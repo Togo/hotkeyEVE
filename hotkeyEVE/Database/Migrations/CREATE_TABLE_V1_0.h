@@ -1,14 +1,13 @@
 //
-//  AppDelegate.h
+//  CREATE_TABLE_V1_0.h
 //  hotkeyEVE
 //
 //  Created by Tobias Sommer on 11/3/12.
 //  Copyright (c) 2012 Tobias Sommer. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Database/FmdbMigration.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
-
+@interface CREATE_TABLE_V1_0 : FmdbMigration
 
 @end

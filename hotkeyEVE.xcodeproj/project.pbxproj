@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD5A463F16455134007B57A5 /* Database.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5A463816455119007B57A5 /* Database.dylib */; };
+		CD5A464016455134007B57A5 /* UIElements.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5A462C1645510F007B57A5 /* UIElements.dylib */; };
+		CD5A464716455398007B57A5 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A464616455398007B57A5 /* DatabaseManager.m */; };
+		CD5A464A1645563E007B57A5 /* CREATE_TABLE_V1_0.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46491645563E007B57A5 /* CREATE_TABLE_V1_0.m */; };
+		CD5A464E1645579C007B57A5 /* EVEDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A464D1645579C007B57A5 /* EVEDatabase.m */; };
+		CD5A4660164558FB007B57A5 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4651164558FB007B57A5 /* DDAbstractDatabaseLogger.m */; };
+		CD5A4661164558FB007B57A5 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4653164558FB007B57A5 /* DDASLLogger.m */; };
+		CD5A4662164558FB007B57A5 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4655164558FB007B57A5 /* DDFileLogger.m */; };
+		CD5A4663164558FB007B57A5 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4657164558FB007B57A5 /* DDLog.m */; };
+		CD5A4664164558FB007B57A5 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4659164558FB007B57A5 /* DDTTYLogger.m */; };
+		CD5A4665164558FB007B57A5 /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A465C164558FB007B57A5 /* ContextFilterLogFormatter.m */; };
+		CD5A4666164558FB007B57A5 /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A465E164558FB007B57A5 /* DispatchQueueLogFormatter.m */; };
+		CD5A4667164558FB007B57A5 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = CD5A465F164558FB007B57A5 /* README.txt */; };
+		CD5A466916455D69007B57A5 /* CREATE_TABLE_V1_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD5A466816455D69007B57A5 /* CREATE_TABLE_V1_0.sql */; };
 		CD80E7531645393300A9C7D8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7521645393300A9C7D8 /* Cocoa.framework */; };
 		CD80E75D1645393400A9C7D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD80E75B1645393400A9C7D8 /* InfoPlist.strings */; };
 		CD80E75F1645393400A9C7D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD80E75E1645393400A9C7D8 /* main.m */; };
@@ -22,6 +36,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CD5A462B1645510F007B57A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD5A46231645510F007B57A5 /* UIElements.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CDE8B47B1633080A0085E130;
+			remoteInfo = UIElements;
+		};
+		CD5A462D1645510F007B57A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD5A46231645510F007B57A5 /* UIElements.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CDE8B48F1633080B0085E130;
+			remoteInfo = UIElementsTests;
+		};
+		CD5A463716455119007B57A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD5A462F16455118007B57A5 /* Database.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CD868153163BBCEB00667709;
+			remoteInfo = Database;
+		};
+		CD5A463916455119007B57A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD5A462F16455118007B57A5 /* Database.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CD868167163BBCEB00667709;
+			remoteInfo = DatabaseTests;
+		};
+		CD5A463B1645512D007B57A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD5A46231645510F007B57A5 /* UIElements.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = CDE8B47A1633080A0085E130;
+			remoteInfo = UIElements;
+		};
+		CD5A463D1645512D007B57A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD5A462F16455118007B57A5 /* Database.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = CD868152163BBCEB00667709;
+			remoteInfo = Database;
+		};
 		CD80E7731645393400A9C7D8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CD80E7451645393300A9C7D8 /* Project object */;
@@ -32,6 +88,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD5A46231645510F007B57A5 /* UIElements.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIElements.xcodeproj; path = "eve-uielements/UIElements.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		CD5A462F16455118007B57A5 /* Database.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Database.xcodeproj; path = "eve-database/Database.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		CD5A464516455398007B57A5 /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseManager.h; path = Database/DatabaseManager.h; sourceTree = "<group>"; };
+		CD5A464616455398007B57A5 /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseManager.m; path = Database/DatabaseManager.m; sourceTree = "<group>"; };
+		CD5A46481645563E007B57A5 /* CREATE_TABLE_V1_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CREATE_TABLE_V1_0.h; path = Database/Migrations/CREATE_TABLE_V1_0.h; sourceTree = "<group>"; };
+		CD5A46491645563E007B57A5 /* CREATE_TABLE_V1_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CREATE_TABLE_V1_0.m; path = Database/Migrations/CREATE_TABLE_V1_0.m; sourceTree = "<group>"; };
+		CD5A464C1645579C007B57A5 /* EVEDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EVEDatabase.h; path = Database/EVEDatabase.h; sourceTree = "<group>"; };
+		CD5A464D1645579C007B57A5 /* EVEDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EVEDatabase.m; path = Database/EVEDatabase.m; sourceTree = "<group>"; };
+		CD5A4650164558FB007B57A5 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		CD5A4651164558FB007B57A5 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		CD5A4652164558FB007B57A5 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		CD5A4653164558FB007B57A5 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		CD5A4654164558FB007B57A5 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		CD5A4655164558FB007B57A5 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		CD5A4656164558FB007B57A5 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		CD5A4657164558FB007B57A5 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		CD5A4658164558FB007B57A5 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		CD5A4659164558FB007B57A5 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		CD5A465B164558FB007B57A5 /* ContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextFilterLogFormatter.h; sourceTree = "<group>"; };
+		CD5A465C164558FB007B57A5 /* ContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		CD5A465D164558FB007B57A5 /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
+		CD5A465E164558FB007B57A5 /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		CD5A465F164558FB007B57A5 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		CD5A466816455D69007B57A5 /* CREATE_TABLE_V1_0.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CREATE_TABLE_V1_0.sql; path = "Database/SQL Scripte/CREATE_TABLE_V1_0.sql"; sourceTree = "<group>"; };
 		CD80E74E1645393300A9C7D8 /* hotkeyEVE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hotkeyEVE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD80E7521645393300A9C7D8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CD80E7551645393300A9C7D8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -61,6 +141,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD5A463F16455134007B57A5 /* Database.dylib in Frameworks */,
+				CD5A464016455134007B57A5 /* UIElements.dylib in Frameworks */,
 				CD80E7531645393300A9C7D8 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +159,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD5A4621164550F6007B57A5 /* Subprojects */ = {
+			isa = PBXGroup;
+			children = (
+				CD5A462F16455118007B57A5 /* Database.xcodeproj */,
+				CD5A46231645510F007B57A5 /* UIElements.xcodeproj */,
+			);
+			name = Subprojects;
+			sourceTree = "<group>";
+		};
+		CD5A46241645510F007B57A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD5A462C1645510F007B57A5 /* UIElements.dylib */,
+				CD5A462E1645510F007B57A5 /* UIElementsTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD5A463016455118007B57A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD5A463816455119007B57A5 /* Database.dylib */,
+				CD5A463A16455119007B57A5 /* DatabaseTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD5A464416455361007B57A5 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				CD5A464B16455643007B57A5 /* Migrations */,
+				CD5A464516455398007B57A5 /* DatabaseManager.h */,
+				CD5A464616455398007B57A5 /* DatabaseManager.m */,
+				CD5A464C1645579C007B57A5 /* EVEDatabase.h */,
+				CD5A464D1645579C007B57A5 /* EVEDatabase.m */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		CD5A464B16455643007B57A5 /* Migrations */ = {
+			isa = PBXGroup;
+			children = (
+				CD5A46481645563E007B57A5 /* CREATE_TABLE_V1_0.h */,
+				CD5A46491645563E007B57A5 /* CREATE_TABLE_V1_0.m */,
+				CD5A466816455D69007B57A5 /* CREATE_TABLE_V1_0.sql */,
+			);
+			name = Migrations;
+			sourceTree = "<group>";
+		};
+		CD5A464F164558FB007B57A5 /* Lumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				CD5A4650164558FB007B57A5 /* DDAbstractDatabaseLogger.h */,
+				CD5A4651164558FB007B57A5 /* DDAbstractDatabaseLogger.m */,
+				CD5A4652164558FB007B57A5 /* DDASLLogger.h */,
+				CD5A4653164558FB007B57A5 /* DDASLLogger.m */,
+				CD5A4654164558FB007B57A5 /* DDFileLogger.h */,
+				CD5A4655164558FB007B57A5 /* DDFileLogger.m */,
+				CD5A4656164558FB007B57A5 /* DDLog.h */,
+				CD5A4657164558FB007B57A5 /* DDLog.m */,
+				CD5A4658164558FB007B57A5 /* DDTTYLogger.h */,
+				CD5A4659164558FB007B57A5 /* DDTTYLogger.m */,
+				CD5A465A164558FB007B57A5 /* Extensions */,
+			);
+			name = Lumberjack;
+			path = hotkeyEVE/Frameworks/Lumberjack;
+			sourceTree = "<group>";
+		};
+		CD5A465A164558FB007B57A5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CD5A465B164558FB007B57A5 /* ContextFilterLogFormatter.h */,
+				CD5A465C164558FB007B57A5 /* ContextFilterLogFormatter.m */,
+				CD5A465D164558FB007B57A5 /* DispatchQueueLogFormatter.h */,
+				CD5A465E164558FB007B57A5 /* DispatchQueueLogFormatter.m */,
+				CD5A465F164558FB007B57A5 /* README.txt */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CD80E7431645393300A9C7D8 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +261,7 @@
 		CD80E7511645393300A9C7D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD5A464F164558FB007B57A5 /* Lumberjack */,
 				CD80E7521645393300A9C7D8 /* Cocoa.framework */,
 				CD80E7701645393400A9C7D8 /* SenTestingKit.framework */,
 				CD80E7541645393300A9C7D8 /* Other Frameworks */,
@@ -120,8 +283,10 @@
 			isa = PBXGroup;
 			children = (
 				CD80E78A164539A900A9C7D8 /* GUI */,
+				CD5A464416455361007B57A5 /* Database */,
 				CD80E7641645393400A9C7D8 /* AppDelegate.h */,
 				CD80E7651645393400A9C7D8 /* AppDelegate.m */,
+				CD5A4621164550F6007B57A5 /* Subprojects */,
 				CD80E7591645393400A9C7D8 /* Supporting Files */,
 			);
 			path = hotkeyEVE;
@@ -183,6 +348,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				CD5A463C1645512D007B57A5 /* PBXTargetDependency */,
+				CD5A463E1645512D007B57A5 /* PBXTargetDependency */,
 			);
 			name = hotkeyEVE;
 			productName = hotkeyEVE;
@@ -227,6 +394,16 @@
 			mainGroup = CD80E7431645393300A9C7D8;
 			productRefGroup = CD80E74F1645393300A9C7D8 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CD5A463016455118007B57A5 /* Products */;
+					ProjectRef = CD5A462F16455118007B57A5 /* Database.xcodeproj */;
+				},
+				{
+					ProductGroup = CD5A46241645510F007B57A5 /* Products */;
+					ProjectRef = CD5A46231645510F007B57A5 /* UIElements.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CD80E74D1645393300A9C7D8 /* hotkeyEVE */,
@@ -234,6 +411,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CD5A462C1645510F007B57A5 /* UIElements.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = UIElements.dylib;
+			remoteRef = CD5A462B1645510F007B57A5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD5A462E1645510F007B57A5 /* UIElementsTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UIElementsTests.octest;
+			remoteRef = CD5A462D1645510F007B57A5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD5A463816455119007B57A5 /* Database.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = Database.dylib;
+			remoteRef = CD5A463716455119007B57A5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD5A463A16455119007B57A5 /* DatabaseTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DatabaseTests.octest;
+			remoteRef = CD5A463916455119007B57A5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CD80E74C1645393300A9C7D8 /* Resources */ = {
@@ -244,6 +452,8 @@
 				CD80E7631645393400A9C7D8 /* Credits.rtf in Resources */,
 				CD80E7691645393400A9C7D8 /* MainMenu.xib in Resources */,
 				CD80E78F1645406B00A9C7D8 /* EVE_ICON_STATUS_BAR_ACTIVE.icns in Resources */,
+				CD5A4667164558FB007B57A5 /* README.txt in Resources */,
+				CD5A466916455D69007B57A5 /* CREATE_TABLE_V1_0.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +491,16 @@
 				CD80E75F1645393400A9C7D8 /* main.m in Sources */,
 				CD80E7661645393400A9C7D8 /* AppDelegate.m in Sources */,
 				CD80E78D16453A0500A9C7D8 /* MainMenuController.m in Sources */,
+				CD5A464716455398007B57A5 /* DatabaseManager.m in Sources */,
+				CD5A464A1645563E007B57A5 /* CREATE_TABLE_V1_0.m in Sources */,
+				CD5A464E1645579C007B57A5 /* EVEDatabase.m in Sources */,
+				CD5A4660164558FB007B57A5 /* DDAbstractDatabaseLogger.m in Sources */,
+				CD5A4661164558FB007B57A5 /* DDASLLogger.m in Sources */,
+				CD5A4662164558FB007B57A5 /* DDFileLogger.m in Sources */,
+				CD5A4663164558FB007B57A5 /* DDLog.m in Sources */,
+				CD5A4664164558FB007B57A5 /* DDTTYLogger.m in Sources */,
+				CD5A4665164558FB007B57A5 /* ContextFilterLogFormatter.m in Sources */,
+				CD5A4666164558FB007B57A5 /* DispatchQueueLogFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +515,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CD5A463C1645512D007B57A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UIElements;
+			targetProxy = CD5A463B1645512D007B57A5 /* PBXContainerItemProxy */;
+		};
+		CD5A463E1645512D007B57A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Database;
+			targetProxy = CD5A463D1645512D007B57A5 /* PBXContainerItemProxy */;
+		};
 		CD80E7741645393400A9C7D8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CD80E74D1645393300A9C7D8 /* hotkeyEVE */;
@@ -398,6 +628,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotkeyEVE/hotkeyEVE-Prefix.pch";
 				INFOPLIST_FILE = "hotkeyEVE/hotkeyEVE-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -410,6 +644,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotkeyEVE/hotkeyEVE-Prefix.pch";
 				INFOPLIST_FILE = "hotkeyEVE/hotkeyEVE-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -464,6 +702,7 @@
 				CD80E7821645393400A9C7D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CD80E7831645393400A9C7D8 /* Build configuration list for PBXNativeTarget "hotkeyEVETests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +711,7 @@
 				CD80E7851645393400A9C7D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
