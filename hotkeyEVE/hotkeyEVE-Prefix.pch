@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'hotkeyEVE' target in the 'hotkeyEVE' project
+//
+
+#ifdef __OBJC__
+  #import <Cocoa/Cocoa.h>
+#endif
