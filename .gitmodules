@@ -1,0 +1,6 @@
+[submodule "eve-uielements"]
+	path = eve-uielements
+	url = git@github.com:Togo/eve-uielements.git
+[submodule "eve-database"]
+	path = eve-database
+	url = git@github.com:Togo/eve-database.git
