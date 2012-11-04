@@ -10,5 +10,6 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+@property (strong, nonatomic) EVEManager *eveAppManager;
 
 @end

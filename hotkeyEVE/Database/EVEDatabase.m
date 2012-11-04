@@ -10,8 +10,9 @@
 
 @implementation EVEDatabase
 
-- (void) printErrorMessage {
+- (void) printErrorMessage :(NSString*) query {
   DDLogError(@"%d: %@", [[self database] lastErrorCode], [[self database] lastErrorMessage]);
+  DDLogError(@"QUERY: %@", query);
 }
 
 @end

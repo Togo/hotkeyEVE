@@ -9,14 +9,23 @@
 #import "AppDelegate.h"
 #import "DDASLLogger.h"
 #import "DDTTYLogger.h"
+#import "MenuBarIndexingThread.h"
 
 @implementation AppDelegate
 
+@synthesize eveAppManager;
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+  NSLog(@"EVE has been started");
+  
   [self startLogging];
   
   [self openDatabase];
+  
+  eveAppManager =  [EVEManager sharedEVEManager];
+  
+  [self startIndexing];
 }
 
 - (void) startLogging {
@@ -26,8 +35,11 @@
 
 - (void) openDatabase {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
-  [NSThread sleepForTimeInterval:1];
   [db executeMigrations:[db databasePath]];
+}
+
+- (void) startIndexing {
+  [[eveAppManager indexing] indexingAllApps];
 }
 
 @end

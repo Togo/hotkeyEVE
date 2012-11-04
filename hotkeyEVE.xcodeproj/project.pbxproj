@@ -21,6 +21,12 @@
 		CD5A4666164558FB007B57A5 /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A465E164558FB007B57A5 /* DispatchQueueLogFormatter.m */; };
 		CD5A4667164558FB007B57A5 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = CD5A465F164558FB007B57A5 /* README.txt */; };
 		CD5A466916455D69007B57A5 /* CREATE_TABLE_V1_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD5A466816455D69007B57A5 /* CREATE_TABLE_V1_0.sql */; };
+		CD5A469216455F7D007B57A5 /* MenuBarIndexingThread.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A469116455F7D007B57A5 /* MenuBarIndexingThread.m */; };
+		CD5A46961645610B007B57A5 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46951645610B007B57A5 /* Queue.m */; };
+		CD5A4699164563D0007B57A5 /* MenuBarTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4698164563D0007B57A5 /* MenuBarTableModel.m */; };
+		CD5A46CD16463D72007B57A5 /* EVEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46CC16463D72007B57A5 /* EVEManager.m */; };
+		CD5A46D016463E64007B57A5 /* IndexingController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46CF16463E64007B57A5 /* IndexingController.m */; };
+		CD5A46D316464A65007B57A5 /* StringUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46D216464A65007B57A5 /* StringUtilities.m */; };
 		CD80E7531645393300A9C7D8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7521645393300A9C7D8 /* Cocoa.framework */; };
 		CD80E75D1645393400A9C7D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD80E75B1645393400A9C7D8 /* InfoPlist.strings */; };
 		CD80E75F1645393400A9C7D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD80E75E1645393400A9C7D8 /* main.m */; };
@@ -112,6 +118,18 @@
 		CD5A465E164558FB007B57A5 /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
 		CD5A465F164558FB007B57A5 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		CD5A466816455D69007B57A5 /* CREATE_TABLE_V1_0.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CREATE_TABLE_V1_0.sql; path = "Database/SQL Scripte/CREATE_TABLE_V1_0.sql"; sourceTree = "<group>"; };
+		CD5A469016455F7D007B57A5 /* MenuBarIndexingThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuBarIndexingThread.h; path = Indexing/MenuBarIndexingThread.h; sourceTree = "<group>"; };
+		CD5A469116455F7D007B57A5 /* MenuBarIndexingThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuBarIndexingThread.m; path = Indexing/MenuBarIndexingThread.m; sourceTree = "<group>"; };
+		CD5A46941645610B007B57A5 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		CD5A46951645610B007B57A5 /* Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Queue.m; sourceTree = "<group>"; };
+		CD5A4697164563D0007B57A5 /* MenuBarTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuBarTableModel.h; path = Database/Models/MenuBarTableModel.h; sourceTree = "<group>"; };
+		CD5A4698164563D0007B57A5 /* MenuBarTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuBarTableModel.m; path = Database/Models/MenuBarTableModel.m; sourceTree = "<group>"; };
+		CD5A46CB16463D72007B57A5 /* EVEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVEManager.h; sourceTree = "<group>"; };
+		CD5A46CC16463D72007B57A5 /* EVEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVEManager.m; sourceTree = "<group>"; };
+		CD5A46CE16463E64007B57A5 /* IndexingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexingController.h; sourceTree = "<group>"; };
+		CD5A46CF16463E64007B57A5 /* IndexingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexingController.m; sourceTree = "<group>"; };
+		CD5A46D116464A65007B57A5 /* StringUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringUtilities.h; sourceTree = "<group>"; };
+		CD5A46D216464A65007B57A5 /* StringUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtilities.m; sourceTree = "<group>"; };
 		CD80E74E1645393300A9C7D8 /* hotkeyEVE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hotkeyEVE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD80E7521645393300A9C7D8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CD80E7551645393300A9C7D8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -239,6 +257,30 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		CD5A469316455F86007B57A5 /* Indexing */ = {
+			isa = PBXGroup;
+			children = (
+				CD5A46CE16463E64007B57A5 /* IndexingController.h */,
+				CD5A46CF16463E64007B57A5 /* IndexingController.m */,
+				CD5A469016455F7D007B57A5 /* MenuBarIndexingThread.h */,
+				CD5A469116455F7D007B57A5 /* MenuBarIndexingThread.m */,
+				CD5A4697164563D0007B57A5 /* MenuBarTableModel.h */,
+				CD5A4698164563D0007B57A5 /* MenuBarTableModel.m */,
+			);
+			name = Indexing;
+			sourceTree = "<group>";
+		};
+		CD5A46CA16463CBF007B57A5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CD5A46941645610B007B57A5 /* Queue.h */,
+				CD5A46951645610B007B57A5 /* Queue.m */,
+				CD5A46D116464A65007B57A5 /* StringUtilities.h */,
+				CD5A46D216464A65007B57A5 /* StringUtilities.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		CD80E7431645393300A9C7D8 = {
 			isa = PBXGroup;
 			children = (
@@ -282,8 +324,12 @@
 		CD80E7581645393300A9C7D8 /* hotkeyEVE */ = {
 			isa = PBXGroup;
 			children = (
+				CD5A46CA16463CBF007B57A5 /* Utilities */,
+				CD5A469316455F86007B57A5 /* Indexing */,
 				CD80E78A164539A900A9C7D8 /* GUI */,
 				CD5A464416455361007B57A5 /* Database */,
+				CD5A46CB16463D72007B57A5 /* EVEManager.h */,
+				CD5A46CC16463D72007B57A5 /* EVEManager.m */,
 				CD80E7641645393400A9C7D8 /* AppDelegate.h */,
 				CD80E7651645393400A9C7D8 /* AppDelegate.m */,
 				CD5A4621164550F6007B57A5 /* Subprojects */,
@@ -501,6 +547,12 @@
 				CD5A4664164558FB007B57A5 /* DDTTYLogger.m in Sources */,
 				CD5A4665164558FB007B57A5 /* ContextFilterLogFormatter.m in Sources */,
 				CD5A4666164558FB007B57A5 /* DispatchQueueLogFormatter.m in Sources */,
+				CD5A469216455F7D007B57A5 /* MenuBarIndexingThread.m in Sources */,
+				CD5A46961645610B007B57A5 /* Queue.m in Sources */,
+				CD5A4699164563D0007B57A5 /* MenuBarTableModel.m in Sources */,
+				CD5A46CD16463D72007B57A5 /* EVEManager.m in Sources */,
+				CD5A46D016463E64007B57A5 /* IndexingController.m in Sources */,
+				CD5A46D316464A65007B57A5 /* StringUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

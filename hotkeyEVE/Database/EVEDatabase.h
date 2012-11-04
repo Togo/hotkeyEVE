@@ -10,6 +10,4 @@
 
 @interface EVEDatabase : Database
 
-- (void) printErrorMessage;
-
 @end

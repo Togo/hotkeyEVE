@@ -4,8 +4,12 @@
 
 #ifdef __OBJC__
   #import <Cocoa/Cocoa.h>
+
   #import "DatabaseManager.h"
+  #import "EVEManager.h"
   #import "DDLog.h"
+
+  #import <Database/TableAndColumnNames.h>
 
   static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 #endif
