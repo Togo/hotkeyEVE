@@ -27,6 +27,8 @@
 		CD5A46CD16463D72007B57A5 /* EVEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46CC16463D72007B57A5 /* EVEManager.m */; };
 		CD5A46D016463E64007B57A5 /* IndexingController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46CF16463E64007B57A5 /* IndexingController.m */; };
 		CD5A46D316464A65007B57A5 /* StringUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46D216464A65007B57A5 /* StringUtilities.m */; };
+		CD5A46F516464F7E007B57A5 /* EVEObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46F416464F7E007B57A5 /* EVEObserver.m */; };
+		CD5A46F816465123007B57A5 /* UIElementClickedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46F716465123007B57A5 /* UIElementClickedController.m */; };
 		CD80E7531645393300A9C7D8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7521645393300A9C7D8 /* Cocoa.framework */; };
 		CD80E75D1645393400A9C7D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD80E75B1645393400A9C7D8 /* InfoPlist.strings */; };
 		CD80E75F1645393400A9C7D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD80E75E1645393400A9C7D8 /* main.m */; };
@@ -130,6 +132,10 @@
 		CD5A46CF16463E64007B57A5 /* IndexingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexingController.m; sourceTree = "<group>"; };
 		CD5A46D116464A65007B57A5 /* StringUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringUtilities.h; sourceTree = "<group>"; };
 		CD5A46D216464A65007B57A5 /* StringUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtilities.m; sourceTree = "<group>"; };
+		CD5A46F316464F7E007B57A5 /* EVEObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EVEObserver.h; path = Observer/EVEObserver.h; sourceTree = "<group>"; };
+		CD5A46F416464F7E007B57A5 /* EVEObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EVEObserver.m; path = Observer/EVEObserver.m; sourceTree = "<group>"; };
+		CD5A46F616465123007B57A5 /* UIElementClickedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIElementClickedController.h; path = Conroller/UIElementClickedController.h; sourceTree = "<group>"; };
+		CD5A46F716465123007B57A5 /* UIElementClickedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIElementClickedController.m; path = Conroller/UIElementClickedController.m; sourceTree = "<group>"; };
 		CD80E74E1645393300A9C7D8 /* hotkeyEVE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hotkeyEVE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD80E7521645393300A9C7D8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CD80E7551645393300A9C7D8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -281,6 +287,24 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
+		CD5A46F216464F26007B57A5 /* Observer */ = {
+			isa = PBXGroup;
+			children = (
+				CD5A46F316464F7E007B57A5 /* EVEObserver.h */,
+				CD5A46F416464F7E007B57A5 /* EVEObserver.m */,
+			);
+			name = Observer;
+			sourceTree = "<group>";
+		};
+		CD5A46F916465128007B57A5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD5A46F616465123007B57A5 /* UIElementClickedController.h */,
+				CD5A46F716465123007B57A5 /* UIElementClickedController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		CD80E7431645393300A9C7D8 = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +348,8 @@
 		CD80E7581645393300A9C7D8 /* hotkeyEVE */ = {
 			isa = PBXGroup;
 			children = (
+				CD5A46F916465128007B57A5 /* Controller */,
+				CD5A46F216464F26007B57A5 /* Observer */,
 				CD5A46CA16463CBF007B57A5 /* Utilities */,
 				CD5A469316455F86007B57A5 /* Indexing */,
 				CD80E78A164539A900A9C7D8 /* GUI */,
@@ -553,6 +579,8 @@
 				CD5A46CD16463D72007B57A5 /* EVEManager.m in Sources */,
 				CD5A46D016463E64007B57A5 /* IndexingController.m in Sources */,
 				CD5A46D316464A65007B57A5 /* StringUtilities.m in Sources */,
+				CD5A46F516464F7E007B57A5 /* EVEObserver.m in Sources */,
+				CD5A46F816465123007B57A5 /* UIElementClickedController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

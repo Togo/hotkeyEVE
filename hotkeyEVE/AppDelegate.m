@@ -10,6 +10,7 @@
 #import "DDASLLogger.h"
 #import "DDTTYLogger.h"
 #import "MenuBarIndexingThread.h"
+#import <UIElements/ClickOnUIElementSubject.h>
 
 @implementation AppDelegate
 
@@ -18,14 +19,17 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
   NSLog(@"EVE has been started");
+  eveAppManager =  [EVEManager sharedEVEManager];
   
   [self startLogging];
   
   [self openDatabase];
   
-  eveAppManager =  [EVEManager sharedEVEManager];
-  
   [self startIndexing];
+  
+  
+  [self registerListener];
+  [self registerNotifications];
 }
 
 - (void) startLogging {
@@ -40,6 +44,16 @@
 
 - (void) startIndexing {
   [[eveAppManager indexing] indexingAllApps];
+}
+
+- (void) registerListener {
+    ClickOnUIElementSubject *clickListener = [[ClickOnUIElementSubject alloc]init];
+    DDLogInfo(@"Register Listener: %@", clickListener);
+}
+
+- (void) registerNotifications {
+  [[eveAppManager eveObserver] subscribeToNotificiation:ClickOnUIElementNotification];
+  DDLogInfo(@"Subsscribed %@", ClickOnUIElementNotification);
 }
 
 @end

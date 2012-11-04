@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "IndexingController.h"
+#import "UIElementClickedController.h"
+#import "EVEObserver.h"
 
 @interface EVEManager : NSObject {
   
 }
 
 @property (nonatomic, retain)   IndexingController  *indexing;
+@property (nonatomic, retain)   EVEObserver  *eveObserver;
+@property (nonatomic, retain)   UIElementClickedController  *uiElementClicked;
 
 + (id) sharedEVEManager;
 

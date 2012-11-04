@@ -9,7 +9,10 @@
   #import "EVEManager.h"
   #import "DDLog.h"
 
+
   #import <Database/TableAndColumnNames.h>
+
+  #import <UIElements/UIElementNotifications.h>
 
   static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 #endif
