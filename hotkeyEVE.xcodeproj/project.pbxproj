@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD57864C16465D5800CC508B /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = CD57864B16465D5800CC508B /* Growl Registration Ticket.growlRegDict */; };
+		CD57865216465E2600CC508B /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
+		CD57865316465EDE00CC508B /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
+		CD5786551646611200CC508B /* EVE_ICON.icns in Resources */ = {isa = PBXBuildFile; fileRef = CD5786541646611200CC508B /* EVE_ICON.icns */; };
 		CD5A463F16455134007B57A5 /* Database.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5A463816455119007B57A5 /* Database.dylib */; };
 		CD5A464016455134007B57A5 /* UIElements.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5A462C1645510F007B57A5 /* UIElements.dylib */; };
 		CD5A464716455398007B57A5 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A464616455398007B57A5 /* DatabaseManager.m */; };
@@ -41,6 +45,8 @@
 		CD80E77D1645393400A9C7D8 /* hotkeyEVETests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD80E77C1645393400A9C7D8 /* hotkeyEVETests.m */; };
 		CD80E78D16453A0500A9C7D8 /* MainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD80E78C16453A0500A9C7D8 /* MainMenuController.m */; };
 		CD80E78F1645406B00A9C7D8 /* EVE_ICON_STATUS_BAR_ACTIVE.icns in Resources */ = {isa = PBXBuildFile; fileRef = CD80E78E1645406B00A9C7D8 /* EVE_ICON_STATUS_BAR_ACTIVE.icns */; };
+		CD97CE6B16466D7B00406F1F /* EVEMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE6A16466D7B00406F1F /* EVEMessages.m */; };
+		CD97CE6E164670BE00406F1F /* HandleClickedUIElement.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE6D164670BE00406F1F /* HandleClickedUIElement.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +101,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CD57864A16465CE100CC508B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CD57865216465E2600CC508B /* Growl.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		CD57864B16465D5800CC508B /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
+		CD57865116465E2600CC508B /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = hotkeyEVE/Frameworks/Growl.framework; sourceTree = "<group>"; };
+		CD5786541646611200CC508B /* EVE_ICON.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON.icns; sourceTree = "<group>"; };
 		CD5A46231645510F007B57A5 /* UIElements.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIElements.xcodeproj; path = "eve-uielements/UIElements.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		CD5A462F16455118007B57A5 /* Database.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Database.xcodeproj; path = "eve-database/Database.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		CD5A464516455398007B57A5 /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseManager.h; path = Database/DatabaseManager.h; sourceTree = "<group>"; };
@@ -158,6 +180,10 @@
 		CD80E78B16453A0500A9C7D8 /* MainMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuController.h; path = GUI/MainMenuController.h; sourceTree = "<group>"; };
 		CD80E78C16453A0500A9C7D8 /* MainMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuController.m; path = GUI/MainMenuController.m; sourceTree = "<group>"; };
 		CD80E78E1645406B00A9C7D8 /* EVE_ICON_STATUS_BAR_ACTIVE.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON_STATUS_BAR_ACTIVE.icns; sourceTree = "<group>"; };
+		CD97CE6916466D7B00406F1F /* EVEMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EVEMessages.h; path = GUI/EVEMessages.h; sourceTree = "<group>"; };
+		CD97CE6A16466D7B00406F1F /* EVEMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EVEMessages.m; path = GUI/EVEMessages.m; sourceTree = "<group>"; };
+		CD97CE6C164670BD00406F1F /* HandleClickedUIElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleClickedUIElement.h; sourceTree = "<group>"; };
+		CD97CE6D164670BE00406F1F /* HandleClickedUIElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandleClickedUIElement.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD57865316465EDE00CC508B /* Growl.framework in Frameworks */,
 				CD5A463F16455134007B57A5 /* Database.dylib in Frameworks */,
 				CD5A464016455134007B57A5 /* UIElements.dylib in Frameworks */,
 				CD80E7531645393300A9C7D8 /* Cocoa.framework in Frameworks */,
@@ -213,6 +240,7 @@
 		CD5A464416455361007B57A5 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				CD97CE6F164671E200406F1F /* DatabaseModel */,
 				CD5A464B16455643007B57A5 /* Migrations */,
 				CD5A464516455398007B57A5 /* DatabaseManager.h */,
 				CD5A464616455398007B57A5 /* DatabaseManager.m */,
@@ -270,8 +298,6 @@
 				CD5A46CF16463E64007B57A5 /* IndexingController.m */,
 				CD5A469016455F7D007B57A5 /* MenuBarIndexingThread.h */,
 				CD5A469116455F7D007B57A5 /* MenuBarIndexingThread.m */,
-				CD5A4697164563D0007B57A5 /* MenuBarTableModel.h */,
-				CD5A4698164563D0007B57A5 /* MenuBarTableModel.m */,
 			);
 			name = Indexing;
 			sourceTree = "<group>";
@@ -327,6 +353,7 @@
 		CD80E7511645393300A9C7D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD57865116465E2600CC508B /* Growl.framework */,
 				CD5A464F164558FB007B57A5 /* Lumberjack */,
 				CD80E7521645393300A9C7D8 /* Cocoa.framework */,
 				CD80E7701645393400A9C7D8 /* SenTestingKit.framework */,
@@ -358,6 +385,8 @@
 				CD5A46CC16463D72007B57A5 /* EVEManager.m */,
 				CD80E7641645393400A9C7D8 /* AppDelegate.h */,
 				CD80E7651645393400A9C7D8 /* AppDelegate.m */,
+				CD97CE6C164670BD00406F1F /* HandleClickedUIElement.h */,
+				CD97CE6D164670BE00406F1F /* HandleClickedUIElement.m */,
 				CD5A4621164550F6007B57A5 /* Subprojects */,
 				CD80E7591645393400A9C7D8 /* Supporting Files */,
 			);
@@ -367,6 +396,8 @@
 		CD80E7591645393400A9C7D8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CD57864B16465D5800CC508B /* Growl Registration Ticket.growlRegDict */,
+				CD5786541646611200CC508B /* EVE_ICON.icns */,
 				CD80E78E1645406B00A9C7D8 /* EVE_ICON_STATUS_BAR_ACTIVE.icns */,
 				CD80E75A1645393400A9C7D8 /* hotkeyEVE-Info.plist */,
 				CD80E75B1645393400A9C7D8 /* InfoPlist.strings */,
@@ -399,11 +430,22 @@
 		CD80E78A164539A900A9C7D8 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				CD97CE6916466D7B00406F1F /* EVEMessages.h */,
+				CD97CE6A16466D7B00406F1F /* EVEMessages.m */,
 				CD80E78B16453A0500A9C7D8 /* MainMenuController.h */,
 				CD80E78C16453A0500A9C7D8 /* MainMenuController.m */,
 				CD80E7671645393400A9C7D8 /* MainMenu.xib */,
 			);
 			name = GUI;
+			sourceTree = "<group>";
+		};
+		CD97CE6F164671E200406F1F /* DatabaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				CD5A4697164563D0007B57A5 /* MenuBarTableModel.h */,
+				CD5A4698164563D0007B57A5 /* MenuBarTableModel.m */,
+			);
+			name = DatabaseModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +458,7 @@
 				CD80E74A1645393300A9C7D8 /* Sources */,
 				CD80E74B1645393300A9C7D8 /* Frameworks */,
 				CD80E74C1645393300A9C7D8 /* Resources */,
+				CD57864A16465CE100CC508B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -526,6 +569,8 @@
 				CD80E78F1645406B00A9C7D8 /* EVE_ICON_STATUS_BAR_ACTIVE.icns in Resources */,
 				CD5A4667164558FB007B57A5 /* README.txt in Resources */,
 				CD5A466916455D69007B57A5 /* CREATE_TABLE_V1_0.sql in Resources */,
+				CD57864C16465D5800CC508B /* Growl Registration Ticket.growlRegDict in Resources */,
+				CD5786551646611200CC508B /* EVE_ICON.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +626,8 @@
 				CD5A46D316464A65007B57A5 /* StringUtilities.m in Sources */,
 				CD5A46F516464F7E007B57A5 /* EVEObserver.m in Sources */,
 				CD5A46F816465123007B57A5 /* UIElementClickedController.m in Sources */,
+				CD97CE6B16466D7B00406F1F /* EVEMessages.m in Sources */,
+				CD97CE6E164670BE00406F1F /* HandleClickedUIElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +719,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"”$(TARGET_BUILD_DIR)/usr/local/lib/include”/**",
+					"”$(OBJROOT)/UninstalledProducts/include”/**",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -696,6 +747,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"”$(TARGET_BUILD_DIR)/usr/local/lib/include”/**",
+					"”$(OBJROOT)/UninstalledProducts/include”/**",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
 			};
@@ -705,6 +760,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/hotkeyEVE/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotkeyEVE/hotkeyEVE-Prefix.pch";
 				INFOPLIST_FILE = "hotkeyEVE/hotkeyEVE-Info.plist";
@@ -721,6 +780,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/hotkeyEVE/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotkeyEVE/hotkeyEVE-Prefix.pch";
 				INFOPLIST_FILE = "hotkeyEVE/hotkeyEVE-Info.plist";

@@ -7,19 +7,26 @@
 //
 
 #import "UIElementClickedController.h"
-
+#import <UIElements/NullUIElement.h>
+#import "HandleClickedUIElement.h"
 
 @implementation UIElementClickedController
 
 - (void) reveiceUIElementClick :(UIElement*) element {
-  DDLogInfo(@"Received Click on UI Element: %@", [[element owner] appName]);
-  DDLogInfo(@"Role: %@", [element role]);
-  DDLogInfo(@"Role Description: %@", [element roleDescription]);
-  DDLogInfo(@"Identifier: %@", [element uiElementIdentifier]);
-  // Check App Status
-  // Check App Active
-  // Check App GUI Element Active
-  // if all yes display shortcut
+  
+  if (element.class != NullUIElement.class) {
+
+    
+    DDLogVerbose(@"Received Click on UI Element: %@", [[element owner] appName]);
+    DDLogVerbose(@"Role: %@", [element role]);
+    DDLogVerbose(@"Role Description: %@", [element roleDescription]);
+    DDLogVerbose(@"Identifier: %@", [element uiElementIdentifier]);
+    if([[element role] isEqualToString:(NSString*) kAXMenuItemRole]) {
+      [HandleClickedUIElement handleMenuElement:element];
+     }  else {
+//      [HandleClickedUIElement handleGUIElement :element];
+    }
+  }
 }
 
 @end

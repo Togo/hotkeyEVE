@@ -59,4 +59,19 @@
     }
 }
 
++ (void) selectShortcutString :(UIElement*) element {
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSMutableString *query = [NSMutableString string];
+  [query appendFormat:@" SELECT * FROM %@,%@ ", SHORTCUTS_TABLE, MENU_BAR_ITEMS_TABLE];
+  [query appendFormat:@" WHERE %@.shortcut_id = %@.id ", MENU_BAR_ITEMS_TABLE, SHORTCUTS_TABLE];
+  [query appendFormat:@" AND %@.identifier like '%@' ", MENU_BAR_ITEMS_TABLE, [element uiElementIdentifier]];
+  
+  DDLogVerbose(@"query: %@", query);
+  NSArray *result = [db executeQuery:query];
+  if ([result count] > 0) {
+    element.shortcutString = [[result objectAtIndex:0] valueForKey:SHORTCUT_STRING_COL];
+  }
+}
+
 @end

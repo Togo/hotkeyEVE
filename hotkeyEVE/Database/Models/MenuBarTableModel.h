@@ -13,4 +13,5 @@
 + (void) insertMenuBarElementArray :(NSArray*) elements;
 + (void) insertShortcutsFromElementArray :(NSArray*) elements;
 
++ (void) selectShortcutString :(UIElement*) element;
 @end

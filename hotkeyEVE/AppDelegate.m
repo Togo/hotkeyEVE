@@ -35,6 +35,8 @@
 - (void) startLogging {
   [DDLog addLogger:[DDASLLogger sharedInstance]];
   [DDLog addLogger:[DDTTYLogger sharedInstance]];
+  
+  // Log in file
 }
 
 - (void) openDatabase {
