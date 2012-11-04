@@ -15,7 +15,6 @@
 - (void) reveiceUIElementClick :(UIElement*) element {
   
   if (element.class != NullUIElement.class) {
-
     
     DDLogVerbose(@"Received Click on UI Element: %@", [[element owner] appName]);
     DDLogVerbose(@"Role: %@", [element role]);

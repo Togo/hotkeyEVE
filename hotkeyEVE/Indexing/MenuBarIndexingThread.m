@@ -10,6 +10,7 @@
 #import <UIElements/Application.h>
 #import <UIElements/MenuBarIndexing.h>
 #import "MenuBarTableModel.h"
+#import "ApplicationsTableModel.h"
 
 @implementation MenuBarIndexingThread
 
@@ -27,7 +28,7 @@
 - (void) startIndexing {
   @autoreleasepool {
     if (self.timer == nil) {
-      self.timer = [NSTimer timerWithTimeInterval:2 target:self selector:@selector(runIndexingShortcuts) userInfo:nil repeats:YES];
+      self.timer = [NSTimer timerWithTimeInterval:2 target:self selector:@selector(runIndexing) userInfo:nil repeats:YES];
       [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
       [[NSRunLoop currentRunLoop] run];
     }
@@ -43,26 +44,36 @@
   [self.timer fire];
 }
 
-- (void) runIndexingShortcuts {
+- (void) runIndexing {
   
   if(!_indexingActive && [self count] > 0) {
     _indexingActive = YES;
     NSString *bundleIdentifier = [self dequeue];
     
     Application *app = [[Application alloc] initWithBundleIdentifier:bundleIdentifier];
+ 
+    [self saveAppData :app];
     
-    AXUIElementRef appRef = AXUIElementCreateApplication( [[app runningApplication] processIdentifier] );
-    MenuBarIndexing *indexMenuBar = [[MenuBarIndexing alloc] init];
-    NSArray *elements = [indexMenuBar indexMenuBar:appRef];
+    [self indexUIElements :app];
     
-    [MenuBarTableModel insertShortcutsFromElementArray: elements];
-    
-    [MenuBarTableModel insertMenuBarElementArray:elements];
-    
-    DDLogInfo(@"Finsihed Menu Bar Indexing of: %@", bundleIdentifier);
+    DDLogInfo(@"Finished Menu Bar Indexing of: %@", bundleIdentifier);
     
     _indexingActive = NO;
   }
+}
+
+- (void) saveAppData :(Application*) app {
+  [ApplicationsTableModel insertApp :app];
+}
+
+- (void) indexUIElements :(Application*) app {
+  AXUIElementRef appRef = AXUIElementCreateApplication( [[app runningApplication] processIdentifier] );
+  MenuBarIndexing *indexMenuBar = [[MenuBarIndexing alloc] init];
+  NSArray *elements = [indexMenuBar indexMenuBar:appRef];
+  
+  [MenuBarTableModel insertShortcutsFromElementArray: elements];
+  
+  [MenuBarTableModel insertMenuBarElementArray:elements];
 }
 
 @end

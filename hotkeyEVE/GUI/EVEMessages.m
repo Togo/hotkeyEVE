@@ -55,7 +55,14 @@
   
   [description appendFormat:@"(click to disable)"];
   
-  [GrowlApplicationBridge notifyWithTitle:[element shortcutString] description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:nil];
+  NSMutableDictionary *clickContextDic = [[NSMutableDictionary alloc] init];
+  [clickContextDic setValue:@"disable_shortcut" forKey:@"mesage_type"];
+  [clickContextDic setValue:[[element owner] appName] forKey:@"appName"];
+  [clickContextDic setValue:[[element owner] bundleIdentifier] forKey:@"BundleIdentifier"];
+  [clickContextDic setValue:[element shortcutString] forKey:@"ShortcutString"];
+  [clickContextDic setValue:[element user] forKey:@"User"];
+  
+  [GrowlApplicationBridge notifyWithTitle:[element shortcutString] description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:clickContextDic];
 }
 
 @end

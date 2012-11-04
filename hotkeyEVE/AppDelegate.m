@@ -11,10 +11,12 @@
 #import "DDTTYLogger.h"
 #import "MenuBarIndexingThread.h"
 #import <UIElements/ClickOnUIElementSubject.h>
+#import "UserDataTableModel.h"
 
 @implementation AppDelegate
 
 @synthesize eveAppManager;
+
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -25,8 +27,9 @@
   
   [self openDatabase];
   
-  [self startIndexing];
+  [self initUserData];
   
+  [self startIndexing];
   
   [self registerListener];
   [self registerNotifications];
@@ -56,6 +59,10 @@
 - (void) registerNotifications {
   [[eveAppManager eveObserver] subscribeToNotificiation:ClickOnUIElementNotification];
   DDLogInfo(@"Subsscribed %@", ClickOnUIElementNotification);
+}
+
+- (void) initUserData {
+  [UserDataTableModel insertUser: NSUserName()];
 }
 
 @end

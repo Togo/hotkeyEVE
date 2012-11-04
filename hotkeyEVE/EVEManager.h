@@ -10,6 +10,7 @@
 #import "IndexingController.h"
 #import "UIElementClickedController.h"
 #import "EVEObserver.h"
+#import "GrowlController.h"
 
 @interface EVEManager : NSObject {
   
@@ -18,6 +19,7 @@
 @property (nonatomic, retain)   IndexingController  *indexing;
 @property (nonatomic, retain)   EVEObserver  *eveObserver;
 @property (nonatomic, retain)   UIElementClickedController  *uiElementClicked;
+@property (strong, nonatomic) GrowlController *growl;
 
 + (id) sharedEVEManager;
 
