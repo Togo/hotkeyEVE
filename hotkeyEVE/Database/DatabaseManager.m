@@ -29,7 +29,7 @@
 - (id)init {
   if (self = [super init]) {
     // Initialize Database
-    eveDatabase = [[EVEDatabase alloc] initWithNameAndPath:@"eve.db" :@"/Users/Togo/dev"];
+    eveDatabase = [[EVEDatabase alloc] initWithNameAndPath:@"eve.db" :@"/Users/Togo/dev/hotkeyEVE/"];
     
     DDLogInfo(@"Load Database at Path: %@", [eveDatabase databasePath]);
     
