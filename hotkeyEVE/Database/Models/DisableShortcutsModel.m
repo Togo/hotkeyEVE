@@ -31,4 +31,28 @@
   
   [db executeUpdate:query];
 }
+
++ (BOOL) isShortcutDisabled :(UIElement*) element :(NSInteger) shortcutID {
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSInteger appID = [ApplicationsTableModel getApplicationID:[[element owner] appName] :[[element owner] bundleIdentifier]];
+  NSInteger userID = [UserDataTableModel getUserID:[element user]];
+  
+  NSMutableString *query = [NSMutableString string];
+  [query appendFormat:@" SELECT * FROM %@ ", DISABLED_SHORTCUTS_TABLE];
+  [query appendFormat:@" WHERE "];
+  [query appendFormat:@" %@ = %li ",APPLICATION_ID_COL, appID];
+  [query appendFormat:@" AND %@ = %li ",SHORTCUT_ID_COL, shortcutID];
+  [query appendFormat:@" AND %@ = %li ",USER_ID_COL, userID];
+  
+  NSArray *result = [db executeQuery:query];
+  
+  if ([result count] > 0) {
+    DDLogInfo(@"Shortcut is disabled!");
+    return YES;
+  } else {
+    return NO;
+  }
+}
+
 @end

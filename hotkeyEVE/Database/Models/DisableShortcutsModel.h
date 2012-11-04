@@ -11,5 +11,6 @@
 @interface DisableShortcutsModel : NSObject
 
 + (void) disableShortcut :appName :bundleIdentifier :shortcutString :user;
++ (BOOL) isShortcutDisabled :(UIElement*) element :(NSInteger) shortcutID;
 
 @end
