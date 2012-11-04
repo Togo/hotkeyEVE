@@ -11,6 +11,8 @@
 @implementation EVEManager
 
 @synthesize indexing;
+@synthesize eveObserver;
+@synthesize uiElementClicked;
 
 #pragma mark Singleton Methods
 
@@ -27,13 +29,11 @@
 - (id)init {
   if (self = [super init]) {
     indexing = [[IndexingController alloc] init];
+    eveObserver = [[EVEObserver alloc] init];
+    uiElementClicked = [[UIElementClickedController alloc] init];
   }
   
   return self;
-}
-
-- (void)dealloc {
-  // Should never be called, but just here for clarity really.
 }
 
 
