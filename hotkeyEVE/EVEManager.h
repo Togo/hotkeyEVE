@@ -11,6 +11,7 @@
 #import "UIElementClickedController.h"
 #import "EVEObserver.h"
 #import "GrowlController.h"
+#import "AppLaunchedController.h"
 
 @interface EVEManager : NSObject {
   
@@ -18,8 +19,11 @@
 
 @property (nonatomic, retain)   IndexingController  *indexing;
 @property (nonatomic, retain)   EVEObserver  *eveObserver;
+
 @property (nonatomic, retain)   UIElementClickedController  *uiElementClicked;
-@property (strong, nonatomic) GrowlController *growl;
+@property (nonatomic, retain)   AppLaunchedController  *appLaunched;
+
+@property (strong, nonatomic)   GrowlController *growl;
 
 + (id) sharedEVEManager;
 

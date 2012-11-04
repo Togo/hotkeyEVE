@@ -22,10 +22,19 @@
   return self;
 }
 
-- (void) update :(NSNotification *)notification {
+- (void) update :(NSNotification *) notification {
+  DDLogVerbose(@"Notification reveived: %@", [notification name]);
   if ([[notification name] isEqualToString:ClickOnUIElementNotification]) {
     UIElement *lastCLickedUIElement =  [UIElement createUIElement:([[notification object] currentUIElement])];
-    [[[EVEManager sharedEVEManager] uiElementClicked] reveiceUIElementClick:lastCLickedUIElement];
+    [[[EVEManager sharedEVEManager] uiElementClicked] reveicedUIElementClick:lastCLickedUIElement];
+    return;
+  }
+
+  if ( [[notification name] isEqualToString:NSWorkspaceDidLaunchApplicationNotification] )  {
+   NSDictionary *dic = [notification userInfo];
+
+   [[[EVEManager sharedEVEManager] appLaunched] newAppLaunched :[dic valueForKey:@"NSApplicationBundleIdentifier"]];
+    return;
   }
 }
 
@@ -41,6 +50,14 @@
                                                name:notificationName object:nil];
   [subscribedNotifications setValue:notificationName forKey:notificationName];
 }
+
+- (void) subscribeToGlobalNotificiation :(NSString*) notificationName {
+  [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
+                                           selector:@selector(update:)
+                                               name:notificationName object:nil];
+  [subscribedNotifications setValue:notificationName forKey:notificationName];
+}
+
 
 - (void) unsuscribeNotificiation :(NSString*) notificationName {
   [self removeNotificationObserver :(NSString*) notificationName];

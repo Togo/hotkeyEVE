@@ -52,4 +52,5 @@ CREATE TABLE disabled_shortcuts (
 	application_id INTEGER REFERENCES applications(id),
 	shortcut_id INTEGER REFERENCES shortcuts(id),
 	user_id INTEGER REFERENCES user_data(id)
+	UNIQUE(application_id, shortcut_id, user_id) ON CONFLICT REPLACE
 );

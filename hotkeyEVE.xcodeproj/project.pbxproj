@@ -53,6 +53,7 @@
 		CD97CE9C164687B300406F1F /* ShortcutDisabledController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE9B164687B300406F1F /* ShortcutDisabledController.m */; };
 		CD97CE9F16468A5E00406F1F /* DisableShortcutsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE9E16468A5E00406F1F /* DisableShortcutsModel.m */; };
 		CD97CEA216468C5200406F1F /* ShortcutTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CEA116468C5200406F1F /* ShortcutTableModel.m */; };
+		CDB3D6621646BAE000285306 /* AppLaunchedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3D6611646BAE000285306 /* AppLaunchedController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,6 +203,8 @@
 		CD97CE9E16468A5E00406F1F /* DisableShortcutsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisableShortcutsModel.m; path = Database/Models/DisableShortcutsModel.m; sourceTree = "<group>"; };
 		CD97CEA016468C5100406F1F /* ShortcutTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortcutTableModel.h; sourceTree = "<group>"; };
 		CD97CEA116468C5200406F1F /* ShortcutTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortcutTableModel.m; sourceTree = "<group>"; };
+		CDB3D6601646BAE000285306 /* AppLaunchedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppLaunchedController.h; path = Conroller/AppLaunchedController.h; sourceTree = "<group>"; };
+		CDB3D6611646BAE000285306 /* AppLaunchedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppLaunchedController.m; path = Conroller/AppLaunchedController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,6 +352,8 @@
 				CD97CE8F16467AB000406F1F /* GrowlController.m */,
 				CD97CE9A164687B300406F1F /* ShortcutDisabledController.h */,
 				CD97CE9B164687B300406F1F /* ShortcutDisabledController.m */,
+				CDB3D6601646BAE000285306 /* AppLaunchedController.h */,
+				CDB3D6611646BAE000285306 /* AppLaunchedController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -664,6 +669,7 @@
 				CD97CE9C164687B300406F1F /* ShortcutDisabledController.m in Sources */,
 				CD97CE9F16468A5E00406F1F /* DisableShortcutsModel.m in Sources */,
 				CD97CEA216468C5200406F1F /* ShortcutTableModel.m in Sources */,
+				CDB3D6621646BAE000285306 /* AppLaunchedController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,5 +14,5 @@
 
   #import <UIElements/UIElementNotifications.h>
 
-  static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+  static const int ddLogLevel = LOG_LEVEL_INFO;
 #endif

@@ -11,6 +11,6 @@
 
 @interface UIElementClickedController : NSObject
 
-- (void) reveiceUIElementClick :(UIElement*) element;
+- (void) reveicedUIElementClick :(UIElement*) element;
 
 @end

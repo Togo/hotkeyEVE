@@ -12,7 +12,10 @@
 
 @synthesize indexing;
 @synthesize eveObserver;
+
 @synthesize uiElementClicked;
+@synthesize appLaunched;
+
 @synthesize growl;
 
 #pragma mark Singleton Methods
@@ -34,6 +37,7 @@
     eveObserver = [[EVEObserver alloc] init];
     
     uiElementClicked = [[UIElementClickedController alloc] init];
+    appLaunched = [[AppLaunchedController alloc] init];
     
     growl = [[GrowlController alloc] init];
     [GrowlApplicationBridge setGrowlDelegate:growl];

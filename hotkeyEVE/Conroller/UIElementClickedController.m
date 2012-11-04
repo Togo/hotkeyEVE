@@ -12,10 +12,9 @@
 
 @implementation UIElementClickedController
 
-- (void) reveiceUIElementClick :(UIElement*) element {
+- (void) reveicedUIElementClick :(UIElement*) element {
   
   if (element.class != NullUIElement.class) {
-    
     DDLogVerbose(@"Received Click on UI Element: %@", [[element owner] appName]);
     DDLogVerbose(@"Role: %@", [element role]);
     DDLogVerbose(@"Role Description: %@", [element roleDescription]);
