@@ -11,6 +11,7 @@
 #import "MenuBarTableModel.h"
 #import "ShortcutTableModel.h"
 #import "DisableShortcutsModel.h"
+#import "DisplayedShortcutsModel.h"
 
 @implementation HandleClickedUIElement
 
@@ -28,6 +29,7 @@
   if ( (shortcutID != 0 )
       && ![self shortcutDisabled :element :shortcutID] ) {
     [EVEMessages displayShortcutMessage:element];
+    [DisplayedShortcutsModel insertDisplayedShortcut:element];
   }
 }
 

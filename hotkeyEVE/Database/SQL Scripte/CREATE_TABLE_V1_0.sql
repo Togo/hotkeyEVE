@@ -63,3 +63,12 @@ CREATE TABLE gui_supported_apps  (
 	app_name TEXT,
 	bundle_identifier TEXT
 );
+
+DROP TABLE displayed_shortcuts;
+CREATE TABLE displayed_shortcuts  (
+	id INTEGER PRIMARY KEY,
+	timestamp DATE DEFAULT (datetime('now','localtime')),
+	application_id INTEGER REFERENCES applications(id),
+	shortcut_id INTEGER REFERENCES shortcuts(id),
+	user_id INTEGER REFERENCES user_data(id)
+);

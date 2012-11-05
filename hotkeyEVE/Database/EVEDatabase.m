@@ -11,8 +11,8 @@
 @implementation EVEDatabase
 
 - (void) printErrorMessage :(NSString*) query {
-  DDLogError(@"%d: %@", [[self database] lastErrorCode], [[self database] lastErrorMessage]);
-  DDLogError(@"QUERY: %@", query);
+  DDLogError(@"SQL Error Message: %d: %@", [[self database] lastErrorCode], [[self database] lastErrorMessage]);
+  DDLogError(@"SQL QUERY: %@", query);
 }
 
 @end
