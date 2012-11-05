@@ -12,10 +12,9 @@
 #import "EVEObserver.h"
 #import "GrowlController.h"
 #import "AppLaunchedController.h"
+#import "MainMenuController.h"
 
-@interface EVEManager : NSObject {
-  
-}
+@interface EVEManager : NSObject
 
 @property (nonatomic, retain)   IndexingController  *indexing;
 @property (nonatomic, retain)   EVEObserver  *eveObserver;
@@ -24,6 +23,7 @@
 @property (nonatomic, retain)   AppLaunchedController  *appLaunched;
 
 @property (strong, nonatomic)   GrowlController *growl;
+@property (strong, nonatomic)   MainMenuController *mainMenuController;
 
 + (id) sharedEVEManager;
 

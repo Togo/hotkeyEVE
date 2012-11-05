@@ -9,8 +9,11 @@
 #import "UIElementClickedController.h"
 #import <UIElements/NullUIElement.h>
 #import "HandleClickedUIElement.h"
+#import "GUISupportTableModel.h"
 
 @implementation UIElementClickedController
+
+@synthesize lastActiveApp;
 
 - (void) reveicedUIElementClick :(UIElement*) element {
   
@@ -24,6 +27,12 @@
      }  else {
 //      [HandleClickedUIElement handleGUIElement :element];
     }
+  }
+  
+  if( ![[[element owner] bundleIdentifier] isEqualToString:[lastActiveApp bundleIdentifier]] ) {
+   BOOL guiSupport = [GUISupportTableModel hasGUISupport:[[element owner] bundleIdentifier]];
+  [[[EVEManager sharedEVEManager] mainMenuController] updateStatusIcon:guiSupport];
+  lastActiveApp = [element owner];
   }
 }
 

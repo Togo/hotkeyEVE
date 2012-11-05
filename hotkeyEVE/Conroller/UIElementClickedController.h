@@ -11,6 +11,8 @@
 
 @interface UIElementClickedController : NSObject
 
+@property (strong, nonatomic) Application *lastActiveApp;
+
 - (void) reveicedUIElementClick :(UIElement*) element;
 
 @end

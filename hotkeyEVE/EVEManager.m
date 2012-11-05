@@ -17,6 +17,7 @@
 @synthesize appLaunched;
 
 @synthesize growl;
+@synthesize mainMenuController;
 
 #pragma mark Singleton Methods
 

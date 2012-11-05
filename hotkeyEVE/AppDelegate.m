@@ -12,9 +12,9 @@
 #import "MenuBarIndexingThread.h"
 
 #import <UIElements/ClickOnUIElementSubject.h>
-#import <UIElements/AppDidStartedSubject.h>
 
 #import "UserDataTableModel.h"
+#import <Carbon/Carbon.h>
 
 @implementation AppDelegate
 
@@ -37,7 +37,7 @@
   [self startIndexing];
   
   [self registerListener];
-  [self registerNotifications];
+  [[eveAppManager eveObserver] subscribeAllNotifications];
 }
 
 - (void) startLogging {
@@ -59,14 +59,8 @@
 - (void) registerListener {
     ClickOnUIElementSubject *clickListener = [[ClickOnUIElementSubject alloc]init];
     DDLogInfo(@"Register Listener: %@", clickListener);
-}
-
-- (void) registerNotifications {
-  [[eveAppManager eveObserver] subscribeToNotificiation:ClickOnUIElementNotification];
-  DDLogInfo(@"Subscribed %@", ClickOnUIElementNotification);
-
-  [[eveAppManager eveObserver] subscribeToGlobalNotificiation:NSWorkspaceDidLaunchApplicationNotification];
-  DDLogInfo(@"Subscribed %@", NSWorkspaceDidLaunchApplicationNotification);
+  
+//  AppFrontSwichtedSubject *frontSwitchedListener = [[AppFrontSwichtedSubject alloc] init];
 }
 
 - (void) initUserData {
@@ -111,6 +105,5 @@
     DDLogInfo(@"Accessibility API is enabled");
   }
 }
-
 
 @end

@@ -10,7 +10,15 @@
 
 @interface MainMenuController : NSObject {
     IBOutlet NSMenu *statusMenu;
-    NSStatusItem * statusItem;
+    IBOutlet NSMenuItem *scanForShortcutsItem;
+    IBOutlet NSMenuItem *pauseMenuItem;
 }
+
+@property (strong, nonatomic) Application *activeApplication;
+@property (strong) NSStatusItem *statusItem;
+@property (strong, nonatomic)  NSImage *guiSupportIcon;
+@property (strong, nonatomic)  NSImage *noGUISupportIcon;
+
+- (void) updateStatusIcon :(BOOL) guiSupport;
 
 @end

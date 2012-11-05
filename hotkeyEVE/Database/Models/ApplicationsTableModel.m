@@ -7,11 +7,14 @@
 //
 
 #import "ApplicationsTableModel.h"
+#import "GUISupportTableModel.h"
 
 @implementation ApplicationsTableModel
 
 + (void) insertApp :(Application*) app {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSInteger guiSupport = [GUISupportTableModel hasGUISupport:[app bundleIdentifier]];
   
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@"INSERT OR IGNORE INTO %@ ", APPLICATIONS_TABLE];
@@ -20,7 +23,8 @@
   [query appendFormat:@" , '%@' ", [app appName]];
   [query appendFormat:@" , '%@' ", [app bundleIdentifier]];
   [query appendFormat:@" , %i ", 1];
-  [query appendFormat:@" , %i ", 1];
+  [query appendFormat:@" , %li ", guiSupport];
+  [query appendFormat:@" , %li ", guiSupport];
   [query appendFormat:@" ); "];
   
   [db executeUpdate:query];

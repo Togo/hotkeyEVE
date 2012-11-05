@@ -10,6 +10,7 @@
 #import <UIElements/UIElement.h>
 #import "StringUtilities.h"
 #import "ShortcutTableModel.h"
+#import "ApplicationsTableModel.h"
 
 @implementation MenuBarTableModel
 
@@ -36,7 +37,7 @@
   
   for (id aElement in elements) {
     NSInteger shortcutID = [ShortcutTableModel getShortcutId:[aElement shortcutString]];
-    
+    NSInteger applicationID = [ApplicationsTableModel getApplicationID:[[aElement owner] appName] :[[aElement owner] bundleIdentifier]];
     NSMutableString *query = [NSMutableString string];
     [query appendFormat:@"INSERT OR IGNORE INTO %@ ", MENU_BAR_ITEMS_TABLE];
     [query appendFormat:@"VALUES ( "];
@@ -46,6 +47,7 @@
     [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[aElement help]]];
     [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[aElement parentTitle]]];
     [query appendFormat:@" ,  %li ", shortcutID];
+    [query appendFormat:@" ,  %li ", applicationID];
     [query appendFormat:@" ); "];
     
     [db executeUpdate:query];
@@ -65,6 +67,21 @@
   if ([result count] > 0) {
     element.shortcutString = [[result objectAtIndex:0] valueForKey:SHORTCUT_STRING_COL];
   }
+}
+
++ (NSInteger) countShortcuts :(Application*) app {
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSInteger applicationID = [ApplicationsTableModel getApplicationID:[app appName] :[app bundleIdentifier]];
+  
+  NSMutableString *query = [NSMutableString string];
+  [query appendFormat:@" SELECT * FROM %@ ", MENU_BAR_ITEMS_TABLE];
+  [query appendFormat:@" WHERE %@.application_id = %li ", MENU_BAR_ITEMS_TABLE, applicationID];
+  [query appendFormat:@" AND %@.shortcut_id != 0 ", MENU_BAR_ITEMS_TABLE];
+  
+  DDLogVerbose(@"query: %@", query);
+  NSArray *result = [db executeQuery:query];
+  return [result count];
 }
 
 @end

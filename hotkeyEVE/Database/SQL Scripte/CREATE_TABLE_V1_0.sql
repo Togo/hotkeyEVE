@@ -15,6 +15,7 @@ CREATE TABLE menu_bar_items (
 	element_help TEXT,
 	parent_title TEXT,
 	shortcut_id INTEGER REFERENCES shortcuts(id),
+	application_id INTEGER REFERENCES applications(id),
 	UNIQUE(identifier) ON CONFLICT REPLACE
 );
 
@@ -43,6 +44,7 @@ CREATE TABLE applications (
 	bundle_identifier TEXT,
 	menu_bar_active INTEGER,
 	gui_elements_active INTEGER,
+	gui_support INTEGER,
 	UNIQUE(bundle_identifier, app_name) ON CONFLICT REPLACE
 );
 
@@ -51,6 +53,13 @@ CREATE TABLE disabled_shortcuts (
 	id INTEGER PRIMARY KEY,
 	application_id INTEGER REFERENCES applications(id),
 	shortcut_id INTEGER REFERENCES shortcuts(id),
-	user_id INTEGER REFERENCES user_data(id)
+	user_id INTEGER REFERENCES user_data(id),
 	UNIQUE(application_id, shortcut_id, user_id) ON CONFLICT REPLACE
+);
+
+DROP TABLE gui_supported_apps;
+CREATE TABLE gui_supported_apps  (
+	id INTEGER PRIMARY KEY,
+	app_name TEXT,
+	bundle_identifier TEXT
 );

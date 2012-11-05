@@ -11,7 +11,11 @@
 #import <UIElements/UIElement.h>
 
 @interface EVEObserver : NSObject <NotificationObserver> {
-    NSMutableDictionary *subscribedNotifications;
+
 }
 
+@property (strong, nonatomic)  NSMutableDictionary *subscribedNotifications;
+
+- (void) subscribeAllNotifications;
+- (void) unSubscribeAllNotifications;
 @end

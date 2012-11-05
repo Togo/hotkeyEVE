@@ -13,6 +13,7 @@
 - (void) up {
   FMDatabase *database =  [[[DatabaseManager sharedDatabaseManager] eveDatabase] database];
   [self executeScript:@"CREATE_TABLE_V1_0" :@"sql" :@"" :database];
+  [self executeScript:@"INSERT_GUI_SUPPORT_V1_0" :@"sql" :@"" :database];
 }
 
 - (void)down {

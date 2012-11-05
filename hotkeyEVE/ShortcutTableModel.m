@@ -26,4 +26,5 @@
   
   return shortcutID;
 }
+
 @end

@@ -14,4 +14,5 @@
 + (void) insertShortcutsFromElementArray :(NSArray*) elements;
 
 + (void) selectShortcutString :(UIElement*) element;
++ (NSInteger) countShortcuts :(Application*) app;
 @end
