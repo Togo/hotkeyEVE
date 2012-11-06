@@ -24,10 +24,14 @@ DROP TABLE gui_elements;
 CREATE TABLE gui_elements (
 	id INTEGER PRIMARY KEY,
 	identifier TEXT,
+	app_name TEXT,
+	bundle_identifier TEXT,
 	element_title TEXT,
 	element_help TEXT,
 	parent_title TEXT,
-	shortcut_string TEXT
+	shortcut_string TEXT,
+	shortcut_id INTEGER REFERENCES shortcuts(id),
+	UNIQUE(identifier) ON CONFLICT IGNORE
 );
 
 DROP TABLE user_data;

@@ -38,19 +38,24 @@
   for (id aElement in elements) {
     NSInteger shortcutID = [ShortcutTableModel getShortcutId:[aElement shortcutString]];
     NSInteger applicationID = [ApplicationsTableModel getApplicationID:[[aElement owner] appName] :[[aElement owner] bundleIdentifier]];
-    NSMutableString *query = [NSMutableString string];
-    [query appendFormat:@"INSERT OR IGNORE INTO %@ ", MENU_BAR_ITEMS_TABLE];
-    [query appendFormat:@"VALUES ( "];
-    [query appendFormat:@" NULL "];
-    [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[aElement uiElementIdentifier]]];
-    [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[aElement title]]];
-    [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[aElement help]]];
-    [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[aElement parentTitle]]];
-    [query appendFormat:@" ,  %li ", shortcutID];
-    [query appendFormat:@" ,  %li ", applicationID];
-    [query appendFormat:@" ); "];
     
-    [db executeUpdate:query];
+    if (shortcutID) {
+      NSMutableString *query = [NSMutableString string];
+      [query appendFormat:@"INSERT OR IGNORE INTO %@ ", MENU_BAR_ITEMS_TABLE];
+      [query appendFormat:@"VALUES ( "];
+      [query appendFormat:@" NULL "];
+      [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[aElement uiElementIdentifier]]];
+      [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[aElement title]]];
+      [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[aElement help]]];
+      [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[aElement parentTitle]]];
+      [query appendFormat:@" ,  %li ", shortcutID];
+      [query appendFormat:@" ,  %li ", applicationID];
+      [query appendFormat:@" ); "];
+      
+      
+      
+      [db executeUpdate:query];
+    }
   }
 }
 
