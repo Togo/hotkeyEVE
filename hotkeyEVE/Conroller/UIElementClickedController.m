@@ -10,10 +10,12 @@
 #import <UIElements/NullUIElement.h>
 #import "HandleClickedUIElement.h"
 #import "GUISupportTableModel.h"
+#import "DisplayedShortcutsModel.h"
 
 @implementation UIElementClickedController
 
 @synthesize lastActiveApp;
+
 
 - (void) reveicedUIElementClick :(UIElement*) element {
   
@@ -23,17 +25,18 @@
     DDLogVerbose(@"Role Description: %@", [element roleDescription]);
     DDLogVerbose(@"Identifier: %@", [element uiElementIdentifier]);
     if([[element role] isEqualToString:(NSString*) kAXMenuItemRole]) {
-      [HandleClickedUIElement handleMenuElement:element];
+    [HandleClickedUIElement handleMenuElement:element];
      }  else {
-//      [HandleClickedUIElement handleGUIElement :element];
+      [HandleClickedUIElement handleGUIElement :element];
     }
   }
-  
+    
   if( ![[[element owner] bundleIdentifier] isEqualToString:[lastActiveApp bundleIdentifier]] ) {
    BOOL guiSupport = [GUISupportTableModel hasGUISupport:[[element owner] bundleIdentifier]];
   [[[EVEManager sharedEVEManager] mainMenuController] updateStatusIcon:guiSupport];
   lastActiveApp = [element owner];
   }
+  
 }
 
 @end

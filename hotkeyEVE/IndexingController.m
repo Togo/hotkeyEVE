@@ -26,7 +26,7 @@
 - (void) restartIndexing {
   [indexingThread restartIndexing];
 }
-  
+
 - (void) stopIndexing {
   [indexingThread stopIndexing];
 }

@@ -69,7 +69,8 @@ DROP TABLE gui_supported_apps;
 CREATE TABLE gui_supported_apps  (
 	id INTEGER PRIMARY KEY,
 	app_name TEXT,
-	bundle_identifier TEXT
+	bundle_identifier TEXT,
+	lang TEXT
 );
 
 DROP TABLE displayed_shortcuts;

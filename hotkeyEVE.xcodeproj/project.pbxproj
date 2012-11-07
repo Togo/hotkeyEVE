@@ -14,7 +14,7 @@
 		CD5A463F16455134007B57A5 /* Database.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5A463816455119007B57A5 /* Database.dylib */; };
 		CD5A464016455134007B57A5 /* UIElements.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5A462C1645510F007B57A5 /* UIElements.dylib */; };
 		CD5A464716455398007B57A5 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A464616455398007B57A5 /* DatabaseManager.m */; };
-		CD5A464A1645563E007B57A5 /* CREATE_TABLE_V1_0.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46491645563E007B57A5 /* CREATE_TABLE_V1_0.m */; };
+		CD5A464A1645563E007B57A5 /* MIGRATIONV1_0.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46491645563E007B57A5 /* MIGRATIONV1_0.m */; };
 		CD5A464E1645579C007B57A5 /* EVEDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A464D1645579C007B57A5 /* EVEDatabase.m */; };
 		CD5A4660164558FB007B57A5 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4651164558FB007B57A5 /* DDAbstractDatabaseLogger.m */; };
 		CD5A4661164558FB007B57A5 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4653164558FB007B57A5 /* DDASLLogger.m */; };
@@ -26,11 +26,9 @@
 		CD5A4667164558FB007B57A5 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = CD5A465F164558FB007B57A5 /* README.txt */; };
 		CD5A466916455D69007B57A5 /* CREATE_TABLE_V1_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD5A466816455D69007B57A5 /* CREATE_TABLE_V1_0.sql */; };
 		CD5A469216455F7D007B57A5 /* MenuBarIndexingThread.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A469116455F7D007B57A5 /* MenuBarIndexingThread.m */; };
-		CD5A46961645610B007B57A5 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46951645610B007B57A5 /* Queue.m */; };
 		CD5A4699164563D0007B57A5 /* MenuBarTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4698164563D0007B57A5 /* MenuBarTableModel.m */; };
 		CD5A46CD16463D72007B57A5 /* EVEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46CC16463D72007B57A5 /* EVEManager.m */; };
 		CD5A46D016463E64007B57A5 /* IndexingController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46CF16463E64007B57A5 /* IndexingController.m */; };
-		CD5A46D316464A65007B57A5 /* StringUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46D216464A65007B57A5 /* StringUtilities.m */; };
 		CD5A46F516464F7E007B57A5 /* EVEObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46F416464F7E007B57A5 /* EVEObserver.m */; };
 		CD5A46F816465123007B57A5 /* UIElementClickedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46F716465123007B57A5 /* UIElementClickedController.m */; };
 		CD80E7531645393300A9C7D8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7521645393300A9C7D8 /* Cocoa.framework */; };
@@ -54,10 +52,15 @@
 		CD97CE9F16468A5E00406F1F /* DisableShortcutsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE9E16468A5E00406F1F /* DisableShortcutsModel.m */; };
 		CD97CEA216468C5200406F1F /* ShortcutTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CEA116468C5200406F1F /* ShortcutTableModel.m */; };
 		CDB3D6621646BAE000285306 /* AppLaunchedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3D6611646BAE000285306 /* AppLaunchedController.m */; };
-		CDEE152F1648125C00EDCDF4 /* EVEUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE152E1648125C00EDCDF4 /* EVEUtilities.m */; };
 		CDEE15311648127A00EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns in Resources */ = {isa = PBXBuildFile; fileRef = CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */; };
 		CDEE15341648128C00EDCDF4 /* GUISupportTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE15331648128C00EDCDF4 /* GUISupportTableModel.m */; };
 		CDEE1537164812F500EDCDF4 /* DisplayedShortcutsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1536164812F500EDCDF4 /* DisplayedShortcutsModel.m */; };
+		CDEE1558164A93FB00EDCDF4 /* EVEUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1551164A93FB00EDCDF4 /* EVEUtilities.m */; };
+		CDEE1559164A93FB00EDCDF4 /* NSFileManager+DirectoryLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1553164A93FB00EDCDF4 /* NSFileManager+DirectoryLocations.m */; };
+		CDEE155A164A93FB00EDCDF4 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1555164A93FB00EDCDF4 /* Queue.m */; };
+		CDEE155B164A93FB00EDCDF4 /* StringUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1557164A93FB00EDCDF4 /* StringUtilities.m */; };
+		CDEE155D164A9D3200EDCDF4 /* INSERT_GUI_SUPPORT_V1_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDEE155C164A9D3200EDCDF4 /* INSERT_GUI_SUPPORT_V1_0.sql */; };
+		CDEE1560164AB0D400EDCDF4 /* GUIElementsTable.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE155F164AB0D200EDCDF4 /* GUIElementsTable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,8 +136,8 @@
 		CD5A462F16455118007B57A5 /* Database.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Database.xcodeproj; path = "eve-database/Database.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		CD5A464516455398007B57A5 /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseManager.h; path = Database/DatabaseManager.h; sourceTree = "<group>"; };
 		CD5A464616455398007B57A5 /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseManager.m; path = Database/DatabaseManager.m; sourceTree = "<group>"; };
-		CD5A46481645563E007B57A5 /* CREATE_TABLE_V1_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CREATE_TABLE_V1_0.h; path = Database/Migrations/CREATE_TABLE_V1_0.h; sourceTree = "<group>"; };
-		CD5A46491645563E007B57A5 /* CREATE_TABLE_V1_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CREATE_TABLE_V1_0.m; path = Database/Migrations/CREATE_TABLE_V1_0.m; sourceTree = "<group>"; };
+		CD5A46481645563E007B57A5 /* MIGRATIONV1_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIGRATIONV1_0.h; path = Database/Migrations/MIGRATIONV1_0.h; sourceTree = "<group>"; };
+		CD5A46491645563E007B57A5 /* MIGRATIONV1_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIGRATIONV1_0.m; path = Database/Migrations/MIGRATIONV1_0.m; sourceTree = "<group>"; };
 		CD5A464C1645579C007B57A5 /* EVEDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EVEDatabase.h; path = Database/EVEDatabase.h; sourceTree = "<group>"; };
 		CD5A464D1645579C007B57A5 /* EVEDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EVEDatabase.m; path = Database/EVEDatabase.m; sourceTree = "<group>"; };
 		CD5A4650164558FB007B57A5 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
@@ -155,16 +158,12 @@
 		CD5A466816455D69007B57A5 /* CREATE_TABLE_V1_0.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CREATE_TABLE_V1_0.sql; path = "Database/SQL Scripte/CREATE_TABLE_V1_0.sql"; sourceTree = "<group>"; };
 		CD5A469016455F7D007B57A5 /* MenuBarIndexingThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuBarIndexingThread.h; path = Indexing/MenuBarIndexingThread.h; sourceTree = "<group>"; };
 		CD5A469116455F7D007B57A5 /* MenuBarIndexingThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuBarIndexingThread.m; path = Indexing/MenuBarIndexingThread.m; sourceTree = "<group>"; };
-		CD5A46941645610B007B57A5 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
-		CD5A46951645610B007B57A5 /* Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Queue.m; sourceTree = "<group>"; };
 		CD5A4697164563D0007B57A5 /* MenuBarTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuBarTableModel.h; path = Database/Models/MenuBarTableModel.h; sourceTree = "<group>"; };
 		CD5A4698164563D0007B57A5 /* MenuBarTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuBarTableModel.m; path = Database/Models/MenuBarTableModel.m; sourceTree = "<group>"; };
 		CD5A46CB16463D72007B57A5 /* EVEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVEManager.h; sourceTree = "<group>"; };
 		CD5A46CC16463D72007B57A5 /* EVEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVEManager.m; sourceTree = "<group>"; };
 		CD5A46CE16463E64007B57A5 /* IndexingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexingController.h; sourceTree = "<group>"; };
 		CD5A46CF16463E64007B57A5 /* IndexingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexingController.m; sourceTree = "<group>"; };
-		CD5A46D116464A65007B57A5 /* StringUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringUtilities.h; sourceTree = "<group>"; };
-		CD5A46D216464A65007B57A5 /* StringUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringUtilities.m; sourceTree = "<group>"; };
 		CD5A46F316464F7E007B57A5 /* EVEObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EVEObserver.h; path = Observer/EVEObserver.h; sourceTree = "<group>"; };
 		CD5A46F416464F7E007B57A5 /* EVEObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EVEObserver.m; path = Observer/EVEObserver.m; sourceTree = "<group>"; };
 		CD5A46F616465123007B57A5 /* UIElementClickedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIElementClickedController.h; path = Conroller/UIElementClickedController.h; sourceTree = "<group>"; };
@@ -209,13 +208,22 @@
 		CD97CEA116468C5200406F1F /* ShortcutTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortcutTableModel.m; sourceTree = "<group>"; };
 		CDB3D6601646BAE000285306 /* AppLaunchedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppLaunchedController.h; path = Conroller/AppLaunchedController.h; sourceTree = "<group>"; };
 		CDB3D6611646BAE000285306 /* AppLaunchedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppLaunchedController.m; path = Conroller/AppLaunchedController.m; sourceTree = "<group>"; };
-		CDEE152D1648125C00EDCDF4 /* EVEUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVEUtilities.h; sourceTree = "<group>"; };
-		CDEE152E1648125C00EDCDF4 /* EVEUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVEUtilities.m; sourceTree = "<group>"; };
 		CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns; sourceTree = "<group>"; };
 		CDEE15321648128C00EDCDF4 /* GUISupportTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUISupportTableModel.h; path = Database/Models/GUISupportTableModel.h; sourceTree = "<group>"; };
 		CDEE15331648128C00EDCDF4 /* GUISupportTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GUISupportTableModel.m; path = Database/Models/GUISupportTableModel.m; sourceTree = "<group>"; };
 		CDEE1535164812F500EDCDF4 /* DisplayedShortcutsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisplayedShortcutsModel.h; path = Database/Models/DisplayedShortcutsModel.h; sourceTree = "<group>"; };
 		CDEE1536164812F500EDCDF4 /* DisplayedShortcutsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisplayedShortcutsModel.m; path = Database/Models/DisplayedShortcutsModel.m; sourceTree = "<group>"; };
+		CDEE1550164A93FB00EDCDF4 /* EVEUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EVEUtilities.h; path = Utilities/EVEUtilities.h; sourceTree = "<group>"; };
+		CDEE1551164A93FB00EDCDF4 /* EVEUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EVEUtilities.m; path = Utilities/EVEUtilities.m; sourceTree = "<group>"; };
+		CDEE1552164A93FB00EDCDF4 /* NSFileManager+DirectoryLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+DirectoryLocations.h"; path = "Utilities/NSFileManager+DirectoryLocations.h"; sourceTree = "<group>"; };
+		CDEE1553164A93FB00EDCDF4 /* NSFileManager+DirectoryLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+DirectoryLocations.m"; path = "Utilities/NSFileManager+DirectoryLocations.m"; sourceTree = "<group>"; };
+		CDEE1554164A93FB00EDCDF4 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Queue.h; path = Utilities/Queue.h; sourceTree = "<group>"; };
+		CDEE1555164A93FB00EDCDF4 /* Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Queue.m; path = Utilities/Queue.m; sourceTree = "<group>"; };
+		CDEE1556164A93FB00EDCDF4 /* StringUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StringUtilities.h; path = Utilities/StringUtilities.h; sourceTree = "<group>"; };
+		CDEE1557164A93FB00EDCDF4 /* StringUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StringUtilities.m; path = Utilities/StringUtilities.m; sourceTree = "<group>"; };
+		CDEE155C164A9D3200EDCDF4 /* INSERT_GUI_SUPPORT_V1_0.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_GUI_SUPPORT_V1_0.sql; path = "Database/SQL Scripte/INSERT_GUI_SUPPORT_V1_0.sql"; sourceTree = "<group>"; };
+		CDEE155E164AB0D100EDCDF4 /* GUIElementsTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUIElementsTable.h; path = Database/Models/GUIElementsTable.h; sourceTree = "<group>"; };
+		CDEE155F164AB0D200EDCDF4 /* GUIElementsTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GUIElementsTable.m; path = Database/Models/GUIElementsTable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,8 +293,9 @@
 		CD5A464B16455643007B57A5 /* Migrations */ = {
 			isa = PBXGroup;
 			children = (
-				CD5A46481645563E007B57A5 /* CREATE_TABLE_V1_0.h */,
-				CD5A46491645563E007B57A5 /* CREATE_TABLE_V1_0.m */,
+				CD5A46481645563E007B57A5 /* MIGRATIONV1_0.h */,
+				CD5A46491645563E007B57A5 /* MIGRATIONV1_0.m */,
+				CDEE155C164A9D3200EDCDF4 /* INSERT_GUI_SUPPORT_V1_0.sql */,
 				CD5A466816455D69007B57A5 /* CREATE_TABLE_V1_0.sql */,
 			);
 			name = Migrations;
@@ -337,12 +346,14 @@
 		CD5A46CA16463CBF007B57A5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				CDEE152D1648125C00EDCDF4 /* EVEUtilities.h */,
-				CDEE152E1648125C00EDCDF4 /* EVEUtilities.m */,
-				CD5A46941645610B007B57A5 /* Queue.h */,
-				CD5A46951645610B007B57A5 /* Queue.m */,
-				CD5A46D116464A65007B57A5 /* StringUtilities.h */,
-				CD5A46D216464A65007B57A5 /* StringUtilities.m */,
+				CDEE1550164A93FB00EDCDF4 /* EVEUtilities.h */,
+				CDEE1551164A93FB00EDCDF4 /* EVEUtilities.m */,
+				CDEE1552164A93FB00EDCDF4 /* NSFileManager+DirectoryLocations.h */,
+				CDEE1553164A93FB00EDCDF4 /* NSFileManager+DirectoryLocations.m */,
+				CDEE1554164A93FB00EDCDF4 /* Queue.h */,
+				CDEE1555164A93FB00EDCDF4 /* Queue.m */,
+				CDEE1556164A93FB00EDCDF4 /* StringUtilities.h */,
+				CDEE1557164A93FB00EDCDF4 /* StringUtilities.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -483,6 +494,8 @@
 		CD97CE6F164671E200406F1F /* DatabaseModel */ = {
 			isa = PBXGroup;
 			children = (
+				CDEE155E164AB0D100EDCDF4 /* GUIElementsTable.h */,
+				CDEE155F164AB0D200EDCDF4 /* GUIElementsTable.m */,
 				CDEE15321648128C00EDCDF4 /* GUISupportTableModel.h */,
 				CDEE15331648128C00EDCDF4 /* GUISupportTableModel.m */,
 				CD97CE94164683EA00406F1F /* ApplicationsTableModel.h */,
@@ -625,6 +638,7 @@
 				CD57864C16465D5800CC508B /* Growl Registration Ticket.growlRegDict in Resources */,
 				CD5786551646611200CC508B /* EVE_ICON.icns in Resources */,
 				CDEE15311648127A00EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns in Resources */,
+				CDEE155D164A9D3200EDCDF4 /* INSERT_GUI_SUPPORT_V1_0.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,7 +677,7 @@
 				CD80E7661645393400A9C7D8 /* AppDelegate.m in Sources */,
 				CD80E78D16453A0500A9C7D8 /* MainMenuController.m in Sources */,
 				CD5A464716455398007B57A5 /* DatabaseManager.m in Sources */,
-				CD5A464A1645563E007B57A5 /* CREATE_TABLE_V1_0.m in Sources */,
+				CD5A464A1645563E007B57A5 /* MIGRATIONV1_0.m in Sources */,
 				CD5A464E1645579C007B57A5 /* EVEDatabase.m in Sources */,
 				CD5A4660164558FB007B57A5 /* DDAbstractDatabaseLogger.m in Sources */,
 				CD5A4661164558FB007B57A5 /* DDASLLogger.m in Sources */,
@@ -673,11 +687,9 @@
 				CD5A4665164558FB007B57A5 /* ContextFilterLogFormatter.m in Sources */,
 				CD5A4666164558FB007B57A5 /* DispatchQueueLogFormatter.m in Sources */,
 				CD5A469216455F7D007B57A5 /* MenuBarIndexingThread.m in Sources */,
-				CD5A46961645610B007B57A5 /* Queue.m in Sources */,
 				CD5A4699164563D0007B57A5 /* MenuBarTableModel.m in Sources */,
 				CD5A46CD16463D72007B57A5 /* EVEManager.m in Sources */,
 				CD5A46D016463E64007B57A5 /* IndexingController.m in Sources */,
-				CD5A46D316464A65007B57A5 /* StringUtilities.m in Sources */,
 				CD5A46F516464F7E007B57A5 /* EVEObserver.m in Sources */,
 				CD5A46F816465123007B57A5 /* UIElementClickedController.m in Sources */,
 				CD97CE6B16466D7B00406F1F /* EVEMessages.m in Sources */,
@@ -689,9 +701,13 @@
 				CD97CE9F16468A5E00406F1F /* DisableShortcutsModel.m in Sources */,
 				CD97CEA216468C5200406F1F /* ShortcutTableModel.m in Sources */,
 				CDB3D6621646BAE000285306 /* AppLaunchedController.m in Sources */,
-				CDEE152F1648125C00EDCDF4 /* EVEUtilities.m in Sources */,
 				CDEE15341648128C00EDCDF4 /* GUISupportTableModel.m in Sources */,
 				CDEE1537164812F500EDCDF4 /* DisplayedShortcutsModel.m in Sources */,
+				CDEE1558164A93FB00EDCDF4 /* EVEUtilities.m in Sources */,
+				CDEE1559164A93FB00EDCDF4 /* NSFileManager+DirectoryLocations.m in Sources */,
+				CDEE155A164A93FB00EDCDF4 /* Queue.m in Sources */,
+				CDEE155B164A93FB00EDCDF4 /* StringUtilities.m in Sources */,
+				CDEE1560164AB0D400EDCDF4 /* GUIElementsTable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

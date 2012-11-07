@@ -25,6 +25,7 @@
 @property (strong, nonatomic)   GrowlController *growl;
 @property (strong, nonatomic)   MainMenuController *mainMenuController;
 
+
 + (id) sharedEVEManager;
 
 @end

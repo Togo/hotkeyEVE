@@ -33,5 +33,20 @@
   [db executeUpdate:query];
 }
 
++ (BOOL) checkShortcutTimeIntervall :(NSInteger) shortcutID {
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSMutableString *query = [NSMutableString string];
+  [query appendFormat:@" SELECT rowid FROM %@" , DISPLAYED_SHORTCUTS_TABLE];
+  [query appendFormat:@" WHERE %@ = %li ", SHORTCUT_ID_COL, shortcutID];
+  [query appendFormat:@" AND   %@ >= (DATETIME('now', '-5 Second') ); ", TIMESTAMP];
+  
+  NSArray *results = [db executeQuery:query];
+  
+  if ([results count] > 0)
+    return NO;
+  else
+    return YES;
+}
 
 @end

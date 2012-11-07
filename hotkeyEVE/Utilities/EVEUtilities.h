@@ -11,5 +11,6 @@
 @interface EVEUtilities : NSObject
 
 + (Application*) activeApplication;
++ (NSString*) currentLanguage;
 
 @end

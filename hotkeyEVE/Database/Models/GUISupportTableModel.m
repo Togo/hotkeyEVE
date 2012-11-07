@@ -7,6 +7,7 @@
 //
 
 #import "GUISupportTableModel.h"
+#import "EVEUtilities.h"
 
 @implementation GUISupportTableModel
 
@@ -16,6 +17,7 @@
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@" SELECT * FROM %@ ", GUI_SUPPORT_TABLE];
   [query appendFormat:@" WHERE %@ like '%@' ", BUNDLE_IDEN_COL, bundleIdentifier];
+  [query appendFormat:@" AND %@ like '%@' ", LANG_COL, [EVEUtilities currentLanguage]];
   
   NSArray *result = [db executeQuery:query];
   

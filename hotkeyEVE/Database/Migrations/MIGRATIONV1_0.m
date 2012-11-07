@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Tobias Sommer. All rights reserved.
 //
 
-#import "CREATE_TABLE_V1_0.h"
+#import "MIGRATIONV1_0.h"
 
-@implementation CREATE_TABLE_V1_0
+@implementation MIGRATIONV1_0
 
 - (void) up {
   FMDatabase *database =  [[[DatabaseManager sharedDatabaseManager] eveDatabase] database];

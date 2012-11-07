@@ -7,8 +7,8 @@
 //
 
 #import "DatabaseManager.h"
-
-#import "CREATE_TABLE_V1_0.h"
+#import "MIGRATIONV1_0.h"
+#import "NSFileManager+DirectoryLocations.h"
 
 @implementation DatabaseManager
 
@@ -29,13 +29,16 @@
 - (id)init {
   if (self = [super init]) {
     // Initialize Database
-    eveDatabase = [[EVEDatabase alloc] initWithNameAndPath:@"eve.db" :@"/Users/Togo/dev/hotkeyEVE/"];
+    NSString *path = [[NSFileManager defaultManager] applicationSupportDirectory];
+    NSString *name = @"eve.db";
+    eveDatabase = [[EVEDatabase alloc] initWithNameAndPath:name :path];
     
     DDLogInfo(@"Load Database at Path: %@", [eveDatabase databasePath]);
     
     // Add Migrations
-    [eveDatabase addMigrationObject:[CREATE_TABLE_V1_0 migration]];
+    [eveDatabase addMigrationObject:[MIGRATIONV1_0 migration]];
   }
+  
   return self;
 }
 

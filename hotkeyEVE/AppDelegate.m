@@ -15,7 +15,7 @@
 
 #import "UserDataTableModel.h"
 #import <Carbon/Carbon.h>
-
+#import "EVEUtilities.h"
 @implementation AppDelegate
 
 @synthesize eveAppManager;
@@ -24,11 +24,14 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
   NSLog(@"EVE has been started");
+  NSLog(@"Lang: %@", [EVEUtilities currentLanguage]);
+  NSLog(@"User: %@ ", NSUserName());
+  
+  [self openDatabase];
+  
   eveAppManager =  [EVEManager sharedEVEManager];
   
   [self startLogging];
-  
-  [self openDatabase];
   
   [self checkAccessibilityAPIEnabled];
   
