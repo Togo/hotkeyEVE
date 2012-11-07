@@ -38,6 +38,8 @@
   
   [self registerListener];
   [[eveAppManager eveObserver] subscribeAllNotifications];
+  
+  
 }
 
 - (void) startLogging {

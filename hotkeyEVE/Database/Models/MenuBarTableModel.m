@@ -14,23 +14,7 @@
 
 @implementation MenuBarTableModel
 
-+ (void) insertShortcutsFromElementArray :(NSArray*) elements {
-  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
-  
-  for (id aElement in elements) {
-    NSString *shortcutString = [[aElement shortcut] composeShortcutString];
-    if ([shortcutString length] > 0) {
-      NSMutableString *query = [NSMutableString string];
-      [query appendFormat:@"INSERT OR IGNORE INTO %@ ", SHORTCUTS_TABLE];
-      [query appendFormat:@"VALUES ( "];
-      [query appendFormat:@" NULL "];
-      [query appendFormat:@" , '%@' ", [StringUtilities databaseString:shortcutString]];
-      [query appendFormat:@" ); "];
-      
-      [db executeUpdate:query];
-    }
-  }
-}
+
 
 + (void) insertMenuBarElementArray :(NSArray*) elements {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
@@ -59,7 +43,7 @@
   }
 }
 
-+ (void) selectShortcutString :(UIElement*) element {
++ (NSString*) selectShortcutString :(UIElement*) element {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
   NSMutableString *query = [NSMutableString string];
@@ -70,8 +54,43 @@
   DDLogVerbose(@"query: %@", query);
   NSArray *result = [db executeQuery:query];
   if ([result count] > 0) {
-    element.shortcutString = [[result objectAtIndex:0] valueForKey:SHORTCUT_STRING_COL];
+    return[[result objectAtIndex:0] valueForKey:SHORTCUT_STRING_COL];
+  } else {
+    return @"";
   }
+}
+
++ (NSArray*) searchInMenuBarTable :(UIElement*) element {
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSInteger appId = [ApplicationsTableModel getApplicationID:[[element owner] appName] :[[element owner] bundleIdentifier]];
+
+  NSMutableString *query = [NSMutableString string];
+  [query appendFormat:@"SELECT %@, %@ FROM %@ ", IDENTIFIER_COL, SHORTCUT_ID_COL, MENU_BAR_ITEMS_TABLE];
+  [query appendFormat:@" WHERE %@ = %li ", APPLICATION_ID_COL, appId];
+  
+  NSArray *results = [db executeQuery:query];
+  
+  for (id aRow in results) {
+    [query setString:@""];
+    [query appendFormat:@"INSERT INTO menu_bar_search VALUES ('%@', %i)", [aRow valueForKey:IDENTIFIER_COL], [[aRow valueForKey:SHORTCUT_ID_COL] intValue]];
+    [db executeUpdate:query];
+  }
+
+  query = [NSMutableString string];
+  [query appendFormat:@" SELECT %@.%@, %@.%@ ",MENU_BAR_SEARCH_TABLE, IDENTIFIER_COL, SHORTCUTS_TABLE, SHORTCUT_STRING_COL];
+  [query appendFormat:@" FROM %@, %@ ", MENU_BAR_SEARCH_TABLE, SHORTCUTS_TABLE];
+  [query appendFormat:@" WHERE %@.%@ MATCH '%@*' ", MENU_BAR_SEARCH_TABLE, IDENTIFIER_COL, [element uiElementIdentifier]];
+  [query appendFormat:@" AND %@.%@ = %@.%@ ", MENU_BAR_SEARCH_TABLE, SHORTCUT_ID_COL, SHORTCUTS_TABLE, ID_COL];
+  
+  DDLogVerbose(@"query: %@", query);
+  NSArray *result = [db executeQuery:query];
+
+  [query setString:@""];
+  [query appendFormat:@"DELETE FROM %@", MENU_BAR_SEARCH_TABLE];
+  [db executeUpdate:query];
+
+  return result;
 }
 
 + (NSInteger) countShortcuts :(Application*) app {

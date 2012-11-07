@@ -19,6 +19,10 @@ CREATE TABLE menu_bar_items (
 	UNIQUE(identifier) ON CONFLICT REPLACE
 );
 
+DROP TABLE menu_bar_search;
+CREATE VIRTUAL TABLE menu_bar_search USING fts3(
+       	identifier TEXT,
+       	shortcut_id INTEGER);
 
 DROP TABLE gui_elements;
 CREATE TABLE gui_elements (
@@ -76,3 +80,4 @@ CREATE TABLE displayed_shortcuts  (
 	shortcut_id INTEGER REFERENCES shortcuts(id),
 	user_id INTEGER REFERENCES user_data(id)
 );
+

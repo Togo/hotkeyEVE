@@ -10,6 +10,8 @@
 
 @interface ShortcutTableModel : NSObject
 
-+ (NSInteger) getShortcutId :(NSString*) shortcutString;
++ (void) insertShortcutsFromElementArray :(NSArray*) elements;
 
++ (NSInteger) getShortcutId :(NSString*) shortcutString;
++ (NSString*) getShortcutString :(NSInteger) shortcutID;
 @end

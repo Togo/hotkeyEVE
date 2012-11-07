@@ -53,7 +53,7 @@
     [description appendFormat:@"%@ \n", [element title]];
   }
   
-  [description appendFormat:@"(click to disable)"];
+  [description appendFormat:@"\n (click to disable)"];
   
   NSMutableDictionary *clickContextDic = [[NSMutableDictionary alloc] init];
   [clickContextDic setValue:@"disable_shortcut" forKey:@"mesage_type"];

@@ -16,7 +16,6 @@
   if (self = [super init]) {
     indexingThread = [[MenuBarIndexingThread alloc] init];
   }
-  
   return self;
 }
 

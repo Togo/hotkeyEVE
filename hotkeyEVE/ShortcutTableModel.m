@@ -11,6 +11,39 @@
 
 @implementation ShortcutTableModel
 
++ (void) insertShortcutsFromElementArray :(NSArray*) elements {
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  for (id aElement in elements) {
+    NSString *shortcutString = [[aElement shortcut] composeShortcutString];
+    if ([shortcutString length] > 0) {
+      NSMutableString *query = [NSMutableString string];
+      [query appendFormat:@"INSERT OR IGNORE INTO %@ ", SHORTCUTS_TABLE];
+      [query appendFormat:@"VALUES ( "];
+      [query appendFormat:@" NULL "];
+      [query appendFormat:@" , '%@' ", [StringUtilities databaseString:shortcutString]];
+      [query appendFormat:@" ); "];
+      
+      [db executeUpdate:query];
+    }
+  }
+}
+
++ (NSString*) getShortcutString :(NSInteger) shortcutID {
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSMutableString *query = [NSMutableString string];
+  [query appendFormat:@" SELECT * FROM %@ ", SHORTCUTS_TABLE];
+  [query appendFormat:@" WHERE %@ =  %li ", ID_COL, shortcutID];
+  
+  NSArray *result = [db executeQuery:query];
+  if ([result count] > 0) {
+    return [[result objectAtIndex:0] valueForKey:SHORTCUT_STRING_COL] ;
+  } else {
+    return @"";
+  }
+}
+
 + (NSInteger) getShortcutId :(NSString*) shortcutString {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   

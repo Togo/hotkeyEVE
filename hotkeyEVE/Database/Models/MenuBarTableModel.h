@@ -11,8 +11,9 @@
 @interface MenuBarTableModel : NSObject
 
 + (void) insertMenuBarElementArray :(NSArray*) elements;
-+ (void) insertShortcutsFromElementArray :(NSArray*) elements;
 
-+ (void) selectShortcutString :(UIElement*) element;
++ (NSString*) selectShortcutString :(UIElement*) element;
++ (NSArray*) searchInMenuBarTable :(UIElement*) element;
+
 + (NSInteger) countShortcuts :(Application*) app;
 @end

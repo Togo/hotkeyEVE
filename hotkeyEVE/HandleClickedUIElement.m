@@ -16,20 +16,31 @@
 @implementation HandleClickedUIElement
 
 + (void) handleMenuElement :(UIElement*) element {
+
+  if ([[element shortcutString] length] ==  0) {
+    element.shortcutString = [MenuBarTableModel selectShortcutString:element];
+  }
   
-  if ([[element shortcutString] length] ==  0)
-    [MenuBarTableModel selectShortcutString:element];
-  
-    [self showMessage:element];
+  // Nothing found, try it with fts
+  if ([[element shortcutString] length] ==  0) {
+    NSArray *results = [MenuBarTableModel searchInMenuBarTable:element];
+    if ([results count] == 1) {
+      element.shortcutString = [[results objectAtIndex:0] valueForKey:SHORTCUT_STRING_COL];
+     [self showMessage:element];
+    }  else if ([results count] > 1) {
+    }
+  }
+[self showMessage:element];
 }
 
-
 + (void) showMessage :(UIElement*) element {
-  NSInteger shortcutID = [ShortcutTableModel getShortcutId:[element shortcutString]];
-  if ( (shortcutID != 0 )
-      && ![self shortcutDisabled :element :shortcutID] ) {
-    [EVEMessages displayShortcutMessage:element];
-    [DisplayedShortcutsModel insertDisplayedShortcut:element];
+  NSInteger shortcutID = 0;
+  if ( [[element shortcutString] length] > 0) {
+     shortcutID = [ShortcutTableModel getShortcutId:[element shortcutString]];
+    if (![self shortcutDisabled :element :shortcutID] ) {
+      [EVEMessages displayShortcutMessage:element];
+      [DisplayedShortcutsModel insertDisplayedShortcut:element];
+    }
   }
 }
 

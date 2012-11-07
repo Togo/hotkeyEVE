@@ -10,6 +10,7 @@
 #import <UIElements/Application.h>
 #import <UIElements/MenuBarIndexing.h>
 #import "MenuBarTableModel.h"
+#import "ShortcutTableModel.h"
 #import "ApplicationsTableModel.h"
 
 @implementation MenuBarIndexingThread
@@ -71,7 +72,7 @@
   MenuBarIndexing *indexMenuBar = [[MenuBarIndexing alloc] init];
   NSArray *elements = [indexMenuBar indexMenuBar:appRef];
   
-  [MenuBarTableModel insertShortcutsFromElementArray: elements];
+  [ShortcutTableModel insertShortcutsFromElementArray: elements];
   
   [MenuBarTableModel insertMenuBarElementArray:elements];
 }
