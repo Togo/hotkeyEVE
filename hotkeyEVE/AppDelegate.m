@@ -5,6 +5,7 @@
 //  Created by Tobias Sommer on 11/3/12.
 //  Copyright (c) 2012 Tobias Sommer. All rights reserved.
 //
+#import <Carbon/Carbon.h>
 
 #import "AppDelegate.h"
 #import "DDASLLogger.h"
@@ -14,8 +15,12 @@
 #import <UIElements/ClickOnUIElementSubject.h>
 
 #import "UserDataTableModel.h"
-#import <Carbon/Carbon.h>
+#import "GUIElementsTable.h"
+
+
 #import "EVEUtilities.h"
+
+
 @implementation AppDelegate
 
 @synthesize eveAppManager;
@@ -28,6 +33,7 @@
   NSLog(@"User: %@ ", NSUserName());
   
   [self openDatabase];
+  [self initGUIElementTable];
   
   eveAppManager =  [EVEManager sharedEVEManager];
   
@@ -55,6 +61,11 @@
 - (void) openDatabase {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   [db executeMigrations:[db databasePath]];
+}
+
+- (void) initGUIElementTable {
+  // Update GUI Element Table and add Shortcut Id's
+  [GUIElementsTable updateGUIElementTable];
 }
 
 - (void) startIndexing {

@@ -20,6 +20,34 @@
                ReferencedContainer = "container:hotkeyEVE.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CD868166163BBCEB00667709"
+               BuildableName = "DatabaseTests.octest"
+               BlueprintName = "DatabaseTests"
+               ReferencedContainer = "container:eve-database/Database.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CDE8B48E1633080B0085E130"
+               BuildableName = "UIElementsTests.octest"
+               BlueprintName = "UIElementsTests"
+               ReferencedContainer = "container:eve-uielements/UIElements.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

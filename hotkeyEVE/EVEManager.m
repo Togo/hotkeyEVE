@@ -19,6 +19,8 @@
 @synthesize growl;
 @synthesize mainMenuController;
 
+@synthesize licence;
+
 #pragma mark Singleton Methods
 
 + (id) sharedEVEManager {
@@ -42,6 +44,8 @@
     
     growl = [[GrowlController alloc] init];
     [GrowlApplicationBridge setGrowlDelegate:growl];
+    
+    licence = [[Licence alloc] init];
   }
   
   return self;

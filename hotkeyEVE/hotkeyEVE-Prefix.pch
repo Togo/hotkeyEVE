@@ -9,7 +9,6 @@
   #import "EVEManager.h"
   #import "DDLog.h"
 
-
   #import <Database/TableAndColumnNames.h>
 
   #import <UIElements/UIElementNotifications.h>

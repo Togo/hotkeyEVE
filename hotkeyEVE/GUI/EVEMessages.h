@@ -11,8 +11,6 @@
 @interface EVEMessages : NSObject
 
 + (void) maxEnabledAppsReachedInWindow :(NSWindow*) window;
-+ (void) registrationFailedInWindow :(NSString*) errorMessage :(NSWindow*) window;
-//+ (void) registrationSuccededInWindow :(NSWindow*) window :(EnterLicenceKeyWindowController*) delegate;
 + (void) shortcutDisabledGrowl :(NSString*) shortcutString;
 + (void) displayShortcutMessage :(UIElement*) element;
 @end

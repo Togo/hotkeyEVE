@@ -7,8 +7,13 @@
 //
 
 #import "MainMenuController.h"
+
 #import "EVEUtilities.h"
+#import "GUIUtilities.h"
+
 #import "MenuBarTableModel.h"
+#import "LicenceWindowController.h"
+
 
 @implementation MainMenuController
 
@@ -16,6 +21,8 @@
 @synthesize statusItem;
 @synthesize guiSupportIcon;
 @synthesize noGUISupportIcon;
+
+@synthesize ourViewController;
 
 -(void)awakeFromNib {
   self.guiSupportIcon = [NSImage imageNamed:@"EVE_ICON_STATUS_BAR_ACTIVE.icns"];
@@ -29,6 +36,12 @@
   [statusItem setMenu:statusMenu];
   [statusItem setImage:guiSupportIcon];
   [statusItem setImage:guiSupportIcon];
+  
+  // remove licence key and get pro version if full version
+  if ([[[EVEManager sharedEVEManager] licence] isValid]) {
+    [statusMenu removeItem:enterLicenceItem];
+    [statusMenu removeItem:getProVersionItem];
+  }
   
   [[EVEManager sharedEVEManager] setMainMenuController:self];
 }
@@ -64,6 +77,23 @@
   } else if (([statusItem image] != noGUISupportIcon)) {
     [statusItem setImage:noGUISupportIcon];
   }
+}
+
+- (IBAction) showLicenceKeyWindow :(id) sender {
+  
+  if(!liceneWindowController) {
+    liceneWindowController = [[LicenceWindowController alloc] initWithWindowNibName:@"LicenceWindow"];
+  }
+  
+  [GUIUtilities closeOpenWindow:ourViewController];
+  
+  ourViewController = liceneWindowController;
+  [GUIUtilities showWindow:ourViewController];
+}
+
+- (IBAction) getProVeriosn :(id)sender {
+  NSURL *url = [NSURL URLWithString:  [[[NSBundle mainBundle] infoDictionary] valueForKey:@"Shop URL"]];
+	[[NSWorkspace sharedWorkspace] openURL:url];
 }
 
 @end

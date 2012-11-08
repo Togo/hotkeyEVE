@@ -12,5 +12,6 @@
 
 + (Application*) activeApplication;
 + (NSString*) currentLanguage;
-
++ (NSString*) getMacAddress;
++ (void) restartEVE;
 @end

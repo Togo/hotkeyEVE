@@ -16,8 +16,13 @@
 
 @synthesize lastActiveApp;
 
-
 - (void) reveicedUIElementClick :(UIElement*) element {
+  if( ![[[element owner] bundleIdentifier] isEqualToString:[lastActiveApp bundleIdentifier]] ) {
+    BOOL appWithGUISupport = [GUISupportTableModel hasGUISupport:[[element owner] bundleIdentifier]];
+    [[[EVEManager sharedEVEManager] mainMenuController] updateStatusIcon:appWithGUISupport];
+    lastActiveApp = [element owner];
+    lastActiveApp.guiSupport = appWithGUISupport;
+  }
   
   if (element.class != NullUIElement.class) {
     DDLogVerbose(@"Received Click on UI Element: %@", [[element owner] appName]);
@@ -26,17 +31,11 @@
     DDLogVerbose(@"Identifier: %@", [element uiElementIdentifier]);
     if([[element role] isEqualToString:(NSString*) kAXMenuItemRole]) {
     [HandleClickedUIElement handleMenuElement:element];
-     }  else {
+     }  else if ([lastActiveApp guiSupport] == YES) {
+       // check gui support
       [HandleClickedUIElement handleGUIElement :element];
     }
   }
-    
-  if( ![[[element owner] bundleIdentifier] isEqualToString:[lastActiveApp bundleIdentifier]] ) {
-   BOOL guiSupport = [GUISupportTableModel hasGUISupport:[[element owner] bundleIdentifier]];
-  [[[EVEManager sharedEVEManager] mainMenuController] updateStatusIcon:guiSupport];
-  lastActiveApp = [element owner];
-  }
-  
 }
 
 @end

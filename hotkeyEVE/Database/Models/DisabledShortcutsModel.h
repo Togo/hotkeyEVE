@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DisableShortcutsModel : NSObject
+@interface DisabledShortcutsModel : NSObject
 
 + (void) disableShortcut :appName :bundleIdentifier :shortcutString :user;
 + (BOOL) isShortcutDisabled :(UIElement*) element :(NSInteger) shortcutID;

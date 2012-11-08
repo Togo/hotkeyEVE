@@ -10,6 +10,7 @@
 
 @interface GUIElementsTable : NSObject
 
-+ (NSString*) selectShortcutString :(UIElement*) element;
++ (void) editGUIElement :(UIElement*) element;
++ (void) updateGUIElementTable;
 
 @end

@@ -34,6 +34,7 @@ CREATE TABLE gui_elements (
 	element_help TEXT,
 	parent_title TEXT,
 	shortcut_string TEXT,
+	application_id INTEGER REFERENCES applications(id),
 	shortcut_id INTEGER REFERENCES shortcuts(id),
 	UNIQUE(identifier) ON CONFLICT IGNORE
 );

@@ -10,7 +10,7 @@
 #import "EVEMessages.h"
 #import "MenuBarTableModel.h"
 #import "ShortcutTableModel.h"
-#import "DisableShortcutsModel.h"
+#import "DisabledShortcutsModel.h"
 #import "DisplayedShortcutsModel.h"
 #import "GUIElementsTable.h"
 
@@ -29,7 +29,7 @@
       element.shortcutString = [[results objectAtIndex:0] valueForKey:SHORTCUT_STRING_COL];
      [self showMessage:element];
     }  else if ([results count] > 1) {
-      // Wes noch net wie ich das mach
+      NSLog(@"multiple mathch");
     }
   }
   
@@ -38,7 +38,7 @@
 
 + (void) handleGUIElement :(UIElement*) element {
   
-  element.shortcutString = [GUIElementsTable selectShortcutString:element];
+  [GUIElementsTable editGUIElement:element];
   
   [self showMessage:element];
 }
@@ -56,7 +56,7 @@
 }
 
 + (BOOL) shortcutDisabled :(UIElement*) element :(NSInteger) shortcutID {
-  return [DisableShortcutsModel isShortcutDisabled :element :shortcutID];
+  return [DisabledShortcutsModel isShortcutDisabled :element :shortcutID];
 }
 
 + (BOOL) timeIntevallOk :(NSInteger) shortcutID {

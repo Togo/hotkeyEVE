@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 Tobias Sommer. All rights reserved.
 //
 
-#import "DisableShortcutsModel.h"
+#import "DisabledShortcutsModel.h"
 #import "ShortcutTableModel.h"
 #import "ApplicationsTableModel.h"
 #import "UserDataTableModel.h"
 
-@implementation DisableShortcutsModel
+@implementation DisabledShortcutsModel
 
 + (void) disableShortcut :appName :bundleIdentifier :shortcutString :user {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];

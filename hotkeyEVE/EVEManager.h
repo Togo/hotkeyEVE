@@ -13,6 +13,7 @@
 #import "GrowlController.h"
 #import "AppLaunchedController.h"
 #import "MainMenuController.h"
+#import "Licence.h"
 
 @interface EVEManager : NSObject
 
@@ -25,6 +26,7 @@
 @property (strong, nonatomic)   GrowlController *growl;
 @property (strong, nonatomic)   MainMenuController *mainMenuController;
 
+@property (strong, nonatomic)   Licence *licence;
 
 + (id) sharedEVEManager;
 

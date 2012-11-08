@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Tobias Sommer. All rights reserved.
 //
 
-#import <Database/Database.h>
+//#import <Database/Database.h>
 #import "Queue.h"
 
 @interface MenuBarIndexingThread : Queue {

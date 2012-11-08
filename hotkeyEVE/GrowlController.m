@@ -7,7 +7,7 @@
 //
 
 #import "GrowlController.h"
-#import "DisableShortcutsModel.h"
+#import "DisabledShortcutsModel.h"
 
 @implementation GrowlController
 
@@ -20,7 +20,7 @@
       NSString *shortcutString = [clickedContext valueForKey:@"ShortcutString"];
       NSString *user = [clickedContext valueForKey:@"User"];
       
-      [DisableShortcutsModel disableShortcut :appName :bundleIdentifier :shortcutString :user];
+      [DisabledShortcutsModel disableShortcut :appName :bundleIdentifier :shortcutString :user];
     }
   }
 }

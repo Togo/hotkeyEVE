@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Tobias Sommer. All rights reserved.
 //
 
-#import <Database/Database.h>
+#import <Database/CoreDatabase.h>
 
-@interface EVEDatabase : Database
+@interface EVEDatabase : CoreDatabase
 
 @end

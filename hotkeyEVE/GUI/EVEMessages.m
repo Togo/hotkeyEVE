@@ -28,18 +28,6 @@
   }
 }
 
-+ (void) registrationFailedInWindow :(NSString*) errorMessage :(NSWindow*) window {
-  NSAlert *alert = [NSAlert alertWithMessageText:@"Something went wrong!"
-                                   defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:errorMessage];
-  [alert beginSheetModalForWindow:window modalDelegate:self didEndSelector:nil contextInfo:NULL];
-}
-
-//+ (void) registrationSuccededInWindow :(NSWindow*) window :(EnterLicenceKeyWindowController*) delegate {
-//  NSAlert *alert = [NSAlert alertWithMessageText:@"You registration was successfull. \nEVE needs now a restart!"
-//                                   defaultButton:@"Restart EVE" alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
-//  [alert beginSheetModalForWindow:window modalDelegate:delegate didEndSelector:@selector(restartAfterRegistering) contextInfo:NULL];
-//}
-
 + (void) shortcutDisabledGrowl :(NSString*) shortcutString {
   [GrowlApplicationBridge notifyWithTitle:[NSString stringWithFormat:@"I disabled: %@", shortcutString] description:@"Go to Preferences to undo this!" notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:nil];
 }
