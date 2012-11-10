@@ -46,7 +46,6 @@
 }
 
 - (void) runIndexing {
-  
   if(!_indexingActive && [self count] > 0) {
     _indexingActive = YES;
     NSString *bundleIdentifier = [self dequeue];

@@ -18,7 +18,7 @@
   [query appendFormat:@"VALUES ( "];
   [query appendFormat:@" NULL "];
   [query appendFormat:@" , '%@' ", user];
-  [query appendFormat:@" ); "];
+  [query appendFormat:@" , 1); "];
   
   [db executeUpdate:query];
 
@@ -38,6 +38,25 @@
   }
   
   return userID;
+}
+
++ (NSInteger) selectStartAtLogin :(NSString*) userName {
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSMutableString *query = [NSMutableString string];
+  [query appendFormat:@" SELECT %@ FROM %@ ",START_AT_LOGIN_COL, USER_DATA_TABLE];
+  [query appendFormat:@" WHERE %@ like '%@' ", USER_NAME_COL, userName];
+  
+  NSArray *result = [db executeQuery:query];
+  if ([result count] > 0) {
+    if ([[[result objectAtIndex:0] valueForKey:START_AT_LOGIN_COL] intValue] == 1) {
+      return NSOnState;
+    } else {
+      return NSOffState;
+    }
+  }
+  
+  return NSOffState;
 }
 
 @end

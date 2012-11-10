@@ -13,5 +13,6 @@
 + (void) insertUser :(NSString*) user;
 
 + (NSInteger) getUserID :(NSString*) userName;
++ (NSInteger) selectStartAtLogin :(NSString*) userName;
 
 @end

@@ -43,6 +43,7 @@ DROP TABLE user_data;
 CREATE TABLE user_data (
 	id INTEGER PRIMARY KEY,
 	user_name TEXT,
+	start_at_login INTEGER,
 	UNIQUE(user_name) ON CONFLICT REPLACE
 );
 

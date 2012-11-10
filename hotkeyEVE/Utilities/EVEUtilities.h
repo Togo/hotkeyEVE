@@ -14,4 +14,8 @@
 + (NSString*) currentLanguage;
 + (NSString*) getMacAddress;
 + (void) restartEVE;
+
++ (void) addAppToLoginItems;
++ (void) removeAppFromLoginItems;
+
 @end

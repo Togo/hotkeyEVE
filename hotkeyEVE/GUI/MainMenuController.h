@@ -16,13 +16,15 @@
     IBOutlet NSMenuItem *pauseMenuItem;
     IBOutlet NSMenuItem *enterLicenceItem;
     IBOutlet NSMenuItem *getProVersionItem;
-  
+  __unsafe_unretained NSMenuItem *_startAtLoginItem;
 }
 
 @property (strong)             NSStatusItem *statusItem;
 @property (strong, nonatomic)  Application *activeApplication;
 @property (strong, nonatomic)  NSImage *guiSupportIcon;
 @property (strong, nonatomic)  NSImage *noGUISupportIcon;
+
+@property (unsafe_unretained) IBOutlet NSMenuItem *startAtLoginItem;
 
 @property (strong, nonatomic)              NSWindowController *ourViewController;
 @property (strong, nonatomic, readonly) NSWindowController *liceneWindowController;
