@@ -13,7 +13,7 @@
 
 #import "MenuBarTableModel.h"
 #import "LicenceWindowController.h"
-
+#import "ShortcutsWindowController.h"
 
 @implementation MainMenuController
 
@@ -22,7 +22,6 @@
 @synthesize guiSupportIcon;
 @synthesize noGUISupportIcon;
 
-@synthesize ourViewController;
 
 -(void)awakeFromNib {
   self.guiSupportIcon = [NSImage imageNamed:@"EVE_ICON_STATUS_BAR_ACTIVE.icns"];
@@ -81,19 +80,34 @@
 
 - (IBAction) showLicenceKeyWindow :(id) sender {
   
-  if(!liceneWindowController) {
-    liceneWindowController = [[LicenceWindowController alloc] initWithWindowNibName:@"LicenceWindow"];
+  if(!_liceneWindowController) {
+    _liceneWindowController = [[LicenceWindowController alloc] initWithWindowNibName:@"LicenceWindow"];
   }
   
-  [GUIUtilities closeOpenWindow:ourViewController];
+  [GUIUtilities closeOpenWindow:_ourViewController];
   
-  ourViewController = liceneWindowController;
-  [GUIUtilities showWindow:ourViewController];
+  self.ourViewController = _liceneWindowController;
+  [GUIUtilities showWindow:_ourViewController];
 }
 
-- (IBAction) getProVeriosn :(id)sender {
+- (IBAction) showShortcutsWindow :(id) sender {
+  
+  if(!_liceneWindowController) {
+    _shortcutsWindowController = [[ShortcutsWindowController alloc] initWithWindowNibName:@"ShortcutsWindow"];
+  }
+  
+  if (self.ourViewController.class == _liceneWindowController.class ) {
+      [GUIUtilities closeOpenWindow:_ourViewController];
+  }
+  
+  self.ourViewController = _shortcutsWindowController;
+  [GUIUtilities showWindow:_ourViewController];
+}
+
+- (IBAction) getProVersion :(id)sender {
   NSURL *url = [NSURL URLWithString:  [[[NSBundle mainBundle] infoDictionary] valueForKey:@"Shop URL"]];
 	[[NSWorkspace sharedWorkspace] openURL:url];
 }
+
 
 @end

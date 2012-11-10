@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CD80E74D1645393300A9C7D8"
-               BuildableName = "hotkeyEVE.app"
+               BuildableName = "EVE.app"
                BlueprintName = "hotkeyEVE"
                ReferencedContainer = "container:hotkeyEVE.xcodeproj">
             </BuildableReference>
@@ -91,7 +91,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD80E74D1645393300A9C7D8"
-            BuildableName = "hotkeyEVE.app"
+            BuildableName = "EVE.app"
             BlueprintName = "hotkeyEVE"
             ReferencedContainer = "container:hotkeyEVE.xcodeproj">
          </BuildableReference>
@@ -110,7 +110,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD80E74D1645393300A9C7D8"
-            BuildableName = "hotkeyEVE.app"
+            BuildableName = "EVE.app"
             BlueprintName = "hotkeyEVE"
             ReferencedContainer = "container:hotkeyEVE.xcodeproj">
          </BuildableReference>
@@ -128,7 +128,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD80E74D1645393300A9C7D8"
-            BuildableName = "hotkeyEVE.app"
+            BuildableName = "EVE.app"
             BlueprintName = "hotkeyEVE"
             ReferencedContainer = "container:hotkeyEVE.xcodeproj">
          </BuildableReference>

@@ -47,4 +47,32 @@
   return appID;
 }
 
++ (NSArray*) getAllApplicationsObjects {
+  NSArray *results = [self selectAllApplications];
+  NSMutableArray *applications = [NSMutableArray array];
+  if ([results count] > 0) {
+    for (id aRow in results) {
+      Application *aApp = [[Application alloc] initWithBundleIdentifier:[aRow valueForKey:BUNDLE_IDEN_COL]];
+      aApp.appID = [[aRow valueForKey:ID_COL] intValue];
+      [applications addObject:aApp];
+    }
+  }
+       
+  return applications;
+}
+
++ (NSArray*) selectAllApplications {
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSMutableString *query = [NSMutableString string];
+  [query appendFormat:@" SELECT * FROM %@ a ", APPLICATIONS_TABLE];
+  [query appendFormat:@" WHERE EXISTS ( "];
+  [query appendFormat:@" SELECT rowid FROM %@ m ", MENU_BAR_ITEMS_TABLE];
+  [query appendFormat:@" WHERE a.%@ = m.%@ ", ID_COL, APPLICATION_ID_COL];
+  [query appendFormat:@" LIMIT 1) "];
+  [query appendFormat:@" ORDER BY a.%@ ", APP_NAME_COL];
+  
+  return  [db executeQuery:query];
+}
+
 @end

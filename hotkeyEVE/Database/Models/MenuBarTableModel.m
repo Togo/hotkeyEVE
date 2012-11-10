@@ -108,4 +108,21 @@
   return [result count];
 }
 
++ (NSArray*) getTitlesAndShortcuts :(Application*) aApp {
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  // First get all Title and Shortcut Strings for this App
+  
+  NSMutableString *query = [NSMutableString string];
+  [query appendFormat:@" SELECT m.*, s.%@  ", SHORTCUT_STRING_COL];
+  [query appendFormat:@" FROM %@ m, %@ s ", MENU_BAR_ITEMS_TABLE, SHORTCUTS_TABLE];
+  [query appendFormat:@" WHERE m.%@ = %li ", APPLICATION_ID_COL, [aApp appID]];
+  [query appendFormat:@" AND s.%@ = m.%@ ", ID_COL, SHORTCUT_ID_COL];
+  [query appendFormat:@" ORDER BY m.%@, s.%@", TITLE_COL, SHORTCUT_STRING_COL];
+  
+  DDLogVerbose(@"query: %@", query);
+  NSArray *result = [db executeQuery:query];
+  return result;
+}
+
 @end

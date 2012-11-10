@@ -10,7 +10,7 @@
 
 @interface Licence : NSObject
 
-@property (readwrite, atomic) NSString *filePath;
+@property (strong, nonatomic) NSString *filePath;
 
 @property (readwrite, atomic,strong) NSString* licenceString;
 @property (readwrite, atomic,strong) NSString* eMail;

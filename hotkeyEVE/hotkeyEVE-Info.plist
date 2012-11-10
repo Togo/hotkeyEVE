@@ -11,7 +11,7 @@
 	<key>CFBundleIconFile</key>
 	<string>EVE_ICON</string>
 	<key>CFBundleIdentifier</key>
-	<string>togo.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.togo.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -34,6 +34,10 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUFeedURL</key>
+	<string>https://s3.amazonaws.com/hotkeyeve/hotkeyEVEappcast.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
 	<key>Shop URL</key>
 	<string>http://store.kagi.com/cgi-bin/store.cgi?storeID=6FJKK_LIVE</string>
 </dict>

@@ -32,6 +32,16 @@
 		CD6AD392164BFE9D009FF1B5 /* LicenceWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AD38F164BFE9D009FF1B5 /* LicenceWindow.xib */; };
 		CD6AD395164C047E009FF1B5 /* LicenceWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD394164C047E009FF1B5 /* LicenceWindowController.m */; };
 		CD6AD3BC164C17E9009FF1B5 /* GUIUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD3BB164C17E9009FF1B5 /* GUIUtilities.m */; };
+		CD6AD3D1164C3CB3009FF1B5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CD6AD3CB164C3CB3009FF1B5 /* .gitignore */; };
+		CD6AD3D2164C3CB3009FF1B5 /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AD3CD164C3CB3009FF1B5 /* MASPreferencesWindow.xib */; };
+		CD6AD3D3164C3CB3009FF1B5 /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD3CF164C3CB3009FF1B5 /* MASPreferencesWindowController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CD6AD3D4164C3CB3009FF1B5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CD6AD3D0164C3CB3009FF1B5 /* README.md */; };
+		CD6AD3E9164CC0F0009FF1B5 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */; };
+		CD6AD3EA164CC178009FF1B5 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */; };
+		CD6AD3F1164D6B9E009FF1B5 /* ShortcutsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD3EF164D6B9D009FF1B5 /* ShortcutsWindowController.m */; };
+		CD6AD3F2164D6B9E009FF1B5 /* ShortcutsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AD3F0164D6B9D009FF1B5 /* ShortcutsWindow.xib */; };
+		CD6AD3FE164D7BA6009FF1B5 /* ApplicationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD3FD164D7BA6009FF1B5 /* ApplicationsTableViewController.m */; };
+		CD6AD401164D893B009FF1B5 /* GUINotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD400164D8939009FF1B5 /* GUINotifications.m */; };
 		CD80E7531645393300A9C7D8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7521645393300A9C7D8 /* Cocoa.framework */; };
 		CD80E75D1645393400A9C7D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD80E75B1645393400A9C7D8 /* InfoPlist.strings */; };
 		CD80E75F1645393400A9C7D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD80E75E1645393400A9C7D8 /* main.m */; };
@@ -52,6 +62,8 @@
 		CD97CE9C164687B300406F1F /* ShortcutDisabledController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE9B164687B300406F1F /* ShortcutDisabledController.m */; };
 		CD97CE9F16468A5E00406F1F /* DisabledShortcutsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE9E16468A5E00406F1F /* DisabledShortcutsModel.m */; };
 		CD97CEA216468C5200406F1F /* ShortcutTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CEA116468C5200406F1F /* ShortcutTableModel.m */; };
+		CDA7AD77164D9F4D000907A5 /* ShortcutsTableViewConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA7AD76164D9F4D000907A5 /* ShortcutsTableViewConroller.m */; };
+		CDA7AD7A164DB80A000907A5 /* ShortcutOptionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA7AD79164DB80A000907A5 /* ShortcutOptionsController.m */; };
 		CDB3D6621646BAE000285306 /* AppLaunchedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3D6611646BAE000285306 /* AppLaunchedController.m */; };
 		CDEE15311648127A00EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns in Resources */ = {isa = PBXBuildFile; fileRef = CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */; };
 		CDEE15341648128C00EDCDF4 /* GUISupportTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE15331648128C00EDCDF4 /* GUISupportTableModel.m */; };
@@ -130,6 +142,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CD6AD3EA164CC178009FF1B5 /* Sparkle.framework in CopyFiles */,
 				CD57865216465E2600CC508B /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,7 +205,21 @@
 		CD6AD394164C047E009FF1B5 /* LicenceWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LicenceWindowController.m; path = GUI/Licence/LicenceWindowController.m; sourceTree = "<group>"; };
 		CD6AD3BA164C17E9009FF1B5 /* GUIUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIUtilities.h; sourceTree = "<group>"; };
 		CD6AD3BB164C17E9009FF1B5 /* GUIUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUIUtilities.m; sourceTree = "<group>"; };
-		CD80E74E1645393300A9C7D8 /* hotkeyEVE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hotkeyEVE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD6AD3CB164C3CB3009FF1B5 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		CD6AD3CC164C3CB3009FF1B5 /* MASPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesViewController.h; sourceTree = "<group>"; };
+		CD6AD3CD164C3CB3009FF1B5 /* MASPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASPreferencesWindow.xib; sourceTree = "<group>"; };
+		CD6AD3CE164C3CB3009FF1B5 /* MASPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesWindowController.h; sourceTree = "<group>"; };
+		CD6AD3CF164C3CB3009FF1B5 /* MASPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASPreferencesWindowController.m; sourceTree = "<group>"; };
+		CD6AD3D0164C3CB3009FF1B5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = hotkeyEVE/Frameworks/Sparkle.framework; sourceTree = "<group>"; };
+		CD6AD3EE164D6B9C009FF1B5 /* ShortcutsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShortcutsWindowController.h; path = GUI/ShortcutWindow/ShortcutsWindowController.h; sourceTree = "<group>"; };
+		CD6AD3EF164D6B9D009FF1B5 /* ShortcutsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShortcutsWindowController.m; path = GUI/ShortcutWindow/ShortcutsWindowController.m; sourceTree = "<group>"; };
+		CD6AD3F0164D6B9D009FF1B5 /* ShortcutsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShortcutsWindow.xib; path = GUI/ShortcutWindow/ShortcutsWindow.xib; sourceTree = "<group>"; };
+		CD6AD3FC164D7BA6009FF1B5 /* ApplicationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationsTableViewController.h; path = GUI/ShortcutWindow/ApplicationsTableViewController.h; sourceTree = "<group>"; };
+		CD6AD3FD164D7BA6009FF1B5 /* ApplicationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplicationsTableViewController.m; path = GUI/ShortcutWindow/ApplicationsTableViewController.m; sourceTree = "<group>"; };
+		CD6AD3FF164D8937009FF1B5 /* GUINotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUINotifications.h; path = GUI/GUINotifications/GUINotifications.h; sourceTree = "<group>"; };
+		CD6AD400164D8939009FF1B5 /* GUINotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GUINotifications.m; path = GUI/GUINotifications/GUINotifications.m; sourceTree = "<group>"; };
+		CD80E74E1645393300A9C7D8 /* EVE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD80E7521645393300A9C7D8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CD80E7551645393300A9C7D8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		CD80E7561645393300A9C7D8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -230,6 +257,10 @@
 		CD97CE9E16468A5E00406F1F /* DisabledShortcutsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisabledShortcutsModel.m; path = Database/Models/DisabledShortcutsModel.m; sourceTree = "<group>"; };
 		CD97CEA016468C5100406F1F /* ShortcutTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortcutTableModel.h; sourceTree = "<group>"; };
 		CD97CEA116468C5200406F1F /* ShortcutTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortcutTableModel.m; sourceTree = "<group>"; };
+		CDA7AD75164D9F4C000907A5 /* ShortcutsTableViewConroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShortcutsTableViewConroller.h; path = GUI/ShortcutWindow/ShortcutsTableViewConroller.h; sourceTree = "<group>"; };
+		CDA7AD76164D9F4D000907A5 /* ShortcutsTableViewConroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShortcutsTableViewConroller.m; path = GUI/ShortcutWindow/ShortcutsTableViewConroller.m; sourceTree = "<group>"; };
+		CDA7AD78164DB809000907A5 /* ShortcutOptionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShortcutOptionsController.h; path = GUI/ShortcutWindow/ShortcutOptionsController.h; sourceTree = "<group>"; };
+		CDA7AD79164DB80A000907A5 /* ShortcutOptionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShortcutOptionsController.m; path = GUI/ShortcutWindow/ShortcutOptionsController.m; sourceTree = "<group>"; };
 		CDB3D6601646BAE000285306 /* AppLaunchedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppLaunchedController.h; path = Conroller/AppLaunchedController.h; sourceTree = "<group>"; };
 		CDB3D6611646BAE000285306 /* AppLaunchedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppLaunchedController.m; path = Conroller/AppLaunchedController.m; sourceTree = "<group>"; };
 		CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns; sourceTree = "<group>"; };
@@ -264,6 +295,7 @@
 				CDFF8CDC164B72EF00A5EA5A /* UIElements.dylib in Frameworks */,
 				CD57865316465EDE00CC508B /* Growl.framework in Frameworks */,
 				CD80E7531645393300A9C7D8 /* Cocoa.framework in Frameworks */,
+				CD6AD3E9164CC0F0009FF1B5 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +454,53 @@
 			name = Licence;
 			sourceTree = "<group>";
 		};
+		CD6AD3C9164C3CB3009FF1B5 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				CD6AD3CA164C3CB3009FF1B5 /* MASPreferences */,
+			);
+			name = Preferences;
+			path = GUI/Preferences;
+			sourceTree = "<group>";
+		};
+		CD6AD3CA164C3CB3009FF1B5 /* MASPreferences */ = {
+			isa = PBXGroup;
+			children = (
+				CD6AD3CB164C3CB3009FF1B5 /* .gitignore */,
+				CD6AD3CC164C3CB3009FF1B5 /* MASPreferencesViewController.h */,
+				CD6AD3CE164C3CB3009FF1B5 /* MASPreferencesWindowController.h */,
+				CD6AD3CF164C3CB3009FF1B5 /* MASPreferencesWindowController.m */,
+				CD6AD3CD164C3CB3009FF1B5 /* MASPreferencesWindow.xib */,
+				CD6AD3D0164C3CB3009FF1B5 /* README.md */,
+			);
+			path = MASPreferences;
+			sourceTree = "<group>";
+		};
+		CD6AD3F3164D6BAA009FF1B5 /* ShortcutWindow */ = {
+			isa = PBXGroup;
+			children = (
+				CD6AD3FC164D7BA6009FF1B5 /* ApplicationsTableViewController.h */,
+				CD6AD3FD164D7BA6009FF1B5 /* ApplicationsTableViewController.m */,
+				CDA7AD75164D9F4C000907A5 /* ShortcutsTableViewConroller.h */,
+				CDA7AD76164D9F4D000907A5 /* ShortcutsTableViewConroller.m */,
+				CDA7AD78164DB809000907A5 /* ShortcutOptionsController.h */,
+				CDA7AD79164DB80A000907A5 /* ShortcutOptionsController.m */,
+				CD6AD3EE164D6B9C009FF1B5 /* ShortcutsWindowController.h */,
+				CD6AD3EF164D6B9D009FF1B5 /* ShortcutsWindowController.m */,
+				CD6AD3F0164D6B9D009FF1B5 /* ShortcutsWindow.xib */,
+			);
+			name = ShortcutWindow;
+			sourceTree = "<group>";
+		};
+		CD6AD402164D8948009FF1B5 /* GUINotifications */ = {
+			isa = PBXGroup;
+			children = (
+				CD6AD3FF164D8937009FF1B5 /* GUINotifications.h */,
+				CD6AD400164D8939009FF1B5 /* GUINotifications.m */,
+			);
+			name = GUINotifications;
+			sourceTree = "<group>";
+		};
 		CD80E7431645393300A9C7D8 = {
 			isa = PBXGroup;
 			children = (
@@ -435,7 +514,7 @@
 		CD80E74F1645393300A9C7D8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CD80E74E1645393300A9C7D8 /* hotkeyEVE.app */,
+				CD80E74E1645393300A9C7D8 /* EVE.app */,
 				CD80E76F1645393400A9C7D8 /* hotkeyEVETests.octest */,
 			);
 			name = Products;
@@ -444,6 +523,7 @@
 		CD80E7511645393300A9C7D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */,
 				CD57865116465E2600CC508B /* Growl.framework */,
 				CD5A464F164558FB007B57A5 /* Lumberjack */,
 				CD80E7521645393300A9C7D8 /* Cocoa.framework */,
@@ -523,6 +603,9 @@
 		CD80E78A164539A900A9C7D8 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				CD6AD402164D8948009FF1B5 /* GUINotifications */,
+				CD6AD3F3164D6BAA009FF1B5 /* ShortcutWindow */,
+				CD6AD3C9164C3CB3009FF1B5 /* Preferences */,
 				CD6AD38A164BFE91009FF1B5 /* Licence */,
 				CD97CE6916466D7B00406F1F /* EVEMessages.h */,
 				CD97CE6A16466D7B00406F1F /* EVEMessages.m */,
@@ -598,7 +681,7 @@
 			);
 			name = hotkeyEVE;
 			productName = hotkeyEVE;
-			productReference = CD80E74E1645393300A9C7D8 /* hotkeyEVE.app */;
+			productReference = CD80E74E1645393300A9C7D8 /* EVE.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CD80E76E1645393400A9C7D8 /* hotkeyEVETests */ = {
@@ -705,6 +788,10 @@
 				CDEE155D164A9D3200EDCDF4 /* INSERT_GUI_SUPPORT_V1_0.sql in Resources */,
 				CDEE156F164AE38A00EDCDF4 /* INSERT_GUI_ELEMENTS_V1_0.sql in Resources */,
 				CD6AD392164BFE9D009FF1B5 /* LicenceWindow.xib in Resources */,
+				CD6AD3D1164C3CB3009FF1B5 /* .gitignore in Resources */,
+				CD6AD3D2164C3CB3009FF1B5 /* MASPreferencesWindow.xib in Resources */,
+				CD6AD3D4164C3CB3009FF1B5 /* README.md in Resources */,
+				CD6AD3F2164D6B9E009FF1B5 /* ShortcutsWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,6 +865,12 @@
 				CDEE1576164B04F100EDCDF4 /* NSString+Hashes.m in Sources */,
 				CD6AD395164C047E009FF1B5 /* LicenceWindowController.m in Sources */,
 				CD6AD3BC164C17E9009FF1B5 /* GUIUtilities.m in Sources */,
+				CD6AD3D3164C3CB3009FF1B5 /* MASPreferencesWindowController.m in Sources */,
+				CD6AD3F1164D6B9E009FF1B5 /* ShortcutsWindowController.m in Sources */,
+				CD6AD3FE164D7BA6009FF1B5 /* ApplicationsTableViewController.m in Sources */,
+				CD6AD401164D893B009FF1B5 /* GUINotifications.m in Sources */,
+				CDA7AD77164D9F4D000907A5 /* ShortcutsTableViewConroller.m in Sources */,
+				CDA7AD7A164DB80A000907A5 /* ShortcutOptionsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -918,7 +1011,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EVE;
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				USER_HEADER_SEARCH_PATHS = "\"$(PROJECT_TEMP_DIR)/../UninstalledProducts/include\"";
 				WRAPPER_EXTENSION = app;
@@ -943,7 +1036,7 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EVE;
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				USER_HEADER_SEARCH_PATHS = "\"$(PROJECT_TEMP_DIR)/../UninstalledProducts/include\"";
 				WRAPPER_EXTENSION = app;

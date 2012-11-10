@@ -1332,6 +1332,15 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
+					<object class="NSMenuItem" id="123333152">
+						<reference key="NSMenu" ref="722780090"/>
+						<string key="NSTitle">Shortcuts</string>
+						<string key="NSKeyEquiv">s</string>
+						<int key="NSKeyEquivModMask">1048576</int>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
 					<object class="NSMenuItem" id="953993596">
 						<reference key="NSMenu" ref="722780090"/>
 						<string key="NSTitle">Preferences…</string>
@@ -2056,14 +2065,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">mainMenu</string>
-						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="649796088"/>
-					</object>
-					<int key="connectionID">538</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">statusMenu</string>
 						<reference key="source" ref="976324537"/>
 						<reference key="destination" ref="722780090"/>
@@ -2124,15 +2125,23 @@
 						<reference key="source" ref="976324537"/>
 						<reference key="destination" ref="869841414"/>
 					</object>
-					<int key="connectionID">567</int>
+					<int key="connectionID">571</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">getProVeriosn:</string>
+						<string key="label">getProVersion:</string>
 						<reference key="source" ref="976324537"/>
 						<reference key="destination" ref="869841414"/>
 					</object>
-					<int key="connectionID">568</int>
+					<int key="connectionID">572</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showShortcutsWindow:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="123333152"/>
+					</object>
+					<int key="connectionID">574</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -3145,6 +3154,7 @@
 							<reference ref="497934724"/>
 							<reference ref="731032011"/>
 							<reference ref="869841414"/>
+							<reference ref="123333152"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -3186,6 +3196,11 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">544</int>
 						<reference key="object" ref="970915237"/>
+						<reference key="parent" ref="722780090"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">573</int>
+						<reference key="object" ref="123333152"/>
 						<reference key="parent" ref="722780090"/>
 					</object>
 				</array>
@@ -3347,6 +3362,7 @@
 				<string key="562.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="564.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="57.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="573.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="58.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3364,7 +3380,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">568</int>
+			<int key="maxID">576</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3380,22 +3396,12 @@
 					<string key="className">MainMenuController</string>
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="getProVeriosn:">id</string>
-						<string key="pauseEve:">id</string>
-						<string key="scanForShortcuts:">id</string>
+						<string key="getProVersion:">id</string>
 						<string key="showLicenceKeyWindow:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="getProVeriosn:">
-							<string key="name">getProVeriosn:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="pauseEve:">
-							<string key="name">pauseEve:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="scanForShortcuts:">
-							<string key="name">scanForShortcuts:</string>
+						<object class="IBActionInfo" key="getProVersion:">
+							<string key="name">getProVersion:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="showLicenceKeyWindow:">
@@ -3406,7 +3412,6 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="enterLicenceItem">NSMenuItem</string>
 						<string key="getProVersionItem">NSMenuItem</string>
-						<string key="ourViewController">NSWindowController</string>
 						<string key="pauseMenuItem">NSMenuItem</string>
 						<string key="scanForShortcutsItem">NSMenuItem</string>
 						<string key="statusMenu">NSMenu</string>
@@ -3419,10 +3424,6 @@
 						<object class="IBToOneOutletInfo" key="getProVersionItem">
 							<string key="name">getProVersionItem</string>
 							<string key="candidateClassName">NSMenuItem</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="ourViewController">
-							<string key="name">ourViewController</string>
-							<string key="candidateClassName">NSWindowController</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="pauseMenuItem">
 							<string key="name">pauseMenuItem</string>
