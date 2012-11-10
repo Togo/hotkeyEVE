@@ -110,8 +110,7 @@
 }
 
 - (IBAction) getProVersion :(id)sender {
-  NSURL *url = [NSURL URLWithString:  [[[NSBundle mainBundle] infoDictionary] valueForKey:@"Shop URL"]];
-	[[NSWorkspace sharedWorkspace] openURL:url];
+  [EVEUtilities openWebShop];
 }
 
 - (IBAction)startAtLogin :(id) sender {

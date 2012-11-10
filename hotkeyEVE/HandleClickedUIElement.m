@@ -16,7 +16,7 @@
 
 @implementation HandleClickedUIElement
 
-+ (void) handleMenuElement :(UIElement*) element {
++ (BOOL) handleMenuElement :(UIElement*) element {
 
   if ([[element shortcutString] length] ==  0) {
     element.shortcutString = [MenuBarTableModel selectShortcutString:element];
@@ -29,21 +29,21 @@
       element.shortcutString = [[results objectAtIndex:0] valueForKey:SHORTCUT_STRING_COL];
      [self showMessage:element];
     }  else if ([results count] > 1) {
-      NSLog(@"multiple mathch");
+      NSLog(@"multiple match");
     }
   }
   
- [self showMessage:element];
+ return [self showMessage:element];
 }
 
-+ (void) handleGUIElement :(UIElement*) element {
++ (BOOL) handleGUIElement :(UIElement*) element {
   
   [GUIElementsTable editGUIElement:element];
   
-  [self showMessage:element];
+  return [self showMessage:element];
 }
 
-+ (void) showMessage :(UIElement*) element {
++ (BOOL) showMessage :(UIElement*) element {
   NSInteger shortcutID = 0;
   if ( [[element shortcutString] length] > 0) {
      shortcutID = [ShortcutTableModel getShortcutId:[element shortcutString]];
@@ -51,8 +51,10 @@
         && [self timeIntevallOk :shortcutID]) {
       [EVEMessages displayShortcutMessage:element];
       [DisplayedShortcutsModel insertDisplayedShortcut:element];
+      return YES;
     }
   }
+  return NO;
 }
 
 + (BOOL) shortcutDisabled :(UIElement*) element :(NSInteger) shortcutID {

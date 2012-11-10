@@ -17,5 +17,5 @@
 
 + (void) addAppToLoginItems;
 + (void) removeAppFromLoginItems;
-
++ (void) openWebShop;
 @end

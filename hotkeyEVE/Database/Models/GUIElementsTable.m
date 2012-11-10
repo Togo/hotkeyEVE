@@ -16,18 +16,31 @@
 + (void) editGUIElement :(UIElement*) element {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
+  NSInteger appID = [ApplicationsTableModel getApplicationID:[[element owner] appName] :[[element owner] bundleIdentifier]];
+  
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@" SELECT * FROM %@ ", GUI_ELEMENTS_TABLE];
   [query appendFormat:@" WHERE %@ like '%@' ", IDENTIFIER_COL, [element uiElementIdentifier]];
+  [query appendFormat:@" AND %@ = %li ", APPLICATION_ID_COL, appID];
   
   DDLogVerbose(@"query: %@", query);
   NSArray *result = [db executeQuery:query];
+  if ([result count] == 0) {
+    [query setString:@""];
+    [query appendFormat:@" SELECT * FROM %@ ", GUI_ELEMENTS_TABLE];
+    [query appendFormat:@" WHERE %@ like '%@' ", COCOA_IDENTIFIER_COL, [element cocoaIdentifier]];
+    [query appendFormat:@" AND   %@ != '' ", COCOA_IDENTIFIER_COL];
+    [query appendFormat:@" AND %@ = %li ", APPLICATION_ID_COL, appID];
+    result = [db executeQuery:query];
+  }
+  
   if ([result count] > 0) {
     element.title = [[result objectAtIndex:0] valueForKey:TITLE_COL];
     element.parentTitle = [[result objectAtIndex:0] valueForKey:PARENT_TITLE_COL];
     element.help = [[result objectAtIndex:0] valueForKey:HELP_COL];
     element.shortcutString = [[result objectAtIndex:0] valueForKey:SHORTCUT_STRING_COL];
-  }
+    element.owner.appID = appID;
+    }
 }
 
 + (void) updateGUIElementTable  {

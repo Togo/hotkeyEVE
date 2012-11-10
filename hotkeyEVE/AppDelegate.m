@@ -10,6 +10,8 @@
 #import "AppDelegate.h"
 #import "DDASLLogger.h"
 #import "DDTTYLogger.h"
+#import "DDFileLogger.h"
+
 #import "MenuBarIndexingThread.h"
 
 #import <UIElements/ClickOnUIElementSubject.h>
@@ -17,14 +19,14 @@
 #import "UserDataTableModel.h"
 #import "GUIElementsTable.h"
 
-
+#import "EVEMessages.h"
 #import "EVEUtilities.h"
 
 
 @implementation AppDelegate
 
 @synthesize eveAppManager;
-
+@synthesize fileLogger;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -48,7 +50,9 @@
   [self registerListener];
   [[eveAppManager eveObserver] subscribeAllNotifications];
   
-  
+  if (![[[EVEManager sharedEVEManager] licence] isValid]) {
+    [EVEMessages showGrowRegistrationMessage];
+  }
 }
 
 - (void) startLogging {
@@ -56,6 +60,11 @@
   [DDLog addLogger:[DDTTYLogger sharedInstance]];
   
   // Log in file
+  fileLogger = [[DDFileLogger alloc] init];
+  fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+  fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+  
+  [DDLog addLogger:fileLogger];
 }
 
 - (void) openDatabase {

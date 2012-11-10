@@ -174,4 +174,9 @@
 	}
 }
 
++ (void) openWebShop {
+  NSURL *url = [NSURL URLWithString:  [[[NSBundle mainBundle] infoDictionary] valueForKey:@"Shop URL"]];
+	[[NSWorkspace sharedWorkspace] openURL:url];
+}
+
 @end

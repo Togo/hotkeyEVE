@@ -11,6 +11,7 @@
 
 @interface UIElementClickedController : NSObject
 
+@property                     NSInteger messageCount;
 @property (strong, nonatomic) Application *lastActiveApp;
 
 - (void) reveicedUIElementClick :(UIElement*) element;

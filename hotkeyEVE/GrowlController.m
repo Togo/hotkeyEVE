@@ -8,6 +8,7 @@
 
 #import "GrowlController.h"
 #import "DisabledShortcutsModel.h"
+#import "EVEUtilities.h"
 
 @implementation GrowlController
 
@@ -21,6 +22,11 @@
       NSString *user = [clickedContext valueForKey:@"User"];
       
       [DisabledShortcutsModel disableShortcut :appName :bundleIdentifier :shortcutString :user];
+      return;
+    }
+    
+    if ([[clickedContext valueForKey:@"mesage_type"] isEqualToString:@"register_eve"]) {
+      [EVEUtilities openWebShop];
     }
   }
 }

@@ -11,12 +11,15 @@
 #import "HandleClickedUIElement.h"
 #import "GUISupportTableModel.h"
 #import "DisplayedShortcutsModel.h"
+#import "EVEMessages.h"
 
 @implementation UIElementClickedController
 
+@synthesize messageCount;
 @synthesize lastActiveApp;
 
 - (void) reveicedUIElementClick :(UIElement*) element {
+  // Update Status Icon
   if( ![[[element owner] bundleIdentifier] isEqualToString:[lastActiveApp bundleIdentifier]] ) {
     BOOL appWithGUISupport = [GUISupportTableModel hasGUISupport:[[element owner] bundleIdentifier]];
     [[[EVEManager sharedEVEManager] mainMenuController] updateStatusIcon:appWithGUISupport];
@@ -25,15 +28,25 @@
   }
   
   if (element.class != NullUIElement.class) {
+    BOOL messageDisplayed = NO;
     DDLogVerbose(@"Received Click on UI Element: %@", [[element owner] appName]);
     DDLogVerbose(@"Role: %@", [element role]);
     DDLogVerbose(@"Role Description: %@", [element roleDescription]);
     DDLogVerbose(@"Identifier: %@", [element uiElementIdentifier]);
     if([[element role] isEqualToString:(NSString*) kAXMenuItemRole]) {
-    [HandleClickedUIElement handleMenuElement:element];
+      messageDisplayed = [HandleClickedUIElement handleMenuElement:element];
      }  else if ([lastActiveApp guiSupport] == YES) {
        // check gui support
-      [HandleClickedUIElement handleGUIElement :element];
+      messageDisplayed = [HandleClickedUIElement handleGUIElement :element];
+    }
+    
+    if (messageDisplayed) {
+      messageCount++;
+      if (messageCount >= 3
+          && ![[[EVEManager sharedEVEManager] licence] isValid]) {
+        messageCount = 0;
+        [EVEMessages showGrowRegistrationMessage];
+      }
     }
   }
 }

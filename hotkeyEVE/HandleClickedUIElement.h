@@ -10,7 +10,7 @@
 
 @interface HandleClickedUIElement : NSObject
 
-+ (void) handleMenuElement :(UIElement*) element;
-+ (void) handleGUIElement :(UIElement*) element;
++ (BOOL) handleMenuElement :(UIElement*) element;
++ (BOOL) handleGUIElement :(UIElement*) element;
 
 @end

@@ -53,4 +53,12 @@
   [GrowlApplicationBridge notifyWithTitle:[element shortcutString] description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:clickContextDic];
 }
 
++ (void) showGrowRegistrationMessage {
+  NSMutableDictionary *clickContextDic = [[NSMutableDictionary alloc] init];
+  [clickContextDic setValue:@"register_eve" forKey:@"mesage_type"];
+
+  [GrowlApplicationBridge notifyWithTitle:@"Register EVE" description:@"Register Your Version to disabled this Message" notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:clickContextDic];
+
+}
+
 @end

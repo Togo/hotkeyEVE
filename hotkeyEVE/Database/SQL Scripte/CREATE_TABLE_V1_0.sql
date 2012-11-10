@@ -28,6 +28,7 @@ DROP TABLE gui_elements;
 CREATE TABLE gui_elements (
 	id INTEGER PRIMARY KEY,
 	identifier TEXT,
+	cocoa_identifier TEXT,
 	app_name TEXT,
 	bundle_identifier TEXT,
 	element_title TEXT,
