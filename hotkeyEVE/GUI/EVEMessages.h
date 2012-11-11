@@ -12,6 +12,9 @@
 
 + (void) maxEnabledAppsReachedInWindow :(NSWindow*) window;
 + (void) shortcutDisabledGrowl :(NSString*) shortcutString;
+
 + (void) displayShortcutMessage :(UIElement*) element;
++ (void) displayMultipleMatchesMessage :(NSString*) description;
+
 + (void) showGrowRegistrationMessage;
 @end

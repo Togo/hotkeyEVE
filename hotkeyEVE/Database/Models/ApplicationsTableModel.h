@@ -10,7 +10,7 @@
 
 @interface ApplicationsTableModel : NSObject
 
-+ (void) insertApp :(Application*) app;
++ (void) updateApplicationTable :(Application*) app;
 
 + (NSInteger) getApplicationID :(NSString*) appName :(NSString*) bundleIdentifier;
 

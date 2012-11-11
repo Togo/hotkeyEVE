@@ -27,12 +27,6 @@
   
   DDLogVerbose(@"query: %@", query);
   NSArray *result = [db executeQuery:query];
-  if ([result count] == 0) {
-    [query setString:@""];
-    [query appendFormat:@" SELECT * FROM %@ ", GUI_ELEMENTS_TABLE];
-    [query appendFormat:@" AND %@ = %li ", APPLICATION_ID_COL, appID];
-    result = [db executeQuery:query];
-  }
   
   if ([result count] > 0) {
     element.title = [[result objectAtIndex:0] valueForKey:TITLE_COL];

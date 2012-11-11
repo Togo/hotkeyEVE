@@ -11,21 +11,37 @@
 
 @implementation ApplicationsTableModel
 
-+ (void) insertApp :(Application*) app {
++ (void) updateApplicationTable :(Application*) app {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
   NSInteger guiSupport = [GUISupportTableModel hasGUISupport:[app bundleIdentifier]];
   
+  // Already in database?
   NSMutableString *query = [NSMutableString string];
-  [query appendFormat:@"INSERT OR IGNORE INTO %@ ", APPLICATIONS_TABLE];
-  [query appendFormat:@"VALUES ( "];
-  [query appendFormat:@" NULL "];
-  [query appendFormat:@" , '%@' ", [app appName]];
-  [query appendFormat:@" , '%@' ", [app bundleIdentifier]];
-  [query appendFormat:@" , %i ", 1];
-  [query appendFormat:@" , %li ", guiSupport];
-  [query appendFormat:@" , %li ", guiSupport];
-  [query appendFormat:@" ); "];
+  [query appendFormat:@"SELECT rowid FROM %@ ", APPLICATIONS_TABLE];
+  [query appendFormat:@"WHERE %@ = '%@' ", APP_NAME_COL, [app appName]];
+  [query appendFormat:@"AND   %@ = '%@' ", BUNDLE_IDEN_COL, [app bundleIdentifier]];
+  
+  NSArray *result = [db executeQuery:query];
+  
+  if ([result count] == 0) {
+    query = [NSMutableString string];
+    [query appendFormat:@"INSERT OR IGNORE INTO %@ ", APPLICATIONS_TABLE];
+    [query appendFormat:@"VALUES ( "];
+    [query appendFormat:@" NULL "];
+    [query appendFormat:@" , '%@' ", [app appName]];
+    [query appendFormat:@" , '%@' ", [app bundleIdentifier]];
+    [query appendFormat:@" , %i ", 1];
+    [query appendFormat:@" , %i ", 1];
+    [query appendFormat:@" , %li ", guiSupport];
+    [query appendFormat:@" ); "];
+  } else {
+    query = [NSMutableString string];
+    [query appendFormat:@"UPDATE %@ ", APPLICATIONS_TABLE];
+    [query appendFormat:@"SET %@ = %li ", GUI_SUPPORT_COL, guiSupport];
+    [query appendFormat:@"WHERE %@ = '%@' ", APP_NAME_COL, [app appName]];
+    [query appendFormat:@"AND   %@ = '%@' ", BUNDLE_IDEN_COL, [app bundleIdentifier]];
+  }
   
   [db executeUpdate:query];
 }

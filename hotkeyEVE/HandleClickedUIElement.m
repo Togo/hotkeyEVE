@@ -17,23 +17,25 @@
 @implementation HandleClickedUIElement
 
 + (BOOL) handleMenuElement :(UIElement*) element {
-
+  BOOL messageDisplayed = NO;
   if ([[element shortcutString] length] ==  0) {
     element.shortcutString = [MenuBarTableModel selectShortcutString:element];
-  }
   
-  // Nothing found, try it with fts
-  if ([[element shortcutString] length] ==  0) {
-    NSArray *results = [MenuBarTableModel searchInMenuBarTable:element];
-    if ([results count] == 1) {
-      element.shortcutString = [[results objectAtIndex:0] valueForKey:SHORTCUT_STRING_COL];
-     [self showMessage:element];
-    }  else if ([results count] > 1) {
-      NSLog(@"multiple match");
+    // Nothing found, try it with fts
+    if ([[element shortcutString] length] ==  0) {
+      NSArray *results = [MenuBarTableModel searchInMenuBarTable:element];
+      if ([results count] == 1) {
+        element.shortcutString = [[results objectAtIndex:0] valueForKey:SHORTCUT_STRING_COL];
+      messageDisplayed = [self showMessage:element];
+      }  else if ([results count] > 1) {
+      messageDisplayed = [self showMultipleMatchMessage :results];
+      }
     }
+  } else {
+      messageDisplayed = [self showMessage:element];
   }
   
- return [self showMessage:element];
+ return messageDisplayed;
 }
 
 + (BOOL) handleGUIElement :(UIElement*) element {
@@ -55,6 +57,20 @@
     }
   }
   return NO;
+}
+
++ (BOOL) showMultipleMatchMessage :(NSArray*) results {
+  NSMutableString *content = [NSMutableString string];
+  for (id aRow in results) {
+    NSString *shortcutString = [ShortcutTableModel getShortcutString:[[aRow valueForKey:SHORTCUT_ID_COL] intValue]];
+    NSString *title = [aRow valueForKey:TITLE_COL];
+    NSString *parentTitle = [aRow valueForKey:PARENT_TITLE_COL];
+    [content appendFormat:@"%@ - %@ - %@ \n", parentTitle, title, shortcutString];
+  }
+  
+  [EVEMessages displayMultipleMatchesMessage :content];
+  
+  return YES;
 }
 
 + (BOOL) shortcutDisabled :(UIElement*) element :(NSInteger) shortcutID {

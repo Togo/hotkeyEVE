@@ -14,8 +14,6 @@
 
 @implementation MenuBarTableModel
 
-
-
 + (void) insertMenuBarElementArray :(NSArray*) elements {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
@@ -66,19 +64,24 @@
   NSInteger appId = [ApplicationsTableModel getApplicationID:[[element owner] appName] :[[element owner] bundleIdentifier]];
 
   NSMutableString *query = [NSMutableString string];
-  [query appendFormat:@"SELECT %@, %@ FROM %@ ", IDENTIFIER_COL, SHORTCUT_ID_COL, MENU_BAR_ITEMS_TABLE];
+  [query appendFormat:@"SELECT * FROM %@ ", MENU_BAR_ITEMS_TABLE];
   [query appendFormat:@" WHERE %@ = %li ", APPLICATION_ID_COL, appId];
   
   NSArray *results = [db executeQuery:query];
   
   for (id aRow in results) {
     [query setString:@""];
-    [query appendFormat:@"INSERT INTO menu_bar_search VALUES ('%@', %i)", [aRow valueForKey:IDENTIFIER_COL], [[aRow valueForKey:SHORTCUT_ID_COL] intValue]];
+    [query appendFormat:@"INSERT INTO menu_bar_search VALUES "];
+    [query appendFormat:@" ( '%@', ",  [aRow valueForKey:IDENTIFIER_COL]];
+    [query appendFormat:@"   '%@', ",  [aRow valueForKey:TITLE_COL]];
+    [query appendFormat:@"   '%@', ",  [aRow valueForKey:PARENT_TITLE_COL] ];
+    [query appendFormat:@"    %i );", [[aRow valueForKey:SHORTCUT_ID_COL] intValue]];
+    
     [db executeUpdate:query];
   }
 
   query = [NSMutableString string];
-  [query appendFormat:@" SELECT %@.%@, %@.%@ ",MENU_BAR_SEARCH_TABLE, IDENTIFIER_COL, SHORTCUTS_TABLE, SHORTCUT_STRING_COL];
+  [query appendFormat:@" SELECT %@.*, %@.%@ ",MENU_BAR_SEARCH_TABLE, SHORTCUTS_TABLE, SHORTCUT_STRING_COL];
   [query appendFormat:@" FROM %@, %@ ", MENU_BAR_SEARCH_TABLE, SHORTCUTS_TABLE];
   [query appendFormat:@" WHERE %@.%@ MATCH '%@*' ", MENU_BAR_SEARCH_TABLE, IDENTIFIER_COL, [element uiElementIdentifier]];
   [query appendFormat:@" AND %@.%@ = %@.%@ ", MENU_BAR_SEARCH_TABLE, SHORTCUT_ID_COL, SHORTCUTS_TABLE, ID_COL];
@@ -112,7 +115,6 @@
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
   // First get all Title and Shortcut Strings for this App
-  
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@" SELECT m.*, s.%@  ", SHORTCUT_STRING_COL];
   [query appendFormat:@" FROM %@ m, %@ s ", MENU_BAR_ITEMS_TABLE, SHORTCUTS_TABLE];

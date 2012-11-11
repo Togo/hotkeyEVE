@@ -66,7 +66,7 @@
 }
 
 - (void) saveAppData :(Application*) app {
-  [ApplicationsTableModel insertApp :app];
+  [ApplicationsTableModel updateApplicationTable :app];
 }
 
 - (void) indexUIElements :(Application*) app {

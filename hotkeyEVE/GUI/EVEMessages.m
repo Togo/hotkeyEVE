@@ -61,4 +61,8 @@
 
 }
 
++ (void) displayMultipleMatchesMessage :(NSString*) description {
+  [GrowlApplicationBridge notifyWithTitle:@"Multiple Match" description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:nil];
+}
+
 @end

@@ -22,6 +22,8 @@ CREATE TABLE menu_bar_items (
 DROP TABLE menu_bar_search;
 CREATE VIRTUAL TABLE menu_bar_search USING fts3(
        	identifier TEXT,
+       	element_title TEXT,
+       	parent_title TEXT,
        	shortcut_id INTEGER);
 
 DROP TABLE gui_elements;
@@ -54,7 +56,7 @@ CREATE TABLE applications (
 	app_name TEXT,
 	bundle_identifier TEXT,
 	menu_bar_active INTEGER,
-	gui_elements_active INTEGER,
+	menu_bar_support INTEGER,
 	gui_support INTEGER,
 	UNIQUE(bundle_identifier, app_name) ON CONFLICT REPLACE
 );
