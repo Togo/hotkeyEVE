@@ -49,7 +49,7 @@
   
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@" SELECT * FROM %@ ", SHORTCUTS_TABLE];
-  [query appendFormat:@" WHERE %@ like '%@' ", SHORTCUT_STRING_COL, [StringUtilities databaseString:shortcutString]];
+  [query appendFormat:@" WHERE replace(%@,' ','') like replace('%@', ' ', '') ", SHORTCUT_STRING_COL, [StringUtilities databaseString:shortcutString]];
   
   NSInteger shortcutID = 0;
   NSArray *result = [db executeQuery:query];

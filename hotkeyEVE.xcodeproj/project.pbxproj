@@ -29,6 +29,8 @@
 		CD5A46D016463E64007B57A5 /* IndexingController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46CF16463E64007B57A5 /* IndexingController.m */; };
 		CD5A46F516464F7E007B57A5 /* EVEObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46F416464F7E007B57A5 /* EVEObserver.m */; };
 		CD5A46F816465123007B57A5 /* UIElementClickedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46F716465123007B57A5 /* UIElementClickedController.m */; };
+		CD602C77164F896A00CF32A4 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
+		CD602C79164F89BB00CF32A4 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
 		CD6AD392164BFE9D009FF1B5 /* LicenceWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AD38F164BFE9D009FF1B5 /* LicenceWindow.xib */; };
 		CD6AD395164C047E009FF1B5 /* LicenceWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD394164C047E009FF1B5 /* LicenceWindowController.m */; };
 		CD6AD3BC164C17E9009FF1B5 /* GUIUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD3BB164C17E9009FF1B5 /* GUIUtilities.m */; };
@@ -144,6 +146,16 @@
 			files = (
 				CD6AD3EA164CC178009FF1B5 /* Sparkle.framework in CopyFiles */,
 				CD57865216465E2600CC508B /* Growl.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD602C78164F89A000CF32A4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CD602C79164F89BB00CF32A4 /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +317,7 @@
 			files = (
 				CD80E7711645393400A9C7D8 /* SenTestingKit.framework in Frameworks */,
 				CD80E7721645393400A9C7D8 /* Cocoa.framework in Frameworks */,
+				CD602C77164F896A00CF32A4 /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,6 +705,7 @@
 				CD80E76B1645393400A9C7D8 /* Frameworks */,
 				CD80E76C1645393400A9C7D8 /* Resources */,
 				CD80E76D1645393400A9C7D8 /* ShellScript */,
+				CD602C78164F89A000CF32A4 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1048,7 +1062,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/hotkeyEVE.app/Contents/MacOS/hotkeyEVE";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/hotkeyEVE/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotkeyEVE/hotkeyEVE-Prefix.pch";
 				INFOPLIST_FILE = "hotkeyEVETests/hotkeyEVETests-Info.plist";
@@ -1063,7 +1080,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/hotkeyEVE.app/Contents/MacOS/hotkeyEVE";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/hotkeyEVE/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotkeyEVE/hotkeyEVE-Prefix.pch";
 				INFOPLIST_FILE = "hotkeyEVETests/hotkeyEVETests-Info.plist";

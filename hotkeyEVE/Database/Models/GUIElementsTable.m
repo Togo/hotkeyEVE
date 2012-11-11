@@ -21,6 +21,8 @@
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@" SELECT * FROM %@ ", GUI_ELEMENTS_TABLE];
   [query appendFormat:@" WHERE %@ like '%@' ", IDENTIFIER_COL, [element uiElementIdentifier]];
+  [query appendFormat:@" OR ( %@ like '%@' ", COCOA_IDENTIFIER_COL, [element cocoaIdentifierString]];
+  [query appendFormat:@" AND   %@ != '' ) ", COCOA_IDENTIFIER_COL];
   [query appendFormat:@" AND %@ = %li ", APPLICATION_ID_COL, appID];
   
   DDLogVerbose(@"query: %@", query);
@@ -28,8 +30,6 @@
   if ([result count] == 0) {
     [query setString:@""];
     [query appendFormat:@" SELECT * FROM %@ ", GUI_ELEMENTS_TABLE];
-    [query appendFormat:@" WHERE %@ like '%@' ", COCOA_IDENTIFIER_COL, [element cocoaIdentifier]];
-    [query appendFormat:@" AND   %@ != '' ", COCOA_IDENTIFIER_COL];
     [query appendFormat:@" AND %@ = %li ", APPLICATION_ID_COL, appID];
     result = [db executeQuery:query];
   }

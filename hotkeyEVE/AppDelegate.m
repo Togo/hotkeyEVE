@@ -33,13 +33,12 @@
   NSLog(@"EVE has been started");
   NSLog(@"Lang: %@", [EVEUtilities currentLanguage]);
   NSLog(@"User: %@ ", NSUserName());
+   [self startLogging];
   
   [self openDatabase];
   [self initGUIElementTable];
   
   eveAppManager =  [EVEManager sharedEVEManager];
-  
-  [self startLogging];
   
   [self checkAccessibilityAPIEnabled];
   

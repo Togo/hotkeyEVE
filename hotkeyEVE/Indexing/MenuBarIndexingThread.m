@@ -57,6 +57,8 @@
     
     [self indexUIElements :app];
     
+    [GUIElementsTable updateGUIElementTable];
+    
     DDLogInfo(@"Finished Menu Bar Indexing of: %@", bundleIdentifier);
     
     _indexingActive = NO;
@@ -65,7 +67,6 @@
 
 - (void) saveAppData :(Application*) app {
   [ApplicationsTableModel insertApp :app];
-  [GUIElementsTable updateGUIElementTable];
 }
 
 - (void) indexUIElements :(Application*) app {
