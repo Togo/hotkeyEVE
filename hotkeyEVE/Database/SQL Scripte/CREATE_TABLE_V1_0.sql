@@ -14,6 +14,7 @@ CREATE TABLE menu_bar_items (
 	element_title TEXT,
 	element_help TEXT,
 	parent_title TEXT,
+	lang TEXT,
 	shortcut_id INTEGER REFERENCES shortcuts(id),
 	application_id INTEGER REFERENCES applications(id),
 	UNIQUE(identifier) ON CONFLICT REPLACE

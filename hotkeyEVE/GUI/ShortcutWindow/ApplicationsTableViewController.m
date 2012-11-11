@@ -46,8 +46,10 @@
 - (void) tableViewSelectionDidChange:(NSNotification *)aNotification {
     DDLogInfo(@"ApplicationsTableViewController: %@", [aNotification name]);
     NSInteger selectedRow = [[aNotification object] selectedRow];
+  if (selectedRow != -1) {
     Application *selectedApp = [applications objectAtIndex:selectedRow];
     [[NSNotificationCenter defaultCenter] postNotificationName:ShortcutsWindowApplicationDidChanged object:selectedApp];
+  }
 }
 
 @end
