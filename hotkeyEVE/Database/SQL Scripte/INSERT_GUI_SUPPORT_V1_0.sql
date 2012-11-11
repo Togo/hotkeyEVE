@@ -4,3 +4,5 @@ INSERT INTO "gui_supported_apps" VALUES (3, 'Chrome', 'com.google.Chrome', 'en')
 INSERT INTO "gui_supported_apps" VALUES (4, 'Safari', 'com.apple.Safari', 'en');
 INSERT INTO "gui_supported_apps" VALUES (5, 'Calendar', 'com.apple.iCal', 'en');
 INSERT INTO "gui_supported_apps" VALUES (6, 'Finder', 'com.apple.finder', 'de');
+INSERT INTO "gui_supported_apps" VALUES (7, 'Chrome', 'com.google.Chrome', 'de');
+INSERT INTO "gui_supported_apps" VALUES (8, 'Calendar', 'com.apple.iCal', 'de');
