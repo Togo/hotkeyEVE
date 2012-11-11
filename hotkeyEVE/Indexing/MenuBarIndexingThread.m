@@ -12,6 +12,7 @@
 #import "MenuBarTableModel.h"
 #import "ShortcutTableModel.h"
 #import "ApplicationsTableModel.h"
+#import "GUIElementsTable.h"
 
 @implementation MenuBarIndexingThread
 
@@ -64,6 +65,7 @@
 
 - (void) saveAppData :(Application*) app {
   [ApplicationsTableModel insertApp :app];
+  [GUIElementsTable updateGUIElementTable];
 }
 
 - (void) indexUIElements :(Application*) app {

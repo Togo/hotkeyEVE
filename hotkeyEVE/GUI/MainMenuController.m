@@ -39,10 +39,10 @@
   [statusItem setImage:guiSupportIcon];
   
   [_startAtLoginItem setState:[UserDataTableModel selectStartAtLogin :NSUserName()]];
-//  [self startAtLogin:_startAtLoginItem];
   
   // remove licence key and get pro version if full version
   if ([[[EVEManager sharedEVEManager] licence] isValid]) {
+    [statusMenu removeItem:_proVersionSeparator];
     [statusMenu removeItem:enterLicenceItem];
     [statusMenu removeItem:getProVersionItem];
   }
@@ -121,6 +121,7 @@
     [sender setState:NSOffState];
     [EVEUtilities removeAppFromLoginItems];
   }
+  [UserDataTableModel setStartAtLogin :[sender state]];
 }
 
 @end

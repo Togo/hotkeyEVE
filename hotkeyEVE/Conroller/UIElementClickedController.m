@@ -42,7 +42,7 @@
     
     if (messageDisplayed) {
       messageCount++;
-      if (messageCount >= 3
+      if (messageCount >= 5
           && ![[[EVEManager sharedEVEManager] licence] isValid]) {
         messageCount = 0;
         [EVEMessages showGrowRegistrationMessage];

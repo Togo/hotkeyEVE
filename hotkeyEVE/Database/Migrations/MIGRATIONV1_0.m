@@ -11,11 +11,11 @@
 @implementation MIGRATIONV1_0
 
 - (void) up {
-  FMDatabase *database =  [[[DatabaseManager sharedDatabaseManager] eveDatabase] database];
-  [self executeScript:@"CREATE_TABLE_V1_0" :@"sql" :@"" :database];
-  [NSThread sleepForTimeInterval:0.5];
-  [self executeScript:@"INSERT_GUI_SUPPORT_V1_0" :@"sql" :@"" :database];
-  [self executeScript:@"INSERT_GUI_ELEMENTS_V1_0" :@"sql" :@"" :database];
+  CoreDatabase *db =  [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  [db executeScript:@"CREATE_TABLE_V1_0" :@"sql" :@""];
+  [NSThread sleepForTimeInterval:3];
+  [db executeScript:@"INSERT_GUI_SUPPORT_V1_0" :@"sql" :@""];
+  [db executeScript:@"INSERT_GUI_ELEMENTS_V1_0" :@"sql" :@""];
 }
 
 - (void)down {

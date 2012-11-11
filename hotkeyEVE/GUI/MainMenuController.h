@@ -17,12 +17,16 @@
     IBOutlet NSMenuItem *enterLicenceItem;
     IBOutlet NSMenuItem *getProVersionItem;
   __unsafe_unretained NSMenuItem *_startAtLoginItem;
+  __unsafe_unretained NSMenuItem *_proVersionSeparator;
+  
 }
 
 @property (strong)             NSStatusItem *statusItem;
 @property (strong, nonatomic)  Application *activeApplication;
 @property (strong, nonatomic)  NSImage *guiSupportIcon;
 @property (strong, nonatomic)  NSImage *noGUISupportIcon;
+@property (unsafe_unretained) IBOutlet NSMenuItem *proVersionSeparator;
+
 
 @property (unsafe_unretained) IBOutlet NSMenuItem *startAtLoginItem;
 
@@ -34,5 +38,4 @@
 
 - (IBAction) showLicenceKeyWindow :(id) sender;
 - (IBAction) getProVersion :(id)sender;
-
 @end

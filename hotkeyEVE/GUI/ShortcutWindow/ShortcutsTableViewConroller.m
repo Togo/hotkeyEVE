@@ -51,8 +51,10 @@
 - (void) tableViewSelectionDidChange:(NSNotification *)aNotification {
   DDLogInfo(@"ShortcutsTableViewConroller: %@", [aNotification name]);
   NSInteger selectedRow = [[aNotification object] selectedRow];
-  NSDictionary *selectedTableRow = [shortcutList objectAtIndex:selectedRow];
-  [[NSNotificationCenter defaultCenter] postNotificationName:ShortcutWindowShortcutSelectionChanged object:selectedTableRow];
+  if (selectedRow != -1) {
+    NSDictionary *selectedTableRow = [shortcutList objectAtIndex:selectedRow];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ShortcutWindowShortcutSelectionChanged object:selectedTableRow];
+  }
 }
 
 @end

@@ -18,10 +18,21 @@
   [query appendFormat:@"VALUES ( "];
   [query appendFormat:@" NULL "];
   [query appendFormat:@" , '%@' ", user];
-  [query appendFormat:@" , 1); "];
+  [query appendFormat:@" , 0 ); "];
   
   [db executeUpdate:query];
+}
 
++ (void) setStartAtLogin :(NSInteger) state {
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSMutableString *query = [NSMutableString string];
+  [query appendFormat:@"UPDATE %@", USER_DATA_TABLE];
+  [query appendFormat:@" SET "];
+  [query appendFormat:@" %@ = %li ", START_AT_LOGIN_COL, state];
+  [query appendFormat:@" WHERE %@ = '%@' ", USER_NAME_COL, NSUserName()];
+  
+  [db executeUpdate:query];
 }
 
 + (NSInteger) getUserID :(NSString*) userName {

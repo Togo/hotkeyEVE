@@ -14,5 +14,5 @@
 
 + (NSInteger) getUserID :(NSString*) userName;
 + (NSInteger) selectStartAtLogin :(NSString*) userName;
-
++ (void) setStartAtLogin :(NSInteger) state;
 @end
