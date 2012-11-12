@@ -34,11 +34,11 @@
 }
 
 - (IBAction)registerButton:(id)sender {
-  NSString *aLicenceString = [liceneKeyTextField stringValue];
-  NSString *theEmaiAddress = [eMailTextField stringValue];
+  NSString *aLicenceString = [[liceneKeyTextField stringValue] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+  NSString *theEmailAddress = [[eMailTextField stringValue]stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
   
   Licence *licencing = [[EVEManager sharedEVEManager] licence];
-  NSString *receivedMessage = [licencing registerAVersion :aLicenceString :theEmaiAddress];
+  NSString *receivedMessage = [licencing registerAVersion :aLicenceString :theEmailAddress];
   
   if ([receivedMessage isEqualToString:@"Ok"]) {
     NSAlert *alert = [NSAlert alertWithMessageText:@"You registration was successfull. \nEVE needs now a restart!"
