@@ -1290,14 +1290,6 @@
 			<object class="NSMenu" id="722780090">
 				<string key="NSTitle">Status Bar</string>
 				<array class="NSMutableArray" key="NSMenuItems">
-					<object class="NSMenuItem" id="909476557">
-						<reference key="NSMenu" ref="722780090"/>
-						<string key="NSTitle">Scan</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="35465992"/>
-						<reference key="NSMixedImage" ref="502551668"/>
-					</object>
 					<object class="NSMenuItem" id="552501602">
 						<reference key="NSMenu" ref="722780090"/>
 						<string key="NSTitle">Pause</string>
@@ -2099,22 +2091,6 @@
 						<reference key="destination" ref="722780090"/>
 					</object>
 					<int key="connectionID">543</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">scanForShortcuts:</string>
-						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="909476557"/>
-					</object>
-					<int key="connectionID">550</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">scanForShortcutsItem</string>
-						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="909476557"/>
-					</object>
-					<int key="connectionID">551</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -3208,9 +3184,7 @@
 						<reference key="object" ref="722780090"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="970915237"/>
-							<reference ref="909476557"/>
 							<reference ref="464496964"/>
-							<reference ref="552501602"/>
 							<reference ref="497934724"/>
 							<reference ref="731032011"/>
 							<reference ref="869841414"/>
@@ -3218,6 +3192,7 @@
 							<reference ref="522652407"/>
 							<reference ref="302069521"/>
 							<reference ref="123333152"/>
+							<reference ref="552501602"/>
 							<reference ref="761728911"/>
 						</array>
 						<reference key="parent" ref="0"/>
@@ -3280,11 +3255,6 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">586</int>
 						<reference key="object" ref="761728911"/>
-						<reference key="parent" ref="722780090"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">549</int>
-						<reference key="object" ref="909476557"/>
 						<reference key="parent" ref="722780090"/>
 					</object>
 				</array>
@@ -3437,7 +3407,6 @@
 				<string key="539.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="544.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="547.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="549.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="553.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="554.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="56.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3468,7 +3437,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">586</int>
+			<int key="maxID">588</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3485,15 +3454,35 @@
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="getProVersion:">id</string>
+						<string key="pauseEve:">id</string>
+						<string key="scanForShortcuts:">id</string>
 						<string key="showLicenceKeyWindow:">id</string>
+						<string key="showShortcutsWindow:">id</string>
+						<string key="startAtLogin:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="getProVersion:">
 							<string key="name">getProVersion:</string>
 							<string key="candidateClassName">id</string>
 						</object>
+						<object class="IBActionInfo" key="pauseEve:">
+							<string key="name">pauseEve:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="scanForShortcuts:">
+							<string key="name">scanForShortcuts:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="showLicenceKeyWindow:">
 							<string key="name">showLicenceKeyWindow:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="showShortcutsWindow:">
+							<string key="name">showShortcutsWindow:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="startAtLogin:">
+							<string key="name">startAtLogin:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>

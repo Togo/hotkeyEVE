@@ -21,7 +21,7 @@
 - (void) reveicedUIElementClick :(UIElement*) element {
   // Update Status Icon
   if( ![[[element owner] bundleIdentifier] isEqualToString:[lastActiveApp bundleIdentifier]] ) {
-    BOOL appWithGUISupport = [GUISupportTableModel hasGUISupport:[[element owner] bundleIdentifier]];
+   BOOL appWithGUISupport = [GUISupportTableModel hasGUISupport:[[element owner] bundleIdentifier]];
     [[[EVEManager sharedEVEManager] mainMenuController] updateStatusIcon:appWithGUISupport];
     lastActiveApp = [element owner];
     lastActiveApp.guiSupport = appWithGUISupport;

@@ -25,7 +25,7 @@
 @synthesize noGUISupportIcon;
 
 
--(void)awakeFromNib {
+- (void)awakeFromNib {
   self.guiSupportIcon = [NSImage imageNamed:@"EVE_ICON_STATUS_BAR_ACTIVE.icns"];
   [guiSupportIcon setSize:NSMakeSize(14, 14)];
   
@@ -35,7 +35,6 @@
   self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
   [statusItem setHighlightMode:YES];
   [statusItem setMenu:statusMenu];
-  [statusItem setImage:guiSupportIcon];
   [statusItem setImage:guiSupportIcon];
   
   [_startAtLoginItem setState:[UserDataTableModel selectStartAtLogin :NSUserName()]];
