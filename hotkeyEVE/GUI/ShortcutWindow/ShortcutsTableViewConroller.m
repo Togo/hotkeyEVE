@@ -8,6 +8,8 @@
 
 #import "ShortcutsTableViewConroller.h"
 #import "MenuBarTableModel.h"
+#import "UserDataTableModel.h"
+#import "DisabledShortcutsModel.h"
 
 @implementation ShortcutsTableViewConroller
 
@@ -19,7 +21,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(applicationChanged:)
                                                  name:ShortcutsWindowApplicationDidChanged object:nil];
-
   }
   
   return self;
@@ -43,12 +44,58 @@
 }
 
 - (id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+  
   NSDictionary *aDatabaseRow = [shortcutList objectAtIndex:row];
   NSString *identifier = [tableColumn identifier];
-  return [aDatabaseRow valueForKey:identifier];
+  
+  if (   [identifier isEqualToString:DISABLED_SHORTCUT_DYN_COL]
+      || [identifier isEqualToString:GLOB_DISABLED_SHORTCUT_DYN_COL] )  {
+      return [self inverseBoolValue :[[aDatabaseRow valueForKey:identifier] intValue]];
+  } else {
+    return [aDatabaseRow valueForKey:identifier];
+  }
 }
 
-- (void) tableViewSelectionDidChange:(NSNotification *)aNotification {
+- (void)tableView:(NSTableView *)aTableView setObjectValue:(id)anObject forTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
+  
+    NSNumber *state = [self inverseBoolValue:[anObject intValue]]; // database view
+  
+    [[shortcutList objectAtIndex:rowIndex] setObject:state forKey:[aTableColumn identifier]];
+    NSInteger shortcutID = [[[shortcutList objectAtIndex:rowIndex] valueForKey:SHORTCUT_ID_COL] intValue];
+    NSInteger appID = [[[shortcutList objectAtIndex:rowIndex] valueForKey:APPLICATION_ID_COL] intValue];
+    NSInteger userID = [UserDataTableModel getUserID:NSUserName()];
+    NSString *title = [[shortcutList objectAtIndex:rowIndex] valueForKey:TITLE_COL];
+  
+    // Ok the gui checkboxes are inversed against the database. If i have a entry in the disabled_database the checkbox in the gui is disabled. So if you enable the checkbox in the gui you have to delete the entry from the database. The shortcut is active.
+  if ([[aTableColumn identifier] isEqualToString:DISABLED_SHORTCUT_DYN_COL]) {
+    if ([state intValue] == NSOnState)  // 1
+      [DisabledShortcutsModel disableShortcut :shortcutID :appID :userID :title];
+    else
+      [DisabledShortcutsModel enableShortcut :shortcutID :appID :userID :title];
+    
+    } else if ([[aTableColumn identifier] isEqualToString:GLOB_DISABLED_SHORTCUT_DYN_COL]) {
+    // disable in all apps
+    if ([state intValue] == NSOnState) {
+      // remove from database
+      [DisabledShortcutsModel disableShortcutInAllApps :shortcutID :title];
+      // and activate the first checkbox
+    } else {
+      [DisabledShortcutsModel enableShortcutInAllApps :shortcutID :title];
+      // and disable the first checkbox
+    }
+    [[shortcutList objectAtIndex:rowIndex] setObject:[self inverseBoolValue:[anObject intValue]] forKey:DISABLED_SHORTCUT_DYN_COL];
+    [shortcutTable reloadData];
+  }
+}
+
+- (NSNumber*) inverseBoolValue :(NSInteger) value {
+  if (value == NSOnState)
+    return [NSNumber numberWithInt:NSOffState];
+  else
+    return [NSNumber numberWithInt:NSOnState];
+}
+
+- (void) tableViewSelectionDidChange :(NSNotification *)aNotification {
   DDLogInfo(@"ShortcutsTableViewConroller: %@", [aNotification name]);
   NSInteger selectedRow = [[aNotification object] selectedRow];
   if (selectedRow != -1) {

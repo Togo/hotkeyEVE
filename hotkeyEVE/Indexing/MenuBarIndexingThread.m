@@ -13,6 +13,7 @@
 #import "ShortcutTableModel.h"
 #import "ApplicationsTableModel.h"
 #import "GUIElementsTable.h"
+#import "DisabledShortcutsModel.h"
 
 @implementation MenuBarIndexingThread
 
@@ -49,24 +50,19 @@
 - (void) runIndexing {
   if(!_indexingActive && [self count] > 0) {
     _indexingActive = YES;
-    NSString *bundleIdentifier = [self dequeue];
     
-    Application *app = [[Application alloc] initWithBundleIdentifier:bundleIdentifier];
- 
-    [self saveAppData :app];
+    Application *app = [self dequeue];
     
     [self indexUIElements :app];
     
     [GUIElementsTable updateGUIElementTable];
     
-    DDLogInfo(@"Finished Menu Bar Indexing of: %@", bundleIdentifier);
+    [DisabledShortcutsModel disableShortcutsInNewApp :app];
+    
+    DDLogInfo(@"Finished Menu Bar Indexing of: %@", [app appName]);
     
     _indexingActive = NO;
   }
-}
-
-- (void) saveAppData :(Application*) app {
-  [ApplicationsTableModel updateApplicationTable :app];
 }
 
 - (void) indexUIElements :(Application*) app {

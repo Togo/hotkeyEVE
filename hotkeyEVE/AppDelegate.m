@@ -77,7 +77,7 @@
 }
 
 - (void) startIndexing {
-  [[eveAppManager indexing] indexingAllApps];
+  [[eveAppManager appLaunched] indexingAllApps];
 }
 
 - (void) registerListener {

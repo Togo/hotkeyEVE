@@ -139,9 +139,9 @@
 		if (item){
 			CFRelease(item);
     }
+    
+  CFRelease(loginItems);
 	}
-  
-	CFRelease(loginItems);
 }
 
 + (void) removeAppFromLoginItems {
@@ -160,7 +160,7 @@
 		//Retrieve the list of Login Items and cast them to
 		// a NSArray so that it will be easier to iterate.
 		NSArray  *loginItemsArray = (__bridge NSArray *)LSSharedFileListCopySnapshot(loginItems, &seedValue);
-		for(int i = 0 ; i< [loginItemsArray count]; i++){
+		for(int i = 0 ; i< [loginItemsArray count]; i++) {
 			LSSharedFileListItemRef itemRef = (__bridge LSSharedFileListItemRef)[loginItemsArray
                                                                            objectAtIndex:i];
 			//Resolve the item with URL

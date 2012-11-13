@@ -18,7 +18,6 @@
 - (void) restartIndexing;
 - (void) stopIndexing;
 
-- (void) indexingAllApps;
 - (void) indexingApp :(Application*) app;
 
 @end

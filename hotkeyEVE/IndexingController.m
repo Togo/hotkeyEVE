@@ -31,16 +31,8 @@
   [indexingThread stopIndexing];
 }
 
-- (void) indexingAllApps {
-  DDLogInfo(@"Start Indexing all Apps");
-  NSArray *runningApplications = [[NSWorkspace sharedWorkspace] runningApplications];
-  for (id aApp in runningApplications) {
-    [indexingThread enqueueUnique:[aApp bundleIdentifier]];
-  }
-}
-
 - (void) indexingApp :(Application*) app {
-  [indexingThread enqueueUnique:[app bundleIdentifier]];
+  [indexingThread enqueueUnique:app];
 }
 
 @end

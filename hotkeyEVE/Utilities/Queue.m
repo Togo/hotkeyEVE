@@ -28,7 +28,7 @@
   for (id oneObject in m_array) {
     // other classes as string
 
-    if ([oneObject isEqualToString:anObject]) {      
+    if ([[oneObject bundleIdentifier] isEqualToString:[anObject bundleIdentifier]]) {
       return;
     }
   }
@@ -38,7 +38,6 @@
 
 - (void)enqueue:(id)anObject {
  if (anObject != NULL ) {
-
 	[m_array addObject:anObject];
 	count = [m_array count];
  }

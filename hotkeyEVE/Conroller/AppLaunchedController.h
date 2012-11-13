@@ -10,6 +10,7 @@
 
 @interface AppLaunchedController : NSObject
 
+- (void) indexingAllApps;
 - (void) newAppLaunched :(NSString*) bundleIdentifier;
 
 @end

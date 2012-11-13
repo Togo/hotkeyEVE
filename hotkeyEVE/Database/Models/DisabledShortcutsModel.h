@@ -10,13 +10,14 @@
 
 @interface DisabledShortcutsModel : NSObject
 
-+ (void) disableShortcut :appName :bundleIdentifier :shortcutString :user;
-+ (void) disableShortcut :(NSInteger) shortcutID :(NSInteger) appID  :(NSInteger) userID;
-+ (void) disableShortcutInAllApps :(NSInteger) shortcutID;
++ (void) disableShortcutWithStrings :(NSString*) appName :(NSString*) bundleIdentifier :(NSString*)shortcutString :(NSString*) user :(NSString*) elementTitle;
++ (void) disableShortcut :(NSInteger) shortcutID :(NSInteger) appID  :(NSInteger) userID :(NSString*) elementTitle;
++ (void) disableShortcutInAllApps :(NSInteger) shortcutID :(NSString*) title;
++ (void) disableShortcutsInNewApp :(Application*) app;
 
-+ (void) enableShortcut :(NSInteger) shortcutID :(NSInteger) appID  :(NSInteger) userID;
-+ (void) enableShortcutInAllApps :(NSInteger) shortcutID;
++ (void) enableShortcut :(NSInteger) shortcutID :(NSInteger) appID  :(NSInteger) userID :(NSString*) title;
++ (void) enableShortcutInAllApps :(NSInteger) shortcutID :(NSString*) title;
 
 + (BOOL) isShortcutDisabled :(UIElement*) element :(NSInteger) shortcutID;
-+ (BOOL) isShortcutDisabled :(NSInteger) shortcutID :(NSInteger) appID  :(NSInteger) userID;
++ (BOOL) isShortcutDisabled :(NSInteger) shortcutID :(NSInteger) appID  :(NSInteger) userID :(NSString*) title;
 @end

@@ -68,7 +68,17 @@ CREATE TABLE disabled_shortcuts (
 	application_id INTEGER REFERENCES applications(id),
 	shortcut_id INTEGER REFERENCES shortcuts(id),
 	user_id INTEGER REFERENCES user_data(id),
-	UNIQUE(application_id, shortcut_id, user_id) ON CONFLICT REPLACE
+	element_title TEXT, 
+	UNIQUE(application_id, shortcut_id, user_id, element_title) ON CONFLICT REPLACE
+);
+
+DROP TABLE global_disabled_shortcuts;
+CREATE TABLE global_disabled_shortcuts (
+	id INTEGER PRIMARY KEY,
+	shortcut_id INTEGER REFERENCES shortcuts(id),
+	user_id INTEGER REFERENCES user_data(id),
+	element_title TEXT, 
+	UNIQUE(shortcut_id, user_id, element_title) ON CONFLICT REPLACE
 );
 
 DROP TABLE gui_supported_apps;

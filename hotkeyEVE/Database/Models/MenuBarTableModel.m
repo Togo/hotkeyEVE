@@ -12,6 +12,7 @@
 #import "ShortcutTableModel.h"
 #import "ApplicationsTableModel.h"
 #import "EVEUtilities.h"
+#import "UserDataTableModel.h"
 
 @implementation MenuBarTableModel
 
@@ -35,8 +36,6 @@
       [query appendFormat:@" ,  %li ", shortcutID];
       [query appendFormat:@" ,  %li ", applicationID];
       [query appendFormat:@" ); "];
-      
-      
       
       [db executeUpdate:query];
     }
@@ -109,17 +108,34 @@
   [query appendFormat:@" WHERE %@.application_id = %li ", MENU_BAR_ITEMS_TABLE, applicationID];
   [query appendFormat:@" AND %@.shortcut_id != 0 ", MENU_BAR_ITEMS_TABLE];
   [query appendFormat:@" AND %@.%@ like '%@' ", MENU_BAR_ITEMS_TABLE, LANG_COL, [EVEUtilities currentLanguage]];
+  
   DDLogVerbose(@"query: %@", query);
   NSArray *result = [db executeQuery:query];
+  
   return [result count];
 }
 
 + (NSArray*) getTitlesAndShortcuts :(Application*) aApp {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
+  NSInteger userID = [UserDataTableModel getUserID:NSUserName()];
   // First get all Title and Shortcut Strings for this App
   NSMutableString *query = [NSMutableString string];
-  [query appendFormat:@" SELECT m.*, s.%@  ", SHORTCUT_STRING_COL];
+  [query appendFormat:@" SELECT m.*, s.%@,   ", SHORTCUT_STRING_COL];
+  
+  [query appendFormat:@"    (  SELECT count(*) "];
+  [query appendFormat:@"      FROM %@ ds ", DISABLED_SHORTCUTS_TABLE];
+  [query appendFormat:@"      WHERE ds.%@ = s.%@ ", SHORTCUT_ID_COL, ID_COL];
+  [query appendFormat:@"      AND   ds.%@ = m.%@ ", APPLICATION_ID_COL, APPLICATION_ID_COL];
+  [query appendFormat:@"      AND   ds.%@ = m.%@ ", TITLE_COL, TITLE_COL];
+  [query appendFormat:@"      AND   ds.%@ = %li ) AS %@, ", USER_ID_COL, userID, DISABLED_SHORTCUT_DYN_COL];
+  
+  [query appendFormat:@"    (  SELECT count(*) "];
+  [query appendFormat:@"      FROM %@ ds ", GLOB_DISABLED_SHORTCUTS_TABLE];
+  [query appendFormat:@"      WHERE ds.%@ = s.%@ ", SHORTCUT_ID_COL, ID_COL];
+  [query appendFormat:@"      AND   ds.%@ = m.%@ ", TITLE_COL, TITLE_COL];
+  [query appendFormat:@"      AND   ds.%@ = %li ) AS %@ ", USER_ID_COL, userID, GLOB_DISABLED_SHORTCUT_DYN_COL];
+  
   [query appendFormat:@" FROM %@ m, %@ s ", MENU_BAR_ITEMS_TABLE, SHORTCUTS_TABLE];
   [query appendFormat:@" WHERE m.%@ = %li ", APPLICATION_ID_COL, [aApp appID]];
   [query appendFormat:@" AND s.%@ = m.%@ ", ID_COL, SHORTCUT_ID_COL];
@@ -127,6 +143,7 @@
   [query appendFormat:@" ORDER BY m.%@, s.%@, m.%@", PARENT_TITLE_COL, SHORTCUT_STRING_COL,TITLE_COL ];
   
   NSArray *result = [db executeQuery:query];
+  
   return result;
 }
 

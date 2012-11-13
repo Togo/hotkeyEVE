@@ -11,7 +11,7 @@
 
 @implementation ApplicationsTableViewController
 
-- (id)init {
+- (id) init {
   self = [super init];
   if (self) {
     applications  = [ApplicationsTableModel getAllApplicationsObjects];
@@ -43,7 +43,7 @@
     return cellView;
 }
 
-- (void) tableViewSelectionDidChange:(NSNotification *)aNotification {
+- (void) tableViewSelectionDidChange :(NSNotification *)aNotification {
     DDLogInfo(@"ApplicationsTableViewController: %@", [aNotification name]);
     NSInteger selectedRow = [[aNotification object] selectedRow];
   if (selectedRow != -1) {

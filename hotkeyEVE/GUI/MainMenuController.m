@@ -53,13 +53,13 @@
   activeApplication = [EVEUtilities activeApplication];
   
   NSInteger count = [MenuBarTableModel countShortcuts:activeApplication];
-  NSString *title = [NSString stringWithFormat:@"Scan %@ (%li)", [activeApplication appName], count];
-  [scanForShortcutsItem setTitle:title];
+  NSString *title = [NSString stringWithFormat:@"%@ (%li)", [activeApplication appName], count];
+  [activeApp setTitle:title];
 }
 
-- (IBAction) scanForShortcuts :(id) sender {
-  [[[EVEManager sharedEVEManager] indexing] indexingApp:activeApplication];
-}
+//- (IBAction) scanForShortcuts :(id) sender {
+//  [[[EVEManager sharedEVEManager] indexing] indexingApp:activeApplication];
+//}
 
 - (IBAction) pauseEve:(id)sender {
   EVEManager *manager = [EVEManager sharedEVEManager];
@@ -96,7 +96,7 @@
 
 - (IBAction) showShortcutsWindow :(id) sender {
   
-  if(!_liceneWindowController) {
+  if(!_shortcutsWindowController) {
     _shortcutsWindowController = [[ShortcutsWindowController alloc] initWithWindowNibName:@"ShortcutsWindow"];
   }
   
@@ -120,6 +120,7 @@
     [sender setState:NSOffState];
     [EVEUtilities removeAppFromLoginItems];
   }
+  
   [UserDataTableModel setStartAtLogin :[sender state]];
 }
 

@@ -16,5 +16,7 @@
 + (void) displayShortcutMessage :(UIElement*) element;
 + (void) displayMultipleMatchesMessage :(NSString*) description;
 
++ (void) showShortcutDisabledMessage :(NSDictionary*) clickContext;
+
 + (void) showGrowRegistrationMessage;
 @end

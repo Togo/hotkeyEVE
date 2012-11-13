@@ -1290,9 +1290,27 @@
 			<object class="NSMenu" id="722780090">
 				<string key="NSTitle">Status Bar</string>
 				<array class="NSMutableArray" key="NSMenuItems">
-					<object class="NSMenuItem" id="552501602">
+					<object class="NSMenuItem" id="61986794">
 						<reference key="NSMenu" ref="722780090"/>
-						<string key="NSTitle">Pause</string>
+						<string key="NSTitle">Active App</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
+					<object class="NSMenuItem" id="761728911">
+						<reference key="NSMenu" ref="722780090"/>
+						<bool key="NSIsDisabled">YES</bool>
+						<bool key="NSIsSeparator">YES</bool>
+						<string key="NSTitle"/>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
+					<object class="NSMenuItem" id="123333152">
+						<reference key="NSMenu" ref="722780090"/>
+						<string key="NSTitle">Shortcut Browser</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
@@ -1324,37 +1342,11 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="761728911">
-						<reference key="NSMenu" ref="722780090"/>
-						<bool key="NSIsDisabled">YES</bool>
-						<bool key="NSIsSeparator">YES</bool>
-						<string key="NSTitle"/>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="35465992"/>
-						<reference key="NSMixedImage" ref="502551668"/>
-					</object>
-					<object class="NSMenuItem" id="123333152">
-						<reference key="NSMenu" ref="722780090"/>
-						<string key="NSTitle">Shortcut Browser</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="35465992"/>
-						<reference key="NSMixedImage" ref="502551668"/>
-					</object>
 					<object class="NSMenuItem" id="522652407">
 						<reference key="NSMenu" ref="722780090"/>
 						<bool key="NSIsDisabled">YES</bool>
 						<bool key="NSIsSeparator">YES</bool>
 						<string key="NSTitle"/>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="35465992"/>
-						<reference key="NSMixedImage" ref="502551668"/>
-					</object>
-					<object class="NSMenuItem" id="302069521">
-						<reference key="NSMenu" ref="722780090"/>
-						<string key="NSTitle">Check for Updates</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
@@ -1368,11 +1360,35 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
+					<object class="NSMenuItem" id="552501602">
+						<reference key="NSMenu" ref="722780090"/>
+						<string key="NSTitle">Pause</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
+					<object class="NSMenuItem" id="302069521">
+						<reference key="NSMenu" ref="722780090"/>
+						<string key="NSTitle">Check for Updates</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
 					<object class="NSMenuItem" id="464496964">
 						<reference key="NSMenu" ref="722780090"/>
 						<bool key="NSIsDisabled">YES</bool>
 						<bool key="NSIsSeparator">YES</bool>
 						<string key="NSTitle"/>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
+					<object class="NSMenuItem" id="722193772">
+						<reference key="NSMenu" ref="722780090"/>
+						<string key="NSTitle">About hotkeyEVE</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
@@ -1435,6 +1451,14 @@
 						<reference key="destination" ref="1070365422"/>
 					</object>
 					<int key="connectionID">548</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">orderFrontStandardAboutPanel:</string>
+						<reference key="source" ref="1021"/>
+						<reference key="destination" ref="722193772"/>
+					</object>
+					<int key="connectionID">590</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -2171,6 +2195,14 @@
 						<reference key="destination" ref="497934724"/>
 					</object>
 					<int key="connectionID">582</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">activeApp</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="61986794"/>
+					</object>
+					<int key="connectionID">592</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -3188,12 +3220,14 @@
 							<reference ref="497934724"/>
 							<reference ref="731032011"/>
 							<reference ref="869841414"/>
-							<reference ref="574058972"/>
 							<reference ref="522652407"/>
 							<reference ref="302069521"/>
 							<reference ref="123333152"/>
-							<reference ref="552501602"/>
 							<reference ref="761728911"/>
+							<reference ref="552501602"/>
+							<reference ref="574058972"/>
+							<reference ref="722193772"/>
+							<reference ref="61986794"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -3255,6 +3289,16 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">586</int>
 						<reference key="object" ref="761728911"/>
+						<reference key="parent" ref="722780090"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">589</int>
+						<reference key="object" ref="722193772"/>
+						<reference key="parent" ref="722780090"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">591</int>
+						<reference key="object" ref="61986794"/>
 						<reference key="parent" ref="722780090"/>
 					</object>
 				</array>
@@ -3421,6 +3465,8 @@
 				<string key="583.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="584.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="586.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="589.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="591.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="74.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3437,7 +3483,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">588</int>
+			<int key="maxID">592</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3454,48 +3500,32 @@
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="getProVersion:">id</string>
-						<string key="pauseEve:">id</string>
-						<string key="scanForShortcuts:">id</string>
 						<string key="showLicenceKeyWindow:">id</string>
-						<string key="showShortcutsWindow:">id</string>
-						<string key="startAtLogin:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="getProVersion:">
 							<string key="name">getProVersion:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="pauseEve:">
-							<string key="name">pauseEve:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="scanForShortcuts:">
-							<string key="name">scanForShortcuts:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="showLicenceKeyWindow:">
 							<string key="name">showLicenceKeyWindow:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="showShortcutsWindow:">
-							<string key="name">showShortcutsWindow:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="startAtLogin:">
-							<string key="name">startAtLogin:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="activeApp">NSMenuItem</string>
 						<string key="enterLicenceItem">NSMenuItem</string>
 						<string key="getProVersionItem">NSMenuItem</string>
 						<string key="pauseMenuItem">NSMenuItem</string>
 						<string key="proVersionSeparator">NSMenuItem</string>
-						<string key="scanForShortcutsItem">NSMenuItem</string>
 						<string key="startAtLoginItem">NSMenuItem</string>
 						<string key="statusMenu">NSMenu</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="activeApp">
+							<string key="name">activeApp</string>
+							<string key="candidateClassName">NSMenuItem</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="enterLicenceItem">
 							<string key="name">enterLicenceItem</string>
 							<string key="candidateClassName">NSMenuItem</string>
@@ -3510,10 +3540,6 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="proVersionSeparator">
 							<string key="name">proVersionSeparator</string>
-							<string key="candidateClassName">NSMenuItem</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="scanForShortcutsItem">
-							<string key="name">scanForShortcutsItem</string>
 							<string key="candidateClassName">NSMenuItem</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="startAtLoginItem">

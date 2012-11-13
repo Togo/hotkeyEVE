@@ -12,7 +12,7 @@
 
 @interface MainMenuController : NSObject {
     IBOutlet NSMenu *statusMenu;
-    IBOutlet NSMenuItem *scanForShortcutsItem;
+    IBOutlet NSMenuItem *activeApp;
     IBOutlet NSMenuItem *pauseMenuItem;
     IBOutlet NSMenuItem *enterLicenceItem;
     IBOutlet NSMenuItem *getProVersionItem;

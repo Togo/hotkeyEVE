@@ -12,6 +12,9 @@
 @private
   IBOutlet NSTableView *shortcutTable;
   NSArray *shortcutList;
+  __unsafe_unretained NSButtonCell *_remindCheckBox;
 }
+
+@property (unsafe_unretained) IBOutlet NSButtonCell *remindCheckBox;
 
 @end

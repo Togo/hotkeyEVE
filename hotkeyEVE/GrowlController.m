@@ -9,6 +9,7 @@
 #import "GrowlController.h"
 #import "DisabledShortcutsModel.h"
 #import "EVEUtilities.h"
+#import "EVEMessages.h"
 
 @implementation GrowlController
 
@@ -20,13 +21,16 @@
       NSString *bundleIdentifier = [clickedContext valueForKey:@"BundleIdentifier"];
       NSString *shortcutString = [clickedContext valueForKey:@"ShortcutString"];
       NSString *user = [clickedContext valueForKey:@"User"];
+      NSString *title = [clickedContext valueForKey:@"element_title"];
       
-      [DisabledShortcutsModel disableShortcut :appName :bundleIdentifier :shortcutString :user];
+      [DisabledShortcutsModel disableShortcutWithStrings :appName :bundleIdentifier :shortcutString :user :title];
+      [EVEMessages showShortcutDisabledMessage :clickedContext];
       return;
     }
     
     if ([[clickedContext valueForKey:@"mesage_type"] isEqualToString:@"register_eve"]) {
       [EVEUtilities openWebShop];
+      return;
     }
   }
 }

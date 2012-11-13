@@ -41,7 +41,7 @@
     [description appendFormat:@"%@ \n", [element title]];
   }
   
-  [description appendFormat:@"\n (click to disable)"];
+  [description appendFormat:@"\n(click to disable)"];
   
   NSMutableDictionary *clickContextDic = [[NSMutableDictionary alloc] init];
   [clickContextDic setValue:@"disable_shortcut" forKey:@"mesage_type"];
@@ -49,6 +49,7 @@
   [clickContextDic setValue:[[element owner] bundleIdentifier] forKey:@"BundleIdentifier"];
   [clickContextDic setValue:[element shortcutString] forKey:@"ShortcutString"];
   [clickContextDic setValue:[element user] forKey:@"User"];
+  [clickContextDic setValue:[element title] forKey:@"element_title"];
   
   [GrowlApplicationBridge notifyWithTitle:[element shortcutString] description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:clickContextDic];
 }
@@ -63,6 +64,17 @@
 
 + (void) displayMultipleMatchesMessage :(NSString*) description {
   [GrowlApplicationBridge notifyWithTitle:@"Multiple Match" description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:nil];
+}
+
++ (void) showShortcutDisabledMessage :(NSDictionary*) clickContext {
+  NSString* appName  = [clickContext  valueForKey:@"appName"];
+  NSString* shortcut = [clickContext  valueForKey:@"ShortcutString"];
+  NSString* title    = [clickContext  valueForKey:@"element_title"];
+  
+  NSMutableString *description = [NSMutableString string];
+  [description appendFormat:@"%@ - >%@ \nin %@", title, shortcut, appName];
+
+  [GrowlApplicationBridge notifyWithTitle:@"Shortcut Disabled!" description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:nil];
 }
 
 @end
