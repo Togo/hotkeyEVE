@@ -35,13 +35,13 @@
 + (void) displayShortcutMessage :(UIElement*) element {
   NSMutableString *description = [[NSMutableString alloc] init];
   if ([[element help] length] > 0) {
-    [description appendFormat:@"%@ \n", [element help]];
+    [description appendFormat:@"%@\n", [element help]];
     
   } else {
-    [description appendFormat:@"%@ \n", [element title]];
+    [description appendFormat:@"%@\n", [element title]];
   }
   
-  [description appendFormat:@"\n(click to disable)"];
+  [description appendFormat:@"(click to disable)"];
   
   NSMutableDictionary *clickContextDic = [[NSMutableDictionary alloc] init];
   [clickContextDic setValue:@"disable_shortcut" forKey:@"mesage_type"];

@@ -25,17 +25,22 @@
 + (void) disableShortcut :(NSInteger) shortcutID :(NSInteger) appID  :(NSInteger) userID :(NSString*) elementTitle {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
 
-  NSMutableString *query = [NSMutableString string];
-  [query appendFormat:@"INSERT OR IGNORE INTO %@ ", DISABLED_SHORTCUTS_TABLE];
-  [query appendFormat:@"VALUES ( "];
-  [query appendFormat:@" NULL "];
-  [query appendFormat:@" , %li ", appID];
-  [query appendFormat:@" , %li ", shortcutID];
-  [query appendFormat:@" , %li ", userID];
-  [query appendFormat:@" , '%@' ", elementTitle];
-  [query appendFormat:@" ); "];
-
-  [db executeUpdate:query];
+  if (shortcutID == 0
+      || appID == 0) {
+    DDLogError(@"disableShortcut: Can't disable shortcut >>> appID: %li  shortcutID: %li <<<", appID, shortcutID);
+  } else {
+    NSMutableString *query = [NSMutableString string];
+    [query appendFormat:@"INSERT OR IGNORE INTO %@ ", DISABLED_SHORTCUTS_TABLE];
+    [query appendFormat:@"VALUES ( "];
+    [query appendFormat:@" NULL "];
+    [query appendFormat:@" , %li ", appID];
+    [query appendFormat:@" , %li ", shortcutID];
+    [query appendFormat:@" , %li ", userID];
+    [query appendFormat:@" , '%@' ", elementTitle];
+    [query appendFormat:@" ); "];
+    
+    [db executeUpdate:query];
+  }
 }
 
 + (void) disableShortcutInAllApps :(NSInteger) shortcutID :(NSString*) title {
@@ -78,7 +83,7 @@
 + (void) enableShortcutInAllApps :(NSInteger) shortcutID :(NSString*) title {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
-  NSInteger userID = [UserDataTableModel getUserID:NSUserName()];
+    NSInteger userID = [UserDataTableModel getUserID:NSUserName()];
   
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@"DELETE FROM %@ ", GLOB_DISABLED_SHORTCUTS_TABLE];
