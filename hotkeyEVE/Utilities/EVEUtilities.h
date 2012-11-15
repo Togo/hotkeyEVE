@@ -18,4 +18,5 @@
 + (void) addAppToLoginItems;
 + (void) removeAppFromLoginItems;
 + (void) openWebShop;
++ (void) checkAccessibilityAPIEnabled;
 @end

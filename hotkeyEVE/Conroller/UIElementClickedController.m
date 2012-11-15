@@ -29,10 +29,10 @@
   
   if (element.class != NullUIElement.class) {
     BOOL messageDisplayed = NO;
-    DDLogVerbose(@"Received Click on UI Element: %@", [[element owner] appName]);
-    DDLogVerbose(@"Role: %@", [element role]);
-    DDLogVerbose(@"Role Description: %@", [element roleDescription]);
-    DDLogVerbose(@"Identifier: %@", [element uiElementIdentifier]);
+    DDLogInfo(@"Received Click on UI Element: %@", [[element owner] appName]);
+    DDLogInfo(@"Role: %@", [element role]);
+    DDLogInfo(@"Role Description: %@", [element roleDescription]);
+    DDLogInfo(@"Identifier: %@", [element uiElementIdentifier]);
     if([[element role] isEqualToString:(NSString*) kAXMenuItemRole]) {
       messageDisplayed = [HandleClickedUIElement handleMenuElement:element];
      }  else if ([lastActiveApp guiSupport] == YES) {

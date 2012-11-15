@@ -30,9 +30,9 @@
 
 @property (unsafe_unretained) IBOutlet NSMenuItem *startAtLoginItem;
 
-@property (strong, nonatomic)              NSWindowController *ourViewController;
-@property (strong, nonatomic, readonly) NSWindowController *liceneWindowController;
-@property (strong, nonatomic, readonly) ShortcutsWindowController *shortcutsWindowController;
+@property (strong, nonatomic)             NSWindowController *ourViewController;
+@property (strong, nonatomic, readonly)   NSWindowController *liceneWindowController;
+@property (strong, nonatomic, readonly)   ShortcutsWindowController *shortcutsWindowController;
 
 - (void) updateStatusIcon :(BOOL) guiSupport;
 

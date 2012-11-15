@@ -115,7 +115,7 @@
   return [result count];
 }
 
-+ (NSArray*) getTitlesAndShortcuts :(Application*) aApp {
++ (NSArray*) getTitlesAndShortcuts :(NSInteger) appID {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
   NSInteger userID = [UserDataTableModel getUserID:NSUserName()];
@@ -137,7 +137,7 @@
   [query appendFormat:@"      AND   ds.%@ = %li ) AS %@ ", USER_ID_COL, userID, GLOB_DISABLED_SHORTCUT_DYN_COL];
   
   [query appendFormat:@" FROM %@ m, %@ s ", MENU_BAR_ITEMS_TABLE, SHORTCUTS_TABLE];
-  [query appendFormat:@" WHERE m.%@ = %li ", APPLICATION_ID_COL, [aApp appID]];
+  [query appendFormat:@" WHERE m.%@ = %li ", APPLICATION_ID_COL, appID];
   [query appendFormat:@" AND s.%@ = m.%@ ", ID_COL, SHORTCUT_ID_COL];
   [query appendFormat:@" AND m.%@ like '%@' ", LANG_COL, [EVEUtilities currentLanguage]];
   [query appendFormat:@" ORDER BY m.%@, s.%@, m.%@", PARENT_TITLE_COL, SHORTCUT_STRING_COL,TITLE_COL ];

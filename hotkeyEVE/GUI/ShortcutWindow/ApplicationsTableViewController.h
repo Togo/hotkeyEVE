@@ -10,8 +10,9 @@
 
 @interface ApplicationsTableViewController : NSObject <NSTableViewDataSource, NSTableViewDelegate> {
   @private
-    IBOutlet NSTableView *applicationTable;
-    NSArray *applications;
+    NSMutableArray *applications;
+  __unsafe_unretained NSTableView *_applicationTable;
 }
 
+@property (unsafe_unretained) IBOutlet NSTableView *applicationTable;
 @end

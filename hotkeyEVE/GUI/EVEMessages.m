@@ -72,7 +72,7 @@
   NSString* title    = [clickContext  valueForKey:@"element_title"];
   
   NSMutableString *description = [NSMutableString string];
-  [description appendFormat:@"%@ - >%@ \nin %@", title, shortcut, appName];
+  [description appendFormat:@"%@ -> %@  \nin %@", title, shortcut, appName];
 
   [GrowlApplicationBridge notifyWithTitle:@"Shortcut Disabled!" description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:nil];
 }

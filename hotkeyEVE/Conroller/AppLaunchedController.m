@@ -18,7 +18,10 @@
   DDLogInfo(@"Start Indexing all Apps");
   NSArray *runningApplications = [[NSWorkspace sharedWorkspace] runningApplications];
   for (id aApp in runningApplications) {
-    [self newAppLaunched:[aApp bundleIdentifier]];
+    NSString *bundleIdentifier = [aApp bundleIdentifier];
+    if (bundleIdentifier) {
+      [self newAppLaunched:bundleIdentifier];
+    }
   }
 }
 
@@ -33,7 +36,6 @@
     [ApplicationsTableModel updateApplicationTable:app];
   
   app.appID = [ApplicationsTableModel getApplicationID:[app appName] :[app bundleIdentifier]];
-  
   
   [[[EVEManager sharedEVEManager] indexing] indexingApp:app];
 }

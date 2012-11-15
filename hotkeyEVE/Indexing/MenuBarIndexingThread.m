@@ -49,9 +49,13 @@
 
 - (void) runIndexing {
   if(!_indexingActive && [self count] > 0) {
-    _indexingActive = YES;
     
     Application *app = [self dequeue];
+    
+    if (![[app appName] isEqualToString:@"EVE"]) {
+    _indexingActive = YES;
+  
+    [self postIndexingAppStarted :app];
     
     [self indexUIElements :app];
     
@@ -61,7 +65,13 @@
     
     DDLogInfo(@"Finished Menu Bar Indexing of: %@", [app appName]);
     
+    
+    [self postIndexingFinished];
+    
+    [self postNewAppIndexedApplicationTable :app];
+    
     _indexingActive = NO;
+    }
   }
 }
 
@@ -73,6 +83,19 @@
   [ShortcutTableModel insertShortcutsFromElementArray: elements];
   
   [MenuBarTableModel insertMenuBarElementArray:elements];
+}
+
+- (void) postIndexingAppStarted :(Application*) app {
+  [[NSNotificationCenter defaultCenter] postNotificationName:ApplicationIndexingStarted object:app];
+}
+
+- (void) postIndexingFinished {
+  [[NSNotificationCenter defaultCenter] postNotificationName:ApplicationIndexingFinished object:nil];
+}
+
+- (void) postNewAppIndexedApplicationTable :(Application*) app {
+    [[NSNotificationCenter defaultCenter] postNotificationName:RefreshShortcutBrowserApplicationTable  object:app];
+//  [[NSNotificationCenter defaultCenter] postNotificationName:NewAppIndexedApplicationTable object:app];
 }
 
 @end

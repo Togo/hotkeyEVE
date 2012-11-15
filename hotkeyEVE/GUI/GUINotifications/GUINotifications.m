@@ -10,3 +10,8 @@
 
 NSString * const ShortcutsWindowApplicationDidChanged = @"ShortcutsWindowApplicationDidChanged";
 NSString * const ShortcutWindowShortcutSelectionChanged = @"ShortcutWindowShortcutSelected";
+
+NSString * const ApplicationIndexingStarted = @"ApplicationIndexingStarted";
+NSString * const NewAppIndexedApplicationTable = @"NewAppIndexedApplicationTable";
+NSString * const ApplicationIndexingFinished = @"ApplicationIndexingFinished";
+NSString * const RefreshShortcutBrowserApplicationTable = @"RefreshShortcutBrowserApplicationTable";

@@ -106,6 +106,7 @@
   
   self.ourViewController = _shortcutsWindowController;
   [GUIUtilities showWindow:_ourViewController];
+  [[NSNotificationCenter defaultCenter] postNotificationName:RefreshShortcutBrowserApplicationTable object:nil];
 }
 
 - (IBAction) getProVersion :(id)sender {

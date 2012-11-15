@@ -10,3 +10,8 @@
 
 extern NSString * const ShortcutsWindowApplicationDidChanged;
 extern NSString * const ShortcutWindowShortcutSelectionChanged;
+
+extern NSString * const ApplicationIndexingStarted;
+extern NSString * const NewAppIndexedApplicationTable;
+extern NSString * const RefreshShortcutBrowserApplicationTable;
+extern NSString * const ApplicationIndexingFinished;

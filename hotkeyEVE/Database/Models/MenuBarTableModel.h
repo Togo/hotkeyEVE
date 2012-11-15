@@ -16,5 +16,5 @@
 + (NSArray*) searchInMenuBarTable :(UIElement*) element;
 
 + (NSInteger) countShortcuts :(Application*) app;
-+ (NSArray*) getTitlesAndShortcuts :(Application*) aApp;
++ (NSArray*) getTitlesAndShortcuts :(NSInteger) appID;
 @end

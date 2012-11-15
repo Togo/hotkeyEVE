@@ -98,7 +98,7 @@
   [query appendFormat:@" SELECT rowid FROM %@ m ", MENU_BAR_ITEMS_TABLE];
   [query appendFormat:@" WHERE a.%@ = m.%@ ", ID_COL, APPLICATION_ID_COL];
   [query appendFormat:@" LIMIT 1) "];
-  [query appendFormat:@" AND a.%@ NOT LIKE 'EVE' ", APP_NAME_COL];
+//  [query appendFormat:@" AND a.%@ NOT LIKE 'EVE' ", APP_NAME_COL];
   [query appendFormat:@" ORDER BY a.%@ ", APP_NAME_COL];
   
   return  [db executeQuery:query];
