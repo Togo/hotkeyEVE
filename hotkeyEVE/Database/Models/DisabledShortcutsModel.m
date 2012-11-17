@@ -17,13 +17,14 @@
 + (void) disableShortcutWithStrings :(NSString*) appName :(NSString*) bundleIdentifier :(NSString*)shortcutString :(NSString*) user :(NSString*) elementTitle {
   NSInteger shortcutID = [ShortcutTableModel getShortcutId:shortcutString];
   NSInteger appID = [ApplicationsTableModel getApplicationID:appName :bundleIdentifier];
-  NSInteger userID = [UserDataTableModel getUserID:user];
   
-  [self disableShortcut:shortcutID :appID :userID :elementTitle];
+  [self disableShortcut:shortcutID :appID :elementTitle];
 }
 
-+ (void) disableShortcut :(NSInteger) shortcutID :(NSInteger) appID  :(NSInteger) userID :(NSString*) elementTitle {
++ (void) disableShortcut :(NSInteger) shortcutID :(NSInteger) appID :(NSString*) elementTitle {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSInteger userID = [UserDataTableModel getUserID:NSUserName()];
 
   if (shortcutID == 0
       || appID == 0) {
@@ -62,13 +63,15 @@
   
   NSArray *allApps = [ApplicationsTableModel selectAllApplications];
   for (id aRow in allApps) {
-    [self disableShortcut:shortcutID :[[aRow valueForKey:ID_COL] intValue] :userID :title];
+    [self disableShortcut:shortcutID :[[aRow valueForKey:ID_COL] intValue] :title];
   }
   
 }
 
-+ (void) enableShortcut :(NSInteger) shortcutID :(NSInteger) appID  :(NSInteger) userID :(NSString*) title {
++ (void) enableShortcut :(NSInteger) shortcutID :(NSInteger) appID :(NSString*) title {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSInteger userID = [UserDataTableModel getUserID:NSUserName()];
   
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@"DELETE FROM %@ ", DISABLED_SHORTCUTS_TABLE];
@@ -96,7 +99,7 @@
 
   NSArray *allApps = [ApplicationsTableModel selectAllApplications];
   for (id aRow in allApps) {
-    [self enableShortcut:shortcutID :[[aRow valueForKey:ID_COL] intValue] :userID :title];
+    [self enableShortcut:shortcutID :[[aRow valueForKey:ID_COL] intValue] :title];
   }
 }
 
@@ -164,7 +167,7 @@
     NSInteger userID = [UserDataTableModel getUserID:NSUserName()];
     
     if ([self isGlobalDisabled :shortcutID :userID :title]) {
-      [self disableShortcut:shortcutID :[app appID] :userID :title];
+      [self disableShortcut:shortcutID :[app appID] :title];
     }
   }
 }

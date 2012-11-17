@@ -20,7 +20,7 @@
   for (id aApp in runningApplications) {
     NSString *bundleIdentifier = [aApp bundleIdentifier];
     if (bundleIdentifier) {
-      [self newAppLaunched:bundleIdentifier];
+//      [self newAppLaunched:bundleIdentifier];
     }
   }
 }

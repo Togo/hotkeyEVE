@@ -9,6 +9,7 @@
 #import "ApplicationsTableViewController.h"
 #import "ApplicationsTableModel.h"
 #import "MenuBarTableModel.h"
+#import "EVEUtilities.h"
 
 @implementation ApplicationsTableViewController
 
@@ -29,7 +30,7 @@
 }
 
 - (void) dealloc {
-  [[NSNotificationCenter defaultCenter] removeObserver:self];
+//  [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
@@ -73,11 +74,12 @@
     NSInteger selectedRow = [[aNotification object] selectedRow];
   if (selectedRow != -1) {
     NSDictionary *selectedApp = [applications objectAtIndex:selectedRow];
-    [[NSNotificationCenter defaultCenter] postNotificationName:ShortcutsWindowApplicationDidChanged object:[selectedApp valueForKey:ID_COL]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ShortcutsWindowApplicationDidChanged object:selectedApp];
   }
 }
 
 - (void) newAppIndexed :(id) aNotification {
+  DDLogInfo(@"ApplicationsTableViewController : newAppIndexed => add new app to applications list");
   Application *newApp = [aNotification object];
   
   if (newApp
@@ -106,11 +108,13 @@
       [inseration setValue:appID forKey:ID_COL];
       
       if (_applicationTable) {
-        [applications insertObject:inseration atIndex:index];
-        [_applicationTable beginUpdates];
-        [_applicationTable insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:index] withAnimation:NSTableViewAnimationEffectFade];
-        [_applicationTable scrollRowToVisible:index];
-        [_applicationTable endUpdates];
+          [applications insertObject:inseration atIndex:index];
+          [_applicationTable beginUpdates];
+          [_applicationTable insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:index] withAnimation:NSTableViewAnimationEffectFade];
+          [_applicationTable scrollRowToVisible:index];
+          [_applicationTable endUpdates];
+      } else {
+        [self refreshApplicationTable:nil];
       }
     }
   }

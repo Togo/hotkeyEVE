@@ -19,10 +19,12 @@ enum {
 
 @implementation ShortcutsTableViewConroller
 
+@synthesize activeAppName;
+
 - (id)init {
   self = [super init];
   if (self) {
-    shortcutList = [NSArray array];
+    shortcutList = [NSMutableArray array];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(applicationChanged:)
                                                  name:ShortcutsWindowApplicationDidChanged object:nil];
@@ -35,15 +37,38 @@ enum {
   [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+
+-(void) menuWillOpen :(NSMenu*) menu {
+  NSInteger selectedRow = [shortcutTable selectedRow];
+  if ([shortcutTable selectedRow] != -1) {
+    BOOL isDisabled = [[[shortcutList objectAtIndex:selectedRow] valueForKey:DISABLED_SHORTCUT_DYN_COL] intValue];
+    if (isDisabled) {
+      [_disableEnableInOneAppItem setTitle:[NSString stringWithFormat:@"Enable in %@", activeAppName]];
+      [_disableEnableInOneAppItem setTag:1];
+    } else {
+      [_disableEnableInOneAppItem setTitle:[NSString stringWithFormat:@"Disable in %@", activeAppName]];
+      [_disableEnableInOneAppItem setTag:0];
+    }
+  }
+}
+
+
 - (void) applicationChanged :(id) aNotification {
-    NSInteger appID =  [[aNotification object] intValue];
-    shortcutList = [MenuBarTableModel getTitlesAndShortcuts:appID];
+    // Clear
+    [_searchField setStringValue:@""];
+    [shortcutList removeAllObjects];
+    NSInteger appID =  [[[aNotification object] valueForKey:ID_COL] intValue];
+    activeAppName = [[aNotification object] valueForKey:APP_NAME_COL];
+  
+    unfilteredShortcutList = [MenuBarTableModel getTitlesAndShortcuts:appID];
+    [shortcutList addObjectsFromArray:unfilteredShortcutList];
+  
     [shortcutTable reloadData];
     [shortcutTable selectRowIndexes :[NSIndexSet indexSetWithIndex:0] byExtendingSelection:NO];
   }
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView {
-  return [shortcutList count];
+    return [shortcutList count];
 }
 
 - (id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
@@ -55,12 +80,11 @@ enum {
   if ([[aTableColumn identifier] isEqualToString:DISABLED_SHORTCUT_DYN_COL]) {
     NSInteger shortcutID = [[[shortcutList objectAtIndex:rowIndex] valueForKey:SHORTCUT_ID_COL] intValue];
     NSInteger appID = [[[shortcutList objectAtIndex:rowIndex] valueForKey:APPLICATION_ID_COL] intValue];
-    NSInteger userID = [UserDataTableModel getUserID:NSUserName()];
     NSString *title = [[shortcutList objectAtIndex:rowIndex] valueForKey:TITLE_COL];
     if ([anObject intValue] == NSOffState) {
-      [DisabledShortcutsModel enableShortcut :shortcutID :appID :userID :title];
+      [DisabledShortcutsModel enableShortcut :shortcutID :appID  :title];
     } else {
-      [DisabledShortcutsModel disableShortcut :shortcutID :appID :userID :title];
+      [DisabledShortcutsModel disableShortcut :shortcutID :appID :title];
     }
     
     [[shortcutList objectAtIndex:rowIndex] setObject:anObject forKey:DISABLED_SHORTCUT_DYN_COL];
@@ -71,8 +95,7 @@ enum {
   NSIndexSet *selectedRows = [shortcutTable selectedRowIndexes];
   /*int (as commented, unreliable across different platforms)*/
   NSInteger currentIndex = [selectedRows firstIndex];
-  while (currentIndex != NSNotFound)
-  {
+  while (currentIndex != NSNotFound) {
     //use the currentIndex
     NSInteger shortcutID = [[[shortcutList objectAtIndex:currentIndex] valueForKey:SHORTCUT_ID_COL] intValue];
     NSString *title = [[shortcutList objectAtIndex:currentIndex] valueForKey:TITLE_COL];
@@ -82,27 +105,64 @@ enum {
     //increment
     currentIndex = [selectedRows indexGreaterThanIndex: currentIndex];
   }
-  
-//  NSInteger rowIndex = [shortcutTable selectedRow];
-//  NSInteger shortcutID = [[[shortcutList objectAtIndex:rowIndex] valueForKey:SHORTCUT_ID_COL] intValue];
-//  NSString *title = [[shortcutList objectAtIndex:rowIndex] valueForKey:TITLE_COL];
-//  [DisabledShortcutsModel enableShortcutInAllApps :shortcutID :title];
-//  [self tableView:shortcutTable setObjectValue:[NSNumber numberWithInt:NSOffState] forTableColumn:[[NSTableColumn alloc] initWithIdentifier:DISABLED_SHORTCUT_DYN_COL] row:rowIndex];
 }
 
 - (IBAction) disableInAllApps:(id)sender {
   NSIndexSet *selectedRows = [shortcutTable selectedRowIndexes];
   /*int (as commented, unreliable across different platforms)*/
   NSInteger currentIndex = [selectedRows firstIndex];
-  while (currentIndex != NSNotFound)
-  {
-//  NSInteger rowIndex = [shortcutTable selectedRow];
+  while (currentIndex != NSNotFound) {
   NSInteger shortcutID = [[[shortcutList objectAtIndex:currentIndex] valueForKey:SHORTCUT_ID_COL] intValue];
   NSString *title = [[shortcutList objectAtIndex:currentIndex] valueForKey:TITLE_COL];
   [DisabledShortcutsModel disableShortcutInAllApps :shortcutID :title];
   [self tableView:shortcutTable setObjectValue:[NSNumber numberWithInt:NSOnState] forTableColumn:[[NSTableColumn alloc] initWithIdentifier:DISABLED_SHORTCUT_DYN_COL] row:currentIndex];
     
     currentIndex = [selectedRows indexGreaterThanIndex: currentIndex];
+  }
+}
+
+
+- (IBAction)disableEnableInOneApp:(id)sender {
+  BOOL isDisabled = [sender tag];
+  NSIndexSet *selectedRows = [shortcutTable selectedRowIndexes];
+  /*int (as commented, unreliable across different platforms)*/
+  NSInteger currentIndex = [selectedRows firstIndex];
+  while (currentIndex != NSNotFound) {
+    NSInteger shortcutID = [[[shortcutList objectAtIndex:currentIndex] valueForKey:SHORTCUT_ID_COL] intValue];
+    NSInteger appID = [[[shortcutList objectAtIndex:currentIndex] valueForKey:APPLICATION_ID_COL] intValue];
+    NSString *title = [[shortcutList objectAtIndex:currentIndex] valueForKey:TITLE_COL];
+    
+    if (isDisabled) {
+      [DisabledShortcutsModel enableShortcut :shortcutID :appID :title];
+      [self tableView:shortcutTable setObjectValue:[NSNumber numberWithInt:NSOffState] forTableColumn:[[NSTableColumn alloc] initWithIdentifier:DISABLED_SHORTCUT_DYN_COL] row:currentIndex];
+
+    } else {
+      [DisabledShortcutsModel disableShortcut :shortcutID :appID :title];
+      [self tableView:shortcutTable setObjectValue:[NSNumber numberWithInt:NSOnState] forTableColumn:[[NSTableColumn alloc] initWithIdentifier:DISABLED_SHORTCUT_DYN_COL] row:currentIndex];
+    }
+    
+    currentIndex = [selectedRows indexGreaterThanIndex: currentIndex];
+  }
+}
+
+
+- (IBAction)updateSearch :(id)sender {
+  if ([[_searchField stringValue] length] > 0) {
+    NSString *match = [_searchField stringValue];
+    NSMutableString *filterQuery = [NSMutableString string];
+    [filterQuery appendFormat:@"%@ contains[cd] '%@'", TITLE_COL, match];
+    [filterQuery appendFormat:@"OR %@ contains[cd] '%@'", PARENT_TITLE_COL, match];
+    [filterQuery appendFormat:@"OR %@ contains[cd] '%@'", SHORTCUT_STRING_COL, match];
+    NSPredicate *filter = [NSPredicate predicateWithFormat:filterQuery];
+    filteredShortcutList = [unfilteredShortcutList filteredArrayUsingPredicate:filter];
+    
+    [shortcutList removeAllObjects];
+    [shortcutList addObjectsFromArray:filteredShortcutList];
+    [shortcutTable reloadData];
+  } else {
+    [shortcutList removeAllObjects];
+    [shortcutList addObjectsFromArray:unfilteredShortcutList];
+    [shortcutTable reloadData];
   }
 }
 
