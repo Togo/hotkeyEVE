@@ -75,9 +75,9 @@
 }
 
 - (void) updateStatusIcon :(BOOL) guiSupport {
-  if (guiSupport && ([statusItem image] != guiSupportIcon) ) {
+  if (guiSupport && ([statusItem image] != guiSupportIcon)) {
     [statusItem setImage:guiSupportIcon];
-  } else if (([statusItem image] != noGUISupportIcon)) {
+  } else if (!guiSupport && ([statusItem image] != noGUISupportIcon)) {
     [statusItem setImage:noGUISupportIcon];
   }
 }

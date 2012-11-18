@@ -60,14 +60,14 @@
 }
 
 - (void) startLogging {
-  [DDLog addLogger:[DDASLLogger sharedInstance]]; // systemlog
+//  [DDLog addLogger:[DDASLLogger sharedInstance]]; // systemlog
   [DDLog addLogger:[DDTTYLogger sharedInstance]]; // xcode console
   [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
   
   // Log in file
   fileLogger = [[DDFileLogger alloc] init];
   fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
-  fileLogger.logFileManager.maximumNumberOfLogFiles = 4;
+  fileLogger.logFileManager.maximumNumberOfLogFiles = 1;
 
   [DDLog addLogger:fileLogger];
 }

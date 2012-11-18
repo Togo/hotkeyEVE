@@ -1,0 +1,15 @@
+INSERT INTO "application_blacklist" VALUES (1, 'loginwindow', 'bundle_identifier');
+INSERT INTO "application_blacklist" VALUES (2, 'com.apple.talagent', 'com.apple.talagent');
+INSERT INTO "application_blacklist" VALUES (3, 'Dock', 'com.apple.dock');
+INSERT INTO "application_blacklist" VALUES (4, 'SystemUIServer', 'com.apple.systemuiserver');
+INSERT INTO "application_blacklist" VALUES (5, 'iTunes Helper', 'com.apple.iTunesHelper');
+INSERT INTO "application_blacklist" VALUES (6, 'Flycut', 'com.generalarcade.flycut');
+INSERT INTO "application_blacklist" VALUES (7, 'com.apple.dock.extra', 'com.apple.dock.extra');
+INSERT INTO "application_blacklist" VALUES (8, 'AppleSpell', 'com.apple.AppleSpell');
+INSERT INTO "application_blacklist" VALUES (9, 'DashboardClient', 'com.apple.dashboard.client');
+INSERT INTO "application_blacklist" VALUES (10, 'com.apple.security.pboxd', 'com.apple.security.pboxd');
+INSERT INTO "application_blacklist" VALUES (11, 'com.apple.ShareKitHelper', 'com.apple.ShareKitHelper');
+INSERT INTO "application_blacklist" VALUES (12, 'Chrome Helper', 'com.google.Chrome.helper');
+INSERT INTO "application_blacklist" VALUES (13, 'EVE', 'com.togo.hotkeyEVE');
+INSERT INTO "application_blacklist" VALUES (14, '1PasswordAgent', 'ws.agile.1PasswordAgent');
+INSERT INTO "application_blacklist" VALUES (15, 'Image Capture Extension', 'com.apple.ImageCaptureExtension2');

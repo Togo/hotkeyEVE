@@ -28,7 +28,7 @@
 
   if (shortcutID == 0
       || appID == 0) {
-    DDLogError(@"disableShortcut: Can't disable shortcut >>> appID: %li  shortcutID: %li <<<", appID, shortcutID);
+    DDLogError(@"disableShortcut: Can't disable shortcut one of these is 0 >>> appID: %li  shortcutID: %li <<<", appID, shortcutID);
   } else {
     NSMutableString *query = [NSMutableString string];
     [query appendFormat:@"INSERT OR IGNORE INTO %@ ", DISABLED_SHORTCUTS_TABLE];

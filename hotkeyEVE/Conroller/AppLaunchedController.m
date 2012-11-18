@@ -20,7 +20,7 @@
   for (id aApp in runningApplications) {
     NSString *bundleIdentifier = [aApp bundleIdentifier];
     if (bundleIdentifier) {
-//      [self newAppLaunched:bundleIdentifier];
+      [self newAppLaunched:bundleIdentifier];
     }
   }
 }
@@ -29,15 +29,17 @@
   DDLogInfo(@"New App started: %@", bundleIdentifier);
   Application *app = [[Application alloc] initWithBundleIdentifier:bundleIdentifier];
   
-  app.guiSupport = [GUISupportTableModel hasGUISupport:[app bundleIdentifier]];
-  if ([ApplicationsTableModel isNewApp:app])
-    [ApplicationsTableModel insertNewApplication :app];
-  else
-    [ApplicationsTableModel updateApplicationTable:app];
-  
-  app.appID = [ApplicationsTableModel getApplicationID:[app appName] :[app bundleIdentifier]];
-  
-  [[[EVEManager sharedEVEManager] indexing] indexingApp:app];
+  if (![ApplicationsTableModel isInApplicationBlacklist :app]) {
+    app.guiSupport = [GUISupportTableModel hasGUISupport:[app bundleIdentifier]];
+    if ([ApplicationsTableModel isNewApp:app])
+      [ApplicationsTableModel insertNewApplication :app];
+    else
+      [ApplicationsTableModel updateApplicationTable:app];
+    
+    app.appID = [ApplicationsTableModel getApplicationID:[app appName] :[app bundleIdentifier]];
+    
+    [[[EVEManager sharedEVEManager] indexing] indexingApp:app];
+  }
 }
 
 @end

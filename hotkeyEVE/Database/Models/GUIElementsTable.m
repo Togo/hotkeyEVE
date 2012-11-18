@@ -39,9 +39,14 @@
   }
 
 + (void) updateGUIElementTable  {
+  DDLogInfo(@"GUIElementsTable -> updateGUIElementTable:: get called");
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@" SELECT * FROM %@ ", GUI_ELEMENTS_TABLE];
+  [query appendFormat:@" WHERE EXISTS (SELECT rowid FROM %@ ", APPLICATIONS_TABLE];
+  [query appendFormat:@" WHERE %@.%@ = %@.%@ ", APPLICATIONS_TABLE, BUNDLE_IDEN_COL, GUI_ELEMENTS_TABLE, BUNDLE_IDEN_COL];
+  [query appendFormat:@" OR %@.%@ = %@.%@ )", APPLICATIONS_TABLE, APP_NAME_COL, GUI_ELEMENTS_TABLE, APP_NAME_COL];
   
   NSArray *results = [db executeQuery:query];
   

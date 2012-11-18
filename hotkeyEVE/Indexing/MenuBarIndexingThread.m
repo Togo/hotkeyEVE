@@ -51,26 +51,23 @@
   if(!_indexingActive && [self count] > 0) {
     
     Application *app = [self dequeue];
-    
-    if (![[app appName] isEqualToString:@"EVE"]) {
+  
     _indexingActive = YES;
   
     [self postIndexingAppStarted :app];
     
     [self indexUIElements :app];
     
-    [GUIElementsTable updateGUIElementTable];
-    
     [DisabledShortcutsModel disableShortcutsInNewApp :app];
     
     DDLogInfo(@"Finished Menu Bar Indexing of: %@", [app appName]);
     
-    
     [self postIndexingFinished];
     
-    [self postNewAppIndexedApplicationTable :app];
-    
     _indexingActive = NO;
+    if ([self count] == 0) {
+      [self postNewAppIndexedApplicationTable :app];
+      [GUIElementsTable updateGUIElementTable];
     }
   }
 }

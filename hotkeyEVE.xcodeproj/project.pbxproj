@@ -31,6 +31,7 @@
 		CD5A46F816465123007B57A5 /* UIElementClickedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46F716465123007B57A5 /* UIElementClickedController.m */; };
 		CD602C77164F896A00CF32A4 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
 		CD602C79164F89BB00CF32A4 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
+		CD6A928E1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD6A928D1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql */; };
 		CD6AD392164BFE9D009FF1B5 /* LicenceWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AD38F164BFE9D009FF1B5 /* LicenceWindow.xib */; };
 		CD6AD395164C047E009FF1B5 /* LicenceWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD394164C047E009FF1B5 /* LicenceWindowController.m */; };
 		CD6AD3BC164C17E9009FF1B5 /* GUIUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD3BB164C17E9009FF1B5 /* GUIUtilities.m */; };
@@ -57,6 +58,8 @@
 		CD80E78D16453A0500A9C7D8 /* MainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD80E78C16453A0500A9C7D8 /* MainMenuController.m */; };
 		CD80E78F1645406B00A9C7D8 /* EVE_ICON_STATUS_BAR_ACTIVE.icns in Resources */ = {isa = PBXBuildFile; fileRef = CD80E78E1645406B00A9C7D8 /* EVE_ICON_STATUS_BAR_ACTIVE.icns */; };
 		CD836D591652C0A5008A7876 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = CD836D581652C0A5008A7876 /* Credits.html */; };
+		CD84B78A1658CB5500DF227B /* MigrationsV1_3_1.m in Sources */ = {isa = PBXBuildFile; fileRef = CD84B7891658CB5500DF227B /* MigrationsV1_3_1.m */; };
+		CD84B78C1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD84B78B1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql */; };
 		CD97CE6B16466D7B00406F1F /* EVEMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE6A16466D7B00406F1F /* EVEMessages.m */; };
 		CD97CE6E164670BE00406F1F /* HandleClickedUIElement.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE6D164670BE00406F1F /* HandleClickedUIElement.m */; };
 		CD97CE9016467AB000406F1F /* GrowlController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE8F16467AB000406F1F /* GrowlController.m */; };
@@ -212,6 +215,7 @@
 		CD5A46F416464F7E007B57A5 /* EVEObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EVEObserver.m; path = Observer/EVEObserver.m; sourceTree = "<group>"; };
 		CD5A46F616465123007B57A5 /* UIElementClickedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIElementClickedController.h; path = Conroller/UIElementClickedController.h; sourceTree = "<group>"; };
 		CD5A46F716465123007B57A5 /* UIElementClickedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIElementClickedController.m; path = Conroller/UIElementClickedController.m; sourceTree = "<group>"; };
+		CD6A928D1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_APPLICATION_BLACKLISTV1_3_1.sql; path = "Database/SQL Scripte/INSERT_APPLICATION_BLACKLISTV1_3_1.sql"; sourceTree = "<group>"; };
 		CD6AD38F164BFE9D009FF1B5 /* LicenceWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LicenceWindow.xib; path = GUI/Licence/LicenceWindow.xib; sourceTree = "<group>"; };
 		CD6AD393164C047E009FF1B5 /* LicenceWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LicenceWindowController.h; path = GUI/Licence/LicenceWindowController.h; sourceTree = "<group>"; };
 		CD6AD394164C047E009FF1B5 /* LicenceWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LicenceWindowController.m; path = GUI/Licence/LicenceWindowController.m; sourceTree = "<group>"; };
@@ -254,6 +258,9 @@
 		CD80E78C16453A0500A9C7D8 /* MainMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuController.m; path = GUI/MainMenuController.m; sourceTree = "<group>"; };
 		CD80E78E1645406B00A9C7D8 /* EVE_ICON_STATUS_BAR_ACTIVE.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON_STATUS_BAR_ACTIVE.icns; sourceTree = "<group>"; };
 		CD836D581652C0A5008A7876 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		CD84B7881658CB5500DF227B /* MigrationsV1_3_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationsV1_3_1.h; path = Database/Migrations/MigrationsV1_3_1.h; sourceTree = "<group>"; };
+		CD84B7891658CB5500DF227B /* MigrationsV1_3_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationsV1_3_1.m; path = Database/Migrations/MigrationsV1_3_1.m; sourceTree = "<group>"; };
+		CD84B78B1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CREATE_TABLEV1_3_1.sql; path = "Database/SQL Scripte/CREATE_TABLEV1_3_1.sql"; sourceTree = "<group>"; };
 		CD97CE6916466D7B00406F1F /* EVEMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EVEMessages.h; path = GUI/EVEMessages.h; sourceTree = "<group>"; };
 		CD97CE6A16466D7B00406F1F /* EVEMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EVEMessages.m; path = GUI/EVEMessages.m; sourceTree = "<group>"; };
 		CD97CE6C164670BD00406F1F /* HandleClickedUIElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleClickedUIElement.h; sourceTree = "<group>"; };
@@ -631,6 +638,10 @@
 		CD84B7871658CAC600DF227B /* V1_3_1 */ = {
 			isa = PBXGroup;
 			children = (
+				CD6A928D1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql */,
+				CD84B78B1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql */,
+				CD84B7881658CB5500DF227B /* MigrationsV1_3_1.h */,
+				CD84B7891658CB5500DF227B /* MigrationsV1_3_1.m */,
 			);
 			name = V1_3_1;
 			sourceTree = "<group>";
@@ -813,6 +824,8 @@
 				CD6AD3D4164C3CB3009FF1B5 /* README.md in Resources */,
 				CD6AD3F2164D6B9E009FF1B5 /* ShortcutsWindow.xib in Resources */,
 				CD836D591652C0A5008A7876 /* Credits.html in Resources */,
+				CD84B78C1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql in Resources */,
+				CD6A928E1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -891,6 +904,7 @@
 				CD6AD3FE164D7BA6009FF1B5 /* ApplicationsTableViewController.m in Sources */,
 				CD6AD401164D893B009FF1B5 /* GUINotifications.m in Sources */,
 				CDA7AD77164D9F4D000907A5 /* ShortcutsTableViewConroller.m in Sources */,
+				CD84B78A1658CB5500DF227B /* MigrationsV1_3_1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

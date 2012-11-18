@@ -19,4 +19,6 @@
 + (NSArray*) getAllApplicationsObjects;
 
 + (NSArray*) selectAllApplications;
+
++ (BOOL) isInApplicationBlacklist :(Application*) app;
 @end

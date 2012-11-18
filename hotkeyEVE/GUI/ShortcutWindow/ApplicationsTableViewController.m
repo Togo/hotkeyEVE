@@ -125,11 +125,11 @@
   
   [applications removeAllObjects];
   [applications addObjectsFromArray:[ApplicationsTableModel selectAllApplications]];
-  
-  if ([applications count] > 0)
-    [_applicationTable selectRowIndexes:[[NSIndexSet alloc] initWithIndex:0] byExtendingSelection:NO];
-  
   [_applicationTable reloadData];
+  
+  if ([applications count] > 0) {
+    [_applicationTable selectRowIndexes:[[NSIndexSet alloc] initWithIndex:0] byExtendingSelection:NO];
+  }
 }
 
 - (BOOL) isAppInApplicationsTable :(NSInteger) appID {

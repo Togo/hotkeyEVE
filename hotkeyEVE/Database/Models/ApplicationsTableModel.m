@@ -74,7 +74,7 @@
     DDLogInfo(@"ApplicationsTableModel -> getApplicationID:: found appID => :%li:", appID);
     return appID;
   } else {
-    DDLogError(@"ApplicationsTableModel -> getApplicationID:: not appID query => :%@:", query);
+    DDLogError(@"ApplicationsTableModel -> getApplicationID:: no appID query => :%@:", query);
      return 0;
   }
 }
@@ -106,6 +106,26 @@
   [query appendFormat:@" ORDER BY a.%@ ", APP_NAME_COL];
   
   return  [db executeQuery:query];
+}
+
++ (BOOL) isInApplicationBlacklist :(Application*) app {
+  DDLogInfo(@"ApplicationsTableModel -> isInApplicationBlacklist(app => :%@:) :: get called ", app);
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSMutableString *query = [NSMutableString string];
+  [query appendFormat:@" SELECT * FROM %@ ", APPLICATION_BLACKLIST_TABLE];
+  [query appendFormat:@" WHERE "];
+  [query appendFormat:@" %@ like '%@' ", BUNDLE_IDEN_COL, [app bundleIdentifier]];
+  [query appendFormat:@" LIMIT 1 "];
+  
+  DDLogVerbose(@"ApplicationsTableModel -> isInApplicationBlacklist :: query %@", query);
+  NSArray *result = [db executeQuery:query];
+  if ([result count] > 0) {
+   DDLogInfo(@"ApplicationsTableModel -> isInApplicationBlacklist :: The App is in the blacklist. AppName => :%@: BundleIdentifier => :%@: ", [app appName], [app bundleIdentifier]);
+    return YES;
+  } else {
+   return  NO;
+  }
 }
 
 @end

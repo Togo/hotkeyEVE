@@ -7,7 +7,8 @@
 //
 
 #import "DatabaseManager.h"
-#import "MIGRATIONV1_0.h"
+#import "MIGRATIONV1_3_0.h"
+#import "MigrationsV1_3_1.h"
 #import "NSFileManager+DirectoryLocations.h"
 
 @implementation DatabaseManager
@@ -36,7 +37,8 @@
     DDLogInfo(@"Load Database at Path: %@", [eveDatabase databasePath]);
     
     // Add Migrations
-    [eveDatabase addMigrationObject:[MIGRATIONV1_0 migration]];
+    [eveDatabase addMigrationObject:[MIGRATIONV1_3_0 migration]];
+    [eveDatabase addMigrationObject:[MigrationsV1_3_1 migration]];
   }
   
   return self;
