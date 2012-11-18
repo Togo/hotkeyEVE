@@ -1397,8 +1397,7 @@
 					<object class="NSMenuItem" id="970915237">
 						<reference key="NSMenu" ref="722780090"/>
 						<string key="NSTitle">Quit hotkeyEVE</string>
-						<string key="NSKeyEquiv">q</string>
-						<int key="NSKeyEquivModMask">1048576</int>
+						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>

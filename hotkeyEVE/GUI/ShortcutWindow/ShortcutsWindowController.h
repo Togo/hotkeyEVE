@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "ShortcutsTableViewConroller.h"
 
-@interface ShortcutsWindowController : NSWindowController {
+@interface ShortcutsWindowController : NSWindowController <NSWindowDelegate> {
   
   __unsafe_unretained NSSearchField *_searchField;
 }

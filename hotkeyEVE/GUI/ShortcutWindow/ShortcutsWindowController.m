@@ -34,15 +34,11 @@
     [super windowDidLoad];
     DDLogInfo(@"ShortcutsWindowController : windowDidLoad => shortcut browser window did load");
 }
+- (void)windowWillLoad {
+  
+}
 
-- (BOOL)windowShouldClose:(id)sender {
-//  for (SearchQuery *query in iSearchQueries) {
-//    // we are no longer interested in accessing SearchQuery's bookmarked search location,
-//    // so it's important we balance the start/stop access to security scoped bookmarks here
-//    //
-//    [[query _searchURL] stopAccessingSecurityScopedResource];
-//  }
-//  return YES;
+- (BOOL) windowShouldClose :(id)sender {
   return YES;
 }
 
@@ -59,7 +55,8 @@
 - (void) applicationIndexingFinshed :(id) aNotification {
   [[self window] setTitle:@"Shortcut Browser"];
 }
-- (IBAction)performFindPanelAction:(id)sender {
+
+- (IBAction) performFindPanelAction :(id)sender {
   [[self window] makeFirstResponder:_searchField];
 }
 

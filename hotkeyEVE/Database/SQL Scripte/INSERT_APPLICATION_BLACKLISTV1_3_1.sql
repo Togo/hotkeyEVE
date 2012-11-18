@@ -13,3 +13,6 @@ INSERT INTO "application_blacklist" VALUES (12, 'Chrome Helper', 'com.google.Chr
 INSERT INTO "application_blacklist" VALUES (13, 'EVE', 'com.togo.hotkeyEVE');
 INSERT INTO "application_blacklist" VALUES (14, '1PasswordAgent', 'ws.agile.1PasswordAgent');
 INSERT INTO "application_blacklist" VALUES (15, 'Image Capture Extension', 'com.apple.ImageCaptureExtension2');
+INSERT INTO "application_blacklist" VALUES (16, 'Dropbox', 'com.getdropbox.dropbox');
+INSERT INTO "application_blacklist" VALUES (17, NULL, NULL);
+INSERT INTO "application_blacklist" VALUES (18, '(Null)', '(Null)');

@@ -13,6 +13,7 @@
 
 @implementation ApplicationsTableViewController
 
+
 - (id) init {
   self = [super init];
   
@@ -131,6 +132,7 @@
     [_applicationTable selectRowIndexes:[[NSIndexSet alloc] initWithIndex:0] byExtendingSelection:NO];
   }
 }
+
 
 - (BOOL) isAppInApplicationsTable :(NSInteger) appID {
   for (id aRow in applications) {
