@@ -71,7 +71,6 @@
   NSArray *result = [db executeQuery:query];
   if ([result count] > 0) {
     NSInteger appID = [[[result objectAtIndex:0] valueForKey:ID_COL] intValue];
-    DDLogInfo(@"ApplicationsTableModel -> getApplicationID:: found appID => :%li:", appID);
     return appID;
   } else {
     DDLogError(@"ApplicationsTableModel -> getApplicationID:: no appID query => :%@:", query);

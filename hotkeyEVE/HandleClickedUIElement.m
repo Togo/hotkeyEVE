@@ -19,9 +19,10 @@
 + (BOOL) handleMenuElement :(UIElement*) element {
   DDLogInfo(@"HandleClickedUIElement -> handleMenuElement(element => :%@: :: get called.", element);
   BOOL messageDisplayed = NO;
+  
   if ([[element shortcutString] length] ==  0) {
-    DDLogInfo(@"HandleClickedUIElement -> handleMenuElement :: no shortcutString found");
-    DDLogInfo(@"HandleClickedUIElement -> handleMenuElement :: try to select a shortcut string in the %@", MENU_BAR_ITEMS_TABLE);
+    DDLogInfo(@"HandleClickedUIElement -> handleMenuElement :: no shortcutString in element found");
+    DDLogInfo(@"HandleClickedUIElement -> handleMenuElement :: try to select a shortcut string in the %@ ", MENU_BAR_ITEMS_TABLE);
     element.shortcutString = [MenuBarTableModel selectShortcutString:element];
   
     // Nothing found, try it with fts
@@ -30,15 +31,18 @@
       NSArray *results = [MenuBarTableModel searchInMenuBarTable:element];
       if ([results count] == 1) {
         element.shortcutString = [[results objectAtIndex:0] valueForKey:SHORTCUT_STRING_COL];
-        messageDisplayed = [self showMessage:element];
       }  else if ([results count] > 1) {
         messageDisplayed = [self showMultipleMatchMessage :results];
       }
     }
-  } else {
-      messageDisplayed = [self showMessage:element];
   }
   
+  // check maybe it's a multiple message try to show message
+  if (!messageDisplayed) {
+    messageDisplayed = [self showMessage:element];
+  }
+  
+  DDLogInfo(@"HandleClickedUIElement -> handleMenuElement :: Finished UIElement => %@", element);
  return messageDisplayed;
 }
 
