@@ -36,9 +36,11 @@
       
       NSString *checkedHash = [self createHash];
       if([self.hash isEqualToString:checkedHash]) {
+        NSLog(@"Licence -> init :: licence valid");
         self.isValid = YES;
       }
     } else {
+      NSLog(@"Licence -> init :: no licence file found");
       self.isValid = NO;
     }
   }
@@ -57,7 +59,7 @@
 }
 
 - (NSString*) registerAVersion :(NSString*) aLicenceString :(NSString*) theEMailAddress {
-  
+  DDLogInfo(@"Licence -> registerAVersion(aLicenceString => :%@:, theEMailAddress => :%@:) :: get called", self.licenceString,  self.eMail);
   NSString *error = [self validateRequest :aLicenceString :theEMailAddress];
   
   if ([error length] == 0) { // licence is valid else return error code
@@ -66,8 +68,9 @@
     self.isValid = YES;
     self.hash = [self createHash];
     
+    DDLogInfo(@"Licence -> registerAVersion :: registeredKey\nLicence=> :%@: \neMail=> :%@:", self.licenceString,  self.eMail);
     [self writeLicenceToFile];
-
+    
     return @"Ok";
   } else {
     return error;
@@ -75,7 +78,7 @@
 }
 
 - (NSString*)  validateRequest :(NSString*) aLicenceString :(NSString*) theEMail {
-  // Call the heaven and ask is this licence key correct
+  DDLogInfo(@"Licence -> validateRequest(aLicenceString => :%@:, theEMailAddress => :%@:) :: Send a request registering request to the server", aLicenceString, theEMail);
   
   NSURL *url = [NSURL URLWithString:@"http://www.hotkey-eve.com/verify"];
   NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -88,8 +91,11 @@
   NSError *requestError = NULL;
   NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&requestError];
   if (!requestError) {
-      return [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    NSString *responsedString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    DDLogInfo(@"Licence -> validateRequest :: request succesfull => :%@:", responsedString);
+    return responsedString;
   } else {
+    DDLogError(@"Licence -> validateRequest :: request with error => :%@:", [requestError localizedDescription]);
     return [requestError localizedDescription];
   }
 }

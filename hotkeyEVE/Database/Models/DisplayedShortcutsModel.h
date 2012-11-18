@@ -10,7 +10,7 @@
 
 @interface DisplayedShortcutsModel : NSObject
 
-+ (void) insertDisplayedShortcut :(UIElement*) element;
++ (void) insertDisplayedShortcut :(UIElement*) element :(NSInteger) shortcutID;
 + (BOOL) checkShortcutTimeIntervall :(NSInteger) shortcutID;
 
 @end

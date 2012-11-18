@@ -45,19 +45,23 @@
 }
 
 + (NSInteger) getShortcutId :(NSString*) shortcutString {
+  DDLogInfo(@"ShortcutTableModel -> getShortcutId(shortcutString => :%@:) ::", shortcutString);
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@" SELECT * FROM %@ ", SHORTCUTS_TABLE];
   [query appendFormat:@" WHERE replace(%@,' ','') like replace('%@', ' ', '') ", SHORTCUT_STRING_COL, [StringUtilities databaseString:shortcutString]];
   
-  NSInteger shortcutID = 0;
+  DDLogVerbose(@"ShortcutTableModel -> getShortcutId :: query => %@", query);
   NSArray *result = [db executeQuery:query];
   if ([result count] > 0) {
-    shortcutID = [[[result objectAtIndex:0] valueForKey:ID_COL] intValue];
+    NSInteger shortcutID = [[[result objectAtIndex:0] valueForKey:ID_COL] intValue];
+    DDLogInfo(@"ShortcutTableModel -> getShortcutId(shortcutString :: found shortcutID => :%li:", shortcutID);
+    return shortcutID;
+  } else {
+    DDLogError(@"ShortcutTableModel -> getShortcutId(shortcutString :: no shortcutID found query => :%@:", query);
+    return 0;
   }
-  
-  return shortcutID;
 }
 
 @end

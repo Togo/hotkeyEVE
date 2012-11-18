@@ -33,6 +33,8 @@
 }
 
 + (void) displayShortcutMessage :(UIElement*) element {
+  DDLogInfo(@"EVEMessages -> displayShortcutMessage(element => :%@:) :: get called", element);
+
   NSMutableString *description = [[NSMutableString alloc] init];
   if ([[element help] length] > 0) {
     [description appendFormat:@"%@\n", [element help]];
@@ -51,6 +53,10 @@
   [clickContextDic setValue:[element user] forKey:@"User"];
   [clickContextDic setValue:[element title] forKey:@"element_title"];
   
+  DDLogInfo(@"EVEMessages -> displayShortcutMessage :: show growl message");
+  DDLogInfo(@"EVEMessages -> displayShortcutMessage :: Message title => :%@:", [element shortcutString]);
+  DDLogInfo(@"EVEMessages -> displayShortcutMessage :: Message description => :%@:", description);
+  DDLogInfo(@"EVEMessages -> displayShortcutMessage :: clickContext => :%@:", clickContextDic);
   [GrowlApplicationBridge notifyWithTitle:[element shortcutString] description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:clickContextDic];
 }
 
@@ -63,6 +69,9 @@
 }
 
 + (void) displayMultipleMatchesMessage :(NSString*) description {
+  DDLogInfo(@"EVEMessages -> displayShortcutMessage(description => :%@:) :: get called", description);
+  DDLogInfo(@"EVEMessages -> displayShortcutMessage:: show growl message");
+  DDLogInfo(@"EVEMessages -> displayShortcutMessage :: clickContext => :%@:", nil);
   [GrowlApplicationBridge notifyWithTitle:@"Multiple Match" description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:nil];
 }
 

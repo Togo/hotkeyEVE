@@ -19,6 +19,8 @@
 @synthesize lastActiveApp;
 
 - (void) reveicedUIElementClick :(UIElement*) element {
+  DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick(element => :%@:) :: get called ", element);
+  
   // Update Status Icon
   if( ![[[element owner] bundleIdentifier] isEqualToString:[lastActiveApp bundleIdentifier]] ) {
    BOOL appWithGUISupport = [GUISupportTableModel hasGUISupport:[[element owner] bundleIdentifier]];
@@ -26,13 +28,17 @@
     lastActiveApp = [element owner];
     lastActiveApp.guiSupport = appWithGUISupport;
   }
+  DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick :: guiSupport :%i:", [lastActiveApp guiSupport]);
   
+
   if (element.class != NullUIElement.class) {
     BOOL messageDisplayed = NO;
-    DDLogInfo(@"Received Click on UI Element: %@", [[element owner] appName]);
-    DDLogInfo(@"Role: %@", [element role]);
-    DDLogInfo(@"Role Description: %@", [element roleDescription]);
-    DDLogInfo(@"Identifier: %@", [element uiElementIdentifier]);
+    DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick :: receive click with element => :%@:", element);
+    DDLogInfo(@"Role => %@", [element role]);
+    DDLogInfo(@"Role Description => %@", [element roleDescription]);
+    DDLogInfo(@"Title => %@", [element title]);
+    DDLogInfo(@"ParentTitle => %@", [element parentTitle]);
+    DDLogInfo(@"Identifier => %@", [element uiElementIdentifier]);
     if([[element role] isEqualToString:(NSString*) kAXMenuItemRole]) {
       messageDisplayed = [HandleClickedUIElement handleMenuElement:element];
      }  else if ([lastActiveApp guiSupport] == YES) {

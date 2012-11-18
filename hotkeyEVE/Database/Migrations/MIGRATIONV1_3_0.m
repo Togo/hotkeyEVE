@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Tobias Sommer. All rights reserved.
 //
 
-#import "MIGRATIONV1_0.h"
+#import "MIGRATIONV1_3_0.h"
 
-@implementation MIGRATIONV1_0
+@implementation MIGRATIONV1_3_0
 
 - (void) up {
   CoreDatabase *db =  [[DatabaseManager sharedDatabaseManager] eveDatabase];

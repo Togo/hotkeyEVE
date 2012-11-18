@@ -51,11 +51,14 @@
   [query appendFormat:@" AND %@.identifier like '%@' ", MENU_BAR_ITEMS_TABLE, [element uiElementIdentifier]];
   [query appendFormat:@" AND %@.%@ like '%@' ", MENU_BAR_ITEMS_TABLE, LANG_COL, [EVEUtilities currentLanguage]];
   
-  DDLogVerbose(@"query: %@", query);
+  DDLogVerbose(@"MenuBarTableModel -> selectShortcutString :: query => %@", query);
   NSArray *result = [db executeQuery:query];
   if ([result count] > 0) {
-    return[[result objectAtIndex:0] valueForKey:SHORTCUT_STRING_COL];
+    NSString *shortcutString = [[result objectAtIndex:0] valueForKey:SHORTCUT_STRING_COL];
+    DDLogInfo(@"MenuBarTableModel -> selectShortcutString :: found a string in the => :%@:", shortcutString);
+    return shortcutString;
   } else {
+    DDLogWarn(@"MenuBarTableModel -> selectShortcutString :: no shortcutString with the uiElementIdentifier => :%@: in the %@ Table found", element.uiElementIdentifier, MENU_BAR_ITEMS_TABLE);
     return @"";
   }
 }
@@ -71,6 +74,7 @@
   
   NSArray *results = [db executeQuery:query];
   
+  DDLogInfo(@"MenuBarTableModel -> searchInMenuBarTable :: add %li items to the %@ Table",[results count], MENU_BAR_SEARCH_TABLE);
   for (id aRow in results) {
     [query setString:@""];
     [query appendFormat:@"INSERT INTO menu_bar_search VALUES "];
@@ -88,13 +92,14 @@
   [query appendFormat:@" WHERE %@.%@ MATCH '%@*' ", MENU_BAR_SEARCH_TABLE, IDENTIFIER_COL, [element uiElementIdentifier]];
   [query appendFormat:@" AND %@.%@ = %@.%@ ", MENU_BAR_SEARCH_TABLE, SHORTCUT_ID_COL, SHORTCUTS_TABLE, ID_COL];
   
-  DDLogVerbose(@"query: %@", query);
+  DDLogVerbose(@"MenuBarTableModel -> searchInMenuBarTable :: query => %@", query);
   NSArray *result = [db executeQuery:query];
-
+  
   [query setString:@""];
   [query appendFormat:@"DELETE FROM %@", MENU_BAR_SEARCH_TABLE];
   [db executeUpdate:query];
 
+  DDLogInfo(@"MenuBarTableModel -> searchInMenuBarTable :: found %li rows with the identifier  => :%@:",[result count], [element uiElementIdentifier]);
   return result;
 }
 

@@ -20,18 +20,22 @@
 }
 
 - (void) startIndexing {
+  DDLogInfo(@"IndexingController -> startIndexing :: start with indexing apps");
   [indexingThread startIndexing];
 }
 
 - (void) restartIndexing {
+  DDLogInfo(@"IndexingController -> restartIndexing :: start with indexing apps");
   [indexingThread restartIndexing];
 }
 
 - (void) stopIndexing {
+  DDLogInfo(@"IndexingController -> stopIndexing :: stop with indexing apps");
   [indexingThread stopIndexing];
 }
 
 - (void) indexingApp :(Application*) app {
+  DDLogInfo(@"IndexingController -> indexingApp :: appName => :%@: bundleIdentifier :%@:", [app appName], [app bundleIdentifier]);
   [indexingThread enqueueUnique:app];
 }
 

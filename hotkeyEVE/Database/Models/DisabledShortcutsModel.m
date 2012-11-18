@@ -112,6 +112,7 @@
 }
 
 + (BOOL) isShortcutDisabled :(NSInteger) shortcutID :(NSInteger) appID  :(NSInteger) userID :(NSString*) title {
+  DDLogInfo(@"ShortcutTableModel -> isShortcutDisabled(shortcutID => :%li:, appID => :%li:, userID => :%li:, title => :%@:) :: get called", shortcutID, appID, userID, title);
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
   NSMutableString *query = [NSMutableString string];
@@ -122,12 +123,13 @@
   [query appendFormat:@" AND %@ = %li ",USER_ID_COL, userID];
   [query appendFormat:@" AND %@ = '%@' ",TITLE_COL, title];
   
+  DDLogVerbose(@"ShortcutTableModel -> isShortcutDisabled :: query => %@",query);
   NSArray *result = [db executeQuery:query];
-  
   if ([result count] > 0) {
-    DDLogInfo(@"Shortcut is disabled!");
+    DDLogInfo(@"ShortcutTableModel -> isShortcutDisabled :: shortcut is disabled");
     return YES;
   } else {
+    DDLogInfo(@"ShortcutTableModel -> isShortcutDisabled :: shortcut is not disabled");
     return NO;
   }
 }

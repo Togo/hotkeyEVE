@@ -14,6 +14,7 @@
 
 
 + (void) editGUIElement :(UIElement*) element {
+  DDLogInfo(@"GUIElementsTable -> editGUIElement(element => :%@: :: get called", element);
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
   NSInteger appID = [ApplicationsTableModel getApplicationID:[[element owner] appName] :[[element owner] bundleIdentifier]];
@@ -25,17 +26,17 @@
   [query appendFormat:@" AND   %@ != '' ) ", COCOA_IDENTIFIER_COL];
   [query appendFormat:@" AND %@ = %li ", APPLICATION_ID_COL, appID];
   
-  DDLogVerbose(@"query: %@", query);
+  DDLogVerbose(@"GUIElementsTable -> editGUIElement :: query => :%@:", query);
   NSArray *result = [db executeQuery:query];
-  
   if ([result count] > 0) {
     element.title = [[result objectAtIndex:0] valueForKey:TITLE_COL];
     element.parentTitle = [[result objectAtIndex:0] valueForKey:PARENT_TITLE_COL];
     element.help = [[result objectAtIndex:0] valueForKey:HELP_COL];
     element.shortcutString = [[result objectAtIndex:0] valueForKey:SHORTCUT_STRING_COL];
     element.owner.appID = appID;
+    DDLogInfo(@"GUIElementsTable -> editGUIElement :: found entry in database resultArray => :%@: ", result );
     }
-}
+  }
 
 + (void) updateGUIElementTable  {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];

@@ -12,7 +12,7 @@
 		CD57865316465EDE00CC508B /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
 		CD5786551646611200CC508B /* EVE_ICON.icns in Resources */ = {isa = PBXBuildFile; fileRef = CD5786541646611200CC508B /* EVE_ICON.icns */; };
 		CD5A464716455398007B57A5 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A464616455398007B57A5 /* DatabaseManager.m */; };
-		CD5A464A1645563E007B57A5 /* MIGRATIONV1_0.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46491645563E007B57A5 /* MIGRATIONV1_0.m */; };
+		CD5A464A1645563E007B57A5 /* MIGRATIONV1_3_0.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46491645563E007B57A5 /* MIGRATIONV1_3_0.m */; };
 		CD5A464E1645579C007B57A5 /* EVEDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A464D1645579C007B57A5 /* EVEDatabase.m */; };
 		CD5A4660164558FB007B57A5 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4651164558FB007B57A5 /* DDAbstractDatabaseLogger.m */; };
 		CD5A4661164558FB007B57A5 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4653164558FB007B57A5 /* DDASLLogger.m */; };
@@ -180,8 +180,8 @@
 		CD5A462F16455118007B57A5 /* Database.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Database.xcodeproj; path = "eve-database/Database.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		CD5A464516455398007B57A5 /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseManager.h; path = Database/DatabaseManager.h; sourceTree = "<group>"; };
 		CD5A464616455398007B57A5 /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseManager.m; path = Database/DatabaseManager.m; sourceTree = "<group>"; };
-		CD5A46481645563E007B57A5 /* MIGRATIONV1_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIGRATIONV1_0.h; path = Database/Migrations/MIGRATIONV1_0.h; sourceTree = "<group>"; };
-		CD5A46491645563E007B57A5 /* MIGRATIONV1_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIGRATIONV1_0.m; path = Database/Migrations/MIGRATIONV1_0.m; sourceTree = "<group>"; };
+		CD5A46481645563E007B57A5 /* MIGRATIONV1_3_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIGRATIONV1_3_0.h; path = Database/Migrations/MIGRATIONV1_3_0.h; sourceTree = "<group>"; };
+		CD5A46491645563E007B57A5 /* MIGRATIONV1_3_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIGRATIONV1_3_0.m; path = Database/Migrations/MIGRATIONV1_3_0.m; sourceTree = "<group>"; };
 		CD5A464C1645579C007B57A5 /* EVEDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EVEDatabase.h; path = Database/EVEDatabase.h; sourceTree = "<group>"; };
 		CD5A464D1645579C007B57A5 /* EVEDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EVEDatabase.m; path = Database/EVEDatabase.m; sourceTree = "<group>"; };
 		CD5A4650164558FB007B57A5 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
@@ -366,7 +366,8 @@
 		CD5A464B16455643007B57A5 /* Migrations */ = {
 			isa = PBXGroup;
 			children = (
-				CDEE156D164AE36100EDCDF4 /* V1_0 */,
+				CD84B7871658CAC600DF227B /* V1_3_1 */,
+				CDEE156D164AE36100EDCDF4 /* V1_3_0 */,
 			);
 			name = Migrations;
 			sourceTree = "<group>";
@@ -627,6 +628,13 @@
 			name = GUI;
 			sourceTree = "<group>";
 		};
+		CD84B7871658CAC600DF227B /* V1_3_1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = V1_3_1;
+			sourceTree = "<group>";
+		};
 		CD97CE6F164671E200406F1F /* DatabaseModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -650,16 +658,16 @@
 			name = DatabaseModel;
 			sourceTree = "<group>";
 		};
-		CDEE156D164AE36100EDCDF4 /* V1_0 */ = {
+		CDEE156D164AE36100EDCDF4 /* V1_3_0 */ = {
 			isa = PBXGroup;
 			children = (
-				CD5A46481645563E007B57A5 /* MIGRATIONV1_0.h */,
-				CD5A46491645563E007B57A5 /* MIGRATIONV1_0.m */,
+				CD5A46481645563E007B57A5 /* MIGRATIONV1_3_0.h */,
+				CD5A46491645563E007B57A5 /* MIGRATIONV1_3_0.m */,
 				CDEE156E164AE38A00EDCDF4 /* INSERT_GUI_ELEMENTS_V1_0.sql */,
 				CDEE155C164A9D3200EDCDF4 /* INSERT_GUI_SUPPORT_V1_0.sql */,
 				CD5A466816455D69007B57A5 /* CREATE_TABLE_V1_0.sql */,
 			);
-			name = V1_0;
+			name = V1_3_0;
 			sourceTree = "<group>";
 		};
 		CDEE1570164B03EF00EDCDF4 /* Licencing */ = {
@@ -843,7 +851,7 @@
 				CD80E7661645393400A9C7D8 /* AppDelegate.m in Sources */,
 				CD80E78D16453A0500A9C7D8 /* MainMenuController.m in Sources */,
 				CD5A464716455398007B57A5 /* DatabaseManager.m in Sources */,
-				CD5A464A1645563E007B57A5 /* MIGRATIONV1_0.m in Sources */,
+				CD5A464A1645563E007B57A5 /* MIGRATIONV1_3_0.m in Sources */,
 				CD5A464E1645579C007B57A5 /* EVEDatabase.m in Sources */,
 				CD5A4660164558FB007B57A5 /* DDAbstractDatabaseLogger.m in Sources */,
 				CD5A4661164558FB007B57A5 /* DDASLLogger.m in Sources */,

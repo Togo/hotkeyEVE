@@ -8,6 +8,6 @@
 
 #import <Database/FmdbMigration.h>
 
-@interface MIGRATIONV1_0 : FmdbMigration
+@interface MIGRATIONV1_3_0 : FmdbMigration
 
 @end

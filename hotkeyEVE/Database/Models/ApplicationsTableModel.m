@@ -59,6 +59,7 @@
 }
 
 + (NSInteger) getApplicationID :(NSString*) appName :(NSString*) bundleIdentifier {
+  DDLogInfo(@"ApplicationsTableModel -> getApplicationID(appName => :%@:, bundleIdentifier => :%@:) :: get called", appName,bundleIdentifier);
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
   NSMutableString *query = [NSMutableString string];
@@ -66,13 +67,16 @@
   [query appendFormat:@" WHERE %@ like '%@' ", APP_NAME_COL, appName];
   [query appendFormat:@" AND %@ like '%@' ", BUNDLE_IDEN_COL, bundleIdentifier];
   
-  NSInteger appID = 0;
+  DDLogVerbose(@"ApplicationsTableModel -> getApplicationID:: query => :%@:", query);
   NSArray *result = [db executeQuery:query];
   if ([result count] > 0) {
-    appID = [[[result objectAtIndex:0] valueForKey:ID_COL] intValue];
+    NSInteger appID = [[[result objectAtIndex:0] valueForKey:ID_COL] intValue];
+    DDLogInfo(@"ApplicationsTableModel -> getApplicationID:: found appID => :%li:", appID);
+    return appID;
+  } else {
+    DDLogError(@"ApplicationsTableModel -> getApplicationID:: not appID query => :%@:", query);
+     return 0;
   }
-  
-  return appID;
 }
 
 + (NSArray*) getAllApplicationsObjects {
