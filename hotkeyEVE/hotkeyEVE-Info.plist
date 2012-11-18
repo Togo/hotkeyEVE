@@ -42,5 +42,7 @@
 	<string>dsa_pub.pem</string>
 	<key>Shop URL</key>
 	<string>http://store.kagi.com/cgi-bin/store.cgi?storeID=6FJKK_LIVE</string>
+	<key>eMail</key>
+	<string>hotkey.eve@gmail.com</string>
 </dict>
 </plist>

@@ -125,4 +125,18 @@
   [UserDataTableModel setStartAtLogin :[sender state]];
 }
 
+- (IBAction)reportABug:(id)sender {
+  NSString* subject = [NSString stringWithFormat:@"Found a bug, or have suggestions?"];
+  NSString* body = [NSString stringWithFormat:@"You can contact me in English or German!\n\n Thanks in Advance \nTobias Sommer"];
+  NSString* to = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"eMail"];
+  
+  NSString *encodedSubject = [NSString stringWithFormat:@"SUBJECT=%@", [subject stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+  NSString *encodedBody = [NSString stringWithFormat:@"BODY=%@", [body stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+  NSString *encodedTo = [to stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+  NSString *encodedURLString = [NSString stringWithFormat:@"mailto:%@?%@&%@", encodedTo, encodedSubject, encodedBody];
+  NSURL *mailtoURL = [NSURL URLWithString:encodedURLString];
+  
+  [[NSWorkspace sharedWorkspace] openURL:mailtoURL];
+}
+
 @end

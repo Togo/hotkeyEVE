@@ -30,15 +30,17 @@
   }
   DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick :: guiSupport :%i:", [lastActiveApp guiSupport]);
   
-
+  DDLogInfo(@"********************************************************");
+  DDLogInfo(@"Role => %@", [element role]);
+  DDLogInfo(@"Role Description => %@", [element roleDescription]);
+  DDLogInfo(@"Title => %@", [element title]);
+  DDLogInfo(@"ParentTitle => %@", [element parentTitle]);
+  DDLogInfo(@"Identifier => %@", [element uiElementIdentifier]);
+  DDLogInfo(@"*********************************************************");
+  
   if (element.class != NullUIElement.class) {
     BOOL messageDisplayed = NO;
     DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick :: receive click with element => :%@:", element);
-    DDLogInfo(@"Role => %@", [element role]);
-    DDLogInfo(@"Role Description => %@", [element roleDescription]);
-    DDLogInfo(@"Title => %@", [element title]);
-    DDLogInfo(@"ParentTitle => %@", [element parentTitle]);
-    DDLogInfo(@"Identifier => %@", [element uiElementIdentifier]);
     if([[element role] isEqualToString:(NSString*) kAXMenuItemRole]) {
       messageDisplayed = [HandleClickedUIElement handleMenuElement:element];
      }  else if ([lastActiveApp guiSupport] == YES) {
