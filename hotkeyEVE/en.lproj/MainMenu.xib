@@ -1386,7 +1386,7 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="334310247">
+					<object class="NSMenuItem" id="1061961169">
 						<reference key="NSMenu" ref="722780090"/>
 						<string key="NSTitle">Report a Bug</string>
 						<string key="NSKeyEquiv"/>
@@ -1402,7 +1402,7 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="576224523">
+					<object class="NSMenuItem" id="790915349">
 						<reference key="NSMenu" ref="722780090"/>
 						<bool key="NSIsDisabled">YES</bool>
 						<bool key="NSIsSeparator">YES</bool>
@@ -2225,7 +2225,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">reportABug:</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="334310247"/>
+						<reference key="destination" ref="1061961169"/>
 					</object>
 					<int key="connectionID">594</int>
 				</object>
@@ -3253,8 +3253,8 @@
 							<reference ref="574058972"/>
 							<reference ref="722193772"/>
 							<reference ref="61986794"/>
-							<reference ref="334310247"/>
-							<reference ref="576224523"/>
+							<reference ref="1061961169"/>
+							<reference ref="790915349"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -3330,12 +3330,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">593</int>
-						<reference key="object" ref="334310247"/>
+						<reference key="object" ref="1061961169"/>
 						<reference key="parent" ref="722780090"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">595</int>
-						<reference key="object" ref="576224523"/>
+						<reference key="object" ref="790915349"/>
 						<reference key="parent" ref="722780090"/>
 					</object>
 				</array>
