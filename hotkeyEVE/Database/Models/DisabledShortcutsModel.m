@@ -28,19 +28,28 @@
 
   if (shortcutID == 0
       || appID == 0) {
-    DDLogError(@"disableShortcut: Can't disable shortcut one of these is 0 >>> appID: %li  shortcutID: %li <<<", appID, shortcutID);
+    DDLogError(@"ShortcutTableModel -> disableShortcut:: Can't disable shortcut one of these is 0. appID => :%li:  shortcutID => :%li: ", appID, shortcutID);
   } else {
     NSMutableString *query = [NSMutableString string];
-    [query appendFormat:@"INSERT OR IGNORE INTO %@ ", DISABLED_SHORTCUTS_TABLE];
-    [query appendFormat:@"VALUES ( "];
-    [query appendFormat:@" NULL "];
-    [query appendFormat:@" , %li ", appID];
-    [query appendFormat:@" , %li ", shortcutID];
-    [query appendFormat:@" , %li ", userID];
-    [query appendFormat:@" , '%@' ", elementTitle];
-    [query appendFormat:@" ); "];
+    [query appendFormat:@" SELECT rowid FROM %@ ", MENU_BAR_ITEMS_TABLE];
+    [query appendFormat:@" where %@ = %li ",APPLICATION_ID_COL, appID];
+    [query appendFormat:@" AND %@ = '%@' ", TITLE_COL, elementTitle];
     
-    [db executeUpdate:query];
+    NSArray *result = [db executeQuery:query];
+    if ( [result count] > 0 ) {
+      query = [NSMutableString string];
+      [query appendFormat:@"INSERT OR IGNORE INTO %@ ", DISABLED_SHORTCUTS_TABLE];
+      [query appendFormat:@"VALUES ( "];
+      [query appendFormat:@" NULL "];
+      [query appendFormat:@" , %li ", appID];
+      [query appendFormat:@" , %li ", shortcutID];
+      [query appendFormat:@" , %li ", userID];
+      [query appendFormat:@" , '%@' ", elementTitle];
+      [query appendFormat:@" ); "];
+      
+      [db executeUpdate:query];
+    }
+    DDLogInfo(@"ShortcutTableModel -> disableShortcut :: Shortcut disabled. appID => :%li: shortcutID => :%li: elementTitle => :%@:", appID, shortcutID, elementTitle);
   }
 }
 

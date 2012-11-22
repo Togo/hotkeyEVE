@@ -17,6 +17,7 @@
 #import "LicenceWindowController.h"
 #import "ShortcutsWindowController.h"
 
+
 @implementation MainMenuController
 
 @synthesize activeApplication;

@@ -55,14 +55,16 @@ enum {
 
 - (void) applicationChanged :(id) aNotification {
     // Clear
-    [_searchField setStringValue:@""];
     [shortcutList removeAllObjects];
     NSInteger appID =  [[[aNotification object] valueForKey:ID_COL] intValue];
     activeAppName = [[aNotification object] valueForKey:APP_NAME_COL];
   
     unfilteredShortcutList = [MenuBarTableModel getTitlesAndShortcuts:appID];
     [shortcutList addObjectsFromArray:unfilteredShortcutList];
-  
+    if([[_searchField stringValue] length] > 0) {
+      [[NSNotificationCenter defaultCenter] postNotificationName:NSControlTextDidChangeNotification object:_searchField];
+      }
+
     [shortcutTable reloadData];
     [shortcutTable selectRowIndexes :[NSIndexSet indexSetWithIndex:0] byExtendingSelection:NO];
   }
@@ -107,6 +109,7 @@ enum {
   }
 }
 
+
 - (IBAction) disableInAllApps:(id)sender {
   NSIndexSet *selectedRows = [shortcutTable selectedRowIndexes];
   /*int (as commented, unreliable across different platforms)*/
@@ -145,9 +148,8 @@ enum {
   }
 }
 
-
-- (IBAction)updateSearch :(id)sender {
-  if ([[_searchField stringValue] length] > 0) {
+- (void) controlTextDidChange :(NSNotification *)aNotification {
+  if ([_searchField isEqual:[aNotification object]]) {
     NSString *match = [_searchField stringValue];
     NSMutableString *filterQuery = [NSMutableString string];
     [filterQuery appendFormat:@"%@ contains[cd] '%@'", TITLE_COL, match];
@@ -159,10 +161,9 @@ enum {
     [shortcutList removeAllObjects];
     [shortcutList addObjectsFromArray:filteredShortcutList];
     [shortcutTable reloadData];
-  } else {
-    [shortcutList removeAllObjects];
-    [shortcutList addObjectsFromArray:unfilteredShortcutList];
-    [shortcutTable reloadData];
+    
+    // notification mit tabellen eintraegen um in applications zu filtern!!!
+    [[NSNotificationCenter defaultCenter] postNotificationName:ShortcutTableSearchUpdate object:match];
   }
 }
 

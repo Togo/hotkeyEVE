@@ -76,7 +76,8 @@
     NSString *shortcutString = [ShortcutTableModel getShortcutString:[[aRow valueForKey:SHORTCUT_ID_COL] intValue]];
     NSString *title = [aRow valueForKey:TITLE_COL];
     NSString *parentTitle = [aRow valueForKey:PARENT_TITLE_COL];
-    [content appendFormat:@"%@ - %@ - %@ \n", parentTitle, title, shortcutString];
+    [content appendFormat:@"%@ - %@ \n", title, shortcutString];
+//    [content appendFormat:@"%@ - %@ - %@ \n", parentTitle, title, shortcutString];
   }
   
   [EVEMessages displayMultipleMatchesMessage :content];

@@ -18,33 +18,36 @@
   self = [super init];
   
   if (self) {
-    applications  = [NSMutableArray array];
+    applicationsList  = [NSMutableArray array];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(refreshApplicationTable:)
                                                  name:RefreshShortcutBrowserApplicationTable object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(newAppIndexed:)
+//                                                 name:NewAppIndexedApplicationTable object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(newAppIndexed:)
-                                                 name:NewAppIndexedApplicationTable object:nil];
+                                             selector:@selector(updateSearch:)
+                                                 name:ShortcutTableSearchUpdate object:nil];
   }
   
   return self;
 }
 
 - (void) dealloc {
-//  [[NSNotificationCenter defaultCenter] removeObserver:self];
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
 - (void) awakeFromNib {
-  [applications addObjectsFromArray:[ApplicationsTableModel selectAllApplications]];
+  [applicationsList addObjectsFromArray:[ApplicationsTableModel selectAllApplications]];
 }
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView {
-  return [applications count];
+  return [applicationsList count];
 }
 
 - (id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-  Application *app = [applications objectAtIndex:row];
+  Application *app = [applicationsList objectAtIndex:row];
   NSString *identifier = [tableColumn identifier];
   return [app valueForKey:identifier];
 }
@@ -53,7 +56,7 @@
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
   // In IB the tableColumn has the identifier set to the same string as the keys in our dictionary
     NSString *identifier = [tableColumn identifier];
-    NSDictionary *aRow = [applications objectAtIndex:row];
+    NSDictionary *aRow = [applicationsList objectAtIndex:row];
   
     NSTableCellView *cellView = [tableView makeViewWithIdentifier:identifier owner:self];
     // Then setup properties on the cellView based on the column
@@ -66,76 +69,130 @@
           && [runningApp icon]) {
         cellView.imageView.objectValue = [runningApp icon];
       }
+    } else {
+      cellView.imageView.objectValue = [NSImage imageNamed:@"NSQuickLookTemplate"];
     }
   
   return cellView;
 }
 
 - (void) tableViewSelectionDidChange :(NSNotification *)aNotification {
-    NSInteger selectedRow = [[aNotification object] selectedRow];
-  if (selectedRow != -1) {
-    NSDictionary *selectedApp = [applications objectAtIndex:selectedRow];
+  NSDictionary *selectedApp = [applicationsList objectAtIndex:[[aNotification object] selectedRow]];
+  if (refreshShorcutTable
+      || [[selectedApp valueForKey:ID_COL] intValue] != lastSelectedAppID) {
+    lastSelectedAppID = [[selectedApp valueForKey:ID_COL] intValue];
     [[NSNotificationCenter defaultCenter] postNotificationName:ShortcutsWindowApplicationDidChanged object:selectedApp];
   }
+
+  refreshShorcutTable = YES;
 }
 
-- (void) newAppIndexed :(id) aNotification {
-  DDLogInfo(@"ApplicationsTableViewController : newAppIndexed => add new app to applications list");
-  Application *newApp = [aNotification object];
-  
-  if (newApp
-      && [MenuBarTableModel countShortcuts:newApp]
-      && ![applications containsObject:newApp] ) {
-    NSInteger index = [_applicationTable selectedRow];
-    if (index == -1) {
-      if (_applicationTable.numberOfRows == 0) {
-        index = 0;
-      } else {
-        index = 1;
-      }
-    }
+//- (void) newAppIndexed :(id) aNotification {
+//  DDLogInfo(@"ApplicationsTableViewController : newAppIndexed => add new app to applications list");
+//  Application *newApp = [aNotification object];
+//  
+//  if (newApp
+//      && [MenuBarTableModel countShortcuts:newApp]
+//      && ![applicationsList containsObject:newApp] ) {
+//    NSInteger index = [_applicationTable selectedRow];
+//    if (index == -1) {
+//      if (_applicationTable.numberOfRows == 0) {
+//        index = 0;
+//      } else {
+//        index = 1;
+//      }
+//    }
+//    
+//    NSString *appName = [newApp appName];
+//    NSString *bundleIdentifier = [newApp bundleIdentifier];
+//    NSNumber *appID = [NSNumber numberWithInteger:[ApplicationsTableModel getApplicationID:appName :bundleIdentifier]];
+//    // BUILD Dictionary
+//    
+//    if ([self isAppInApplicationsTable :[appID intValue]]) {
+//      // app selected? then refresh shortcut list
+//    } else {
+//      NSMutableDictionary *inseration = [NSMutableDictionary dictionary];
+//      [inseration setValue:appName forKey:APP_NAME_COL];
+//      [inseration setValue:bundleIdentifier forKey:BUNDLE_IDEN_COL];
+//      [inseration setValue:appID forKey:ID_COL];
+//      
+//      if (_applicationTable) {
+//          [applicationsList insertObject:inseration atIndex:index];
+//          [_applicationTable beginUpdates];
+//          [_applicationTable insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:index] withAnimation:NSTableViewAnimationEffectFade];
+//          [_applicationTable scrollRowToVisible:index];
+//          [_applicationTable endUpdates];
+//      } else {
+//        [self refreshApplicationTable:nil];
+//      }
+//    }
+//  }
+//}
+
+- (void) updateSearch :(id) aNotification {
+  NSString *searchString = [aNotification object];
+  if ([searchString length] > 0) {
+    refreshShorcutTable = NO;
+    [self applicationTableWithFilteredApps :searchString];
     
-    NSString *appName = [newApp appName];
-    NSString *bundleIdentifier = [newApp bundleIdentifier];
-    NSNumber *appID = [NSNumber numberWithInteger:[ApplicationsTableModel getApplicationID:appName :bundleIdentifier]];
-    // BUILD Dictionary
+    refreshShorcutTable = NO;
+    [self selectLastSelectedRow];
+  } else {
+    refreshShorcutTable = NO;
+    [self applicationTableWithAllApps];
     
-    if ([self isAppInApplicationsTable :[appID intValue]]) {
-      // app selected? then refresh shortcut list
-    } else {
-      NSMutableDictionary *inseration = [NSMutableDictionary dictionary];
-      [inseration setValue:appName forKey:APP_NAME_COL];
-      [inseration setValue:bundleIdentifier forKey:BUNDLE_IDEN_COL];
-      [inseration setValue:appID forKey:ID_COL];
-      
-      if (_applicationTable) {
-          [applications insertObject:inseration atIndex:index];
-          [_applicationTable beginUpdates];
-          [_applicationTable insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:index] withAnimation:NSTableViewAnimationEffectFade];
-          [_applicationTable scrollRowToVisible:index];
-          [_applicationTable endUpdates];
-      } else {
-        [self refreshApplicationTable:nil];
-      }
-    }
+    refreshShorcutTable = YES;
+    [self selectLastSelectedRow];
   }
 }
 
 - (void) refreshApplicationTable :(id) aNotification {
   DDLogInfo(@"ApplicationsTableViewController : refreshApplicationTable => refresh Application Table");
+  refreshShorcutTable = NO;
+  [self applicationTableWithAllApps];
   
-  [applications removeAllObjects];
-  [applications addObjectsFromArray:[ApplicationsTableModel selectAllApplications]];
-  [_applicationTable reloadData];
-  
-  if ([applications count] > 0) {
-    [_applicationTable selectRowIndexes:[[NSIndexSet alloc] initWithIndex:0] byExtendingSelection:NO];
-  }
+  refreshShorcutTable = YES;
+  [self selectLastSelectedRow];
 }
 
+- (void) applicationTableWithAllApps {
+  [_applicationTable beginUpdates];
+  [applicationsList removeAllObjects];
+  unfilteredApplications = [ApplicationsTableModel selectAllApplications];
+  [applicationsList addObjectsFromArray:unfilteredApplications];
+  [_applicationTable reloadData];
+  [_applicationTable endUpdates];
+}
+
+- (void) applicationTableWithFilteredApps :(NSString*) searchString {
+  [_applicationTable beginUpdates];
+  filteredApplications = [ApplicationsTableModel selectApplicationsFiltered:searchString];
+  [applicationsList removeAllObjects];
+  [applicationsList  addObjectsFromArray:filteredApplications];
+  [_applicationTable reloadData];
+  [_applicationTable endUpdates];
+}
+
+- (void) selectLastSelectedRow {
+  NSInteger rowToSelect = [self findLastSelectedAppRow];
+  [_applicationTable selectRowIndexes:[[NSIndexSet alloc] initWithIndex:rowToSelect] byExtendingSelection:NO];
+}
+
+- (NSInteger) findLastSelectedAppRow {
+  NSInteger index = 0;
+  for (NSDictionary *row in applicationsList) {
+    if ([[row valueForKey:ID_COL] intValue] == lastSelectedAppID ) {
+      return index;
+    }
+    
+  index++;
+  }
+  
+  return 0;
+}
 
 - (BOOL) isAppInApplicationsTable :(NSInteger) appID {
-  for (id aRow in applications) {
+  for (id aRow in applicationsList) {
     if([[aRow valueForKey:ID_COL] intValue] == appID)
       return YES;
   }

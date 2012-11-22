@@ -15,3 +15,4 @@ NSString * const ApplicationIndexingStarted = @"ApplicationIndexingStarted";
 NSString * const NewAppIndexedApplicationTable = @"NewAppIndexedApplicationTable";
 NSString * const ApplicationIndexingFinished = @"ApplicationIndexingFinished";
 NSString * const RefreshShortcutBrowserApplicationTable = @"RefreshShortcutBrowserApplicationTable";
+NSString * const ShortcutTableSearchUpdate = @"ShortcutTableSearchUpdate";

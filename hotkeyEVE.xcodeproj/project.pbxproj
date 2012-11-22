@@ -35,16 +35,13 @@
 		CD6AD392164BFE9D009FF1B5 /* LicenceWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AD38F164BFE9D009FF1B5 /* LicenceWindow.xib */; };
 		CD6AD395164C047E009FF1B5 /* LicenceWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD394164C047E009FF1B5 /* LicenceWindowController.m */; };
 		CD6AD3BC164C17E9009FF1B5 /* GUIUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD3BB164C17E9009FF1B5 /* GUIUtilities.m */; };
-		CD6AD3D1164C3CB3009FF1B5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CD6AD3CB164C3CB3009FF1B5 /* .gitignore */; };
-		CD6AD3D2164C3CB3009FF1B5 /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AD3CD164C3CB3009FF1B5 /* MASPreferencesWindow.xib */; };
-		CD6AD3D3164C3CB3009FF1B5 /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD3CF164C3CB3009FF1B5 /* MASPreferencesWindowController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		CD6AD3D4164C3CB3009FF1B5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CD6AD3D0164C3CB3009FF1B5 /* README.md */; };
 		CD6AD3E9164CC0F0009FF1B5 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */; };
 		CD6AD3EA164CC178009FF1B5 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */; };
 		CD6AD3F1164D6B9E009FF1B5 /* ShortcutsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD3EF164D6B9D009FF1B5 /* ShortcutsWindowController.m */; };
 		CD6AD3F2164D6B9E009FF1B5 /* ShortcutsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AD3F0164D6B9D009FF1B5 /* ShortcutsWindow.xib */; };
 		CD6AD3FE164D7BA6009FF1B5 /* ApplicationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD3FD164D7BA6009FF1B5 /* ApplicationsTableViewController.m */; };
 		CD6AD401164D893B009FF1B5 /* GUINotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD400164D8939009FF1B5 /* GUINotifications.m */; };
+		CD71E48D165ED17F00987E09 /* INSERT_APPLICATION_BLACKLISTV1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD71E48C165ED17F00987E09 /* INSERT_APPLICATION_BLACKLISTV1_3_2.sql */; };
 		CD80E7531645393300A9C7D8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7521645393300A9C7D8 /* Cocoa.framework */; };
 		CD80E75D1645393400A9C7D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD80E75B1645393400A9C7D8 /* InfoPlist.strings */; };
 		CD80E75F1645393400A9C7D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD80E75E1645393400A9C7D8 /* main.m */; };
@@ -70,6 +67,9 @@
 		CD97CEA216468C5200406F1F /* ShortcutTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CEA116468C5200406F1F /* ShortcutTableModel.m */; };
 		CDA7AD77164D9F4D000907A5 /* ShortcutsTableViewConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA7AD76164D9F4D000907A5 /* ShortcutsTableViewConroller.m */; };
 		CDB3D6621646BAE000285306 /* AppLaunchedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3D6611646BAE000285306 /* AppLaunchedController.m */; };
+		CDC77C1F165C2DAF00939D99 /* MigrationsV1_3_2.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */; };
+		CDC77C22165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDC77C20165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql */; };
+		CDC77C23165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDC77C21165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql */; };
 		CDEE15311648127A00EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns in Resources */ = {isa = PBXBuildFile; fileRef = CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */; };
 		CDEE15341648128C00EDCDF4 /* GUISupportTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE15331648128C00EDCDF4 /* GUISupportTableModel.m */; };
 		CDEE1537164812F500EDCDF4 /* DisplayedShortcutsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1536164812F500EDCDF4 /* DisplayedShortcutsModel.m */; };
@@ -221,12 +221,6 @@
 		CD6AD394164C047E009FF1B5 /* LicenceWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LicenceWindowController.m; path = GUI/Licence/LicenceWindowController.m; sourceTree = "<group>"; };
 		CD6AD3BA164C17E9009FF1B5 /* GUIUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIUtilities.h; sourceTree = "<group>"; };
 		CD6AD3BB164C17E9009FF1B5 /* GUIUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUIUtilities.m; sourceTree = "<group>"; };
-		CD6AD3CB164C3CB3009FF1B5 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		CD6AD3CC164C3CB3009FF1B5 /* MASPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesViewController.h; sourceTree = "<group>"; };
-		CD6AD3CD164C3CB3009FF1B5 /* MASPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASPreferencesWindow.xib; sourceTree = "<group>"; };
-		CD6AD3CE164C3CB3009FF1B5 /* MASPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesWindowController.h; sourceTree = "<group>"; };
-		CD6AD3CF164C3CB3009FF1B5 /* MASPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASPreferencesWindowController.m; sourceTree = "<group>"; };
-		CD6AD3D0164C3CB3009FF1B5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = hotkeyEVE/Frameworks/Sparkle.framework; sourceTree = "<group>"; };
 		CD6AD3EE164D6B9C009FF1B5 /* ShortcutsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShortcutsWindowController.h; path = GUI/ShortcutWindow/ShortcutsWindowController.h; sourceTree = "<group>"; };
 		CD6AD3EF164D6B9D009FF1B5 /* ShortcutsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShortcutsWindowController.m; path = GUI/ShortcutWindow/ShortcutsWindowController.m; sourceTree = "<group>"; };
@@ -235,6 +229,7 @@
 		CD6AD3FD164D7BA6009FF1B5 /* ApplicationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplicationsTableViewController.m; path = GUI/ShortcutWindow/ApplicationsTableViewController.m; sourceTree = "<group>"; };
 		CD6AD3FF164D8937009FF1B5 /* GUINotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUINotifications.h; path = GUI/GUINotifications/GUINotifications.h; sourceTree = "<group>"; };
 		CD6AD400164D8939009FF1B5 /* GUINotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GUINotifications.m; path = GUI/GUINotifications/GUINotifications.m; sourceTree = "<group>"; };
+		CD71E48C165ED17F00987E09 /* INSERT_APPLICATION_BLACKLISTV1_3_2.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_APPLICATION_BLACKLISTV1_3_2.sql; path = "Database/SQL Scripte/V1.3.2/INSERT_APPLICATION_BLACKLISTV1_3_2.sql"; sourceTree = "<group>"; };
 		CD80E74E1645393300A9C7D8 /* EVE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD80E7521645393300A9C7D8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CD80E7551645393300A9C7D8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -281,6 +276,10 @@
 		CDA7AD76164D9F4D000907A5 /* ShortcutsTableViewConroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShortcutsTableViewConroller.m; path = GUI/ShortcutWindow/ShortcutsTableViewConroller.m; sourceTree = "<group>"; };
 		CDB3D6601646BAE000285306 /* AppLaunchedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppLaunchedController.h; path = Conroller/AppLaunchedController.h; sourceTree = "<group>"; };
 		CDB3D6611646BAE000285306 /* AppLaunchedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppLaunchedController.m; path = Conroller/AppLaunchedController.m; sourceTree = "<group>"; };
+		CDC77C1D165C2DAF00939D99 /* MigrationsV1_3_2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationsV1_3_2.h; path = Database/Migrations/MigrationsV1_3_2.h; sourceTree = "<group>"; };
+		CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationsV1_3_2.m; path = Database/Migrations/MigrationsV1_3_2.m; sourceTree = "<group>"; };
+		CDC77C20165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_GUI_ELEMENTS_V1_3_2.sql; path = "Database/SQL Scripte/V1.3.2/INSERT_GUI_ELEMENTS_V1_3_2.sql"; sourceTree = "<group>"; };
+		CDC77C21165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_GUI_SUPPORT_V1_3_2.sql; path = "Database/SQL Scripte/V1.3.2/INSERT_GUI_SUPPORT_V1_3_2.sql"; sourceTree = "<group>"; };
 		CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns; sourceTree = "<group>"; };
 		CDEE15321648128C00EDCDF4 /* GUISupportTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUISupportTableModel.h; path = Database/Models/GUISupportTableModel.h; sourceTree = "<group>"; };
 		CDEE15331648128C00EDCDF4 /* GUISupportTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GUISupportTableModel.m; path = Database/Models/GUISupportTableModel.m; sourceTree = "<group>"; };
@@ -373,6 +372,7 @@
 		CD5A464B16455643007B57A5 /* Migrations */ = {
 			isa = PBXGroup;
 			children = (
+				CDC77C1C165C2D8E00939D99 /* V1_3_2 */,
 				CD84B7871658CAC600DF227B /* V1_3_1 */,
 				CDEE156D164AE36100EDCDF4 /* V1_3_0 */,
 			);
@@ -477,23 +477,9 @@
 		CD6AD3C9164C3CB3009FF1B5 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				CD6AD3CA164C3CB3009FF1B5 /* MASPreferences */,
 			);
 			name = Preferences;
 			path = GUI/Preferences;
-			sourceTree = "<group>";
-		};
-		CD6AD3CA164C3CB3009FF1B5 /* MASPreferences */ = {
-			isa = PBXGroup;
-			children = (
-				CD6AD3CB164C3CB3009FF1B5 /* .gitignore */,
-				CD6AD3CC164C3CB3009FF1B5 /* MASPreferencesViewController.h */,
-				CD6AD3CE164C3CB3009FF1B5 /* MASPreferencesWindowController.h */,
-				CD6AD3CF164C3CB3009FF1B5 /* MASPreferencesWindowController.m */,
-				CD6AD3CD164C3CB3009FF1B5 /* MASPreferencesWindow.xib */,
-				CD6AD3D0164C3CB3009FF1B5 /* README.md */,
-			);
-			path = MASPreferences;
 			sourceTree = "<group>";
 		};
 		CD6AD3F3164D6BAA009FF1B5 /* ShortcutWindow */ = {
@@ -669,6 +655,18 @@
 			name = DatabaseModel;
 			sourceTree = "<group>";
 		};
+		CDC77C1C165C2D8E00939D99 /* V1_3_2 */ = {
+			isa = PBXGroup;
+			children = (
+				CD71E48C165ED17F00987E09 /* INSERT_APPLICATION_BLACKLISTV1_3_2.sql */,
+				CDC77C20165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql */,
+				CDC77C21165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql */,
+				CDC77C1D165C2DAF00939D99 /* MigrationsV1_3_2.h */,
+				CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */,
+			);
+			name = V1_3_2;
+			sourceTree = "<group>";
+		};
 		CDEE156D164AE36100EDCDF4 /* V1_3_0 */ = {
 			isa = PBXGroup;
 			children = (
@@ -819,13 +817,13 @@
 				CDEE155D164A9D3200EDCDF4 /* INSERT_GUI_SUPPORT_V1_0.sql in Resources */,
 				CDEE156F164AE38A00EDCDF4 /* INSERT_GUI_ELEMENTS_V1_0.sql in Resources */,
 				CD6AD392164BFE9D009FF1B5 /* LicenceWindow.xib in Resources */,
-				CD6AD3D1164C3CB3009FF1B5 /* .gitignore in Resources */,
-				CD6AD3D2164C3CB3009FF1B5 /* MASPreferencesWindow.xib in Resources */,
-				CD6AD3D4164C3CB3009FF1B5 /* README.md in Resources */,
 				CD6AD3F2164D6B9E009FF1B5 /* ShortcutsWindow.xib in Resources */,
 				CD836D591652C0A5008A7876 /* Credits.html in Resources */,
 				CD84B78C1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql in Resources */,
 				CD6A928E1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql in Resources */,
+				CDC77C22165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql in Resources */,
+				CDC77C23165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql in Resources */,
+				CD71E48D165ED17F00987E09 /* INSERT_APPLICATION_BLACKLISTV1_3_2.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -899,12 +897,12 @@
 				CDEE1576164B04F100EDCDF4 /* NSString+Hashes.m in Sources */,
 				CD6AD395164C047E009FF1B5 /* LicenceWindowController.m in Sources */,
 				CD6AD3BC164C17E9009FF1B5 /* GUIUtilities.m in Sources */,
-				CD6AD3D3164C3CB3009FF1B5 /* MASPreferencesWindowController.m in Sources */,
 				CD6AD3F1164D6B9E009FF1B5 /* ShortcutsWindowController.m in Sources */,
 				CD6AD3FE164D7BA6009FF1B5 /* ApplicationsTableViewController.m in Sources */,
 				CD6AD401164D893B009FF1B5 /* GUINotifications.m in Sources */,
 				CDA7AD77164D9F4D000907A5 /* ShortcutsTableViewConroller.m in Sources */,
 				CD84B78A1658CB5500DF227B /* MigrationsV1_3_1.m in Sources */,
+				CDC77C1F165C2DAF00939D99 /* MigrationsV1_3_2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

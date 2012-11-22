@@ -78,20 +78,6 @@
   }
 }
 
-+ (NSArray*) getAllApplicationsObjects {
-  NSArray *results = [self selectAllApplications];
-  NSMutableArray *applications = [NSMutableArray array];
-  if ([results count] > 0) {
-    for (id aRow in results) {
-      Application *aApp = [[Application alloc] initWithBundleIdentifier:[aRow valueForKey:BUNDLE_IDEN_COL]];
-      aApp.appID = [[aRow valueForKey:ID_COL] intValue];
-      [applications addObject:aApp];
-    }
-  }
-       
-  return applications;
-}
-
 + (NSArray*) selectAllApplications {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
@@ -100,11 +86,38 @@
   [query appendFormat:@" WHERE EXISTS ( "];
   [query appendFormat:@" SELECT rowid FROM %@ m ", MENU_BAR_ITEMS_TABLE];
   [query appendFormat:@" WHERE a.%@ = m.%@ ", ID_COL, APPLICATION_ID_COL];
-  [query appendFormat:@" AND  a.%@ NOT LIKE '%@' ", APP_NAME_COL, @"(null)"];
   [query appendFormat:@" LIMIT 1) "];
-  [query appendFormat:@" ORDER BY a.%@ ", APP_NAME_COL];
+  [query appendFormat:@" AND  a.%@ NOT LIKE '%@' ", APP_NAME_COL, @"(null)"];
+  [query appendFormat:@" ORDER BY a.%@ COLLATE NOCASE ", APP_NAME_COL];
   
   return  [db executeQuery:query];
+}
+
++ (NSArray*) selectApplicationsFiltered :(NSString*) searchString {
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  if (searchString) {
+    NSMutableString *query = [NSMutableString string];
+    [query appendFormat:@" SELECT * FROM %@ a \n", APPLICATIONS_TABLE];
+    [query appendFormat:@" WHERE EXISTS ( \n"];
+    [query appendFormat:@"  SELECT rowid FROM %@ m \n", MENU_BAR_ITEMS_TABLE];
+    [query appendFormat:@"        WHERE ( m.%@ LIKE '%%%@%%' \n", TITLE_COL,  searchString];
+    [query appendFormat:@"        OR  m.%@ LIKE '%%%@%%' ) \n", PARENT_TITLE_COL,  searchString];
+    [query appendFormat:@"        AND a.%@ = m.%@ \n", ID_COL, APPLICATION_ID_COL];
+    [query appendFormat:@"        LIMIT 1) \n"];
+    [query appendFormat:@" OR EXISTS ( \n"];
+    [query appendFormat:@"  SELECT s.rowid FROM %@ s, %@ m \n", SHORTCUTS_TABLE, MENU_BAR_ITEMS_TABLE];
+    [query appendFormat:@"        WHERE ( s.%@ LIKE '%%%@%%' ) \n", SHORTCUT_STRING_COL,  searchString];
+    [query appendFormat:@"        AND m.%@ = s.%@ \n", SHORTCUT_ID_COL, ID_COL];
+    [query appendFormat:@"        AND a.%@ = m.%@ \n", ID_COL, APPLICATION_ID_COL];
+    [query appendFormat:@"        LIMIT 1) \n"];
+    [query appendFormat:@" AND  a.%@ NOT LIKE '%@' \n", APP_NAME_COL, @"(null)"];
+    [query appendFormat:@" ORDER BY a.%@ COLLATE NOCASE \n", APP_NAME_COL];
+    
+    return [db executeQuery:query];
+  }
+  
+  return [NSArray array];
 }
 
 + (BOOL) isInApplicationBlacklist :(Application*) app {

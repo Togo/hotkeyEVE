@@ -10,8 +10,14 @@
 
 @interface ApplicationsTableViewController : NSObject <NSTableViewDataSource, NSTableViewDelegate> {
   @private
-    NSMutableArray *applications;
+    NSArray *unfilteredApplications;
+    NSArray *filteredApplications;
+    NSMutableArray *applicationsList;
+  
+    NSInteger lastSelectedAppID;
+    BOOL refreshShorcutTable;
   __unsafe_unretained NSTableView *_applicationTable;
+  
 }
 
 @property (unsafe_unretained) IBOutlet NSTableView *applicationTable;

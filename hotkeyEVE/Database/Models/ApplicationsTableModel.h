@@ -16,9 +16,8 @@
 
 + (NSInteger) getApplicationID :(NSString*) appName :(NSString*) bundleIdentifier;
 
-+ (NSArray*) getAllApplicationsObjects;
-
 + (NSArray*) selectAllApplications;
++ (NSArray*) selectApplicationsFiltered :(NSString*) searchString;
 
 + (BOOL) isInApplicationBlacklist :(Application*) app;
 @end

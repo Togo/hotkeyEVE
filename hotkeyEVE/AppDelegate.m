@@ -62,7 +62,6 @@
 - (void) startLogging {
 //  [DDLog addLogger:[DDASLLogger sharedInstance]]; // systemlog
   [DDLog addLogger:[DDTTYLogger sharedInstance]]; // xcode console
-  [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
   
   // Log in file
   fileLogger = [[DDFileLogger alloc] init];

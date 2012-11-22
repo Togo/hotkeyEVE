@@ -18,7 +18,6 @@
     IBOutlet NSMenuItem *getProVersionItem;
   __unsafe_unretained NSMenuItem *_startAtLoginItem;
   __unsafe_unretained NSMenuItem *_proVersionSeparator;
-  
 }
 
 @property (strong)             NSStatusItem *statusItem;

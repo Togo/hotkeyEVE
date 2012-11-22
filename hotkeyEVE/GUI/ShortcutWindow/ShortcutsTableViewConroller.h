@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ShortcutsTableViewConroller : NSObject <NSTableViewDataSource, NSTableViewDelegate> {
+@interface ShortcutsTableViewConroller : NSObject <NSTableViewDataSource, NSTableViewDelegate, NSControlTextEditingDelegate> {
 @private
   IBOutlet NSTableView *shortcutTable;
   NSMutableArray *shortcutList;
