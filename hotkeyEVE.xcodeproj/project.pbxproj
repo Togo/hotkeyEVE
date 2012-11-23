@@ -488,14 +488,6 @@
 			name = Licence;
 			sourceTree = "<group>";
 		};
-		CD6AD3C9164C3CB3009FF1B5 /* Preferences */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Preferences;
-			path = GUI/Preferences;
-			sourceTree = "<group>";
-		};
 		CD6AD3F3164D6BAA009FF1B5 /* ShortcutWindow */ = {
 			isa = PBXGroup;
 			children = (
@@ -638,7 +630,6 @@
 			children = (
 				CD6AD402164D8948009FF1B5 /* GUINotifications */,
 				CD6AD3F3164D6BAA009FF1B5 /* ShortcutWindow */,
-				CD6AD3C9164C3CB3009FF1B5 /* Preferences */,
 				CD6AD38A164BFE91009FF1B5 /* Licence */,
 				CD97CE6916466D7B00406F1F /* EVEMessages.h */,
 				CD97CE6A16466D7B00406F1F /* EVEMessages.m */,
