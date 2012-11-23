@@ -7,6 +7,7 @@
 //
 
 #import "EVEUtilities.h"
+#import "ApplicationsTableModel.h"
 
 #include <sys/socket.h>
 #include <sys/sysctl.h>
@@ -16,10 +17,10 @@
 @implementation EVEUtilities
 
 + (Application*) activeApplication {
-  NSDictionary *appDic = [[NSWorkspace sharedWorkspace] activeApplication];
-  NSString *bundleIdentifier = [appDic valueForKey:@"NSApplicationBundleIdentifier"];
-  
-  return [[Application alloc] initWithBundleIdentifier:bundleIdentifier];
+  DDLogInfo(@"EVEUtilities -> activeApplication() :: get called ");
+  Application *activeApp = [[EVEManager sharedEVEManager] lastActiveApp];
+  DDLogInfo(@"EVEUtilities -> activeApplication() :: return actuve app. appName => :%@: bundleIdentifier :%@: appID :%li: ", [activeApp appName], [activeApp bundleIdentifier], [activeApp appID]);
+  return activeApp;
 }
 
 + (NSString*) currentLanguage {

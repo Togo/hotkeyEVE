@@ -9,7 +9,10 @@
 #import <Cocoa/Cocoa.h>
 @class DDFileLogger;
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate> {
+
+
+}
 
 @property (strong, nonatomic) EVEManager *eveAppManager;
 @property (strong, nonatomic) DDFileLogger *fileLogger;

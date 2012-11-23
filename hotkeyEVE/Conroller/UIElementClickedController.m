@@ -12,22 +12,26 @@
 #import "GUISupportTableModel.h"
 #import "DisplayedShortcutsModel.h"
 #import "EVEMessages.h"
+#import "ApplicationsTableModel.h"
 
 @implementation UIElementClickedController
 
 @synthesize messageCount;
-@synthesize lastActiveApp;
 
 - (void) reveicedUIElementClick :(UIElement*) element {
   DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick(element => :%@:) :: get called ", element);
-  
+  Application *lastActiveApp =  [[EVEManager sharedEVEManager] lastActiveApp];
   // Update Status Icon
   if( ![[[element owner] bundleIdentifier] isEqualToString:[lastActiveApp bundleIdentifier]] ) {
    BOOL appWithGUISupport = [GUISupportTableModel hasGUISupport:[[element owner] bundleIdentifier]];
     [[[EVEManager sharedEVEManager] mainMenuController] updateStatusIcon:appWithGUISupport];
-    lastActiveApp = [element owner];
-    lastActiveApp.guiSupport = appWithGUISupport;
+    Application *activeApp = [element owner];
+    activeApp.guiSupport = appWithGUISupport;
+    activeApp.appID = [ApplicationsTableModel getApplicationID:[activeApp appName] :[activeApp bundleIdentifier]];
+    lastActiveApp = activeApp;
+    [[EVEManager sharedEVEManager] setLastActiveApp:lastActiveApp];
   }
+  
   DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick :: guiSupport :%i:", [lastActiveApp guiSupport]);
   
   DDLogInfo(@"********************************************************");

@@ -23,6 +23,8 @@
 #import "EVEUtilities.h"
 
 
+
+
 @implementation AppDelegate
 
 @synthesize eveAppManager;
@@ -53,6 +55,8 @@
   if (![[[EVEManager sharedEVEManager] licence] isValid]) {
     [EVEMessages showGrowRegistrationMessage];
   }
+  
+  [[eveAppManager globalHotkeyController] registerGlobalHotkeys];
 }
 
 - (void) applicationWillTerminate:(NSNotification *)notification {
@@ -93,5 +97,7 @@
 - (void) initUserData {
   [UserDataTableModel insertUser: NSUserName()];
 }
+
+
 
 @end

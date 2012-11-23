@@ -28,6 +28,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateSearch:)
                                                  name:ShortcutTableSearchUpdate object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(selectCurrentRunningApplication:)
+                                                 name:SelectCurrentRunningApplication object:nil];
   }
   
   return self;
@@ -155,6 +158,14 @@
   [self selectLastSelectedRow];
 }
 
+- (void) selectCurrentRunningApplication :(id) aNotification {
+  DDLogInfo(@"ApplicationsTableViewController(aNotification => :%@:) : selectCurrentRunningApplication => refresh Application Table",[aNotification object]);
+  
+  lastSelectedAppID = [[aNotification object] appID];
+  refreshShorcutTable = YES;
+  [self selectLastSelectedRow];
+}
+
 - (void) applicationTableWithAllApps {
   [_applicationTable beginUpdates];
   [applicationsList removeAllObjects];
@@ -176,6 +187,7 @@
 - (void) selectLastSelectedRow {
   NSInteger rowToSelect = [self findLastSelectedAppRow];
   [_applicationTable selectRowIndexes:[[NSIndexSet alloc] initWithIndex:rowToSelect] byExtendingSelection:NO];
+  [_applicationTable scrollRowToVisible:rowToSelect];
 }
 
 - (NSInteger) findLastSelectedAppRow {

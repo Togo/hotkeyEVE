@@ -14,6 +14,7 @@
 #import "AppLaunchedController.h"
 #import "MainMenuController.h"
 #import "Licence.h"
+#import "GlobalHotkeyController.h"
 
 @interface EVEManager : NSObject
 
@@ -27,6 +28,10 @@
 @property (strong, nonatomic)   MainMenuController *mainMenuController;
 
 @property (strong, nonatomic)   Licence *licence;
+
+@property (strong, nonatomic)   GlobalHotkeyController *globalHotkeyController;
+
+@property (strong, nonatomic)   Application *lastActiveApp;
 
 + (id) sharedEVEManager;
 

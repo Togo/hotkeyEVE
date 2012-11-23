@@ -16,3 +16,4 @@ extern NSString * const NewAppIndexedApplicationTable;
 extern NSString * const RefreshShortcutBrowserApplicationTable;
 extern NSString * const ApplicationIndexingFinished;
 extern NSString * const ShortcutTableSearchUpdate;
+extern NSString * const SelectCurrentRunningApplication;

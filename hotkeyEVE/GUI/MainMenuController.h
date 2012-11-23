@@ -36,5 +36,6 @@
 - (void) updateStatusIcon :(BOOL) guiSupport;
 
 - (IBAction) showLicenceKeyWindow :(id) sender;
+- (IBAction) showShortcutsWindow :(id) sender;
 - (IBAction) getProVersion :(id)sender;
 @end

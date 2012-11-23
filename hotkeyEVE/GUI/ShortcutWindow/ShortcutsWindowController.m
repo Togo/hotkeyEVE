@@ -35,11 +35,15 @@
     DDLogInfo(@"ShortcutsWindowController : windowDidLoad => shortcut browser window did load");
 }
 - (void)windowWillLoad {
-  
+
 }
 
 - (BOOL) windowShouldClose :(id)sender {
   return YES;
+}
+
+- (void) windowWillClose :(NSNotification*) notification {
+  
 }
 
 - (void) dealloc {
@@ -58,6 +62,10 @@
 
 - (IBAction) performFindPanelAction :(id)sender {
   [[self window] makeFirstResponder:_searchField];
+}
+
+- (void)windowDidBecomeKey:(NSNotification *)notification {
+  [_searchField becomeFirstResponder];
 }
 
 @end

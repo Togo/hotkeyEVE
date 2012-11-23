@@ -67,6 +67,7 @@ enum {
 
     [shortcutTable reloadData];
     [shortcutTable selectRowIndexes :[NSIndexSet indexSetWithIndex:0] byExtendingSelection:NO];
+    [shortcutTable scrollRowToVisible:0];
   }
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView {
