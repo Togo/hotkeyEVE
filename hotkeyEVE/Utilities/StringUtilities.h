@@ -11,5 +11,6 @@
 @interface StringUtilities : NSObject
 
 + (NSString*) databaseString :(NSString*) str;
++ (NSString*) printUIElement :(UIElement*) element;
 
 @end

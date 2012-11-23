@@ -13,6 +13,7 @@
 #import "DisplayedShortcutsModel.h"
 #import "EVEMessages.h"
 #import "ApplicationsTableModel.h"
+#import "StringUtilities.h"
 
 @implementation UIElementClickedController
 
@@ -34,13 +35,7 @@
   
   DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick :: guiSupport :%i:", [lastActiveApp guiSupport]);
   
-  DDLogInfo(@"********************************************************");
-  DDLogInfo(@"Role => %@", [element role]);
-  DDLogInfo(@"Role Description => %@", [element roleDescription]);
-  DDLogInfo(@"Title => %@", [element title]);
-  DDLogInfo(@"ParentTitle => %@", [element parentTitle]);
-  DDLogInfo(@"Identifier => %@", [element uiElementIdentifier]);
-  DDLogInfo(@"*********************************************************");
+  DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick :: \n%@",[StringUtilities printUIElement:element]);
   
   if (element.class != NullUIElement.class) {
     BOOL messageDisplayed = NO;

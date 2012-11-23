@@ -23,9 +23,10 @@
 }
 
 - (void) update :(NSNotification *) notification {
-  DDLogVerbose(@"Notification reveived: %@", [notification name]);
+  DDLogInfo(@"EVEObserver -> update(notification :%@:) :: get called", [notification name]);
   if ([[notification name] isEqualToString:ClickOnUIElementNotification]) {
     UIElement *lastCLickedUIElement =  [UIElement createUIElement:([[notification object] currentUIElement])];
+    DDLogInfo(@"EVEObserver -> update() :: create new UIElement :%@:", lastCLickedUIElement);
     [[[EVEManager sharedEVEManager] uiElementClicked] reveicedUIElementClick:lastCLickedUIElement];
     return;
   }
