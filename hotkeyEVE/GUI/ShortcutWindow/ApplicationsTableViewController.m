@@ -73,7 +73,10 @@
         cellView.imageView.objectValue = [runningApp icon];
       }
     } else {
-      cellView.imageView.objectValue = [NSImage imageNamed:@"NSStatusNone"];
+      NSImage *inactiveStatus = [NSImage imageNamed:@"NSStatusNone"];
+      if (inactiveStatus) {
+         cellView.imageView.objectValue = [NSImage imageNamed:@"NSStatusNone"];
+      }
     }
   
   return cellView;

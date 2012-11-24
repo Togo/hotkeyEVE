@@ -30,6 +30,7 @@
 		CD5A46D016463E64007B57A5 /* IndexingController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46CF16463E64007B57A5 /* IndexingController.m */; };
 		CD5A46F516464F7E007B57A5 /* EVEObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46F416464F7E007B57A5 /* EVEObserver.m */; };
 		CD5A46F816465123007B57A5 /* UIElementClickedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46F716465123007B57A5 /* UIElementClickedController.m */; };
+		CD5E8E2D16612A7700D81C2E /* ALTER_MENU_BAR_ITEMS.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD5E8E2C16612A7700D81C2E /* ALTER_MENU_BAR_ITEMS.sql */; };
 		CD602C77164F896A00CF32A4 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
 		CD602C79164F89BB00CF32A4 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
 		CD6A928E1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD6A928D1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql */; };
@@ -222,6 +223,7 @@
 		CD5A46F416464F7E007B57A5 /* EVEObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EVEObserver.m; path = Observer/EVEObserver.m; sourceTree = "<group>"; };
 		CD5A46F616465123007B57A5 /* UIElementClickedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIElementClickedController.h; path = Conroller/UIElementClickedController.h; sourceTree = "<group>"; };
 		CD5A46F716465123007B57A5 /* UIElementClickedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIElementClickedController.m; path = Conroller/UIElementClickedController.m; sourceTree = "<group>"; };
+		CD5E8E2C16612A7700D81C2E /* ALTER_MENU_BAR_ITEMS.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ALTER_MENU_BAR_ITEMS.sql; path = "Database/SQL Scripte/V1.3.2/ALTER_MENU_BAR_ITEMS.sql"; sourceTree = "<group>"; };
 		CD6A928D1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_APPLICATION_BLACKLISTV1_3_1.sql; path = "Database/SQL Scripte/INSERT_APPLICATION_BLACKLISTV1_3_1.sql"; sourceTree = "<group>"; };
 		CD6AD38F164BFE9D009FF1B5 /* LicenceWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LicenceWindow.xib; path = GUI/Licence/LicenceWindow.xib; sourceTree = "<group>"; };
 		CD6AD393164C047E009FF1B5 /* LicenceWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LicenceWindowController.h; path = GUI/Licence/LicenceWindowController.h; sourceTree = "<group>"; };
@@ -682,6 +684,7 @@
 		CDC77C1C165C2D8E00939D99 /* V1_3_2 */ = {
 			isa = PBXGroup;
 			children = (
+				CD5E8E2C16612A7700D81C2E /* ALTER_MENU_BAR_ITEMS.sql */,
 				CD71E48C165ED17F00987E09 /* INSERT_APPLICATION_BLACKLISTV1_3_2.sql */,
 				CDC77C20165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql */,
 				CDC77C21165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql */,
@@ -848,6 +851,7 @@
 				CDC77C22165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql in Resources */,
 				CDC77C23165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql in Resources */,
 				CD71E48D165ED17F00987E09 /* INSERT_APPLICATION_BLACKLISTV1_3_2.sql in Resources */,
+				CD5E8E2D16612A7700D81C2E /* ALTER_MENU_BAR_ITEMS.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

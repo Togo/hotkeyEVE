@@ -1388,7 +1388,7 @@
 					</object>
 					<object class="NSMenuItem" id="39247221">
 						<reference key="NSMenu" ref="722780090"/>
-						<string key="NSTitle">Report a Bug</string>
+						<string key="NSTitle">Send Feedback</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
@@ -2224,11 +2224,11 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">reportABug:</string>
+						<string key="label">sendFeedback:</string>
 						<reference key="source" ref="976324537"/>
 						<reference key="destination" ref="39247221"/>
 					</object>
-					<int key="connectionID">594</int>
+					<int key="connectionID">598</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -3523,7 +3523,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">597</int>
+			<int key="maxID">598</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3540,12 +3540,23 @@
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="getProVersion:">id</string>
+						<string key="pauseEve:">id</string>
+						<string key="sendFeedback:">id</string>
 						<string key="showLicenceKeyWindow:">id</string>
 						<string key="showShortcutsWindow:">id</string>
+						<string key="startAtLogin:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="getProVersion:">
 							<string key="name">getProVersion:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="pauseEve:">
+							<string key="name">pauseEve:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="sendFeedback:">
+							<string key="name">sendFeedback:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="showLicenceKeyWindow:">
@@ -3554,6 +3565,10 @@
 						</object>
 						<object class="IBActionInfo" key="showShortcutsWindow:">
 							<string key="name">showShortcutsWindow:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="startAtLogin:">
+							<string key="name">startAtLogin:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>

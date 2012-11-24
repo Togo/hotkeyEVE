@@ -58,10 +58,6 @@
   [activeApp setTitle:title];
 }
 
-//- (IBAction) scanForShortcuts :(id) sender {
-//  [[[EVEManager sharedEVEManager] indexing] indexingApp:activeApplication];
-//}
-
 - (IBAction) pauseEve:(id)sender {
   EVEManager *manager = [EVEManager sharedEVEManager];
   if ([sender state] == NSOffState) {
@@ -111,7 +107,7 @@
   [[NSNotificationCenter defaultCenter] postNotificationName:SelectCurrentRunningApplication object:[EVEUtilities activeApplication]];
 }
 
-- (IBAction) getProVersion :(id)sender {
+- (IBAction) getProVersion :(id) sender {
   [EVEUtilities openWebShop];
 }
 
@@ -127,7 +123,7 @@
   [UserDataTableModel setStartAtLogin :[sender state]];
 }
 
-- (IBAction)reportABug:(id)sender {
+- (IBAction)sendFeedback :(id) sender {
   NSString* subject = [NSString stringWithFormat:@"Found a bug, or have suggestions?"];
   NSString* body = [NSString stringWithFormat:@"You can contact me in English or German!\n\n Thanks in Advance \nTobias Sommer"];
   NSString* to = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"eMail"];

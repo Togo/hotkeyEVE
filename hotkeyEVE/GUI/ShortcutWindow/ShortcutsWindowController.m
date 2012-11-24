@@ -61,6 +61,7 @@
 }
 
 - (IBAction) performFindPanelAction :(id)sender {
+// response to command f menu item. set focus on search field
   [[self window] makeFirstResponder:_searchField];
 }
 

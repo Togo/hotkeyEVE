@@ -8,6 +8,7 @@
 
 #import "ApplicationsTableModel.h"
 #import "GUISupportTableModel.h"
+#import "EVEUtilities.h"
 
 @implementation ApplicationsTableModel
 
@@ -86,6 +87,7 @@
   [query appendFormat:@" WHERE EXISTS ( "];
   [query appendFormat:@" SELECT rowid FROM %@ m ", MENU_BAR_ITEMS_TABLE];
   [query appendFormat:@" WHERE a.%@ = m.%@ ", ID_COL, APPLICATION_ID_COL];
+  [query appendFormat:@" AND m.%@ like '%@' ", LANG_COL, [EVEUtilities currentLanguage]];
   [query appendFormat:@" LIMIT 1) "];
   [query appendFormat:@" AND  a.%@ NOT LIKE '%@' ", APP_NAME_COL, @"(null)"];
   [query appendFormat:@" ORDER BY a.%@ COLLATE NOCASE ", APP_NAME_COL];
@@ -104,12 +106,14 @@
     [query appendFormat:@"        WHERE ( m.%@ LIKE '%%%@%%' \n", TITLE_COL,  searchString];
     [query appendFormat:@"        OR  m.%@ LIKE '%%%@%%' ) \n", PARENT_TITLE_COL,  searchString];
     [query appendFormat:@"        AND a.%@ = m.%@ \n", ID_COL, APPLICATION_ID_COL];
+    [query appendFormat:@"        AND m.%@ like '%@' ", LANG_COL, [EVEUtilities currentLanguage]];
     [query appendFormat:@"        LIMIT 1) \n"];
     [query appendFormat:@" OR EXISTS ( \n"];
     [query appendFormat:@"  SELECT s.rowid FROM %@ s, %@ m \n", SHORTCUTS_TABLE, MENU_BAR_ITEMS_TABLE];
     [query appendFormat:@"        WHERE ( s.%@ LIKE '%%%@%%' ) \n", SHORTCUT_STRING_COL,  searchString];
     [query appendFormat:@"        AND m.%@ = s.%@ \n", SHORTCUT_ID_COL, ID_COL];
     [query appendFormat:@"        AND a.%@ = m.%@ \n", ID_COL, APPLICATION_ID_COL];
+    [query appendFormat:@"        AND m.%@ like '%@' ", LANG_COL, [EVEUtilities currentLanguage]];
     [query appendFormat:@"        LIMIT 1) \n"];
     [query appendFormat:@" AND  a.%@ NOT LIKE '%@' \n", APP_NAME_COL, @"(null)"];
     [query appendFormat:@" ORDER BY a.%@ COLLATE NOCASE \n", APP_NAME_COL];

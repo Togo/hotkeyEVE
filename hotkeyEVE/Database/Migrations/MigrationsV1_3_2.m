@@ -21,6 +21,9 @@
   
   DDLogInfo(@"MigrationsV1_3_2 -> up :: run script :%@:", @"INSERT_APPLICATION_BLACKLISTV1_3_2.sql");
   [db executeScript:@"INSERT_APPLICATION_BLACKLISTV1_3_2" :@"sql" :@""];
+  
+  DDLogInfo(@"MigrationsV1_3_2 -> up :: run script :%@:", @"ALTER_MENU_BAR_ITEMS.sql");
+  [db executeScript:@"ALTER_MENU_BAR_ITEMS" :@"sql" :@""];
 }
 
 - (void)down {
