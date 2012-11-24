@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD018F001660A4B3008A1C5A /* AppChangedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD018EFF1660A4B3008A1C5A /* AppChangedController.m */; };
 		CD57864C16465D5800CC508B /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = CD57864B16465D5800CC508B /* Growl Registration Ticket.growlRegDict */; };
 		CD57865216465E2600CC508B /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
 		CD57865316465EDE00CC508B /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
@@ -180,6 +181,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CD018EFE1660A4B3008A1C5A /* AppChangedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppChangedController.h; path = Conroller/AppChangedController.h; sourceTree = "<group>"; };
+		CD018EFF1660A4B3008A1C5A /* AppChangedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppChangedController.m; path = Conroller/AppChangedController.m; sourceTree = "<group>"; };
 		CD57864B16465D5800CC508B /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		CD57865116465E2600CC508B /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = hotkeyEVE/Frameworks/Growl.framework; sourceTree = "<group>"; };
 		CD5786541646611200CC508B /* EVE_ICON.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON.icns; sourceTree = "<group>"; };
@@ -472,6 +475,8 @@
 				CD97CE9B164687B300406F1F /* ShortcutDisabledController.m */,
 				CDB3D6601646BAE000285306 /* AppLaunchedController.h */,
 				CDB3D6611646BAE000285306 /* AppLaunchedController.m */,
+				CD018EFE1660A4B3008A1C5A /* AppChangedController.h */,
+				CD018EFF1660A4B3008A1C5A /* AppChangedController.m */,
 				CD71E4A9165FC88A00987E09 /* GlobalHotkeyController.h */,
 				CD71E4AA165FC88A00987E09 /* GlobalHotkeyController.m */,
 			);
@@ -925,6 +930,7 @@
 				CD71E4A4165EE85A00987E09 /* DDHotKeyAppDelegate.m in Sources */,
 				CD71E4A5165EE85A00987E09 /* DDHotKeyCenter.m in Sources */,
 				CD71E4AB165FC88B00987E09 /* GlobalHotkeyController.m in Sources */,
+				CD018F001660A4B3008A1C5A /* AppChangedController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,6 +15,7 @@
 
 @synthesize uiElementClicked;
 @synthesize appLaunched;
+@synthesize appChangedController;
 
 @synthesize growl;
 @synthesize mainMenuController;
@@ -22,8 +23,6 @@
 @synthesize licence;
 
 @synthesize globalHotkeyController;
-
-@synthesize lastActiveApp;
 
 #pragma mark Singleton Methods
 
@@ -44,6 +43,8 @@
     eveObserver = [[EVEObserver alloc] init];
     
     uiElementClicked = [[UIElementClickedController alloc] init];
+    
+    appChangedController = [[AppChangedController alloc] init];
     appLaunched = [[AppLaunchedController alloc] init];
     
     growl = [[GrowlController alloc] init];

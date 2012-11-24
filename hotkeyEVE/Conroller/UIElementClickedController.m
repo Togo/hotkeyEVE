@@ -14,6 +14,7 @@
 #import "EVEMessages.h"
 #import "ApplicationsTableModel.h"
 #import "StringUtilities.h"
+#import "EVEUtilities.h"
 
 @implementation UIElementClickedController
 
@@ -21,19 +22,6 @@
 
 - (void) reveicedUIElementClick :(UIElement*) element {
   DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick(element => :%@:) :: get called ", element);
-  Application *lastActiveApp =  [[EVEManager sharedEVEManager] lastActiveApp];
-  // Update Status Icon
-  if( ![[[element owner] bundleIdentifier] isEqualToString:[lastActiveApp bundleIdentifier]] ) {
-   BOOL appWithGUISupport = [GUISupportTableModel hasGUISupport:[[element owner] bundleIdentifier]];
-    [[[EVEManager sharedEVEManager] mainMenuController] updateStatusIcon:appWithGUISupport];
-    Application *activeApp = [element owner];
-    activeApp.guiSupport = appWithGUISupport;
-    activeApp.appID = [ApplicationsTableModel getApplicationID:[activeApp appName] :[activeApp bundleIdentifier]];
-    lastActiveApp = activeApp;
-    [[EVEManager sharedEVEManager] setLastActiveApp:lastActiveApp];
-  }
-  
-  DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick :: guiSupport :%i:", [lastActiveApp guiSupport]);
   
   DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick :: \n%@",[StringUtilities printUIElement:element]);
   
@@ -42,7 +30,7 @@
     DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick :: receive click with element => :%@:", element);
     if([[element role] isEqualToString:(NSString*) kAXMenuItemRole]) {
       messageDisplayed = [HandleClickedUIElement handleMenuElement:element];
-     }  else if ([lastActiveApp guiSupport] == YES) {
+     }  else if ([[EVEUtilities activeApplication] guiSupport] == YES) {
        // check gui support
       messageDisplayed = [HandleClickedUIElement handleGUIElement :element];
     }

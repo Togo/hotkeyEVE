@@ -17,10 +17,7 @@
 @implementation EVEUtilities
 
 + (Application*) activeApplication {
-  DDLogInfo(@"EVEUtilities -> activeApplication() :: get called ");
-  Application *activeApp = [[EVEManager sharedEVEManager] lastActiveApp];
-  DDLogInfo(@"EVEUtilities -> activeApplication() :: return actuve app. appName => :%@: bundleIdentifier :%@: appID :%li: ", [activeApp appName], [activeApp bundleIdentifier], [activeApp appID]);
-  return activeApp;
+  return [[[EVEManager sharedEVEManager] appChangedController] activeApplication];
 }
 
 + (NSString*) currentLanguage {

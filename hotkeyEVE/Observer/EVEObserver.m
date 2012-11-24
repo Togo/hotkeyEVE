@@ -37,6 +37,13 @@
    [[[EVEManager sharedEVEManager] appLaunched] newAppLaunched :[dic valueForKey:@"NSApplicationBundleIdentifier"]];
     return;
   }
+  
+  if ( [[notification name] isEqualToString:NSWorkspaceDidActivateApplicationNotification] )  {
+    NSDictionary *dic = [notification userInfo];
+    NSString *bundleIdentifier = [[dic valueForKey:@"NSWorkspaceApplicationKey"] bundleIdentifier];
+    [[[EVEManager sharedEVEManager] appChangedController] appFrontChanged :bundleIdentifier];
+    return;
+  }
 }
 
 - (void) dealloc {
@@ -85,11 +92,17 @@
 
 
 - (void) subscribeAllNotifications {
+  DDLogInfo(@"EVEObserver -> subscribeAllNotifications() :: get called");
+
   [self subscribeToNotificiation:ClickOnUIElementNotification];
-  DDLogInfo(@"Subscribed %@", ClickOnUIElementNotification);
+  DDLogInfo(@"EVEObserver -> subscribeAllNotifications() :: get subscribed => :%@:", ClickOnUIElementNotification);
   
   [self subscribeToGlobalNotificiation:NSWorkspaceDidLaunchApplicationNotification];
-  DDLogInfo(@"Subscribed %@", NSWorkspaceDidLaunchApplicationNotification);
+  DDLogInfo(@"EVEObserver -> subscribeAllNotifications() :: get subscribed => :%@:", NSWorkspaceDidLaunchApplicationNotification);
+
+
+  [self subscribeToGlobalNotificiation:NSWorkspaceDidActivateApplicationNotification];
+  DDLogInfo(@"Subscribed %@", NSWorkspaceDidActivateApplicationNotification);
 }
 
 - (void) unSubscribeAllNotifications {

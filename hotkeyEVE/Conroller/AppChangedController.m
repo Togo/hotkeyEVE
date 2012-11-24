@@ -1,0 +1,27 @@
+//
+//  AppChangedController.m
+//  hotkeyEVE
+//
+//  Created by Tobias Sommer on 11/24/12.
+//  Copyright (c) 2012 Tobias Sommer. All rights reserved.
+//
+
+#import "AppChangedController.h"
+#import "GUISupportTableModel.h"
+#import "ApplicationsTableModel.h"
+
+@implementation AppChangedController
+
+@synthesize activeApplication;
+
+- (void) appFrontChanged :(NSString*) bundleIdentifier {
+  DDLogInfo(@"AppChangedController -> appFrontChanged(bundleIdentifier :%@:) :: get called", bundleIdentifier);
+  
+    activeApplication = [[Application alloc] initWithBundleIdentifier:bundleIdentifier];
+    activeApplication.appID = [ApplicationsTableModel getApplicationID:[activeApplication appName] :[activeApplication bundleIdentifier]];
+    activeApplication.guiSupport = [GUISupportTableModel hasGUISupport:bundleIdentifier];
+    [[[EVEManager sharedEVEManager] mainMenuController] updateStatusIcon:[activeApplication guiSupport]];
+  
+  DDLogInfo(@"AppChangedController -> appFrontChanged :: appName => :%@: appID :%li: guiSupport => :%i:",[activeApplication appName], [activeApplication appID], [activeApplication guiSupport]);
+}
+@end

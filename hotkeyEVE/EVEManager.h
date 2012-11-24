@@ -12,6 +12,7 @@
 #import "EVEObserver.h"
 #import "GrowlController.h"
 #import "AppLaunchedController.h"
+#import "AppChangedController.h"
 #import "MainMenuController.h"
 #import "Licence.h"
 #import "GlobalHotkeyController.h"
@@ -22,7 +23,9 @@
 @property (nonatomic, retain)   EVEObserver  *eveObserver;
 
 @property (nonatomic, retain)   UIElementClickedController  *uiElementClicked;
+
 @property (nonatomic, retain)   AppLaunchedController  *appLaunched;
+@property (nonatomic, retain)   AppChangedController  *appChangedController;
 
 @property (strong, nonatomic)   GrowlController *growl;
 @property (strong, nonatomic)   MainMenuController *mainMenuController;
@@ -30,8 +33,6 @@
 @property (strong, nonatomic)   Licence *licence;
 
 @property (strong, nonatomic)   GlobalHotkeyController *globalHotkeyController;
-
-@property (strong, nonatomic)   Application *lastActiveApp;
 
 + (id) sharedEVEManager;
 

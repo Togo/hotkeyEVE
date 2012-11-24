@@ -73,7 +73,7 @@
         cellView.imageView.objectValue = [runningApp icon];
       }
     } else {
-      cellView.imageView.objectValue = [NSImage imageNamed:@"NSQuickLookTemplate"];
+      cellView.imageView.objectValue = [NSImage imageNamed:@"NSStatusNone"];
     }
   
   return cellView;
