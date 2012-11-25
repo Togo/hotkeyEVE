@@ -22,9 +22,6 @@
 #import "EVEMessages.h"
 #import "EVEUtilities.h"
 
-
-
-
 @implementation AppDelegate
 
 @synthesize eveAppManager;
