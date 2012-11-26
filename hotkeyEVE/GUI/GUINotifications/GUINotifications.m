@@ -16,4 +16,5 @@ NSString * const NewAppIndexedApplicationTable = @"NewAppIndexedApplicationTable
 NSString * const ApplicationIndexingFinished = @"ApplicationIndexingFinished";
 NSString * const RefreshShortcutBrowserApplicationTable = @"RefreshShortcutBrowserApplicationTable";
 NSString * const ShortcutTableSearchUpdate = @"ShortcutTableSearchUpdate";
-NSString * const SelectCurrentRunningApplication = @"SelectCurrentRunningApplication";
+NSString * const SelectActiveApplication = @"SelectCurrentRunningApplication";
+NSString * const SelectNotificationDisabledShortcutRow = @"SelectNotificationDisabledShortcutRow";

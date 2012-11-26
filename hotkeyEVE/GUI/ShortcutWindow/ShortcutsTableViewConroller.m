@@ -29,6 +29,9 @@ enum {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(applicationChanged:)
                                                  name:ShortcutsWindowApplicationDidChanged object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(selectRowInTable:)
+                                                 name:SelectNotificationDisabledShortcutRow object:nil];
   }
   
   return self;
@@ -69,10 +72,12 @@ enum {
 
 
 - (void) applicationChanged :(id) aNotification {
+    DDLogInfo(@"ShortcutsTableViewConroller -> applicationChanged(aNotification => :%@:) :: get called ", [aNotification object]);
     // Clear
     [shortcutList removeAllObjects];
     NSInteger appID =  [[[aNotification object] valueForKey:ID_COL] intValue];
     activeAppName = [[aNotification object] valueForKey:APP_NAME_COL];
+    DDLogInfo(@"ShortcutsTableViewConroller -> applicationChanged() :: appID :%li: set activeAppName :%@: ", appID, activeAppName);
   
     unfilteredShortcutList = [MenuBarTableModel getTitlesAndShortcuts:appID];
     [shortcutList addObjectsFromArray:unfilteredShortcutList];
@@ -81,8 +86,7 @@ enum {
       }
 
     [shortcutTable reloadData];
-    [shortcutTable selectRowIndexes :[NSIndexSet indexSetWithIndex:0] byExtendingSelection:NO];
-    [shortcutTable scrollRowToVisible:0];
+    [self setSelectedRow:0];
   }
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView {
@@ -107,6 +111,32 @@ enum {
     
     [[shortcutList objectAtIndex:rowIndex] setObject:anObject forKey:DISABLED_SHORTCUT_DYN_COL];
   }  
+}
+
+- (void) selectRowInTable :(id) aNotification {
+  if([[aNotification name] isEqualToString:SelectNotificationDisabledShortcutRow]) {
+    NSInteger row = [self findTableRow :[aNotification object]];
+    [self setSelectedRow:row];
+  }
+}
+
+- (NSInteger) findTableRow :(NSDictionary*) dic {
+  
+  NSInteger index = 0;
+  for (NSDictionary *row in shortcutList) {
+    if ( [[row valueForKey:TITLE_COL] isEqualToString:[dic valueForKey:TITLE_COL]] ) {
+      return index;
+    }
+    
+    index++;
+  }
+  
+  return 0;
+}
+
+- (void) setSelectedRow :(NSInteger) row {
+  [shortcutTable selectRowIndexes :[NSIndexSet indexSetWithIndex:row] byExtendingSelection:NO];
+  [shortcutTable scrollRowToVisible:row];
 }
 
 - (IBAction) enableInAllApps :(id)sender {

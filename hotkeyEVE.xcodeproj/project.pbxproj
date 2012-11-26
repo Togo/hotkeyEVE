@@ -12,6 +12,8 @@
 		CD57865216465E2600CC508B /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
 		CD57865316465EDE00CC508B /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
 		CD5786551646611200CC508B /* EVE_ICON.icns in Resources */ = {isa = PBXBuildFile; fileRef = CD5786541646611200CC508B /* EVE_ICON.icns */; };
+		CD59010D1663BE57000613F7 /* MigrationsV1_3_3.m in Sources */ = {isa = PBXBuildFile; fileRef = CD59010C1663BE56000613F7 /* MigrationsV1_3_3.m */; };
+		CD59010F1663BE61000613F7 /* INSERT_GUI_ELEMENTS_V1_3_3.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD59010E1663BE61000613F7 /* INSERT_GUI_ELEMENTS_V1_3_3.sql */; };
 		CD5A464716455398007B57A5 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A464616455398007B57A5 /* DatabaseManager.m */; };
 		CD5A464A1645563E007B57A5 /* MIGRATIONV1_3_0.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46491645563E007B57A5 /* MIGRATIONV1_3_0.m */; };
 		CD5A464E1645579C007B57A5 /* EVEDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A464D1645579C007B57A5 /* EVEDatabase.m */; };
@@ -68,7 +70,6 @@
 		CD97CE9016467AB000406F1F /* GrowlController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE8F16467AB000406F1F /* GrowlController.m */; };
 		CD97CE96164683EA00406F1F /* ApplicationsTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE95164683EA00406F1F /* ApplicationsTableModel.m */; };
 		CD97CE99164685BA00406F1F /* UserDataTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE98164685BA00406F1F /* UserDataTableModel.m */; };
-		CD97CE9C164687B300406F1F /* ShortcutDisabledController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE9B164687B300406F1F /* ShortcutDisabledController.m */; };
 		CD97CE9F16468A5E00406F1F /* DisabledShortcutsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE9E16468A5E00406F1F /* DisabledShortcutsModel.m */; };
 		CD97CEA216468C5200406F1F /* ShortcutTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CEA116468C5200406F1F /* ShortcutTableModel.m */; };
 		CDA7AD77164D9F4D000907A5 /* ShortcutsTableViewConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA7AD76164D9F4D000907A5 /* ShortcutsTableViewConroller.m */; };
@@ -190,6 +191,9 @@
 		CD57864B16465D5800CC508B /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		CD57865116465E2600CC508B /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = hotkeyEVE/Frameworks/Growl.framework; sourceTree = "<group>"; };
 		CD5786541646611200CC508B /* EVE_ICON.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON.icns; sourceTree = "<group>"; };
+		CD59010B1663BE56000613F7 /* MigrationsV1_3_3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationsV1_3_3.h; path = Database/Migrations/MigrationsV1_3_3.h; sourceTree = "<group>"; };
+		CD59010C1663BE56000613F7 /* MigrationsV1_3_3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationsV1_3_3.m; path = Database/Migrations/MigrationsV1_3_3.m; sourceTree = "<group>"; };
+		CD59010E1663BE61000613F7 /* INSERT_GUI_ELEMENTS_V1_3_3.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_GUI_ELEMENTS_V1_3_3.sql; path = "Database/SQL Scripte/V1.3.3/INSERT_GUI_ELEMENTS_V1_3_3.sql"; sourceTree = "<group>"; };
 		CD5A46231645510F007B57A5 /* UIElements.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIElements.xcodeproj; path = "eve-uielements/UIElements.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		CD5A462F16455118007B57A5 /* Database.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Database.xcodeproj; path = "eve-database/Database.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		CD5A464516455398007B57A5 /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseManager.h; path = Database/DatabaseManager.h; sourceTree = "<group>"; };
@@ -285,8 +289,6 @@
 		CD97CE95164683EA00406F1F /* ApplicationsTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplicationsTableModel.m; path = Database/Models/ApplicationsTableModel.m; sourceTree = "<group>"; };
 		CD97CE97164685BA00406F1F /* UserDataTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDataTableModel.h; path = Database/Models/UserDataTableModel.h; sourceTree = "<group>"; };
 		CD97CE98164685BA00406F1F /* UserDataTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDataTableModel.m; path = Database/Models/UserDataTableModel.m; sourceTree = "<group>"; };
-		CD97CE9A164687B300406F1F /* ShortcutDisabledController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShortcutDisabledController.h; path = Conroller/ShortcutDisabledController.h; sourceTree = "<group>"; };
-		CD97CE9B164687B300406F1F /* ShortcutDisabledController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShortcutDisabledController.m; path = Conroller/ShortcutDisabledController.m; sourceTree = "<group>"; };
 		CD97CE9D16468A5E00406F1F /* DisabledShortcutsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisabledShortcutsModel.h; path = Database/Models/DisabledShortcutsModel.h; sourceTree = "<group>"; };
 		CD97CE9E16468A5E00406F1F /* DisabledShortcutsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisabledShortcutsModel.m; path = Database/Models/DisabledShortcutsModel.m; sourceTree = "<group>"; };
 		CD97CEA016468C5100406F1F /* ShortcutTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortcutTableModel.h; sourceTree = "<group>"; };
@@ -352,6 +354,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD59010A1663BE44000613F7 /* V1_3_3 */ = {
+			isa = PBXGroup;
+			children = (
+				CD59010E1663BE61000613F7 /* INSERT_GUI_ELEMENTS_V1_3_3.sql */,
+				CD59010B1663BE56000613F7 /* MigrationsV1_3_3.h */,
+				CD59010C1663BE56000613F7 /* MigrationsV1_3_3.m */,
+			);
+			name = V1_3_3;
+			sourceTree = "<group>";
+		};
 		CD5A4621164550F6007B57A5 /* Subprojects */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +407,7 @@
 		CD5A464B16455643007B57A5 /* Migrations */ = {
 			isa = PBXGroup;
 			children = (
+				CD59010A1663BE44000613F7 /* V1_3_3 */,
 				CDC77C1C165C2D8E00939D99 /* V1_3_2 */,
 				CD84B7871658CAC600DF227B /* V1_3_1 */,
 				CDEE156D164AE36100EDCDF4 /* V1_3_0 */,
@@ -479,8 +492,6 @@
 				CD5A46F716465123007B57A5 /* UIElementClickedController.m */,
 				CD97CE8E16467AB000406F1F /* GrowlController.h */,
 				CD97CE8F16467AB000406F1F /* GrowlController.m */,
-				CD97CE9A164687B300406F1F /* ShortcutDisabledController.h */,
-				CD97CE9B164687B300406F1F /* ShortcutDisabledController.m */,
 				CDB3D6601646BAE000285306 /* AppLaunchedController.h */,
 				CDB3D6611646BAE000285306 /* AppLaunchedController.m */,
 				CD018EFE1660A4B3008A1C5A /* AppChangedController.h */,
@@ -869,6 +880,7 @@
 				CDC77C23165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql in Resources */,
 				CD71E48D165ED17F00987E09 /* INSERT_APPLICATION_BLACKLISTV1_3_2.sql in Resources */,
 				CD5E8E2D16612A7700D81C2E /* ALTER_MENU_BAR_ITEMS.sql in Resources */,
+				CD59010F1663BE61000613F7 /* INSERT_GUI_ELEMENTS_V1_3_3.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,7 +939,6 @@
 				CD97CE9016467AB000406F1F /* GrowlController.m in Sources */,
 				CD97CE96164683EA00406F1F /* ApplicationsTableModel.m in Sources */,
 				CD97CE99164685BA00406F1F /* UserDataTableModel.m in Sources */,
-				CD97CE9C164687B300406F1F /* ShortcutDisabledController.m in Sources */,
 				CD97CE9F16468A5E00406F1F /* DisabledShortcutsModel.m in Sources */,
 				CD97CEA216468C5200406F1F /* ShortcutTableModel.m in Sources */,
 				CDB3D6621646BAE000285306 /* AppLaunchedController.m in Sources */,
@@ -953,6 +964,7 @@
 				CD71E4AB165FC88B00987E09 /* GlobalHotkeyController.m in Sources */,
 				CD018F001660A4B3008A1C5A /* AppChangedController.m in Sources */,
 				CDE54D9A16626FF8009E4C57 /* ShareService.m in Sources */,
+				CD59010D1663BE57000613F7 /* MigrationsV1_3_3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

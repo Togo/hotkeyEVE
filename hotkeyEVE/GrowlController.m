@@ -14,19 +14,22 @@
 @implementation GrowlController
 
 // a Growl delegate method, called when a notification is clicked. Check the value of the clickContext argument to determine what to do
-- (void) growlNotificationWasClicked:(id) clickedContext {
+- (void) growlNotificationWasClicked :(id) clickedContext {
   if (clickedContext != nil) {
     if ([[clickedContext valueForKey:@"mesage_type"] isEqualToString:@"disable_shortcut"]) {
-      NSString *appName = [clickedContext valueForKey:@"appName"];
-      NSString *bundleIdentifier = [clickedContext valueForKey:@"BundleIdentifier"];
-      NSString *shortcutString = [clickedContext valueForKey:@"ShortcutString"];
-      NSString *user = [clickedContext valueForKey:@"User"];
-      NSString *title = [clickedContext valueForKey:@"element_title"];
+      NSString *appName = [clickedContext valueForKey:APP_NAME_COL];
+      NSString *bundleIdentifier = [clickedContext valueForKey:BUNDLE_IDEN_COL];
+      NSString *shortcutString = [clickedContext valueForKey:SHORTCUT_STRING_COL];
+      NSString *user = [clickedContext valueForKey:USER_NAME_COL];
+      NSString *title = [clickedContext valueForKey:TITLE_COL];
       
       [DisabledShortcutsModel disableShortcutWithStrings :appName :bundleIdentifier :shortcutString :user :title];
       [EVEMessages showShortcutDisabledMessage :clickedContext];
       
-      [[NSNotificationCenter defaultCenter] ]
+      [[NSNotificationCenter defaultCenter] postNotificationName:SelectActiveApplication object:[EVEUtilities activeApplication]];
+      [[NSNotificationCenter defaultCenter] postNotificationName:ShortcutsWindowApplicationDidChanged object:clickedContext];
+      [[NSNotificationCenter defaultCenter] postNotificationName:SelectNotificationDisabledShortcutRow object:clickedContext];
+
       return;
     }
     

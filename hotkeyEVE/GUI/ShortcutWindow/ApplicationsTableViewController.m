@@ -30,7 +30,7 @@
                                                  name:ShortcutTableSearchUpdate object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(selectCurrentRunningApplication:)
-                                                 name:SelectCurrentRunningApplication object:nil];
+                                                 name:SelectActiveApplication object:nil];
   }
   
   return self;

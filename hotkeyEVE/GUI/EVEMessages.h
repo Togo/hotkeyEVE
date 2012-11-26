@@ -11,7 +11,6 @@
 @interface EVEMessages : NSObject
 
 + (void) maxEnabledAppsReachedInWindow :(NSWindow*) window;
-+ (void) shortcutDisabledGrowl :(NSString*) shortcutString;
 
 + (void) displayShortcutMessage :(UIElement*) element;
 + (void) displayMultipleMatchesMessage :(NSString*) description;

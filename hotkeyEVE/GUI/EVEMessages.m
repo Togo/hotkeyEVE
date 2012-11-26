@@ -28,10 +28,6 @@
   }
 }
 
-+ (void) shortcutDisabledGrowl :(NSString*) shortcutString {
-  [GrowlApplicationBridge notifyWithTitle:[NSString stringWithFormat:@"I disabled: %@", shortcutString] description:@"Go to Preferences to undo this!" notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:nil];
-}
-
 + (void) displayShortcutMessage :(UIElement*) element {
   DDLogInfo(@"EVEMessages -> displayShortcutMessage(element => :%@:) :: get called", element);
 
@@ -47,11 +43,12 @@
   
   NSMutableDictionary *clickContextDic = [[NSMutableDictionary alloc] init];
   [clickContextDic setValue:@"disable_shortcut" forKey:@"mesage_type"];
-  [clickContextDic setValue:[[element owner] appName] forKey:@"appName"];
-  [clickContextDic setValue:[[element owner] bundleIdentifier] forKey:@"BundleIdentifier"];
-  [clickContextDic setValue:[element shortcutString] forKey:@"ShortcutString"];
-  [clickContextDic setValue:[element user] forKey:@"User"];
-  [clickContextDic setValue:[element title] forKey:@"element_title"];
+  [clickContextDic setValue:[[element owner] appName] forKey:APP_NAME_COL];
+  [clickContextDic setValue:[[element owner] bundleIdentifier] forKey:BUNDLE_IDEN_COL];
+  [clickContextDic setValue:[NSNumber numberWithInteger:[[element owner] appID]]forKey:ID_COL];
+  [clickContextDic setValue:[element shortcutString] forKey:SHORTCUT_STRING_COL];
+  [clickContextDic setValue:[element user] forKey:USER_NAME_COL];
+  [clickContextDic setValue:[element title] forKey:TITLE_COL];
   
   DDLogInfo(@"EVEMessages -> displayShortcutMessage :: show growl message");
   DDLogInfo(@"EVEMessages -> displayShortcutMessage :: Message title => :%@:", [element shortcutString]);
@@ -76,9 +73,9 @@
 }
 
 + (void) showShortcutDisabledMessage :(NSDictionary*) clickContext {
-  NSString* appName  = [clickContext  valueForKey:@"appName"];
-  NSString* shortcut = [clickContext  valueForKey:@"ShortcutString"];
-  NSString* title    = [clickContext  valueForKey:@"element_title"];
+  NSString* appName  = [clickContext  valueForKey:APP_NAME_COL];
+  NSString* shortcut = [clickContext  valueForKey:SHORTCUT_STRING_COL];
+  NSString* title    = [clickContext  valueForKey:TITLE_COL];
   
   NSMutableString *description = [NSMutableString string];
   [description appendFormat:@"%@ -> %@  \nin %@", title, shortcut, appName];

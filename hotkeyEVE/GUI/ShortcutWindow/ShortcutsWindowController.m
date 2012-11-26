@@ -7,6 +7,7 @@
 //
 
 #import "ShortcutsWindowController.h"
+#import "EVEUtilities.h"
 
 @interface ShortcutsWindowController ()
 

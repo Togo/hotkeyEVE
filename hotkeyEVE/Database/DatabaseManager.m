@@ -7,10 +7,12 @@
 //
 
 #import "DatabaseManager.h"
+#import "NSFileManager+DirectoryLocations.h"
+
 #import "MIGRATIONV1_3_0.h"
 #import "MigrationsV1_3_1.h"
 #import "MigrationsV1_3_2.h"
-#import "NSFileManager+DirectoryLocations.h"
+#import "MigrationsV1_3_3.h"
 
 @implementation DatabaseManager
 
@@ -41,6 +43,7 @@
     [eveDatabase addMigrationObject:[MIGRATIONV1_3_0 migration]];
     [eveDatabase addMigrationObject:[MigrationsV1_3_1 migration]];
     [eveDatabase addMigrationObject:[MigrationsV1_3_2 migration]];
+    [eveDatabase addMigrationObject:[MigrationsV1_3_3 migration]];
   }
   
   return self;
