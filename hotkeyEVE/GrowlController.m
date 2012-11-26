@@ -25,6 +25,8 @@
       
       [DisabledShortcutsModel disableShortcutWithStrings :appName :bundleIdentifier :shortcutString :user :title];
       [EVEMessages showShortcutDisabledMessage :clickedContext];
+      
+      [[NSNotificationCenter defaultCenter] ]
       return;
     }
     

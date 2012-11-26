@@ -76,6 +76,9 @@
 		CDC77C1F165C2DAF00939D99 /* MigrationsV1_3_2.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */; };
 		CDC77C22165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDC77C20165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql */; };
 		CDC77C23165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDC77C21165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql */; };
+		CDE54D9A16626FF8009E4C57 /* ShareService.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE54D9916626FF8009E4C57 /* ShareService.m */; };
+		CDE54D9D16627556009E4C57 /* ShareServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE54D9C16627556009E4C57 /* ShareServiceTests.m */; };
+		CDE54D9E166277D2009E4C57 /* ShareService.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE54D9916626FF8009E4C57 /* ShareService.m */; };
 		CDEE15311648127A00EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns in Resources */ = {isa = PBXBuildFile; fileRef = CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */; };
 		CDEE15341648128C00EDCDF4 /* GUISupportTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE15331648128C00EDCDF4 /* GUISupportTableModel.m */; };
 		CDEE1537164812F500EDCDF4 /* DisplayedShortcutsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1536164812F500EDCDF4 /* DisplayedShortcutsModel.m */; };
@@ -296,6 +299,9 @@
 		CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationsV1_3_2.m; path = Database/Migrations/MigrationsV1_3_2.m; sourceTree = "<group>"; };
 		CDC77C20165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_GUI_ELEMENTS_V1_3_2.sql; path = "Database/SQL Scripte/V1.3.2/INSERT_GUI_ELEMENTS_V1_3_2.sql"; sourceTree = "<group>"; };
 		CDC77C21165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_GUI_SUPPORT_V1_3_2.sql; path = "Database/SQL Scripte/V1.3.2/INSERT_GUI_SUPPORT_V1_3_2.sql"; sourceTree = "<group>"; };
+		CDE54D9816626FF8009E4C57 /* ShareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareService.h; sourceTree = "<group>"; };
+		CDE54D9916626FF8009E4C57 /* ShareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareService.m; sourceTree = "<group>"; };
+		CDE54D9C16627556009E4C57 /* ShareServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareServiceTests.m; sourceTree = "<group>"; };
 		CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns; sourceTree = "<group>"; };
 		CDEE15321648128C00EDCDF4 /* GUISupportTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUISupportTableModel.h; path = Database/Models/GUISupportTableModel.h; sourceTree = "<group>"; };
 		CDEE15331648128C00EDCDF4 /* GUISupportTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GUISupportTableModel.m; path = Database/Models/GUISupportTableModel.m; sourceTree = "<group>"; };
@@ -577,6 +583,7 @@
 		CD80E7581645393300A9C7D8 /* hotkeyEVE */ = {
 			isa = PBXGroup;
 			children = (
+				CDE54D9716626FE6009E4C57 /* Social */,
 				CDEE1570164B03EF00EDCDF4 /* Licencing */,
 				CD5A46F916465128007B57A5 /* Controller */,
 				CD5A46F216464F26007B57A5 /* Observer */,
@@ -616,6 +623,7 @@
 		CD80E7751645393400A9C7D8 /* hotkeyEVETests */ = {
 			isa = PBXGroup;
 			children = (
+				CDE54D9C16627556009E4C57 /* ShareServiceTests.m */,
 				CD80E77B1645393400A9C7D8 /* hotkeyEVETests.h */,
 				CD80E77C1645393400A9C7D8 /* hotkeyEVETests.m */,
 				CD80E7761645393400A9C7D8 /* Supporting Files */,
@@ -692,6 +700,15 @@
 				CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */,
 			);
 			name = V1_3_2;
+			sourceTree = "<group>";
+		};
+		CDE54D9716626FE6009E4C57 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				CDE54D9816626FF8009E4C57 /* ShareService.h */,
+				CDE54D9916626FF8009E4C57 /* ShareService.m */,
+			);
+			path = Social;
 			sourceTree = "<group>";
 		};
 		CDEE156D164AE36100EDCDF4 /* V1_3_0 */ = {
@@ -935,6 +952,7 @@
 				CD71E4A5165EE85A00987E09 /* DDHotKeyCenter.m in Sources */,
 				CD71E4AB165FC88B00987E09 /* GlobalHotkeyController.m in Sources */,
 				CD018F001660A4B3008A1C5A /* AppChangedController.m in Sources */,
+				CDE54D9A16626FF8009E4C57 /* ShareService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -943,6 +961,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD80E77D1645393400A9C7D8 /* hotkeyEVETests.m in Sources */,
+				CDE54D9D16627556009E4C57 /* ShareServiceTests.m in Sources */,
+				CDE54D9E166277D2009E4C57 /* ShareService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

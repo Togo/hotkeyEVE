@@ -12,7 +12,10 @@
 @interface ShortcutsWindowController : NSWindowController <NSWindowDelegate> {
   
   __unsafe_unretained NSSearchField *_searchField;
+
+
 }
 
 @property (unsafe_unretained) IBOutlet NSSearchField *searchField;
+
 @end

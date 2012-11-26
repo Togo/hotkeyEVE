@@ -25,14 +25,17 @@
       [[NSNotificationCenter defaultCenter] addObserver:self
                                                selector:@selector(applicationIndexingFinshed:)
                                                    name:ApplicationIndexingFinished object:nil];
+      
+
     }
     
     return self;
 }
 
 - (void)windowDidLoad {
-    [super windowDidLoad];
-    DDLogInfo(@"ShortcutsWindowController : windowDidLoad => shortcut browser window did load");
+  [super windowDidLoad];
+  
+  DDLogInfo(@"ShortcutsWindowController : windowDidLoad => shortcut browser window did load");
 }
 - (void)windowWillLoad {
 

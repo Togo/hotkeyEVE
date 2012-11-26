@@ -476,7 +476,6 @@
 									<string key="NSFrame">{{1, 447}, {602, 15}}</string>
 									<reference key="NSSuperview" ref="130106042"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:60</string>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									<int key="NSsFlags">1</int>
@@ -641,6 +640,44 @@
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="764036910"/>
 						<reference key="NSMixedImage" ref="17711875"/>
+					</object>
+					<object class="NSMenuItem" id="656967892">
+						<reference key="NSMenu" ref="215615643"/>
+						<string key="NSTitle">Share</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="764036910"/>
+						<reference key="NSMixedImage" ref="17711875"/>
+						<string key="NSAction">submenuAction:</string>
+						<object class="NSMenu" key="NSSubmenu" id="590628621">
+							<string key="NSTitle">Share</string>
+							<array class="NSMutableArray" key="NSMenuItems">
+								<object class="NSMenuItem" id="980076699">
+									<reference key="NSMenu" ref="590628621"/>
+									<string key="NSTitle">Mail</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="764036910"/>
+									<reference key="NSMixedImage" ref="17711875"/>
+								</object>
+								<object class="NSMenuItem" id="35678965">
+									<reference key="NSMenu" ref="590628621"/>
+									<string key="NSTitle">Twitter</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="764036910"/>
+									<reference key="NSMixedImage" ref="17711875"/>
+								</object>
+								<object class="NSMenuItem" id="45564466">
+									<reference key="NSMenu" ref="590628621"/>
+									<string key="NSTitle">Facebook</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="764036910"/>
+									<reference key="NSMixedImage" ref="17711875"/>
+								</object>
+							</array>
+						</object>
 					</object>
 					<object class="NSMenuItem" id="134544434">
 						<reference key="NSMenu" ref="215615643"/>
@@ -1141,6 +1178,14 @@
 					<int key="connectionID">846</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">shareTwitterMenuItem</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="35678965"/>
+					</object>
+					<int key="connectionID">1385</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">startSpeaking:</string>
 						<reference key="source" ref="1003"/>
@@ -1631,6 +1676,54 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
+						<string key="label">shareTwitterMenuItem</string>
+						<reference key="source" ref="521586417"/>
+						<reference key="destination" ref="35678965"/>
+					</object>
+					<int key="connectionID">1386</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">shareUsingTwitter:</string>
+						<reference key="source" ref="521586417"/>
+						<reference key="destination" ref="35678965"/>
+					</object>
+					<int key="connectionID">1387</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">shareFacebookMenuItem</string>
+						<reference key="source" ref="521586417"/>
+						<reference key="destination" ref="45564466"/>
+					</object>
+					<int key="connectionID">1389</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">shareUsingFacebook:</string>
+						<reference key="source" ref="521586417"/>
+						<reference key="destination" ref="45564466"/>
+					</object>
+					<int key="connectionID">1390</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">shareMailMenuItem</string>
+						<reference key="source" ref="521586417"/>
+						<reference key="destination" ref="980076699"/>
+					</object>
+					<int key="connectionID">1392</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">shareUsingMail:</string>
+						<reference key="source" ref="521586417"/>
+						<reference key="destination" ref="980076699"/>
+					</object>
+					<int key="connectionID">1393</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="215615643"/>
 						<reference key="destination" ref="521586417"/>
@@ -1716,22 +1809,6 @@
 								<float key="scoringTypeFloat">29</float>
 								<int key="contentType">3</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="631929605">
-								<reference key="firstItem" ref="1006"/>
-								<int key="firstAttribute">6</int>
-								<int key="relation">0</int>
-								<reference key="secondItem" ref="130106042"/>
-								<int key="secondAttribute">6</int>
-								<float key="multiplier">1</float>
-								<object class="IBNSLayoutSymbolicConstant" key="constant">
-									<double key="value">20</double>
-								</object>
-								<float key="priority">1000</float>
-								<reference key="containingView" ref="1006"/>
-								<int key="scoringType">8</int>
-								<float key="scoringTypeFloat">29</float>
-								<int key="contentType">3</int>
-							</object>
 							<object class="IBNSLayoutConstraint" id="901300653">
 								<reference key="firstItem" ref="130106042"/>
 								<int key="firstAttribute">5</int>
@@ -1746,6 +1823,22 @@
 								<reference key="containingView" ref="1006"/>
 								<int key="scoringType">3</int>
 								<float key="scoringTypeFloat">9</float>
+								<int key="contentType">3</int>
+							</object>
+							<object class="IBNSLayoutConstraint" id="631929605">
+								<reference key="firstItem" ref="1006"/>
+								<int key="firstAttribute">6</int>
+								<int key="relation">0</int>
+								<reference key="secondItem" ref="130106042"/>
+								<int key="secondAttribute">6</int>
+								<float key="multiplier">1</float>
+								<object class="IBNSLayoutSymbolicConstant" key="constant">
+									<double key="value">20</double>
+								</object>
+								<float key="priority">1000</float>
+								<reference key="containingView" ref="1006"/>
+								<int key="scoringType">8</int>
+								<float key="scoringTypeFloat">29</float>
 								<int key="contentType">3</int>
 							</object>
 							<object class="IBNSLayoutConstraint" id="515912976">
@@ -1988,9 +2081,10 @@
 							<reference ref="107538560"/>
 							<reference ref="227119031"/>
 							<reference ref="48693821"/>
-							<reference ref="134544434"/>
 							<reference ref="128013074"/>
 							<reference ref="666915744"/>
+							<reference ref="134544434"/>
+							<reference ref="656967892"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -2656,11 +2750,6 @@
 						<reference key="parent" ref="1006"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">1220</int>
-						<reference key="object" ref="1072550528"/>
-						<reference key="parent" ref="1006"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">1255</int>
 						<reference key="object" ref="814129942"/>
 						<reference key="parent" ref="576267686"/>
@@ -2711,14 +2800,52 @@
 						<reference key="parent" ref="1006"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">1361</int>
+						<int key="objectID">1362</int>
+						<reference key="object" ref="631929605"/>
+						<reference key="parent" ref="1006"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1371</int>
+						<reference key="object" ref="1072550528"/>
+						<reference key="parent" ref="1006"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1372</int>
 						<reference key="object" ref="901300653"/>
 						<reference key="parent" ref="1006"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">1362</int>
-						<reference key="object" ref="631929605"/>
-						<reference key="parent" ref="1006"/>
+						<int key="objectID">1380</int>
+						<reference key="object" ref="656967892"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="590628621"/>
+						</array>
+						<reference key="parent" ref="215615643"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1381</int>
+						<reference key="object" ref="590628621"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="35678965"/>
+							<reference ref="45564466"/>
+							<reference ref="980076699"/>
+						</array>
+						<reference key="parent" ref="656967892"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1377</int>
+						<reference key="object" ref="35678965"/>
+						<reference key="parent" ref="590628621"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1388</int>
+						<reference key="object" ref="45564466"/>
+						<reference key="parent" ref="590628621"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1391</int>
+						<reference key="object" ref="980076699"/>
+						<reference key="parent" ref="590628621"/>
 					</object>
 				</array>
 			</object>
@@ -2750,7 +2877,6 @@
 				<string key="1150.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1218.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1219.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1220.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1255.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1299.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1322.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2761,8 +2887,14 @@
 				<string key="1355.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1359.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1360.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1361.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1362.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1371.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1372.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1377.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1380.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1381.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1388.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1391.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<boolean value="NO" key="15.IBNSViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="15.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="16.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2790,15 +2922,15 @@
 				<string key="171.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="172.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<array key="2.IBNSViewMetadataConstraints">
+				<array class="NSMutableArray" key="2.IBNSViewMetadataConstraints">
 					<reference ref="909966727"/>
 					<reference ref="90678476"/>
 					<reference ref="104114530"/>
 					<reference ref="972019506"/>
 					<reference ref="734529990"/>
 					<reference ref="515912976"/>
-					<reference ref="901300653"/>
 					<reference ref="631929605"/>
+					<reference ref="901300653"/>
 					<reference ref="721132485"/>
 					<reference ref="1072550528"/>
 				</array>
@@ -2897,7 +3029,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1362</int>
+			<int key="maxID">1393</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2931,9 +3063,46 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">ShortcutsTableViewConroller</string>
 					<string key="superclassName">NSObject</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="disableEnableInOneApp:">id</string>
+						<string key="disableInAllApps:">id</string>
+						<string key="enableInAllApps:">id</string>
+						<string key="shareUsingFacebook:">id</string>
+						<string key="shareUsingMail:">id</string>
+						<string key="shareUsingTwitter:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="disableEnableInOneApp:">
+							<string key="name">disableEnableInOneApp:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="disableInAllApps:">
+							<string key="name">disableInAllApps:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="enableInAllApps:">
+							<string key="name">enableInAllApps:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="shareUsingFacebook:">
+							<string key="name">shareUsingFacebook:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="shareUsingMail:">
+							<string key="name">shareUsingMail:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="shareUsingTwitter:">
+							<string key="name">shareUsingTwitter:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="disableEnableInOneAppItem">NSMenuItem</string>
 						<string key="searchField">NSSearchField</string>
+						<string key="shareFacebookMenuItem">NSMenuItem</string>
+						<string key="shareMailMenuItem">NSMenuItem</string>
+						<string key="shareTwitterMenuItem">NSMenuItem</string>
 						<string key="shortcutListMenu">NSMenu</string>
 						<string key="shortcutTable">NSTableView</string>
 					</dictionary>
@@ -2945,6 +3114,18 @@
 						<object class="IBToOneOutletInfo" key="searchField">
 							<string key="name">searchField</string>
 							<string key="candidateClassName">NSSearchField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="shareFacebookMenuItem">
+							<string key="name">shareFacebookMenuItem</string>
+							<string key="candidateClassName">NSMenuItem</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="shareMailMenuItem">
+							<string key="name">shareMailMenuItem</string>
+							<string key="candidateClassName">NSMenuItem</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="shareTwitterMenuItem">
+							<string key="name">shareTwitterMenuItem</string>
+							<string key="candidateClassName">NSMenuItem</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="shortcutListMenu">
 							<string key="name">shortcutListMenu</string>

@@ -10,6 +10,7 @@
 #import "MenuBarTableModel.h"
 #import "UserDataTableModel.h"
 #import "DisabledShortcutsModel.h"
+#import "ShareService.h"
 
 enum {
   kRemindMe = 0,
@@ -35,6 +36,20 @@ enum {
 
 - (void) dealloc {
   [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void) awakeFromNib {
+  NSSharingService *tweetSharingService  = [NSSharingService sharingServiceNamed:NSSharingServiceNamePostOnTwitter];
+  _shareTwitterMenuItem.title = tweetSharingService.title;
+  _shareTwitterMenuItem.image = tweetSharingService.image;
+  
+  NSSharingService *facebookSharingService  = [NSSharingService sharingServiceNamed:NSSharingServiceNamePostOnFacebook];
+  _shareFacebookMenuItem.title = facebookSharingService.title;
+  _shareFacebookMenuItem.image = facebookSharingService.image;
+  
+  NSSharingService *mailShareService  = [NSSharingService sharingServiceNamed:NSSharingServiceNameComposeEmail];
+  _shareMailMenuItem.title = mailShareService.title;
+  _shareMailMenuItem.image = mailShareService.image;
 }
 
 
@@ -166,6 +181,64 @@ enum {
     // notification mit tabellen eintraegen um in applications zu filtern!!!
     [[NSNotificationCenter defaultCenter] postNotificationName:ShortcutTableSearchUpdate object:match];
   }
+}
+
+- (IBAction)shareUsingTwitter :(id)sender {
+  /*
+   Create the array of items to share.
+   Start with just the content of the text view. If there's an image, add that too.
+   */
+  NSInteger selectedRow = [shortcutTable selectedRow];
+  if (selectedRow != -1) {
+    NSMutableArray *shareItems = [NSMutableArray array];
+
+//    NSString *menu = [[shortcutList objectAtIndex:selectedRow] valueForKey:PARENT_TITLE_COL];
+    NSString *title = [[shortcutList objectAtIndex:selectedRow] valueForKey:TITLE_COL];
+    NSString *shortcut = [[shortcutList objectAtIndex:selectedRow] valueForKey:SHORTCUT_STRING_COL];
+    NSString *tweetMessage = [NSString stringWithFormat:@"I found in %@ a useful shortcut: \n%@ - %@ \n #mac #osx #hotkeyEVE",activeAppName, title, shortcut];
+    
+    [shareItems addObject:tweetMessage];
+    
+    /*
+     Perform the service using the array of items.
+     */
+    ShareService *shareServive = [ShareService shareService];
+    [shareServive tweetWithItems:shareItems];
+  }
+}
+
+- (IBAction)shareUsingFacebook :(id)sender {
+  NSInteger selectedRow = [shortcutTable selectedRow];
+  if (selectedRow != -1) {
+    NSMutableArray *shareItems = [NSMutableArray array];
+    NSString *title = [[shortcutList objectAtIndex:selectedRow] valueForKey:TITLE_COL];
+    NSString *shortcut = [[shortcutList objectAtIndex:selectedRow] valueForKey:SHORTCUT_STRING_COL];
+    NSString *facebookMessage = [NSString stringWithFormat:@"I found in %@ a useful shortcut: \n%@ - %@ \n @Hotkeyeve",activeAppName, title, shortcut];
+
+    [shareItems addObject:facebookMessage];
+    /*
+     Perform the service using the array of items.
+     */
+    ShareService *shareServive = [ShareService shareService];
+    [shareServive postOnFacebookWithItems:shareItems];
+  }
+}
+
+- (IBAction)shareUsingMail:(id)sender {
+  NSInteger selectedRow = [shortcutTable selectedRow];
+  if (selectedRow != -1) {
+    NSMutableArray *shareItems = [NSMutableArray array];
+    NSString *title = [[shortcutList objectAtIndex:selectedRow] valueForKey:TITLE_COL];
+    NSString *shortcut = [[shortcutList objectAtIndex:selectedRow] valueForKey:SHORTCUT_STRING_COL];
+    NSString *mailMessage = [NSString stringWithFormat:@"I found in %@ a useful shortcut: \n%@ - %@ \n www.hotkeye-eve.com",activeAppName, title, shortcut];
+    
+    [shareItems addObject:mailMessage];
+    /*
+     Perform the service using the array of items.
+     */
+    ShareService *shareServive = [ShareService shareService];
+    [shareServive mailWithItems:shareItems];
+  }  
 }
 
 @end
