@@ -16,9 +16,14 @@
   
   DDLogInfo(@"MigrationsV1_3_2 -> up :: run script :%@:", @"INSERT_GUI_ELEMENTS_V1_3_3.sql");
   [db executeScript:@"INSERT_GUI_ELEMENTS_V1_3_3" :@"sql" :@""];
+
+
+  DDLogInfo(@"MigrationsV1_3_2 -> up :: run script :%@:", @"INSERT_GUI_SUPPORT_V1_3_3.sql");
+  [db executeScript:@"INSERT_GUI_SUPPORT_V1_3_3" :@"sql" :@""];
 }
 
 - (void)down {
   
 }
+
 @end
