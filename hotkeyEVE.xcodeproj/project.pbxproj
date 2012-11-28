@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CD018F001660A4B3008A1C5A /* AppChangedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD018EFF1660A4B3008A1C5A /* AppChangedController.m */; };
 		CD52DC851665527D0006CF06 /* INSERT_GUI_SUPPORT_V1_3_3.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD52DC841665527D0006CF06 /* INSERT_GUI_SUPPORT_V1_3_3.sql */; };
+		CD52DC931666918C0006CF06 /* ALTER_GUI_ELEMENTS_V1_3_3.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD52DC921666918B0006CF06 /* ALTER_GUI_ELEMENTS_V1_3_3.sql */; };
 		CD57864C16465D5800CC508B /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = CD57864B16465D5800CC508B /* Growl Registration Ticket.growlRegDict */; };
 		CD57865216465E2600CC508B /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
 		CD57865316465EDE00CC508B /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
@@ -190,6 +191,7 @@
 		CD018EFE1660A4B3008A1C5A /* AppChangedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppChangedController.h; path = Conroller/AppChangedController.h; sourceTree = "<group>"; };
 		CD018EFF1660A4B3008A1C5A /* AppChangedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppChangedController.m; path = Conroller/AppChangedController.m; sourceTree = "<group>"; };
 		CD52DC841665527D0006CF06 /* INSERT_GUI_SUPPORT_V1_3_3.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_GUI_SUPPORT_V1_3_3.sql; path = "Database/SQL Scripte/V1.3.3/INSERT_GUI_SUPPORT_V1_3_3.sql"; sourceTree = "<group>"; };
+		CD52DC921666918B0006CF06 /* ALTER_GUI_ELEMENTS_V1_3_3.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ALTER_GUI_ELEMENTS_V1_3_3.sql; path = "Database/SQL Scripte/V1.3.3/ALTER_GUI_ELEMENTS_V1_3_3.sql"; sourceTree = "<group>"; };
 		CD57864B16465D5800CC508B /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		CD57865116465E2600CC508B /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = hotkeyEVE/Frameworks/Growl.framework; sourceTree = "<group>"; };
 		CD5786541646611200CC508B /* EVE_ICON.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON.icns; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 		CD59010A1663BE44000613F7 /* V1_3_3 */ = {
 			isa = PBXGroup;
 			children = (
+				CD52DC921666918B0006CF06 /* ALTER_GUI_ELEMENTS_V1_3_3.sql */,
 				CD52DC841665527D0006CF06 /* INSERT_GUI_SUPPORT_V1_3_3.sql */,
 				CD59010E1663BE61000613F7 /* INSERT_GUI_ELEMENTS_V1_3_3.sql */,
 				CD59010B1663BE56000613F7 /* MigrationsV1_3_3.h */,
@@ -885,6 +888,7 @@
 				CD5E8E2D16612A7700D81C2E /* ALTER_MENU_BAR_ITEMS.sql in Resources */,
 				CD59010F1663BE61000613F7 /* INSERT_GUI_ELEMENTS_V1_3_3.sql in Resources */,
 				CD52DC851665527D0006CF06 /* INSERT_GUI_SUPPORT_V1_3_3.sql in Resources */,
+				CD52DC931666918C0006CF06 /* ALTER_GUI_ELEMENTS_V1_3_3.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

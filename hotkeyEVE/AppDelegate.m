@@ -67,7 +67,7 @@
   // Log in file
   fileLogger = [[DDFileLogger alloc] init];
   fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
-  fileLogger.logFileManager.maximumNumberOfLogFiles = 1;
+  fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
 
   [DDLog addLogger:fileLogger];
 }
@@ -94,7 +94,5 @@
 - (void) initUserData {
   [UserDataTableModel insertUser: NSUserName()];
 }
-
-
 
 @end
