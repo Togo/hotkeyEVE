@@ -86,7 +86,6 @@ enum {
       }
 
     [shortcutTable reloadData];
-    [self setSelectedRow:0];
   }
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView {
@@ -127,7 +126,6 @@ enum {
     if ( [[row valueForKey:TITLE_COL] isEqualToString:[dic valueForKey:TITLE_COL]] ) {
       return index;
     }
-    
     index++;
   }
   
@@ -225,7 +223,7 @@ enum {
 //    NSString *menu = [[shortcutList objectAtIndex:selectedRow] valueForKey:PARENT_TITLE_COL];
     NSString *title = [[shortcutList objectAtIndex:selectedRow] valueForKey:TITLE_COL];
     NSString *shortcut = [[shortcutList objectAtIndex:selectedRow] valueForKey:SHORTCUT_STRING_COL];
-    NSString *tweetMessage = [NSString stringWithFormat:@"I found in %@ a useful shortcut: \n%@ - %@ \n #mac #osx #hotkeyEVE",activeAppName, title, shortcut];
+    NSString *tweetMessage = [NSString stringWithFormat:@"I found in %@ a useful shortcut: \nTitle: %@ \nShortcut: %@ \n #mac #osx #hotkeyEVE",activeAppName, title, shortcut];
     
     [shareItems addObject:tweetMessage];
     
@@ -243,7 +241,7 @@ enum {
     NSMutableArray *shareItems = [NSMutableArray array];
     NSString *title = [[shortcutList objectAtIndex:selectedRow] valueForKey:TITLE_COL];
     NSString *shortcut = [[shortcutList objectAtIndex:selectedRow] valueForKey:SHORTCUT_STRING_COL];
-    NSString *facebookMessage = [NSString stringWithFormat:@"I found in %@ a useful shortcut: \n%@ - %@ \n @Hotkeyeve",activeAppName, title, shortcut];
+    NSString *facebookMessage = [NSString stringWithFormat:@"I found in %@ a useful shortcut: \nTitle: %@ \nShortcut: %@ \n @Hotkeyeve",activeAppName, title, shortcut];
 
     [shareItems addObject:facebookMessage];
     /*
@@ -260,7 +258,7 @@ enum {
     NSMutableArray *shareItems = [NSMutableArray array];
     NSString *title = [[shortcutList objectAtIndex:selectedRow] valueForKey:TITLE_COL];
     NSString *shortcut = [[shortcutList objectAtIndex:selectedRow] valueForKey:SHORTCUT_STRING_COL];
-    NSString *mailMessage = [NSString stringWithFormat:@"I found in %@ a useful shortcut: \n%@ - %@ \n www.hotkeye-eve.com",activeAppName, title, shortcut];
+    NSString *mailMessage = [NSString stringWithFormat:@"I found in %@ a useful shortcut: \nTitle: %@ \nShortcut: %@ \n www.hotkeye-eve.com",activeAppName, title, shortcut];
     
     [shareItems addObject:mailMessage];
     /*
@@ -268,7 +266,7 @@ enum {
      */
     ShareService *shareServive = [ShareService shareService];
     [shareServive mailWithItems:shareItems];
-  }  
+  }
 }
 
 @end

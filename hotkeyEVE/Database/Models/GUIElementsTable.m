@@ -33,7 +33,6 @@
     element.parentTitle = [[result objectAtIndex:0] valueForKey:PARENT_TITLE_COL];
     element.help = [[result objectAtIndex:0] valueForKey:HELP_COL];
     element.shortcutString = [[result objectAtIndex:0] valueForKey:SHORTCUT_STRING_COL];
-    element.owner.appID = appID;
     DDLogInfo(@"GUIElementsTable -> editGUIElement :: found entry in database resultArray => :%@: ", result );
     }
   }

@@ -27,6 +27,7 @@
   
   if (element.class != NullUIElement.class) {
     BOOL messageDisplayed = NO;
+    element.owner.appID = [ApplicationsTableModel getApplicationID:[[element owner] appName] :[[element owner] bundleIdentifier]];
     DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick :: receive click with element => :%@:", element);
     if([[element role] isEqualToString:(NSString*) kAXMenuItemRole]) {
       messageDisplayed = [HandleClickedUIElement handleMenuElement:element];

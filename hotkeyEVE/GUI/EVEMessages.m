@@ -39,13 +39,13 @@
     [description appendFormat:@"%@\n", [element title]];
   }
   
-  [description appendFormat:@"(click to disable)"];
+//  [description appendFormat:@"(click show shortcut browser)"];
   
   NSMutableDictionary *clickContextDic = [[NSMutableDictionary alloc] init];
   [clickContextDic setValue:@"disable_shortcut" forKey:@"mesage_type"];
   [clickContextDic setValue:[[element owner] appName] forKey:APP_NAME_COL];
   [clickContextDic setValue:[[element owner] bundleIdentifier] forKey:BUNDLE_IDEN_COL];
-  [clickContextDic setValue:[NSNumber numberWithInteger:[[element owner] appID]]forKey:ID_COL];
+  [clickContextDic setValue:[NSNumber numberWithInteger:[[element owner] appID]] forKey:ID_COL];
   [clickContextDic setValue:[element shortcutString] forKey:SHORTCUT_STRING_COL];
   [clickContextDic setValue:[element user] forKey:USER_NAME_COL];
   [clickContextDic setValue:[element title] forKey:TITLE_COL];

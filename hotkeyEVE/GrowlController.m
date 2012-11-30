@@ -17,14 +17,15 @@
 - (void) growlNotificationWasClicked :(id) clickedContext {
   if (clickedContext != nil) {
     if ([[clickedContext valueForKey:@"mesage_type"] isEqualToString:@"disable_shortcut"]) {
-      NSString *appName = [clickedContext valueForKey:APP_NAME_COL];
-      NSString *bundleIdentifier = [clickedContext valueForKey:BUNDLE_IDEN_COL];
-      NSString *shortcutString = [clickedContext valueForKey:SHORTCUT_STRING_COL];
-      NSString *user = [clickedContext valueForKey:USER_NAME_COL];
-      NSString *title = [clickedContext valueForKey:TITLE_COL];
+//      NSString *appName = [clickedContext valueForKey:APP_NAME_COL];
+//      NSString *bundleIdentifier = [clickedContext valueForKey:BUNDLE_IDEN_COL];
+//      NSString *shortcutString = [clickedContext valueForKey:SHORTCUT_STRING_COL];
+//      NSString *user = [clickedContext valueForKey:USER_NAME_COL];
+//      NSString *title = [clickedContext valueForKey:TITLE_COL];
       
-      [DisabledShortcutsModel disableShortcutWithStrings :appName :bundleIdentifier :shortcutString :user :title];
-      [EVEMessages showShortcutDisabledMessage :clickedContext];
+//      [DisabledShortcutsModel disableShortcutWithStrings :appName :bundleIdentifier :shortcutString :user :title];
+//      [EVEMessages showShortcutDisabledMessage :clickedContext];
+      [[[EVEManager sharedEVEManager] mainMenuController] showShortcutsWindow:nil];
       
       [[NSNotificationCenter defaultCenter] postNotificationName:SelectActiveApplication object:[EVEUtilities activeApplication]];
       [[NSNotificationCenter defaultCenter] postNotificationName:ShortcutsWindowApplicationDidChanged object:clickedContext];
