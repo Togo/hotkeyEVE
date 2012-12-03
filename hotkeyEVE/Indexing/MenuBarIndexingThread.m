@@ -51,7 +51,8 @@
   if(!_indexingActive && [self count] > 0) {
     
     Application *app = [self dequeue];
-  
+    DDLogInfo(@"MenuBarIndexingThread -> runIndexing() :: start Indexing :%@: ", [app appName]);
+    
     _indexingActive = YES;
   
     [self postIndexingAppStarted :app];
@@ -66,7 +67,7 @@
     
     _indexingActive = NO;
     if ([self count] == 0) {
-      [self postNewAppIndexedApplicationTable :app];
+      [self postNewAppIndexedApplicationTable];
       [GUIElementsTable updateGUIElementTable];
     }
   }
@@ -90,8 +91,9 @@
   [[NSNotificationCenter defaultCenter] postNotificationName:ApplicationIndexingFinished object:nil];
 }
 
-- (void) postNewAppIndexedApplicationTable :(Application*) app {
-    [[NSNotificationCenter defaultCenter] postNotificationName:RefreshShortcutBrowserApplicationTable  object:app];
+- (void) postNewAppIndexedApplicationTable {
+    DDLogInfo(@"MenuBarIndexingThread -> postNewAppIndexedApplicationTable() :: get called ");
+    [[NSNotificationCenter defaultCenter] postNotificationName:RefreshShortcutBrowserApplicationTable  object:nil];
 //  [[NSNotificationCenter defaultCenter] postNotificationName:NewAppIndexedApplicationTable object:app];
 }
 

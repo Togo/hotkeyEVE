@@ -154,11 +154,13 @@
 
 - (void) refreshApplicationTable :(id) aNotification {
   DDLogInfo(@"ApplicationsTableViewController : refreshApplicationTable => refresh Application Table");
-  refreshShorcutTable = NO;
-  [self applicationTableWithAllApps];
-  
-  refreshShorcutTable = YES;
-  [self selectLastSelectedRow];
+  @synchronized (self) {
+    refreshShorcutTable = NO;
+    [self applicationTableWithAllApps];
+    
+    refreshShorcutTable = YES;
+    [self selectLastSelectedRow];
+  }
 }
 
 - (void) selectCurrentRunningApplication :(id) aNotification {

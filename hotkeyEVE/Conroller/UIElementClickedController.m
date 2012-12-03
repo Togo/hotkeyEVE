@@ -22,9 +22,11 @@
 
 - (void) reveicedUIElementClick :(UIElement*) element {
   DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick(element => :%@:) :: get called ", element);
+  DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick() :: guiSupport? => :%i: ", [[EVEUtilities activeApplication] guiSupport]);
   
-  DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick :: \n%@",[StringUtilities printUIElement:element]);
+  DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick :: \n%@", [StringUtilities printUIElement:element]);
   
+  DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick :: ");
   if (element.class != NullUIElement.class) {
     BOOL messageDisplayed = NO;
     element.owner.appID = [ApplicationsTableModel getApplicationID:[[element owner] appName] :[[element owner] bundleIdentifier]];
@@ -45,6 +47,7 @@
       }
     }
   }
+  DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick :: end method");
 }
 
 @end
