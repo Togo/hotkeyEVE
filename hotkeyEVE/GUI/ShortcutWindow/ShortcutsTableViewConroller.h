@@ -19,6 +19,7 @@
   __unsafe_unretained NSMenu *_shortcutListMenu;
   __unsafe_unretained NSMenuItem *_disableEnableInOneAppItem;
   
+  __unsafe_unretained NSMenuItem *_shareMenuItem;
   __unsafe_unretained NSMenuItem *_shareTwitterMenuItem;
   __unsafe_unretained NSMenuItem *_shareFacebookMenuItem;
   __unsafe_unretained NSMenuItem *_shareMailMenuItem;
@@ -36,4 +37,5 @@
 @property (unsafe_unretained) IBOutlet NSMenuItem *shareTwitterMenuItem;
 @property (unsafe_unretained) IBOutlet NSMenuItem *shareFacebookMenuItem;
 @property (unsafe_unretained) IBOutlet NSMenuItem *shareMailMenuItem;
+@property (unsafe_unretained) IBOutlet NSMenuItem *shareMenuItem;
 @end

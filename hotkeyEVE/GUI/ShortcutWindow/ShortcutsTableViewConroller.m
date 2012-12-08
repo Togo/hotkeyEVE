@@ -42,17 +42,26 @@ enum {
 }
 
 - (void) awakeFromNib {
-  NSSharingService *tweetSharingService  = [NSSharingService sharingServiceNamed:NSSharingServiceNamePostOnTwitter];
-  _shareTwitterMenuItem.title = tweetSharingService.title;
-  _shareTwitterMenuItem.image = tweetSharingService.image;
-  
-  NSSharingService *facebookSharingService  = [NSSharingService sharingServiceNamed:NSSharingServiceNamePostOnFacebook];
-  _shareFacebookMenuItem.title = facebookSharingService.title;
-  _shareFacebookMenuItem.image = facebookSharingService.image;
-  
-  NSSharingService *mailShareService  = [NSSharingService sharingServiceNamed:NSSharingServiceNameComposeEmail];
-  _shareMailMenuItem.title = mailShareService.title;
-  _shareMailMenuItem.image = mailShareService.image;
+  SInt32 OSXversionMajor, OSXversionMinor;
+  if(Gestalt(gestaltSystemVersionMajor, &OSXversionMajor) == noErr && Gestalt(gestaltSystemVersionMinor, &OSXversionMinor) == noErr)
+  {
+    if(OSXversionMajor == 10 && OSXversionMinor >= 8)
+    {
+      [_shareMenuItem setEnabled:YES];
+      
+      NSSharingService *tweetSharingService  = [NSSharingService sharingServiceNamed:NSSharingServiceNamePostOnTwitter];
+      _shareTwitterMenuItem.title = tweetSharingService.title;
+      _shareTwitterMenuItem.image = tweetSharingService.image;
+      
+      NSSharingService *facebookSharingService  = [NSSharingService sharingServiceNamed:NSSharingServiceNamePostOnFacebook];
+      _shareFacebookMenuItem.title = facebookSharingService.title;
+      _shareFacebookMenuItem.image = facebookSharingService.image;
+      
+      NSSharingService *mailShareService  = [NSSharingService sharingServiceNamed:NSSharingServiceNameComposeEmail];
+      _shareMailMenuItem.title = mailShareService.title;
+      _shareMailMenuItem.image = mailShareService.image;
+    }
+  }
 }
 
 

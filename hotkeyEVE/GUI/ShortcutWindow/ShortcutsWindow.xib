@@ -654,6 +654,7 @@
 					</object>
 					<object class="NSMenuItem" id="656967892">
 						<reference key="NSMenu" ref="215615643"/>
+						<bool key="NSIsDisabled">YES</bool>
 						<string key="NSTitle">Share</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
@@ -1732,6 +1733,14 @@
 						<reference key="destination" ref="980076699"/>
 					</object>
 					<int key="connectionID">1393</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">shareMenuItem</string>
+						<reference key="source" ref="521586417"/>
+						<reference key="destination" ref="656967892"/>
+					</object>
+					<int key="connectionID">1397</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -3047,7 +3056,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1396</int>
+			<int key="maxID">1397</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3081,11 +3090,46 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">ShortcutsTableViewConroller</string>
 					<string key="superclassName">NSObject</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="disableEnableInOneApp:">id</string>
+						<string key="disableInAllApps:">id</string>
+						<string key="enableInAllApps:">id</string>
+						<string key="shareUsingFacebook:">id</string>
+						<string key="shareUsingMail:">id</string>
+						<string key="shareUsingTwitter:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="disableEnableInOneApp:">
+							<string key="name">disableEnableInOneApp:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="disableInAllApps:">
+							<string key="name">disableInAllApps:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="enableInAllApps:">
+							<string key="name">enableInAllApps:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="shareUsingFacebook:">
+							<string key="name">shareUsingFacebook:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="shareUsingMail:">
+							<string key="name">shareUsingMail:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="shareUsingTwitter:">
+							<string key="name">shareUsingTwitter:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="disableEnableInOneAppItem">NSMenuItem</string>
 						<string key="searchField">NSSearchField</string>
 						<string key="shareFacebookMenuItem">NSMenuItem</string>
 						<string key="shareMailMenuItem">NSMenuItem</string>
+						<string key="shareMenuItem">NSMenuItem</string>
 						<string key="shareTwitterMenuItem">NSMenuItem</string>
 						<string key="shortcutListMenu">NSMenu</string>
 						<string key="shortcutTable">NSTableView</string>
@@ -3105,6 +3149,10 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="shareMailMenuItem">
 							<string key="name">shareMailMenuItem</string>
+							<string key="candidateClassName">NSMenuItem</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="shareMenuItem">
+							<string key="name">shareMenuItem</string>
 							<string key="candidateClassName">NSMenuItem</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="shareTwitterMenuItem">
