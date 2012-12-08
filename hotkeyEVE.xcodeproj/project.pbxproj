@@ -556,7 +556,6 @@
 		CD80E7431645393300A9C7D8 = {
 			isa = PBXGroup;
 			children = (
-				CD71E4A7165EEB8C00987E09 /* Carbon.framework */,
 				CD80E7581645393300A9C7D8 /* hotkeyEVE */,
 				CD80E7751645393400A9C7D8 /* hotkeyEVETests */,
 				CD80E7511645393300A9C7D8 /* Frameworks */,
@@ -576,6 +575,7 @@
 		CD80E7511645393300A9C7D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD71E4A7165EEB8C00987E09 /* Carbon.framework */,
 				CD71E49F165EE83C00987E09 /* DDHotkey */,
 				CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */,
 				CD57865116465E2600CC508B /* Growl.framework */,
@@ -808,6 +808,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				fr,
 			);
 			mainGroup = CD80E7431645393300A9C7D8;
 			productRefGroup = CD80E74F1645393300A9C7D8 /* Products */;
