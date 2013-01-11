@@ -67,6 +67,15 @@
 		CD836D591652C0A5008A7876 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = CD836D581652C0A5008A7876 /* Credits.html */; };
 		CD8459FA16A0AB09007717CB /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8459F816A0AAF4007717CB /* OCMock.framework */; };
 		CD8459FE16A0AD63007717CB /* OCMock.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD8459F816A0AAF4007717CB /* OCMock.framework */; };
+		CD845A0716A0C493007717CB /* AppsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A0516A0C493007717CB /* AppsWindowController.m */; };
+		CD845A0816A0C493007717CB /* AppsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A0616A0C493007717CB /* AppsWindowController.xib */; };
+		CD845A0B16A0C8B1007717CB /* AppsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A0A16A0C8B1007717CB /* AppsViewController.m */; };
+		CD845A0F16A0C8ED007717CB /* AppsNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A0D16A0C8ED007717CB /* AppsNavigationViewController.m */; };
+		CD845A1016A0C8ED007717CB /* AppsNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A0E16A0C8ED007717CB /* AppsNavigationViewController.xib */; };
+		CD845A1416A0C91D007717CB /* AppsInstalledViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A1216A0C91D007717CB /* AppsInstalledViewController.m */; };
+		CD845A1516A0C91D007717CB /* AppsInstalledViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A1316A0C91D007717CB /* AppsInstalledViewController.xib */; };
+		CD845A1916A0C937007717CB /* AppsUninstalledViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A1716A0C937007717CB /* AppsUninstalledViewController.m */; };
+		CD845A1A16A0C937007717CB /* AppsUninstalledViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A1816A0C937007717CB /* AppsUninstalledViewController.xib */; };
 		CD84B78A1658CB5500DF227B /* MigrationsV1_3_1.m in Sources */ = {isa = PBXBuildFile; fileRef = CD84B7891658CB5500DF227B /* MigrationsV1_3_1.m */; };
 		CD84B78C1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD84B78B1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql */; };
 		CD97CE6B16466D7B00406F1F /* EVEMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE6A16466D7B00406F1F /* EVEMessages.m */; };
@@ -291,6 +300,20 @@
 		CD80E78E1645406B00A9C7D8 /* EVE_ICON_STATUS_BAR_ACTIVE.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON_STATUS_BAR_ACTIVE.icns; sourceTree = "<group>"; };
 		CD836D581652C0A5008A7876 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		CD8459F816A0AAF4007717CB /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = hotkeyEVE/Frameworks/OCMock.framework; sourceTree = "<group>"; };
+		CD845A0416A0C493007717CB /* AppsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsWindowController.h; path = Apps/GUI/AppsWindowController.h; sourceTree = "<group>"; };
+		CD845A0516A0C493007717CB /* AppsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsWindowController.m; path = Apps/GUI/AppsWindowController.m; sourceTree = "<group>"; };
+		CD845A0616A0C493007717CB /* AppsWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsWindowController.xib; path = Apps/GUI/AppsWindowController.xib; sourceTree = "<group>"; };
+		CD845A0916A0C8B1007717CB /* AppsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsViewController.h; path = Apps/GUI/AppsViewController.h; sourceTree = "<group>"; };
+		CD845A0A16A0C8B1007717CB /* AppsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsViewController.m; path = Apps/GUI/AppsViewController.m; sourceTree = "<group>"; };
+		CD845A0C16A0C8ED007717CB /* AppsNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsNavigationViewController.h; path = Apps/GUI/AppsNavigationViewController.h; sourceTree = "<group>"; };
+		CD845A0D16A0C8ED007717CB /* AppsNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsNavigationViewController.m; path = Apps/GUI/AppsNavigationViewController.m; sourceTree = "<group>"; };
+		CD845A0E16A0C8ED007717CB /* AppsNavigationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsNavigationViewController.xib; path = Apps/GUI/AppsNavigationViewController.xib; sourceTree = "<group>"; };
+		CD845A1116A0C91D007717CB /* AppsInstalledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsInstalledViewController.h; path = Apps/GUI/AppsInstalledViewController.h; sourceTree = "<group>"; };
+		CD845A1216A0C91D007717CB /* AppsInstalledViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsInstalledViewController.m; path = Apps/GUI/AppsInstalledViewController.m; sourceTree = "<group>"; };
+		CD845A1316A0C91D007717CB /* AppsInstalledViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsInstalledViewController.xib; path = Apps/GUI/AppsInstalledViewController.xib; sourceTree = "<group>"; };
+		CD845A1616A0C936007717CB /* AppsUninstalledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsUninstalledViewController.h; path = Apps/GUI/AppsUninstalledViewController.h; sourceTree = "<group>"; };
+		CD845A1716A0C937007717CB /* AppsUninstalledViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsUninstalledViewController.m; path = Apps/GUI/AppsUninstalledViewController.m; sourceTree = "<group>"; };
+		CD845A1816A0C937007717CB /* AppsUninstalledViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsUninstalledViewController.xib; path = Apps/GUI/AppsUninstalledViewController.xib; sourceTree = "<group>"; };
 		CD84B7881658CB5500DF227B /* MigrationsV1_3_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationsV1_3_1.h; path = Database/Migrations/MigrationsV1_3_1.h; sourceTree = "<group>"; };
 		CD84B7891658CB5500DF227B /* MigrationsV1_3_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationsV1_3_1.m; path = Database/Migrations/MigrationsV1_3_1.m; sourceTree = "<group>"; };
 		CD84B78B1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CREATE_TABLEV1_3_1.sql; path = "Database/SQL Scripte/CREATE_TABLEV1_3_1.sql"; sourceTree = "<group>"; };
@@ -612,6 +635,7 @@
 		CD80E7581645393300A9C7D8 /* hotkeyEVE */ = {
 			isa = PBXGroup;
 			children = (
+				CD8459FF16A0C41B007717CB /* Apps */,
 				CDE54D9716626FE6009E4C57 /* Social */,
 				CDEE1570164B03EF00EDCDF4 /* Licencing */,
 				CD5A46F916465128007B57A5 /* Controller */,
@@ -679,6 +703,35 @@
 				CD80E78B16453A0500A9C7D8 /* MainMenuController.h */,
 				CD80E78C16453A0500A9C7D8 /* MainMenuController.m */,
 				CD80E7671645393400A9C7D8 /* MainMenu.xib */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		CD8459FF16A0C41B007717CB /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				CD845A0016A0C424007717CB /* GUI */,
+			);
+			name = Apps;
+			sourceTree = "<group>";
+		};
+		CD845A0016A0C424007717CB /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				CD845A0416A0C493007717CB /* AppsWindowController.h */,
+				CD845A0516A0C493007717CB /* AppsWindowController.m */,
+				CD845A0616A0C493007717CB /* AppsWindowController.xib */,
+				CD845A0916A0C8B1007717CB /* AppsViewController.h */,
+				CD845A0A16A0C8B1007717CB /* AppsViewController.m */,
+				CD845A0C16A0C8ED007717CB /* AppsNavigationViewController.h */,
+				CD845A0D16A0C8ED007717CB /* AppsNavigationViewController.m */,
+				CD845A0E16A0C8ED007717CB /* AppsNavigationViewController.xib */,
+				CD845A1116A0C91D007717CB /* AppsInstalledViewController.h */,
+				CD845A1216A0C91D007717CB /* AppsInstalledViewController.m */,
+				CD845A1316A0C91D007717CB /* AppsInstalledViewController.xib */,
+				CD845A1616A0C936007717CB /* AppsUninstalledViewController.h */,
+				CD845A1716A0C937007717CB /* AppsUninstalledViewController.m */,
+				CD845A1816A0C937007717CB /* AppsUninstalledViewController.xib */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -903,6 +956,10 @@
 				CD59010F1663BE61000613F7 /* INSERT_GUI_ELEMENTS_V1_3_3.sql in Resources */,
 				CD52DC851665527D0006CF06 /* INSERT_GUI_SUPPORT_V1_3_3.sql in Resources */,
 				CD52DC931666918C0006CF06 /* ALTER_GUI_ELEMENTS_V1_3_3.sql in Resources */,
+				CD845A0816A0C493007717CB /* AppsWindowController.xib in Resources */,
+				CD845A1016A0C8ED007717CB /* AppsNavigationViewController.xib in Resources */,
+				CD845A1516A0C91D007717CB /* AppsInstalledViewController.xib in Resources */,
+				CD845A1A16A0C937007717CB /* AppsUninstalledViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -987,6 +1044,11 @@
 				CD018F001660A4B3008A1C5A /* AppChangedController.m in Sources */,
 				CDE54D9A16626FF8009E4C57 /* ShareService.m in Sources */,
 				CD59010D1663BE57000613F7 /* MigrationsV1_3_3.m in Sources */,
+				CD845A0716A0C493007717CB /* AppsWindowController.m in Sources */,
+				CD845A0B16A0C8B1007717CB /* AppsViewController.m in Sources */,
+				CD845A0F16A0C8ED007717CB /* AppsNavigationViewController.m in Sources */,
+				CD845A1416A0C91D007717CB /* AppsInstalledViewController.m in Sources */,
+				CD845A1916A0C937007717CB /* AppsUninstalledViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
