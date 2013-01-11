@@ -76,7 +76,7 @@
 											<string key="NSFrameSize">{217, 445}</string>
 											<reference key="NSSuperview" ref="696952093"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="576267686"/>
+											<reference key="NSNextKeyView" ref="272774271"/>
 											<string key="NSReuseIdentifierKey">_NS:13</string>
 											<bool key="NSEnabled">YES</bool>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -240,7 +240,7 @@
 							<string key="NSFrame">{{20, 18}, {219, 463}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="272774271"/>
+							<reference key="NSNextKeyView" ref="696952093"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<int key="NSsFlags">133682</int>
 							<reference key="NSVScroller" ref="70472054"/>
@@ -268,7 +268,7 @@
 											<string key="NSFrameSize">{644, 445}</string>
 											<reference key="NSSuperview" ref="285916721"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="850994471"/>
+											<reference key="NSNextKeyView" ref="500192044"/>
 											<string key="NSReuseIdentifierKey">_NS:13</string>
 											<bool key="NSEnabled">YES</bool>
 											<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -476,7 +476,6 @@
 									<string key="NSFrame">{{1, 447}, {602, 15}}</string>
 									<reference key="NSSuperview" ref="130106042"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:60</string>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 									<int key="NSsFlags">1</int>
@@ -504,7 +503,7 @@
 							<string key="NSFrame">{{247, 18}, {646, 463}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="500192044"/>
+							<reference key="NSNextKeyView" ref="285916721"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<int key="NSsFlags">133682</int>
 							<reference key="NSVScroller" ref="850994471"/>
@@ -3090,40 +3089,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">ShortcutsTableViewConroller</string>
 					<string key="superclassName">NSObject</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="disableEnableInOneApp:">id</string>
-						<string key="disableInAllApps:">id</string>
-						<string key="enableInAllApps:">id</string>
-						<string key="shareUsingFacebook:">id</string>
-						<string key="shareUsingMail:">id</string>
-						<string key="shareUsingTwitter:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="disableEnableInOneApp:">
-							<string key="name">disableEnableInOneApp:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="disableInAllApps:">
-							<string key="name">disableInAllApps:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="enableInAllApps:">
-							<string key="name">enableInAllApps:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="shareUsingFacebook:">
-							<string key="name">shareUsingFacebook:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="shareUsingMail:">
-							<string key="name">shareUsingMail:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="shareUsingTwitter:">
-							<string key="name">shareUsingTwitter:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="disableEnableInOneAppItem">NSMenuItem</string>
 						<string key="searchField">NSSearchField</string>
