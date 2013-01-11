@@ -65,6 +65,8 @@
 		CD80E78D16453A0500A9C7D8 /* MainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD80E78C16453A0500A9C7D8 /* MainMenuController.m */; };
 		CD80E78F1645406B00A9C7D8 /* EVE_ICON_STATUS_BAR_ACTIVE.icns in Resources */ = {isa = PBXBuildFile; fileRef = CD80E78E1645406B00A9C7D8 /* EVE_ICON_STATUS_BAR_ACTIVE.icns */; };
 		CD836D591652C0A5008A7876 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = CD836D581652C0A5008A7876 /* Credits.html */; };
+		CD8459FA16A0AB09007717CB /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8459F816A0AAF4007717CB /* OCMock.framework */; };
+		CD8459FE16A0AD63007717CB /* OCMock.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD8459F816A0AAF4007717CB /* OCMock.framework */; };
 		CD84B78A1658CB5500DF227B /* MigrationsV1_3_1.m in Sources */ = {isa = PBXBuildFile; fileRef = CD84B7891658CB5500DF227B /* MigrationsV1_3_1.m */; };
 		CD84B78C1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD84B78B1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql */; };
 		CD97CE6B16466D7B00406F1F /* EVEMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE6A16466D7B00406F1F /* EVEMessages.m */; };
@@ -80,8 +82,6 @@
 		CDC77C22165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDC77C20165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql */; };
 		CDC77C23165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDC77C21165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql */; };
 		CDE54D9A16626FF8009E4C57 /* ShareService.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE54D9916626FF8009E4C57 /* ShareService.m */; };
-		CDE54D9D16627556009E4C57 /* ShareServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE54D9C16627556009E4C57 /* ShareServiceTests.m */; };
-		CDE54D9E166277D2009E4C57 /* ShareService.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE54D9916626FF8009E4C57 /* ShareService.m */; };
 		CDEE15311648127A00EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns in Resources */ = {isa = PBXBuildFile; fileRef = CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */; };
 		CDEE15341648128C00EDCDF4 /* GUISupportTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE15331648128C00EDCDF4 /* GUISupportTableModel.m */; };
 		CDEE1537164812F500EDCDF4 /* DisplayedShortcutsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1536164812F500EDCDF4 /* DisplayedShortcutsModel.m */; };
@@ -171,6 +171,16 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CD602C79164F89BB00CF32A4 /* Growl.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD8459FD16A0AD5B007717CB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				CD8459FE16A0AD63007717CB /* OCMock.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +290,7 @@
 		CD80E78C16453A0500A9C7D8 /* MainMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuController.m; path = GUI/MainMenuController.m; sourceTree = "<group>"; };
 		CD80E78E1645406B00A9C7D8 /* EVE_ICON_STATUS_BAR_ACTIVE.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON_STATUS_BAR_ACTIVE.icns; sourceTree = "<group>"; };
 		CD836D581652C0A5008A7876 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		CD8459F816A0AAF4007717CB /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = hotkeyEVE/Frameworks/OCMock.framework; sourceTree = "<group>"; };
 		CD84B7881658CB5500DF227B /* MigrationsV1_3_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationsV1_3_1.h; path = Database/Migrations/MigrationsV1_3_1.h; sourceTree = "<group>"; };
 		CD84B7891658CB5500DF227B /* MigrationsV1_3_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationsV1_3_1.m; path = Database/Migrations/MigrationsV1_3_1.m; sourceTree = "<group>"; };
 		CD84B78B1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CREATE_TABLEV1_3_1.sql; path = "Database/SQL Scripte/CREATE_TABLEV1_3_1.sql"; sourceTree = "<group>"; };
@@ -307,7 +318,6 @@
 		CDC77C21165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_GUI_SUPPORT_V1_3_2.sql; path = "Database/SQL Scripte/V1.3.2/INSERT_GUI_SUPPORT_V1_3_2.sql"; sourceTree = "<group>"; };
 		CDE54D9816626FF8009E4C57 /* ShareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareService.h; sourceTree = "<group>"; };
 		CDE54D9916626FF8009E4C57 /* ShareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareService.m; sourceTree = "<group>"; };
-		CDE54D9C16627556009E4C57 /* ShareServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareServiceTests.m; sourceTree = "<group>"; };
 		CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns; sourceTree = "<group>"; };
 		CDEE15321648128C00EDCDF4 /* GUISupportTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUISupportTableModel.h; path = Database/Models/GUISupportTableModel.h; sourceTree = "<group>"; };
 		CDEE15331648128C00EDCDF4 /* GUISupportTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GUISupportTableModel.m; path = Database/Models/GUISupportTableModel.m; sourceTree = "<group>"; };
@@ -352,6 +362,7 @@
 				CD80E7711645393400A9C7D8 /* SenTestingKit.framework in Frameworks */,
 				CD80E7721645393400A9C7D8 /* Cocoa.framework in Frameworks */,
 				CD602C77164F896A00CF32A4 /* Growl.framework in Frameworks */,
+				CD8459FA16A0AB09007717CB /* OCMock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +586,7 @@
 		CD80E7511645393300A9C7D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD8459F816A0AAF4007717CB /* OCMock.framework */,
 				CD71E4A7165EEB8C00987E09 /* Carbon.framework */,
 				CD71E49F165EE83C00987E09 /* DDHotkey */,
 				CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */,
@@ -640,7 +652,6 @@
 		CD80E7751645393400A9C7D8 /* hotkeyEVETests */ = {
 			isa = PBXGroup;
 			children = (
-				CDE54D9C16627556009E4C57 /* ShareServiceTests.m */,
 				CD80E77B1645393400A9C7D8 /* hotkeyEVETests.h */,
 				CD80E77C1645393400A9C7D8 /* hotkeyEVETests.m */,
 				CD80E7761645393400A9C7D8 /* Supporting Files */,
@@ -782,6 +793,7 @@
 				CD80E76C1645393400A9C7D8 /* Resources */,
 				CD80E76D1645393400A9C7D8 /* ShellScript */,
 				CD602C78164F89A000CF32A4 /* CopyFiles */,
+				CD8459FD16A0AD5B007717CB /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -809,6 +821,7 @@
 			knownRegions = (
 				en,
 				fr,
+				English,
 			);
 			mainGroup = CD80E7431645393300A9C7D8;
 			productRefGroup = CD80E74F1645393300A9C7D8 /* Products */;
@@ -982,8 +995,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD80E77D1645393400A9C7D8 /* hotkeyEVETests.m in Sources */,
-				CDE54D9D16627556009E4C57 /* ShareServiceTests.m in Sources */,
-				CDE54D9E166277D2009E4C57 /* ShareService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1105,6 +1116,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/hotkeyEVE/Frameworks\"",
+					"\"$(SRCROOT)/hotkeyEVE/Conroller/HotkeyController/SGHotKeysLib/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotkeyEVE/hotkeyEVE-Prefix.pch";
@@ -1130,6 +1142,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/hotkeyEVE/Frameworks\"",
+					"\"$(SRCROOT)/hotkeyEVE/Conroller/HotkeyController/SGHotKeysLib/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotkeyEVE/hotkeyEVE-Prefix.pch";

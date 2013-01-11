@@ -7,6 +7,7 @@
 //
 
 #import "hotkeyEVETests.h"
+#import <OCMock/OCMock.h>
 
 @implementation hotkeyEVETests
 
@@ -22,11 +23,6 @@
     // Tear-down code here.
     
     [super tearDown];
-}
-
-- (void)testExample
-{
-//    STFail(@"Unit tests are not implemented yet in hotkeyEVETests");
 }
 
 @end
