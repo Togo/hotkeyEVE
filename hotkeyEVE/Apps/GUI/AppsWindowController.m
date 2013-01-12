@@ -8,6 +8,8 @@
 
 #import "AppsWindowController.h"
 
+NSString const * kAppsWindowNibName = @"AppsWindowController";
+
 @interface AppsWindowController ()
 
 @end

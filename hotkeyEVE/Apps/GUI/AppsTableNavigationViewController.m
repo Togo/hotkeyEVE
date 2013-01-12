@@ -6,22 +6,28 @@
 //  Copyright (c) 2013 Tobias Sommer. All rights reserved.
 //
 
-#import "AppsNavigationViewController.h"
+#import "AppsTableNavigationViewController.h"
 
-@interface AppsNavigationViewController ()
+NSString * const kAppsTableNavigationViewControllerNibName = @"AppsTableNavigationViewController";
+
+@interface AppsTableNavigationViewController ()
 
 @end
 
-@implementation AppsNavigationViewController
+@implementation AppsTableNavigationViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Initialization code here.
+      
     }
     
     return self;
+}
+
+- (IBAction)selectionDidChange :(id)sender {
+  [delegate viewSelectionDidChanged :sender];
 }
 
 @end

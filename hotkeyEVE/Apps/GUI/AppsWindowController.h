@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+extern  NSString const * kAppsWindowNibName;
+
 @interface AppsWindowController : NSWindowController
 
 @end

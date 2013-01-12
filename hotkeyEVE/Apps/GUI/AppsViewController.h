@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AppsNavigationDelegate.h"
 
-@interface AppsViewController : NSObject
+@interface AppsViewController : NSObject <AppsNavigationDelegate>
+
+@property (weak) IBOutlet NSView *navigationView;
+@property (weak) IBOutlet NSView *mainContentView;
+@property (strong) NSViewController *mainContentViewController;
+@property (strong) NSViewController *navigationViewController;
 
 @end

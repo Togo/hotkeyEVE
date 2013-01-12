@@ -35,8 +35,6 @@
 		CD5A46F516464F7E007B57A5 /* EVEObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46F416464F7E007B57A5 /* EVEObserver.m */; };
 		CD5A46F816465123007B57A5 /* UIElementClickedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46F716465123007B57A5 /* UIElementClickedController.m */; };
 		CD5E8E2D16612A7700D81C2E /* ALTER_MENU_BAR_ITEMS.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD5E8E2C16612A7700D81C2E /* ALTER_MENU_BAR_ITEMS.sql */; };
-		CD602C77164F896A00CF32A4 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
-		CD602C79164F89BB00CF32A4 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
 		CD6A928E1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD6A928D1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql */; };
 		CD6AD392164BFE9D009FF1B5 /* LicenceWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AD38F164BFE9D009FF1B5 /* LicenceWindow.xib */; };
 		CD6AD395164C047E009FF1B5 /* LicenceWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD394164C047E009FF1B5 /* LicenceWindowController.m */; };
@@ -58,24 +56,26 @@
 		CD80E7631645393400A9C7D8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CD80E7611645393400A9C7D8 /* Credits.rtf */; };
 		CD80E7661645393400A9C7D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD80E7651645393400A9C7D8 /* AppDelegate.m */; };
 		CD80E7691645393400A9C7D8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD80E7671645393400A9C7D8 /* MainMenu.xib */; };
-		CD80E7711645393400A9C7D8 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7701645393400A9C7D8 /* SenTestingKit.framework */; };
-		CD80E7721645393400A9C7D8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7521645393300A9C7D8 /* Cocoa.framework */; };
-		CD80E77A1645393400A9C7D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD80E7781645393400A9C7D8 /* InfoPlist.strings */; };
-		CD80E77D1645393400A9C7D8 /* hotkeyEVETests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD80E77C1645393400A9C7D8 /* hotkeyEVETests.m */; };
 		CD80E78D16453A0500A9C7D8 /* MainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD80E78C16453A0500A9C7D8 /* MainMenuController.m */; };
 		CD80E78F1645406B00A9C7D8 /* EVE_ICON_STATUS_BAR_ACTIVE.icns in Resources */ = {isa = PBXBuildFile; fileRef = CD80E78E1645406B00A9C7D8 /* EVE_ICON_STATUS_BAR_ACTIVE.icns */; };
 		CD836D591652C0A5008A7876 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = CD836D581652C0A5008A7876 /* Credits.html */; };
-		CD8459FA16A0AB09007717CB /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8459F816A0AAF4007717CB /* OCMock.framework */; };
-		CD8459FE16A0AD63007717CB /* OCMock.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD8459F816A0AAF4007717CB /* OCMock.framework */; };
 		CD845A0716A0C493007717CB /* AppsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A0516A0C493007717CB /* AppsWindowController.m */; };
 		CD845A0816A0C493007717CB /* AppsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A0616A0C493007717CB /* AppsWindowController.xib */; };
 		CD845A0B16A0C8B1007717CB /* AppsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A0A16A0C8B1007717CB /* AppsViewController.m */; };
-		CD845A0F16A0C8ED007717CB /* AppsNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A0D16A0C8ED007717CB /* AppsNavigationViewController.m */; };
-		CD845A1016A0C8ED007717CB /* AppsNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A0E16A0C8ED007717CB /* AppsNavigationViewController.xib */; };
+		CD845A0F16A0C8ED007717CB /* AppsTableNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A0D16A0C8ED007717CB /* AppsTableNavigationViewController.m */; };
+		CD845A1016A0C8ED007717CB /* AppsTableNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A0E16A0C8ED007717CB /* AppsTableNavigationViewController.xib */; };
 		CD845A1416A0C91D007717CB /* AppsInstalledViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A1216A0C91D007717CB /* AppsInstalledViewController.m */; };
 		CD845A1516A0C91D007717CB /* AppsInstalledViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A1316A0C91D007717CB /* AppsInstalledViewController.xib */; };
 		CD845A1916A0C937007717CB /* AppsUninstalledViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A1716A0C937007717CB /* AppsUninstalledViewController.m */; };
 		CD845A1A16A0C937007717CB /* AppsUninstalledViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A1816A0C937007717CB /* AppsUninstalledViewController.xib */; };
+		CD845A2616A15B98007717CB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7701645393400A9C7D8 /* SenTestingKit.framework */; };
+		CD845A2716A15B98007717CB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7521645393300A9C7D8 /* Cocoa.framework */; };
+		CD845A2D16A15B98007717CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD845A2B16A15B98007717CB /* InfoPlist.strings */; };
+		CD845A3016A15B98007717CB /* hotkeyEVEUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A2F16A15B98007717CB /* hotkeyEVEUnitTests.m */; };
+		CD845A3716A15BDA007717CB /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8459F816A0AAF4007717CB /* OCMock.framework */; };
+		CD845A3916A15BE2007717CB /* OCMock.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD8459F816A0AAF4007717CB /* OCMock.framework */; };
+		CD845A4216A161F1007717CB /* AppsTableNavigationViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A3B16A15CB0007717CB /* AppsTableNavigationViewControllerTests.m */; };
+		CD845A4516A16D89007717CB /* AppsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A4416A16D89007717CB /* AppsViewControllerTests.m */; };
 		CD84B78A1658CB5500DF227B /* MigrationsV1_3_1.m in Sources */ = {isa = PBXBuildFile; fileRef = CD84B7891658CB5500DF227B /* MigrationsV1_3_1.m */; };
 		CD84B78C1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD84B78B1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql */; };
 		CD97CE6B16466D7B00406F1F /* EVEMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE6A16466D7B00406F1F /* EVEMessages.m */; };
@@ -152,7 +152,7 @@
 			remoteGlobalIDString = CD868152163BBCEB00667709;
 			remoteInfo = Database;
 		};
-		CD80E7731645393400A9C7D8 /* PBXContainerItemProxy */ = {
+		CD845A3516A15BCE007717CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CD80E7451645393300A9C7D8 /* Project object */;
 			proxyType = 1;
@@ -173,23 +173,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD602C78164F89A000CF32A4 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				CD602C79164F89BB00CF32A4 /* Growl.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CD8459FD16A0AD5B007717CB /* CopyFiles */ = {
+		CD845A3816A15BDE007717CB /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				CD8459FE16A0AD63007717CB /* OCMock.framework in CopyFiles */,
+				CD845A3916A15BE2007717CB /* OCMock.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +279,6 @@
 		CD80E7641645393400A9C7D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CD80E7651645393400A9C7D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CD80E7681645393400A9C7D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		CD80E76F1645393400A9C7D8 /* hotkeyEVETests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hotkeyEVETests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD80E7701645393400A9C7D8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		CD80E7771645393400A9C7D8 /* hotkeyEVETests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "hotkeyEVETests-Info.plist"; sourceTree = "<group>"; };
 		CD80E7791645393400A9C7D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -305,15 +294,26 @@
 		CD845A0616A0C493007717CB /* AppsWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsWindowController.xib; path = Apps/GUI/AppsWindowController.xib; sourceTree = "<group>"; };
 		CD845A0916A0C8B1007717CB /* AppsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsViewController.h; path = Apps/GUI/AppsViewController.h; sourceTree = "<group>"; };
 		CD845A0A16A0C8B1007717CB /* AppsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsViewController.m; path = Apps/GUI/AppsViewController.m; sourceTree = "<group>"; };
-		CD845A0C16A0C8ED007717CB /* AppsNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsNavigationViewController.h; path = Apps/GUI/AppsNavigationViewController.h; sourceTree = "<group>"; };
-		CD845A0D16A0C8ED007717CB /* AppsNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsNavigationViewController.m; path = Apps/GUI/AppsNavigationViewController.m; sourceTree = "<group>"; };
-		CD845A0E16A0C8ED007717CB /* AppsNavigationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsNavigationViewController.xib; path = Apps/GUI/AppsNavigationViewController.xib; sourceTree = "<group>"; };
+		CD845A0C16A0C8ED007717CB /* AppsTableNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsTableNavigationViewController.h; path = Apps/GUI/AppsTableNavigationViewController.h; sourceTree = "<group>"; };
+		CD845A0D16A0C8ED007717CB /* AppsTableNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsTableNavigationViewController.m; path = Apps/GUI/AppsTableNavigationViewController.m; sourceTree = "<group>"; };
+		CD845A0E16A0C8ED007717CB /* AppsTableNavigationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsTableNavigationViewController.xib; path = Apps/GUI/AppsTableNavigationViewController.xib; sourceTree = "<group>"; };
 		CD845A1116A0C91D007717CB /* AppsInstalledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsInstalledViewController.h; path = Apps/GUI/AppsInstalledViewController.h; sourceTree = "<group>"; };
 		CD845A1216A0C91D007717CB /* AppsInstalledViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsInstalledViewController.m; path = Apps/GUI/AppsInstalledViewController.m; sourceTree = "<group>"; };
 		CD845A1316A0C91D007717CB /* AppsInstalledViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsInstalledViewController.xib; path = Apps/GUI/AppsInstalledViewController.xib; sourceTree = "<group>"; };
 		CD845A1616A0C936007717CB /* AppsUninstalledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsUninstalledViewController.h; path = Apps/GUI/AppsUninstalledViewController.h; sourceTree = "<group>"; };
 		CD845A1716A0C937007717CB /* AppsUninstalledViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsUninstalledViewController.m; path = Apps/GUI/AppsUninstalledViewController.m; sourceTree = "<group>"; };
 		CD845A1816A0C937007717CB /* AppsUninstalledViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsUninstalledViewController.xib; path = Apps/GUI/AppsUninstalledViewController.xib; sourceTree = "<group>"; };
+		CD845A1B16A15560007717CB /* AppsNavigationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppsNavigationDelegate.h; path = Apps/GUI/AppsNavigationDelegate.h; sourceTree = "<group>"; };
+		CD845A2516A15B98007717CB /* hotkeyEVEUnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hotkeyEVEUnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD845A2A16A15B98007717CB /* hotkeyEVEUnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "hotkeyEVEUnitTests-Info.plist"; sourceTree = "<group>"; };
+		CD845A2C16A15B98007717CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CD845A2E16A15B98007717CB /* hotkeyEVEUnitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hotkeyEVEUnitTests.h; sourceTree = "<group>"; };
+		CD845A2F16A15B98007717CB /* hotkeyEVEUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hotkeyEVEUnitTests.m; sourceTree = "<group>"; };
+		CD845A3116A15B98007717CB /* hotkeyEVEUnitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hotkeyEVEUnitTests-Prefix.pch"; sourceTree = "<group>"; };
+		CD845A3A16A15CB0007717CB /* AppsTableNavigationViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsTableNavigationViewControllerTests.h; path = AppsGUITests/AppsTableNavigationViewControllerTests.h; sourceTree = "<group>"; };
+		CD845A3B16A15CB0007717CB /* AppsTableNavigationViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsTableNavigationViewControllerTests.m; path = AppsGUITests/AppsTableNavigationViewControllerTests.m; sourceTree = "<group>"; };
+		CD845A4316A16D89007717CB /* AppsViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsViewControllerTests.h; path = AppsGUITests/AppsViewControllerTests.h; sourceTree = "<group>"; };
+		CD845A4416A16D89007717CB /* AppsViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsViewControllerTests.m; path = AppsGUITests/AppsViewControllerTests.m; sourceTree = "<group>"; };
 		CD84B7881658CB5500DF227B /* MigrationsV1_3_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationsV1_3_1.h; path = Database/Migrations/MigrationsV1_3_1.h; sourceTree = "<group>"; };
 		CD84B7891658CB5500DF227B /* MigrationsV1_3_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationsV1_3_1.m; path = Database/Migrations/MigrationsV1_3_1.m; sourceTree = "<group>"; };
 		CD84B78B1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CREATE_TABLEV1_3_1.sql; path = "Database/SQL Scripte/CREATE_TABLEV1_3_1.sql"; sourceTree = "<group>"; };
@@ -378,14 +378,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD80E76B1645393400A9C7D8 /* Frameworks */ = {
+		CD845A2116A15B98007717CB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD80E7711645393400A9C7D8 /* SenTestingKit.framework in Frameworks */,
-				CD80E7721645393400A9C7D8 /* Cocoa.framework in Frameworks */,
-				CD602C77164F896A00CF32A4 /* Growl.framework in Frameworks */,
-				CD8459FA16A0AB09007717CB /* OCMock.framework in Frameworks */,
+				CD845A2616A15B98007717CB /* SenTestingKit.framework in Frameworks */,
+				CD845A2716A15B98007717CB /* Cocoa.framework in Frameworks */,
+				CD845A3716A15BDA007717CB /* OCMock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +590,7 @@
 			isa = PBXGroup;
 			children = (
 				CD80E7581645393300A9C7D8 /* hotkeyEVE */,
+				CD845A2816A15B98007717CB /* hotkeyEVEUnitTests */,
 				CD80E7751645393400A9C7D8 /* hotkeyEVETests */,
 				CD80E7511645393300A9C7D8 /* Frameworks */,
 				CD80E74F1645393300A9C7D8 /* Products */,
@@ -601,7 +601,7 @@
 			isa = PBXGroup;
 			children = (
 				CD80E74E1645393300A9C7D8 /* EVE.app */,
-				CD80E76F1645393400A9C7D8 /* hotkeyEVETests.octest */,
+				CD845A2516A15B98007717CB /* hotkeyEVEUnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -676,6 +676,7 @@
 		CD80E7751645393400A9C7D8 /* hotkeyEVETests */ = {
 			isa = PBXGroup;
 			children = (
+				CD845A1C16A15619007717CB /* AppsGUITests */,
 				CD80E77B1645393400A9C7D8 /* hotkeyEVETests.h */,
 				CD80E77C1645393400A9C7D8 /* hotkeyEVETests.m */,
 				CD80E7761645393400A9C7D8 /* Supporting Files */,
@@ -721,11 +722,12 @@
 				CD845A0416A0C493007717CB /* AppsWindowController.h */,
 				CD845A0516A0C493007717CB /* AppsWindowController.m */,
 				CD845A0616A0C493007717CB /* AppsWindowController.xib */,
+				CD845A1B16A15560007717CB /* AppsNavigationDelegate.h */,
 				CD845A0916A0C8B1007717CB /* AppsViewController.h */,
 				CD845A0A16A0C8B1007717CB /* AppsViewController.m */,
-				CD845A0C16A0C8ED007717CB /* AppsNavigationViewController.h */,
-				CD845A0D16A0C8ED007717CB /* AppsNavigationViewController.m */,
-				CD845A0E16A0C8ED007717CB /* AppsNavigationViewController.xib */,
+				CD845A0C16A0C8ED007717CB /* AppsTableNavigationViewController.h */,
+				CD845A0D16A0C8ED007717CB /* AppsTableNavigationViewController.m */,
+				CD845A0E16A0C8ED007717CB /* AppsTableNavigationViewController.xib */,
 				CD845A1116A0C91D007717CB /* AppsInstalledViewController.h */,
 				CD845A1216A0C91D007717CB /* AppsInstalledViewController.m */,
 				CD845A1316A0C91D007717CB /* AppsInstalledViewController.xib */,
@@ -734,6 +736,45 @@
 				CD845A1816A0C937007717CB /* AppsUninstalledViewController.xib */,
 			);
 			name = GUI;
+			sourceTree = "<group>";
+		};
+		CD845A1C16A15619007717CB /* AppsGUITests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AppsGUITests;
+			sourceTree = "<group>";
+		};
+		CD845A2816A15B98007717CB /* hotkeyEVEUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD845A4616A16D92007717CB /* AppsGUITests */,
+				CD845A2E16A15B98007717CB /* hotkeyEVEUnitTests.h */,
+				CD845A2F16A15B98007717CB /* hotkeyEVEUnitTests.m */,
+				CD845A2916A15B98007717CB /* Supporting Files */,
+			);
+			path = hotkeyEVEUnitTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		CD845A2916A15B98007717CB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD845A2A16A15B98007717CB /* hotkeyEVEUnitTests-Info.plist */,
+				CD845A2B16A15B98007717CB /* InfoPlist.strings */,
+				CD845A3116A15B98007717CB /* hotkeyEVEUnitTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CD845A4616A16D92007717CB /* AppsGUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CD845A3A16A15CB0007717CB /* AppsTableNavigationViewControllerTests.h */,
+				CD845A3B16A15CB0007717CB /* AppsTableNavigationViewControllerTests.m */,
+				CD845A4316A16D89007717CB /* AppsViewControllerTests.h */,
+				CD845A4416A16D89007717CB /* AppsViewControllerTests.m */,
+			);
+			name = AppsGUITests;
 			sourceTree = "<group>";
 		};
 		CD84B7871658CAC600DF227B /* V1_3_1 */ = {
@@ -837,25 +878,24 @@
 			productReference = CD80E74E1645393300A9C7D8 /* EVE.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CD80E76E1645393400A9C7D8 /* hotkeyEVETests */ = {
+		CD845A2416A15B98007717CB /* hotkeyEVEUnitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD80E7831645393400A9C7D8 /* Build configuration list for PBXNativeTarget "hotkeyEVETests" */;
+			buildConfigurationList = CD845A3216A15B98007717CB /* Build configuration list for PBXNativeTarget "hotkeyEVEUnitTests" */;
 			buildPhases = (
-				CD80E76A1645393400A9C7D8 /* Sources */,
-				CD80E76B1645393400A9C7D8 /* Frameworks */,
-				CD80E76C1645393400A9C7D8 /* Resources */,
-				CD80E76D1645393400A9C7D8 /* ShellScript */,
-				CD602C78164F89A000CF32A4 /* CopyFiles */,
-				CD8459FD16A0AD5B007717CB /* CopyFiles */,
+				CD845A2016A15B98007717CB /* Sources */,
+				CD845A2116A15B98007717CB /* Frameworks */,
+				CD845A2216A15B98007717CB /* Resources */,
+				CD845A2316A15B98007717CB /* ShellScript */,
+				CD845A3816A15BDE007717CB /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CD80E7741645393400A9C7D8 /* PBXTargetDependency */,
+				CD845A3616A15BCE007717CB /* PBXTargetDependency */,
 			);
-			name = hotkeyEVETests;
-			productName = hotkeyEVETests;
-			productReference = CD80E76F1645393400A9C7D8 /* hotkeyEVETests.octest */;
+			name = hotkeyEVEUnitTests;
+			productName = hotkeyEVEUnitTests;
+			productReference = CD845A2516A15B98007717CB /* hotkeyEVEUnitTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -892,7 +932,7 @@
 			projectRoot = "";
 			targets = (
 				CD80E74D1645393300A9C7D8 /* hotkeyEVE */,
-				CD80E76E1645393400A9C7D8 /* hotkeyEVETests */,
+				CD845A2416A15B98007717CB /* hotkeyEVEUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -957,24 +997,24 @@
 				CD52DC851665527D0006CF06 /* INSERT_GUI_SUPPORT_V1_3_3.sql in Resources */,
 				CD52DC931666918C0006CF06 /* ALTER_GUI_ELEMENTS_V1_3_3.sql in Resources */,
 				CD845A0816A0C493007717CB /* AppsWindowController.xib in Resources */,
-				CD845A1016A0C8ED007717CB /* AppsNavigationViewController.xib in Resources */,
+				CD845A1016A0C8ED007717CB /* AppsTableNavigationViewController.xib in Resources */,
 				CD845A1516A0C91D007717CB /* AppsInstalledViewController.xib in Resources */,
 				CD845A1A16A0C937007717CB /* AppsUninstalledViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD80E76C1645393400A9C7D8 /* Resources */ = {
+		CD845A2216A15B98007717CB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD80E77A1645393400A9C7D8 /* InfoPlist.strings in Resources */,
+				CD845A2D16A15B98007717CB /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		CD80E76D1645393400A9C7D8 /* ShellScript */ = {
+		CD845A2316A15B98007717CB /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1046,17 +1086,19 @@
 				CD59010D1663BE57000613F7 /* MigrationsV1_3_3.m in Sources */,
 				CD845A0716A0C493007717CB /* AppsWindowController.m in Sources */,
 				CD845A0B16A0C8B1007717CB /* AppsViewController.m in Sources */,
-				CD845A0F16A0C8ED007717CB /* AppsNavigationViewController.m in Sources */,
+				CD845A0F16A0C8ED007717CB /* AppsTableNavigationViewController.m in Sources */,
 				CD845A1416A0C91D007717CB /* AppsInstalledViewController.m in Sources */,
 				CD845A1916A0C937007717CB /* AppsUninstalledViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD80E76A1645393400A9C7D8 /* Sources */ = {
+		CD845A2016A15B98007717CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD80E77D1645393400A9C7D8 /* hotkeyEVETests.m in Sources */,
+				CD845A3016A15B98007717CB /* hotkeyEVEUnitTests.m in Sources */,
+				CD845A4216A161F1007717CB /* AppsTableNavigationViewControllerTests.m in Sources */,
+				CD845A4516A16D89007717CB /* AppsViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1073,10 +1115,10 @@
 			name = Database;
 			targetProxy = CD5A463D1645512D007B57A5 /* PBXContainerItemProxy */;
 		};
-		CD80E7741645393400A9C7D8 /* PBXTargetDependency */ = {
+		CD845A3616A15BCE007717CB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CD80E74D1645393300A9C7D8 /* hotkeyEVE */;
-			targetProxy = CD80E7731645393400A9C7D8 /* PBXContainerItemProxy */;
+			targetProxy = CD845A3516A15BCE007717CB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1113,6 +1155,14 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		CD845A2B16A15B98007717CB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD845A2C16A15B98007717CB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1141,7 +1191,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -1166,7 +1216,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -1182,10 +1232,11 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotkeyEVE/hotkeyEVE-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "hotkeyEVE/hotkeyEVE-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1211,7 +1262,7 @@
 				INFOPLIST_FILE = "hotkeyEVE/hotkeyEVE-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1223,27 +1274,30 @@
 			};
 			name = Release;
 		};
-		CD80E7841645393400A9C7D8 /* Debug */ = {
+		CD845A3316A15B98007717CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/hotkeyEVE.app/Contents/MacOS/hotkeyEVE";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EVE.app/Contents/MacOS/EVE";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 					"\"$(SRCROOT)/hotkeyEVE/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "hotkeyEVE/hotkeyEVE-Prefix.pch";
-				INFOPLIST_FILE = "hotkeyEVETests/hotkeyEVETests-Info.plist";
+				GCC_PREFIX_HEADER = "hotkeyEVEUnitTests/hotkeyEVEUnitTests-Prefix.pch";
+				INFOPLIST_FILE = "hotkeyEVEUnitTests/hotkeyEVEUnitTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
-		CD80E7851645393400A9C7D8 /* Release */ = {
+		CD845A3416A15B98007717CB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/hotkeyEVE.app/Contents/MacOS/hotkeyEVE";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1251,8 +1305,9 @@
 					"\"$(SRCROOT)/hotkeyEVE/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "hotkeyEVE/hotkeyEVE-Prefix.pch";
-				INFOPLIST_FILE = "hotkeyEVETests/hotkeyEVETests-Info.plist";
+				GCC_PREFIX_HEADER = "hotkeyEVEUnitTests/hotkeyEVEUnitTests-Prefix.pch";
+				INFOPLIST_FILE = "hotkeyEVEUnitTests/hotkeyEVEUnitTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -1280,14 +1335,13 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD80E7831645393400A9C7D8 /* Build configuration list for PBXNativeTarget "hotkeyEVETests" */ = {
+		CD845A3216A15B98007717CB /* Build configuration list for PBXNativeTarget "hotkeyEVEUnitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CD80E7841645393400A9C7D8 /* Debug */,
-				CD80E7851645393400A9C7D8 /* Release */,
+				CD845A3316A15B98007717CB /* Debug */,
+				CD845A3416A15B98007717CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1316,6 +1316,15 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
+					<object class="NSMenuItem" id="1004558543">
+						<reference key="NSMenu" ref="722780090"/>
+						<string key="NSTitle">Apps</string>
+						<string key="NSKeyEquiv">a</string>
+						<int key="NSKeyEquivModMask">1048576</int>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
 					<object class="NSMenuItem" id="497934724">
 						<reference key="NSMenu" ref="722780090"/>
 						<bool key="NSIsDisabled">YES</bool>
@@ -2229,6 +2238,14 @@
 						<reference key="destination" ref="39247221"/>
 					</object>
 					<int key="connectionID">598</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showAppsWindow:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="1004558543"/>
+					</object>
+					<int key="connectionID">600</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -3256,6 +3273,7 @@
 							<reference ref="61986794"/>
 							<reference ref="39247221"/>
 							<reference ref="973171163"/>
+							<reference ref="1004558543"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -3337,6 +3355,11 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">595</int>
 						<reference key="object" ref="973171163"/>
+						<reference key="parent" ref="722780090"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">599</int>
+						<reference key="object" ref="1004558543"/>
 						<reference key="parent" ref="722780090"/>
 					</object>
 				</array>
@@ -3507,6 +3530,7 @@
 				<string key="591.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="593.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="595.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="599.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="74.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3523,7 +3547,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">598</int>
+			<int key="maxID">600</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3540,23 +3564,17 @@
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="getProVersion:">id</string>
-						<string key="pauseEve:">id</string>
-						<string key="sendFeedback:">id</string>
+						<string key="showAppsWindow:">id</string>
 						<string key="showLicenceKeyWindow:">id</string>
 						<string key="showShortcutsWindow:">id</string>
-						<string key="startAtLogin:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="getProVersion:">
 							<string key="name">getProVersion:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="pauseEve:">
-							<string key="name">pauseEve:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="sendFeedback:">
-							<string key="name">sendFeedback:</string>
+						<object class="IBActionInfo" key="showAppsWindow:">
+							<string key="name">showAppsWindow:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="showLicenceKeyWindow:">
@@ -3565,10 +3583,6 @@
 						</object>
 						<object class="IBActionInfo" key="showShortcutsWindow:">
 							<string key="name">showShortcutsWindow:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="startAtLogin:">
-							<string key="name">startAtLogin:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>

@@ -31,11 +31,13 @@
 
 @property (strong, nonatomic)             NSWindowController *ourViewController;
 @property (strong, nonatomic, readonly)   NSWindowController *liceneWindowController;
+@property (strong, nonatomic, readonly)   NSWindowController *appsWindowController;
 @property (strong, nonatomic, readonly)   ShortcutsWindowController *shortcutsWindowController;
 
 - (void) updateStatusIcon :(BOOL) guiSupport;
 
 - (IBAction) showLicenceKeyWindow :(id) sender;
 - (IBAction) showShortcutsWindow :(id) sender;
+- (IBAction) showAppsWindow :(id) sender;
 - (IBAction) getProVersion :(id)sender;
 @end

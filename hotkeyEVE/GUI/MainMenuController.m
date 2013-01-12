@@ -16,6 +16,7 @@
 
 #import "LicenceWindowController.h"
 #import "ShortcutsWindowController.h"
+#import "AppsWindowController.h"
 
 @implementation MainMenuController
 
@@ -104,6 +105,15 @@
   [GUIUtilities showWindow:_ourViewController];
   [[NSNotificationCenter defaultCenter] postNotificationName:RefreshShortcutBrowserApplicationTable object:nil];
   [[NSNotificationCenter defaultCenter] postNotificationName:SelectActiveApplication object:[EVEUtilities activeApplication]];
+}
+
+- (IBAction) showAppsWindow :(id) sender {
+  if(!_appsWindowController) {
+    _appsWindowController = [[AppsWindowController alloc] initWithWindowNibName:kAppsWindowNibName];
+  }
+  
+  self.ourViewController = _appsWindowController;
+  [GUIUtilities showWindow:_ourViewController];
 }
 
 - (IBAction) getProVersion :(id) sender {

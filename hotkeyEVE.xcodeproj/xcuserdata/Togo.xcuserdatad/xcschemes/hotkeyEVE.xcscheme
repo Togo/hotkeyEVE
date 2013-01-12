@@ -60,9 +60,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CD80E76E1645393400A9C7D8"
-               BuildableName = "hotkeyEVETests.octest"
-               BlueprintName = "hotkeyEVETests"
+               BlueprintIdentifier = "CD845A2416A15B98007717CB"
+               BuildableName = "hotkeyEVEUnitTests.octest"
+               BlueprintName = "hotkeyEVEUnitTests"
                ReferencedContainer = "container:hotkeyEVE.xcodeproj">
             </BuildableReference>
          </TestableReference>

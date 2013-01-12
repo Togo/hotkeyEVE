@@ -8,6 +8,8 @@
 
 #import "AppsInstalledViewController.h"
 
+NSString * const kAppsInstalledViewControllerNibName = @"AppsInstalledViewController";
+
 @interface AppsInstalledViewController ()
 
 @end
