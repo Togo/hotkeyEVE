@@ -16,4 +16,5 @@
 @property (strong) NSViewController *mainContentViewController;
 @property (strong) NSViewController *navigationViewController;
 
+- (void) initNavigationView :(NSString*) viewNibName;
 @end

@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Tobias Sommer. All rights reserved.
 //
 
-#import "AppsUninstalledViewController.h"
+#import "AppsNotInstalledViewController.h"
 
-@interface AppsUninstalledViewController ()
+@interface AppsNotInstalledViewController ()
 
 @end
 
-@implementation AppsUninstalledViewController
+@implementation AppsNotInstalledViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

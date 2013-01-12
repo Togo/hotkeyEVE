@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AppsUninstalledViewController : NSViewController
+@interface AppsNotInstalledViewController : NSViewController
 
 @end

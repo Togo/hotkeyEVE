@@ -12,6 +12,7 @@
 #import "AppsViewController.h"
 #import "AppsInstalledViewController.h"
 #import "AppsWindowController.h"
+#import "AppsTableNavigationViewController.h"
 
 @implementation AppsViewControllerTests
 
@@ -21,9 +22,11 @@
   _appsViewController = [[AppsViewController alloc] init];
   
   _navigationView = [[NSView alloc] init];
+  [_navigationView setBounds:NSMakeRect(99, 99, 1, 1)];
   [_appsViewController setNavigationView:_navigationView];
   
   _mainContentView = [[NSView alloc] init];
+  [_mainContentView setBounds:NSMakeRect(1, 1, 99, 99)];
   [_appsViewController setMainContentView:_mainContentView];
   
   // Set-up code here.
@@ -46,6 +49,15 @@
   [appsViewControllerMock verify];
 }
 
+- (void) test_awakeFromNib_contollerAllocated_setTheNavigationView {
+  id appsViewControllerMock = [OCMockObject partialMockForObject:_appsViewController];
+  [[appsViewControllerMock expect] initNavigationView :kAppsTableNavigationViewControllerNibName];
+  
+  [_appsViewController awakeFromNib];
+  
+  [appsViewControllerMock verify];
+}
+
 //************************* viewSelectionDidChanged *************************//
 - (void) test_viewSelectionDidChanged_allScenarios_removeCurrentMainViewFromSuperView {
   NSViewController *activeViewController = [[NSViewController alloc] init];
@@ -59,7 +71,7 @@
   [currentActiveViewMock verify];
 }
 
-- (void) test_viewSelectionDidChanged_allScenarios_setMainViewControllerWithTheNibNamePassedToTheMethod {
+- (void) test_viewSelectionDidChanged_allScenarios_setMainContentViewController {
   [_appsViewController setMainContentViewController:nil];
   
   [_appsViewController viewSelectionDidChanged:kAppsInstalledViewControllerNibName];
@@ -73,6 +85,53 @@
   [_appsViewController viewSelectionDidChanged :kAppsInstalledViewControllerNibName];
   
   STAssertTrue([[[_appsViewController mainContentView] subviews] count] == 1, @"");
+}
+
+- (void) test_viewSelectiondDidChanged_allScenarios_setTheFrameOfSubviewToMainViewFrameBounds {
+  [_appsViewController viewSelectionDidChanged:kAppsInstalledViewControllerNibName];
+  
+  NSRect returnValue = [[[_appsViewController mainContentViewController] view] bounds];
+  NSRect expectedValue = [[_appsViewController mainContentView] bounds];
+  
+  STAssertEquals(returnValue, expectedValue, @"");
+}
+
+- (void) test_viewSelectiondDidChanged_allScenarios_setSubviewToWitdhAndHeightResiziable {
+  [_appsViewController viewSelectionDidChanged:kAppsInstalledViewControllerNibName];
+  NSInteger autoresizMask = NSViewWidthSizable|NSViewHeightSizable;
+  STAssertTrue([[[_appsViewController mainContentViewController] view] autoresizingMask] == autoresizMask , @"");
+}
+
+//************************* initNavigationView *************************//
+- (void) test_initNavigationView_allScenarios_setNavigationViewController {
+  [_appsViewController setNavigationViewController:nil];
+  
+  [_appsViewController initNavigationView:kAppsTableNavigationViewControllerNibName];
+  
+  STAssertNotNil([_appsViewController navigationViewController], @"");
+}
+
+- (void) test_initNavigationView_allScenarios_addNewViewToTheNavigationView {
+  [_appsViewController setNavigationViewController:nil];
+  
+  [_appsViewController initNavigationView :kAppsTableNavigationViewControllerNibName];
+  
+  STAssertTrue([[[_appsViewController navigationView] subviews] count] == 1, @"");
+}
+
+- (void) test_initNavigationView_allScenarios_setTheFrameOfSubviewToMainViewFrameBounds {
+  [_appsViewController initNavigationView:kAppsInstalledViewControllerNibName];
+
+  NSRect returnValue = [[[_appsViewController navigationViewController] view] bounds];
+  NSRect expectedValue = [[_appsViewController navigationView] bounds];
+  
+  STAssertEquals(returnValue, expectedValue, @"");
+}
+
+- (void) test_initNavigationView_allScenarios_setSubviewToHeightResiziable {
+  [_appsViewController initNavigationView:kAppsTableNavigationViewControllerNibName];
+  NSInteger autoresizMask = NSViewHeightSizable;
+  STAssertTrue([[[_appsViewController navigationViewController] view] autoresizingMask] == autoresizMask , @"");
 }
 
 @end

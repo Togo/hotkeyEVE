@@ -66,8 +66,8 @@
 		CD845A1016A0C8ED007717CB /* AppsTableNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A0E16A0C8ED007717CB /* AppsTableNavigationViewController.xib */; };
 		CD845A1416A0C91D007717CB /* AppsInstalledViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A1216A0C91D007717CB /* AppsInstalledViewController.m */; };
 		CD845A1516A0C91D007717CB /* AppsInstalledViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A1316A0C91D007717CB /* AppsInstalledViewController.xib */; };
-		CD845A1916A0C937007717CB /* AppsUninstalledViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A1716A0C937007717CB /* AppsUninstalledViewController.m */; };
-		CD845A1A16A0C937007717CB /* AppsUninstalledViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A1816A0C937007717CB /* AppsUninstalledViewController.xib */; };
+		CD845A1916A0C937007717CB /* AppsNotInstalledViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A1716A0C937007717CB /* AppsNotInstalledViewController.m */; };
+		CD845A1A16A0C937007717CB /* AppsNotInstalledViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A1816A0C937007717CB /* AppsNotInstalledViewController.xib */; };
 		CD845A2616A15B98007717CB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7701645393400A9C7D8 /* SenTestingKit.framework */; };
 		CD845A2716A15B98007717CB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7521645393300A9C7D8 /* Cocoa.framework */; };
 		CD845A2D16A15B98007717CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD845A2B16A15B98007717CB /* InfoPlist.strings */; };
@@ -300,9 +300,9 @@
 		CD845A1116A0C91D007717CB /* AppsInstalledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsInstalledViewController.h; path = Apps/GUI/AppsInstalledViewController.h; sourceTree = "<group>"; };
 		CD845A1216A0C91D007717CB /* AppsInstalledViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsInstalledViewController.m; path = Apps/GUI/AppsInstalledViewController.m; sourceTree = "<group>"; };
 		CD845A1316A0C91D007717CB /* AppsInstalledViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsInstalledViewController.xib; path = Apps/GUI/AppsInstalledViewController.xib; sourceTree = "<group>"; };
-		CD845A1616A0C936007717CB /* AppsUninstalledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsUninstalledViewController.h; path = Apps/GUI/AppsUninstalledViewController.h; sourceTree = "<group>"; };
-		CD845A1716A0C937007717CB /* AppsUninstalledViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsUninstalledViewController.m; path = Apps/GUI/AppsUninstalledViewController.m; sourceTree = "<group>"; };
-		CD845A1816A0C937007717CB /* AppsUninstalledViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsUninstalledViewController.xib; path = Apps/GUI/AppsUninstalledViewController.xib; sourceTree = "<group>"; };
+		CD845A1616A0C936007717CB /* AppsNotInstalledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsNotInstalledViewController.h; path = Apps/GUI/AppsNotInstalledViewController.h; sourceTree = "<group>"; };
+		CD845A1716A0C937007717CB /* AppsNotInstalledViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsNotInstalledViewController.m; path = Apps/GUI/AppsNotInstalledViewController.m; sourceTree = "<group>"; };
+		CD845A1816A0C937007717CB /* AppsNotInstalledViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsNotInstalledViewController.xib; path = Apps/GUI/AppsNotInstalledViewController.xib; sourceTree = "<group>"; };
 		CD845A1B16A15560007717CB /* AppsNavigationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppsNavigationDelegate.h; path = Apps/GUI/AppsNavigationDelegate.h; sourceTree = "<group>"; };
 		CD845A2516A15B98007717CB /* hotkeyEVEUnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hotkeyEVEUnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD845A2A16A15B98007717CB /* hotkeyEVEUnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "hotkeyEVEUnitTests-Info.plist"; sourceTree = "<group>"; };
@@ -731,9 +731,9 @@
 				CD845A1116A0C91D007717CB /* AppsInstalledViewController.h */,
 				CD845A1216A0C91D007717CB /* AppsInstalledViewController.m */,
 				CD845A1316A0C91D007717CB /* AppsInstalledViewController.xib */,
-				CD845A1616A0C936007717CB /* AppsUninstalledViewController.h */,
-				CD845A1716A0C937007717CB /* AppsUninstalledViewController.m */,
-				CD845A1816A0C937007717CB /* AppsUninstalledViewController.xib */,
+				CD845A1616A0C936007717CB /* AppsNotInstalledViewController.h */,
+				CD845A1716A0C937007717CB /* AppsNotInstalledViewController.m */,
+				CD845A1816A0C937007717CB /* AppsNotInstalledViewController.xib */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -999,7 +999,7 @@
 				CD845A0816A0C493007717CB /* AppsWindowController.xib in Resources */,
 				CD845A1016A0C8ED007717CB /* AppsTableNavigationViewController.xib in Resources */,
 				CD845A1516A0C91D007717CB /* AppsInstalledViewController.xib in Resources */,
-				CD845A1A16A0C937007717CB /* AppsUninstalledViewController.xib in Resources */,
+				CD845A1A16A0C937007717CB /* AppsNotInstalledViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1088,7 +1088,7 @@
 				CD845A0B16A0C8B1007717CB /* AppsViewController.m in Sources */,
 				CD845A0F16A0C8ED007717CB /* AppsTableNavigationViewController.m in Sources */,
 				CD845A1416A0C91D007717CB /* AppsInstalledViewController.m in Sources */,
-				CD845A1916A0C937007717CB /* AppsUninstalledViewController.m in Sources */,
+				CD845A1916A0C937007717CB /* AppsNotInstalledViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
