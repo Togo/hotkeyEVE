@@ -91,6 +91,7 @@
 		CDC77C22165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDC77C20165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql */; };
 		CDC77C23165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDC77C21165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql */; };
 		CDE3015716A2FB6B00E8D489 /* AppsNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3015616A2FB6B00E8D489 /* AppsNavigationViewController.m */; };
+		CDE3015A16A469BC00E8D489 /* AppsWindowControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3015916A469BC00E8D489 /* AppsWindowControllerTests.m */; };
 		CDE54D9A16626FF8009E4C57 /* ShareService.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE54D9916626FF8009E4C57 /* ShareService.m */; };
 		CDEE15311648127A00EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns in Resources */ = {isa = PBXBuildFile; fileRef = CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */; };
 		CDEE15341648128C00EDCDF4 /* GUISupportTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE15331648128C00EDCDF4 /* GUISupportTableModel.m */; };
@@ -343,6 +344,8 @@
 		CDE3015416A2F2B300E8D489 /* AppsNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppsNavigationView.h; path = Apps/GUI/AppsNavigationView.h; sourceTree = "<group>"; };
 		CDE3015516A2FB6A00E8D489 /* AppsNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsNavigationViewController.h; path = Apps/GUI/AppsNavigationViewController.h; sourceTree = "<group>"; };
 		CDE3015616A2FB6B00E8D489 /* AppsNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsNavigationViewController.m; path = Apps/GUI/AppsNavigationViewController.m; sourceTree = "<group>"; };
+		CDE3015816A469BC00E8D489 /* AppsWindowControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsWindowControllerTests.h; path = AppsGUITests/AppsWindowControllerTests.h; sourceTree = "<group>"; };
+		CDE3015916A469BC00E8D489 /* AppsWindowControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsWindowControllerTests.m; path = AppsGUITests/AppsWindowControllerTests.m; sourceTree = "<group>"; };
 		CDE54D9816626FF8009E4C57 /* ShareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareService.h; sourceTree = "<group>"; };
 		CDE54D9916626FF8009E4C57 /* ShareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareService.m; sourceTree = "<group>"; };
 		CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns; sourceTree = "<group>"; };
@@ -780,6 +783,8 @@
 				CD845A3B16A15CB0007717CB /* AppsTableNavigationViewControllerTests.m */,
 				CD845A4316A16D89007717CB /* AppsViewControllerTests.h */,
 				CD845A4416A16D89007717CB /* AppsViewControllerTests.m */,
+				CDE3015816A469BC00E8D489 /* AppsWindowControllerTests.h */,
+				CDE3015916A469BC00E8D489 /* AppsWindowControllerTests.m */,
 			);
 			name = AppsGUITests;
 			sourceTree = "<group>";
@@ -1107,6 +1112,7 @@
 				CD845A3016A15B98007717CB /* hotkeyEVEUnitTests.m in Sources */,
 				CD845A4216A161F1007717CB /* AppsTableNavigationViewControllerTests.m in Sources */,
 				CD845A4516A16D89007717CB /* AppsViewControllerTests.m in Sources */,
+				CDE3015A16A469BC00E8D489 /* AppsWindowControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
