@@ -17,22 +17,25 @@
 @synthesize mainContentViewController = _mainContentViewController;
 
 -(void)awakeFromNib {
-  [self viewSelectionDidChanged:kAppsInstalledViewControllerNibName];
-  [self initNavigationView:kAppsTableNavigationViewControllerNibName];
+  // set the view for the first start
+  [self viewSelectionDidChanged:[AppsInstalledViewController class]  :kAppsInstalledViewControllerNibName];
+  [self initNavigationView:[AppsTableNavigationViewController class] :kAppsTableNavigationViewControllerNibName];
 }
 
-- (void) initNavigationView :(NSString*) viewNibName {
-  _navigationViewController = [[NSViewController alloc] initWithNibName:viewNibName bundle:nil];
+- (void) initNavigationView :(id)viewControllerClass :(NSString*) viewNibName {
+  _navigationViewController = [[viewControllerClass alloc] initWithNibName:viewNibName bundle:nil];
   
   [_navigationView addSubview:[_navigationViewController view]];
   [[_navigationViewController view] setBounds:[_navigationView bounds]];
   [[_navigationViewController view] setAutoresizingMask:NSViewHeightSizable];
+ 
+  [_navigationViewController setDelegate:self];
 }
 
--(void) viewSelectionDidChanged:(NSString*)viewNibName {
+-(void)viewSelectionDidChanged:(id)viewControllerClass :(NSString*) viewNibName {
   [[_mainContentViewController view] removeFromSuperview];
   
-  _mainContentViewController = [[NSViewController alloc] initWithNibName:viewNibName bundle:nil];
+  _mainContentViewController = [[viewControllerClass alloc] initWithNibName:viewNibName bundle:nil];
   
   [_mainContentView addSubview:[_mainContentViewController view]];
   [[_mainContentViewController view] setBounds:[_mainContentView bounds]];

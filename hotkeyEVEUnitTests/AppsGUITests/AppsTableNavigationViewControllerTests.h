@@ -12,6 +12,10 @@
 
 @interface AppsTableNavigationViewControllerTests : SenTestCase {
   AppsTableNavigationViewController *_tableNavController;
+  
+  @private
+    NSTableView *_tableView;
+    NSTableColumn *_navigationTableColumn;
 }
 
 @end

@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "AppsNavigationDelegate.h"
+#import "AppsNavigationViewController.h"
 
 @interface AppsViewController : NSObject <AppsNavigationDelegate>
 
 @property (weak) IBOutlet NSView *navigationView;
 @property (weak) IBOutlet NSView *mainContentView;
 @property (strong) NSViewController *mainContentViewController;
-@property (strong) NSViewController *navigationViewController;
+@property (strong) AppsNavigationViewController *navigationViewController;
 
-- (void) initNavigationView :(NSString*) viewNibName;
+- (void) initNavigationView :(id)viewControllerClass :(NSString*) viewNibName;
 @end

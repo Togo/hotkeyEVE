@@ -42,7 +42,7 @@
 //************************* awakeFromNib *************************//
 - (void) test_awakeFromNib_contollerAllocated_callViewSelectiondDidChangeWithInstalledAppsView {
   id appsViewControllerMock = [OCMockObject partialMockForObject:_appsViewController];
-  [[appsViewControllerMock expect] viewSelectionDidChanged :kAppsInstalledViewControllerNibName];
+  [[appsViewControllerMock expect] viewSelectionDidChanged :[AppsInstalledViewController class] :kAppsInstalledViewControllerNibName];
   
   [_appsViewController awakeFromNib];
   
@@ -51,7 +51,7 @@
 
 - (void) test_awakeFromNib_contollerAllocated_setTheNavigationView {
   id appsViewControllerMock = [OCMockObject partialMockForObject:_appsViewController];
-  [[appsViewControllerMock expect] initNavigationView :kAppsTableNavigationViewControllerNibName];
+  [[appsViewControllerMock expect] initNavigationView:[AppsTableNavigationViewController class] :kAppsTableNavigationViewControllerNibName];
   
   [_appsViewController awakeFromNib];
   
@@ -66,7 +66,7 @@
   id currentActiveViewMock = [OCMockObject partialMockForObject:[[_appsViewController mainContentViewController] view]];
   [[currentActiveViewMock expect] removeFromSuperview];
   
-  [_appsViewController viewSelectionDidChanged:kAppsInstalledViewControllerNibName];
+  [_appsViewController viewSelectionDidChanged:[AppsInstalledViewController class] :kAppsInstalledViewControllerNibName];
   
   [currentActiveViewMock verify];
 }
@@ -74,7 +74,7 @@
 - (void) test_viewSelectionDidChanged_allScenarios_setMainContentViewController {
   [_appsViewController setMainContentViewController:nil];
   
-  [_appsViewController viewSelectionDidChanged:kAppsInstalledViewControllerNibName];
+  [_appsViewController viewSelectionDidChanged:[AppsInstalledViewController class] :kAppsInstalledViewControllerNibName];
   
   STAssertNotNil([_appsViewController mainContentViewController], @"");
 }
@@ -82,13 +82,13 @@
 - (void) test_viewSelectionDidChanged_allScenarios_addNewViewToTheMainContentView {
   [_appsViewController setMainContentViewController:nil];
   
-  [_appsViewController viewSelectionDidChanged :kAppsInstalledViewControllerNibName];
+  [_appsViewController viewSelectionDidChanged:[AppsInstalledViewController class] :kAppsInstalledViewControllerNibName];
   
   STAssertTrue([[[_appsViewController mainContentView] subviews] count] == 1, @"");
 }
 
 - (void) test_viewSelectiondDidChanged_allScenarios_setTheFrameOfSubviewToMainViewFrameBounds {
-  [_appsViewController viewSelectionDidChanged:kAppsInstalledViewControllerNibName];
+  [_appsViewController viewSelectionDidChanged:[AppsInstalledViewController class] :kAppsInstalledViewControllerNibName];
   
   NSRect returnValue = [[[_appsViewController mainContentViewController] view] bounds];
   NSRect expectedValue = [[_appsViewController mainContentView] bounds];
@@ -97,7 +97,7 @@
 }
 
 - (void) test_viewSelectiondDidChanged_allScenarios_setSubviewToWitdhAndHeightResiziable {
-  [_appsViewController viewSelectionDidChanged:kAppsInstalledViewControllerNibName];
+  [_appsViewController viewSelectionDidChanged:[AppsInstalledViewController class] :kAppsInstalledViewControllerNibName];
   NSInteger autoresizMask = NSViewWidthSizable|NSViewHeightSizable;
   STAssertTrue([[[_appsViewController mainContentViewController] view] autoresizingMask] == autoresizMask , @"");
 }
@@ -106,7 +106,7 @@
 - (void) test_initNavigationView_allScenarios_setNavigationViewController {
   [_appsViewController setNavigationViewController:nil];
   
-  [_appsViewController initNavigationView:kAppsTableNavigationViewControllerNibName];
+  [_appsViewController initNavigationView:[AppsTableNavigationViewController class] :kAppsTableNavigationViewControllerNibName];
   
   STAssertNotNil([_appsViewController navigationViewController], @"");
 }
@@ -114,13 +114,13 @@
 - (void) test_initNavigationView_allScenarios_addNewViewToTheNavigationView {
   [_appsViewController setNavigationViewController:nil];
   
-  [_appsViewController initNavigationView :kAppsTableNavigationViewControllerNibName];
+  [_appsViewController initNavigationView:[AppsTableNavigationViewController class] :kAppsTableNavigationViewControllerNibName];
   
   STAssertTrue([[[_appsViewController navigationView] subviews] count] == 1, @"");
 }
 
 - (void) test_initNavigationView_allScenarios_setTheFrameOfSubviewToMainViewFrameBounds {
-  [_appsViewController initNavigationView:kAppsInstalledViewControllerNibName];
+  [_appsViewController initNavigationView:[AppsTableNavigationViewController class] :kAppsTableNavigationViewControllerNibName];
 
   NSRect returnValue = [[[_appsViewController navigationViewController] view] bounds];
   NSRect expectedValue = [[_appsViewController navigationView] bounds];
@@ -129,9 +129,21 @@
 }
 
 - (void) test_initNavigationView_allScenarios_setSubviewToHeightResiziable {
-  [_appsViewController initNavigationView:kAppsTableNavigationViewControllerNibName];
+  [_appsViewController initNavigationView:[AppsTableNavigationViewController class] :kAppsTableNavigationViewControllerNibName];
   NSInteger autoresizMask = NSViewHeightSizable;
   STAssertTrue([[[_appsViewController navigationViewController] view] autoresizingMask] == autoresizMask , @"");
+}
+
+- (void) test_initNavigationView_classIsNotKindOfClassNSViewController_throwException {
+  STAssertThrows([_appsViewController initNavigationView:[NSWindowController class] :kAppsTableNavigationViewControllerNibName], @"");
+}
+
+- (void) test_initNavigationView_delegateHasBeenSet_delegateNotNil {
+  [_appsViewController setNavigationViewController:nil];
+  
+  [_appsViewController initNavigationView:[AppsTableNavigationViewController class] :kAppsTableNavigationViewControllerNibName];
+  
+  STAssertNotNil([[_appsViewController navigationViewController] delegate], @"");
 }
 
 @end

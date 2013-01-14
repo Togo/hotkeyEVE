@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+extern NSString * const kAppsNotInstalledViewControllerNibName;
+
 @interface AppsNotInstalledViewController : NSViewController
 
 @end

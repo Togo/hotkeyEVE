@@ -8,14 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 #import "AppsNavigationDelegate.h"
+#import "AppsNavigationViewController.h"
 
 extern NSString * const kAppsTableNavigationViewControllerNibName;
 
-@interface AppsTableNavigationViewController : NSViewController {
-  @public
-    id<AppsNavigationDelegate> delegate;
+@interface AppsTableNavigationViewController : AppsNavigationViewController <NSTableViewDataSource, NSTableViewDelegate> {
 }
 
-- (IBAction)selectionDidChange:(id)sender;
+@property (strong) NSArray<NSTableViewDataSource> *dataSource;
+@property (weak) IBOutlet NSTableView *navigationTableView;
+@property (weak) IBOutlet NSTableColumn *navigationTableColumn;
 
 @end

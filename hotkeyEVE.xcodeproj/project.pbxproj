@@ -90,6 +90,7 @@
 		CDC77C1F165C2DAF00939D99 /* MigrationsV1_3_2.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */; };
 		CDC77C22165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDC77C20165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql */; };
 		CDC77C23165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDC77C21165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql */; };
+		CDE3015716A2FB6B00E8D489 /* AppsNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3015616A2FB6B00E8D489 /* AppsNavigationViewController.m */; };
 		CDE54D9A16626FF8009E4C57 /* ShareService.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE54D9916626FF8009E4C57 /* ShareService.m */; };
 		CDEE15311648127A00EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns in Resources */ = {isa = PBXBuildFile; fileRef = CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */; };
 		CDEE15341648128C00EDCDF4 /* GUISupportTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE15331648128C00EDCDF4 /* GUISupportTableModel.m */; };
@@ -339,6 +340,9 @@
 		CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationsV1_3_2.m; path = Database/Migrations/MigrationsV1_3_2.m; sourceTree = "<group>"; };
 		CDC77C20165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_GUI_ELEMENTS_V1_3_2.sql; path = "Database/SQL Scripte/V1.3.2/INSERT_GUI_ELEMENTS_V1_3_2.sql"; sourceTree = "<group>"; };
 		CDC77C21165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_GUI_SUPPORT_V1_3_2.sql; path = "Database/SQL Scripte/V1.3.2/INSERT_GUI_SUPPORT_V1_3_2.sql"; sourceTree = "<group>"; };
+		CDE3015416A2F2B300E8D489 /* AppsNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppsNavigationView.h; path = Apps/GUI/AppsNavigationView.h; sourceTree = "<group>"; };
+		CDE3015516A2FB6A00E8D489 /* AppsNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsNavigationViewController.h; path = Apps/GUI/AppsNavigationViewController.h; sourceTree = "<group>"; };
+		CDE3015616A2FB6B00E8D489 /* AppsNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsNavigationViewController.m; path = Apps/GUI/AppsNavigationViewController.m; sourceTree = "<group>"; };
 		CDE54D9816626FF8009E4C57 /* ShareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareService.h; sourceTree = "<group>"; };
 		CDE54D9916626FF8009E4C57 /* ShareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareService.m; sourceTree = "<group>"; };
 		CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns; sourceTree = "<group>"; };
@@ -725,6 +729,9 @@
 				CD845A1B16A15560007717CB /* AppsNavigationDelegate.h */,
 				CD845A0916A0C8B1007717CB /* AppsViewController.h */,
 				CD845A0A16A0C8B1007717CB /* AppsViewController.m */,
+				CDE3015416A2F2B300E8D489 /* AppsNavigationView.h */,
+				CDE3015516A2FB6A00E8D489 /* AppsNavigationViewController.h */,
+				CDE3015616A2FB6B00E8D489 /* AppsNavigationViewController.m */,
 				CD845A0C16A0C8ED007717CB /* AppsTableNavigationViewController.h */,
 				CD845A0D16A0C8ED007717CB /* AppsTableNavigationViewController.m */,
 				CD845A0E16A0C8ED007717CB /* AppsTableNavigationViewController.xib */,
@@ -1089,6 +1096,7 @@
 				CD845A0F16A0C8ED007717CB /* AppsTableNavigationViewController.m in Sources */,
 				CD845A1416A0C91D007717CB /* AppsInstalledViewController.m in Sources */,
 				CD845A1916A0C937007717CB /* AppsNotInstalledViewController.m in Sources */,
+				CDE3015716A2FB6B00E8D489 /* AppsNavigationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1342,6 +1350,7 @@
 				CD845A3416A15B98007717CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
