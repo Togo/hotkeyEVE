@@ -12,9 +12,12 @@
 
 @interface AppsViewController : NSObject <AppsNavigationDelegate>
 
-@property (weak) IBOutlet NSView *navigationView;
+@property (weak) IBOutlet NSSplitView *splitView;
+
 @property (weak) IBOutlet NSView *mainContentView;
 @property (strong) NSViewController *mainContentViewController;
+
+@property (weak) IBOutlet NSView *navigationView;
 @property (strong) AppsNavigationViewController *navigationViewController;
 
 - (void) initNavigationView :(id)viewControllerClass :(NSString*) viewNibName;

@@ -22,7 +22,6 @@ NSString * const kAppsInstalledViewControllerNibName = @"AppsInstalledViewContro
     if (self) {
       
     }
-    
     return self;
 }
 

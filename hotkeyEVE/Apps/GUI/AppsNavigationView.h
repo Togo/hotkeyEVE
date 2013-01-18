@@ -13,4 +13,5 @@
 
 @property (strong) id<AppsNavigationDelegate> delegate;
 
+
 @end

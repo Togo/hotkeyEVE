@@ -69,7 +69,10 @@
   STAssertTrue([returnValue isEqualTo:[AppsNotInstalledViewController class]], @"");
 }
 
+//************************* loadView *************************//
 
+
+//************************* objectValueForTableColumn *************************//
 - (void) test_objectValueForTableColumn_rowSelected_returnNavigationColumnValue {
   NSTableColumn *navTableColumn = [[NSTableColumn alloc] initWithIdentifier:@"NavigationColumn"];
   NSString *returnValue = [_tableNavController tableView:_tableView objectValueForTableColumn:navTableColumn row:0];

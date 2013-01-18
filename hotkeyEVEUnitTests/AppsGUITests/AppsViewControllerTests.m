@@ -90,7 +90,7 @@
 - (void) test_viewSelectiondDidChanged_allScenarios_setTheFrameOfSubviewToMainViewFrameBounds {
   [_appsViewController viewSelectionDidChanged:[AppsInstalledViewController class] :kAppsInstalledViewControllerNibName];
   
-  NSRect returnValue = [[[_appsViewController mainContentViewController] view] bounds];
+  NSRect returnValue = [[[_appsViewController mainContentViewController] view] frame];
   NSRect expectedValue = [[_appsViewController mainContentView] bounds];
   
   STAssertEquals(returnValue, expectedValue, @"");
@@ -122,7 +122,7 @@
 - (void) test_initNavigationView_allScenarios_setTheFrameOfSubviewToMainViewFrameBounds {
   [_appsViewController initNavigationView:[AppsTableNavigationViewController class] :kAppsTableNavigationViewControllerNibName];
 
-  NSRect returnValue = [[[_appsViewController navigationViewController] view] bounds];
+  NSRect returnValue = [[[_appsViewController navigationViewController] view] frame];
   NSRect expectedValue = [[_appsViewController navigationView] bounds];
   
   STAssertEquals(returnValue, expectedValue, @"");
@@ -130,7 +130,7 @@
 
 - (void) test_initNavigationView_allScenarios_setSubviewToHeightResiziable {
   [_appsViewController initNavigationView:[AppsTableNavigationViewController class] :kAppsTableNavigationViewControllerNibName];
-  NSInteger autoresizMask = NSViewHeightSizable;
+  NSInteger autoresizMask = NSViewHeightSizable|NSViewWidthSizable;
   STAssertTrue([[[_appsViewController navigationViewController] view] autoresizingMask] == autoresizMask , @"");
 }
 

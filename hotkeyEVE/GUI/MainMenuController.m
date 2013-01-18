@@ -109,7 +109,8 @@
 
 - (IBAction) showAppsWindow :(id) sender {
   if(!_appsWindowController) {
-    _appsWindowController = [[AppsWindowController alloc] initWithWindowNibName:kAppsWindowNibName];
+    _appsWindowController = [[AppsWindowController alloc] initWithWindowNibName:
+                             [NSString stringWithFormat:@"%@",kAppsWindowNibName]];
   }
   
   self.ourViewController = _appsWindowController;

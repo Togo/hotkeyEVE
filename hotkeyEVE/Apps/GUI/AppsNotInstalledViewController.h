@@ -7,9 +7,31 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "AppsNotInstalledModel.h"
 
 extern NSString * const kAppsNotInstalledViewControllerNibName;
 
-@interface AppsNotInstalledViewController : NSViewController
+@interface AppsNotInstalledViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>{
+
+}
+
+@property (strong) id<AppsNotInstalledModel> model;
+
+@property (strong) NSMutableArray<NSTableViewDataSource> *dataSource;
+
+@property (weak) IBOutlet  NSTableView *tableView;
+@property (weak) IBOutlet  NSTableColumn *moduleIDTableColumn;
+@property (weak) IBOutlet  NSTableColumn *appNameTableColumn;
+@property (weak) IBOutlet  NSTableColumn *languageTableColumn;
+@property (weak) IBOutlet  NSTableColumn *userNameTableColumn;
+@property (weak) IBOutlet  NSTableColumn *credatTableColumn;
+
+
+@property (strong) NSProgressIndicator *progressIndicator;
+
+- (void) loadTableData;
+
+- (void) startProgressAnimationinSuperview :(NSView*) superview;
+- (void) stopProgressAnimation;
 
 @end

@@ -92,6 +92,9 @@
 		CDC77C23165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDC77C21165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql */; };
 		CDE3015716A2FB6B00E8D489 /* AppsNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3015616A2FB6B00E8D489 /* AppsNavigationViewController.m */; };
 		CDE3015A16A469BC00E8D489 /* AppsWindowControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3015916A469BC00E8D489 /* AppsWindowControllerTests.m */; };
+		CDE3015F16A4910000E8D489 /* AppsAmazonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3015E16A4910000E8D489 /* AppsAmazonModel.m */; };
+		CDE3016216A4921D00E8D489 /* AppsAmazonModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3016116A4921D00E8D489 /* AppsAmazonModelTests.m */; };
+		CDE3018316A49D0300E8D489 /* libAppsLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE3016C16A4932600E8D489 /* libAppsLibrary.a */; };
 		CDE54D9A16626FF8009E4C57 /* ShareService.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE54D9916626FF8009E4C57 /* ShareService.m */; };
 		CDEE15311648127A00EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns in Resources */ = {isa = PBXBuildFile; fileRef = CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */; };
 		CDEE15341648128C00EDCDF4 /* GUISupportTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE15331648128C00EDCDF4 /* GUISupportTableModel.m */; };
@@ -105,6 +108,7 @@
 		CDEE156F164AE38A00EDCDF4 /* INSERT_GUI_ELEMENTS_V1_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDEE156E164AE38A00EDCDF4 /* INSERT_GUI_ELEMENTS_V1_0.sql */; };
 		CDEE1573164B03FF00EDCDF4 /* Licence.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1572164B03FF00EDCDF4 /* Licence.m */; };
 		CDEE1576164B04F100EDCDF4 /* NSString+Hashes.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1575164B04F000EDCDF4 /* NSString+Hashes.m */; };
+		CDF174A416A5E6EE0047C56E /* AppsNotInstalledViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF174A316A5E6EE0047C56E /* AppsNotInstalledViewControllerTests.m */; };
 		CDFF8CDB164B72EF00A5EA5A /* Database.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5A463816455119007B57A5 /* Database.dylib */; };
 		CDFF8CDC164B72EF00A5EA5A /* UIElements.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5A462C1645510F007B57A5 /* UIElements.dylib */; };
 		CDFF8CEA164B7CEF00A5EA5A /* Database.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD5A463816455119007B57A5 /* Database.dylib */; };
@@ -160,6 +164,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = CD80E74D1645393300A9C7D8;
 			remoteInfo = hotkeyEVE;
+		};
+		CDE3016B16A4932600E8D489 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDE3016316A4932500E8D489 /* AppsLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CD0477FB167FA9450063DCBE;
+			remoteInfo = AppsLibrary;
+		};
+		CDE3016D16A4932600E8D489 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDE3016316A4932500E8D489 /* AppsLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CD04780F167FA9450063DCBE;
+			remoteInfo = AppsLibraryTests;
+		};
+		CDE3018116A49CFD00E8D489 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDE3016316A4932500E8D489 /* AppsLibrary.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = CD0477FA167FA9450063DCBE;
+			remoteInfo = AppsLibrary;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -346,6 +371,12 @@
 		CDE3015616A2FB6B00E8D489 /* AppsNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsNavigationViewController.m; path = Apps/GUI/AppsNavigationViewController.m; sourceTree = "<group>"; };
 		CDE3015816A469BC00E8D489 /* AppsWindowControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsWindowControllerTests.h; path = AppsGUITests/AppsWindowControllerTests.h; sourceTree = "<group>"; };
 		CDE3015916A469BC00E8D489 /* AppsWindowControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsWindowControllerTests.m; path = AppsGUITests/AppsWindowControllerTests.m; sourceTree = "<group>"; };
+		CDE3015C16A48EAB00E8D489 /* AppsNotInstalledModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsNotInstalledModel.h; path = Apps/Model/AppsNotInstalledModel.h; sourceTree = "<group>"; };
+		CDE3015D16A4910000E8D489 /* AppsAmazonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsAmazonModel.h; path = Apps/Model/AppsAmazonModel.h; sourceTree = "<group>"; };
+		CDE3015E16A4910000E8D489 /* AppsAmazonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsAmazonModel.m; path = Apps/Model/AppsAmazonModel.m; sourceTree = "<group>"; };
+		CDE3016016A4921D00E8D489 /* AppsAmazonModelTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsAmazonModelTests.h; path = AppsGUITests/AppsAmazonModelTests.h; sourceTree = "<group>"; };
+		CDE3016116A4921D00E8D489 /* AppsAmazonModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsAmazonModelTests.m; path = AppsGUITests/AppsAmazonModelTests.m; sourceTree = "<group>"; };
+		CDE3016316A4932500E8D489 /* AppsLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppsLibrary.xcodeproj; path = AppsLibrary/AppsLibrary.xcodeproj; sourceTree = SOURCE_ROOT; };
 		CDE54D9816626FF8009E4C57 /* ShareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareService.h; sourceTree = "<group>"; };
 		CDE54D9916626FF8009E4C57 /* ShareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareService.m; sourceTree = "<group>"; };
 		CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns; sourceTree = "<group>"; };
@@ -369,6 +400,8 @@
 		CDEE1572164B03FF00EDCDF4 /* Licence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Licence.m; path = Licencing/Licence.m; sourceTree = "<group>"; };
 		CDEE1574164B04F000EDCDF4 /* NSString+Hashes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Hashes.h"; path = "Utilities/NSString+Hashes.h"; sourceTree = "<group>"; };
 		CDEE1575164B04F000EDCDF4 /* NSString+Hashes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Hashes.m"; path = "Utilities/NSString+Hashes.m"; sourceTree = "<group>"; };
+		CDF174A216A5E6ED0047C56E /* AppsNotInstalledViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsNotInstalledViewControllerTests.h; path = AppsGUITests/AppsNotInstalledViewControllerTests.h; sourceTree = "<group>"; };
+		CDF174A316A5E6EE0047C56E /* AppsNotInstalledViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsNotInstalledViewControllerTests.m; path = AppsGUITests/AppsNotInstalledViewControllerTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,6 +409,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE3018316A49D0300E8D489 /* libAppsLibrary.a in Frameworks */,
 				CDFF8CDB164B72EF00A5EA5A /* Database.dylib in Frameworks */,
 				CDFF8CDC164B72EF00A5EA5A /* UIElements.dylib in Frameworks */,
 				CD57865316465EDE00CC508B /* Growl.framework in Frameworks */,
@@ -410,13 +444,14 @@
 			name = V1_3_3;
 			sourceTree = "<group>";
 		};
-		CD5A4621164550F6007B57A5 /* Subprojects */ = {
+		CD5A4621164550F6007B57A5 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				CDE3016316A4932500E8D489 /* AppsLibrary.xcodeproj */,
 				CD5A462F16455118007B57A5 /* Database.xcodeproj */,
 				CD5A46231645510F007B57A5 /* UIElements.xcodeproj */,
 			);
-			name = Subprojects;
+			name = libs;
 			sourceTree = "<group>";
 		};
 		CD5A46241645510F007B57A5 /* Products */ = {
@@ -657,7 +692,7 @@
 				CD80E7651645393400A9C7D8 /* AppDelegate.m */,
 				CD97CE6C164670BD00406F1F /* HandleClickedUIElement.h */,
 				CD97CE6D164670BE00406F1F /* HandleClickedUIElement.m */,
-				CD5A4621164550F6007B57A5 /* Subprojects */,
+				CD5A4621164550F6007B57A5 /* libs */,
 				CD80E7591645393400A9C7D8 /* Supporting Files */,
 			);
 			path = hotkeyEVE;
@@ -718,12 +753,13 @@
 		CD8459FF16A0C41B007717CB /* Apps */ = {
 			isa = PBXGroup;
 			children = (
-				CD845A0016A0C424007717CB /* GUI */,
+				CD845A0016A0C424007717CB /* GUI/Controller */,
+				CDE3015B16A48E3A00E8D489 /* Model */,
 			);
 			name = Apps;
 			sourceTree = "<group>";
 		};
-		CD845A0016A0C424007717CB /* GUI */ = {
+		CD845A0016A0C424007717CB /* GUI/Controller */ = {
 			isa = PBXGroup;
 			children = (
 				CD845A0416A0C493007717CB /* AppsWindowController.h */,
@@ -745,7 +781,7 @@
 				CD845A1716A0C937007717CB /* AppsNotInstalledViewController.m */,
 				CD845A1816A0C937007717CB /* AppsNotInstalledViewController.xib */,
 			);
-			name = GUI;
+			name = GUI/Controller;
 			sourceTree = "<group>";
 		};
 		CD845A1C16A15619007717CB /* AppsGUITests */ = {
@@ -758,7 +794,7 @@
 		CD845A2816A15B98007717CB /* hotkeyEVEUnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				CD845A4616A16D92007717CB /* AppsGUITests */,
+				CD845A4616A16D92007717CB /* AppsTests */,
 				CD845A2E16A15B98007717CB /* hotkeyEVEUnitTests.h */,
 				CD845A2F16A15B98007717CB /* hotkeyEVEUnitTests.m */,
 				CD845A2916A15B98007717CB /* Supporting Files */,
@@ -776,7 +812,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CD845A4616A16D92007717CB /* AppsGUITests */ = {
+		CD845A4616A16D92007717CB /* AppsTests */ = {
 			isa = PBXGroup;
 			children = (
 				CD845A3A16A15CB0007717CB /* AppsTableNavigationViewControllerTests.h */,
@@ -785,8 +821,12 @@
 				CD845A4416A16D89007717CB /* AppsViewControllerTests.m */,
 				CDE3015816A469BC00E8D489 /* AppsWindowControllerTests.h */,
 				CDE3015916A469BC00E8D489 /* AppsWindowControllerTests.m */,
+				CDE3016016A4921D00E8D489 /* AppsAmazonModelTests.h */,
+				CDE3016116A4921D00E8D489 /* AppsAmazonModelTests.m */,
+				CDF174A216A5E6ED0047C56E /* AppsNotInstalledViewControllerTests.h */,
+				CDF174A316A5E6EE0047C56E /* AppsNotInstalledViewControllerTests.m */,
 			);
-			name = AppsGUITests;
+			name = AppsTests;
 			sourceTree = "<group>";
 		};
 		CD84B7871658CAC600DF227B /* V1_3_1 */ = {
@@ -836,6 +876,25 @@
 			name = V1_3_2;
 			sourceTree = "<group>";
 		};
+		CDE3015B16A48E3A00E8D489 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CDE3015C16A48EAB00E8D489 /* AppsNotInstalledModel.h */,
+				CDE3015D16A4910000E8D489 /* AppsAmazonModel.h */,
+				CDE3015E16A4910000E8D489 /* AppsAmazonModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CDE3016416A4932500E8D489 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDE3016C16A4932600E8D489 /* libAppsLibrary.a */,
+				CDE3016E16A4932600E8D489 /* AppsLibraryTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CDE54D9716626FE6009E4C57 /* Social */ = {
 			isa = PBXGroup;
 			children = (
@@ -882,6 +941,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CDE3018216A49CFD00E8D489 /* PBXTargetDependency */,
 				CD5A463C1645512D007B57A5 /* PBXTargetDependency */,
 				CD5A463E1645512D007B57A5 /* PBXTargetDependency */,
 			);
@@ -933,6 +993,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = CDE3016416A4932500E8D489 /* Products */;
+					ProjectRef = CDE3016316A4932500E8D489 /* AppsLibrary.xcodeproj */;
+				},
+				{
 					ProductGroup = CD5A463016455118007B57A5 /* Products */;
 					ProjectRef = CD5A462F16455118007B57A5 /* Database.xcodeproj */;
 				},
@@ -976,6 +1040,20 @@
 			fileType = wrapper.cfbundle;
 			path = DatabaseTests.octest;
 			remoteRef = CD5A463916455119007B57A5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CDE3016C16A4932600E8D489 /* libAppsLibrary.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAppsLibrary.a;
+			remoteRef = CDE3016B16A4932600E8D489 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CDE3016E16A4932600E8D489 /* AppsLibraryTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AppsLibraryTests.octest;
+			remoteRef = CDE3016D16A4932600E8D489 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1102,6 +1180,7 @@
 				CD845A1416A0C91D007717CB /* AppsInstalledViewController.m in Sources */,
 				CD845A1916A0C937007717CB /* AppsNotInstalledViewController.m in Sources */,
 				CDE3015716A2FB6B00E8D489 /* AppsNavigationViewController.m in Sources */,
+				CDE3015F16A4910000E8D489 /* AppsAmazonModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1113,6 +1192,8 @@
 				CD845A4216A161F1007717CB /* AppsTableNavigationViewControllerTests.m in Sources */,
 				CD845A4516A16D89007717CB /* AppsViewControllerTests.m in Sources */,
 				CDE3015A16A469BC00E8D489 /* AppsWindowControllerTests.m in Sources */,
+				CDE3016216A4921D00E8D489 /* AppsAmazonModelTests.m in Sources */,
+				CDF174A416A5E6EE0047C56E /* AppsNotInstalledViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1133,6 +1214,11 @@
 			isa = PBXTargetDependency;
 			target = CD80E74D1645393300A9C7D8 /* hotkeyEVE */;
 			targetProxy = CD845A3516A15BCE007717CB /* PBXContainerItemProxy */;
+		};
+		CDE3018216A49CFD00E8D489 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AppsLibrary;
+			targetProxy = CDE3018116A49CFD00E8D489 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

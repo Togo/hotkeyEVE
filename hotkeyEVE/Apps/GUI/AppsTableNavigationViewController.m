@@ -33,9 +33,15 @@ NSString * const kAppsTableNavigationViewControllerNibName = @"AppsTableNavigati
       NSDictionary *notInstalledRow = [NSDictionary dictionaryWithObjectsAndKeys:@"Not Installed", @"NavigationColumn", [AppsNotInstalledViewController class],@"Class" ,kAppsNotInstalledViewControllerNibName, @"NibName", nil];
 
       _dataSource = [NSArray arrayWithObjects:installedRow,notInstalledRow,nil];
+      
     }
-    
-    return self;
+
+  return self;
+}
+
+- (void) loadView {
+  [super loadView];
+
 }
 
 -(void)awakeFromNib {
