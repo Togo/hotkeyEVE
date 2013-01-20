@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "AppsNavigationDelegate.h"
 
+@class AppsManager;
+
 @protocol AppsNavigationView <NSObject>
 
 @property (strong) id<AppsNavigationDelegate> delegate;
-
+@property (strong) AppsManager *appsManager;
 
 @end

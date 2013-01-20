@@ -61,10 +61,28 @@
   STAssertTrue([[[_appsNotInstalledController moduleIDTableColumn] identifier] isEqualToString:kModuleID], @"");
 }
 
+- (void) test_awakeFromNib_allSecenarios_moduleIDColumnIsHidden {
+  [[_appsNotInstalledController moduleIDTableColumn] setHidden:NO];
+  [_appsNotInstalledController awakeFromNib];
+  STAssertTrue([[_appsNotInstalledController moduleIDTableColumn] isHidden], @"");
+}
+
 - (void) test_awakeFromNib_allSecenarios_appNameColumnHasCorrectIdentifier {
   [[_appsNotInstalledController appNameTableColumn] setIdentifier:nil];
   [_appsNotInstalledController awakeFromNib];
   STAssertTrue([[[_appsNotInstalledController appNameTableColumn] identifier] isEqualToString:kAppNameKey], @"");
+}
+
+- (void) test_awakeFromNib_allSecenarios_appNameTableSortDescriptorKey {
+  [[_appsNotInstalledController appNameTableColumn] setSortDescriptorPrototype:nil];
+  [_appsNotInstalledController awakeFromNib];
+  STAssertTrue([[[[_appsNotInstalledController appNameTableColumn] sortDescriptorPrototype] key] isEqualToString:kAppNameKey], @"");
+}
+
+- (void) test_awakeFromNib_allSecenarios_appNameColumnNotEditable  {
+  [[_appsNotInstalledController appNameTableColumn] setEditable:YES];
+  [_appsNotInstalledController awakeFromNib];
+  STAssertFalse([[_appsNotInstalledController appNameTableColumn] isEditable], @"");
 }
 
 - (void) test_awakeFromNib_allSecenarios_languageColumnHasCorrectIdentifier {
@@ -73,10 +91,34 @@
   STAssertTrue([[[_appsNotInstalledController languageTableColumn] identifier] isEqualToString:kLanguageKey], @"");
 }
 
+- (void) test_awakeFromNib_allSecenarios_languageTableSortDescriptorKey {
+  [[_appsNotInstalledController languageTableColumn] setSortDescriptorPrototype:nil];
+  [_appsNotInstalledController awakeFromNib];
+  STAssertTrue([[[[_appsNotInstalledController languageTableColumn] sortDescriptorPrototype] key] isEqualToString:kLanguageKey], @"");
+}
+
+- (void) test_awakeFromNib_allSecenarios_languageTableColumnNotEditable  {
+  [[_appsNotInstalledController languageTableColumn] setEditable:YES];
+  [_appsNotInstalledController awakeFromNib];
+  STAssertFalse([[_appsNotInstalledController languageTableColumn] isEditable], @"");
+}
+
 - (void) test_awakeFromNib_allSecenarios_userNameColumnHasCorrectIdentifier {
   [[_appsNotInstalledController userNameTableColumn] setIdentifier:nil];
   [_appsNotInstalledController awakeFromNib];
   STAssertTrue([[[_appsNotInstalledController userNameTableColumn] identifier] isEqualToString:kUserNameKey], @"");
+}
+
+- (void) test_awakeFromNib_allSecenarios_userNameTableSortDescriptorKey {
+  [[_appsNotInstalledController userNameTableColumn] setSortDescriptorPrototype:nil];
+  [_appsNotInstalledController awakeFromNib];
+  STAssertTrue([[[[_appsNotInstalledController userNameTableColumn] sortDescriptorPrototype] key] isEqualToString:kUserNameKey], @"");
+}
+
+- (void) test_awakeFromNib_allSecenarios_userNameTableColumnNotEditable  {
+  [[_appsNotInstalledController userNameTableColumn] setEditable:YES];
+  [_appsNotInstalledController awakeFromNib];
+  STAssertFalse([[_appsNotInstalledController userNameTableColumn] isEditable], @"");
 }
 
 - (void) test_awakeFromNib_allSecenarios_credatColumnHasCorrectIdentifier {
@@ -84,6 +126,28 @@
   [_appsNotInstalledController awakeFromNib];
   STAssertTrue([[[_appsNotInstalledController credatTableColumn] identifier] isEqualToString:kModuleCredatKey], @"");
 }
+
+- (void) test_awakeFromNib_allSecenarios_credatTableSortDescriptorKey {
+  [[_appsNotInstalledController credatTableColumn] setSortDescriptorPrototype:nil];
+  [_appsNotInstalledController awakeFromNib];
+  STAssertTrue([[[[_appsNotInstalledController credatTableColumn] sortDescriptorPrototype] key] isEqualToString:kModuleCredatKey], @"");
+}
+
+- (void) test_awakeFromNib_allSecenarios_credatTableColumnNotEditable  {
+  [[_appsNotInstalledController credatTableColumn] setEditable:YES];
+  [_appsNotInstalledController awakeFromNib];
+  STAssertFalse([[_appsNotInstalledController credatTableColumn] isEditable], @"");
+}
+
+- (void) test_awakeFromNib_allSecenarios_registerForDragAndDrop  {
+  id tableViewMock = [OCMockObject partialMockForObject:[_appsNotInstalledController tableView]];
+  [[tableViewMock expect] registerForDraggedTypes:OCMOCK_ANY];
+  
+  [_appsNotInstalledController awakeFromNib];
+  
+  [tableViewMock verify];
+}
+
 
 //************************* objectValueForTableColumn *************************//
 - (void) test_objectValueForTableColumn_rowSelected_returnNavigationColumnValue {
@@ -203,8 +267,62 @@
   [progressIndicatorMock verify];
 }
 
+//************************* reloadTableData *************************//
+- (void) test_reloadTableData_menuItemClicked_callLoadTableTableData {
+  id controllerMock = [OCMockObject partialMockForObject:_appsNotInstalledController];
+  [[controllerMock expect] loadTableData];
+  
+  [_appsNotInstalledController reloadTableData:nil];
+  
+  [controllerMock verify];
+}
 
-- (NSArray<NSTableViewDataSource>*) createDataSource :(NSInteger) items{
+- (void) test_writeRowsWithIndexes_oneRowSelected_pasteModuleIDStringToClipboard {
+  NSIndexSet *selectedRows = [NSIndexSet indexSetWithIndex:0];
+  [_appsNotInstalledController setDataSource:[self createDataSource :1]];
+  
+  id pasteBoardMock = [OCMockObject partialMockForObject:[NSPasteboard pasteboardWithName:NSDragPboard]];
+  [[pasteBoardMock expect] setString:@"value1" forType:NSPasteboardTypeString];
+  
+  [_appsNotInstalledController tableView:[_appsNotInstalledController tableView] writeRowsWithIndexes:selectedRows toPasteboard:[NSPasteboard pasteboardWithName:NSDragPboard]];
+  
+  [pasteBoardMock verify];
+}
+
+- (void) test_writeRowsWithIndexes_twoRowSelected_pasteModuleIDStringsSeparatedWithNewLineToClipboard {
+  NSIndexSet *selectedRows = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 2)];
+  [_appsNotInstalledController setDataSource:[self createDataSource :2]];
+  
+  id pasteBoardMock = [OCMockObject partialMockForObject:[NSPasteboard pasteboardWithName:NSDragPboard]];
+  [[pasteBoardMock expect] setString:@"value1\nvalue2" forType:NSPasteboardTypeString];
+  
+  [_appsNotInstalledController tableView:[_appsNotInstalledController tableView] writeRowsWithIndexes:selectedRows toPasteboard:[NSPasteboard pasteboardWithName:NSDragPboard]];
+  
+  [pasteBoardMock verify];
+}
+
+- (void) test_writeRowsWithIndexes_rowsSelected_returnYES {
+  NSIndexSet *selectedRows = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 2)];
+  [_appsNotInstalledController setDataSource:[self createDataSource :2]];
+  
+  id pasteBoardMock = [OCMockObject partialMockForObject:[NSPasteboard pasteboardWithName:NSDragPboard]];
+  [[pasteBoardMock stub] setString:OCMOCK_ANY forType:OCMOCK_ANY];
+  
+  BOOL result = [_appsNotInstalledController tableView:[_appsNotInstalledController tableView] writeRowsWithIndexes:selectedRows toPasteboard:[NSPasteboard pasteboardWithName:NSDragPboard]];
+  STAssertTrue(result, @"");
+}
+
+- (void) test_writeRowsWithIndexes_indexSetIsEmpty_returnFalse {
+  NSIndexSet *selectedRows = [[NSIndexSet alloc] init];
+  [_appsNotInstalledController setDataSource:[self createDataSource :2]];
+  
+  
+  BOOL result = [_appsNotInstalledController tableView:[_appsNotInstalledController tableView] writeRowsWithIndexes:selectedRows toPasteboard:[NSPasteboard pasteboardWithName:NSDragPboard]];
+  
+  STAssertFalse(result, @"");
+}
+
+- (NSMutableArray<NSTableViewDataSource>*) createDataSource :(NSInteger) items{
   NSMutableArray<NSTableViewDataSource> *rows = [NSMutableArray array];
   for (int i = 1; i <= items; i++) {
     NSString *value = [NSString stringWithFormat:@"value%i", i];
@@ -214,4 +332,5 @@
   
   return rows;
 }
+
 @end

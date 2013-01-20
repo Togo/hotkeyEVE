@@ -16,6 +16,7 @@ extern NSString * const kAppsNotInstalledViewControllerNibName;
 }
 
 @property (strong) id<AppsNotInstalledModel> model;
+@property (strong) NSProgressIndicator *progressIndicator;
 
 @property (strong) NSMutableArray<NSTableViewDataSource> *dataSource;
 
@@ -26,8 +27,7 @@ extern NSString * const kAppsNotInstalledViewControllerNibName;
 @property (weak) IBOutlet  NSTableColumn *userNameTableColumn;
 @property (weak) IBOutlet  NSTableColumn *credatTableColumn;
 
-
-@property (strong) NSProgressIndicator *progressIndicator;
+- (IBAction)reloadTableData :(id)sender;
 
 - (void) loadTableData;
 

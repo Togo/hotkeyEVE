@@ -85,6 +85,7 @@
 		CD97CE99164685BA00406F1F /* UserDataTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE98164685BA00406F1F /* UserDataTableModel.m */; };
 		CD97CE9F16468A5E00406F1F /* DisabledShortcutsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE9E16468A5E00406F1F /* DisabledShortcutsModel.m */; };
 		CD97CEA216468C5200406F1F /* ShortcutTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CEA116468C5200406F1F /* ShortcutTableModel.m */; };
+		CDA558AC16AC3653008D236E /* AppsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558AB16AC3653008D236E /* AppsManager.m */; };
 		CDA7AD77164D9F4D000907A5 /* ShortcutsTableViewConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA7AD76164D9F4D000907A5 /* ShortcutsTableViewConroller.m */; };
 		CDB3D6621646BAE000285306 /* AppLaunchedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3D6611646BAE000285306 /* AppLaunchedController.m */; };
 		CDC77C1F165C2DAF00939D99 /* MigrationsV1_3_2.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */; };
@@ -358,6 +359,8 @@
 		CD97CE9E16468A5E00406F1F /* DisabledShortcutsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisabledShortcutsModel.m; path = Database/Models/DisabledShortcutsModel.m; sourceTree = "<group>"; };
 		CD97CEA016468C5100406F1F /* ShortcutTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortcutTableModel.h; sourceTree = "<group>"; };
 		CD97CEA116468C5200406F1F /* ShortcutTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortcutTableModel.m; sourceTree = "<group>"; };
+		CDA558AA16AC3653008D236E /* AppsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsManager.h; path = Apps/Model/AppsManager.h; sourceTree = "<group>"; };
+		CDA558AB16AC3653008D236E /* AppsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsManager.m; path = Apps/Model/AppsManager.m; sourceTree = "<group>"; };
 		CDA7AD75164D9F4C000907A5 /* ShortcutsTableViewConroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShortcutsTableViewConroller.h; path = GUI/ShortcutWindow/ShortcutsTableViewConroller.h; sourceTree = "<group>"; };
 		CDA7AD76164D9F4D000907A5 /* ShortcutsTableViewConroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShortcutsTableViewConroller.m; path = GUI/ShortcutWindow/ShortcutsTableViewConroller.m; sourceTree = "<group>"; };
 		CDB3D6601646BAE000285306 /* AppLaunchedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppLaunchedController.h; path = Conroller/AppLaunchedController.h; sourceTree = "<group>"; };
@@ -882,6 +885,8 @@
 				CDE3015C16A48EAB00E8D489 /* AppsNotInstalledModel.h */,
 				CDE3015D16A4910000E8D489 /* AppsAmazonModel.h */,
 				CDE3015E16A4910000E8D489 /* AppsAmazonModel.m */,
+				CDA558AA16AC3653008D236E /* AppsManager.h */,
+				CDA558AB16AC3653008D236E /* AppsManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1181,6 +1186,7 @@
 				CD845A1916A0C937007717CB /* AppsNotInstalledViewController.m in Sources */,
 				CDE3015716A2FB6B00E8D489 /* AppsNavigationViewController.m in Sources */,
 				CDE3015F16A4910000E8D489 /* AppsAmazonModel.m in Sources */,
+				CDA558AC16AC3653008D236E /* AppsManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

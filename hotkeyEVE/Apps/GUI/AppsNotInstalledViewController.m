@@ -34,10 +34,25 @@ NSString * const kAppsNotInstalledViewControllerNibName = @"AppsNotInstalledView
 
 -(void) awakeFromNib {
   [_moduleIDTableColumn setIdentifier:kModuleID];
+  [_moduleIDTableColumn setHidden:YES];
+  
   [_appNameTableColumn setIdentifier:kAppNameKey];
+  [_appNameTableColumn setEditable:NO];
+  [_appNameTableColumn setSortDescriptorPrototype:[[NSSortDescriptor alloc] initWithKey:kAppNameKey ascending:NO]];
+  
   [_languageTableColumn setIdentifier:kLanguageKey];
+  [_languageTableColumn setEditable:NO];
+  [_languageTableColumn setSortDescriptorPrototype:[[NSSortDescriptor alloc] initWithKey:kLanguageKey ascending:NO]];
+
   [_userNameTableColumn setIdentifier:kUserNameKey];
+  [_userNameTableColumn setEditable:NO];
+  [_userNameTableColumn setSortDescriptorPrototype:[[NSSortDescriptor alloc] initWithKey:kUserNameKey ascending:NO]];
+  
   [_credatTableColumn setIdentifier:kModuleCredatKey];
+  [_credatTableColumn setEditable:NO];
+  [_credatTableColumn setSortDescriptorPrototype:[[NSSortDescriptor alloc] initWithKey:kModuleCredatKey ascending:NO]];
+  
+  [_tableView registerForDraggedTypes:[NSArray arrayWithObjects: NSPasteboardTypeString , nil]];
 }
 
 - (NSProgressIndicator*) createProgressIndicitor {
@@ -59,7 +74,6 @@ NSString * const kAppsNotInstalledViewControllerNibName = @"AppsNotInstalledView
 
 - (void) loadTableData {
   [self startProgressAnimationinSuperview:_tableView];
-  
   _dataSource = [_model getNotInstalledList];
   [_tableView reloadData];
   
@@ -95,6 +109,30 @@ NSString * const kAppsNotInstalledViewControllerNibName = @"AppsNotInstalledView
 - (void) stopProgressAnimation {
     [_progressIndicator stopAnimation:nil];
     [_progressIndicator removeFromSuperview];
+}
+
+- (IBAction)reloadTableData :(id)sender {
+  [self loadTableData];
+}
+
+- (BOOL)tableView:(NSTableView *)tv writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard*)pboard {
+  // Drag and drop support
+  if ([rowIndexes count] > 0) {
+    NSMutableArray *pasteBoardStringArray = [NSMutableArray array];
+    NSInteger currentIndex = [rowIndexes firstIndex];
+    while (currentIndex != NSNotFound) {
+      NSString *moduleID = [[_dataSource objectAtIndex:currentIndex] valueForKey:kModuleID];
+      [pasteBoardStringArray addObject:moduleID];
+    
+      currentIndex = [rowIndexes indexGreaterThanIndex: currentIndex];
+    }
+    
+    [pboard setString:[pasteBoardStringArray componentsJoinedByString:@"\n"] forType:NSPasteboardTypeString];
+
+    return YES;
+  } else {
+     return NO;
+  }
 }
 
 @end

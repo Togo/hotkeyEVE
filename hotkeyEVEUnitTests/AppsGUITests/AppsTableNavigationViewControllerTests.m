@@ -11,6 +11,7 @@
 #import <OCMock/OCMock.h>
 #import "AppsInstalledViewController.h"
 #import "AppsNotInstalledViewController.h"
+#import "AppsManager.h"
 
 @implementation AppsTableNavigationViewControllerTests
 
@@ -37,6 +38,10 @@
 //************************* initWithNibName *************************//
 - (void) test_initWithNibName_classContainsDelegate_delegateIsNil {
   STAssertNil(_tableNavController.delegate  , @"");
+}
+
+- (void) test_initWithNibName_all_appsManagerAlloced {
+  STAssertNotNil([_tableNavController appsManager]  , @"");
 }
 
 - (void) test_initWithNibName_dataSourceInstalledRow_dataSourceContainsRowWithInstalledColumn {
@@ -132,6 +137,70 @@
   [_tableNavController awakeFromNib];
   
   [navigationTableColumnMock verify];
+}
+
+
+- (void) test_awakeFromNib_allSecenarios_registerForDragAndDrop  {
+  id tableViewMock = [OCMockObject partialMockForObject:[_tableNavController navigationTableView]];
+  [[tableViewMock expect] registerForDraggedTypes:OCMOCK_ANY];
+  
+  [_tableNavController awakeFromNib];
+  
+  [tableViewMock verify];
+}
+
+//************************* validateDrop *************************//
+- (void) test_validateDrop_dropRowInRowCountAndOnRow_allOperationAllowed {
+  id tableViewMock = [OCMockObject partialMockForObject:[_tableNavController navigationTableView]];
+  NSInteger rowNumbers = 2;
+  [[[tableViewMock stub] andReturnValue:OCMOCK_VALUE(rowNumbers)] numberOfRows];
+  
+  NSInteger  expectedValue = [_tableNavController tableView:_tableView validateDrop:nil proposedRow:1 proposedDropOperation:NSTableViewDropOn];
+  
+  STAssertTrue(expectedValue == NSDragOperationEvery, @"");
+}
+
+- (void) test_validateDrop_dropRowNotInRowCountAndOnRow_noOperationAllowed {
+  id tableViewMock = [OCMockObject partialMockForObject:[_tableNavController navigationTableView]];
+  NSInteger rowNumbers = 0;
+  [[[tableViewMock stub] andReturnValue:OCMOCK_VALUE(rowNumbers)] numberOfRows];
+  
+  NSInteger  expectedValue = [_tableNavController tableView:_tableView validateDrop:nil proposedRow:2 proposedDropOperation:NSTableViewDropOn];
+  
+  STAssertTrue(expectedValue == NSDragOperationNone, @"");
+}
+
+- (void) test_validateDrop_dropRowInRowCountAndAboveRow_noOperationAllowed {
+  id tableViewMock = [OCMockObject partialMockForObject:[_tableNavController navigationTableView]];
+  NSInteger rowNumbers = 4;
+  [[[tableViewMock stub] andReturnValue:OCMOCK_VALUE(rowNumbers)] numberOfRows];
+  
+  NSInteger  expectedValue = [_tableNavController tableView:_tableView validateDrop:nil proposedRow:2 proposedDropOperation:NSTableViewDropAbove];
+  
+  STAssertTrue(expectedValue == NSDragOperationNone, @"");
+}
+
+//************************* acceptDrop *************************//
+- (void) test_acceptDrop_pasteBoardDropZoneInstallRow_callAppManagerToInstallAppWithArray {
+  id appsManagerMock = [OCMockObject mockForClass:[AppsManager class]];
+  [[appsManagerMock expect] addAppsFromArray:OCMOCK_ANY];
+  
+  [_tableNavController setAppsManager:appsManagerMock];
+  
+  [_tableNavController tableView:nil acceptDrop:nil row:0 dropOperation:NSDragOperationEvery];
+  
+  [appsManagerMock verify];
+}
+
+- (void) test_acceptDrop_pasteBoardDropZoneInstallRow_callAppManagerUnInstallAppsFromArray {
+  id appsManagerMock = [OCMockObject mockForClass:[AppsManager class]];
+  [[appsManagerMock expect] removeAppsFromArray:OCMOCK_ANY];
+  
+  [_tableNavController setAppsManager:appsManagerMock];
+  
+  [_tableNavController tableView:nil acceptDrop:nil row:1 dropOperation:NSDragOperationEvery];
+  
+  [appsManagerMock verify];
 }
 
 @end

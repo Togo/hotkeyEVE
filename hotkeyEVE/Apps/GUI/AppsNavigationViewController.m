@@ -11,5 +11,6 @@
 @implementation AppsNavigationViewController
 
 @synthesize delegate = _delegate;
+@synthesize appsManager = _appsManager;
 
 @end
