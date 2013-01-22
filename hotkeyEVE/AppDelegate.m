@@ -17,7 +17,7 @@
 #import <UIElements/ClickOnUIElementSubject.h>
 
 #import "UserDataTableModel.h"
-#import "GUIElementsTable.h"
+#import "GUIElementsTableModel.h"
 
 #import "EVEMessages.h"
 #import "EVEUtilities.h"
@@ -79,7 +79,7 @@
 
 - (void) initGUIElementTable {
   // Update GUI Element Table and add Shortcut Id's
-  [GUIElementsTable updateGUIElementTable];
+  [GUIElementsTableModel updateGUIElementTable];
 }
 
 - (void) startIndexing {

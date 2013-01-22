@@ -52,7 +52,7 @@
   id amazonWebServiceMock = [OCMockObject niceMockForClass:[AmazonWebService class]];
   [[amazonWebServiceMock expect] insertInAppsDatabase:[OCMArg any]];
   [[amazonWebServiceMock stub] insertInAppsDatabase:[OCMArg any]];
-  [[[amazonWebServiceMock stub] andReturn:kUploadSuccessMessage] uploadToAmazonBucket:[OCMArg any]];
+  [[[amazonWebServiceMock stub] andReturn:kUploadSuccessMessage] uploadToServer:[OCMArg any]];
   
   [_distributeApp setWebService:amazonWebServiceMock];
 
@@ -68,7 +68,7 @@
   id amazonWebServiceMock = [OCMockObject niceMockForClass:[AmazonWebService class]];
   [[amazonWebServiceMock reject] insertInAppsDatabase:[OCMArg any]];
   [[amazonWebServiceMock stub] insertInAppsDatabase:[OCMArg any]];
-  [[[amazonWebServiceMock stub] andReturn:@"NO Successed Message"] uploadToAmazonBucket:[OCMArg any]];
+  [[[amazonWebServiceMock stub] andReturn:@"NO Successed Message"] uploadToServer:[OCMArg any]];
   
   [_distributeApp setWebService:amazonWebServiceMock];
   

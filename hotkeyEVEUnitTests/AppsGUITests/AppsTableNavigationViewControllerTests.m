@@ -11,7 +11,7 @@
 #import <OCMock/OCMock.h>
 #import "AppsInstalledViewController.h"
 #import "AppsNotInstalledViewController.h"
-#import "AppsManager.h"
+#import "AppsManagerAmazon.h"
 
 @implementation AppsTableNavigationViewControllerTests
 
@@ -182,7 +182,7 @@
 
 //************************* acceptDrop *************************//
 - (void) test_acceptDrop_pasteBoardDropZoneInstallRow_callAppManagerToInstallAppWithArray {
-  id appsManagerMock = [OCMockObject mockForClass:[AppsManager class]];
+  id appsManagerMock = [OCMockObject mockForClass:[AppsManagerAmazon class]];
   [[appsManagerMock expect] addAppsFromArray:OCMOCK_ANY];
   
   [_tableNavController setAppsManager:appsManagerMock];
@@ -193,7 +193,7 @@
 }
 
 - (void) test_acceptDrop_pasteBoardDropZoneInstallRow_callAppManagerUnInstallAppsFromArray {
-  id appsManagerMock = [OCMockObject mockForClass:[AppsManager class]];
+  id appsManagerMock = [OCMockObject mockForClass:[AppsManagerAmazon class]];
   [[appsManagerMock expect] removeAppsFromArray:OCMOCK_ANY];
   
   [_tableNavController setAppsManager:appsManagerMock];

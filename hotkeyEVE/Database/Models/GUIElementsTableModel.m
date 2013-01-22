@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 Tobias Sommer. All rights reserved.
 //
 
-#import "GUIElementsTable.h"
+#import "GUIElementsTableModel.h"
 #import "ShortcutTableModel.h"
 #import "ApplicationsTableModel.h"
+#import "AppModuleTableModel.h"
 
-@implementation GUIElementsTable
-
+@implementation GUIElementsTableModel
 
 + (void) editGUIElement :(UIElement*) element {
   DDLogInfo(@"GUIElementsTable -> editGUIElement(element => :%@: :: get called", element);
@@ -24,7 +24,7 @@
   [query appendFormat:@" WHERE %@ like '%@' ", IDENTIFIER_COL, [element uiElementIdentifier]];
   [query appendFormat:@" OR ( %@ like '%@' ", COCOA_IDENTIFIER_COL, [element cocoaIdentifierString]];
   [query appendFormat:@" AND   %@ != '' ) ", COCOA_IDENTIFIER_COL];
-  [query appendFormat:@" AND %@ = %li ", APPLICATION_ID_COL, appID];
+//  [query appendFormat:@" AND %@ = %li ", APPLICATION_ID_COL, appID]; glaub brauchen wir nicht mehr identifier muss eindeutig sein!!
   
   DDLogVerbose(@"GUIElementsTable -> editGUIElement :: query => :%@:", query);
   NSArray *result = [db executeQuery:query];
@@ -37,6 +37,7 @@
     }
   }
 
+// todo umbauen auf module ID
 + (void) updateGUIElementTable  {
   DDLogInfo(@"GUIElementsTable -> updateGUIElementTable:: get called");
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
@@ -88,4 +89,35 @@
   [db executeUpdate:query];
 }
 
+- (void) insertGUIElementsFromAppModule :(AppModule*) app {
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  NSString *externalModuleID = [[app moduleMetaData] valueForKey:kModuleID];
+  
+  for (NSDictionary *aGUIElement in [app moduleBody]) {
+    NSMutableString *query = [NSMutableString string];
+    [query appendFormat:@"INSERT OR REPLACE INTO %@ ", GUI_ELEMENTS_TABLE];
+    [query appendFormat:@"VALUES ( "];
+    [query appendFormat:@" NULL "];
+    [query appendFormat:@" , '%@' ", [aGUIElement valueForKey:kAppsUIElementIdentifierColumn]];
+    [query appendFormat:@" , '%@' ", [aGUIElement valueForKey:kAppsCocoaIdentifierColumn]];
+    [query appendFormat:@" , '%@' ", [aGUIElement valueForKey:kAppsElementTitleColumn]];
+    [query appendFormat:@" , '%@' ", [aGUIElement valueForKey:kAppsHelpColumn]];
+    [query appendFormat:@" , '%@' ", [aGUIElement valueForKey:kAppsShortcutStringColumn]];
+    [query appendFormat:@" , %li ",  [AppModuleTableModel getModuleIDWithExternalID:externalModuleID]];
+    [query appendFormat:@" , '%li' ", [ShortcutTableModel getShortcutId:[aGUIElement valueForKey:kAppsShortcutStringColumn]]];
+    [query appendFormat:@" ); "];
+    
+    [db executeQuery:query];
+  }
+}
+ 
+//ElementDescriptionColumn = Search;
+//ElementTitleColumn = "";
+//HelpColumn = "";
+//RoleColumn = AXTextField;
+//RoleDescription = "search text field";
+//ShortcutStringColumn = "Command F";
+//TextValueColumn = "";
+//TitleColumn = Find;
+//UIElementIdentifierColumn = axtextfieldsearchtextfieldfindersearchaxsearchfield;
 @end

@@ -28,7 +28,7 @@
   return self;
 }
 
-- (NSString*) uploadToAmazonBucket :(AppModule*) module {
+- (NSString*) uploadToServer :(AppModule*) module {
     NSString* returnValue = kUploadSuccessMessage;
 
     @try {
@@ -66,11 +66,6 @@
   return returnValue;
 }
 
--(id) getAppList {
-  
-  return nil;
-}
-
 - (NSMutableArray*) createAttributesArrayWithMetaData :(NSDictionary*) metaData {
   NSMutableArray *attributes = [NSMutableArray array];
   
@@ -86,6 +81,53 @@
   [attributes addObject:replacableAttribute];
   
   return attributes;
+}
+
+- (NSArray*) getNotInstalledAppList {
+  NSArray *entries = nil;
+  NSString *select = [NSString stringWithFormat:@"select * from %@", kAmazonAppsDBDomainName];
+  SimpleDBSelectRequest *selectRequest = [[SimpleDBSelectRequest alloc] initWithSelectExpression:select];
+  selectRequest.consistentRead = YES;
+  
+  @try {
+    SimpleDBSelectResponse *selectResponse = [_sdbClient select:selectRequest];
+    entries =  [self parseAmazonResponseToObjectiveCArrayWithDictionarys :selectResponse];
+  }
+  @catch (AmazonClientException *exception) {
+    NSLog(@"%@", [exception reason]);
+  }
+  
+  return entries;
+}
+
+- (NSArray*) parseAmazonResponseToObjectiveCArrayWithDictionarys :(SimpleDBSelectResponse*) selectResponse {
+  NSMutableArray *entries = [NSMutableArray array];
+  for (SimpleDBItem *aItem in [selectResponse items]) {
+    NSMutableDictionary *aEntry = [NSMutableDictionary dictionary];
+    [aEntry setValue:[aItem name] forKey:kModuleID];
+    for (SimpleDBAttribute *aAttibute in [aItem attributes]) {
+      [aEntry setValue:[aAttibute value] forKey:[aAttibute name]];
+    }
+    [entries addObject:aEntry];
+  }
+  return entries;
+}
+
+- (NSData*) downloadFromServer :(NSString*) moduleID {
+  NSData *returnData;
+  
+  @try {
+    S3GetObjectRequest *download = [[S3GetObjectRequest alloc] initWithKey:moduleID withBucket:kAmazonBucketName];
+
+    // Get the image data
+    S3GetObjectResponse *getObjectResponse = [_s3Client getObject:download];
+    returnData = [getObjectResponse body];
+  }
+  @catch (AmazonClientException *exception) {
+      NSLog(@"%@", [exception reason]);
+  }
+  
+  return returnData;
 }
 
 @end

@@ -12,7 +12,7 @@
 #import "ShortcutTableModel.h"
 #import "DisabledShortcutsModel.h"
 #import "DisplayedShortcutsModel.h"
-#import "GUIElementsTable.h"
+#import "GUIElementsTableModel.h"
 
 @implementation HandleClickedUIElement
 
@@ -49,7 +49,7 @@
 + (BOOL) handleGUIElement :(UIElement*) element {
   DDLogInfo(@"HandleClickedUIElement -> handleGUIElement(element => :%@: :: get called", element);
   
-  [GUIElementsTable editGUIElement:element];
+  [GUIElementsTableModel editGUIElement:element];
   
   return [self showMessage:element];
 }

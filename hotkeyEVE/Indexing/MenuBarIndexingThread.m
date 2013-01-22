@@ -12,7 +12,7 @@
 #import "MenuBarTableModel.h"
 #import "ShortcutTableModel.h"
 #import "ApplicationsTableModel.h"
-#import "GUIElementsTable.h"
+#import "GUIElementsTableModel.h"
 #import "DisabledShortcutsModel.h"
 
 @implementation MenuBarIndexingThread
@@ -68,7 +68,7 @@
     _indexingActive = NO;
     if ([self count] == 0) {
       [self postNewAppIndexedApplicationTable];
-      [GUIElementsTable updateGUIElementTable];
+      [GUIElementsTableModel updateGUIElementTable];
     }
   }
 }

@@ -7,12 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IWebService.h"
+#import "IReceiveAppModule.h"
 
-@interface ReceiveAppModule : NSObject
+@interface ReceiveAppModule : NSObject <IReceiveAppModule>
 
-@property (strong) id<IWebService> webService;
-
-- (id) initWithWebService :(id<IWebService>) webService;
++ (ReceiveAppModule*) createReceiverWithAmazonWebService;
 
 @end

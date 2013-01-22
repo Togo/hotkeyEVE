@@ -14,11 +14,12 @@
 @property (strong) NSDictionary *moduleMetaData;
 
 + (AppModule*) createNewAppModule :(NSArray*) tableData :(NSString*) userName :(NSString*) eMail :(NSString*) appName :(NSString*) bundleIdentifier :(NSString*) appLanguage;
++ (AppModule*) createNewAppModuleFromJsonString :(NSData*) data;
 
 - (NSDictionary*) createMetaDataDictionary :(NSString*) userName :(NSString*) eMail :(NSString*) appName :(NSString*) bundleIdentifier :(NSString*) appLanguage;
 - (id) createModuleID :(NSString*) appName :(NSString*) userName :(NSString*) credat;
 
 - (id) moduleToJSonString;
 - (id) writeObjectToJSonString :(id) object;
-
+- (id) parseJsonDataToObject :(NSData*) data;
 @end

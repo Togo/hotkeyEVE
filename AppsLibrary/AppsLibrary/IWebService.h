@@ -12,7 +12,10 @@
 
 @protocol IWebService <NSObject>
 
-- (NSString*) uploadToAmazonBucket :(AppModule*) module;
+- (NSString*) uploadToServer :(AppModule*) module;
 - (NSString*) insertInAppsDatabase :(AppModule*) module;
+
+- (NSArray*) getNotInstalledAppList;
+- (NSData*) downloadFromServer :(NSString*) moduleID;
 
 @end

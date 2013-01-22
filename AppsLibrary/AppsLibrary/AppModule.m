@@ -53,7 +53,7 @@
   
   if (bundleIdentifier == nil
       || [bundleIdentifier length] == 0) {
-    NSException *emptyBundleIdentifierException = [NSException exceptionWithName:NSInvalidArgumentException reason:@"No Application Name" userInfo:nil];
+    NSException *emptyBundleIdentifierException = [NSException exceptionWithName:NSInvalidArgumentException reason:@"No Bundle Identifier" userInfo:nil];
     @throw emptyBundleIdentifierException;
   }
   
@@ -68,6 +68,24 @@
   [appModule setModuleMetaData:[appModule createMetaDataDictionary :userName :eMail :appName :bundleIdentifier :appLanguage]];
   
   return appModule;
+}
+
++ (AppModule*) createNewAppModuleFromJsonString :(NSData*) data {
+  AppModule *appModule;
+  if ([data length] > 0) {
+    appModule = [[self alloc] init];
+    id object = [appModule parseJsonDataToObject:data];
+    
+    NSDictionary *metaData = [appModule parseJsonStringToObject:[object valueForKey:kModuleMetaData]];
+    [appModule setModuleMetaData:metaData];
+    
+    NSArray *body = [appModule parseJsonStringToObject:[object valueForKey:kModuleBody]];
+    [appModule setModuleBody:body];
+    
+    return appModule;
+  } else {
+    @throw [NSException exceptionWithName:@"NoDataFoundException" reason:@"Can't download Data with this moduleID" userInfo:nil];
+  }
 }
 
 - (NSDictionary*) createMetaDataDictionary :(NSString*) userName :(NSString*) eMail :(NSString*) appName :(NSString*) bundleIdentifier :(NSString*) appLanguage {
@@ -97,6 +115,18 @@
   [jsonDataDictionary setObject:[self writeObjectToJSonString:_moduleBody] forKey:kModuleBody];
   NSString *jsonString = [self writeObjectToJSonString:jsonDataDictionary];
   return jsonString;
+}
+
+- (id) parseJsonDataToObject :(NSData*) data {
+  SBJsonParser *parse = [[SBJsonParser alloc] init];
+  id object = [parse objectWithData:data];
+  return object;
+}
+
+- (id) parseJsonStringToObject :(NSString*) data {
+  SBJsonParser *parse = [[SBJsonParser alloc] init];
+  id object = [parse objectWithString:data];
+  return object;
 }
 
 - (id) writeObjectToJSonString :(id) object {

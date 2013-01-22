@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "AppsNotInstalledModel.h"
+#import "IAppsManager.h"
 
 extern NSString * const kAppsNotInstalledViewControllerNibName;
 
@@ -15,7 +15,7 @@ extern NSString * const kAppsNotInstalledViewControllerNibName;
 
 }
 
-@property (strong) id<AppsNotInstalledModel> model;
+@property (strong) id<IAppsManager> appsManager;
 @property (strong) NSProgressIndicator *progressIndicator;
 
 @property (strong) NSMutableArray<NSTableViewDataSource> *dataSource;

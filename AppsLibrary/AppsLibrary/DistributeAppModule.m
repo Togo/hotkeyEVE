@@ -35,7 +35,7 @@
   }
   
   if (workflowStatus != kAppModuleCreatingFailed) {
-      workflowStatus = [_webService uploadToAmazonBucket :module];
+      workflowStatus = [_webService uploadToServer :module];
     
     if (workflowStatus == kUploadSuccessMessage) {
       returnValue =[_webService insertInAppsDatabase :module];

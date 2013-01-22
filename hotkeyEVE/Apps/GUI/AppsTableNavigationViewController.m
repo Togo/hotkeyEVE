@@ -9,7 +9,7 @@
 #import "AppsTableNavigationViewController.h"
 #import "AppsInstalledViewController.h"
 #import "AppsNotInstalledViewController.h"
-#import "AppsManager.h"
+#import "AppsManagerAmazon.h"
 
 NSString * const kAppsTableNavigationViewControllerNibName = @"AppsTableNavigationViewController";
 
@@ -41,7 +41,7 @@ NSString * const KNavigationColumn = @"NavigationColumn";
 
       _dataSource = [NSArray arrayWithObjects:installedRow,notInstalledRow,nil];
       
-      _appsManager = [[AppsManager alloc] init];
+      _appsManager = [[AppsManagerAmazon alloc] init];
     }
 
   return self;

@@ -195,11 +195,20 @@
   STAssertTrue([theID rangeOfString:expectedcredatHash].location != NSNotFound, @"");
 }
 
+- (void) test_createNewAppModuleFromJsonString_noDataDownloaded_throwException {
+  STAssertThrows([AppModule createNewAppModuleFromJsonString:[NSData data]], @"");
+}
+
+- (void) test_createNewAppModuleFromJsonString_downloadedSomeData_returnAppModule {
+  STAssertNotNil([AppModule createNewAppModuleFromJsonString:[NSData dataWithBytes:@"test" length:@"test".length]], @"");
+}
+
 - (AppModule*) createTestAppModule {
   NSDictionary *aTableRow = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"key1", nil];
   NSArray *tableData = [NSArray arrayWithObject:aTableRow];
   AppModule *module = [AppModule createNewAppModule:tableData :@"UserName Value" :@"EMail Value" :@"AppName Value" :@"BundleIdentifier Value" :@"Language value"];
   return module;
 }
+
 
 @end

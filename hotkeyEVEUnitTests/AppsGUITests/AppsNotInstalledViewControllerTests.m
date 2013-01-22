@@ -9,7 +9,7 @@
 #import "AppsNotInstalledViewControllerTests.h"
 #import <AppsLibrary/AppsLibrary.h>
 #import <OCMock/OCMock.h>
-#import "AppsNotInstalledModel.h"
+#import "IAppsManager.h"
 
 @implementation AppsNotInstalledViewControllerTests
 
@@ -46,8 +46,8 @@
 }
 
 //************************* initWithNibName *************************//
-- (void) test_initWithNibName_selfDidCreated_modelCreated {
-  STAssertNotNil([_appsNotInstalledController model], @"");
+- (void) test_initWithNibName_selfDidCreated_appsManagerCreated {
+  STAssertNotNil([_appsNotInstalledController appsManager], @"");
 }
 
 - (void) test_initWithNibName_selfDidCreated_createBarberAnimation {
@@ -174,13 +174,13 @@
 
 //************************* loadTableData *************************//
 - (void) test_loadTableData_allScenarios_loadTableDataFromAppsNotInstalledModel {
-  id modelMock = [OCMockObject niceMockForProtocol:@protocol(AppsNotInstalledModel)];
-  [[modelMock expect] getNotInstalledList];
+  id appsManagerMock = [OCMockObject niceMockForProtocol:@protocol(IAppsManager)];
+  [[appsManagerMock expect] getNotInstalledList];
 
-  [_appsNotInstalledController setModel:modelMock];
+  [_appsNotInstalledController setAppsManager:appsManagerMock];
   [_appsNotInstalledController loadTableData];
   
-  [modelMock verify];
+  [appsManagerMock verify];
 }
 
 - (void) test_loadTableData_allScenarios_reloadTable {
@@ -193,11 +193,11 @@
 }
 
 - (void) test_loadTableData_newDataSourceArray_dataSourceIsFromModelReturnedNewDataSource {
-  id modelMock = [OCMockObject niceMockForProtocol:@protocol(AppsNotInstalledModel)];
+  id appsManagerMock = [OCMockObject niceMockForProtocol:@protocol(IAppsManager)];
   NSArray *newNotInstalledArray = [self createDataSource:1];
-  [[[modelMock stub] andReturn:newNotInstalledArray] getNotInstalledList];
+  [[[appsManagerMock stub] andReturn:newNotInstalledArray] getNotInstalledList];
   
-  [_appsNotInstalledController setModel:modelMock];
+  [_appsNotInstalledController setAppsManager:appsManagerMock];
   [_appsNotInstalledController loadTableData];
   
   STAssertEquals([_appsNotInstalledController dataSource], newNotInstalledArray , @"");

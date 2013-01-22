@@ -7,10 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IAppsManager.h"
 
-@interface AppsManager : NSObject
-
-- (void) addAppsFromArray :(NSArray*) moduleIDs;
-- (void) removeAppsFromArray :(NSArray*) moduleIDs;
+@interface AppsManagerAmazon : NSObject <IAppsManager>
 
 @end

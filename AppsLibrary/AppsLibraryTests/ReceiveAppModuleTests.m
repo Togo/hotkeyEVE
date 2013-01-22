@@ -7,6 +7,9 @@
 //
 
 #import "ReceiveAppModuleTests.h"
+#import "ReceiveAppModule.h"
+#import <OCMock/OCMock.h>
+#import "IWebService.h"
 
 @implementation ReceiveAppModuleTests
 
@@ -21,6 +24,17 @@
 {
   
   [super tearDown];
+}
+
+- (void) test_getAppWithModuleID_moduleIDNotNil_callDownloadMethodInWebService {
+  id webServiceMock = [OCMockObject mockForProtocol:@protocol(IWebService)];
+  [[webServiceMock expect] downloadFromServer:@"moduleID"];
+  
+  [_receiveAppModule setWebService:webServiceMock];
+  
+  STAssertThrows([_receiveAppModule getAppWithModuleID :@"moduleID"], @"");
+  
+  [webServiceMock verify];
 }
 
 

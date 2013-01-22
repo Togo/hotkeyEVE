@@ -7,15 +7,27 @@
 //
 
 #import "ReceiveAppModule.h"
+#import "AmazonWebService.h"
+#import "AppModule.h"
 
 @implementation ReceiveAppModule
 
-- (id) initWithWebService :(id<IWebService>) webService {
-  self = [super init];
-  if (self) {
-    self.webService = webService;
-  }
-  return self;
+@synthesize webService = _webService;
+
++ (ReceiveAppModule*) createReceiverWithAmazonWebService {
+  ReceiveAppModule *receiver = [[ReceiveAppModule alloc] init];
+  [receiver setWebService:[[AmazonWebService alloc] init]];
+  return receiver;
+}
+
+- (NSArray*) getNotInstalledAppList {
+  return [_webService getNotInstalledAppList];
+}
+
+- (AppModule*) getAppWithModuleID :(NSString*) moduleID {
+  NSData *data = [_webService downloadFromServer:moduleID];
+  
+  return [AppModule createNewAppModuleFromJsonString:data];
 }
 
 @end

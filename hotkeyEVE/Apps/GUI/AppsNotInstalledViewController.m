@@ -7,7 +7,8 @@
 //
 
 #import "AppsNotInstalledViewController.h"
-#import "AppsAmazonModel.h"
+#import "AppsManagerAmazon.h"
+#import <AppsLibrary/AppsLibrary.h>
 
 NSString * const kAppsNotInstalledViewControllerNibName = @"AppsNotInstalledViewController";
 
@@ -17,7 +18,7 @@ NSString * const kAppsNotInstalledViewControllerNibName = @"AppsNotInstalledView
 
 @implementation AppsNotInstalledViewController
 
-@synthesize model = _model;
+@synthesize appsManager = _appsManager;
 
 @synthesize moduleIDTableColumn = _moduleIDTableColumn;
 
@@ -25,8 +26,8 @@ NSString * const kAppsNotInstalledViewControllerNibName = @"AppsNotInstalledView
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-      self.model = [[AppsAmazonModel alloc] init];
-      self.progressIndicator = [self createProgressIndicitor];
+      self.appsManager = [[AppsManagerAmazon alloc] init];
+      self.progressIndicator = [self createProgressIndicator];
     }
   
     return self;
@@ -55,7 +56,7 @@ NSString * const kAppsNotInstalledViewControllerNibName = @"AppsNotInstalledView
   [_tableView registerForDraggedTypes:[NSArray arrayWithObjects: NSPasteboardTypeString , nil]];
 }
 
-- (NSProgressIndicator*) createProgressIndicitor {
+- (NSProgressIndicator*) createProgressIndicator {
   NSProgressIndicator *progressIndicator = [[NSProgressIndicator alloc] init];
 //  [progressIndicator setIndeterminate:YES];
   [progressIndicator setStyle:NSProgressIndicatorSpinningStyle];
@@ -74,7 +75,7 @@ NSString * const kAppsNotInstalledViewControllerNibName = @"AppsNotInstalledView
 
 - (void) loadTableData {
   [self startProgressAnimationinSuperview:_tableView];
-  _dataSource = [_model getNotInstalledList];
+  _dataSource = [_appsManager getNotInstalledList];
   [_tableView reloadData];
   
   [self stopProgressAnimation];

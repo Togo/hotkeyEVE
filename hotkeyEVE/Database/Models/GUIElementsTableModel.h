@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AppsLibrary/AppsLibrary.h>
+#import <UIElements/UIElement.h>
 
-@interface GUIElementsTable : NSObject
+@interface GUIElementsTableModel : NSObject
 
 + (void) editGUIElement :(UIElement*) element;
 + (void) updateGUIElementTable;
+
+- (void) insertGUIElementsFromAppModule :(AppModule*) app;
 
 @end

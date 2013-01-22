@@ -86,6 +86,16 @@
                ReferencedContainer = "container:eve-uielements/UIElements.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CD04780E167FA9450063DCBE"
+               BuildableName = "AppsLibraryTests.octest"
+               BlueprintName = "AppsLibraryTests"
+               ReferencedContainer = "container:AppsLibrary/AppsLibrary.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
