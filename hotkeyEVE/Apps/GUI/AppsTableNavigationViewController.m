@@ -7,9 +7,9 @@
 //
 
 #import "AppsTableNavigationViewController.h"
-#import "AppsInstalledViewController.h"
-#import "AppsNotInstalledViewController.h"
+#import "AppsTableViewController.h"
 #import "AppsManagerAmazon.h"
+#import "AppsManagerLocalDB.h"
 
 NSString * const kAppsTableNavigationViewControllerNibName = @"AppsTableNavigationViewController";
 
@@ -36,8 +36,8 @@ NSString * const KNavigationColumn = @"NavigationColumn";
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-      NSDictionary *installedRow = [NSDictionary dictionaryWithObjectsAndKeys:kInstalledRowHeader, KNavigationColumn, [AppsInstalledViewController class],@"Class" ,kAppsInstalledViewControllerNibName, @"NibName", nil];
-      NSDictionary *notInstalledRow = [NSDictionary dictionaryWithObjectsAndKeys:kNotInstalledRowHeader, KNavigationColumn, [AppsNotInstalledViewController class],@"Class" ,kAppsNotInstalledViewControllerNibName, @"NibName", nil];
+      NSDictionary *installedRow = [NSDictionary dictionaryWithObjectsAndKeys:kInstalledRowHeader, KNavigationColumn, [AppsTableViewController class],@"Class" ,kAppsTableViewControllerNibName, @"NibName", [AppsManagerLocalDB class], @"model", nil];
+      NSDictionary *notInstalledRow = [NSDictionary dictionaryWithObjectsAndKeys:kNotInstalledRowHeader, KNavigationColumn, [AppsTableViewController class],@"Class" ,kAppsTableViewControllerNibName, @"NibName", [AppsManagerAmazon class], @"model", nil];
 
       _dataSource = [NSArray arrayWithObjects:installedRow,notInstalledRow,nil];
       
@@ -72,7 +72,7 @@ NSString * const KNavigationColumn = @"NavigationColumn";
 
   if (selectedRow != -1) {
     NSDictionary *theRow = [_dataSource objectAtIndex:selectedRow];
-    [_delegate viewSelectionDidChanged:[theRow valueForKey:@"Class"] :[theRow valueForKey:@"NibName"]];
+    [_delegate viewSelectionDidChanged:[theRow valueForKey:@"Class"] :[theRow valueForKey:@"NibName"] :[theRow valueForKey:@"model"]];
   }
 }
 

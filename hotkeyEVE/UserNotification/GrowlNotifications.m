@@ -6,10 +6,14 @@
 //  Copyright (c) 2012 Sommer. All rights reserved.
 //
 
-#import "EVEMessages.h"
+#import "GrowlNotifications.h"
 #import <Growl/Growl.h>
 
-@implementation EVEMessages
+@implementation GrowlNotifications
+
++ (id<IUserNotifications>) growNotifications {
+  return [[GrowlNotifications alloc] init];
+}
 
 + (void) maxEnabledAppsReachedInWindow :(NSWindow*) window {
   NSAlert *alert = [[NSAlert alloc] init];
@@ -24,11 +28,10 @@
   if (answer == 1000) {
     NSURL *url = [[NSURL alloc] initWithString:@"http://store.kagi.com/cgi-bin/store.cgi?storeID=6FJKK_LIVE"];
     [[NSWorkspace sharedWorkspace] openURL:url];
-
   }
 }
 
-+ (void) displayShortcutMessage :(UIElement*) element {
++ (void) displayShortcutHintNotification :(UIElement*) element {
   DDLogInfo(@"EVEMessages -> displayShortcutMessage(element => :%@:) :: get called", element);
 
   NSMutableString *description = [[NSMutableString alloc] init];
@@ -57,7 +60,7 @@
   [GrowlApplicationBridge notifyWithTitle:[element shortcutString] description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:clickContextDic];
 }
 
-+ (void) showGrowRegistrationMessage {
++ (void) displayGrowRegistrationNotification {
   NSMutableDictionary *clickContextDic = [[NSMutableDictionary alloc] init];
   [clickContextDic setValue:@"register_eve" forKey:@"mesage_type"];
 
@@ -65,14 +68,14 @@
 
 }
 
-+ (void) displayMultipleMatchesMessage :(NSString*) description {
++ (void) displayMultipleMatchesNotification :(NSString*) description {
   DDLogInfo(@"EVEMessages -> displayShortcutMessage(description => :%@:) :: get called", description);
   DDLogInfo(@"EVEMessages -> displayShortcutMessage:: show growl message");
   DDLogInfo(@"EVEMessages -> displayShortcutMessage :: clickContext => :%@:", nil);
   [GrowlApplicationBridge notifyWithTitle:@"Multiple Match" description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:nil];
 }
 
-+ (void) showShortcutDisabledMessage :(NSDictionary*) clickContext {
++ (void) displayShortcutDisabledNotification :(NSDictionary*) clickContext {
   NSString* appName  = [clickContext  valueForKey:APP_NAME_COL];
   NSString* shortcut = [clickContext  valueForKey:SHORTCUT_STRING_COL];
   NSString* title    = [clickContext  valueForKey:TITLE_COL];
@@ -81,6 +84,16 @@
   [description appendFormat:@"%@ -> %@  \nin %@", title, shortcut, appName];
 
   [GrowlApplicationBridge notifyWithTitle:@"Shortcut Disabled!" description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:nil];
+}
+
+- (void) displayAppInstalledNotification :(NSString*) appName :(NSString*) user {
+  NSString *title = [NSString stringWithFormat:@"%@ Install Succeeded", appName];
+  NSString *description = [NSString stringWithFormat:@"I add the GUIElements from \"%@\" to HotkeyEVE!", user];
+  [self display:title :description :nil];
+}
+
+- (void) display :(NSString*) title :(NSString*) description :(NSDictionary*) clickContext {
+  [GrowlApplicationBridge notifyWithTitle:title description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:clickContext];
 }
 
 @end

@@ -9,9 +9,8 @@
 #import "UIElementClickedController.h"
 #import <UIElements/NullUIElement.h>
 #import "HandleClickedUIElement.h"
-#import "GUISupportTableModel.h"
 #import "DisplayedShortcutsModel.h"
-#import "EVEMessages.h"
+#import "GrowlNotifications.h"
 #import "ApplicationsTableModel.h"
 #import "StringUtilities.h"
 #import "EVEUtilities.h"
@@ -43,7 +42,7 @@
       if (messageCount >= 7
           && ![[[EVEManager sharedEVEManager] licence] isValid]) {
         messageCount = 0;
-        [EVEMessages showGrowRegistrationMessage];
+        [GrowlNotifications displayGrowRegistrationNotification];
       }
     }
   }

@@ -68,7 +68,7 @@
     _indexingActive = NO;
     if ([self count] == 0) {
       [self postNewAppIndexedApplicationTable];
-      [GUIElementsTableModel updateGUIElementTable];
+//      [GUIElementsTableModel updateGUIElementTable]; brauchen wir nicht mehr seit moduleID prueft ob applikation schon mal gestartet wurde
     }
   }
 }

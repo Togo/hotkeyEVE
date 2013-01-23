@@ -7,10 +7,10 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "AppsNotInstalledViewController.h"
+#import "AppsTableViewController.h"
 
-@interface AppsNotInstalledViewControllerTests : SenTestCase {
-  AppsNotInstalledViewController *_appsNotInstalledController;
+@interface AppsTableViewControllerTests : SenTestCase {
+  AppsTableViewController *_appsNotInstalledController;
   
   @private
    NSTableView *_tableView;

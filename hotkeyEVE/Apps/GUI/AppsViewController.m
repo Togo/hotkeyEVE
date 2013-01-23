@@ -7,8 +7,9 @@
 //
 
 #import "AppsViewController.h"
-#import "AppsInstalledViewController.h"
 #import "AppsTableNavigationViewController.h"
+#import "AppsTableViewController.h"
+#import "AppsManagerLocalDB.h"
 
 @implementation AppsViewController
 
@@ -18,7 +19,7 @@
 
 - (void)awakeFromNib {
   // set the view for the first start
-  [self viewSelectionDidChanged:[AppsInstalledViewController class]  :kAppsInstalledViewControllerNibName];
+  [self viewSelectionDidChanged:[AppsTableViewController class] :kAppsTableViewControllerNibName :[AppsManagerLocalDB class]];
   [self initNavigationView:[AppsTableNavigationViewController class] :kAppsTableNavigationViewControllerNibName];
 }
 
@@ -34,10 +35,11 @@
   [_splitView adjustSubviews];
 }
 
-- (void)viewSelectionDidChanged:(id)viewControllerClass :(NSString*) viewNibName {
+- (void)viewSelectionDidChanged:(id)viewControllerClass :(NSString*) viewNibName :(id) model {
   [[_mainContentViewController view] removeFromSuperview];
   
   _mainContentViewController = [[viewControllerClass alloc] initWithNibName:viewNibName bundle:nil];
+  [_mainContentViewController setAppsManager:[[model alloc] init]];
   
   [_mainContentView addSubview:[_mainContentViewController view]];
   [[_mainContentViewController view] setFrame:[_mainContentView bounds]];

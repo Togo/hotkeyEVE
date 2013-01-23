@@ -8,11 +8,13 @@
 
 #import "AppsViewControllerTests.h"
 #import <OCMock/OCMock.h>
-
+#import "AppsTableViewController.h"
 #import "AppsViewController.h"
-#import "AppsInstalledViewController.h"
 #import "AppsWindowController.h"
 #import "AppsTableNavigationViewController.h"
+#import "AppsManagerLocalDB.h"
+#import "IAppsTableViewController.h"
+#import "AppsManagerMock.h"
 
 @implementation AppsViewControllerTests
 
@@ -42,7 +44,7 @@
 //************************* awakeFromNib *************************//
 - (void) test_awakeFromNib_contollerAllocated_callViewSelectiondDidChangeWithInstalledAppsView {
   id appsViewControllerMock = [OCMockObject partialMockForObject:_appsViewController];
-  [[appsViewControllerMock expect] viewSelectionDidChanged :[AppsInstalledViewController class] :kAppsInstalledViewControllerNibName];
+  [[appsViewControllerMock expect] viewSelectionDidChanged :[AppsTableViewController class] :kAppsTableViewControllerNibName :[AppsManagerLocalDB class]];
   
   [_appsViewController awakeFromNib];
   
@@ -66,7 +68,7 @@
   id currentActiveViewMock = [OCMockObject partialMockForObject:[[_appsViewController mainContentViewController] view]];
   [[currentActiveViewMock expect] removeFromSuperview];
   
-  [_appsViewController viewSelectionDidChanged:[AppsInstalledViewController class] :kAppsInstalledViewControllerNibName];
+  [_appsViewController viewSelectionDidChanged:[AppsTableViewController class] :kAppsTableViewControllerNibName :[AppsManagerMock class]];
   
   [currentActiveViewMock verify];
 }
@@ -74,21 +76,29 @@
 - (void) test_viewSelectionDidChanged_allScenarios_setMainContentViewController {
   [_appsViewController setMainContentViewController:nil];
   
-  [_appsViewController viewSelectionDidChanged:[AppsInstalledViewController class] :kAppsInstalledViewControllerNibName];
+  [_appsViewController viewSelectionDidChanged:[AppsTableNavigationViewController class] :kAppsTableViewControllerNibName :[AppsManagerMock class]];
   
   STAssertNotNil([_appsViewController mainContentViewController], @"");
+}
+
+- (void) test_viewSelectionDidChanged_allScenarios_setTheModel {
+ [[_appsViewController mainContentViewController] setAppsManager:nil];
+  
+  [_appsViewController viewSelectionDidChanged:[AppsTableNavigationViewController class] :kAppsTableViewControllerNibName :[AppsManagerLocalDB class]];
+  
+  STAssertTrue([[[_appsViewController mainContentViewController] appsManager] isKindOfClass:[AppsManagerLocalDB class]], @"");
 }
 
 - (void) test_viewSelectionDidChanged_allScenarios_addNewViewToTheMainContentView {
   [_appsViewController setMainContentViewController:nil];
   
-  [_appsViewController viewSelectionDidChanged:[AppsInstalledViewController class] :kAppsInstalledViewControllerNibName];
+  [_appsViewController viewSelectionDidChanged:[AppsTableViewController class] :kAppsTableViewControllerNibName :[AppsManagerMock class]];
   
   STAssertTrue([[[_appsViewController mainContentView] subviews] count] == 1, @"");
 }
 
 - (void) test_viewSelectiondDidChanged_allScenarios_setTheFrameOfSubviewToMainViewFrameBounds {
-  [_appsViewController viewSelectionDidChanged:[AppsInstalledViewController class] :kAppsInstalledViewControllerNibName];
+  [_appsViewController viewSelectionDidChanged:[AppsTableViewController class] :kAppsTableViewControllerNibName :[AppsManagerMock class]];
   
   NSRect returnValue = [[[_appsViewController mainContentViewController] view] frame];
   NSRect expectedValue = [[_appsViewController mainContentView] bounds];
@@ -97,7 +107,7 @@
 }
 
 - (void) test_viewSelectiondDidChanged_allScenarios_setSubviewToWitdhAndHeightResiziable {
-  [_appsViewController viewSelectionDidChanged:[AppsInstalledViewController class] :kAppsInstalledViewControllerNibName];
+  [_appsViewController viewSelectionDidChanged:[AppsTableViewController class] :kAppsTableViewControllerNibName :[AppsManagerMock class]];
   NSInteger autoresizMask = NSViewWidthSizable|NSViewHeightSizable;
   STAssertTrue([[[_appsViewController mainContentViewController] view] autoresizingMask] == autoresizMask , @"");
 }

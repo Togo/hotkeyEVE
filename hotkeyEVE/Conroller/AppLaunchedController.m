@@ -8,7 +8,6 @@
 
 #import "AppLaunchedController.h"
 #import <UIElements/Application.h>
-#import "GUISupportTableModel.h"
 #import "ApplicationsTableModel.h"
 #import "DisabledShortcutsModel.h"
 
@@ -30,11 +29,8 @@
   Application *app = [[Application alloc] initWithBundleIdentifier:bundleIdentifier];
   
   if (![ApplicationsTableModel isInApplicationBlacklist :app]) {
-    app.guiSupport = [GUISupportTableModel hasGUISupport:[app bundleIdentifier]];
     if ([ApplicationsTableModel isNewApp:app])
       [ApplicationsTableModel insertNewApplication :app];
-    else
-      [ApplicationsTableModel updateApplicationTable:app];
     
     app.appID = [ApplicationsTableModel getApplicationID:[app appName] :[app bundleIdentifier]];
     

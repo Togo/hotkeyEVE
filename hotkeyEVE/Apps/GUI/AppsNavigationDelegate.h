@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IAppsManager.h"
 
 @protocol AppsNavigationDelegate <NSObject>
 
--(void)viewSelectionDidChanged:(id)viewControllerClass :(NSString*) viewNibName;
+-(void) viewSelectionDidChanged:(id)viewControllerClass :(NSString*) viewNibName :(id) model;
 
 @end

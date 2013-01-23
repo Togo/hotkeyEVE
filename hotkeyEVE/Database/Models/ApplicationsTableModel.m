@@ -7,8 +7,8 @@
 //
 
 #import "ApplicationsTableModel.h"
-#import "GUISupportTableModel.h"
 #import "EVEUtilities.h"
+#import "AppModuleTableModel.h"
 
 @implementation ApplicationsTableModel
 
@@ -39,22 +39,7 @@
   [query appendFormat:@" NULL "];
   [query appendFormat:@" , '%@' ", [app appName]];
   [query appendFormat:@" , '%@' ", [app bundleIdentifier]];
-  [query appendFormat:@" , %i ", 1];
-  [query appendFormat:@" , %i ", 1];
-  [query appendFormat:@" , %i ", [[NSNumber numberWithBool:[app guiSupport]] intValue]];
   [query appendFormat:@" ); "];
-  
-  [db executeUpdate:query];
-}
-
-+ (void) updateApplicationTable :(Application *) app  {
-  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
-  
-  NSMutableString *query = [NSMutableString string];
-  [query appendFormat:@"UPDATE %@ ", APPLICATIONS_TABLE];
-  [query appendFormat:@"SET %@ = %i ", GUI_SUPPORT_COL, [[NSNumber numberWithBool:[app guiSupport]] intValue]];
-  [query appendFormat:@"WHERE %@ = '%@' ", APP_NAME_COL, [app appName]];
-  [query appendFormat:@"AND   %@ = '%@' ", BUNDLE_IDEN_COL, [app bundleIdentifier]];
   
   [db executeUpdate:query];
 }
@@ -141,6 +126,26 @@
     return YES;
   } else {
    return  NO;
+  }
+}
+
++ (BOOL) hasGUISupport :(NSInteger) applicationID {
+  DDLogInfo(@"ApplicationsTableModel -> hasGUISupport(id => :%li:) :: get called ", applicationID);
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSMutableString *query = [NSMutableString string];
+  [query appendFormat:@" SELECT * FROM %@ a ", APPLICATIONS_TABLE];
+  [query appendFormat:@" WHERE EXISTS ( \n"];
+  [query appendFormat:@"  SELECT rowid FROM %@ m \n", kEVEModuleTableName];
+  [query appendFormat:@"        WHERE ( m.%@ = %li \n", kEVEApplicationIDColumn,  applicationID];
+  [query appendFormat:@"        AND  m.%@ LIKE '%@' )  \n", LANG_COL, [EVEUtilities currentLanguage]];
+  [query appendFormat:@"        LIMIT 1 ) \n"];
+
+  NSArray *result = [db executeQuery:query];
+  if ([result count] > 0) {
+    return YES;
+  } else {
+    return  NO;
   }
 }
 

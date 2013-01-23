@@ -21,6 +21,9 @@
   
   _appsManager = [[AppsManagerAmazon alloc] init];
   [_appsManager setReceiveAppModule:[[ReceiveAppModuleMock alloc] init]];
+  
+  id notificationsMock = [OCMockObject partialMockForObject:[_appsManager userNotifications]];
+  [[notificationsMock stub] displayAppInstalledNotification:OCMOCK_ANY :OCMOCK_ANY];
 }
 
 - (void)tearDown
@@ -42,6 +45,10 @@
 
 - (void) test_init_selfCreated_appModuleTableNotNil {
   STAssertNotNil([_appsManager appModuleTable], @"");
+}
+
+- (void) test_init_selfCreated_userNotificationNotNil {
+  STAssertNotNil([_appsManager userNotifications], @"");
 }
 
 
@@ -90,6 +97,7 @@
   id moduleTableMock = [OCMockObject partialMockForObject:[_appsManager appModuleTable]];
   [[moduleTableMock expect] addAppModule :OCMOCK_ANY];
   
+  
   [_appsManager addAppWithModuleID:@"1"];
   
   [moduleTableMock verify];
@@ -102,9 +110,26 @@
   id guiElementTableMock = [OCMockObject partialMockForObject:[_appsManager guiElementTable]];
   [[guiElementTableMock expect] insertGUIElementsFromAppModule :OCMOCK_ANY];
   
+  
   [_appsManager addAppWithModuleID:@"1"];
   
   [guiElementTableMock verify];
+}
+
+- (void) test_addAppWithModuleID_installationProcessSuccesfull_displayUserNotification {
+  id moduleTableMock = [OCMockObject partialMockForObject:[_appsManager appModuleTable]];
+  [[moduleTableMock stub] addAppModule :OCMOCK_ANY];
+  
+  id guiElementTableMock = [OCMockObject partialMockForObject:[_appsManager guiElementTable]];
+  [[guiElementTableMock stub] insertGUIElementsFromAppModule :OCMOCK_ANY];
+  
+  id notificationsMock = [OCMockObject mockForProtocol:@protocol(IUserNotifications)];
+  [[notificationsMock expect] displayAppInstalledNotification:OCMOCK_ANY :OCMOCK_ANY];
+  
+  [_appsManager setUserNotifications:notificationsMock];
+  [_appsManager addAppWithModuleID:@"1"];
+  
+  [notificationsMock verify];
 }
 
 @end

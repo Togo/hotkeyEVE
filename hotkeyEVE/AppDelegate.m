@@ -19,7 +19,7 @@
 #import "UserDataTableModel.h"
 #import "GUIElementsTableModel.h"
 
-#import "EVEMessages.h"
+#import "GrowlNotifications.h"
 #import "EVEUtilities.h"
 
 @implementation AppDelegate
@@ -36,7 +36,6 @@
   [self startLogging];
   
   [self openDatabase];
-  [self initGUIElementTable];
   
   eveAppManager =  [EVEManager sharedEVEManager];
   
@@ -50,7 +49,7 @@
   [[eveAppManager eveObserver] subscribeAllNotifications];
   
   if (![[[EVEManager sharedEVEManager] licence] isValid]) {
-    [EVEMessages showGrowRegistrationMessage];
+    [GrowlNotifications displayGrowRegistrationNotification];
   }
   
   [[eveAppManager globalHotkeyController] registerGlobalHotkeys];
@@ -77,13 +76,8 @@
   [db executeMigrations:[db databasePath]];
 }
 
-- (void) initGUIElementTable {
-  // Update GUI Element Table and add Shortcut Id's
-  [GUIElementsTableModel updateGUIElementTable];
-}
-
 - (void) startIndexing {
-//  [[eveAppManager appLaunched] indexingAllApps];
+  [[eveAppManager appLaunched] indexingAllApps];
 }
 
 - (void) registerListener {

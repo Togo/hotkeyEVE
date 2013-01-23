@@ -7,7 +7,6 @@
 //
 
 #import "AppChangedController.h"
-#import "GUISupportTableModel.h"
 #import "ApplicationsTableModel.h"
 
 @implementation AppChangedController
@@ -19,7 +18,7 @@
   if( ![bundleIdentifier isEqualToString:@"com.togo.hotkeyEVE"] ) {
     activeApplication = [[Application alloc] initWithBundleIdentifier:bundleIdentifier];
     activeApplication.appID = [ApplicationsTableModel getApplicationID:[activeApplication appName] :[activeApplication bundleIdentifier]];
-    activeApplication.guiSupport = [GUISupportTableModel hasGUISupport:bundleIdentifier];
+    activeApplication.guiSupport = [ApplicationsTableModel hasGUISupport:[activeApplication appID]]; 
     [[[EVEManager sharedEVEManager] mainMenuController] updateStatusIcon:[activeApplication guiSupport]];
   
   DDLogInfo(@"AppChangedController -> appFrontChanged :: appName => :%@: appID :%li: guiSupport => :%i:",[activeApplication appName], [activeApplication appID], [activeApplication guiSupport]);

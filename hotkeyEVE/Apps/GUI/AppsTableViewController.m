@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 Tobias Sommer. All rights reserved.
 //
 
-#import "AppsNotInstalledViewController.h"
+#import "AppsTableViewController.h"
 #import "AppsManagerAmazon.h"
 #import <AppsLibrary/AppsLibrary.h>
 
-NSString * const kAppsNotInstalledViewControllerNibName = @"AppsNotInstalledViewController";
+NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 
-@interface AppsNotInstalledViewController ()
+@interface AppsTableViewController ()
 
 @end
 
-@implementation AppsNotInstalledViewController
+@implementation AppsTableViewController
 
 @synthesize appsManager = _appsManager;
 
@@ -75,7 +75,7 @@ NSString * const kAppsNotInstalledViewControllerNibName = @"AppsNotInstalledView
 
 - (void) loadTableData {
   [self startProgressAnimationinSuperview:_tableView];
-  _dataSource = [_appsManager getNotInstalledList];
+  _dataSource = [_appsManager loadTableSourceData];
   [_tableView reloadData];
   
   [self stopProgressAnimation];

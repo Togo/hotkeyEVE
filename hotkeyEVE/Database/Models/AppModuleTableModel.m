@@ -13,6 +13,7 @@ NSString * const kEVEModuleTableName = @"app_module";
 
 NSString * const kEVEInternalIDColumn = @"internal_id";
 NSString * const kEVEExternalIDColumn = @"external_id";
+NSString * const kEVEApplicationIDColumn = @"application_id";
 
 @implementation AppModuleTableModel
 
@@ -34,7 +35,10 @@ NSString * const kEVEExternalIDColumn = @"external_id";
   [query appendFormat:@"VALUES ( "];
   [query appendFormat:@" NULL "];
   [query appendFormat:@" , '%@' ", [[appModule moduleMetaData] valueForKey:kModuleID]];
+  [query appendFormat:@" , '%@' ", [[appModule moduleMetaData] valueForKey:kLanguageKey]];
   [query appendFormat:@" , '%li' ", applicationID];
+  [query appendFormat:@" , '%@' ", [[appModule moduleMetaData] valueForKey:kUserNameKey]];
+  [query appendFormat:@" , '%@' ", [[appModule moduleMetaData] valueForKey:kModuleCredatKey]];
   [query appendFormat:@" ) "];
   
   [db executeUpdate:query];
@@ -57,4 +61,16 @@ NSString * const kEVEExternalIDColumn = @"external_id";
     return 0;
   }
 }
+
+- (NSArray*) selectAllInstalledAppModules {
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSMutableString *query = [NSMutableString string];
+  [query appendFormat:@" SELECT a.%@ AS ApplicationName, m.* FROM %@ m, %@ a", APP_NAME_COL, kEVEModuleTableName, APPLICATIONS_TABLE];
+  [query appendFormat:@" WHERE a.%@ = m.%@ ", ID_COL, APPLICATION_ID_COL];
+  NSArray *result =  [db executeQuery:query];
+  
+  return result;
+}
+
 @end

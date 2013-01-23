@@ -64,10 +64,8 @@
 		CD845A0B16A0C8B1007717CB /* AppsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A0A16A0C8B1007717CB /* AppsViewController.m */; };
 		CD845A0F16A0C8ED007717CB /* AppsTableNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A0D16A0C8ED007717CB /* AppsTableNavigationViewController.m */; };
 		CD845A1016A0C8ED007717CB /* AppsTableNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A0E16A0C8ED007717CB /* AppsTableNavigationViewController.xib */; };
-		CD845A1416A0C91D007717CB /* AppsInstalledViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A1216A0C91D007717CB /* AppsInstalledViewController.m */; };
-		CD845A1516A0C91D007717CB /* AppsInstalledViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A1316A0C91D007717CB /* AppsInstalledViewController.xib */; };
-		CD845A1916A0C937007717CB /* AppsNotInstalledViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A1716A0C937007717CB /* AppsNotInstalledViewController.m */; };
-		CD845A1A16A0C937007717CB /* AppsNotInstalledViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A1816A0C937007717CB /* AppsNotInstalledViewController.xib */; };
+		CD845A1916A0C937007717CB /* AppsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A1716A0C937007717CB /* AppsTableViewController.m */; };
+		CD845A1A16A0C937007717CB /* AppsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A1816A0C937007717CB /* AppsTableViewController.xib */; };
 		CD845A2616A15B98007717CB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7701645393400A9C7D8 /* SenTestingKit.framework */; };
 		CD845A2716A15B98007717CB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7521645393300A9C7D8 /* Cocoa.framework */; };
 		CD845A2D16A15B98007717CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD845A2B16A15B98007717CB /* InfoPlist.strings */; };
@@ -78,7 +76,6 @@
 		CD845A4516A16D89007717CB /* AppsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A4416A16D89007717CB /* AppsViewControllerTests.m */; };
 		CD84B78A1658CB5500DF227B /* MigrationsV1_3_1.m in Sources */ = {isa = PBXBuildFile; fileRef = CD84B7891658CB5500DF227B /* MigrationsV1_3_1.m */; };
 		CD84B78C1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD84B78B1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql */; };
-		CD97CE6B16466D7B00406F1F /* EVEMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE6A16466D7B00406F1F /* EVEMessages.m */; };
 		CD97CE6E164670BE00406F1F /* HandleClickedUIElement.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE6D164670BE00406F1F /* HandleClickedUIElement.m */; };
 		CD97CE9016467AB000406F1F /* GrowlController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE8F16467AB000406F1F /* GrowlController.m */; };
 		CD97CE96164683EA00406F1F /* ApplicationsTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE95164683EA00406F1F /* ApplicationsTableModel.m */; };
@@ -93,6 +90,10 @@
 		CDA558C016AF2809008D236E /* ALTER_TABLE_GUI_ELEMENTS_V1_3_5.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDA558BF16AF2808008D236E /* ALTER_TABLE_GUI_ELEMENTS_V1_3_5.sql */; };
 		CDA558C316AF2BCF008D236E /* AppModuleTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558C216AF2BCE008D236E /* AppModuleTableModel.m */; };
 		CDA558C516AF35B6008D236E /* CREATE_TABLE_APP_MODULE_V1_3_5.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDA558C416AF35B5008D236E /* CREATE_TABLE_APP_MODULE_V1_3_5.sql */; };
+		CDA558C716AF4086008D236E /* ALTER_TABLE_APPLICATIONS_V1_3_5.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDA558C616AF4085008D236E /* ALTER_TABLE_APPLICATIONS_V1_3_5.sql */; };
+		CDA558C916AF46A2008D236E /* DROP_GUI_SUPPORTED_APPS_V1_3_5.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDA558C816AF46A2008D236E /* DROP_GUI_SUPPORTED_APPS_V1_3_5.sql */; };
+		CDA558CE16B02688008D236E /* GrowlNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558CD16B02687008D236E /* GrowlNotifications.m */; };
+		CDA558D216B02981008D236E /* GrowlNotificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558D116B02981008D236E /* GrowlNotificationTests.m */; };
 		CDA7AD77164D9F4D000907A5 /* ShortcutsTableViewConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA7AD76164D9F4D000907A5 /* ShortcutsTableViewConroller.m */; };
 		CDB3D6621646BAE000285306 /* AppLaunchedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3D6611646BAE000285306 /* AppLaunchedController.m */; };
 		CDC77C1F165C2DAF00939D99 /* MigrationsV1_3_2.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */; };
@@ -103,7 +104,6 @@
 		CDE3018316A49D0300E8D489 /* libAppsLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE3016C16A4932600E8D489 /* libAppsLibrary.a */; };
 		CDE54D9A16626FF8009E4C57 /* ShareService.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE54D9916626FF8009E4C57 /* ShareService.m */; };
 		CDEE15311648127A00EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns in Resources */ = {isa = PBXBuildFile; fileRef = CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */; };
-		CDEE15341648128C00EDCDF4 /* GUISupportTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE15331648128C00EDCDF4 /* GUISupportTableModel.m */; };
 		CDEE1537164812F500EDCDF4 /* DisplayedShortcutsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1536164812F500EDCDF4 /* DisplayedShortcutsModel.m */; };
 		CDEE1558164A93FB00EDCDF4 /* EVEUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1551164A93FB00EDCDF4 /* EVEUtilities.m */; };
 		CDEE1559164A93FB00EDCDF4 /* NSFileManager+DirectoryLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1553164A93FB00EDCDF4 /* NSFileManager+DirectoryLocations.m */; };
@@ -114,7 +114,10 @@
 		CDEE156F164AE38A00EDCDF4 /* INSERT_GUI_ELEMENTS_V1_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDEE156E164AE38A00EDCDF4 /* INSERT_GUI_ELEMENTS_V1_0.sql */; };
 		CDEE1573164B03FF00EDCDF4 /* Licence.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1572164B03FF00EDCDF4 /* Licence.m */; };
 		CDEE1576164B04F100EDCDF4 /* NSString+Hashes.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1575164B04F000EDCDF4 /* NSString+Hashes.m */; };
-		CDF174A416A5E6EE0047C56E /* AppsNotInstalledViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF174A316A5E6EE0047C56E /* AppsNotInstalledViewControllerTests.m */; };
+		CDF174A416A5E6EE0047C56E /* AppsTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF174A316A5E6EE0047C56E /* AppsTableViewControllerTests.m */; };
+		CDF656E616B0403500A0FEC4 /* AppsManagerLocalDB.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF656E516B0403500A0FEC4 /* AppsManagerLocalDB.m */; };
+		CDF656EA16B0493200A0FEC4 /* AppsManagerMock.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF656E916B0493200A0FEC4 /* AppsManagerMock.m */; };
+		CDF656ED16B04B3C00A0FEC4 /* AppsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF656EC16B04B3C00A0FEC4 /* AppsManager.m */; };
 		CDFF8CDB164B72EF00A5EA5A /* Database.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5A463816455119007B57A5 /* Database.dylib */; };
 		CDFF8CDC164B72EF00A5EA5A /* UIElements.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5A462C1645510F007B57A5 /* UIElements.dylib */; };
 		CDFF8CEA164B7CEF00A5EA5A /* Database.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD5A463816455119007B57A5 /* Database.dylib */; };
@@ -330,12 +333,9 @@
 		CD845A0C16A0C8ED007717CB /* AppsTableNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsTableNavigationViewController.h; path = Apps/GUI/AppsTableNavigationViewController.h; sourceTree = "<group>"; };
 		CD845A0D16A0C8ED007717CB /* AppsTableNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsTableNavigationViewController.m; path = Apps/GUI/AppsTableNavigationViewController.m; sourceTree = "<group>"; };
 		CD845A0E16A0C8ED007717CB /* AppsTableNavigationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsTableNavigationViewController.xib; path = Apps/GUI/AppsTableNavigationViewController.xib; sourceTree = "<group>"; };
-		CD845A1116A0C91D007717CB /* AppsInstalledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsInstalledViewController.h; path = Apps/GUI/AppsInstalledViewController.h; sourceTree = "<group>"; };
-		CD845A1216A0C91D007717CB /* AppsInstalledViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsInstalledViewController.m; path = Apps/GUI/AppsInstalledViewController.m; sourceTree = "<group>"; };
-		CD845A1316A0C91D007717CB /* AppsInstalledViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsInstalledViewController.xib; path = Apps/GUI/AppsInstalledViewController.xib; sourceTree = "<group>"; };
-		CD845A1616A0C936007717CB /* AppsNotInstalledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsNotInstalledViewController.h; path = Apps/GUI/AppsNotInstalledViewController.h; sourceTree = "<group>"; };
-		CD845A1716A0C937007717CB /* AppsNotInstalledViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsNotInstalledViewController.m; path = Apps/GUI/AppsNotInstalledViewController.m; sourceTree = "<group>"; };
-		CD845A1816A0C937007717CB /* AppsNotInstalledViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsNotInstalledViewController.xib; path = Apps/GUI/AppsNotInstalledViewController.xib; sourceTree = "<group>"; };
+		CD845A1616A0C936007717CB /* AppsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsTableViewController.h; path = Apps/GUI/AppsTableViewController.h; sourceTree = "<group>"; };
+		CD845A1716A0C937007717CB /* AppsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsTableViewController.m; path = Apps/GUI/AppsTableViewController.m; sourceTree = "<group>"; };
+		CD845A1816A0C937007717CB /* AppsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsTableViewController.xib; path = Apps/GUI/AppsTableViewController.xib; sourceTree = "<group>"; };
 		CD845A1B16A15560007717CB /* AppsNavigationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppsNavigationDelegate.h; path = Apps/GUI/AppsNavigationDelegate.h; sourceTree = "<group>"; };
 		CD845A2516A15B98007717CB /* hotkeyEVEUnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hotkeyEVEUnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD845A2A16A15B98007717CB /* hotkeyEVEUnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "hotkeyEVEUnitTests-Info.plist"; sourceTree = "<group>"; };
@@ -350,8 +350,6 @@
 		CD84B7881658CB5500DF227B /* MigrationsV1_3_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationsV1_3_1.h; path = Database/Migrations/MigrationsV1_3_1.h; sourceTree = "<group>"; };
 		CD84B7891658CB5500DF227B /* MigrationsV1_3_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationsV1_3_1.m; path = Database/Migrations/MigrationsV1_3_1.m; sourceTree = "<group>"; };
 		CD84B78B1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CREATE_TABLEV1_3_1.sql; path = "Database/SQL Scripte/CREATE_TABLEV1_3_1.sql"; sourceTree = "<group>"; };
-		CD97CE6916466D7B00406F1F /* EVEMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EVEMessages.h; path = GUI/EVEMessages.h; sourceTree = "<group>"; };
-		CD97CE6A16466D7B00406F1F /* EVEMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EVEMessages.m; path = GUI/EVEMessages.m; sourceTree = "<group>"; };
 		CD97CE6C164670BD00406F1F /* HandleClickedUIElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleClickedUIElement.h; sourceTree = "<group>"; };
 		CD97CE6D164670BE00406F1F /* HandleClickedUIElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandleClickedUIElement.m; sourceTree = "<group>"; };
 		CD97CE8E16467AB000406F1F /* GrowlController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowlController.h; sourceTree = "<group>"; };
@@ -378,6 +376,13 @@
 		CDA558C116AF2BCD008D236E /* AppModuleTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppModuleTableModel.h; path = Database/Models/AppModuleTableModel.h; sourceTree = "<group>"; };
 		CDA558C216AF2BCE008D236E /* AppModuleTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppModuleTableModel.m; path = Database/Models/AppModuleTableModel.m; sourceTree = "<group>"; };
 		CDA558C416AF35B5008D236E /* CREATE_TABLE_APP_MODULE_V1_3_5.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CREATE_TABLE_APP_MODULE_V1_3_5.sql; path = "Database/SQL Scripte/V1.3.5/CREATE_TABLE_APP_MODULE_V1_3_5.sql"; sourceTree = "<group>"; };
+		CDA558C616AF4085008D236E /* ALTER_TABLE_APPLICATIONS_V1_3_5.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ALTER_TABLE_APPLICATIONS_V1_3_5.sql; path = "Database/SQL Scripte/V1.3.5/ALTER_TABLE_APPLICATIONS_V1_3_5.sql"; sourceTree = "<group>"; };
+		CDA558C816AF46A2008D236E /* DROP_GUI_SUPPORTED_APPS_V1_3_5.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DROP_GUI_SUPPORTED_APPS_V1_3_5.sql; path = "Database/SQL Scripte/V1.3.5/DROP_GUI_SUPPORTED_APPS_V1_3_5.sql"; sourceTree = "<group>"; };
+		CDA558CA16B02605008D236E /* IUserNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IUserNotifications.h; path = UserNotification/IUserNotifications.h; sourceTree = "<group>"; };
+		CDA558CC16B02687008D236E /* GrowlNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrowlNotifications.h; path = UserNotification/GrowlNotifications.h; sourceTree = "<group>"; };
+		CDA558CD16B02687008D236E /* GrowlNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GrowlNotifications.m; path = UserNotification/GrowlNotifications.m; sourceTree = "<group>"; };
+		CDA558D016B02981008D236E /* GrowlNotificationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrowlNotificationTests.h; path = UserNotificationsTests/GrowlNotificationTests.h; sourceTree = "<group>"; };
+		CDA558D116B02981008D236E /* GrowlNotificationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GrowlNotificationTests.m; path = UserNotificationsTests/GrowlNotificationTests.m; sourceTree = "<group>"; };
 		CDA7AD75164D9F4C000907A5 /* ShortcutsTableViewConroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShortcutsTableViewConroller.h; path = GUI/ShortcutWindow/ShortcutsTableViewConroller.h; sourceTree = "<group>"; };
 		CDA7AD76164D9F4D000907A5 /* ShortcutsTableViewConroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShortcutsTableViewConroller.m; path = GUI/ShortcutWindow/ShortcutsTableViewConroller.m; sourceTree = "<group>"; };
 		CDB3D6601646BAE000285306 /* AppLaunchedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppLaunchedController.h; path = Conroller/AppLaunchedController.h; sourceTree = "<group>"; };
@@ -395,8 +400,6 @@
 		CDE54D9816626FF8009E4C57 /* ShareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareService.h; sourceTree = "<group>"; };
 		CDE54D9916626FF8009E4C57 /* ShareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareService.m; sourceTree = "<group>"; };
 		CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns; sourceTree = "<group>"; };
-		CDEE15321648128C00EDCDF4 /* GUISupportTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUISupportTableModel.h; path = Database/Models/GUISupportTableModel.h; sourceTree = "<group>"; };
-		CDEE15331648128C00EDCDF4 /* GUISupportTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GUISupportTableModel.m; path = Database/Models/GUISupportTableModel.m; sourceTree = "<group>"; };
 		CDEE1535164812F500EDCDF4 /* DisplayedShortcutsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisplayedShortcutsModel.h; path = Database/Models/DisplayedShortcutsModel.h; sourceTree = "<group>"; };
 		CDEE1536164812F500EDCDF4 /* DisplayedShortcutsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisplayedShortcutsModel.m; path = Database/Models/DisplayedShortcutsModel.m; sourceTree = "<group>"; };
 		CDEE1550164A93FB00EDCDF4 /* EVEUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EVEUtilities.h; path = Utilities/EVEUtilities.h; sourceTree = "<group>"; };
@@ -415,8 +418,15 @@
 		CDEE1572164B03FF00EDCDF4 /* Licence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Licence.m; path = Licencing/Licence.m; sourceTree = "<group>"; };
 		CDEE1574164B04F000EDCDF4 /* NSString+Hashes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Hashes.h"; path = "Utilities/NSString+Hashes.h"; sourceTree = "<group>"; };
 		CDEE1575164B04F000EDCDF4 /* NSString+Hashes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Hashes.m"; path = "Utilities/NSString+Hashes.m"; sourceTree = "<group>"; };
-		CDF174A216A5E6ED0047C56E /* AppsNotInstalledViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsNotInstalledViewControllerTests.h; path = AppsGUITests/AppsNotInstalledViewControllerTests.h; sourceTree = "<group>"; };
-		CDF174A316A5E6EE0047C56E /* AppsNotInstalledViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsNotInstalledViewControllerTests.m; path = AppsGUITests/AppsNotInstalledViewControllerTests.m; sourceTree = "<group>"; };
+		CDF174A216A5E6ED0047C56E /* AppsTableViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsTableViewControllerTests.h; path = AppsGUITests/AppsTableViewControllerTests.h; sourceTree = "<group>"; };
+		CDF174A316A5E6EE0047C56E /* AppsTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsTableViewControllerTests.m; path = AppsGUITests/AppsTableViewControllerTests.m; sourceTree = "<group>"; };
+		CDF656E416B0403500A0FEC4 /* AppsManagerLocalDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsManagerLocalDB.h; path = Apps/Model/AppsManagerLocalDB.h; sourceTree = "<group>"; };
+		CDF656E516B0403500A0FEC4 /* AppsManagerLocalDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsManagerLocalDB.m; path = Apps/Model/AppsManagerLocalDB.m; sourceTree = "<group>"; };
+		CDF656E716B0444B00A0FEC4 /* IAppsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IAppsTableViewController.h; path = Apps/GUI/IAppsTableViewController.h; sourceTree = "<group>"; };
+		CDF656E816B0493200A0FEC4 /* AppsManagerMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsManagerMock.h; sourceTree = "<group>"; };
+		CDF656E916B0493200A0FEC4 /* AppsManagerMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsManagerMock.m; sourceTree = "<group>"; };
+		CDF656EB16B04B3C00A0FEC4 /* AppsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsManager.h; path = Apps/Model/AppsManager.h; sourceTree = "<group>"; };
+		CDF656EC16B04B3C00A0FEC4 /* AppsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsManager.m; path = Apps/Model/AppsManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -693,6 +703,7 @@
 		CD80E7581645393300A9C7D8 /* hotkeyEVE */ = {
 			isa = PBXGroup;
 			children = (
+				CDA558CB16B02611008D236E /* UserNotification */,
 				CD8459FF16A0C41B007717CB /* Apps */,
 				CDE54D9716626FE6009E4C57 /* Social */,
 				CDEE1570164B03EF00EDCDF4 /* Licencing */,
@@ -757,8 +768,6 @@
 				CD6AD402164D8948009FF1B5 /* GUINotifications */,
 				CD6AD3F3164D6BAA009FF1B5 /* ShortcutWindow */,
 				CD6AD38A164BFE91009FF1B5 /* Licence */,
-				CD97CE6916466D7B00406F1F /* EVEMessages.h */,
-				CD97CE6A16466D7B00406F1F /* EVEMessages.m */,
 				CD80E78B16453A0500A9C7D8 /* MainMenuController.h */,
 				CD80E78C16453A0500A9C7D8 /* MainMenuController.m */,
 				CD80E7671645393400A9C7D8 /* MainMenu.xib */,
@@ -790,12 +799,10 @@
 				CD845A0C16A0C8ED007717CB /* AppsTableNavigationViewController.h */,
 				CD845A0D16A0C8ED007717CB /* AppsTableNavigationViewController.m */,
 				CD845A0E16A0C8ED007717CB /* AppsTableNavigationViewController.xib */,
-				CD845A1116A0C91D007717CB /* AppsInstalledViewController.h */,
-				CD845A1216A0C91D007717CB /* AppsInstalledViewController.m */,
-				CD845A1316A0C91D007717CB /* AppsInstalledViewController.xib */,
-				CD845A1616A0C936007717CB /* AppsNotInstalledViewController.h */,
-				CD845A1716A0C937007717CB /* AppsNotInstalledViewController.m */,
-				CD845A1816A0C937007717CB /* AppsNotInstalledViewController.xib */,
+				CDF656E716B0444B00A0FEC4 /* IAppsTableViewController.h */,
+				CD845A1616A0C936007717CB /* AppsTableViewController.h */,
+				CD845A1716A0C937007717CB /* AppsTableViewController.m */,
+				CD845A1816A0C937007717CB /* AppsTableViewController.xib */,
 			);
 			name = GUI/Controller;
 			sourceTree = "<group>";
@@ -810,6 +817,7 @@
 		CD845A2816A15B98007717CB /* hotkeyEVEUnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				CDA558CF16B0295C008D236E /* UserNotificiation */,
 				CD845A4616A16D92007717CB /* AppsTests */,
 				CD845A2E16A15B98007717CB /* hotkeyEVEUnitTests.h */,
 				CD845A2F16A15B98007717CB /* hotkeyEVEUnitTests.m */,
@@ -838,8 +846,8 @@
 				CD845A4416A16D89007717CB /* AppsViewControllerTests.m */,
 				CDE3015816A469BC00E8D489 /* AppsWindowControllerTests.h */,
 				CDE3015916A469BC00E8D489 /* AppsWindowControllerTests.m */,
-				CDF174A216A5E6ED0047C56E /* AppsNotInstalledViewControllerTests.h */,
-				CDF174A316A5E6EE0047C56E /* AppsNotInstalledViewControllerTests.m */,
+				CDF174A216A5E6ED0047C56E /* AppsTableViewControllerTests.h */,
+				CDF174A316A5E6EE0047C56E /* AppsTableViewControllerTests.m */,
 				CDA558B116ADC4E9008D236E /* AppsManagerTests.h */,
 				CDA558B216ADC4E9008D236E /* AppsManagerTests.m */,
 			);
@@ -862,8 +870,6 @@
 			children = (
 				CDEE155E164AB0D100EDCDF4 /* GUIElementsTableModel.h */,
 				CDEE155F164AB0D200EDCDF4 /* GUIElementsTableModel.m */,
-				CDEE15321648128C00EDCDF4 /* GUISupportTableModel.h */,
-				CDEE15331648128C00EDCDF4 /* GUISupportTableModel.m */,
 				CD97CE94164683EA00406F1F /* ApplicationsTableModel.h */,
 				CD97CE95164683EA00406F1F /* ApplicationsTableModel.m */,
 				CD5A4697164563D0007B57A5 /* MenuBarTableModel.h */,
@@ -887,6 +893,8 @@
 			children = (
 				CDA558B516ADCA2F008D236E /* ReceiveAppModuleMock.h */,
 				CDA558B616ADCA2F008D236E /* ReceiveAppModuleMock.m */,
+				CDF656E816B0493200A0FEC4 /* AppsManagerMock.h */,
+				CDF656E916B0493200A0FEC4 /* AppsManagerMock.m */,
 			);
 			name = "Mock Classes";
 			sourceTree = "<group>";
@@ -894,6 +902,8 @@
 		CDA558B916AF25C9008D236E /* V1_3_5 */ = {
 			isa = PBXGroup;
 			children = (
+				CDA558C816AF46A2008D236E /* DROP_GUI_SUPPORTED_APPS_V1_3_5.sql */,
+				CDA558C616AF4085008D236E /* ALTER_TABLE_APPLICATIONS_V1_3_5.sql */,
 				CDA558C416AF35B5008D236E /* CREATE_TABLE_APP_MODULE_V1_3_5.sql */,
 				CDA558BF16AF2808008D236E /* ALTER_TABLE_GUI_ELEMENTS_V1_3_5.sql */,
 				CDA558BD16AF2712008D236E /* REMOVE_GUI_ELEMENTS_V1_3_5.sql */,
@@ -901,6 +911,25 @@
 				CDA558BB16AF2615008D236E /* MigrationV1_3_5.m */,
 			);
 			name = V1_3_5;
+			sourceTree = "<group>";
+		};
+		CDA558CB16B02611008D236E /* UserNotification */ = {
+			isa = PBXGroup;
+			children = (
+				CDA558CA16B02605008D236E /* IUserNotifications.h */,
+				CDA558CC16B02687008D236E /* GrowlNotifications.h */,
+				CDA558CD16B02687008D236E /* GrowlNotifications.m */,
+			);
+			name = UserNotification;
+			sourceTree = "<group>";
+		};
+		CDA558CF16B0295C008D236E /* UserNotificiation */ = {
+			isa = PBXGroup;
+			children = (
+				CDA558D016B02981008D236E /* GrowlNotificationTests.h */,
+				CDA558D116B02981008D236E /* GrowlNotificationTests.m */,
+			);
+			name = UserNotificiation;
 			sourceTree = "<group>";
 		};
 		CDC77C1C165C2D8E00939D99 /* V1_3_2 */ = {
@@ -920,8 +949,12 @@
 			isa = PBXGroup;
 			children = (
 				CDA558B416ADC7F9008D236E /* IAppsManager.h */,
+				CDF656EB16B04B3C00A0FEC4 /* AppsManager.h */,
+				CDF656EC16B04B3C00A0FEC4 /* AppsManager.m */,
 				CDA558AA16AC3653008D236E /* AppsManagerAmazon.h */,
 				CDA558AB16AC3653008D236E /* AppsManagerAmazon.m */,
+				CDF656E416B0403500A0FEC4 /* AppsManagerLocalDB.h */,
+				CDF656E516B0403500A0FEC4 /* AppsManagerLocalDB.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1128,11 +1161,12 @@
 				CD52DC931666918C0006CF06 /* ALTER_GUI_ELEMENTS_V1_3_3.sql in Resources */,
 				CD845A0816A0C493007717CB /* AppsWindowController.xib in Resources */,
 				CD845A1016A0C8ED007717CB /* AppsTableNavigationViewController.xib in Resources */,
-				CD845A1516A0C91D007717CB /* AppsInstalledViewController.xib in Resources */,
-				CD845A1A16A0C937007717CB /* AppsNotInstalledViewController.xib in Resources */,
+				CD845A1A16A0C937007717CB /* AppsTableViewController.xib in Resources */,
 				CDA558BE16AF2712008D236E /* REMOVE_GUI_ELEMENTS_V1_3_5.sql in Resources */,
 				CDA558C016AF2809008D236E /* ALTER_TABLE_GUI_ELEMENTS_V1_3_5.sql in Resources */,
 				CDA558C516AF35B6008D236E /* CREATE_TABLE_APP_MODULE_V1_3_5.sql in Resources */,
+				CDA558C716AF4086008D236E /* ALTER_TABLE_APPLICATIONS_V1_3_5.sql in Resources */,
+				CDA558C916AF46A2008D236E /* DROP_GUI_SUPPORTED_APPS_V1_3_5.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1186,7 +1220,6 @@
 				CD5A46D016463E64007B57A5 /* IndexingController.m in Sources */,
 				CD5A46F516464F7E007B57A5 /* EVEObserver.m in Sources */,
 				CD5A46F816465123007B57A5 /* UIElementClickedController.m in Sources */,
-				CD97CE6B16466D7B00406F1F /* EVEMessages.m in Sources */,
 				CD97CE6E164670BE00406F1F /* HandleClickedUIElement.m in Sources */,
 				CD97CE9016467AB000406F1F /* GrowlController.m in Sources */,
 				CD97CE96164683EA00406F1F /* ApplicationsTableModel.m in Sources */,
@@ -1194,7 +1227,6 @@
 				CD97CE9F16468A5E00406F1F /* DisabledShortcutsModel.m in Sources */,
 				CD97CEA216468C5200406F1F /* ShortcutTableModel.m in Sources */,
 				CDB3D6621646BAE000285306 /* AppLaunchedController.m in Sources */,
-				CDEE15341648128C00EDCDF4 /* GUISupportTableModel.m in Sources */,
 				CDEE1537164812F500EDCDF4 /* DisplayedShortcutsModel.m in Sources */,
 				CDEE1558164A93FB00EDCDF4 /* EVEUtilities.m in Sources */,
 				CDEE1559164A93FB00EDCDF4 /* NSFileManager+DirectoryLocations.m in Sources */,
@@ -1220,12 +1252,14 @@
 				CD845A0716A0C493007717CB /* AppsWindowController.m in Sources */,
 				CD845A0B16A0C8B1007717CB /* AppsViewController.m in Sources */,
 				CD845A0F16A0C8ED007717CB /* AppsTableNavigationViewController.m in Sources */,
-				CD845A1416A0C91D007717CB /* AppsInstalledViewController.m in Sources */,
-				CD845A1916A0C937007717CB /* AppsNotInstalledViewController.m in Sources */,
+				CD845A1916A0C937007717CB /* AppsTableViewController.m in Sources */,
 				CDE3015716A2FB6B00E8D489 /* AppsNavigationViewController.m in Sources */,
 				CDA558AC16AC3653008D236E /* AppsManagerAmazon.m in Sources */,
 				CDA558BC16AF2615008D236E /* MigrationV1_3_5.m in Sources */,
 				CDA558C316AF2BCF008D236E /* AppModuleTableModel.m in Sources */,
+				CDA558CE16B02688008D236E /* GrowlNotifications.m in Sources */,
+				CDF656E616B0403500A0FEC4 /* AppsManagerLocalDB.m in Sources */,
+				CDF656ED16B04B3C00A0FEC4 /* AppsManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1237,9 +1271,11 @@
 				CD845A4216A161F1007717CB /* AppsTableNavigationViewControllerTests.m in Sources */,
 				CD845A4516A16D89007717CB /* AppsViewControllerTests.m in Sources */,
 				CDE3015A16A469BC00E8D489 /* AppsWindowControllerTests.m in Sources */,
-				CDF174A416A5E6EE0047C56E /* AppsNotInstalledViewControllerTests.m in Sources */,
+				CDF174A416A5E6EE0047C56E /* AppsTableViewControllerTests.m in Sources */,
 				CDA558B316ADC4E9008D236E /* AppsManagerTests.m in Sources */,
 				CDA558B716ADCA2F008D236E /* ReceiveAppModuleMock.m in Sources */,
+				CDA558D216B02981008D236E /* GrowlNotificationTests.m in Sources */,
+				CDF656EA16B0493200A0FEC4 /* AppsManagerMock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

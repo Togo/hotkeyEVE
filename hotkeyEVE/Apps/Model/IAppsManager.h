@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AppsLibrary/AppsLibrary.h>
+#import "IUserNotifications.h"
 
 @class GUIElementsTableModel;
 @class AppModuleTableModel;
@@ -16,6 +17,7 @@
 
 @property (strong) GUIElementsTableModel *guiElementTable;
 @property (strong) AppModuleTableModel   *appModuleTable;
+@property (strong) id<IUserNotifications> userNotifications;
 
 @property (strong) id<IReceiveAppModule> receiveAppModule;
 
@@ -24,6 +26,6 @@
 
 - (void) addAppWithModuleID :(NSString*) aModuleID;
 
-- (id) getNotInstalledList;
+- (id) loadTableSourceData;
 
 @end

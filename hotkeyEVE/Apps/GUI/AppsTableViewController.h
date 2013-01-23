@@ -7,15 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "IAppsManager.h"
+#import "IAppsTableViewController.h"
 
-extern NSString * const kAppsNotInstalledViewControllerNibName;
+extern NSString * const kAppsTableViewControllerNibName;
 
-@interface AppsNotInstalledViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>{
+@interface AppsTableViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate, IAppsTableViewController> {
 
 }
 
-@property (strong) id<IAppsManager> appsManager;
 @property (strong) NSProgressIndicator *progressIndicator;
 
 @property (strong) NSMutableArray<NSTableViewDataSource> *dataSource;

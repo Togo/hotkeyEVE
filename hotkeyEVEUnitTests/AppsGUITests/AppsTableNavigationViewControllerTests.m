@@ -9,9 +9,9 @@
 #import "AppsTableNavigationViewControllerTests.h"
 #import "AppsTableNavigationViewController.h"
 #import <OCMock/OCMock.h>
-#import "AppsInstalledViewController.h"
-#import "AppsNotInstalledViewController.h"
+#import "AppsTableViewController.h"
 #import "AppsManagerAmazon.h"
+#import "AppsManagerLocalDB.h"
 
 @implementation AppsTableNavigationViewControllerTests
 
@@ -49,29 +49,39 @@
   STAssertTrue([returnValue isEqualToString:@"Installed"], @"");
 }
 
-- (void) test_initWithNibName_dataSourceInstalledRow_dataSourceContainsRowWithAppsInstalledViewNibName {
+- (void) test_initWithNibName_dataSourceInstalledRow_dataSourceContainsRowWithAppsTableViewNibName {
   NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:0] valueForKey:@"NibName"];
-  STAssertTrue([returnValue isEqualToString:kAppsInstalledViewControllerNibName], @"");
+  STAssertTrue([returnValue isEqualToString:kAppsTableViewControllerNibName], @"");
 }
 
-- (void) test_initWithNibName_dataSourceInstalledRow_dataSourceContainsRowWithAppsInstalledClass {
+- (void) test_initWithNibName_dataSourceInstalledRow_dataSourceContainsRowWithAppsTableViewClass {
   NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:0] valueForKey:@"Class"];
-  STAssertTrue([returnValue isEqualTo:[AppsInstalledViewController class]], @"");
+  STAssertTrue([returnValue isEqualTo:[AppsTableViewController class]], @"");
 }
 
-- (void) test_initWithNibName_dataSourceNotInstalledRow_dataSourceContainsRowWithInstalledColumn {
+- (void) test_initWithNibName_dataSourceInstalledRow_dataSourceContainsRowWithLocalDBModel {
+  NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:0] valueForKey:@"model"];
+  STAssertTrue([returnValue isEqualTo:[AppsManagerLocalDB class]], @"");
+}
+
+- (void) test_initWithNibName_dataSourceNotInstalledRow_dataSourceContainsRowWithNotInstalledColumn {
   NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:1] valueForKey:@"NavigationColumn"];
   STAssertTrue([returnValue isEqualToString:@"Not Installed"], @"");
 }
 
-- (void) test_initWithNibName_dataSourceNotInstalledRow_dataSourceContainsRowWithAppsInstalledViewNibName {
+- (void) test_initWithNibName_dataSourceNotInstalledRow_dataSourceContainsRowWithAppsTableViewViewNibName {
   NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:1] valueForKey:@"NibName"];
-  STAssertTrue([returnValue isEqualToString:kAppsNotInstalledViewControllerNibName], @"");
+  STAssertTrue([returnValue isEqualToString:kAppsTableViewControllerNibName], @"");
 }
 
-- (void) test_initWithNibName_dataSourceInstalledRow_dataSourceContainsRowWithAppsNotInstalledClass {
+- (void) test_initWithNibName_dataSourceInstalledRow_dataSourceContainsRowWithAppsTableViewClassw {
   NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:1] valueForKey:@"Class"];
-  STAssertTrue([returnValue isEqualTo:[AppsNotInstalledViewController class]], @"");
+  STAssertTrue([returnValue isEqualTo:[AppsTableViewController class]], @"");
+}
+
+- (void) test_initWithNibName_dataSourceInstalledRow_dataSourceContainsRowWithAppsAmazonModel {
+  NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:1] valueForKey:@"model"];
+  STAssertTrue([returnValue isEqualTo:[AppsManagerAmazon class]], @"");
 }
 
 //************************* loadView *************************//
@@ -93,8 +103,9 @@
   [[[tableViewMock stub] andReturnValue:OCMOCK_VALUE(selectedRow)] selectedRow];
   
   id navigationDelegateMock = [OCMockObject niceMockForProtocol:@protocol(AppsNavigationDelegate)];
-  id expectedClass = [[[_tableNavController dataSource] objectAtIndex:selectedRow] valueForKey:@"Class"];
-  [[navigationDelegateMock expect] viewSelectionDidChanged:expectedClass :kAppsInstalledViewControllerNibName];
+  id expectedViewController = [[[_tableNavController dataSource] objectAtIndex:selectedRow] valueForKey:@"Class"];
+  id expectedModelClass = [[[_tableNavController dataSource] objectAtIndex:selectedRow] valueForKey:@"model"];
+  [[navigationDelegateMock expect] viewSelectionDidChanged:expectedViewController :kAppsTableViewControllerNibName :expectedModelClass];
   
   _tableNavController.delegate = navigationDelegateMock;
   
@@ -111,7 +122,7 @@
   [[[tableViewMock stub] andReturnValue:OCMOCK_VALUE(selectedRow)] selectedRow];
   
   id navigationDelegateMock = [OCMockObject niceMockForProtocol:@protocol(AppsNavigationDelegate)];
-  [[navigationDelegateMock reject] viewSelectionDidChanged:[OCMArg any] :kAppsInstalledViewControllerNibName];
+  [[navigationDelegateMock reject] viewSelectionDidChanged:[OCMArg any] :kAppsTableViewControllerNibName :[OCMArg any]];
   
   _tableNavController.delegate = navigationDelegateMock;
   

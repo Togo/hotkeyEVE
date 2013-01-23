@@ -9,12 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <AppsLibrary/AppsLibrary.h>
 
-extern NSString * const kEVEInternalIDColumn;
-extern NSString * const kEVEExternalIDColumn;
+NSString * const kEVEModuleTableName;
+
+NSString * const kEVEInternalIDColumn;
+NSString * const kEVEExternalIDColumn;
+NSString * const kEVEApplicationIDColumn;
 
 @interface AppModuleTableModel : NSObject
 
 - (void) addAppModule :(AppModule*) appModule;
 + (NSInteger) getModuleIDWithExternalID :(NSString*) external_id;
+- (NSArray*) selectAllInstalledAppModules;
 
 @end

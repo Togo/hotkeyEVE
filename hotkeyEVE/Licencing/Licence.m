@@ -11,7 +11,6 @@
 #import "StringUtilities.h"
 #import "NSString+Hashes.h"
 
-#import "EVEMessages.h"
 #import "EVEUtilities.h"
 
 @implementation Licence

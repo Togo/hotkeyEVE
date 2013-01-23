@@ -6,17 +6,18 @@
 //  Copyright (c) 2013 Tobias Sommer. All rights reserved.
 //
 
-#import "AppsNotInstalledViewControllerTests.h"
+#import "AppsTableViewControllerTests.h"
 #import <AppsLibrary/AppsLibrary.h>
 #import <OCMock/OCMock.h>
 #import "IAppsManager.h"
+#import "AppsManagerMock.h"
 
-@implementation AppsNotInstalledViewControllerTests
+@implementation AppsTableViewControllerTests
 
 - (void)setUp
 {
   [super setUp];
-  _appsNotInstalledController = [[AppsNotInstalledViewController alloc] initWithNibName:kAppsNotInstalledViewControllerNibName bundle:nil];
+  _appsNotInstalledController = [[AppsTableViewController alloc] initWithNibName:kAppsTableViewControllerNibName bundle:nil];
   
   
   _tableView = [[NSTableView alloc] init];
@@ -36,6 +37,8 @@
   
   _credatTableColumn = [[NSTableColumn alloc] initWithIdentifier:kModuleCredatKey];
   [_appsNotInstalledController setCredatTableColumn:_credatTableColumn];
+  
+  [_appsNotInstalledController setAppsManager:[[AppsManagerMock alloc] init]];
 }
 
 - (void)tearDown
@@ -175,7 +178,7 @@
 //************************* loadTableData *************************//
 - (void) test_loadTableData_allScenarios_loadTableDataFromAppsNotInstalledModel {
   id appsManagerMock = [OCMockObject niceMockForProtocol:@protocol(IAppsManager)];
-  [[appsManagerMock expect] getNotInstalledList];
+  [[appsManagerMock expect] loadTableSourceData];
 
   [_appsNotInstalledController setAppsManager:appsManagerMock];
   [_appsNotInstalledController loadTableData];
@@ -195,7 +198,7 @@
 - (void) test_loadTableData_newDataSourceArray_dataSourceIsFromModelReturnedNewDataSource {
   id appsManagerMock = [OCMockObject niceMockForProtocol:@protocol(IAppsManager)];
   NSArray *newNotInstalledArray = [self createDataSource:1];
-  [[[appsManagerMock stub] andReturn:newNotInstalledArray] getNotInstalledList];
+  [[[appsManagerMock stub] andReturn:newNotInstalledArray] loadTableSourceData];
   
   [_appsNotInstalledController setAppsManager:appsManagerMock];
   [_appsNotInstalledController loadTableData];

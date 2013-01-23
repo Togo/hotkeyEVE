@@ -7,7 +7,7 @@
 //
 
 #import "HandleClickedUIElement.h"
-#import "EVEMessages.h"
+#import "GrowlNotifications.h"
 #import "MenuBarTableModel.h"
 #import "ShortcutTableModel.h"
 #import "DisabledShortcutsModel.h"
@@ -61,7 +61,7 @@
      shortcutID = [ShortcutTableModel getShortcutId:[element shortcutString]];
     if (![self shortcutDisabled :element :shortcutID]
         && [self timeIntevallOk :shortcutID]) {
-      [EVEMessages displayShortcutMessage:element];
+      [GrowlNotifications displayShortcutHintNotification:element];
       [DisplayedShortcutsModel insertDisplayedShortcut :element :shortcutID];
       return YES;
     }
@@ -79,7 +79,7 @@
 //    [content appendFormat:@"%@ - %@ - %@ \n", parentTitle, title, shortcutString];
   }
   
-  [EVEMessages displayMultipleMatchesMessage :content];
+  [GrowlNotifications displayMultipleMatchesNotification :content];
   
   return YES;
 }

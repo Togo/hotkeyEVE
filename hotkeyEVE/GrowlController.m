@@ -9,7 +9,7 @@
 #import "GrowlController.h"
 #import "DisabledShortcutsModel.h"
 #import "EVEUtilities.h"
-#import "EVEMessages.h"
+#import "GrowlNotifications.h"
 
 @implementation GrowlController
 
@@ -24,7 +24,7 @@
       NSString *title = [clickedContext valueForKey:TITLE_COL];
       
       [DisabledShortcutsModel disableShortcutWithStrings :appName :bundleIdentifier :shortcutString :user :title];
-      [EVEMessages showShortcutDisabledMessage :clickedContext];
+      [GrowlNotifications displayShortcutDisabledNotification :clickedContext];
 //      [[[EVEManager sharedEVEManager] mainMenuController] showShortcutsWindow:nil];
       
       [[NSNotificationCenter defaultCenter] postNotificationName:SelectActiveApplication object:[EVEUtilities activeApplication]];
