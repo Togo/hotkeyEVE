@@ -16,5 +16,6 @@
 //+ (void) updateGUIElementTable;
 
 - (void) insertGUIElementsFromAppModule :(AppModule*) app;
+- (void) removeGUIElementsWithID :(NSInteger) theID;
 
 @end

@@ -14,7 +14,7 @@
 
 - (void)setUp {
   [super setUp];
-   _growlNotifications = [GrowlNotifications growNotifications];
+   _growlNotifications = [GrowlNotifications growlNotifications];
 }
 
 - (void)tearDown {
@@ -24,16 +24,26 @@
 
 //************************* growlNotifications *************************//
 - (void) test_growlNotifications_allScenarios_createAndReturnGrowlNotificationObject {
-  id returnValue =  [GrowlNotifications growNotifications];
+  id returnValue =  [GrowlNotifications growlNotifications];
   STAssertTrue([returnValue  isKindOfClass:[GrowlNotifications class]], @"");
 }
 
 //************************* displayAddApp *************************//
-- (void) test_displayAddApp_appModuleNotNil_callMethodToDisplayMessageWithGrowl {
+- (void) test_displayAddApp_allScenarios_callMethodToDisplayMessageWithGrowl {
   id growlNotificationMock = [OCMockObject partialMockForObject:_growlNotifications];
-  [[growlNotificationMock expect] display:@"Finder Install Succeeded" :@"I add the GUIElements from \"the User\" to HotkeyEVE!" :nil];
+  [[growlNotificationMock expect] showTheNotification:@"App Name Install Succeeded" :@"I added the GUIElements from \"User Name\" to HotkeyEVE!" :nil];
+ 
+  [_growlNotifications displayAppInstalledNotification:@"App Name" :@"User Name"];
   
-  [_growlNotifications displayAppInstalledNotification:@"Finder" :@"the User"];
+  [growlNotificationMock verify];
+}
+
+//************************* displayAppRemoved *************************//
+- (void) test_displayAppRemoved_allScenarios_callMethodToDisplayMessageWithGrowl {
+  id growlNotificationMock = [OCMockObject partialMockForObject:_growlNotifications];
+  [[growlNotificationMock expect] showTheNotification:@"App Name Removed" :@"The GUIElements from \"User Name\" are not longer available!" :nil];
+  
+  [_growlNotifications displayAppRemovedNotification:@"App Name" :@"User Name"];
   
   [growlNotificationMock verify];
 }

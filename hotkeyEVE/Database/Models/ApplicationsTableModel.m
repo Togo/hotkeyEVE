@@ -138,7 +138,7 @@
   [query appendFormat:@" WHERE EXISTS ( \n"];
   [query appendFormat:@"  SELECT rowid FROM %@ m \n", kEVEModuleTableName];
   [query appendFormat:@"        WHERE ( m.%@ = %li \n", kEVEApplicationIDColumn,  applicationID];
-  [query appendFormat:@"        AND  m.%@ LIKE '%@' )  \n", LANG_COL, [EVEUtilities currentLanguage]];
+  [query appendFormat:@"        AND  m.%@ LIKE '%@' )  \n", kLanguageKey, [EVEUtilities currentLanguage]];
   [query appendFormat:@"        LIMIT 1 ) \n"];
 
   NSArray *result = [db executeQuery:query];

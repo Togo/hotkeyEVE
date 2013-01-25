@@ -25,6 +25,7 @@
 - (void) removeAppsFromArray :(NSArray*) moduleIDs;
 
 - (void) addAppWithModuleID :(NSString*) aModuleID;
+- (void) removeAppWithModuleID :(NSString*) aModuleID;
 
 - (id) loadTableSourceData;
 

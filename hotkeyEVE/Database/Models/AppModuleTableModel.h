@@ -18,7 +18,9 @@ NSString * const kEVEApplicationIDColumn;
 @interface AppModuleTableModel : NSObject
 
 - (void) addAppModule :(AppModule*) appModule;
-+ (NSInteger) getModuleIDWithExternalID :(NSString*) external_id;
+- (void) removeAppModuleWithID :(NSInteger) theID;
+
+- (NSDictionary*) getModuleEntityWithExternalID :(NSString*) external_id;
 - (NSArray*) selectAllInstalledAppModules;
 
 @end

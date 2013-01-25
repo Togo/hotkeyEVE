@@ -11,7 +11,7 @@
 
 @implementation GrowlNotifications
 
-+ (id<IUserNotifications>) growNotifications {
++ (id<IUserNotifications>) growlNotifications {
   return [[GrowlNotifications alloc] init];
 }
 
@@ -88,11 +88,17 @@
 
 - (void) displayAppInstalledNotification :(NSString*) appName :(NSString*) user {
   NSString *title = [NSString stringWithFormat:@"%@ Install Succeeded", appName];
-  NSString *description = [NSString stringWithFormat:@"I add the GUIElements from \"%@\" to HotkeyEVE!", user];
-  [self display:title :description :nil];
+  NSString *description = [NSString stringWithFormat:@"I added the GUIElements from \"%@\" to HotkeyEVE!", user];
+  [self showTheNotification:title :description :nil];
 }
 
-- (void) display :(NSString*) title :(NSString*) description :(NSDictionary*) clickContext {
+- (void) displayAppRemovedNotification :(NSString*) appName :(NSString*) user {
+  NSString *title = [NSString stringWithFormat:@"%@ Removed", appName];
+  NSString *description = [NSString stringWithFormat:@"The GUIElements from \"%@\" are not longer available!", user];
+  [self showTheNotification:title :description :nil];
+}
+
+- (void) showTheNotification :(NSString*) title :(NSString*) description :(NSDictionary*) clickContext {
   [GrowlApplicationBridge notifyWithTitle:title description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:clickContext];
 }
 

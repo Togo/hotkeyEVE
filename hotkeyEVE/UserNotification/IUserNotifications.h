@@ -21,5 +21,7 @@
 + (void) displayGrowRegistrationNotification;
 
 - (void) displayAppInstalledNotification :(NSString*) appName :(NSString*) user;
+- (void) displayAppRemovedNotification :(NSString*) appName :(NSString*) user;
+- (void) showTheNotification :(NSString*) title :(NSString*) description :(NSDictionary*) clickContext;
 
 @end

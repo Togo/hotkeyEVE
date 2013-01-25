@@ -9,6 +9,7 @@
 #import "AppModuleTableModel.h"
 #import "ApplicationsTableModel.h"
 
+
 NSString * const kEVEModuleTableName = @"app_module";
 
 NSString * const kEVEInternalIDColumn = @"internal_id";
@@ -44,20 +45,32 @@ NSString * const kEVEApplicationIDColumn = @"application_id";
   [db executeUpdate:query];
 }
 
-+ (NSInteger) getModuleIDWithExternalID :(NSString*) external_id {
+- (void) removeAppModuleWithID :(NSInteger) theID {
+  DDLogInfo(@"AppModuleTableModel -> addAppModule(moduleID => :%li:) :: get called", theID);
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSMutableString *query = [NSMutableString string];
+  [query appendFormat:@"DELETE FROM %@ ", kEVEModuleTableName];
+  [query appendFormat:@" WHERE %@ = %li ",ID_COL, theID];
+
+  [db executeUpdate:query];
+}
+
+- (NSDictionary*) getModuleEntityWithExternalID :(NSString*) external_id {
   DDLogInfo(@"AppModuleTableModel -> getModuleIDWithExternalID(external_id => :%@:) :: get called", external_id);
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
   NSMutableString *query = [NSMutableString string];
-  [query appendFormat:@" SELECT * FROM %@ ", kEVEModuleTableName];
-  [query appendFormat:@" WHERE %@ like '%@' ", kEVEExternalIDColumn, external_id];
+  [query appendFormat:@" SELECT a.%@ AS ApplicationName, m.* FROM %@ m, %@ a", APP_NAME_COL, kEVEModuleTableName, APPLICATIONS_TABLE];
+  [query appendFormat:@" WHERE %@ like '%@' ", kModuleID, external_id];
+  [query appendFormat:@" AND a.%@ = m.%@ ", ID_COL, APPLICATION_ID_COL];
   
   NSArray *result = [db executeQuery:query];
   if ([result count] > 0) {
-    NSInteger appID = [[[result objectAtIndex:0] valueForKey:kEVEInternalIDColumn] intValue];
-    return appID;
+//    NSInteger appID = [[[result objectAtIndex:0] valueForKey:ID_COL] intValue];
+    return [result objectAtIndex:0];
   } else {
-    DDLogError(@"AppModuleTableModel -> getModuleIDWithExternalID:: no appID query => :%@:", query);
+    DDLogError(@"AppModuleTableModel -> getModuleIDWithExternalID:: multiple APPIDS that's not correct => :%@:", query);
     return 0;
   }
 }

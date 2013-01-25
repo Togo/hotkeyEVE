@@ -11,9 +11,6 @@
 
 @interface GrowlNotifications : NSObject <IUserNotifications>
 
-+ (id<IUserNotifications>) growNotifications;
-
-
-- (void) display :(NSString*) title :(NSString*) description :(NSDictionary*) clickContext;
++ (id<IUserNotifications>) growlNotifications;
 
 @end

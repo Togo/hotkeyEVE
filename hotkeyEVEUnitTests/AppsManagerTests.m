@@ -12,6 +12,7 @@
 #import "ReceiveAppModuleMock.h"
 #import "GUIElementsTableModel.h"
 #import "AppModuleTableModel.h"
+#import <Database/TableAndColumnNames.h>
 
 @implementation AppsManagerTests
 
@@ -24,6 +25,7 @@
   
   id notificationsMock = [OCMockObject partialMockForObject:[_appsManager userNotifications]];
   [[notificationsMock stub] displayAppInstalledNotification:OCMOCK_ANY :OCMOCK_ANY];
+  [[notificationsMock stub] displayAppRemovedNotification:OCMOCK_ANY :OCMOCK_ANY];
 }
 
 - (void)tearDown
@@ -128,6 +130,72 @@
   
   [_appsManager setUserNotifications:notificationsMock];
   [_appsManager addAppWithModuleID:@"1"];
+  
+  [notificationsMock verify];
+}
+
+//************************* removeAppsFromArray *************************//
+- (void) test_removeAppsFromArray_arrayContainsAModuleID_callMethodRemoveModuleWithThisModuleID {
+  id appsManagerMock = [OCMockObject partialMockForObject:_appsManager];
+  NSString *moduleID = @"1";
+  [[appsManagerMock expect] performSelectorInBackground:@selector(removeAppWithModuleID:) withObject:moduleID];
+  
+  [_appsManager removeAppsFromArray:[NSArray arrayWithObject:moduleID]];
+  
+  [appsManagerMock verify];
+}
+
+- (void) test_removeAppsFromArray_arrayContainsMultipleModuleIDs_removeThreeAppsWithTheModuleIDS {
+  id appsManagerMock = [OCMockObject partialMockForObject:_appsManager];
+  [[appsManagerMock expect] performSelectorInBackground:@selector(removeAppWithModuleID:) withObject:@"1"];
+  [[appsManagerMock expect] performSelectorInBackground:@selector(removeAppWithModuleID:) withObject:@"2"];
+  [[appsManagerMock expect] performSelectorInBackground:@selector(removeAppWithModuleID:) withObject:@"3"];
+  
+  [_appsManager removeAppsFromArray:[NSArray arrayWithObjects:@"1", @"2", @"3", nil]];
+  
+  [appsManagerMock verify];
+}
+
+//************************* removeAppWithModuleID *************************//
+- (void) test_removeAppWithModuleID_moduleIDNotNil_removeAllEntriesInGUIElementTable {
+  id guiElementTableMock = [OCMockObject partialMockForObject:[_appsManager guiElementTable]];
+  [[guiElementTableMock expect] removeGUIElementsWithID :1];
+  
+  id moduleTableMock = [OCMockObject partialMockForObject:[_appsManager appModuleTable]];
+  [[[moduleTableMock stub] andReturn:[NSDictionary dictionaryWithObjectsAndKeys:@"1", @"id", nil]] getModuleEntityWithExternalID :OCMOCK_ANY];
+  [[moduleTableMock stub] removeAppModuleWithID :1];
+
+  [_appsManager removeAppWithModuleID:@"5"];
+  
+  [guiElementTableMock verify];
+}
+
+- (void) test_removeAppWithModuleID_moduleIDNotNil_removeTheEntryFromTheModuleTable {
+  id guiElementTableMock = [OCMockObject partialMockForObject:[_appsManager guiElementTable]];
+  [[guiElementTableMock stub] removeGUIElementsWithID :1];
+  
+  id moduleTableMock = [OCMockObject partialMockForObject:[_appsManager appModuleTable]];
+  [[[moduleTableMock stub] andReturn:[NSDictionary dictionaryWithObjectsAndKeys:@"1", @"id", nil]] getModuleEntityWithExternalID :OCMOCK_ANY];
+  [[moduleTableMock expect] removeAppModuleWithID :1];
+  
+  [_appsManager removeAppWithModuleID:@"5"];
+  
+  [moduleTableMock verify];
+}
+
+- (void) test_removeAppWithModuleID_moduleIDNotNil_sendUserNotification {
+  id guiElementTableMock = [OCMockObject partialMockForObject:[_appsManager guiElementTable]];
+  [[guiElementTableMock stub] removeGUIElementsWithID :1];
+  
+  id moduleTableMock = [OCMockObject partialMockForObject:[_appsManager appModuleTable]];
+  [[[moduleTableMock stub] andReturn:[NSDictionary dictionaryWithObjectsAndKeys:@"1", @"id", @"UserName", kUserNameKey, @"AppName", kAppNameKey,  nil]] getModuleEntityWithExternalID :OCMOCK_ANY];
+  [[moduleTableMock stub] removeAppModuleWithID :1];
+  
+  id notificationsMock = [OCMockObject mockForProtocol:@protocol(IUserNotifications)];
+  [[notificationsMock expect] displayAppRemovedNotification:@"AppName" :@"UserName"];
+  
+  [_appsManager setUserNotifications:notificationsMock];
+  [_appsManager removeAppWithModuleID:@"5"];
   
   [notificationsMock verify];
 }

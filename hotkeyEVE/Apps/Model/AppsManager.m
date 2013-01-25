@@ -25,7 +25,7 @@
     self.receiveAppModule = [ReceiveAppModule createReceiverWithAmazonWebService];
     self.guiElementTable = [[GUIElementsTableModel alloc] init];
     self.appModuleTable = [[AppModuleTableModel alloc] init];
-    self.userNotifications = [GrowlNotifications growNotifications];
+    self.userNotifications = [GrowlNotifications growlNotifications];
   }
   
   return self;
@@ -47,13 +47,29 @@
       [_userNotifications displayAppInstalledNotification:[[app moduleMetaData] valueForKey:kAppNameKey] :[[app moduleMetaData] valueForKey:kUserNameKey]];
     }
     @catch (NSException *exception) {
-      // todo
+      DDLogError(@"AppsManager -> addAppWithModuleID :: exception occured => %@",[exception reason]);
     }
   }
 }
 
 - (void) removeAppsFromArray :(NSArray*) moduleIDs {
-  
+  for (NSString *moduleID in moduleIDs) {
+    [self performSelectorInBackground:@selector(removeAppWithModuleID:) withObject:moduleID];
+  }
+}
+
+- (void) removeAppWithModuleID :(NSString*) aModuleID {
+    @synchronized(self) {
+      NSDictionary *theModuleRow = [_appModuleTable getModuleEntityWithExternalID:aModuleID];
+      if ([theModuleRow count] > 0) {
+        NSInteger theID = [[theModuleRow valueForKey:ID_COL] integerValue];
+        [_guiElementTable removeGUIElementsWithID:theID];
+        [_appModuleTable  removeAppModuleWithID:theID];
+        [_userNotifications displayAppRemovedNotification:[theModuleRow valueForKey:kAppNameKey] :[theModuleRow valueForKey:kUserNameKey]];
+      } else {
+          DDLogError(@"AppsManager -> removeAppWithModuleID :: app with module id %@ not installed",aModuleID);
+      }
+    }
 }
 
 - (id) loadTableSourceData {
