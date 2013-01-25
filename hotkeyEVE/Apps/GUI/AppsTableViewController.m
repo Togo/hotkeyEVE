@@ -33,6 +33,10 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
     return self;
 }
 
+- (void) dealloc {
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 -(void) awakeFromNib {
   [_moduleIDTableColumn setIdentifier:kModuleID];
   [_moduleIDTableColumn setHidden:YES];
@@ -54,16 +58,17 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
   [_credatTableColumn setSortDescriptorPrototype:[[NSSortDescriptor alloc] initWithKey:kModuleCredatKey ascending:NO]];
   
   [_tableView registerForDraggedTypes:[NSArray arrayWithObjects: NSPasteboardTypeString , nil]];
+  
+  [self registerObserver];
+}
+
+- (void) registerObserver {
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadTableData) name:kEVENotificationsReloadAppsTable object:nil];
 }
 
 - (NSProgressIndicator*) createProgressIndicator {
   NSProgressIndicator *progressIndicator = [[NSProgressIndicator alloc] init];
-//  [progressIndicator setIndeterminate:YES];
   [progressIndicator setStyle:NSProgressIndicatorSpinningStyle];
-////  [self.progressIndicator setControlSize:NSRegularControlSize];
-////  [self.progressIndicator setMinValue:0];
-////  [self.progressIndicator setMaxValue:100];
-////  [self.progressIndicator setDoubleValue:25];
   
   return progressIndicator;
 }

@@ -15,7 +15,7 @@
 - (NSString*) uploadToServer :(AppModule*) module;
 - (NSString*) insertInAppsDatabase :(AppModule*) module;
 
-- (NSArray*) getNotInstalledAppList;
+- (NSArray*) getNotInstalledAppList :(NSArray*) installedModuleIDs;
 - (NSData*) downloadFromServer :(NSString*) moduleID;
 
 @end

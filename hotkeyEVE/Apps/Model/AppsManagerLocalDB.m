@@ -12,7 +12,6 @@
 @implementation AppsManagerLocalDB
 
 - (id) loadTableSourceData {
-  [super loadTableSourceData];
   return [[super appModuleTable] selectAllInstalledAppModules];
 }
 

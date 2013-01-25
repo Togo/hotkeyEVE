@@ -10,6 +10,7 @@
 #import "GUIElementsTableModel.h"
 #import "AppModuleTableModel.h"
 #import "GrowlNotifications.h"
+#import "GUINotifications.h"
 
 @implementation AppsManager
 
@@ -45,9 +46,10 @@
       [_guiElementTable insertGUIElementsFromAppModule:app];
       
       [_userNotifications displayAppInstalledNotification:[[app moduleMetaData] valueForKey:kAppNameKey] :[[app moduleMetaData] valueForKey:kUserNameKey]];
+      [self postTableRefreshNotification];
     }
     @catch (NSException *exception) {
-      DDLogError(@"AppsManager -> addAppWithModuleID :: exception occured => %@",[exception reason]);
+      DDLogError(@"AppsManager -> addAppWithModuleID :: exception occured => %@", [exception reason]);
     }
   }
 }
@@ -66,6 +68,7 @@
         [_guiElementTable removeGUIElementsWithID:theID];
         [_appModuleTable  removeAppModuleWithID:theID];
         [_userNotifications displayAppRemovedNotification:[theModuleRow valueForKey:kAppNameKey] :[theModuleRow valueForKey:kUserNameKey]];
+        [self postTableRefreshNotification];
       } else {
           DDLogError(@"AppsManager -> removeAppWithModuleID :: app with module id %@ not installed",aModuleID);
       }
@@ -73,7 +76,12 @@
 }
 
 - (id) loadTableSourceData {
+ [NSException raise:@"Invoked abstract method" format:@"Invoked abstract method"];
   return nil;
+}
+
+- (void) postTableRefreshNotification {
+  [[NSNotificationCenter defaultCenter] postNotificationName:kEVENotificationsReloadAppsTable object:nil];
 }
 
 @end

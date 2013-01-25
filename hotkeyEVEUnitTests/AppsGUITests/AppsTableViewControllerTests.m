@@ -11,6 +11,7 @@
 #import <OCMock/OCMock.h>
 #import "IAppsManager.h"
 #import "AppsManagerMock.h"
+#import "GUINotifications.h"
 
 @implementation AppsTableViewControllerTests
 
@@ -39,6 +40,9 @@
   [_appsNotInstalledController setCredatTableColumn:_credatTableColumn];
   
   [_appsNotInstalledController setAppsManager:[[AppsManagerMock alloc] init]];
+  
+  id controllerMock = [OCMockObject partialMockForObject:_appsNotInstalledController];
+  [[controllerMock stub] registerObserver];
 }
 
 - (void)tearDown
@@ -151,6 +155,14 @@
   [tableViewMock verify];
 }
 
+- (void) test_awakeFromNib_allScenarios_addReloadObserver {
+  id controllerMock = [OCMockObject partialMockForObject:_appsNotInstalledController];
+  [[controllerMock expect] registerObserver];
+  
+  [_appsNotInstalledController awakeFromNib];
+  
+  [controllerMock verify];
+}
 
 //************************* objectValueForTableColumn *************************//
 - (void) test_objectValueForTableColumn_rowSelected_returnNavigationColumnValue {
@@ -169,6 +181,7 @@
 - (void) test_loadView_viewWillBeDisplayed_startBackgroundJobWithLoadingTableData {
   id controllerMock = [OCMockObject partialMockForObject:_appsNotInstalledController];
   [[controllerMock expect] performSelectorInBackground:@selector(loadTableData) withObject:nil];
+  [[controllerMock stub] registerObserver];
   
   [_appsNotInstalledController loadView];
   
@@ -325,6 +338,7 @@
   STAssertFalse(result, @"");
 }
 
+
 - (NSMutableArray<NSTableViewDataSource>*) createDataSource :(NSInteger) items{
   NSMutableArray<NSTableViewDataSource> *rows = [NSMutableArray array];
   for (int i = 1; i <= items; i++) {
@@ -335,5 +349,4 @@
   
   return rows;
 }
-
 @end

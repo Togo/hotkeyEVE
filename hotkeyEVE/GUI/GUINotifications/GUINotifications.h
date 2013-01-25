@@ -18,3 +18,4 @@ extern NSString * const ApplicationIndexingFinished;
 extern NSString * const ShortcutTableSearchUpdate;
 extern NSString * const SelectActiveApplication;
 extern NSString * const SelectNotificationDisabledShortcutRow;
+extern NSString * const kEVENotificationsReloadAppsTable;

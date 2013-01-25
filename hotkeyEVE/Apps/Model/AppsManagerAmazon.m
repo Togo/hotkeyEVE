@@ -7,13 +7,19 @@
 //
 
 #import "AppsManagerAmazon.h"
+#import "AppModuleTableModel.h"
 
 @implementation AppsManagerAmazon
 
-
 - (id) loadTableSourceData {
-  [super loadTableSourceData];
-  return [[super receiveAppModule] getNotInstalledAppList];
+  AppModuleTableModel *appModuleTable = [[AppModuleTableModel alloc] init];
+  NSArray *allRows = [appModuleTable selectAllInstalledAppModules];
+  NSMutableArray *installedModulesIDs = [NSMutableArray array];
+  for (id aRow in allRows) {
+    [installedModulesIDs addObject:[aRow valueForKey:kModuleID]];
+  }
+  
+  return [[super receiveAppModule] getNotInstalledAppList :installedModulesIDs];
 }
 
 @end

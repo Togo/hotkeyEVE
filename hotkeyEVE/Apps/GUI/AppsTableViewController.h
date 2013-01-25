@@ -32,5 +32,5 @@ extern NSString * const kAppsTableViewControllerNibName;
 
 - (void) startProgressAnimationinSuperview :(NSView*) superview;
 - (void) stopProgressAnimation;
-
+- (void) registerObserver;
 @end
