@@ -7044,6 +7044,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -7067,6 +7068,7 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -7081,7 +7083,7 @@
 				GCC_PREFIX_HEADER = "AppsLibrary/AppsLibrary-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "include/$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = $TARGET_NAME;
 				TEST_AFTER_BUILD = NO;
 			};
 			name = Debug;
@@ -7097,7 +7099,7 @@
 				GCC_PREFIX_HEADER = "AppsLibrary/AppsLibrary-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "include/$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = $TARGET_NAME;
 				TEST_AFTER_BUILD = NO;
 			};
 			name = Release;
@@ -7114,6 +7116,7 @@
 				GCC_PREFIX_HEADER = "AppsLibrary/AppsLibrary-Prefix.pch";
 				INFOPLIST_FILE = "AppsLibraryTests/AppsLibraryTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -7130,6 +7133,7 @@
 				GCC_PREFIX_HEADER = "AppsLibrary/AppsLibrary-Prefix.pch";
 				INFOPLIST_FILE = "AppsLibraryTests/AppsLibraryTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;

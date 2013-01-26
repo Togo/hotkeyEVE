@@ -30,7 +30,7 @@
 -(id)initWithCredentials:(AmazonCredentials *)theCredentials
 {
     if (self = [super initWithCredentials:theCredentials]) {
-        self.endpoint = @"https://sdb.amazonaws.com";
+        self.endpoint = @"    ";
     }
     return self;
 }

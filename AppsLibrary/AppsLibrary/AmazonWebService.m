@@ -16,8 +16,7 @@
 @synthesize s3Client = _s3Client;
 @synthesize sdbClient = _sdbClient;
 
-- (id)init
-{
+- (id)init {
   self = [super init];
   if (self) {
     self.s3Client = [[AmazonS3Client alloc] initWithAccessKey:kAmazonAccesKey
@@ -77,7 +76,7 @@
   }
   
   // Set Module Enabled standard to false
-  SimpleDBReplaceableAttribute *replacableAttribute = [[SimpleDBReplaceableAttribute alloc] initWithName:@"Enabled" andValue:@"NO"andReplace:YES];
+  SimpleDBReplaceableAttribute *replacableAttribute = [[SimpleDBReplaceableAttribute alloc] initWithName:@"Enabled" andValue:@"NO" andReplace:YES];
   [attributes addObject:replacableAttribute];
   
   return attributes;
