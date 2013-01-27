@@ -38,7 +38,7 @@
 			<object class="NSWindowTemplate" id="1005">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{196, 240}, {779, 491}}</string>
+				<string key="NSWindowRect">{{196, 240}, {789, 492}}</string>
 				<int key="NSWTFlags">544735232</int>
 				<string key="NSWindowTitle">Window</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -56,7 +56,7 @@
 									<reference key="NSNextResponder" ref="991037623"/>
 									<int key="NSvFlags">256</int>
 									<array class="NSMutableArray" key="NSSubviews"/>
-									<string key="NSFrameSize">{179, 491}</string>
+									<string key="NSFrameSize">{179, 492}</string>
 									<reference key="NSSuperview" ref="991037623"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="863956542"/>
@@ -67,15 +67,14 @@
 									<reference key="NSNextResponder" ref="991037623"/>
 									<int key="NSvFlags">256</int>
 									<array class="NSMutableArray" key="NSSubviews"/>
-									<string key="NSFrame">{{189, 0}, {590, 491}}</string>
+									<string key="NSFrame">{{189, 0}, {600, 492}}</string>
 									<reference key="NSSuperview" ref="991037623"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:13</string>
 									<string key="NSClassName">NSView</string>
 								</object>
 							</array>
-							<string key="NSFrameSize">{779, 491}</string>
+							<string key="NSFrameSize">{789, 492}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="652930339"/>
@@ -84,7 +83,7 @@
 							<int key="NSDividerStyle">3</int>
 						</object>
 					</array>
-					<string key="NSFrameSize">{779, 491}</string>
+					<string key="NSFrameSize">{789, 492}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="991037623"/>

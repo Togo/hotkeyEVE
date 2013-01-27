@@ -34,4 +34,8 @@ NSString const * kAppsWindowNibName = @"AppsWindowController";
   [[self window] setTitle:@"Apps"];
 }
 
+- (void) windowDidBecomeKey:(NSNotification *)notification {
+   [[NSNotificationCenter defaultCenter] postNotificationName:kEVENotificationsReloadAppsTable object:nil];
+}
+
 @end

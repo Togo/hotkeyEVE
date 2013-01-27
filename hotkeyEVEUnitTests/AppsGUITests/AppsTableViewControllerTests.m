@@ -165,17 +165,27 @@
 }
 
 //************************* objectValueForTableColumn *************************//
-- (void) test_objectValueForTableColumn_rowSelected_returnNavigationColumnValue {
-  
+- (void) test_objectValueForTableColumn_tablePrintsModuleIDColumn_returnModuleIDCellValue {
   [_appsNotInstalledController setDataSource:[self createDataSource :1]];
   NSString *returnValue = [_appsNotInstalledController tableView:_tableView objectValueForTableColumn:_moduleIDTableColumn row:0];
   STAssertTrue([returnValue isEqualToString:@"value1"], @"");
 }
 
+- (void) test_objectValueForTableColumn_rowSelected_returnNavigationColumnValue {
+  [_appsNotInstalledController setDataSource:[self createDataSource :1]];
+  [[[_appsNotInstalledController  dataSource] objectAtIndex:0] setValue:@"2013-01-26 20:34:52 +0000" forKey:kModuleCredatKey];
+  NSString *returnValue = [_appsNotInstalledController tableView:_tableView objectValueForTableColumn:_credatTableColumn row:0];
+  STAssertTrue([returnValue isEqualToString:@"2013-01-26 at 21:34"], @"");
+}
+
+
+
+//************************* numberOfRowsInTableView *************************//
 - (void) test_numberOfRowsInTableView_dataSourceWithOnItem_return1 {
   [_appsNotInstalledController setDataSource:[self createDataSource :1]];
   STAssertTrue([_appsNotInstalledController numberOfRowsInTableView:_tableView] == 1, @"");
 }
+
 
 //************************* loadView *************************//
 - (void) test_loadView_viewWillBeDisplayed_startBackgroundJobWithLoadingTableData {
@@ -252,6 +262,7 @@
   [progressIndicatorMock verify];
 }
 
+
 - (void) test_startProgressAnimationinSuperview_viewNotNil_setTheFrameFromTheSuperview {
   [_tableView setFrame:NSMakeRect(0, 0, 10, 10)];
   [_appsNotInstalledController startProgressAnimationinSuperview:_tableView];
@@ -283,15 +294,6 @@
   [progressIndicatorMock verify];
 }
 
-//************************* reloadTableData *************************//
-- (void) test_reloadTableData_menuItemClicked_callLoadTableTableData {
-  id controllerMock = [OCMockObject partialMockForObject:_appsNotInstalledController];
-  [[controllerMock expect] loadTableData];
-  
-  [_appsNotInstalledController reloadTableData:nil];
-  
-  [controllerMock verify];
-}
 
 - (void) test_writeRowsWithIndexes_oneRowSelected_pasteModuleIDStringToClipboard {
   NSIndexSet *selectedRows = [NSIndexSet indexSetWithIndex:0];
@@ -338,12 +340,11 @@
   STAssertFalse(result, @"");
 }
 
-
 - (NSMutableArray<NSTableViewDataSource>*) createDataSource :(NSInteger) items{
   NSMutableArray<NSTableViewDataSource> *rows = [NSMutableArray array];
   for (int i = 1; i <= items; i++) {
     NSString *value = [NSString stringWithFormat:@"value%i", i];
-    NSDictionary *aRow = [NSDictionary dictionaryWithObjectsAndKeys:value, kModuleID, nil];
+    NSMutableDictionary *aRow = [NSMutableDictionary dictionaryWithObjectsAndKeys:value, kModuleID, @"2013-01-26 20:34:52 +000", kModuleCredatKey, nil];
     [rows addObject:aRow];
   }
   

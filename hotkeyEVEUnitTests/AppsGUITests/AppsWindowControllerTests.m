@@ -8,6 +8,7 @@
 
 #import "AppsWindowControllerTests.h"
 #import <OCMock/OCMock.h>
+#import "GUINotifications.h"
 
 @implementation AppsWindowControllerTests
 
@@ -35,6 +36,22 @@
   [_appsWindowController windowDidLoad];
   
   STAssertTrue([[_appsWindow title] isEqualToString:@"Apps"], @"");
+}
+
+//********************** windowDidBecomeKey *********************//
+- (void) test_windowDidBecomeKey_windowComeFromBackgroundToFront_sendReloadTableNotification {
+    id mock = [OCMockObject observerMock];
+    
+    [[NSNotificationCenter defaultCenter] addMockObserver:mock
+                                                     name:kEVENotificationsReloadAppsTable
+                                                   object:nil];
+    
+    [[mock expect] notificationWithName:kEVENotificationsReloadAppsTable object:[OCMArg any]];
+    
+    [_appsWindowController windowDidBecomeKey:nil];
+    
+    [mock verify];
+    [[NSNotificationCenter defaultCenter] removeObserver:mock];
 }
 
 @end

@@ -14,8 +14,6 @@
 			<string>IBNSLayoutConstraint</string>
 			<string>NSCustomObject</string>
 			<string>NSCustomView</string>
-			<string>NSMenu</string>
-			<string>NSMenuItem</string>
 			<string>NSScrollView</string>
 			<string>NSScroller</string>
 			<string>NSTableColumn</string>
@@ -59,7 +57,7 @@
 										<string key="NSFrameSize">{715, 478}</string>
 										<reference key="NSSuperview" ref="515573313"/>
 										<reference key="NSWindow"/>
-										<reference key="NSNextKeyView" ref="900455938"/>
+										<reference key="NSNextKeyView" ref="895436055"/>
 										<string key="NSReuseIdentifierKey">_NS:13</string>
 										<bool key="NSEnabled">YES</bool>
 										<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -209,7 +207,7 @@
 												<object class="NSTableHeaderCell" key="NSHeaderCell">
 													<int key="NSCellFlags">75497536</int>
 													<int key="NSCellFlags2">2048</int>
-													<string key="NSContents">From User</string>
+													<string key="NSContents">Uploaded by</string>
 													<reference key="NSSupport" ref="26"/>
 													<reference key="NSBackgroundColor" ref="484254183"/>
 													<reference key="NSTextColor" ref="766571725"/>
@@ -235,7 +233,7 @@
 												<object class="NSTableHeaderCell" key="NSHeaderCell">
 													<int key="NSCellFlags">75497536</int>
 													<int key="NSCellFlags2">2048</int>
-													<string key="NSContents">Credat</string>
+													<string key="NSContents">Uploaded at</string>
 													<reference key="NSSupport" ref="26"/>
 													<reference key="NSBackgroundColor" ref="484254183"/>
 													<reference key="NSTextColor" ref="766571725"/>
@@ -335,7 +333,7 @@
 						<string key="NSFrame">{{0, -1}, {717, 496}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="515573313"/>
+						<reference key="NSNextKeyView" ref="900455938"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<int key="NSsFlags">133682</int>
 						<reference key="NSVScroller" ref="895436055"/>
@@ -354,37 +352,6 @@
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="4650624"/>
 				<string key="NSClassName">NSView</string>
-			</object>
-			<object class="NSMenu" id="796252378">
-				<string key="NSTitle"/>
-				<array class="NSMutableArray" key="NSMenuItems">
-					<object class="NSMenuItem" id="344493734">
-						<reference key="NSMenu" ref="796252378"/>
-						<string key="NSTitle">Add App</string>
-						<string key="NSKeyEquiv">a</string>
-						<int key="NSKeyEquivModMask">1048576</int>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<object class="NSCustomResource" key="NSOnImage" id="822024064">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">NSMenuCheckmark</string>
-						</object>
-						<object class="NSCustomResource" key="NSMixedImage" id="431730383">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">NSMenuMixedState</string>
-						</object>
-					</object>
-					<object class="NSMenuItem" id="891261656">
-						<reference key="NSMenu" ref="796252378"/>
-						<string key="NSTitle">Reload</string>
-						<string key="NSKeyEquiv">r</string>
-						<int key="NSKeyEquivModMask">1048576</int>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="822024064"/>
-						<reference key="NSMixedImage" ref="431730383"/>
-					</object>
-				</array>
-				<bool key="NSNoAutoenable">YES</bool>
-				<bool key="NSMenuExcludeMarkColumn">YES</bool>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -446,14 +413,6 @@
 					<int key="connectionID">44</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">reloadTableData:</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="891261656"/>
-					</object>
-					<int key="connectionID">173</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="463298479"/>
@@ -468,14 +427,6 @@
 						<reference key="destination" ref="1001"/>
 					</object>
 					<int key="connectionID">30</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">menu</string>
-						<reference key="source" ref="463298479"/>
-						<reference key="destination" ref="796252378"/>
-					</object>
-					<int key="connectionID">136</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -575,25 +526,6 @@
 							<reference ref="4650624"/>
 						</array>
 						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">132</int>
-						<reference key="object" ref="796252378"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="344493734"/>
-							<reference ref="891261656"/>
-						</array>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">172</int>
-						<reference key="object" ref="891261656"/>
-						<reference key="parent" ref="796252378"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">133</int>
-						<reference key="object" ref="344493734"/>
-						<reference key="parent" ref="796252378"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">7</int>
@@ -734,10 +666,7 @@
 				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="11.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="12.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="132.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="133.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="15.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="172.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="23.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="235.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="236.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -766,17 +695,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">AppsTableViewController</string>
 					<string key="superclassName">NSViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">reloadTableData:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">reloadTableData:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">reloadTableData:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="appNameTableColumn">NSTableColumn</string>
 						<string key="credatTableColumn">NSTableColumn</string>
@@ -834,10 +752,6 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NSMenuCheckmark">{11, 11}</string>
-			<string key="NSMenuMixedState">{10, 3}</string>
-		</dictionary>
 		<bool key="IBDocument.UseAutolayout">YES</bool>
 	</data>
 </archive>

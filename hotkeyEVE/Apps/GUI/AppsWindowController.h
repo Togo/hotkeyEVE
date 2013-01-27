@@ -10,6 +10,6 @@
 
 extern  NSString const * kAppsWindowNibName;
 
-@interface AppsWindowController : NSWindowController
+@interface AppsWindowController : NSWindowController <NSWindowDelegate>
 
 @end

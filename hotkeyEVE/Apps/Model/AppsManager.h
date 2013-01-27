@@ -11,4 +11,6 @@
 
 @interface AppsManager : NSObject <IAppsManager>
 
+- (BOOL) grantInstall;
+
 @end

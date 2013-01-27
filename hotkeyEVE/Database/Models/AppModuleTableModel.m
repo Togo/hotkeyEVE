@@ -28,7 +28,8 @@ NSString * const kEVEApplicationIDColumn = @"application_id";
   NSInteger applicationID = [ApplicationsTableModel getApplicationID:appName :bundleIdentifier];
   
   if (applicationID == 0) {
-    @throw [NSException exceptionWithName:@"NoAppFoundException" reason:@"I need at least one start for this Application before you can install the EVEApps module" userInfo:nil];
+    NSString *exceptionReason =  [NSString stringWithFormat:@"Can't find a Application.\nI need at least one Start of \"%@\" to install a HotkeyEVE-App!", appName];
+    @throw [NSException exceptionWithName:@"NoAppFoundException" reason:exceptionReason userInfo:nil];
   }
 
   NSMutableString *query = [NSMutableString string];
@@ -86,4 +87,16 @@ NSString * const kEVEApplicationIDColumn = @"application_id";
   return result;
 }
 
+- (BOOL) installedAppsMaximumReached {
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSMutableString *query = [NSMutableString string];
+  [query appendFormat:@" SELECT count(*) as count FROM %@", kEVEModuleTableName];
+  NSArray *result =  [db executeQuery:query];
+  if ([[[result objectAtIndex:0] valueForKey:@"count"] integerValue]  >= 3) {
+    return YES;
+  } else {
+    return NO;
+  }
+}
 @end

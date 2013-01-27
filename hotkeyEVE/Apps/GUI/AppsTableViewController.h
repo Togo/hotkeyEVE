@@ -26,8 +26,6 @@ extern NSString * const kAppsTableViewControllerNibName;
 @property (weak) IBOutlet  NSTableColumn *userNameTableColumn;
 @property (weak) IBOutlet  NSTableColumn *credatTableColumn;
 
-- (IBAction)reloadTableData :(id)sender;
-
 - (void) loadTableData;
 
 - (void) startProgressAnimationinSuperview :(NSView*) superview;

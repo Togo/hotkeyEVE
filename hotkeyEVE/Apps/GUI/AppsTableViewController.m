@@ -91,7 +91,20 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 }
 
 -(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-  return [[_dataSource objectAtIndex:row] valueForKey:[tableColumn identifier]];
+  id returnParameter;
+  if ([tableColumn identifier] == kModuleCredatKey) {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
+    
+    NSString *unformattedString =  [[_dataSource objectAtIndex:row] valueForKey:[tableColumn identifier]];
+    NSDate *date = [NSDate dateWithNaturalLanguageString:unformattedString];
+    
+    returnParameter = [dateFormatter stringFromDate:date];
+  } else
+    returnParameter = [[_dataSource objectAtIndex:row] valueForKey:[tableColumn identifier]];
+  
+  
+  return returnParameter;
 }
 
 -(void)tableView:(NSTableView *)tableView sortDescriptorsDidChange: (NSArray *)oldDescriptors
@@ -102,9 +115,10 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 }
 
 - (void) startProgressAnimationinSuperview :(NSView*) superview {
-  if ( !(superview == nil) ) {
+
+    if ( superview != nil ) {
     [superview addSubview:_progressIndicator];
-    
+
     [_progressIndicator setFrame:[superview frame]];
     [_progressIndicator startAnimation:nil];
   } else
@@ -115,10 +129,6 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 - (void) stopProgressAnimation {
     [_progressIndicator stopAnimation:nil];
     [_progressIndicator removeFromSuperview];
-}
-
-- (IBAction)reloadTableData :(id)sender {
-  [self loadTableData];
 }
 
 - (BOOL)tableView:(NSTableView *)tv writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard*)pboard {

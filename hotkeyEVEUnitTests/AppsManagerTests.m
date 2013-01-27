@@ -12,8 +12,8 @@
 #import "ReceiveAppModuleMock.h"
 #import "GUIElementsTableModel.h"
 #import "AppModuleTableModel.h"
-#import <Database/TableAndColumnNames.h>
 #import "GUINotifications.h"
+#import "EVEManager.h"
 
 @implementation AppsManagerTests
 
@@ -25,8 +25,8 @@
   [_appsManager setReceiveAppModule:[[ReceiveAppModuleMock alloc] init]];
   
   id notificationsMock = [OCMockObject partialMockForObject:[_appsManager userNotifications]];
-  [[notificationsMock stub] displayAppInstalledNotification:OCMOCK_ANY :OCMOCK_ANY];
-  [[notificationsMock stub] displayAppRemovedNotification:OCMOCK_ANY :OCMOCK_ANY];
+  [[notificationsMock stub] displayAppInstalledNotification:OCMOCK_ANY];
+  [[notificationsMock stub] displayAppRemovedNotification:OCMOCK_ANY];
 }
 
 - (void)tearDown
@@ -85,6 +85,10 @@
   id moduleTableMock = [OCMockObject partialMockForObject:[_appsManager appModuleTable]];
   [[moduleTableMock stub] addAppModule :OCMOCK_ANY];
   
+  id appsManagerMock = [OCMockObject partialMockForObject:_appsManager];
+  BOOL grantInstall = YES;
+  [[[appsManagerMock stub] andReturnValue:OCMOCK_VALUE(grantInstall)] grantInstall];
+  
   id receiveAppModuleMock = [OCMockObject partialMockForObject:[_appsManager receiveAppModule]];
   [[receiveAppModuleMock expect] getAppWithModuleID:@"1"];
   
@@ -100,6 +104,10 @@
   id moduleTableMock = [OCMockObject partialMockForObject:[_appsManager appModuleTable]];
   [[moduleTableMock expect] addAppModule :OCMOCK_ANY];
   
+  id appsManagerMock = [OCMockObject partialMockForObject:_appsManager];
+  BOOL grantInstall = YES;
+  [[[appsManagerMock stub] andReturnValue:OCMOCK_VALUE(grantInstall)] grantInstall];
+  
   
   [_appsManager addAppWithModuleID:@"1"];
   
@@ -113,6 +121,10 @@
   id guiElementTableMock = [OCMockObject partialMockForObject:[_appsManager guiElementTable]];
   [[guiElementTableMock expect] insertGUIElementsFromAppModule :OCMOCK_ANY];
   
+  id appsManagerMock = [OCMockObject partialMockForObject:_appsManager];
+  BOOL grantInstall = YES;
+  [[[appsManagerMock stub] andReturnValue:OCMOCK_VALUE(grantInstall)] grantInstall];
+  
   [_appsManager addAppWithModuleID:@"1"];
   
   [guiElementTableMock verify];
@@ -125,8 +137,13 @@
   id guiElementTableMock = [OCMockObject partialMockForObject:[_appsManager guiElementTable]];
   [[guiElementTableMock stub] insertGUIElementsFromAppModule :OCMOCK_ANY];
   
+  id appsManagerMock = [OCMockObject partialMockForObject:_appsManager];
+  BOOL grantInstall = YES;
+  [[[appsManagerMock stub] andReturnValue:OCMOCK_VALUE(grantInstall)] grantInstall];
+
+  
   id notificationsMock = [OCMockObject mockForProtocol:@protocol(IUserNotifications)];
-  [[notificationsMock expect] displayAppInstalledNotification:OCMOCK_ANY :OCMOCK_ANY];
+  [[notificationsMock expect] displayAppInstalledNotification:OCMOCK_ANY];
   
   [_appsManager setUserNotifications:notificationsMock];
   [_appsManager addAppWithModuleID:@"1"];
@@ -142,16 +159,31 @@
   [[guiElementTableMock stub] insertGUIElementsFromAppModule :OCMOCK_ANY];
   
   id notificationsMock = [OCMockObject mockForProtocol:@protocol(IUserNotifications)];
-  [[notificationsMock stub] displayAppInstalledNotification:OCMOCK_ANY :OCMOCK_ANY];
+  [[notificationsMock stub] displayAppInstalledNotification:OCMOCK_ANY];
   
   id appsManagerMock = [OCMockObject partialMockForObject:_appsManager];
   [[appsManagerMock expect] postTableRefreshNotification];
+  BOOL grantInstall = YES;
+  [[[appsManagerMock stub] andReturnValue:OCMOCK_VALUE(grantInstall)] grantInstall];
   
   [_appsManager setUserNotifications:notificationsMock];
   [_appsManager addAppWithModuleID:@"1"];
   
   [appsManagerMock verify];
+}
 
+- (void) test_addAppWithModuleID_noLicenceAndLimitInstalled_displayUserNotification {
+  id appsManagerMock = [OCMockObject partialMockForObject:_appsManager];
+  BOOL grantInstall = NO;
+  [[[appsManagerMock stub] andReturnValue:OCMOCK_VALUE(grantInstall)] grantInstall];
+  
+  id notificationsMock = [OCMockObject mockForProtocol:@protocol(IUserNotifications)];
+  [[notificationsMock expect] displayRegisterEVEWithCallbackNotification :@"Register now to install more Apps!" :@"You've reached the maximum number of intalled Apps"];
+  
+  [_appsManager setUserNotifications:notificationsMock];
+  [_appsManager addAppWithModuleID:@"1"];
+  
+  [notificationsMock verify];
 }
 
 //************************* removeAppsFromArray *************************//
@@ -212,7 +244,7 @@
   [[moduleTableMock stub] removeAppModuleWithID :1];
   
   id notificationsMock = [OCMockObject mockForProtocol:@protocol(IUserNotifications)];
-  [[notificationsMock expect] displayAppRemovedNotification:@"AppName" :@"UserName"];
+  [[notificationsMock expect] displayAppRemovedNotification:@"AppName"];
   
   [_appsManager setUserNotifications:notificationsMock];
   [_appsManager removeAppWithModuleID:@"5"];
@@ -229,7 +261,7 @@
   [[moduleTableMock stub] removeAppModuleWithID :1];
   
   id notificationsMock = [OCMockObject mockForProtocol:@protocol(IUserNotifications)];
-  [[notificationsMock stub] displayAppRemovedNotification:@"AppName" :@"UserName"];
+  [[notificationsMock stub] displayAppRemovedNotification:@"AppName"];
   
   id appsManagerMock = [OCMockObject partialMockForObject:_appsManager];
   [[appsManagerMock expect] postTableRefreshNotification];

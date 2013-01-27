@@ -40,16 +40,26 @@
 
 - (void) addAppWithModuleID :(NSString*) aModuleID {
   @synchronized(self) {
+    if ([self grantInstall]) {
     @try {
       AppModule *app = [_receiveAppModule getAppWithModuleID:aModuleID];
       [_appModuleTable addAppModule:app];
       [_guiElementTable insertGUIElementsFromAppModule:app];
       
-      [_userNotifications displayAppInstalledNotification:[[app moduleMetaData] valueForKey:kAppNameKey] :[[app moduleMetaData] valueForKey:kUserNameKey]];
+      [_userNotifications displayAppInstalledNotification:[[app moduleMetaData] valueForKey:kAppNameKey]];
       [self postTableRefreshNotification];
     }
     @catch (NSException *exception) {
       DDLogError(@"AppsManager -> addAppWithModuleID :: exception occured => %@", [exception reason]);
+      NSAlert *alert = [NSAlert alertWithMessageText:@"Error occured!"
+                                       defaultButton:@"OK"
+                                     alternateButton:nil
+                                         otherButton:nil
+                           informativeTextWithFormat:@"%@", [exception reason]];
+      [alert beginSheetModalForWindow:nil modalDelegate:self didEndSelector:nil contextInfo:NULL];
+    }
+    } else {
+      [_userNotifications displayRegisterEVEWithCallbackNotification:@"Register EVE, to install more Apps!" :@"You've reached the maximum number of intalled Apps"];
     }
   }
 }
@@ -67,7 +77,7 @@
         NSInteger theID = [[theModuleRow valueForKey:ID_COL] integerValue];
         [_guiElementTable removeGUIElementsWithID:theID];
         [_appModuleTable  removeAppModuleWithID:theID];
-        [_userNotifications displayAppRemovedNotification:[theModuleRow valueForKey:kAppNameKey] :[theModuleRow valueForKey:kUserNameKey]];
+        [_userNotifications displayAppRemovedNotification:[theModuleRow valueForKey:kAppNameKey]];
         [self postTableRefreshNotification];
       } else {
           DDLogError(@"AppsManager -> removeAppWithModuleID :: app with module id %@ not installed",aModuleID);
@@ -82,6 +92,15 @@
 
 - (void) postTableRefreshNotification {
   [[NSNotificationCenter defaultCenter] postNotificationName:kEVENotificationsReloadAppsTable object:nil];
+}
+
+- (BOOL) grantInstall {
+  if ([[[EVEManager sharedEVEManager] licence] isValid])
+    return YES;
+  else if (![_appModuleTable installedAppsMaximumReached])
+    return YES;
+  else
+    return NO;
 }
 
 @end

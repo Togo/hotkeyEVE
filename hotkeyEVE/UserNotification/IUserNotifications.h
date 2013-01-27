@@ -18,10 +18,10 @@
 
 + (void) displayShortcutDisabledNotification :(NSDictionary*) clickContext;
 
-+ (void) displayGrowRegistrationNotification;
+- (void) displayRegisterEVEWithCallbackNotification :(NSString*) title :(NSString*) informativeText;
 
-- (void) displayAppInstalledNotification :(NSString*) appName :(NSString*) user;
-- (void) displayAppRemovedNotification :(NSString*) appName :(NSString*) user;
+- (void) displayAppInstalledNotification :(NSString*) appName;
+- (void) displayAppRemovedNotification :(NSString*) appName;
 - (void) showTheNotification :(NSString*) title :(NSString*) description :(NSDictionary*) clickContext;
 
 @end

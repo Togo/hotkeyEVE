@@ -49,7 +49,7 @@
   [[eveAppManager eveObserver] subscribeAllNotifications];
   
   if (![[[EVEManager sharedEVEManager] licence] isValid]) {
-    [GrowlNotifications displayGrowRegistrationNotification];
+    [[GrowlNotifications growlNotifications] displayRegisterEVEWithCallbackNotification :@"Register EVE" :@"\nClick to get an Activation Key"];
   }
   
   [[eveAppManager globalHotkeyController] registerGlobalHotkeys];

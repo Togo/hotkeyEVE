@@ -60,12 +60,11 @@
   [GrowlApplicationBridge notifyWithTitle:[element shortcutString] description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:clickContextDic];
 }
 
-+ (void) displayGrowRegistrationNotification {
+- (void) displayRegisterEVEWithCallbackNotification :(NSString*) title :(NSString*) informativeText {
   NSMutableDictionary *clickContextDic = [[NSMutableDictionary alloc] init];
   [clickContextDic setValue:@"register_eve" forKey:@"mesage_type"];
 
-  [GrowlApplicationBridge notifyWithTitle:@"Register EVE" description:@"to disable this message!" notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:clickContextDic];
-
+  [GrowlApplicationBridge notifyWithTitle:title description:informativeText notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:clickContextDic];
 }
 
 + (void) displayMultipleMatchesNotification :(NSString*) description {
@@ -86,15 +85,15 @@
   [GrowlApplicationBridge notifyWithTitle:@"Shortcut Disabled!" description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:nil];
 }
 
-- (void) displayAppInstalledNotification :(NSString*) appName :(NSString*) user {
-  NSString *title = [NSString stringWithFormat:@"%@ Install Succeeded", appName];
-  NSString *description = [NSString stringWithFormat:@"I added the GUIElements from \"%@\" to HotkeyEVE!", user];
+- (void) displayAppInstalledNotification :(NSString*) appName {
+  NSString *title = [NSString stringWithFormat:@"%@ installed", appName];
+  NSString *description = [NSString stringWithFormat:@"GUI support for %@ was sucessfully installed!", appName];
   [self showTheNotification:title :description :nil];
 }
 
-- (void) displayAppRemovedNotification :(NSString*) appName :(NSString*) user {
-  NSString *title = [NSString stringWithFormat:@"%@ Removed", appName];
-  NSString *description = [NSString stringWithFormat:@"The GUIElements from \"%@\" are not longer available!", user];
+- (void) displayAppRemovedNotification :(NSString*) appName {
+  NSString *title = [NSString stringWithFormat:@"%@ removed", appName];
+  NSString *description = [NSString stringWithFormat:@"GUI support for %@ was removed", appName];
   [self showTheNotification:title :description :nil];
 }
 

@@ -86,15 +86,11 @@
   NSArray *entries = nil;
   NSMutableString *select = [NSMutableString string];
   [select appendFormat:@" select * from %@ ", kAmazonAppsDBDomainName];
+    [select appendFormat:@" where Enabled = 'YES' "];
   
   NSInteger index = 0;
   for (NSString *aModuleID in installedModuleIDs) {
-    if (index == 0) {
-      [select appendFormat:@" where itemName() != '%@' ", aModuleID];
-    } else {
       [select appendFormat:@" and itemName() != '%@' ", aModuleID];
-    }
-    index++;
   }
 
   SimpleDBSelectRequest *selectRequest = [[SimpleDBSelectRequest alloc] initWithSelectExpression:select];
