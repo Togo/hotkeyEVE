@@ -60,19 +60,8 @@
   [appsViewControllerMock verify];
 }
 
-//************************* viewSelectionDidChanged *************************//
-- (void) test_viewSelectionDidChanged_allScenarios_removeCurrentMainViewFromSuperView {
-  NSViewController *activeViewController = [[NSViewController alloc] init];
-  [_appsViewController setMainContentViewController:activeViewController];
-  
-  id currentActiveViewMock = [OCMockObject partialMockForObject:[[_appsViewController mainContentViewController] view]];
-  [[currentActiveViewMock expect] removeFromSuperview];
-  
-  [_appsViewController viewSelectionDidChanged:[AppsTableViewController class] :kAppsTableViewControllerNibName :[AppsManagerMock class]];
-  
-  [currentActiveViewMock verify];
-}
 
+//************************* viewSelectionDidChanged *************************//
 - (void) test_viewSelectionDidChanged_allScenarios_setMainContentViewController {
   [_appsViewController setMainContentViewController:nil];
   

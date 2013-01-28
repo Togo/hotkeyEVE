@@ -31,4 +31,12 @@
   return nil;
 }
 
+- (void) removeAppWithModuleID:(NSString *)aModuleID {
+  
+}
+
+- (void) postTableRefreshNotification {
+  
+}
+
 @end

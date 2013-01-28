@@ -75,15 +75,18 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 
 - (void) loadView {
   [super loadView];
-  [self performSelectorInBackground:@selector(loadTableData) withObject:nil];
+
+  [self loadTableData];
 }
+
 
 - (void) loadTableData {
   [self startProgressAnimationinSuperview:_tableView];
-  _dataSource = [_appsManager loadTableSourceData];
-  [_tableView reloadData];
-  
-  [self stopProgressAnimation];
+  dispatch_async(dispatch_get_global_queue(0,0),^{
+    _dataSource = [_appsManager loadTableSourceData];
+    [_tableView reloadData];
+    [self stopProgressAnimation];
+  });
 }
 
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
@@ -115,12 +118,11 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 }
 
 - (void) startProgressAnimationinSuperview :(NSView*) superview {
-
     if ( superview != nil ) {
-    [superview addSubview:_progressIndicator];
-
-    [_progressIndicator setFrame:[superview frame]];
+    [_progressIndicator setFrame:[superview bounds]];
+ 
     [_progressIndicator startAnimation:nil];
+    [superview addSubview:_progressIndicator];
   } else
       @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                             reason:@"Can't start a Animation in a nil Superview" userInfo:nil];

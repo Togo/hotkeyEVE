@@ -13,11 +13,13 @@
 
 @synthesize webService = _webService;
 
-- (NSArray*) getNotInstalledAppList {
+- (NSArray*) getNotInstalledAppList:(NSArray *)installedModuleIDs {
   return [NSArray array];
 }
 
 - (AppModule*) getAppWithModuleID :(NSString*) moduleID {
   return [[AppModule alloc] init];
 }
+
+
 @end

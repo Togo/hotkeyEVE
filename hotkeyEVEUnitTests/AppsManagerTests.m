@@ -178,7 +178,7 @@
   [[[appsManagerMock stub] andReturnValue:OCMOCK_VALUE(grantInstall)] grantInstall];
   
   id notificationsMock = [OCMockObject mockForProtocol:@protocol(IUserNotifications)];
-  [[notificationsMock expect] displayRegisterEVEWithCallbackNotification :@"Register now to install more Apps!" :@"You've reached the maximum number of intalled Apps"];
+  [[notificationsMock expect] displayRegisterEVEWithCallbackNotification :@"Register EVE, to install more Apps!" :@"You've reached the maximum number of installed Apps"];
   
   [_appsManager setUserNotifications:notificationsMock];
   [_appsManager addAppWithModuleID:@"1"];
@@ -287,4 +287,6 @@
   [mock verify];
   [[NSNotificationCenter defaultCenter] removeObserver:mock];
 }
+
+
 @end

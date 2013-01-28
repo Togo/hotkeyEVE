@@ -59,7 +59,7 @@
       [alert beginSheetModalForWindow:nil modalDelegate:self didEndSelector:nil contextInfo:NULL];
     }
     } else {
-      [_userNotifications displayRegisterEVEWithCallbackNotification:@"Register EVE, to install more Apps!" :@"You've reached the maximum number of intalled Apps"];
+      [_userNotifications displayRegisterEVEWithCallbackNotification:@"Register EVE, to install more Apps!" :@"You've reached the maximum number of installed Apps"];
     }
   }
 }
