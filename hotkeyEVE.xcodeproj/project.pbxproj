@@ -120,9 +120,9 @@
 		CDF656EA16B0493200A0FEC4 /* AppsManagerMock.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF656E916B0493200A0FEC4 /* AppsManagerMock.m */; };
 		CDF656ED16B04B3C00A0FEC4 /* AppsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF656EC16B04B3C00A0FEC4 /* AppsManager.m */; };
 		CDFF8CDB164B72EF00A5EA5A /* Database.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5A463816455119007B57A5 /* Database.dylib */; };
-		CDFF8CDC164B72EF00A5EA5A /* include/UIElements.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5A462C1645510F007B57A5 /* include/UIElements.dylib */; };
+		CDFF8CDC164B72EF00A5EA5A /* UIElements.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5A462C1645510F007B57A5 /* UIElements.dylib */; };
 		CDFF8CEA164B7CEF00A5EA5A /* Database.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD5A463816455119007B57A5 /* Database.dylib */; };
-		CDFF8CEB164B7CEF00A5EA5A /* include/UIElements.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD5A462C1645510F007B57A5 /* include/UIElements.dylib */; };
+		CDFF8CEB164B7CEF00A5EA5A /* UIElements.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD5A462C1645510F007B57A5 /* UIElements.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,7 +227,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CDFF8CEA164B7CEF00A5EA5A /* Database.dylib in CopyFiles */,
-				CDFF8CEB164B7CEF00A5EA5A /* include/UIElements.dylib in CopyFiles */,
+				CDFF8CEB164B7CEF00A5EA5A /* UIElements.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,7 +438,7 @@
 			files = (
 				CDE3018316A49D0300E8D489 /* libAppsLibrary.a in Frameworks */,
 				CDFF8CDB164B72EF00A5EA5A /* Database.dylib in Frameworks */,
-				CDFF8CDC164B72EF00A5EA5A /* include/UIElements.dylib in Frameworks */,
+				CDFF8CDC164B72EF00A5EA5A /* UIElements.dylib in Frameworks */,
 				CD57865316465EDE00CC508B /* Growl.framework in Frameworks */,
 				CD80E7531645393300A9C7D8 /* Cocoa.framework in Frameworks */,
 				CD6AD3E9164CC0F0009FF1B5 /* Sparkle.framework in Frameworks */,
@@ -484,7 +484,7 @@
 		CD5A46241645510F007B57A5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CD5A462C1645510F007B57A5 /* include/UIElements.dylib */,
+				CD5A462C1645510F007B57A5 /* UIElements.dylib */,
 				CD5A462E1645510F007B57A5 /* UIElementsTests.octest */,
 			);
 			name = Products;
@@ -1090,10 +1090,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		CD5A462C1645510F007B57A5 /* include/UIElements.dylib */ = {
+		CD5A462C1645510F007B57A5 /* UIElements.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
-			path = include/UIElements.dylib;
+			path = UIElements.dylib;
 			remoteRef = CD5A462B1645510F007B57A5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
