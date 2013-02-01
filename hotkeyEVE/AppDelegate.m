@@ -43,7 +43,7 @@
   
   [self initUserData];
   
-//  [self startIndexing];
+  [self startIndexing];
   
   [self registerListener];
   [[eveAppManager eveObserver] subscribeAllNotifications];
@@ -53,6 +53,8 @@
   }
   
   [[eveAppManager globalHotkeyController] registerGlobalHotkeys];
+  
+  [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES],@"1_3_5_firstLaunch",nil]];
 }
 
 - (void) applicationWillTerminate:(NSNotification *)notification {

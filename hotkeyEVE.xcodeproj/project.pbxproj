@@ -96,6 +96,7 @@
 		CDA558D216B02981008D236E /* GrowlNotificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558D116B02981008D236E /* GrowlNotificationTests.m */; };
 		CDA7AD77164D9F4D000907A5 /* ShortcutsTableViewConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA7AD76164D9F4D000907A5 /* ShortcutsTableViewConroller.m */; };
 		CDB3D6621646BAE000285306 /* AppLaunchedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3D6611646BAE000285306 /* AppLaunchedController.m */; };
+		CDC1767916BC2583006C1A74 /* apps_drag_and_drop_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC1767816BC2583006C1A74 /* apps_drag_and_drop_overlay.png */; };
 		CDC77C1F165C2DAF00939D99 /* MigrationsV1_3_2.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */; };
 		CDC77C22165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDC77C20165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql */; };
 		CDC77C23165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDC77C21165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql */; };
@@ -387,6 +388,7 @@
 		CDA7AD76164D9F4D000907A5 /* ShortcutsTableViewConroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShortcutsTableViewConroller.m; path = GUI/ShortcutWindow/ShortcutsTableViewConroller.m; sourceTree = "<group>"; };
 		CDB3D6601646BAE000285306 /* AppLaunchedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppLaunchedController.h; path = Conroller/AppLaunchedController.h; sourceTree = "<group>"; };
 		CDB3D6611646BAE000285306 /* AppLaunchedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppLaunchedController.m; path = Conroller/AppLaunchedController.m; sourceTree = "<group>"; };
+		CDC1767816BC2583006C1A74 /* apps_drag_and_drop_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apps_drag_and_drop_overlay.png; sourceTree = "<group>"; };
 		CDC77C1D165C2DAF00939D99 /* MigrationsV1_3_2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationsV1_3_2.h; path = Database/Migrations/MigrationsV1_3_2.h; sourceTree = "<group>"; };
 		CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationsV1_3_2.m; path = Database/Migrations/MigrationsV1_3_2.m; sourceTree = "<group>"; };
 		CDC77C20165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_GUI_ELEMENTS_V1_3_2.sql; path = "Database/SQL Scripte/V1.3.2/INSERT_GUI_ELEMENTS_V1_3_2.sql"; sourceTree = "<group>"; };
@@ -728,6 +730,7 @@
 		CD80E7591645393400A9C7D8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CDC1767816BC2583006C1A74 /* apps_drag_and_drop_overlay.png */,
 				CD836D581652C0A5008A7876 /* Credits.html */,
 				CD57864B16465D5800CC508B /* Growl Registration Ticket.growlRegDict */,
 				CD5786541646611200CC508B /* EVE_ICON.icns */,
@@ -1167,6 +1170,7 @@
 				CDA558C516AF35B6008D236E /* CREATE_TABLE_APP_MODULE_V1_3_5.sql in Resources */,
 				CDA558C716AF4086008D236E /* ALTER_TABLE_APPLICATIONS_V1_3_5.sql in Resources */,
 				CDA558C916AF46A2008D236E /* DROP_GUI_SUPPORTED_APPS_V1_3_5.sql in Resources */,
+				CDC1767916BC2583006C1A74 /* apps_drag_and_drop_overlay.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

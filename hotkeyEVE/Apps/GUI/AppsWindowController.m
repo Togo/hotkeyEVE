@@ -16,6 +16,8 @@ NSString const * kAppsWindowNibName = @"AppsWindowController";
 
 @implementation AppsWindowController
 
+@synthesize dragAndDropOverlay = _dragAndDropOverlay;
+
 - (id)initWithWindow:(NSWindow *)window
 {
     self = [super initWithWindow:window];
@@ -32,10 +34,30 @@ NSString const * kAppsWindowNibName = @"AppsWindowController";
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
   [[self window] setTitle:@"Apps"];
+  
+  if([[NSUserDefaults standardUserDefaults] boolForKey:@"1_3_5_firstLaunch"]) {
+    [self showDragAndDropOverlay];
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"1_3_5_firstLaunch"];
+    [NSTimer scheduledTimerWithTimeInterval:5.0
+                                     target:self
+                                   selector:@selector(removeDragAndDropOverlay)
+                                   userInfo:nil
+                                    repeats:NO];
+  }
+
 }
 
 - (void) windowDidBecomeKey:(NSNotification *)notification {
    [[NSNotificationCenter defaultCenter] postNotificationName:kEVENotificationsReloadAppsTable object:nil];
+}
+
+- (void) showDragAndDropOverlay {
+  [[[self window] contentView] addSubview:_dragAndDropOverlay];
+  
+}
+
+- (void) removeDragAndDropOverlay {
+  [_dragAndDropOverlay removeFromSuperview];
 }
 
 @end

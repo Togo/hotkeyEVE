@@ -44,6 +44,7 @@
   [_mainContentView addSubview:[_mainContentViewController view]];
   [[_mainContentViewController view] setFrame:[_mainContentView bounds]];
   [[_mainContentViewController view] setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
+  
   [_splitView adjustSubviews];
 }
 

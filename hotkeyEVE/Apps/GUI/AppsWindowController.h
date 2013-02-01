@@ -12,4 +12,7 @@ extern  NSString const * kAppsWindowNibName;
 
 @interface AppsWindowController : NSWindowController <NSWindowDelegate>
 
+@property IBOutlet NSImageView *dragAndDropOverlay;
+
+
 @end
