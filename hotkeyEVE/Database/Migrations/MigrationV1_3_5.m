@@ -7,6 +7,7 @@
 //
 
 #import "MigrationV1_3_5.h"
+#import "AppsManager.h"
 
 @implementation MigrationV1_3_5
 
@@ -27,9 +28,7 @@
   [db executeScript:@"ALTER_TABLE_APPLICATIONS_V1_3_5" :@"sql" :@""];
 
   DDLogInfo(@"MigrationsV1_3_5 -> up :: run script :%@:", @"  DROP_GUI_SUPPORTED_APPS_V1_3_5.sql");
-  [db executeScript:@"  DROP_GUI_SUPPORTED_APPS_V1_3_5" :@"sql" :@""];
-
-
+  [db executeScript:@"  DROP_GUI_SUPPORTED_APPS_V1_3_5" :@"sql" :@""];  
 }
 
 - (void)down {

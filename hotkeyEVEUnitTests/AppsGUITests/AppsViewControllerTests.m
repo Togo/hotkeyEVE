@@ -60,7 +60,6 @@
   [appsViewControllerMock verify];
 }
 
-
 //************************* viewSelectionDidChanged *************************//
 - (void) test_viewSelectionDidChanged_allScenarios_setMainContentViewController {
   [_appsViewController setMainContentViewController:nil];

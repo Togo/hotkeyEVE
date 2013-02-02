@@ -18,8 +18,8 @@
   
   DDLogInfo(@"Database Created? schema_info >>> %lu", [result count]);
   
-  [db executeScript:@"INSERT_GUI_SUPPORT_V1_0" :@"sql" :@""];
-  [db executeScript:@"INSERT_GUI_ELEMENTS_V1_0" :@"sql" :@""];
+//  [db executeScript:@"INSERT_GUI_SUPPORT_V1_0" :@"sql" :@""];
+//  [db executeScript:@"INSERT_GUI_ELEMENTS_V1_0" :@"sql" :@""];
 }
 
 - (void)down {

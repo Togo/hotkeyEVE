@@ -13,11 +13,11 @@
 - (void) up {
   CoreDatabase *db =  [[DatabaseManager sharedDatabaseManager] eveDatabase];
     
-  DDLogInfo(@"MigrationsV1_3_2 -> up :: run script :%@:", @"INSERT_GUI_ELEMENTS_V1_3_2.sql");
-  [db executeScript:@"INSERT_GUI_ELEMENTS_V1_3_2" :@"sql" :@""];
-  
-  DDLogInfo(@"MigrationsV1_3_2 -> up :: run script :%@:", @"INSERT_GUI_SUPPORT_V1_3_2.sql");
-  [db executeScript:@"INSERT_GUI_SUPPORT_V1_3_2" :@"sql" :@""];
+//  DDLogInfo(@"MigrationsV1_3_2 -> up :: run script :%@:", @"INSERT_GUI_ELEMENTS_V1_3_2.sql");
+//  [db executeScript:@"INSERT_GUI_ELEMENTS_V1_3_2" :@"sql" :@""];
+//  
+//  DDLogInfo(@"MigrationsV1_3_2 -> up :: run script :%@:", @"INSERT_GUI_SUPPORT_V1_3_2.sql");
+//  [db executeScript:@"INSERT_GUI_SUPPORT_V1_3_2" :@"sql" :@""];
   
   DDLogInfo(@"MigrationsV1_3_2 -> up :: run script :%@:", @"INSERT_APPLICATION_BLACKLISTV1_3_2.sql");
   [db executeScript:@"INSERT_APPLICATION_BLACKLISTV1_3_2" :@"sql" :@""];
