@@ -66,7 +66,7 @@
   AppModule *appModule = [[self alloc] init];
   [appModule setModuleBody:tableData];
   [appModule setModuleMetaData:[appModule createMetaDataDictionary :userName :eMail :appName :bundleIdentifier :appLanguage]];
-  
+
   return appModule;
 }
 
