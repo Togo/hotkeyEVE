@@ -34,7 +34,7 @@
       // Upload module data.  Remember to set the content type.
       S3PutObjectRequest *por = [[S3PutObjectRequest alloc] initWithKey:[[module moduleMetaData] valueForKey:kModuleID] inBucket:kAmazonBucketName];
       por.contentType = @"plain/text";
-      por.data        = [[module moduleToJSonString] dataUsingEncoding:NSUTF8StringEncoding];
+      por.data        = [[module moduleToJSonString] dataUsingEncoding :NSUTF8StringEncoding];
       
       // Put the image data into the specified s3 bucket and object.
       S3PutObjectResponse *putObjectResponse = [_s3Client putObject:por];
