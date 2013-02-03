@@ -34,54 +34,6 @@
     }
   }
 
-//// todo umbauen auf module ID
-//+ (void) updateGUIElementTable  {
-//  DDLogInfo(@"GUIElementsTable -> updateGUIElementTable:: get called");
-//  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
-//  
-//  NSMutableString *query = [NSMutableString string];
-//  [query appendFormat:@" SELECT * FROM %@ ", GUI_ELEMENTS_TABLE];
-//  [query appendFormat:@" WHERE EXISTS (SELECT rowid FROM %@ ", APPLICATIONS_TABLE];
-//  [query appendFormat:@" WHERE %@.%@ = %@.%@ ", APPLICATIONS_TABLE, BUNDLE_IDEN_COL, GUI_ELEMENTS_TABLE, BUNDLE_IDEN_COL];
-//  [query appendFormat:@" OR %@.%@ = %@.%@ )", APPLICATIONS_TABLE, APP_NAME_COL, GUI_ELEMENTS_TABLE, APP_NAME_COL];
-//  
-//  NSArray *results = [db executeQuery:query];
-//  
-//  for (id aRow in results) {
-//    NSInteger rowID = [[aRow valueForKey:ID_COL] intValue];
-//    NSString *shortcutString = [aRow valueForKey:SHORTCUT_STRING_COL];
-//    NSString *appName = [aRow valueForKey:APP_NAME_COL];
-//    NSString *bundeIdentifier = [aRow valueForKey:BUNDLE_IDEN_COL];
-//
-//    NSInteger shortcutID = [ShortcutTableModel getShortcutId:shortcutString];
-//    if (shortcutID != 0)
-//      [self setGUIElementShortcutID :shortcutID :rowID];
-//
-//  }
-//}
-//
-//+ (void) setGUIElementShortcutID :(NSInteger) shortcutID :(NSInteger) rowId {
-//  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
-//  
-//  NSMutableString *query = [NSMutableString string];
-//  [query appendFormat:@" UPDATE %@  ", GUI_ELEMENTS_TABLE];
-//  [query appendFormat:@" SET %@ = %li  ", SHORTCUT_ID_COL, shortcutID];
-//  [query appendFormat:@" WHERE %@ = %li  ", ID_COL, rowId];
-//  
-//  [db executeUpdate:query];
-//}
-//
-//+ (void) setGUIElementApplicationID :(NSInteger) applicationID :(NSInteger) rowId {
-//  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
-//  
-//  NSMutableString *query = [NSMutableString string];
-//  [query appendFormat:@" UPDATE %@  ", GUI_ELEMENTS_TABLE];
-//  [query appendFormat:@" SET %@ = %li  ", APPLICATION_ID_COL, applicationID];
-//  [query appendFormat:@" WHERE %@ = %li  ", ID_COL, rowId];
-//  
-//  [db executeUpdate:query];
-//}
-
 - (void) insertGUIElementsFromAppModule :(AppModule*) app {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   AppModuleTableModel *moduleTable = [[AppModuleTableModel alloc] init];

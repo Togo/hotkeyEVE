@@ -13,7 +13,6 @@
 @interface GUIElementsTableModel : NSObject
 
 + (void) editGUIElement :(UIElement*) element;
-//+ (void) updateGUIElementTable;
 
 - (void) insertGUIElementsFromAppModule :(AppModule*) app;
 - (void) removeGUIElementsWithID :(NSInteger) theID;
