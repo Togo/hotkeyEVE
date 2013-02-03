@@ -68,13 +68,4 @@
     [db executeQuery:query];
 }
  
-//ElementDescriptionColumn = Search;
-//ElementTitleColumn = "";
-//HelpColumn = "";
-//RoleColumn = AXTextField;
-//RoleDescription = "search text field";
-//ShortcutStringColumn = "Command F";
-//TextValueColumn = "";
-//TitleColumn = Find;
-//UIElementIdentifierColumn = axtextfieldsearchtextfieldfindersearchaxsearchfield;
 @end
