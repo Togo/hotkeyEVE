@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "IAppsManager.h"
 
-@interface AppsManager : NSObject <IAppsManager>
+@interface AppsManager : NSObject <IAppsManager> {
+  NSInteger _appCount;
+}
 
 - (BOOL) grantInstall;
 

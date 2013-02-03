@@ -36,6 +36,8 @@
   for (NSString *moduleID in moduleIDs) {
     [self performSelectorInBackground:@selector(addAppWithModuleID:) withObject:moduleID];
   }
+  
+  _appCount = [moduleIDs count];
 }
 
 - (void) addAppWithModuleID :(NSString*) aModuleID {
@@ -47,7 +49,6 @@
       [_guiElementTable insertGUIElementsFromAppModule:app];
       
       [_userNotifications displayAppInstalledNotification:[[app moduleMetaData] valueForKey:kAppNameKey]];
-      [self postTableRefreshNotification];
     }
     @catch (NSException *exception) {
       DDLogError(@"AppsManager -> addAppWithModuleID :: exception occured => %@", [exception reason]);
@@ -62,27 +63,32 @@
       [_userNotifications displayRegisterEVEWithCallbackNotification:@"Register EVE, to install more Apps!" :@"You've reached the maximum number of installed Apps"];
     }
   }
+  
+  [self postTableRefreshNotificationIfNoMoreApps];
 }
 
 - (void) removeAppsFromArray :(NSArray*) moduleIDs {
   for (NSString *moduleID in moduleIDs) {
     [self performSelectorInBackground:@selector(removeAppWithModuleID:) withObject:moduleID];
   }
+  
+    _appCount = [moduleIDs count];
 }
 
 - (void) removeAppWithModuleID :(NSString*) aModuleID {
-    @synchronized(self) {
-      NSDictionary *theModuleRow = [_appModuleTable getModuleEntityWithExternalID:aModuleID];
-      if ([theModuleRow count] > 0) {
-        NSInteger theID = [[theModuleRow valueForKey:ID_COL] integerValue];
-        [_guiElementTable removeGUIElementsWithID:theID];
-        [_appModuleTable  removeAppModuleWithID:theID];
-        [_userNotifications displayAppRemovedNotification:[theModuleRow valueForKey:kAppNameKey]];
-        [self postTableRefreshNotification];
-      } else {
-          DDLogError(@"AppsManager -> removeAppWithModuleID :: app with module id %@ not installed",aModuleID);
-      }
+  @synchronized(self) {
+    NSDictionary *theModuleRow = [_appModuleTable getModuleEntityWithExternalID:aModuleID];
+    if ([theModuleRow count] > 0) {
+      NSInteger theID = [[theModuleRow valueForKey:ID_COL] integerValue];
+      [_guiElementTable removeGUIElementsWithID:theID];
+      [_appModuleTable  removeAppModuleWithID:theID];
+      [_userNotifications displayAppRemovedNotification:[theModuleRow valueForKey:kAppNameKey]];
+    } else {
+        DDLogError(@"AppsManager -> removeAppWithModuleID :: app with module id %@ not installed",aModuleID);
     }
+  }
+  
+  [self postTableRefreshNotificationIfNoMoreApps];
 }
 
 - (id) loadTableSourceData {
@@ -90,8 +96,9 @@
   return nil;
 }
 
-- (void) postTableRefreshNotification {
-  [[NSNotificationCenter defaultCenter] postNotificationName:kEVENotificationsReloadAppsTable object:nil];
+- (void) postTableRefreshNotificationIfNoMoreApps {
+  if(--_appCount == 0) // no More Apps Refresh Table
+    [[NSNotificationCenter defaultCenter] postNotificationName:kEVENotificationsReloadAppsTable object:nil];
 }
 
 - (BOOL) grantInstall {

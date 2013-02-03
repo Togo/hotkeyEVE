@@ -63,6 +63,8 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 }
 
 - (void) registerObserver {
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(removeRowsFromTable) name:kEVENotificationsRemoveDropedLinesFromTable object:nil];
+  
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadTableData) name:kEVENotificationsReloadAppsTable object:nil];
 }
 
@@ -146,11 +148,17 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
     }
     
     [pboard setString:[pasteBoardStringArray componentsJoinedByString:@"\n"] forType:NSPasteboardTypeString];
-
+    
     return YES;
   } else {
      return NO;
   }
+}
+
+- (void) removeRowsFromTable {
+  [_tableView beginUpdates];
+  [_tableView removeRowsAtIndexes:[_tableView selectedRowIndexes] withAnimation:NSTableViewAnimationEffectFade];
+  [_tableView endUpdates];
 }
 
 @end

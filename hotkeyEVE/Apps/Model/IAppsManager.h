@@ -28,6 +28,5 @@
 - (void) removeAppWithModuleID :(NSString*) aModuleID;
 
 - (id) loadTableSourceData;
-- (void) postTableRefreshNotification;
 
 @end

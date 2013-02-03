@@ -18,4 +18,5 @@ NSString * const RefreshShortcutBrowserApplicationTable = @"RefreshShortcutBrows
 NSString * const ShortcutTableSearchUpdate = @"ShortcutTableSearchUpdate";
 NSString * const SelectActiveApplication = @"SelectCurrentRunningApplication";
 NSString * const SelectNotificationDisabledShortcutRow = @"SelectNotificationDisabledShortcutRow";
+NSString * const kEVENotificationsRemoveDropedLinesFromTable = @"RemoveDropedLinesFromTable";
 NSString * const kEVENotificationsReloadAppsTable = @"ReloadAppsTable";

@@ -88,14 +88,16 @@ NSString * const KNavigationColumn = @"NavigationColumn";
 - (BOOL)tableView:(NSTableView*)tv acceptDrop:(id <NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)op {
   
   NSPasteboard *pboard = [info draggingPasteboard];
-  NSString *moduleID = [pboard stringForType:NSPasteboardTypeString];
-  NSArray *moduleIDArray = [moduleID componentsSeparatedByString:@"\n"];
+  NSString *moduleIDsString = [pboard stringForType:NSPasteboardTypeString];
+  NSArray *moduleIDArray = [moduleIDsString componentsSeparatedByString:@"\n"];
   
   if ([[_dataSource objectAtIndex:row] valueForKey:KNavigationColumn] == kInstalledRowHeader) {
       [_appsManager addAppsFromArray:moduleIDArray];
   } else if ([[_dataSource objectAtIndex:row] valueForKey:KNavigationColumn] == kNotInstalledRowHeader) {
       [_appsManager removeAppsFromArray:moduleIDArray];
   }
+  
+  [[NSNotificationCenter defaultCenter] postNotificationName:kEVENotificationsRemoveDropedLinesFromTable object:nil];
   
 	return YES;
 }
