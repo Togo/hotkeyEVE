@@ -54,7 +54,7 @@
   
   [[eveAppManager globalHotkeyController] registerGlobalHotkeys];
   
-  [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES],@"1_3_5_firstLaunch",nil]];
+  [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES],@"apps_window_firstLaunch",nil]];
 }
 
 - (void) applicationWillTerminate:(NSNotification *)notification {
