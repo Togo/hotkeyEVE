@@ -45,6 +45,7 @@
 		CD6AD3F2164D6B9E009FF1B5 /* ShortcutsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AD3F0164D6B9D009FF1B5 /* ShortcutsWindow.xib */; };
 		CD6AD3FE164D7BA6009FF1B5 /* ApplicationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD3FD164D7BA6009FF1B5 /* ApplicationsTableViewController.m */; };
 		CD6AD401164D893B009FF1B5 /* GUINotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD400164D8939009FF1B5 /* GUINotifications.m */; };
+		CD6ECE2316C0200F00A47985 /* libAppsLibrary.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDE3016C16A4932600E8D489 /* libAppsLibrary.a */; };
 		CD71E48D165ED17F00987E09 /* INSERT_APPLICATION_BLACKLISTV1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD71E48C165ED17F00987E09 /* INSERT_APPLICATION_BLACKLISTV1_3_2.sql */; };
 		CD71E4A4165EE85A00987E09 /* DDHotKeyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD71E4A1165EE85A00987E09 /* DDHotKeyAppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CD71E4A5165EE85A00987E09 /* DDHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CD71E4A3165EE85A00987E09 /* DDHotKeyCenter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -226,6 +227,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CD6ECE2316C0200F00A47985 /* libAppsLibrary.a in CopyFiles */,
 				CDFF8CEA164B7CEF00A5EA5A /* Database.dylib in CopyFiles */,
 				CDFF8CEB164B7CEF00A5EA5A /* UIElements.dylib in CopyFiles */,
 			);
