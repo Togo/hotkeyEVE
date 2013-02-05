@@ -18,7 +18,6 @@
   if( ![bundleIdentifier isEqualToString:@"com.togo.hotkeyEVE"] ) {
     activeApplication = [[Application alloc] initWithBundleIdentifier:bundleIdentifier];
     activeApplication.appID = [ApplicationsTableModel getApplicationID:[activeApplication appName] :[activeApplication bundleIdentifier]];
-//    activeApplication.guiSupport = [ApplicationsTableModel hasGUISupport:[activeApplication appID]]; test to disable
     activeApplication.guiSupport =  YES;
     [[[EVEManager sharedEVEManager] mainMenuController] updateStatusIcon:[activeApplication guiSupport]];
   

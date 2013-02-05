@@ -129,24 +129,4 @@
   }
 }
 
-+ (BOOL) hasGUISupport :(NSInteger) applicationID {
-  DDLogInfo(@"ApplicationsTableModel -> hasGUISupport(id => :%li:) :: get called ", applicationID);
-  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
-  
-  NSMutableString *query = [NSMutableString string];
-  [query appendFormat:@" SELECT * FROM %@ a ", APPLICATIONS_TABLE];
-  [query appendFormat:@" WHERE EXISTS ( \n"];
-  [query appendFormat:@"  SELECT rowid FROM %@ m \n", kEVEModuleTableName];
-  [query appendFormat:@"        WHERE ( m.%@ = %li \n", kEVEApplicationIDColumn,  applicationID];
-  [query appendFormat:@"        AND  m.%@ LIKE '%% %@ %%' ) \n", kLanguageKey, [EVEUtilities currentLanguage]];
-  [query appendFormat:@"        LIMIT 1 ) \n"];
-
-  NSArray *result = [db executeQuery:query];
-  if ([result count] > 0) {
-    return YES;
-  } else {
-    return  NO;
-  }
-}
-
 @end
