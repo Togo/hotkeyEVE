@@ -92,7 +92,8 @@
   for (NSString *aModuleID in installedModuleIDs) {
       [select appendFormat:@" and itemName() != '%@' ", aModuleID];
   }
-
+  [select appendFormat:@" intersection ApplicationName is not null order by ApplicationName "];
+  
   SimpleDBSelectRequest *selectRequest = [[SimpleDBSelectRequest alloc] initWithSelectExpression:select];
   selectRequest.consistentRead = YES;
   

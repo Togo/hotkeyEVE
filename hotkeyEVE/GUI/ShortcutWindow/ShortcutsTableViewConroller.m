@@ -64,7 +64,6 @@ enum {
   }
 }
 
-
 -(void) menuWillOpen :(NSMenu*) menu {
   NSInteger selectedRow = [shortcutTable selectedRow];
   if ([shortcutTable selectedRow] != -1) {

@@ -68,7 +68,6 @@ NSString * const kEVEApplicationIDColumn = @"application_id";
   
   NSArray *result = [db executeQuery:query];
   if ([result count] > 0) {
-//    NSInteger appID = [[[result objectAtIndex:0] valueForKey:ID_COL] intValue];
     return [result objectAtIndex:0];
   } else {
     DDLogError(@"AppModuleTableModel -> getModuleIDWithExternalID:: multiple APPIDS that's not correct => :%@:", query);
@@ -82,6 +81,7 @@ NSString * const kEVEApplicationIDColumn = @"application_id";
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@" SELECT a.%@ AS ApplicationName, m.* FROM %@ m, %@ a", APP_NAME_COL, kEVEModuleTableName, APPLICATIONS_TABLE];
   [query appendFormat:@" WHERE a.%@ = m.%@ ", ID_COL, APPLICATION_ID_COL];
+  [query appendFormat:@" ORDER BY a.%@, m.%@ ",  APP_NAME_COL, kLanguageKey];
   NSArray *result =  [db executeQuery:query];
   
   return result;
