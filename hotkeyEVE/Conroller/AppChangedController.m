@@ -18,7 +18,7 @@
   if( ![bundleIdentifier isEqualToString:@"com.togo.hotkeyEVE"] ) {
     activeApplication = [[Application alloc] initWithBundleIdentifier:bundleIdentifier];
     activeApplication.appID = [ApplicationsTableModel getApplicationID:[activeApplication appName] :[activeApplication bundleIdentifier]];
-    activeApplication.guiSupport = [ApplicationsTableModel hasGUISupport:[activeApplication appID]]; 
+    activeApplication.guiSupport = YES; // delete this property
     [[[EVEManager sharedEVEManager] mainMenuController] updateStatusIcon:[activeApplication guiSupport]];
   
   DDLogInfo(@"AppChangedController -> appFrontChanged :: appName => :%@: appID :%li: guiSupport => :%i:",[activeApplication appName], [activeApplication appID], [activeApplication guiSupport]);

@@ -31,9 +31,9 @@
 //************************* displayAddApp *************************//
 - (void) test_displayAddApp_allScenarios_callMethodToDisplayMessageWithGrowl {
   id growlNotificationMock = [OCMockObject partialMockForObject:_growlNotifications];
-  [[growlNotificationMock expect] showTheNotification:@"App Name installed" :@"GUI support for App Name was sucessfully installed!" :nil];
+  [[growlNotificationMock expect] showTheNotification:@"App Name installed" :@"GUI support for App Name (en) was sucessfully installed!" :nil];
  
-  [_growlNotifications displayAppInstalledNotification:@"App Name"];
+  [_growlNotifications displayAppInstalledNotification:@"App Name" :@"en"];
   
   [growlNotificationMock verify];
 }
@@ -41,9 +41,9 @@
 //************************* displayAppRemoved *************************//
 - (void) test_displayAppRemoved_allScenarios_callMethodToDisplayMessageWithGrowl {
   id growlNotificationMock = [OCMockObject partialMockForObject:_growlNotifications];
-  [[growlNotificationMock expect] showTheNotification:@"App Name removed" :@"GUI support for App Name was removed" :nil];
+  [[growlNotificationMock expect] showTheNotification:@"App Name removed" :@"GUI support for App Name (en) was removed" :nil];
   
-  [_growlNotifications displayAppRemovedNotification:@"App Name"];
+  [_growlNotifications displayAppRemovedNotification:@"App Name" :@"en"];
   
   [growlNotificationMock verify];
 }

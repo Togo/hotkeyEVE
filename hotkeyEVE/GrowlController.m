@@ -25,7 +25,6 @@
       
       [DisabledShortcutsModel disableShortcutWithStrings :appName :bundleIdentifier :shortcutString :user :title];
       [GrowlNotifications displayShortcutDisabledNotification :clickedContext];
-//      [[[EVEManager sharedEVEManager] mainMenuController] showShortcutsWindow:nil];
       
       [[NSNotificationCenter defaultCenter] postNotificationName:SelectActiveApplication object:[EVEUtilities activeApplication]];
       [[NSNotificationCenter defaultCenter] postNotificationName:ShortcutsWindowApplicationDidChanged object:clickedContext];

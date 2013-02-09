@@ -85,15 +85,15 @@
   [GrowlApplicationBridge notifyWithTitle:@"Shortcut Disabled!" description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:nil];
 }
 
-- (void) displayAppInstalledNotification :(NSString*) appName {
+- (void) displayAppInstalledNotification :(NSString*) appName :(NSString*) lang {
   NSString *title = [NSString stringWithFormat:@"%@ installed", appName];
-  NSString *description = [NSString stringWithFormat:@"GUI support for %@ was sucessfully installed!", appName];
+  NSString *description = [NSString stringWithFormat:@"GUI support for %@ (%@) was sucessfully installed!", appName, lang];
   [self showTheNotification:title :description :nil];
 }
 
-- (void) displayAppRemovedNotification :(NSString*) appName {
+- (void) displayAppRemovedNotification :(NSString*) appName :(NSString*) lang {
   NSString *title = [NSString stringWithFormat:@"%@ removed", appName];
-  NSString *description = [NSString stringWithFormat:@"GUI support for %@ was removed", appName];
+  NSString *description = [NSString stringWithFormat:@"GUI support for %@ (%@) was removed", appName, lang];
   [self showTheNotification:title :description :nil];
 }
 

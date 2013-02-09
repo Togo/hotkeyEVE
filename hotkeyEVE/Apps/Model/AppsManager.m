@@ -48,7 +48,7 @@
       [_appModuleTable addAppModule:app];
       [_guiElementTable insertGUIElementsFromAppModule:app];
       
-      [_userNotifications displayAppInstalledNotification:[[app moduleMetaData] valueForKey:kAppNameKey]];
+      [_userNotifications displayAppInstalledNotification:[[app moduleMetaData] valueForKey:kAppNameKey] :[[app moduleMetaData] valueForKey:kLanguageKey]];
     }
     @catch (NSException *exception) {
       DDLogError(@"AppsManager -> addAppWithModuleID :: exception occured => %@", [exception reason]);
@@ -82,7 +82,7 @@
       NSInteger theID = [[theModuleRow valueForKey:ID_COL] integerValue];
       [_guiElementTable removeGUIElementsWithID:theID];
       [_appModuleTable  removeAppModuleWithID:theID];
-      [_userNotifications displayAppRemovedNotification:[theModuleRow valueForKey:kAppNameKey]];
+      [_userNotifications displayAppRemovedNotification:[theModuleRow valueForKey:kAppNameKey] :[theModuleRow valueForKey:kLanguageKey]];
     } else {
         DDLogError(@"AppsManager -> removeAppWithModuleID :: app with module id %@ not installed",aModuleID);
     }
@@ -104,7 +104,7 @@
 - (BOOL) grantInstall {
   if ([[[EVEManager sharedEVEManager] licence] isValid])
     return YES;
-  else if (![_appModuleTable installedAppsMaximumReached])
+  else if ( ![_appModuleTable installedAppsMaximumReached] )
     return YES;
   else
     return NO;

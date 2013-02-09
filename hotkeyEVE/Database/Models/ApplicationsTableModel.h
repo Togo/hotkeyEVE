@@ -13,8 +13,6 @@
 + (BOOL) isNewApp :(Application*) app;
 + (void) insertNewApplication :(Application*) app;
 
-+ (BOOL) hasGUISupport :(NSInteger) applicationID;
-
 + (NSInteger) getApplicationID :(NSString*) appName :(NSString*) bundleIdentifier;
 
 + (NSArray*) selectAllApplications;
