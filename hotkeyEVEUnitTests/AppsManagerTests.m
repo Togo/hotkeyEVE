@@ -25,8 +25,8 @@
   [_appsManager setReceiveAppModule:[[ReceiveAppModuleMock alloc] init]];
   
   id notificationsMock = [OCMockObject partialMockForObject:[_appsManager userNotifications]];
-  [[notificationsMock stub] displayAppInstalledNotification:OCMOCK_ANY];
-  [[notificationsMock stub] displayAppRemovedNotification:OCMOCK_ANY];
+  [[notificationsMock stub] displayAppInstalledNotification:OCMOCK_ANY :OCMOCK_ANY];
+  [[notificationsMock stub] displayAppRemovedNotification:OCMOCK_ANY :OCMOCK_ANY];
 }
 
 - (void)tearDown
@@ -143,33 +143,12 @@
 
   
   id notificationsMock = [OCMockObject mockForProtocol:@protocol(IUserNotifications)];
-  [[notificationsMock expect] displayAppInstalledNotification:OCMOCK_ANY];
+  [[notificationsMock expect] displayAppInstalledNotification:OCMOCK_ANY :OCMOCK_ANY];
   
   [_appsManager setUserNotifications:notificationsMock];
   [_appsManager addAppWithModuleID:@"1"];
   
   [notificationsMock verify];
-}
-
-- (void) test_addAppWithModuleID_installationProcessSuccesfull_sendNotificationToReloadTable {
-  id moduleTableMock = [OCMockObject partialMockForObject:[_appsManager appModuleTable]];
-  [[moduleTableMock stub] addAppModule :OCMOCK_ANY];
-  
-  id guiElementTableMock = [OCMockObject partialMockForObject:[_appsManager guiElementTable]];
-  [[guiElementTableMock stub] insertGUIElementsFromAppModule :OCMOCK_ANY];
-  
-  id notificationsMock = [OCMockObject mockForProtocol:@protocol(IUserNotifications)];
-  [[notificationsMock stub] displayAppInstalledNotification:OCMOCK_ANY];
-  
-  id appsManagerMock = [OCMockObject partialMockForObject:_appsManager];
-  [[appsManagerMock expect] postTableRefreshNotification];
-  BOOL grantInstall = YES;
-  [[[appsManagerMock stub] andReturnValue:OCMOCK_VALUE(grantInstall)] grantInstall];
-  
-  [_appsManager setUserNotifications:notificationsMock];
-  [_appsManager addAppWithModuleID:@"1"];
-  
-  [appsManagerMock verify];
 }
 
 - (void) test_addAppWithModuleID_noLicenceAndLimitInstalled_displayUserNotification {
@@ -240,52 +219,16 @@
   [[guiElementTableMock stub] removeGUIElementsWithID :1];
   
   id moduleTableMock = [OCMockObject partialMockForObject:[_appsManager appModuleTable]];
-  [[[moduleTableMock stub] andReturn:[NSDictionary dictionaryWithObjectsAndKeys:@"1", @"id", @"UserName", kUserNameKey, @"AppName", kAppNameKey,  nil]] getModuleEntityWithExternalID :OCMOCK_ANY];
+  [[[moduleTableMock stub] andReturn:[NSDictionary dictionaryWithObjectsAndKeys:@"1", @"id", @"UserName", kUserNameKey, @"AppName", kAppNameKey, @"en", kLanguageKey,  nil]] getModuleEntityWithExternalID :OCMOCK_ANY];
   [[moduleTableMock stub] removeAppModuleWithID :1];
   
   id notificationsMock = [OCMockObject mockForProtocol:@protocol(IUserNotifications)];
-  [[notificationsMock expect] displayAppRemovedNotification:@"AppName"];
+  [[notificationsMock expect] displayAppRemovedNotification:@"AppName" :@"en"];
   
   [_appsManager setUserNotifications:notificationsMock];
   [_appsManager removeAppWithModuleID:@"5"];
   
   [notificationsMock verify];
-}
-
-- (void) test_removeAppWithModuleID_appRemoved_sendNotificationToReloadTable {
-  id guiElementTableMock = [OCMockObject partialMockForObject:[_appsManager guiElementTable]];
-  [[guiElementTableMock stub] removeGUIElementsWithID :1];
-  
-  id moduleTableMock = [OCMockObject partialMockForObject:[_appsManager appModuleTable]];
-  [[[moduleTableMock stub] andReturn:[NSDictionary dictionaryWithObjectsAndKeys:@"1", @"id", @"UserName", kUserNameKey, @"AppName", kAppNameKey,  nil]] getModuleEntityWithExternalID :OCMOCK_ANY];
-  [[moduleTableMock stub] removeAppModuleWithID :1];
-  
-  id notificationsMock = [OCMockObject mockForProtocol:@protocol(IUserNotifications)];
-  [[notificationsMock stub] displayAppRemovedNotification:@"AppName"];
-  
-  id appsManagerMock = [OCMockObject partialMockForObject:_appsManager];
-  [[appsManagerMock expect] postTableRefreshNotification];
-  
-  [_appsManager setUserNotifications:notificationsMock];
-  [_appsManager removeAppWithModuleID:@"1"];
-  
-  [appsManagerMock verify];
-}
-
-//************************* postTableRefreshNotification *************************//
-- (void) test_postTableRefreshNotification_allScenarios_postNotificaion {
-  id mock = [OCMockObject observerMock];
-
-  [[NSNotificationCenter defaultCenter] addMockObserver:mock
-                                                   name:kEVENotificationsRemoveDropedLinesFromTable
-                                                 object:nil];
-  
-  [[mock expect] notificationWithName:kEVENotificationsRemoveDropedLinesFromTable object:[OCMArg any]];
-  
-  [_appsManager postTableRefreshNotification];
-  
-  [mock verify];
-  [[NSNotificationCenter defaultCenter] removeObserver:mock];
 }
 
 

@@ -20,8 +20,8 @@
 
 - (void) displayRegisterEVEWithCallbackNotification :(NSString*) title :(NSString*) informativeText;
 
-- (void) displayAppInstalledNotification :(NSString*) appName;
-- (void) displayAppRemovedNotification :(NSString*) appName;
+- (void) displayAppInstalledNotification :(NSString*) appName :(NSString*) lang;
+- (void) displayAppRemovedNotification :(NSString*) appName :(NSString*) lang;
 - (void) showTheNotification :(NSString*) title :(NSString*) description :(NSDictionary*) clickContext;
 
 @end

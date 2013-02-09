@@ -37,6 +37,7 @@
       messageDisplayed = [HandleClickedUIElement handleGUIElement :element];
     }
     
+<<<<<<< HEAD
 //    if (messageDisplayed) {
 //      messageCount++;
 //      if (messageCount >= 7
@@ -45,6 +46,8 @@
 //        [GrowlNotifications displayGrowRegistrationNotification :@"RegisterEVE" :@""];
 //      }
 //    }`
+=======
+>>>>>>> V1.4.0-prod
   }
   DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick :: end method");
 }

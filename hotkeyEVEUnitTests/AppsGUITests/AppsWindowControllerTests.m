@@ -43,10 +43,10 @@
     id mock = [OCMockObject observerMock];
     
     [[NSNotificationCenter defaultCenter] addMockObserver:mock
-                                                     name:kEVENotificationsRemoveDropedLinesFromTable
+                                                     name:kEVENotificationsReloadAppsTable
                                                    object:nil];
     
-    [[mock expect] notificationWithName:kEVENotificationsRemoveDropedLinesFromTable object:[OCMArg any]];
+    [[mock expect] notificationWithName:kEVENotificationsReloadAppsTable object:[OCMArg any]];
     
     [_appsWindowController windowDidBecomeKey:nil];
     
