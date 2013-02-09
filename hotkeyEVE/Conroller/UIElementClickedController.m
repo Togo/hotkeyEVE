@@ -37,17 +37,6 @@
       messageDisplayed = [HandleClickedUIElement handleGUIElement :element];
     }
     
-<<<<<<< HEAD
-//    if (messageDisplayed) {
-//      messageCount++;
-//      if (messageCount >= 7
-//          && ![[[EVEManager sharedEVEManager] licence] isValid]) {
-//        messageCount = 0;
-//        [GrowlNotifications displayGrowRegistrationNotification :@"RegisterEVE" :@""];
-//      }
-//    }`
-=======
->>>>>>> V1.4.0-prod
   }
   DDLogInfo(@"UIElementClickedController -> reveicedUIElementClick :: end method");
 }
