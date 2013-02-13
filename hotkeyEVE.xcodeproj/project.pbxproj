@@ -47,10 +47,7 @@
 		CD6AD401164D893B009FF1B5 /* GUINotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD400164D8939009FF1B5 /* GUINotifications.m */; };
 		CD6ECE2316C0200F00A47985 /* libAppsLibrary.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDE3016C16A4932600E8D489 /* libAppsLibrary.a */; };
 		CD71E48D165ED17F00987E09 /* INSERT_APPLICATION_BLACKLISTV1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD71E48C165ED17F00987E09 /* INSERT_APPLICATION_BLACKLISTV1_3_2.sql */; };
-		CD71E4A4165EE85A00987E09 /* DDHotKeyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD71E4A1165EE85A00987E09 /* DDHotKeyAppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		CD71E4A5165EE85A00987E09 /* DDHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = CD71E4A3165EE85A00987E09 /* DDHotKeyCenter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CD71E4A8165EEB8C00987E09 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD71E4A7165EEB8C00987E09 /* Carbon.framework */; };
-		CD71E4AB165FC88B00987E09 /* GlobalHotkeyController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD71E4AA165FC88A00987E09 /* GlobalHotkeyController.m */; };
 		CD80E7531645393300A9C7D8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7521645393300A9C7D8 /* Cocoa.framework */; };
 		CD80E75D1645393400A9C7D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD80E75B1645393400A9C7D8 /* InfoPlist.strings */; };
 		CD80E75F1645393400A9C7D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD80E75E1645393400A9C7D8 /* main.m */; };
@@ -297,13 +294,7 @@
 		CD6AD3FF164D8937009FF1B5 /* GUINotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUINotifications.h; path = GUI/GUINotifications/GUINotifications.h; sourceTree = "<group>"; };
 		CD6AD400164D8939009FF1B5 /* GUINotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GUINotifications.m; path = GUI/GUINotifications/GUINotifications.m; sourceTree = "<group>"; };
 		CD71E48C165ED17F00987E09 /* INSERT_APPLICATION_BLACKLISTV1_3_2.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_APPLICATION_BLACKLISTV1_3_2.sql; path = "Database/SQL Scripte/V1.3.2/INSERT_APPLICATION_BLACKLISTV1_3_2.sql"; sourceTree = "<group>"; };
-		CD71E4A0165EE85A00987E09 /* DDHotKeyAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDHotKeyAppDelegate.h; path = DDHotKey/DDHotKeyAppDelegate.h; sourceTree = SOURCE_ROOT; };
-		CD71E4A1165EE85A00987E09 /* DDHotKeyAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDHotKeyAppDelegate.m; path = DDHotKey/DDHotKeyAppDelegate.m; sourceTree = SOURCE_ROOT; };
-		CD71E4A2165EE85A00987E09 /* DDHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDHotKeyCenter.h; path = DDHotKey/DDHotKeyCenter.h; sourceTree = SOURCE_ROOT; };
-		CD71E4A3165EE85A00987E09 /* DDHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDHotKeyCenter.m; path = DDHotKey/DDHotKeyCenter.m; sourceTree = SOURCE_ROOT; };
 		CD71E4A7165EEB8C00987E09 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
-		CD71E4A9165FC88A00987E09 /* GlobalHotkeyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlobalHotkeyController.h; path = Conroller/GlobalHotkeyController.h; sourceTree = "<group>"; };
-		CD71E4AA165FC88A00987E09 /* GlobalHotkeyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GlobalHotkeyController.m; path = Conroller/GlobalHotkeyController.m; sourceTree = "<group>"; };
 		CD80E74E1645393300A9C7D8 /* EVE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD80E7521645393300A9C7D8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CD80E7551645393300A9C7D8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -605,8 +596,6 @@
 				CDB3D6611646BAE000285306 /* AppLaunchedController.m */,
 				CD018EFE1660A4B3008A1C5A /* AppChangedController.h */,
 				CD018EFF1660A4B3008A1C5A /* AppChangedController.m */,
-				CD71E4A9165FC88A00987E09 /* GlobalHotkeyController.h */,
-				CD71E4AA165FC88A00987E09 /* GlobalHotkeyController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -644,18 +633,6 @@
 			name = GUINotifications;
 			sourceTree = "<group>";
 		};
-		CD71E49F165EE83C00987E09 /* DDHotkey */ = {
-			isa = PBXGroup;
-			children = (
-				CD71E4A0165EE85A00987E09 /* DDHotKeyAppDelegate.h */,
-				CD71E4A1165EE85A00987E09 /* DDHotKeyAppDelegate.m */,
-				CD71E4A2165EE85A00987E09 /* DDHotKeyCenter.h */,
-				CD71E4A3165EE85A00987E09 /* DDHotKeyCenter.m */,
-			);
-			name = DDHotkey;
-			path = hotkeyEVE;
-			sourceTree = "<group>";
-		};
 		CD80E7431645393300A9C7D8 = {
 			isa = PBXGroup;
 			children = (
@@ -681,7 +658,6 @@
 			children = (
 				CD8459F816A0AAF4007717CB /* OCMock.framework */,
 				CD71E4A7165EEB8C00987E09 /* Carbon.framework */,
-				CD71E49F165EE83C00987E09 /* DDHotkey */,
 				CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */,
 				CD57865116465E2600CC508B /* Growl.framework */,
 				CD5A464F164558FB007B57A5 /* Lumberjack */,
@@ -1245,9 +1221,6 @@
 				CDA7AD77164D9F4D000907A5 /* ShortcutsTableViewConroller.m in Sources */,
 				CD84B78A1658CB5500DF227B /* MigrationsV1_3_1.m in Sources */,
 				CDC77C1F165C2DAF00939D99 /* MigrationsV1_3_2.m in Sources */,
-				CD71E4A4165EE85A00987E09 /* DDHotKeyAppDelegate.m in Sources */,
-				CD71E4A5165EE85A00987E09 /* DDHotKeyCenter.m in Sources */,
-				CD71E4AB165FC88B00987E09 /* GlobalHotkeyController.m in Sources */,
 				CD018F001660A4B3008A1C5A /* AppChangedController.m in Sources */,
 				CDE54D9A16626FF8009E4C57 /* ShareService.m in Sources */,
 				CD59010D1663BE57000613F7 /* MigrationsV1_3_3.m in Sources */,

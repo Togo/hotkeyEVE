@@ -6687,7 +6687,7 @@
 		CD0477F2167FA9450063DCBE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Tobias Sommer";
 			};
 			buildConfigurationList = CD0477F5167FA9450063DCBE /* Build configuration list for PBXProject "AppsLibrary" */;
@@ -7075,6 +7075,7 @@
 		CD047822167FA9450063DCBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External Frameworks\"",
@@ -7091,6 +7092,7 @@
 		CD047823167FA9450063DCBE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/External Frameworks\"",

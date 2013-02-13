@@ -22,8 +22,6 @@
 
 @synthesize licence;
 
-@synthesize globalHotkeyController;
-
 #pragma mark Singleton Methods
 
 + (id) sharedEVEManager {
@@ -51,8 +49,6 @@
     [GrowlApplicationBridge setGrowlDelegate:growl];
     
     licence = [[Licence alloc] init];
-    
-    globalHotkeyController = [[GlobalHotkeyController alloc] init];
   }
   
   return self;

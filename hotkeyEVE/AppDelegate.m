@@ -52,8 +52,6 @@
     [[GrowlNotifications growlNotifications] displayRegisterEVEWithCallbackNotification :@"Register EVE" :@"\nClick to get an Activation Key"];
   }
   
-  [[eveAppManager globalHotkeyController] registerGlobalHotkeys];
-  
   [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES],@"apps_window_firstLaunch",nil]];
 }
 
