@@ -13,7 +13,7 @@
 #import "MigrationsV1_3_1.h"
 #import "MigrationsV1_3_2.h"
 #import "MigrationsV1_3_3.h"
-#import "MigrationV1_3_5.h"
+#import "MigrationV1_4_0.h"
 
 @implementation DatabaseManager
 
@@ -45,7 +45,7 @@
     [eveDatabase addMigrationObject:[MigrationsV1_3_1 migration]];
     [eveDatabase addMigrationObject:[MigrationsV1_3_2 migration]];
     [eveDatabase addMigrationObject:[MigrationsV1_3_3 migration]];
-    [eveDatabase addMigrationObject:[MigrationV1_3_5 migration]];
+    [eveDatabase addMigrationObject:[MigrationV1_4_0 migration]];
   }
   
   return self;

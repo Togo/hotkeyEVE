@@ -66,6 +66,7 @@
       return YES;
     }
   }
+  DDLogInfo(@"HandleClickedUIElement -> showMessage() :: no Shortcut to displaz found");
   return NO;
 }
 

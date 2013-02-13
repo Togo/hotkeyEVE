@@ -26,7 +26,7 @@
       
       if (shortcutID) {
         NSMutableString *query = [NSMutableString string];
-        [query appendFormat:@"INSERT OR IGNORE INTO %@ ", MENU_BAR_ITEMS_TABLE];
+        [query appendFormat:@"INSERT OR REPLACE INTO %@ ", MENU_BAR_ITEMS_TABLE];
         [query appendFormat:@"VALUES ( "];
         [query appendFormat:@" NULL "];
         [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[aElement uiElementIdentifier]]];

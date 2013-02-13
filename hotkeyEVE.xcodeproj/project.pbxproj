@@ -86,13 +86,12 @@
 		CDA558AC16AC3653008D236E /* AppsManagerAmazon.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558AB16AC3653008D236E /* AppsManagerAmazon.m */; };
 		CDA558B316ADC4E9008D236E /* AppsManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558B216ADC4E9008D236E /* AppsManagerTests.m */; };
 		CDA558B716ADCA2F008D236E /* ReceiveAppModuleMock.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558B616ADCA2F008D236E /* ReceiveAppModuleMock.m */; };
-		CDA558BC16AF2615008D236E /* MigrationV1_3_5.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558BB16AF2615008D236E /* MigrationV1_3_5.m */; };
+		CDA558BC16AF2615008D236E /* MigrationV1_4_0.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558BB16AF2615008D236E /* MigrationV1_4_0.m */; };
 		CDA558BE16AF2712008D236E /* REMOVE_GUI_ELEMENTS_V1_3_5.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDA558BD16AF2712008D236E /* REMOVE_GUI_ELEMENTS_V1_3_5.sql */; };
 		CDA558C016AF2809008D236E /* ALTER_TABLE_GUI_ELEMENTS_V1_3_5.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDA558BF16AF2808008D236E /* ALTER_TABLE_GUI_ELEMENTS_V1_3_5.sql */; };
 		CDA558C316AF2BCF008D236E /* AppModuleTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558C216AF2BCE008D236E /* AppModuleTableModel.m */; };
 		CDA558C516AF35B6008D236E /* CREATE_TABLE_APP_MODULE_V1_3_5.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDA558C416AF35B5008D236E /* CREATE_TABLE_APP_MODULE_V1_3_5.sql */; };
 		CDA558C716AF4086008D236E /* ALTER_TABLE_APPLICATIONS_V1_3_5.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDA558C616AF4085008D236E /* ALTER_TABLE_APPLICATIONS_V1_3_5.sql */; };
-		CDA558C916AF46A2008D236E /* DROP_GUI_SUPPORTED_APPS_V1_3_5.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDA558C816AF46A2008D236E /* DROP_GUI_SUPPORTED_APPS_V1_3_5.sql */; };
 		CDA558CE16B02688008D236E /* GrowlNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558CD16B02687008D236E /* GrowlNotifications.m */; };
 		CDA558D216B02981008D236E /* GrowlNotificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558D116B02981008D236E /* GrowlNotificationTests.m */; };
 		CDA7AD77164D9F4D000907A5 /* ShortcutsTableViewConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA7AD76164D9F4D000907A5 /* ShortcutsTableViewConroller.m */; };
@@ -372,15 +371,14 @@
 		CDA558B416ADC7F9008D236E /* IAppsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IAppsManager.h; path = Apps/Model/IAppsManager.h; sourceTree = "<group>"; };
 		CDA558B516ADCA2F008D236E /* ReceiveAppModuleMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiveAppModuleMock.h; sourceTree = "<group>"; };
 		CDA558B616ADCA2F008D236E /* ReceiveAppModuleMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiveAppModuleMock.m; sourceTree = "<group>"; };
-		CDA558BA16AF2615008D236E /* MigrationV1_3_5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationV1_3_5.h; path = Database/Migrations/MigrationV1_3_5.h; sourceTree = "<group>"; };
-		CDA558BB16AF2615008D236E /* MigrationV1_3_5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationV1_3_5.m; path = Database/Migrations/MigrationV1_3_5.m; sourceTree = "<group>"; };
+		CDA558BA16AF2615008D236E /* MigrationV1_4_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationV1_4_0.h; path = Database/Migrations/MigrationV1_4_0.h; sourceTree = "<group>"; };
+		CDA558BB16AF2615008D236E /* MigrationV1_4_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationV1_4_0.m; path = Database/Migrations/MigrationV1_4_0.m; sourceTree = "<group>"; };
 		CDA558BD16AF2712008D236E /* REMOVE_GUI_ELEMENTS_V1_3_5.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = REMOVE_GUI_ELEMENTS_V1_3_5.sql; path = "Database/SQL Scripte/V1.3.5/REMOVE_GUI_ELEMENTS_V1_3_5.sql"; sourceTree = "<group>"; };
 		CDA558BF16AF2808008D236E /* ALTER_TABLE_GUI_ELEMENTS_V1_3_5.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ALTER_TABLE_GUI_ELEMENTS_V1_3_5.sql; path = "Database/SQL Scripte/V1.3.5/ALTER_TABLE_GUI_ELEMENTS_V1_3_5.sql"; sourceTree = "<group>"; };
 		CDA558C116AF2BCD008D236E /* AppModuleTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppModuleTableModel.h; path = Database/Models/AppModuleTableModel.h; sourceTree = "<group>"; };
 		CDA558C216AF2BCE008D236E /* AppModuleTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppModuleTableModel.m; path = Database/Models/AppModuleTableModel.m; sourceTree = "<group>"; };
 		CDA558C416AF35B5008D236E /* CREATE_TABLE_APP_MODULE_V1_3_5.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CREATE_TABLE_APP_MODULE_V1_3_5.sql; path = "Database/SQL Scripte/V1.3.5/CREATE_TABLE_APP_MODULE_V1_3_5.sql"; sourceTree = "<group>"; };
 		CDA558C616AF4085008D236E /* ALTER_TABLE_APPLICATIONS_V1_3_5.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ALTER_TABLE_APPLICATIONS_V1_3_5.sql; path = "Database/SQL Scripte/V1.3.5/ALTER_TABLE_APPLICATIONS_V1_3_5.sql"; sourceTree = "<group>"; };
-		CDA558C816AF46A2008D236E /* DROP_GUI_SUPPORTED_APPS_V1_3_5.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DROP_GUI_SUPPORTED_APPS_V1_3_5.sql; path = "Database/SQL Scripte/V1.3.5/DROP_GUI_SUPPORTED_APPS_V1_3_5.sql"; sourceTree = "<group>"; };
 		CDA558CA16B02605008D236E /* IUserNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IUserNotifications.h; path = UserNotification/IUserNotifications.h; sourceTree = "<group>"; };
 		CDA558CC16B02687008D236E /* GrowlNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrowlNotifications.h; path = UserNotification/GrowlNotifications.h; sourceTree = "<group>"; };
 		CDA558CD16B02687008D236E /* GrowlNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GrowlNotifications.m; path = UserNotification/GrowlNotifications.m; sourceTree = "<group>"; };
@@ -517,7 +515,7 @@
 		CD5A464B16455643007B57A5 /* Migrations */ = {
 			isa = PBXGroup;
 			children = (
-				CDA558B916AF25C9008D236E /* V1_3_5 */,
+				CDA558B916AF25C9008D236E /* V1_4_0 */,
 				CD59010A1663BE44000613F7 /* V1_3_3 */,
 				CDC77C1C165C2D8E00939D99 /* V1_3_2 */,
 				CD84B7871658CAC600DF227B /* V1_3_1 */,
@@ -904,18 +902,17 @@
 			name = "Mock Classes";
 			sourceTree = "<group>";
 		};
-		CDA558B916AF25C9008D236E /* V1_3_5 */ = {
+		CDA558B916AF25C9008D236E /* V1_4_0 */ = {
 			isa = PBXGroup;
 			children = (
-				CDA558C816AF46A2008D236E /* DROP_GUI_SUPPORTED_APPS_V1_3_5.sql */,
 				CDA558C616AF4085008D236E /* ALTER_TABLE_APPLICATIONS_V1_3_5.sql */,
 				CDA558C416AF35B5008D236E /* CREATE_TABLE_APP_MODULE_V1_3_5.sql */,
 				CDA558BF16AF2808008D236E /* ALTER_TABLE_GUI_ELEMENTS_V1_3_5.sql */,
 				CDA558BD16AF2712008D236E /* REMOVE_GUI_ELEMENTS_V1_3_5.sql */,
-				CDA558BA16AF2615008D236E /* MigrationV1_3_5.h */,
-				CDA558BB16AF2615008D236E /* MigrationV1_3_5.m */,
+				CDA558BA16AF2615008D236E /* MigrationV1_4_0.h */,
+				CDA558BB16AF2615008D236E /* MigrationV1_4_0.m */,
 			);
-			name = V1_3_5;
+			name = V1_4_0;
 			sourceTree = "<group>";
 		};
 		CDA558CB16B02611008D236E /* UserNotification */ = {
@@ -1171,7 +1168,6 @@
 				CDA558C016AF2809008D236E /* ALTER_TABLE_GUI_ELEMENTS_V1_3_5.sql in Resources */,
 				CDA558C516AF35B6008D236E /* CREATE_TABLE_APP_MODULE_V1_3_5.sql in Resources */,
 				CDA558C716AF4086008D236E /* ALTER_TABLE_APPLICATIONS_V1_3_5.sql in Resources */,
-				CDA558C916AF46A2008D236E /* DROP_GUI_SUPPORTED_APPS_V1_3_5.sql in Resources */,
 				CDC1767916BC2583006C1A74 /* apps_drag_and_drop_overlay.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1261,7 +1257,7 @@
 				CD845A1916A0C937007717CB /* AppsTableViewController.m in Sources */,
 				CDE3015716A2FB6B00E8D489 /* AppsNavigationViewController.m in Sources */,
 				CDA558AC16AC3653008D236E /* AppsManagerAmazon.m in Sources */,
-				CDA558BC16AF2615008D236E /* MigrationV1_3_5.m in Sources */,
+				CDA558BC16AF2615008D236E /* MigrationV1_4_0.m in Sources */,
 				CDA558C316AF2BCF008D236E /* AppModuleTableModel.m in Sources */,
 				CDA558CE16B02688008D236E /* GrowlNotifications.m in Sources */,
 				CDF656E616B0403500A0FEC4 /* AppsManagerLocalDB.m in Sources */,

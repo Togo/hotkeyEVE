@@ -9,6 +9,7 @@ UNIQUE ("bundle_identifier", "app_name") ON CONFLICT REPLACE
 );
 INSERT INTO "applications"  ("id", "app_name", "bundle_identifier") SELECT "id", "app_name", "bundle_identifier" FROM "applications_ME_TMP";
 DROP TABLE "applications_ME_TMP";
+DROP TABLE "gui_supported_apps";
 COMMIT;
 -- END TABLE ALTERATIONS
 
