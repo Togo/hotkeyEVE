@@ -44,6 +44,24 @@
   [db executeUpdate:query];
 }
 
++ (NSInteger) getApplicationID :(NSString*) bundleIdentifier {
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSMutableString *query = [NSMutableString string];
+  [query appendFormat:@" SELECT * FROM %@ ", APPLICATIONS_TABLE];
+  [query appendFormat:@" WHERE %@ like '%@' ", BUNDLE_IDEN_COL, bundleIdentifier];
+  
+  DDLogVerbose(@"ApplicationsTableModel -> getApplicationID:: query => :%@:", query);
+  NSArray *result = [db executeQuery:query];
+  if ([result count] > 0) {
+    NSInteger appID = [[[result objectAtIndex:0] valueForKey:ID_COL] intValue];
+    return appID;
+  } else {
+    DDLogError(@"ApplicationsTableModel -> getApplicationID:: no appID query => :%@:", query);
+    return 0;
+  }
+}
+
 + (NSInteger) getApplicationID :(NSString*) appName :(NSString*) bundleIdentifier {
   DDLogInfo(@"ApplicationsTableModel -> getApplicationID(appName => :%@:, bundleIdentifier => :%@:) :: get called", appName,bundleIdentifier);
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];

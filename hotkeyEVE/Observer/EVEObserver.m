@@ -9,6 +9,7 @@
 #import "EVEObserver.h"
 #import <UIElements/ClickOnUIElementSubject.h>
 #import <UIElements/UIElement.h>
+#import "TGEVE_MouseEventHandler.h"
 
 @implementation EVEObserver
 
@@ -24,10 +25,11 @@
 
 - (void) update :(NSNotification *) notification {
   DDLogInfo(@"EVEObserver -> update(notification :%@:) :: get called", [notification name]);
-  if ([[notification name] isEqualToString:ClickOnUIElementNotification]) {
+  if ([[notification name] isEqualToString :ClickOnUIElementNotification]) {
     UIElement *lastCLickedUIElement =  [UIElement createUIElement:([[notification object] currentUIElement])];
     DDLogInfo(@"EVEObserver -> update() :: create new UIElement :%@:", lastCLickedUIElement);
-    [[[EVEManager sharedEVEManager] uiElementClicked] reveicedUIElementClick:lastCLickedUIElement];
+    id eventHandler = [[TGEVE_MouseEventHandler alloc] init];
+    [eventHandler handleEVEEvent:lastCLickedUIElement];
     return;
   }
 

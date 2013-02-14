@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "IndexingController.h"
-#import "UIElementClickedController.h"
 #import "EVEObserver.h"
 #import "GrowlController.h"
 #import "AppLaunchedController.h"
@@ -20,8 +19,6 @@
 
 @property (nonatomic, retain)   IndexingController  *indexing;
 @property (nonatomic, retain)   EVEObserver  *eveObserver;
-
-@property (nonatomic, retain)   UIElementClickedController  *uiElementClicked;
 
 @property (nonatomic, retain)   AppLaunchedController  *appLaunched;
 @property (nonatomic, retain)   AppChangedController  *appChangedController;

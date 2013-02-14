@@ -7,7 +7,7 @@
 //
 
 #import "AppsManager.h"
-#import "GUIElementsTableModel.h"
+#import "TGEVE_GUIElementsTableModel.h"
 #import "AppModuleTableModel.h"
 #import "GrowlNotifications.h"
 #import "GUINotifications.h"
@@ -24,7 +24,7 @@
   self = [super init];
   if (self) {
     self.receiveAppModule = [ReceiveAppModule createReceiverWithAmazonWebService];
-    self.guiElementTable = [[GUIElementsTableModel alloc] init];
+    self.guiElementTable = [[TGEVE_GUIElementsTableModel alloc] init];
     self.appModuleTable = [[AppModuleTableModel alloc] init];
     self.userNotifications = [GrowlNotifications growlNotifications];
   }

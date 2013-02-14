@@ -8,14 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		CD018F001660A4B3008A1C5A /* AppChangedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD018EFF1660A4B3008A1C5A /* AppChangedController.m */; };
-		CD52DC851665527D0006CF06 /* INSERT_GUI_SUPPORT_V1_3_3.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD52DC841665527D0006CF06 /* INSERT_GUI_SUPPORT_V1_3_3.sql */; };
-		CD52DC931666918C0006CF06 /* ALTER_GUI_ELEMENTS_V1_3_3.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD52DC921666918B0006CF06 /* ALTER_GUI_ELEMENTS_V1_3_3.sql */; };
+		CD1464F116CB9A65004395D8 /* ALTER_MENU_BAR_ITEMS.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD1464F016CB9A65004395D8 /* ALTER_MENU_BAR_ITEMS.sql */; };
+		CD1464F316CB9A84004395D8 /* ALTER_GUI_ELEMENTS_V1_3_3.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD1464F216CB9A84004395D8 /* ALTER_GUI_ELEMENTS_V1_3_3.sql */; };
+		CD1464F816CB9A9F004395D8 /* ALTER_TABLE_APPLICATIONS_V1_4_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD1464F416CB9A9F004395D8 /* ALTER_TABLE_APPLICATIONS_V1_4_0.sql */; };
+		CD1464F916CB9A9F004395D8 /* ALTER_TABLE_GUI_ELEMENTS_V1_4_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD1464F516CB9A9F004395D8 /* ALTER_TABLE_GUI_ELEMENTS_V1_4_0.sql */; };
+		CD1464FA16CB9A9F004395D8 /* CREATE_TABLE_APP_MODULE_V1_4_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD1464F616CB9A9F004395D8 /* CREATE_TABLE_APP_MODULE_V1_4_0.sql */; };
+		CD1464FB16CB9A9F004395D8 /* REMOVE_GUI_ELEMENTS_V1_4_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD1464F716CB9A9F004395D8 /* REMOVE_GUI_ELEMENTS_V1_4_0.sql */; };
+		CD14650116CBEFE9004395D8 /* TGEVEMouseEventHandlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD14650016CBEFE9004395D8 /* TGEVEMouseEventHandlerTests.m */; };
+		CD14650416CBF03F004395D8 /* TGEVE_MouseEventHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CD14650316CBF03F004395D8 /* TGEVE_MouseEventHandler.m */; };
+		CD14650716CBF48C004395D8 /* TGEVE_MenuItemEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CD14650616CBF48C004395D8 /* TGEVE_MenuItemEvent.m */; };
+		CD14650B16CC03E5004395D8 /* TGEVE_MenuItemEventTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD14650A16CC03E4004395D8 /* TGEVE_MenuItemEventTests.m */; };
+		CD14650C16CC0844004395D8 /* UIElements.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5A462C1645510F007B57A5 /* UIElements.dylib */; };
+		CD14651316CC0EAB004395D8 /* NSDictionary+TGEVE_EventDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = CD14651216CC0EAA004395D8 /* NSDictionary+TGEVE_EventDictionary.m */; };
+		CD14651616CC11CB004395D8 /* TGEVE_UIElementDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD14651516CC11CA004395D8 /* TGEVE_UIElementDictionaryTests.m */; };
+		CD14651716CCEF49004395D8 /* Database.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5A463816455119007B57A5 /* Database.dylib */; };
+		CD14651A16CD7E5E004395D8 /* TGEVE_GUIElementEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CD14651916CD7E5D004395D8 /* TGEVE_GUIElementEvent.m */; };
+		CD14651D16CD7FDB004395D8 /* TGEVE_GUIElementEventTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD14651C16CD7FDA004395D8 /* TGEVE_GUIElementEventTests.m */; };
 		CD57864C16465D5800CC508B /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = CD57864B16465D5800CC508B /* Growl Registration Ticket.growlRegDict */; };
 		CD57865216465E2600CC508B /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
 		CD57865316465EDE00CC508B /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
 		CD5786551646611200CC508B /* EVE_ICON.icns in Resources */ = {isa = PBXBuildFile; fileRef = CD5786541646611200CC508B /* EVE_ICON.icns */; };
 		CD59010D1663BE57000613F7 /* MigrationsV1_3_3.m in Sources */ = {isa = PBXBuildFile; fileRef = CD59010C1663BE56000613F7 /* MigrationsV1_3_3.m */; };
-		CD59010F1663BE61000613F7 /* INSERT_GUI_ELEMENTS_V1_3_3.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD59010E1663BE61000613F7 /* INSERT_GUI_ELEMENTS_V1_3_3.sql */; };
 		CD5A464716455398007B57A5 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A464616455398007B57A5 /* DatabaseManager.m */; };
 		CD5A464A1645563E007B57A5 /* MIGRATIONV1_3_0.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46491645563E007B57A5 /* MIGRATIONV1_3_0.m */; };
 		CD5A464E1645579C007B57A5 /* EVEDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A464D1645579C007B57A5 /* EVEDatabase.m */; };
@@ -29,12 +42,10 @@
 		CD5A4667164558FB007B57A5 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = CD5A465F164558FB007B57A5 /* README.txt */; };
 		CD5A466916455D69007B57A5 /* CREATE_TABLE_V1_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD5A466816455D69007B57A5 /* CREATE_TABLE_V1_0.sql */; };
 		CD5A469216455F7D007B57A5 /* MenuBarIndexingThread.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A469116455F7D007B57A5 /* MenuBarIndexingThread.m */; };
-		CD5A4699164563D0007B57A5 /* MenuBarTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4698164563D0007B57A5 /* MenuBarTableModel.m */; };
+		CD5A4699164563D0007B57A5 /* TGEVE_MenuBarTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4698164563D0007B57A5 /* TGEVE_MenuBarTableModel.m */; };
 		CD5A46CD16463D72007B57A5 /* EVEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46CC16463D72007B57A5 /* EVEManager.m */; };
 		CD5A46D016463E64007B57A5 /* IndexingController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46CF16463E64007B57A5 /* IndexingController.m */; };
 		CD5A46F516464F7E007B57A5 /* EVEObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46F416464F7E007B57A5 /* EVEObserver.m */; };
-		CD5A46F816465123007B57A5 /* UIElementClickedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46F716465123007B57A5 /* UIElementClickedController.m */; };
-		CD5E8E2D16612A7700D81C2E /* ALTER_MENU_BAR_ITEMS.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD5E8E2C16612A7700D81C2E /* ALTER_MENU_BAR_ITEMS.sql */; };
 		CD6A928E1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD6A928D1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql */; };
 		CD6AD392164BFE9D009FF1B5 /* LicenceWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AD38F164BFE9D009FF1B5 /* LicenceWindow.xib */; };
 		CD6AD395164C047E009FF1B5 /* LicenceWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD394164C047E009FF1B5 /* LicenceWindowController.m */; };
@@ -46,7 +57,6 @@
 		CD6AD3FE164D7BA6009FF1B5 /* ApplicationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD3FD164D7BA6009FF1B5 /* ApplicationsTableViewController.m */; };
 		CD6AD401164D893B009FF1B5 /* GUINotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD400164D8939009FF1B5 /* GUINotifications.m */; };
 		CD6ECE2316C0200F00A47985 /* libAppsLibrary.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDE3016C16A4932600E8D489 /* libAppsLibrary.a */; };
-		CD71E48D165ED17F00987E09 /* INSERT_APPLICATION_BLACKLISTV1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD71E48C165ED17F00987E09 /* INSERT_APPLICATION_BLACKLISTV1_3_2.sql */; };
 		CD71E4A8165EEB8C00987E09 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD71E4A7165EEB8C00987E09 /* Carbon.framework */; };
 		CD80E7531645393300A9C7D8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7521645393300A9C7D8 /* Cocoa.framework */; };
 		CD80E75D1645393400A9C7D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD80E75B1645393400A9C7D8 /* InfoPlist.strings */; };
@@ -74,7 +84,6 @@
 		CD845A4516A16D89007717CB /* AppsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A4416A16D89007717CB /* AppsViewControllerTests.m */; };
 		CD84B78A1658CB5500DF227B /* MigrationsV1_3_1.m in Sources */ = {isa = PBXBuildFile; fileRef = CD84B7891658CB5500DF227B /* MigrationsV1_3_1.m */; };
 		CD84B78C1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD84B78B1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql */; };
-		CD97CE6E164670BE00406F1F /* HandleClickedUIElement.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE6D164670BE00406F1F /* HandleClickedUIElement.m */; };
 		CD97CE9016467AB000406F1F /* GrowlController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE8F16467AB000406F1F /* GrowlController.m */; };
 		CD97CE96164683EA00406F1F /* ApplicationsTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE95164683EA00406F1F /* ApplicationsTableModel.m */; };
 		CD97CE99164685BA00406F1F /* UserDataTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE98164685BA00406F1F /* UserDataTableModel.m */; };
@@ -84,19 +93,13 @@
 		CDA558B316ADC4E9008D236E /* AppsManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558B216ADC4E9008D236E /* AppsManagerTests.m */; };
 		CDA558B716ADCA2F008D236E /* ReceiveAppModuleMock.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558B616ADCA2F008D236E /* ReceiveAppModuleMock.m */; };
 		CDA558BC16AF2615008D236E /* MigrationV1_4_0.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558BB16AF2615008D236E /* MigrationV1_4_0.m */; };
-		CDA558BE16AF2712008D236E /* REMOVE_GUI_ELEMENTS_V1_3_5.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDA558BD16AF2712008D236E /* REMOVE_GUI_ELEMENTS_V1_3_5.sql */; };
-		CDA558C016AF2809008D236E /* ALTER_TABLE_GUI_ELEMENTS_V1_3_5.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDA558BF16AF2808008D236E /* ALTER_TABLE_GUI_ELEMENTS_V1_3_5.sql */; };
 		CDA558C316AF2BCF008D236E /* AppModuleTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558C216AF2BCE008D236E /* AppModuleTableModel.m */; };
-		CDA558C516AF35B6008D236E /* CREATE_TABLE_APP_MODULE_V1_3_5.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDA558C416AF35B5008D236E /* CREATE_TABLE_APP_MODULE_V1_3_5.sql */; };
-		CDA558C716AF4086008D236E /* ALTER_TABLE_APPLICATIONS_V1_3_5.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDA558C616AF4085008D236E /* ALTER_TABLE_APPLICATIONS_V1_3_5.sql */; };
 		CDA558CE16B02688008D236E /* GrowlNotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558CD16B02687008D236E /* GrowlNotifications.m */; };
 		CDA558D216B02981008D236E /* GrowlNotificationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558D116B02981008D236E /* GrowlNotificationTests.m */; };
 		CDA7AD77164D9F4D000907A5 /* ShortcutsTableViewConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA7AD76164D9F4D000907A5 /* ShortcutsTableViewConroller.m */; };
 		CDB3D6621646BAE000285306 /* AppLaunchedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3D6611646BAE000285306 /* AppLaunchedController.m */; };
 		CDC1767916BC2583006C1A74 /* apps_drag_and_drop_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC1767816BC2583006C1A74 /* apps_drag_and_drop_overlay.png */; };
 		CDC77C1F165C2DAF00939D99 /* MigrationsV1_3_2.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */; };
-		CDC77C22165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDC77C20165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql */; };
-		CDC77C23165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDC77C21165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql */; };
 		CDE3015716A2FB6B00E8D489 /* AppsNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3015616A2FB6B00E8D489 /* AppsNavigationViewController.m */; };
 		CDE3015A16A469BC00E8D489 /* AppsWindowControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3015916A469BC00E8D489 /* AppsWindowControllerTests.m */; };
 		CDE3018316A49D0300E8D489 /* libAppsLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE3016C16A4932600E8D489 /* libAppsLibrary.a */; };
@@ -108,7 +111,7 @@
 		CDEE155A164A93FB00EDCDF4 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1555164A93FB00EDCDF4 /* Queue.m */; };
 		CDEE155B164A93FB00EDCDF4 /* StringUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1557164A93FB00EDCDF4 /* StringUtilities.m */; };
 		CDEE155D164A9D3200EDCDF4 /* INSERT_GUI_SUPPORT_V1_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDEE155C164A9D3200EDCDF4 /* INSERT_GUI_SUPPORT_V1_0.sql */; };
-		CDEE1560164AB0D400EDCDF4 /* GUIElementsTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE155F164AB0D200EDCDF4 /* GUIElementsTableModel.m */; };
+		CDEE1560164AB0D400EDCDF4 /* TGEVE_GUIElementsTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE155F164AB0D200EDCDF4 /* TGEVE_GUIElementsTableModel.m */; };
 		CDEE156F164AE38A00EDCDF4 /* INSERT_GUI_ELEMENTS_V1_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDEE156E164AE38A00EDCDF4 /* INSERT_GUI_ELEMENTS_V1_0.sql */; };
 		CDEE1573164B03FF00EDCDF4 /* Licence.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1572164B03FF00EDCDF4 /* Licence.m */; };
 		CDEE1576164B04F100EDCDF4 /* NSString+Hashes.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1575164B04F000EDCDF4 /* NSString+Hashes.m */; };
@@ -234,14 +237,35 @@
 /* Begin PBXFileReference section */
 		CD018EFE1660A4B3008A1C5A /* AppChangedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppChangedController.h; path = Conroller/AppChangedController.h; sourceTree = "<group>"; };
 		CD018EFF1660A4B3008A1C5A /* AppChangedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppChangedController.m; path = Conroller/AppChangedController.m; sourceTree = "<group>"; };
-		CD52DC841665527D0006CF06 /* INSERT_GUI_SUPPORT_V1_3_3.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_GUI_SUPPORT_V1_3_3.sql; path = "Database/SQL Scripte/V1.3.3/INSERT_GUI_SUPPORT_V1_3_3.sql"; sourceTree = "<group>"; };
-		CD52DC921666918B0006CF06 /* ALTER_GUI_ELEMENTS_V1_3_3.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ALTER_GUI_ELEMENTS_V1_3_3.sql; path = "Database/SQL Scripte/V1.3.3/ALTER_GUI_ELEMENTS_V1_3_3.sql"; sourceTree = "<group>"; };
+		CD1464F016CB9A65004395D8 /* ALTER_MENU_BAR_ITEMS.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ALTER_MENU_BAR_ITEMS.sql; path = "Database/SQL Scripte/V1_3_2/ALTER_MENU_BAR_ITEMS.sql"; sourceTree = "<group>"; };
+		CD1464F216CB9A84004395D8 /* ALTER_GUI_ELEMENTS_V1_3_3.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ALTER_GUI_ELEMENTS_V1_3_3.sql; path = "Database/SQL Scripte/V1_3_3/ALTER_GUI_ELEMENTS_V1_3_3.sql"; sourceTree = "<group>"; };
+		CD1464F416CB9A9F004395D8 /* ALTER_TABLE_APPLICATIONS_V1_4_0.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ALTER_TABLE_APPLICATIONS_V1_4_0.sql; path = "Database/SQL Scripte/V1_4_0/ALTER_TABLE_APPLICATIONS_V1_4_0.sql"; sourceTree = "<group>"; };
+		CD1464F516CB9A9F004395D8 /* ALTER_TABLE_GUI_ELEMENTS_V1_4_0.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ALTER_TABLE_GUI_ELEMENTS_V1_4_0.sql; path = "Database/SQL Scripte/V1_4_0/ALTER_TABLE_GUI_ELEMENTS_V1_4_0.sql"; sourceTree = "<group>"; };
+		CD1464F616CB9A9F004395D8 /* CREATE_TABLE_APP_MODULE_V1_4_0.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CREATE_TABLE_APP_MODULE_V1_4_0.sql; path = "Database/SQL Scripte/V1_4_0/CREATE_TABLE_APP_MODULE_V1_4_0.sql"; sourceTree = "<group>"; };
+		CD1464F716CB9A9F004395D8 /* REMOVE_GUI_ELEMENTS_V1_4_0.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = REMOVE_GUI_ELEMENTS_V1_4_0.sql; path = "Database/SQL Scripte/V1_4_0/REMOVE_GUI_ELEMENTS_V1_4_0.sql"; sourceTree = "<group>"; };
+		CD1464FD16CBEE2F004395D8 /* TGEVE_IUIEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_IUIEventHandler.h; path = UIEvents/TGEVE_IUIEventHandler.h; sourceTree = "<group>"; };
+		CD1464FF16CBEFE9004395D8 /* TGEVEMouseEventHandlerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVEMouseEventHandlerTests.h; path = hotkeyEVEUnitTests/UIEvents/TGEVEMouseEventHandlerTests.h; sourceTree = SOURCE_ROOT; };
+		CD14650016CBEFE9004395D8 /* TGEVEMouseEventHandlerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVEMouseEventHandlerTests.m; path = hotkeyEVEUnitTests/UIEvents/TGEVEMouseEventHandlerTests.m; sourceTree = SOURCE_ROOT; };
+		CD14650216CBF03F004395D8 /* TGEVE_MouseEventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_MouseEventHandler.h; path = UIEvents/TGEVE_MouseEventHandler.h; sourceTree = "<group>"; };
+		CD14650316CBF03F004395D8 /* TGEVE_MouseEventHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_MouseEventHandler.m; path = UIEvents/TGEVE_MouseEventHandler.m; sourceTree = "<group>"; };
+		CD14650516CBF48C004395D8 /* TGEVE_MenuItemEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_MenuItemEvent.h; path = UIEvents/TGEVE_MenuItemEvent.h; sourceTree = "<group>"; };
+		CD14650616CBF48C004395D8 /* TGEVE_MenuItemEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_MenuItemEvent.m; path = UIEvents/TGEVE_MenuItemEvent.m; sourceTree = "<group>"; };
+		CD14650816CBFA8E004395D8 /* TGEVE_IUIEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TGEVE_IUIEvent.h; path = UIEvents/TGEVE_IUIEvent.h; sourceTree = "<group>"; };
+		CD14650916CC03E4004395D8 /* TGEVE_MenuItemEventTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_MenuItemEventTests.h; path = UIEvents/TGEVE_MenuItemEventTests.h; sourceTree = "<group>"; };
+		CD14650A16CC03E4004395D8 /* TGEVE_MenuItemEventTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_MenuItemEventTests.m; path = UIEvents/TGEVE_MenuItemEventTests.m; sourceTree = "<group>"; };
+		CD14651116CC0EA9004395D8 /* NSDictionary+TGEVE_EventDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+TGEVE_EventDictionary.h"; path = "UIEvents/NSDictionary+TGEVE_EventDictionary.h"; sourceTree = "<group>"; };
+		CD14651216CC0EAA004395D8 /* NSDictionary+TGEVE_EventDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+TGEVE_EventDictionary.m"; path = "UIEvents/NSDictionary+TGEVE_EventDictionary.m"; sourceTree = "<group>"; };
+		CD14651416CC11CA004395D8 /* TGEVE_UIElementDictionaryTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_UIElementDictionaryTests.h; path = UIEvents/TGEVE_UIElementDictionaryTests.h; sourceTree = "<group>"; };
+		CD14651516CC11CA004395D8 /* TGEVE_UIElementDictionaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_UIElementDictionaryTests.m; path = UIEvents/TGEVE_UIElementDictionaryTests.m; sourceTree = "<group>"; };
+		CD14651816CD7E5D004395D8 /* TGEVE_GUIElementEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_GUIElementEvent.h; path = UIEvents/TGEVE_GUIElementEvent.h; sourceTree = "<group>"; };
+		CD14651916CD7E5D004395D8 /* TGEVE_GUIElementEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_GUIElementEvent.m; path = UIEvents/TGEVE_GUIElementEvent.m; sourceTree = "<group>"; };
+		CD14651B16CD7FDA004395D8 /* TGEVE_GUIElementEventTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_GUIElementEventTests.h; path = UIEvents/TGEVE_GUIElementEventTests.h; sourceTree = "<group>"; };
+		CD14651C16CD7FDA004395D8 /* TGEVE_GUIElementEventTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_GUIElementEventTests.m; path = UIEvents/TGEVE_GUIElementEventTests.m; sourceTree = "<group>"; };
 		CD57864B16465D5800CC508B /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		CD57865116465E2600CC508B /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = hotkeyEVE/Frameworks/Growl.framework; sourceTree = "<group>"; };
 		CD5786541646611200CC508B /* EVE_ICON.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON.icns; sourceTree = "<group>"; };
 		CD59010B1663BE56000613F7 /* MigrationsV1_3_3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationsV1_3_3.h; path = Database/Migrations/MigrationsV1_3_3.h; sourceTree = "<group>"; };
 		CD59010C1663BE56000613F7 /* MigrationsV1_3_3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationsV1_3_3.m; path = Database/Migrations/MigrationsV1_3_3.m; sourceTree = "<group>"; };
-		CD59010E1663BE61000613F7 /* INSERT_GUI_ELEMENTS_V1_3_3.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_GUI_ELEMENTS_V1_3_3.sql; path = "Database/SQL Scripte/V1.3.3/INSERT_GUI_ELEMENTS_V1_3_3.sql"; sourceTree = "<group>"; };
 		CD5A46231645510F007B57A5 /* UIElements.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIElements.xcodeproj; path = "eve-uielements/UIElements.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		CD5A462F16455118007B57A5 /* Database.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Database.xcodeproj; path = "eve-database/Database.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		CD5A464516455398007B57A5 /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseManager.h; path = Database/DatabaseManager.h; sourceTree = "<group>"; };
@@ -268,17 +292,14 @@
 		CD5A466816455D69007B57A5 /* CREATE_TABLE_V1_0.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CREATE_TABLE_V1_0.sql; path = "Database/SQL Scripte/CREATE_TABLE_V1_0.sql"; sourceTree = "<group>"; };
 		CD5A469016455F7D007B57A5 /* MenuBarIndexingThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuBarIndexingThread.h; path = Indexing/MenuBarIndexingThread.h; sourceTree = "<group>"; };
 		CD5A469116455F7D007B57A5 /* MenuBarIndexingThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuBarIndexingThread.m; path = Indexing/MenuBarIndexingThread.m; sourceTree = "<group>"; };
-		CD5A4697164563D0007B57A5 /* MenuBarTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuBarTableModel.h; path = Database/Models/MenuBarTableModel.h; sourceTree = "<group>"; };
-		CD5A4698164563D0007B57A5 /* MenuBarTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuBarTableModel.m; path = Database/Models/MenuBarTableModel.m; sourceTree = "<group>"; };
+		CD5A4697164563D0007B57A5 /* TGEVE_MenuBarTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_MenuBarTableModel.h; path = Database/Models/TGEVE_MenuBarTableModel.h; sourceTree = "<group>"; };
+		CD5A4698164563D0007B57A5 /* TGEVE_MenuBarTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_MenuBarTableModel.m; path = Database/Models/TGEVE_MenuBarTableModel.m; sourceTree = "<group>"; };
 		CD5A46CB16463D72007B57A5 /* EVEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVEManager.h; sourceTree = "<group>"; };
 		CD5A46CC16463D72007B57A5 /* EVEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVEManager.m; sourceTree = "<group>"; };
 		CD5A46CE16463E64007B57A5 /* IndexingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexingController.h; sourceTree = "<group>"; };
 		CD5A46CF16463E64007B57A5 /* IndexingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexingController.m; sourceTree = "<group>"; };
 		CD5A46F316464F7E007B57A5 /* EVEObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EVEObserver.h; path = Observer/EVEObserver.h; sourceTree = "<group>"; };
 		CD5A46F416464F7E007B57A5 /* EVEObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EVEObserver.m; path = Observer/EVEObserver.m; sourceTree = "<group>"; };
-		CD5A46F616465123007B57A5 /* UIElementClickedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIElementClickedController.h; path = Conroller/UIElementClickedController.h; sourceTree = "<group>"; };
-		CD5A46F716465123007B57A5 /* UIElementClickedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIElementClickedController.m; path = Conroller/UIElementClickedController.m; sourceTree = "<group>"; };
-		CD5E8E2C16612A7700D81C2E /* ALTER_MENU_BAR_ITEMS.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ALTER_MENU_BAR_ITEMS.sql; path = "Database/SQL Scripte/V1.3.2/ALTER_MENU_BAR_ITEMS.sql"; sourceTree = "<group>"; };
 		CD6A928D1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_APPLICATION_BLACKLISTV1_3_1.sql; path = "Database/SQL Scripte/INSERT_APPLICATION_BLACKLISTV1_3_1.sql"; sourceTree = "<group>"; };
 		CD6AD38F164BFE9D009FF1B5 /* LicenceWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LicenceWindow.xib; path = GUI/Licence/LicenceWindow.xib; sourceTree = "<group>"; };
 		CD6AD393164C047E009FF1B5 /* LicenceWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LicenceWindowController.h; path = GUI/Licence/LicenceWindowController.h; sourceTree = "<group>"; };
@@ -293,7 +314,6 @@
 		CD6AD3FD164D7BA6009FF1B5 /* ApplicationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplicationsTableViewController.m; path = GUI/ShortcutWindow/ApplicationsTableViewController.m; sourceTree = "<group>"; };
 		CD6AD3FF164D8937009FF1B5 /* GUINotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUINotifications.h; path = GUI/GUINotifications/GUINotifications.h; sourceTree = "<group>"; };
 		CD6AD400164D8939009FF1B5 /* GUINotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GUINotifications.m; path = GUI/GUINotifications/GUINotifications.m; sourceTree = "<group>"; };
-		CD71E48C165ED17F00987E09 /* INSERT_APPLICATION_BLACKLISTV1_3_2.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_APPLICATION_BLACKLISTV1_3_2.sql; path = "Database/SQL Scripte/V1.3.2/INSERT_APPLICATION_BLACKLISTV1_3_2.sql"; sourceTree = "<group>"; };
 		CD71E4A7165EEB8C00987E09 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		CD80E74E1645393300A9C7D8 /* EVE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD80E7521645393300A9C7D8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -343,8 +363,6 @@
 		CD84B7881658CB5500DF227B /* MigrationsV1_3_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationsV1_3_1.h; path = Database/Migrations/MigrationsV1_3_1.h; sourceTree = "<group>"; };
 		CD84B7891658CB5500DF227B /* MigrationsV1_3_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationsV1_3_1.m; path = Database/Migrations/MigrationsV1_3_1.m; sourceTree = "<group>"; };
 		CD84B78B1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CREATE_TABLEV1_3_1.sql; path = "Database/SQL Scripte/CREATE_TABLEV1_3_1.sql"; sourceTree = "<group>"; };
-		CD97CE6C164670BD00406F1F /* HandleClickedUIElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleClickedUIElement.h; sourceTree = "<group>"; };
-		CD97CE6D164670BE00406F1F /* HandleClickedUIElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandleClickedUIElement.m; sourceTree = "<group>"; };
 		CD97CE8E16467AB000406F1F /* GrowlController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowlController.h; sourceTree = "<group>"; };
 		CD97CE8F16467AB000406F1F /* GrowlController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowlController.m; sourceTree = "<group>"; };
 		CD97CE94164683EA00406F1F /* ApplicationsTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationsTableModel.h; path = Database/Models/ApplicationsTableModel.h; sourceTree = "<group>"; };
@@ -364,12 +382,8 @@
 		CDA558B616ADCA2F008D236E /* ReceiveAppModuleMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiveAppModuleMock.m; sourceTree = "<group>"; };
 		CDA558BA16AF2615008D236E /* MigrationV1_4_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationV1_4_0.h; path = Database/Migrations/MigrationV1_4_0.h; sourceTree = "<group>"; };
 		CDA558BB16AF2615008D236E /* MigrationV1_4_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationV1_4_0.m; path = Database/Migrations/MigrationV1_4_0.m; sourceTree = "<group>"; };
-		CDA558BD16AF2712008D236E /* REMOVE_GUI_ELEMENTS_V1_3_5.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = REMOVE_GUI_ELEMENTS_V1_3_5.sql; path = "Database/SQL Scripte/V1.3.5/REMOVE_GUI_ELEMENTS_V1_3_5.sql"; sourceTree = "<group>"; };
-		CDA558BF16AF2808008D236E /* ALTER_TABLE_GUI_ELEMENTS_V1_3_5.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ALTER_TABLE_GUI_ELEMENTS_V1_3_5.sql; path = "Database/SQL Scripte/V1.3.5/ALTER_TABLE_GUI_ELEMENTS_V1_3_5.sql"; sourceTree = "<group>"; };
 		CDA558C116AF2BCD008D236E /* AppModuleTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppModuleTableModel.h; path = Database/Models/AppModuleTableModel.h; sourceTree = "<group>"; };
 		CDA558C216AF2BCE008D236E /* AppModuleTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppModuleTableModel.m; path = Database/Models/AppModuleTableModel.m; sourceTree = "<group>"; };
-		CDA558C416AF35B5008D236E /* CREATE_TABLE_APP_MODULE_V1_3_5.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CREATE_TABLE_APP_MODULE_V1_3_5.sql; path = "Database/SQL Scripte/V1.3.5/CREATE_TABLE_APP_MODULE_V1_3_5.sql"; sourceTree = "<group>"; };
-		CDA558C616AF4085008D236E /* ALTER_TABLE_APPLICATIONS_V1_3_5.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ALTER_TABLE_APPLICATIONS_V1_3_5.sql; path = "Database/SQL Scripte/V1.3.5/ALTER_TABLE_APPLICATIONS_V1_3_5.sql"; sourceTree = "<group>"; };
 		CDA558CA16B02605008D236E /* IUserNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IUserNotifications.h; path = UserNotification/IUserNotifications.h; sourceTree = "<group>"; };
 		CDA558CC16B02687008D236E /* GrowlNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GrowlNotifications.h; path = UserNotification/GrowlNotifications.h; sourceTree = "<group>"; };
 		CDA558CD16B02687008D236E /* GrowlNotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GrowlNotifications.m; path = UserNotification/GrowlNotifications.m; sourceTree = "<group>"; };
@@ -382,8 +396,6 @@
 		CDC1767816BC2583006C1A74 /* apps_drag_and_drop_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apps_drag_and_drop_overlay.png; sourceTree = "<group>"; };
 		CDC77C1D165C2DAF00939D99 /* MigrationsV1_3_2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationsV1_3_2.h; path = Database/Migrations/MigrationsV1_3_2.h; sourceTree = "<group>"; };
 		CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationsV1_3_2.m; path = Database/Migrations/MigrationsV1_3_2.m; sourceTree = "<group>"; };
-		CDC77C20165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_GUI_ELEMENTS_V1_3_2.sql; path = "Database/SQL Scripte/V1.3.2/INSERT_GUI_ELEMENTS_V1_3_2.sql"; sourceTree = "<group>"; };
-		CDC77C21165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_GUI_SUPPORT_V1_3_2.sql; path = "Database/SQL Scripte/V1.3.2/INSERT_GUI_SUPPORT_V1_3_2.sql"; sourceTree = "<group>"; };
 		CDE3015416A2F2B300E8D489 /* AppsNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppsNavigationView.h; path = Apps/GUI/AppsNavigationView.h; sourceTree = "<group>"; };
 		CDE3015516A2FB6A00E8D489 /* AppsNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsNavigationViewController.h; path = Apps/GUI/AppsNavigationViewController.h; sourceTree = "<group>"; };
 		CDE3015616A2FB6B00E8D489 /* AppsNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsNavigationViewController.m; path = Apps/GUI/AppsNavigationViewController.m; sourceTree = "<group>"; };
@@ -404,8 +416,8 @@
 		CDEE1556164A93FB00EDCDF4 /* StringUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StringUtilities.h; path = Utilities/StringUtilities.h; sourceTree = "<group>"; };
 		CDEE1557164A93FB00EDCDF4 /* StringUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StringUtilities.m; path = Utilities/StringUtilities.m; sourceTree = "<group>"; };
 		CDEE155C164A9D3200EDCDF4 /* INSERT_GUI_SUPPORT_V1_0.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_GUI_SUPPORT_V1_0.sql; path = "Database/SQL Scripte/INSERT_GUI_SUPPORT_V1_0.sql"; sourceTree = "<group>"; };
-		CDEE155E164AB0D100EDCDF4 /* GUIElementsTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUIElementsTableModel.h; path = Database/Models/GUIElementsTableModel.h; sourceTree = "<group>"; };
-		CDEE155F164AB0D200EDCDF4 /* GUIElementsTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GUIElementsTableModel.m; path = Database/Models/GUIElementsTableModel.m; sourceTree = "<group>"; };
+		CDEE155E164AB0D100EDCDF4 /* TGEVE_GUIElementsTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_GUIElementsTableModel.h; path = Database/Models/TGEVE_GUIElementsTableModel.h; sourceTree = "<group>"; };
+		CDEE155F164AB0D200EDCDF4 /* TGEVE_GUIElementsTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_GUIElementsTableModel.m; path = Database/Models/TGEVE_GUIElementsTableModel.m; sourceTree = "<group>"; };
 		CDEE156E164AE38A00EDCDF4 /* INSERT_GUI_ELEMENTS_V1_0.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_GUI_ELEMENTS_V1_0.sql; path = "Database/SQL Scripte/INSERT_GUI_ELEMENTS_V1_0.sql"; sourceTree = "<group>"; };
 		CDEE1571164B03FF00EDCDF4 /* Licence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Licence.h; path = Licencing/Licence.h; sourceTree = "<group>"; };
 		CDEE1572164B03FF00EDCDF4 /* Licence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Licence.m; path = Licencing/Licence.m; sourceTree = "<group>"; };
@@ -441,6 +453,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD14651716CCEF49004395D8 /* Database.dylib in Frameworks */,
+				CD14650C16CC0844004395D8 /* UIElements.dylib in Frameworks */,
 				CD845A2616A15B98007717CB /* SenTestingKit.framework in Frameworks */,
 				CD845A2716A15B98007717CB /* Cocoa.framework in Frameworks */,
 				CD845A3716A15BDA007717CB /* OCMock.framework in Frameworks */,
@@ -450,12 +464,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD1464FC16CBEDAD004395D8 /* UIEvents */ = {
+			isa = PBXGroup;
+			children = (
+				CD1464FD16CBEE2F004395D8 /* TGEVE_IUIEventHandler.h */,
+				CD14650216CBF03F004395D8 /* TGEVE_MouseEventHandler.h */,
+				CD14650316CBF03F004395D8 /* TGEVE_MouseEventHandler.m */,
+				CD14650816CBFA8E004395D8 /* TGEVE_IUIEvent.h */,
+				CD14650516CBF48C004395D8 /* TGEVE_MenuItemEvent.h */,
+				CD14650616CBF48C004395D8 /* TGEVE_MenuItemEvent.m */,
+				CD14651816CD7E5D004395D8 /* TGEVE_GUIElementEvent.h */,
+				CD14651916CD7E5D004395D8 /* TGEVE_GUIElementEvent.m */,
+				CD14651116CC0EA9004395D8 /* NSDictionary+TGEVE_EventDictionary.h */,
+				CD14651216CC0EAA004395D8 /* NSDictionary+TGEVE_EventDictionary.m */,
+			);
+			name = UIEvents;
+			sourceTree = "<group>";
+		};
+		CD1464FE16CBEF87004395D8 /* UIEvents */ = {
+			isa = PBXGroup;
+			children = (
+				CD1464FF16CBEFE9004395D8 /* TGEVEMouseEventHandlerTests.h */,
+				CD14650016CBEFE9004395D8 /* TGEVEMouseEventHandlerTests.m */,
+				CD14650916CC03E4004395D8 /* TGEVE_MenuItemEventTests.h */,
+				CD14650A16CC03E4004395D8 /* TGEVE_MenuItemEventTests.m */,
+				CD14651B16CD7FDA004395D8 /* TGEVE_GUIElementEventTests.h */,
+				CD14651C16CD7FDA004395D8 /* TGEVE_GUIElementEventTests.m */,
+				CD14651416CC11CA004395D8 /* TGEVE_UIElementDictionaryTests.h */,
+				CD14651516CC11CA004395D8 /* TGEVE_UIElementDictionaryTests.m */,
+			);
+			name = UIEvents;
+			sourceTree = "<group>";
+		};
 		CD59010A1663BE44000613F7 /* V1_3_3 */ = {
 			isa = PBXGroup;
 			children = (
-				CD52DC921666918B0006CF06 /* ALTER_GUI_ELEMENTS_V1_3_3.sql */,
-				CD52DC841665527D0006CF06 /* INSERT_GUI_SUPPORT_V1_3_3.sql */,
-				CD59010E1663BE61000613F7 /* INSERT_GUI_ELEMENTS_V1_3_3.sql */,
+				CD1464F216CB9A84004395D8 /* ALTER_GUI_ELEMENTS_V1_3_3.sql */,
 				CD59010B1663BE56000613F7 /* MigrationsV1_3_3.h */,
 				CD59010C1663BE56000613F7 /* MigrationsV1_3_3.m */,
 			);
@@ -588,8 +632,6 @@
 			children = (
 				CD5A46CE16463E64007B57A5 /* IndexingController.h */,
 				CD5A46CF16463E64007B57A5 /* IndexingController.m */,
-				CD5A46F616465123007B57A5 /* UIElementClickedController.h */,
-				CD5A46F716465123007B57A5 /* UIElementClickedController.m */,
 				CD97CE8E16467AB000406F1F /* GrowlController.h */,
 				CD97CE8F16467AB000406F1F /* GrowlController.m */,
 				CDB3D6601646BAE000285306 /* AppLaunchedController.h */,
@@ -681,6 +723,7 @@
 		CD80E7581645393300A9C7D8 /* hotkeyEVE */ = {
 			isa = PBXGroup;
 			children = (
+				CD1464FC16CBEDAD004395D8 /* UIEvents */,
 				CDA558CB16B02611008D236E /* UserNotification */,
 				CD8459FF16A0C41B007717CB /* Apps */,
 				CDE54D9716626FE6009E4C57 /* Social */,
@@ -695,8 +738,6 @@
 				CD5A46CC16463D72007B57A5 /* EVEManager.m */,
 				CD80E7641645393400A9C7D8 /* AppDelegate.h */,
 				CD80E7651645393400A9C7D8 /* AppDelegate.m */,
-				CD97CE6C164670BD00406F1F /* HandleClickedUIElement.h */,
-				CD97CE6D164670BE00406F1F /* HandleClickedUIElement.m */,
 				CD5A4621164550F6007B57A5 /* libs */,
 				CD80E7591645393400A9C7D8 /* Supporting Files */,
 			);
@@ -796,6 +837,7 @@
 		CD845A2816A15B98007717CB /* hotkeyEVEUnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				CD1464FE16CBEF87004395D8 /* UIEvents */,
 				CDA558CF16B0295C008D236E /* UserNotificiation */,
 				CD845A4616A16D92007717CB /* AppsTests */,
 				CD845A2E16A15B98007717CB /* hotkeyEVEUnitTests.h */,
@@ -847,12 +889,12 @@
 		CD97CE6F164671E200406F1F /* DatabaseModel */ = {
 			isa = PBXGroup;
 			children = (
-				CDEE155E164AB0D100EDCDF4 /* GUIElementsTableModel.h */,
-				CDEE155F164AB0D200EDCDF4 /* GUIElementsTableModel.m */,
+				CDEE155E164AB0D100EDCDF4 /* TGEVE_GUIElementsTableModel.h */,
+				CDEE155F164AB0D200EDCDF4 /* TGEVE_GUIElementsTableModel.m */,
 				CD97CE94164683EA00406F1F /* ApplicationsTableModel.h */,
 				CD97CE95164683EA00406F1F /* ApplicationsTableModel.m */,
-				CD5A4697164563D0007B57A5 /* MenuBarTableModel.h */,
-				CD5A4698164563D0007B57A5 /* MenuBarTableModel.m */,
+				CD5A4697164563D0007B57A5 /* TGEVE_MenuBarTableModel.h */,
+				CD5A4698164563D0007B57A5 /* TGEVE_MenuBarTableModel.m */,
 				CD97CE97164685BA00406F1F /* UserDataTableModel.h */,
 				CD97CE98164685BA00406F1F /* UserDataTableModel.m */,
 				CD97CE9D16468A5E00406F1F /* DisabledShortcutsModel.h */,
@@ -881,10 +923,10 @@
 		CDA558B916AF25C9008D236E /* V1_4_0 */ = {
 			isa = PBXGroup;
 			children = (
-				CDA558C616AF4085008D236E /* ALTER_TABLE_APPLICATIONS_V1_3_5.sql */,
-				CDA558C416AF35B5008D236E /* CREATE_TABLE_APP_MODULE_V1_3_5.sql */,
-				CDA558BF16AF2808008D236E /* ALTER_TABLE_GUI_ELEMENTS_V1_3_5.sql */,
-				CDA558BD16AF2712008D236E /* REMOVE_GUI_ELEMENTS_V1_3_5.sql */,
+				CD1464F416CB9A9F004395D8 /* ALTER_TABLE_APPLICATIONS_V1_4_0.sql */,
+				CD1464F516CB9A9F004395D8 /* ALTER_TABLE_GUI_ELEMENTS_V1_4_0.sql */,
+				CD1464F616CB9A9F004395D8 /* CREATE_TABLE_APP_MODULE_V1_4_0.sql */,
+				CD1464F716CB9A9F004395D8 /* REMOVE_GUI_ELEMENTS_V1_4_0.sql */,
 				CDA558BA16AF2615008D236E /* MigrationV1_4_0.h */,
 				CDA558BB16AF2615008D236E /* MigrationV1_4_0.m */,
 			);
@@ -913,10 +955,7 @@
 		CDC77C1C165C2D8E00939D99 /* V1_3_2 */ = {
 			isa = PBXGroup;
 			children = (
-				CD5E8E2C16612A7700D81C2E /* ALTER_MENU_BAR_ITEMS.sql */,
-				CD71E48C165ED17F00987E09 /* INSERT_APPLICATION_BLACKLISTV1_3_2.sql */,
-				CDC77C20165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql */,
-				CDC77C21165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql */,
+				CD1464F016CB9A65004395D8 /* ALTER_MENU_BAR_ITEMS.sql */,
 				CDC77C1D165C2DAF00939D99 /* MigrationsV1_3_2.h */,
 				CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */,
 			);
@@ -1130,21 +1169,16 @@
 				CD836D591652C0A5008A7876 /* Credits.html in Resources */,
 				CD84B78C1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql in Resources */,
 				CD6A928E1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql in Resources */,
-				CDC77C22165C2DEF00939D99 /* INSERT_GUI_ELEMENTS_V1_3_2.sql in Resources */,
-				CDC77C23165C2DEF00939D99 /* INSERT_GUI_SUPPORT_V1_3_2.sql in Resources */,
-				CD71E48D165ED17F00987E09 /* INSERT_APPLICATION_BLACKLISTV1_3_2.sql in Resources */,
-				CD5E8E2D16612A7700D81C2E /* ALTER_MENU_BAR_ITEMS.sql in Resources */,
-				CD59010F1663BE61000613F7 /* INSERT_GUI_ELEMENTS_V1_3_3.sql in Resources */,
-				CD52DC851665527D0006CF06 /* INSERT_GUI_SUPPORT_V1_3_3.sql in Resources */,
-				CD52DC931666918C0006CF06 /* ALTER_GUI_ELEMENTS_V1_3_3.sql in Resources */,
 				CD845A0816A0C493007717CB /* AppsWindowController.xib in Resources */,
 				CD845A1016A0C8ED007717CB /* AppsTableNavigationViewController.xib in Resources */,
 				CD845A1A16A0C937007717CB /* AppsTableViewController.xib in Resources */,
-				CDA558BE16AF2712008D236E /* REMOVE_GUI_ELEMENTS_V1_3_5.sql in Resources */,
-				CDA558C016AF2809008D236E /* ALTER_TABLE_GUI_ELEMENTS_V1_3_5.sql in Resources */,
-				CDA558C516AF35B6008D236E /* CREATE_TABLE_APP_MODULE_V1_3_5.sql in Resources */,
-				CDA558C716AF4086008D236E /* ALTER_TABLE_APPLICATIONS_V1_3_5.sql in Resources */,
 				CDC1767916BC2583006C1A74 /* apps_drag_and_drop_overlay.png in Resources */,
+				CD1464F116CB9A65004395D8 /* ALTER_MENU_BAR_ITEMS.sql in Resources */,
+				CD1464F316CB9A84004395D8 /* ALTER_GUI_ELEMENTS_V1_3_3.sql in Resources */,
+				CD1464F816CB9A9F004395D8 /* ALTER_TABLE_APPLICATIONS_V1_4_0.sql in Resources */,
+				CD1464F916CB9A9F004395D8 /* ALTER_TABLE_GUI_ELEMENTS_V1_4_0.sql in Resources */,
+				CD1464FA16CB9A9F004395D8 /* CREATE_TABLE_APP_MODULE_V1_4_0.sql in Resources */,
+				CD1464FB16CB9A9F004395D8 /* REMOVE_GUI_ELEMENTS_V1_4_0.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1193,12 +1227,10 @@
 				CD5A4665164558FB007B57A5 /* ContextFilterLogFormatter.m in Sources */,
 				CD5A4666164558FB007B57A5 /* DispatchQueueLogFormatter.m in Sources */,
 				CD5A469216455F7D007B57A5 /* MenuBarIndexingThread.m in Sources */,
-				CD5A4699164563D0007B57A5 /* MenuBarTableModel.m in Sources */,
+				CD5A4699164563D0007B57A5 /* TGEVE_MenuBarTableModel.m in Sources */,
 				CD5A46CD16463D72007B57A5 /* EVEManager.m in Sources */,
 				CD5A46D016463E64007B57A5 /* IndexingController.m in Sources */,
 				CD5A46F516464F7E007B57A5 /* EVEObserver.m in Sources */,
-				CD5A46F816465123007B57A5 /* UIElementClickedController.m in Sources */,
-				CD97CE6E164670BE00406F1F /* HandleClickedUIElement.m in Sources */,
 				CD97CE9016467AB000406F1F /* GrowlController.m in Sources */,
 				CD97CE96164683EA00406F1F /* ApplicationsTableModel.m in Sources */,
 				CD97CE99164685BA00406F1F /* UserDataTableModel.m in Sources */,
@@ -1210,7 +1242,7 @@
 				CDEE1559164A93FB00EDCDF4 /* NSFileManager+DirectoryLocations.m in Sources */,
 				CDEE155A164A93FB00EDCDF4 /* Queue.m in Sources */,
 				CDEE155B164A93FB00EDCDF4 /* StringUtilities.m in Sources */,
-				CDEE1560164AB0D400EDCDF4 /* GUIElementsTableModel.m in Sources */,
+				CDEE1560164AB0D400EDCDF4 /* TGEVE_GUIElementsTableModel.m in Sources */,
 				CDEE1573164B03FF00EDCDF4 /* Licence.m in Sources */,
 				CDEE1576164B04F100EDCDF4 /* NSString+Hashes.m in Sources */,
 				CD6AD395164C047E009FF1B5 /* LicenceWindowController.m in Sources */,
@@ -1235,6 +1267,10 @@
 				CDA558CE16B02688008D236E /* GrowlNotifications.m in Sources */,
 				CDF656E616B0403500A0FEC4 /* AppsManagerLocalDB.m in Sources */,
 				CDF656ED16B04B3C00A0FEC4 /* AppsManager.m in Sources */,
+				CD14650416CBF03F004395D8 /* TGEVE_MouseEventHandler.m in Sources */,
+				CD14650716CBF48C004395D8 /* TGEVE_MenuItemEvent.m in Sources */,
+				CD14651316CC0EAB004395D8 /* NSDictionary+TGEVE_EventDictionary.m in Sources */,
+				CD14651A16CD7E5E004395D8 /* TGEVE_GUIElementEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1251,6 +1287,10 @@
 				CDA558B716ADCA2F008D236E /* ReceiveAppModuleMock.m in Sources */,
 				CDA558D216B02981008D236E /* GrowlNotificationTests.m in Sources */,
 				CDF656EA16B0493200A0FEC4 /* AppsManagerMock.m in Sources */,
+				CD14650116CBEFE9004395D8 /* TGEVEMouseEventHandlerTests.m in Sources */,
+				CD14650B16CC03E5004395D8 /* TGEVE_MenuItemEventTests.m in Sources */,
+				CD14651616CC11CB004395D8 /* TGEVE_UIElementDictionaryTests.m in Sources */,
+				CD14651D16CD7FDB004395D8 /* TGEVE_GUIElementEventTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,15 +10,17 @@
 #import "ShortcutTableModel.h"
 #import "ApplicationsTableModel.h"
 #import "UserDataTableModel.h"
+#import "NSDictionary+TGEVE_EventDictionary.h"
 
 @implementation DisplayedShortcutsModel
 
-+ (void) insertDisplayedShortcut :(UIElement*) element :(NSInteger) shortcutID {
-  DDLogInfo(@"DisplayedShortcutsModel -> insertDisplayedShortcut(element => :%@:, shortcutID => :%li:) :: get called.",element , shortcutID);
++ (void) insertDisplayedShortcut :(NSDictionary*) eventHintShorcutDic {
+  DDLogInfo(@"DisplayedShortcutsModel -> insertDisplayedShortcut( eventHintShorcutDic => :%@:) :: get called.",eventHintShorcutDic);
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
-  NSInteger appID = [ApplicationsTableModel getApplicationID:[[element owner] appName] :[[element owner] bundleIdentifier]];
-  NSInteger userID = [UserDataTableModel getUserID:[element user]];
+  NSInteger appID = [ApplicationsTableModel getApplicationID :[eventHintShorcutDic valueForKey:TGEVE_KEY_BUNDLE_IDENTIFIER_STRING]];
+  NSInteger userID = [UserDataTableModel getUserID:NSUserName()];
+  NSInteger shortcutID = [ShortcutTableModel getShortcutId :[eventHintShorcutDic valueForKey:TGEVE_KEY_SHORTCUT_STRING]];
   
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@"INSERT INTO %@ ", DISPLAYED_SHORTCUTS_TABLE];
@@ -34,10 +36,11 @@
   [db executeUpdate:query];
 }
 
-+ (BOOL) checkShortcutTimeIntervall :(NSInteger) shortcutID {
-  DDLogInfo(@"DisplayedShortcutsModel -> checkShortcutTimeIntervall(shortcutID => :%li:) :: check the time intervall", shortcutID);
++ (BOOL) checkShortcutTimeIntervall :(NSDictionary*) eventHintShortcutDic {
+  DDLogInfo(@"DisplayedShortcutsModel -> checkShortcutTimeIntervall(eventHintDic => :%@:) :: check the time intervall", eventHintShortcutDic);
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
-  
+
+  NSInteger shortcutID = [ShortcutTableModel getShortcutId :[eventHintShortcutDic valueForKey:TGEVE_KEY_SHORTCUT_STRING]];
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@" SELECT rowid FROM %@" , DISPLAYED_SHORTCUTS_TABLE];
   [query appendFormat:@" WHERE %@ = %li ", SHORTCUT_ID_COL, shortcutID];

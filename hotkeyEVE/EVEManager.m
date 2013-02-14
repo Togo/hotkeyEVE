@@ -13,7 +13,6 @@
 @synthesize indexing;
 @synthesize eveObserver;
 
-@synthesize uiElementClicked;
 @synthesize appLaunched;
 @synthesize appChangedController;
 
@@ -39,8 +38,6 @@
     indexing = [[IndexingController alloc] init];
     
     eveObserver = [[EVEObserver alloc] init];
-    
-    uiElementClicked = [[UIElementClickedController alloc] init];
     
     appChangedController = [[AppChangedController alloc] init];
     appLaunched = [[AppLaunchedController alloc] init];

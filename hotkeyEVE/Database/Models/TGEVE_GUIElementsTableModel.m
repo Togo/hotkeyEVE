@@ -6,32 +6,29 @@
 //  Copyright (c) 2012 Tobias Sommer. All rights reserved.
 //
 
-#import "GUIElementsTableModel.h"
+#import "TGEVE_GUIElementsTableModel.h"
 #import "ShortcutTableModel.h"
 #import "ApplicationsTableModel.h"
 #import "AppModuleTableModel.h"
 
-@implementation GUIElementsTableModel
+@implementation TGEVE_GUIElementsTableModel
 
-+ (void) editGUIElement :(UIElement*) element {
-  DDLogInfo(@"GUIElementsTable -> editGUIElement(element => :%@: :: get called", element);
+- (NSArray*) searchInGUIElementTable :(UIElement*) element {
+  DDLogInfo(@"GUIElementsTable -> searchInGUIElementTable(element => :%@: :: get called", element);
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
   NSMutableString *query = [NSMutableString string];
-  [query appendFormat:@" SELECT * FROM %@ ", GUI_ELEMENTS_TABLE];
-  [query appendFormat:@" WHERE %@ like '%@' ", IDENTIFIER_COL, [element uiElementIdentifier]];
-  [query appendFormat:@" OR ( %@ like '%@' ", COCOA_IDENTIFIER_COL, [element cocoaIdentifierString]];
-  [query appendFormat:@" AND   %@ != '' ) ", COCOA_IDENTIFIER_COL];
-  
-  DDLogVerbose(@"GUIElementsTable -> editGUIElement :: query => :%@:", query);
+  [query appendFormat:@"   SELECT g.*, a.* FROM %@ g, app_module m, %@ a", GUI_ELEMENTS_TABLE, APPLICATIONS_TABLE];
+  [query appendFormat:@" WHERE ( g.%@ like '%@' ", IDENTIFIER_COL, [element uiElementIdentifier]];
+  [query appendFormat:@" OR ( g.%@ like '%@' ", COCOA_IDENTIFIER_COL, [element cocoaIdentifierString]];
+  [query appendFormat:@" AND   g.%@ != '' ) )", COCOA_IDENTIFIER_COL];
+  [query appendFormat:@" AND ( m.%@ = g.%@  ", ID_COL, MODULE_ID_COL];
+  [query appendFormat:@" AND a.%@ = m.%@ ) ", ID_COL, APPLICATION_ID_COL];
+  [query appendFormat:@" GROUP BY   g.%@  ", ID_COL];
+
+  DDLogVerbose(@"GUIElementsTable -> searchInGUIElementTable :: query => :%@:", query);
   NSArray *result = [db executeQuery:query];
-  if ([result count] > 0) {
-    element.title = [[result objectAtIndex:0] valueForKey:TITLE_COL];
-    element.parentTitle = [[result objectAtIndex:0] valueForKey:PARENT_TITLE_COL];
-    element.help = [[result objectAtIndex:0] valueForKey:HELP_COL];
-    element.shortcutString = [[result objectAtIndex:0] valueForKey:SHORTCUT_STRING_COL];
-    DDLogInfo(@"GUIElementsTable -> editGUIElement :: found entry in database resultArray => :%@: ", result );
-    }
+  return result;
   }
 
 - (void) insertGUIElementsFromAppModule :(AppModule*) app {

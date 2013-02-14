@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Tobias Sommer. All rights reserved.
 //
 
-#import "MenuBarTableModel.h"
+#import "TGEVE_MenuBarTableModel.h"
 #import <UIElements/UIElement.h>
 #import "StringUtilities.h"
 #import "ShortcutTableModel.h"
@@ -14,7 +14,7 @@
 #import "EVEUtilities.h"
 #import "UserDataTableModel.h"
 
-@implementation MenuBarTableModel
+@implementation TGEVE_MenuBarTableModel
 
 + (void) insertMenuBarElementArray :(NSArray*) elements {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
@@ -44,64 +44,31 @@
   }
 }
 
-+ (NSString*) selectShortcutString :(UIElement*) element {
-  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
-  
-  NSMutableString *query = [NSMutableString string];
-  [query appendFormat:@" SELECT * FROM %@,%@ ", SHORTCUTS_TABLE, MENU_BAR_ITEMS_TABLE];
-  [query appendFormat:@" WHERE %@.shortcut_id = %@.id ", MENU_BAR_ITEMS_TABLE, SHORTCUTS_TABLE];
-  [query appendFormat:@" AND %@.identifier like '%@' ", MENU_BAR_ITEMS_TABLE, [element uiElementIdentifier]];
-  [query appendFormat:@" AND %@.%@ like '%@' ", MENU_BAR_ITEMS_TABLE, LANG_COL, [EVEUtilities currentLanguage]];
-  
-  DDLogVerbose(@"MenuBarTableModel -> selectShortcutString :: query => %@", query);
-  NSArray *result = [db executeQuery:query];
-  if ([result count] > 0) {
-    NSString *shortcutString = [[result objectAtIndex:0] valueForKey:SHORTCUT_STRING_COL];
-    DDLogInfo(@"MenuBarTableModel -> selectShortcutString :: found a string in the => :%@:", shortcutString);
-    return shortcutString;
-  } else {
-    DDLogWarn(@"MenuBarTableModel -> selectShortcutString :: no shortcutString with the uiElementIdentifier => :%@: in the %@ Table found", element.uiElementIdentifier, MENU_BAR_ITEMS_TABLE);
-    return @"";
-  }
-}
-
-+ (NSArray*) searchInMenuBarTable :(UIElement*) element {
+- (NSArray*) searchInMenuBarTable :(UIElement*) element {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
   NSInteger appId = [ApplicationsTableModel getApplicationID:[[element owner] appName] :[[element owner] bundleIdentifier]];
 
   NSMutableString *query = [NSMutableString string];
-  [query appendFormat:@"SELECT * FROM %@ ", MENU_BAR_ITEMS_TABLE];
-  [query appendFormat:@" WHERE %@ = %li ", APPLICATION_ID_COL, appId];
   
-  NSArray *results = [db executeQuery:query];
+  [query appendFormat:@"INSERT INTO menu_bar_search (\"%@\", \"%@\",  \"%@\",\"%@\") SELECT \"%@\", \"%@\",  \"%@\",\"%@\" FROM menu_bar_items WHERE %@ = %li ", IDENTIFIER_COL, TITLE_COL,PARENT_TITLE_COL, SHORTCUT_ID_COL,IDENTIFIER_COL, TITLE_COL, PARENT_TITLE_COL, SHORTCUT_ID_COL, APPLICATION_ID_COL, appId];
+  [db executeUpdate:query];
   
-  DDLogInfo(@"MenuBarTableModel -> searchInMenuBarTable :: add %li items to the %@ Table",[results count], MENU_BAR_SEARCH_TABLE);
-  for (id aRow in results) {
-    [query setString:@""];
-    [query appendFormat:@"INSERT INTO menu_bar_search VALUES "];
-    [query appendFormat:@" ( '%@', ",  [aRow valueForKey:IDENTIFIER_COL]];
-    [query appendFormat:@"   '%@', ",  [aRow valueForKey:TITLE_COL]];
-    [query appendFormat:@"   '%@', ",  [aRow valueForKey:PARENT_TITLE_COL] ];
-    [query appendFormat:@"    %i );", [[aRow valueForKey:SHORTCUT_ID_COL] intValue]];
-    
-    [db executeUpdate:query];
-  }
-
   query = [NSMutableString string];
   [query appendFormat:@" SELECT %@.*, %@.%@ ",MENU_BAR_SEARCH_TABLE, SHORTCUTS_TABLE, SHORTCUT_STRING_COL];
   [query appendFormat:@" FROM %@, %@ ", MENU_BAR_SEARCH_TABLE, SHORTCUTS_TABLE];
-  [query appendFormat:@" WHERE %@.%@ MATCH '%@*' ", MENU_BAR_SEARCH_TABLE, IDENTIFIER_COL, [element uiElementIdentifier]];
+  [query appendFormat:@" WHERE %@.%@ MATCH '%@' ", MENU_BAR_SEARCH_TABLE, IDENTIFIER_COL, [element uiElementIdentifier]];
   [query appendFormat:@" AND %@.%@ = %@.%@ ", MENU_BAR_SEARCH_TABLE, SHORTCUT_ID_COL, SHORTCUTS_TABLE, ID_COL];
   
   DDLogVerbose(@"MenuBarTableModel -> searchInMenuBarTable :: query => %@", query);
   NSArray *result = [db executeQuery:query];
   
-  [query setString:@""];
+  query = [NSMutableString string];
   [query appendFormat:@"DELETE FROM %@", MENU_BAR_SEARCH_TABLE];
   [db executeUpdate:query];
 
   DDLogInfo(@"MenuBarTableModel -> searchInMenuBarTable :: found %li rows with the identifier  => :%@:",[result count], [element uiElementIdentifier]);
+  
   return result;
 }
 

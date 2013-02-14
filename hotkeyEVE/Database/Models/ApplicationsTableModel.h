@@ -14,6 +14,7 @@
 + (void) insertNewApplication :(Application*) app;
 
 + (NSInteger) getApplicationID :(NSString*) appName :(NSString*) bundleIdentifier;
++ (NSInteger) getApplicationID :(NSString*) bundleIdentifier;
 
 + (NSArray*) selectAllApplications;
 + (NSArray*) selectApplicationsFiltered :(NSString*) searchString;

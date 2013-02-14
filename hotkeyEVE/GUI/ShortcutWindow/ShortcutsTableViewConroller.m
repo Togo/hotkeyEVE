@@ -7,7 +7,7 @@
 //
 
 #import "ShortcutsTableViewConroller.h"
-#import "MenuBarTableModel.h"
+#import "TGEVE_MenuBarTableModel.h"
 #import "UserDataTableModel.h"
 #import "DisabledShortcutsModel.h"
 #import "ShareService.h"
@@ -87,7 +87,7 @@ enum {
     activeAppName = [[aNotification object] valueForKey:APP_NAME_COL];
     DDLogInfo(@"ShortcutsTableViewConroller -> applicationChanged() :: appID :%li: set activeAppName :%@: ", appID, activeAppName);
   
-    unfilteredShortcutList = [MenuBarTableModel getTitlesAndShortcuts:appID];
+    unfilteredShortcutList = [TGEVE_MenuBarTableModel getTitlesAndShortcuts:appID];
     [shortcutList addObjectsFromArray:unfilteredShortcutList];
     if([[_searchField stringValue] length] > 0) {
       [[NSNotificationCenter defaultCenter] postNotificationName:NSControlTextDidChangeNotification object:_searchField];

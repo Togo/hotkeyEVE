@@ -13,8 +13,8 @@
 
 @protocol IUserNotifications <NSObject>
 
-+ (void) displayShortcutHintNotification :(UIElement*) element;
-+ (void) displayMultipleMatchesNotification :(NSString*) description;
+- (void) displaySingleShortcutHintNotification :(NSDictionary*) eventDictionary;
+- (void) displayMultipleMatchesNotification :(NSArray*) eventShortcutList;
 
 + (void) displayShortcutDisabledNotification :(NSDictionary*) clickContext;
 

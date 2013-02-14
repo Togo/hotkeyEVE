@@ -10,12 +10,12 @@
 #import <AppsLibrary/AppsLibrary.h>
 #import "IUserNotifications.h"
 
-@class GUIElementsTableModel;
+@class TGEVE_GUIElementsTableModel;
 @class AppModuleTableModel;
 
 @protocol IAppsManager <NSObject>
 
-@property (strong) GUIElementsTableModel *guiElementTable;
+@property (strong) TGEVE_GUIElementsTableModel *guiElementTable;
 @property (strong) AppModuleTableModel   *appModuleTable;
 @property (strong) id<IUserNotifications> userNotifications;
 

@@ -10,9 +10,9 @@
 #import <AppsLibrary/AppsLibrary.h>
 #import <UIElements/UIElement.h>
 
-@interface GUIElementsTableModel : NSObject
+@interface TGEVE_GUIElementsTableModel : NSObject
 
-+ (void) editGUIElement :(UIElement*) element;
+- (NSArray*) searchInGUIElementTable :(UIElement*) element;
 
 - (void) insertGUIElementsFromAppModule :(AppModule*) app;
 - (void) removeGUIElementsWithID :(NSInteger) theID;

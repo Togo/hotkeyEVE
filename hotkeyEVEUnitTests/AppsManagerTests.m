@@ -10,7 +10,7 @@
 #import "AppsManagerAmazon.h"
 #import <OCMock/OCMock.h>
 #import "ReceiveAppModuleMock.h"
-#import "GUIElementsTableModel.h"
+#import "TGEVE_GUIElementsTableModel.h"
 #import "AppModuleTableModel.h"
 #import "GUINotifications.h"
 #import "EVEManager.h"

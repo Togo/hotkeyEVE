@@ -8,12 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MenuBarTableModel : NSObject
+@interface TGEVE_MenuBarTableModel : NSObject
 
 + (void) insertMenuBarElementArray :(NSArray*) elements;
 
-+ (NSString*) selectShortcutString :(UIElement*) element;
-+ (NSArray*) searchInMenuBarTable :(UIElement*) element;
+- (NSArray*) searchInMenuBarTable :(UIElement*) element;
 
 + (NSInteger) countShortcuts :(Application*) app;
 + (NSArray*) getTitlesAndShortcuts :(NSInteger) appID;

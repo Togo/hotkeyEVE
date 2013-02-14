@@ -11,7 +11,7 @@
 #import "EVEUtilities.h"
 #import "GUIUtilities.h"
 
-#import "MenuBarTableModel.h"
+#import "TGEVE_MenuBarTableModel.h"
 #import "UserDataTableModel.h"
 
 #import "LicenceWindowController.h"
@@ -53,7 +53,7 @@
 -(void) menuWillOpen :(NSMenu*) menu {
   activeApplication = [EVEUtilities activeApplication];
   
-  NSInteger count = [MenuBarTableModel countShortcuts:activeApplication];
+  NSInteger count = [TGEVE_MenuBarTableModel countShortcuts:activeApplication];
   NSString *title = [NSString stringWithFormat:@"%@ (%li)", [activeApplication appName], count];
   [activeApp setTitle:title];
 }

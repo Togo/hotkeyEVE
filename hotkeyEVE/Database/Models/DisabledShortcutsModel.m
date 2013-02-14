@@ -11,12 +11,21 @@
 #import "ApplicationsTableModel.h"
 #import "UserDataTableModel.h"
 #import "EVEUtilities.h"
+#import "NSDictionary+TGEVE_EventDictionary.h"
 
 @implementation DisabledShortcutsModel
 
++ (void) disableShortcutWithEventDictionary :(NSDictionary*) eventShortcutDictionary {
+  NSInteger shortcutID = [ShortcutTableModel getShortcutId :[eventShortcutDictionary valueForKey:TGEVE_KEY_SHORTCUT_STRING]];
+  NSInteger appID = [ApplicationsTableModel getApplicationID :[eventShortcutDictionary valueForKey:TGEVE_KEY_BUNDLE_IDENTIFIER_STRING]];
+  NSString *title = [eventShortcutDictionary valueForKey:TGEVE_KEY_TITLE_STRING];
+  
+  [self disableShortcut :shortcutID :appID :title];
+}
+
 + (void) disableShortcutWithStrings :(NSString*) appName :(NSString*) bundleIdentifier :(NSString*)shortcutString :(NSString*) user :(NSString*) elementTitle {
-  NSInteger shortcutID = [ShortcutTableModel getShortcutId:shortcutString];
-  NSInteger appID = [ApplicationsTableModel getApplicationID:appName :bundleIdentifier];
+  NSInteger shortcutID = [ShortcutTableModel getShortcutId :shortcutString];
+  NSInteger appID = [ApplicationsTableModel getApplicationID :appName :bundleIdentifier];
   
   [self disableShortcut:shortcutID :appID :elementTitle];
 }
@@ -105,6 +114,14 @@
   }
 }
 
+
++ (BOOL) isShortcutDisabled :(NSDictionary*) eventShortcutDic {
+  NSInteger shortcutID = [ShortcutTableModel getShortcutId :[eventShortcutDic valueForKey:TGEVE_KEY_SHORTCUT_STRING]];
+  NSInteger appID = [ApplicationsTableModel getApplicationID :[eventShortcutDic valueForKey:TGEVE_KEY_BUNDLE_IDENTIFIER_STRING]];
+  NSInteger userID = [UserDataTableModel getUserID :NSUserName() ];
+  
+  return [self isShortcutDisabled :shortcutID :appID :userID :[eventShortcutDic valueForKey:TGEVE_KEY_TITLE_STRING]];
+}
 
 + (BOOL) isShortcutDisabled :(UIElement*) element :(NSInteger) shortcutID {
   NSInteger appID = [ApplicationsTableModel getApplicationID:[[element owner] appName] :[[element owner] bundleIdentifier]];

@@ -10,6 +10,7 @@
 #import "DisabledShortcutsModel.h"
 #import "EVEUtilities.h"
 #import "GrowlNotifications.h"
+#import "NSDictionary+TGEVE_EventDictionary.h"
 
 @implementation GrowlController
 
@@ -17,18 +18,19 @@
 - (void) growlNotificationWasClicked :(id) clickedContext {
   if (clickedContext != nil) {
     if ([[clickedContext valueForKey:@"mesage_type"] isEqualToString:@"disable_shortcut"]) {
-      NSString *appName = [clickedContext valueForKey:APP_NAME_COL];
-      NSString *bundleIdentifier = [clickedContext valueForKey:BUNDLE_IDEN_COL];
-      NSString *shortcutString = [clickedContext valueForKey:SHORTCUT_STRING_COL];
-      NSString *user = [clickedContext valueForKey:USER_NAME_COL];
-      NSString *title = [clickedContext valueForKey:TITLE_COL];
+
+      [DisabledShortcutsModel disableShortcutWithEventDictionary:[clickedContext valueForKey:@"clickContextDic"]];
+      [GrowlNotifications displayShortcutDisabledNotification :[clickedContext valueForKey:@"clickContextDic"]];
+
+      //      NSString *appName = [clickedContext valueForKey:APP_NAME_COL];
+      //      NSString *user = [clickedContext valueForKey:USER_NAME_COL];
       
-      [DisabledShortcutsModel disableShortcutWithStrings :appName :bundleIdentifier :shortcutString :user :title];
-      [GrowlNotifications displayShortcutDisabledNotification :clickedContext];
-      
-      [[NSNotificationCenter defaultCenter] postNotificationName:SelectActiveApplication object:[EVEUtilities activeApplication]];
-      [[NSNotificationCenter defaultCenter] postNotificationName:ShortcutsWindowApplicationDidChanged object:clickedContext];
-      [[NSNotificationCenter defaultCenter] postNotificationName:SelectNotificationDisabledShortcutRow object:clickedContext];
+      //      NSString *bundleIdentifier = [clickedContext valueForKey:BUNDLE_IDEN_COL];
+      //      NSString *shortcutString = [clickedContext valueForKey:TGEVE_KEY_SHORTCUT_STRING];
+      //      NSString *title = [clickedContext valueForKey:TGEVE_KEY_TITLE_STRING];
+//      [[NSNotificationCenter defaultCenter] postNotificationName:SelectActiveApplication object:[EVEUtilities activeApplication]];
+//      [[NSNotificationCenter defaultCenter] postNotificationName:ShortcutsWindowApplicationDidChanged object:clickedContext];
+//      [[NSNotificationCenter defaultCenter] postNotificationName:SelectNotificationDisabledShortcutRow object:clickedContext];
 
       return;
     }

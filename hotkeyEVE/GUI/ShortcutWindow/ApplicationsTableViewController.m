@@ -8,7 +8,7 @@
 
 #import "ApplicationsTableViewController.h"
 #import "ApplicationsTableModel.h"
-#import "MenuBarTableModel.h"
+#import "TGEVE_MenuBarTableModel.h"
 #import "EVEUtilities.h"
 
 @implementation ApplicationsTableViewController

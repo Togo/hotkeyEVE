@@ -17,7 +17,7 @@
 #import <UIElements/ClickOnUIElementSubject.h>
 
 #import "UserDataTableModel.h"
-#import "GUIElementsTableModel.h"
+#import "TGEVE_GUIElementsTableModel.h"
 
 #import "GrowlNotifications.h"
 #import "EVEUtilities.h"

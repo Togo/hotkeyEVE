@@ -9,10 +9,10 @@
 #import "MenuBarIndexingThread.h"
 #import <UIElements/Application.h>
 #import <UIElements/MenuBarIndexing.h>
-#import "MenuBarTableModel.h"
+#import "TGEVE_MenuBarTableModel.h"
 #import "ShortcutTableModel.h"
 #import "ApplicationsTableModel.h"
-#import "GUIElementsTableModel.h"
+#import "TGEVE_GUIElementsTableModel.h"
 #import "DisabledShortcutsModel.h"
 
 @implementation MenuBarIndexingThread
@@ -80,7 +80,7 @@
   
   [ShortcutTableModel insertShortcutsFromElementArray: elements];
   
-  [MenuBarTableModel insertMenuBarElementArray:elements];
+  [TGEVE_MenuBarTableModel insertMenuBarElementArray:elements];
 }
 
 - (void) postIndexingAppStarted :(Application*) app {
