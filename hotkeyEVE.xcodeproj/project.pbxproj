@@ -24,6 +24,8 @@
 		CD14651716CCEF49004395D8 /* Database.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5A463816455119007B57A5 /* Database.dylib */; };
 		CD14651A16CD7E5E004395D8 /* TGEVE_GUIElementEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CD14651916CD7E5D004395D8 /* TGEVE_GUIElementEvent.m */; };
 		CD14651D16CD7FDB004395D8 /* TGEVE_GUIElementEventTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD14651C16CD7FDA004395D8 /* TGEVE_GUIElementEventTests.m */; };
+		CD14652016CD9943004395D8 /* ALTER_MENU_BAR_ITEMS_V1_4_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD14651F16CD9943004395D8 /* ALTER_MENU_BAR_ITEMS_V1_4_1.sql */; };
+		CD14652316CD9984004395D8 /* MigrationV1_4_1.m in Sources */ = {isa = PBXBuildFile; fileRef = CD14652216CD9984004395D8 /* MigrationV1_4_1.m */; };
 		CD57864C16465D5800CC508B /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = CD57864B16465D5800CC508B /* Growl Registration Ticket.growlRegDict */; };
 		CD57865216465E2600CC508B /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
 		CD57865316465EDE00CC508B /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD57865116465E2600CC508B /* Growl.framework */; };
@@ -261,6 +263,9 @@
 		CD14651916CD7E5D004395D8 /* TGEVE_GUIElementEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_GUIElementEvent.m; path = UIEvents/TGEVE_GUIElementEvent.m; sourceTree = "<group>"; };
 		CD14651B16CD7FDA004395D8 /* TGEVE_GUIElementEventTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_GUIElementEventTests.h; path = UIEvents/TGEVE_GUIElementEventTests.h; sourceTree = "<group>"; };
 		CD14651C16CD7FDA004395D8 /* TGEVE_GUIElementEventTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_GUIElementEventTests.m; path = UIEvents/TGEVE_GUIElementEventTests.m; sourceTree = "<group>"; };
+		CD14651F16CD9943004395D8 /* ALTER_MENU_BAR_ITEMS_V1_4_1.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ALTER_MENU_BAR_ITEMS_V1_4_1.sql; path = "Database/SQL Scripte/V1_4_1/ALTER_MENU_BAR_ITEMS_V1_4_1.sql"; sourceTree = "<group>"; };
+		CD14652116CD9984004395D8 /* MigrationV1_4_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationV1_4_1.h; path = Database/Migrations/MigrationV1_4_1.h; sourceTree = "<group>"; };
+		CD14652216CD9984004395D8 /* MigrationV1_4_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationV1_4_1.m; path = Database/Migrations/MigrationV1_4_1.m; sourceTree = "<group>"; };
 		CD57864B16465D5800CC508B /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		CD57865116465E2600CC508B /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = hotkeyEVE/Frameworks/Growl.framework; sourceTree = "<group>"; };
 		CD5786541646611200CC508B /* EVE_ICON.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = EVE_ICON.icns; sourceTree = "<group>"; };
@@ -496,6 +501,16 @@
 			name = UIEvents;
 			sourceTree = "<group>";
 		};
+		CD14651E16CD9936004395D8 /* V1_4_1 */ = {
+			isa = PBXGroup;
+			children = (
+				CD14652116CD9984004395D8 /* MigrationV1_4_1.h */,
+				CD14652216CD9984004395D8 /* MigrationV1_4_1.m */,
+				CD14651F16CD9943004395D8 /* ALTER_MENU_BAR_ITEMS_V1_4_1.sql */,
+			);
+			name = V1_4_1;
+			sourceTree = "<group>";
+		};
 		CD59010A1663BE44000613F7 /* V1_3_3 */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,6 +565,7 @@
 		CD5A464B16455643007B57A5 /* Migrations */ = {
 			isa = PBXGroup;
 			children = (
+				CD14651E16CD9936004395D8 /* V1_4_1 */,
 				CDA558B916AF25C9008D236E /* V1_4_0 */,
 				CD59010A1663BE44000613F7 /* V1_3_3 */,
 				CDC77C1C165C2D8E00939D99 /* V1_3_2 */,
@@ -1179,6 +1195,7 @@
 				CD1464F916CB9A9F004395D8 /* ALTER_TABLE_GUI_ELEMENTS_V1_4_0.sql in Resources */,
 				CD1464FA16CB9A9F004395D8 /* CREATE_TABLE_APP_MODULE_V1_4_0.sql in Resources */,
 				CD1464FB16CB9A9F004395D8 /* REMOVE_GUI_ELEMENTS_V1_4_0.sql in Resources */,
+				CD14652016CD9943004395D8 /* ALTER_MENU_BAR_ITEMS_V1_4_1.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1271,6 +1288,7 @@
 				CD14650716CBF48C004395D8 /* TGEVE_MenuItemEvent.m in Sources */,
 				CD14651316CC0EAB004395D8 /* NSDictionary+TGEVE_EventDictionary.m in Sources */,
 				CD14651A16CD7E5E004395D8 /* TGEVE_GUIElementEvent.m in Sources */,
+				CD14652316CD9984004395D8 /* MigrationV1_4_1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
