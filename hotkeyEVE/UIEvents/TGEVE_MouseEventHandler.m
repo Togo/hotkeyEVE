@@ -37,12 +37,16 @@
 }
 
 - (id<TGEVE_IUIEvent>) createEvent :(UIElement*) element {
-  if ( [element isKindOfClass:[NullUIElement class]] )
+  if ( [element isKindOfClass:[NullUIElement class]] ) {
+    DDLogInfo(@"TGEVE_MouseEventHandler -> createEvent() :: UIElement not supported");
     return nil;
-  else if( [element isKindOfClass:[MenuItem class]] )
+  }  else if( [element isKindOfClass:[MenuItem class]] ) {
+    DDLogInfo(@"TGEVE_MouseEventHandler -> createEvent() :: Menu Item Event");
     return [[TGEVE_MenuItemEvent alloc] init];
-  else
+  } else {
+    DDLogInfo(@"TGEVE_MouseEventHandler -> createEvent() :: GUI Element Event");
     return [[TGEVE_GUIElementEvent alloc] init];  // if not an menu bar and not null then it's a gui element event
+  }
 }
 
 - (BOOL) isShortcutDisabled :(NSArray*) eventShortcutHintList {

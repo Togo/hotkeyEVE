@@ -26,7 +26,7 @@
   [query appendFormat:@" AND a.%@ = m.%@ ) ", ID_COL, APPLICATION_ID_COL];
   [query appendFormat:@" GROUP BY   g.%@  ", ID_COL];
 
-  DDLogVerbose(@"GUIElementsTable -> searchInGUIElementTable :: query => :%@:", query);
+  DDLogInfo(@"GUIElementsTable -> searchInGUIElementTable :: query => :%@:", query);
   NSArray *result = [db executeQuery:query];
   return result;
   }

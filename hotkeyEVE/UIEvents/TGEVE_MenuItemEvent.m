@@ -30,6 +30,7 @@
   DDLogInfo(@"TGEVE_MenuItemEvent -> searchForShortcuts(element :%@:) :: get called", element);
   if ( [[element shortcutString] length] > 0 ) {
     DDLogInfo(@"TGEVE_MenuItemEvent -> searchForShortcuts() :: shortcut String in element Found");
+    [_menuBarTable insertMenuBarElement:element];
     return [NSArray arrayWithObject :[NSDictionary dictionaryWithUIElement:element]];
   } else {
     NSMutableArray *shortcutList = [NSMutableArray array];

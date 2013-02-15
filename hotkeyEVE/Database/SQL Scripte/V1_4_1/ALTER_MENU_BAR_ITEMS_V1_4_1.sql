@@ -11,7 +11,6 @@ CREATE TABLE "menu_bar_items" (
 "application_id" INTEGER REFERENCES "applications"("id"),
 UNIQUE ("identifier", "parent_title") ON CONFLICT IGNORE
 );
-INSERT INTO "menu_bar_items"  ("id", "identifier", "element_title", "element_help", "parent_title", "lang", "shortcut_id", "application_id") SELECT "id", "identifier", "element_title", "element_help", "parent_title", "lang", "shortcut_id", "application_id" FROM "menu_bar_items_ME_TMP";
 DROP TABLE "menu_bar_items_ME_TMP";
 COMMIT;
 

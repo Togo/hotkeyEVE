@@ -80,7 +80,7 @@
   
   [ShortcutTableModel insertShortcutsFromElementArray: elements];
   
-  [TGEVE_MenuBarTableModel insertMenuBarElementArray:elements];
+  [[[TGEVE_MenuBarTableModel alloc] init] insertMenuBarElementArray:elements];
 }
 
 - (void) postIndexingAppStarted :(Application*) app {
@@ -94,7 +94,6 @@
 - (void) postNewAppIndexedApplicationTable {
     DDLogInfo(@"MenuBarIndexingThread -> postNewAppIndexedApplicationTable() :: get called ");
     [[NSNotificationCenter defaultCenter] postNotificationName:RefreshShortcutBrowserApplicationTable  object:nil];
-//  [[NSNotificationCenter defaultCenter] postNotificationName:NewAppIndexedApplicationTable object:app];
 }
 
 @end

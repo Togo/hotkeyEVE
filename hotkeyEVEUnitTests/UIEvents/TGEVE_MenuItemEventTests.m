@@ -49,6 +49,21 @@
   STAssertTrue([result isKindOfClass:[NSDictionary class]], @"");
 }
 
+- (void) test_searchForShortcuts_elementContainsShortcutString_insertInMenuBarTable {
+  TGEVE_MenuItemEvent *event = [self createMenuItemEvent];
+  
+  UIElement *element = [[UIElement alloc] init];
+  [element setShortcutString:@"Jahuuuu Shortcut Found"];
+  
+  id menuBarTableMock = [OCMockObject niceMockForClass:[TGEVE_MenuBarTableModel class]];
+  [[menuBarTableMock expect] insertMenuBarElement:element];
+  
+  [event setMenuBarTable:menuBarTableMock];
+  [event searchForShortcuts:element];
+  
+  [menuBarTableMock verify];
+}
+
 - (void) test_searchForShortcuts_noShortcutString_searchInDatabase {
   TGEVE_MenuItemEvent *event = [self createMenuItemEvent];
   

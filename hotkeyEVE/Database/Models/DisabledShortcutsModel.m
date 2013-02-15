@@ -137,7 +137,7 @@
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@" SELECT * FROM %@ ", DISABLED_SHORTCUTS_TABLE];
   [query appendFormat:@" WHERE "];
-  [query appendFormat:@" %@ = %li ",APPLICATION_ID_COL, appID];
+  [query appendFormat:@" %@ = %li ", APPLICATION_ID_COL, appID];
   [query appendFormat:@" AND %@ = %li ",SHORTCUT_ID_COL, shortcutID];
   [query appendFormat:@" AND %@ = %li ",USER_ID_COL, userID];
   [query appendFormat:@" AND %@ = '%@' ",TITLE_COL, title]; // title because it's possible that in other apps the shortcut id is the same but with another title

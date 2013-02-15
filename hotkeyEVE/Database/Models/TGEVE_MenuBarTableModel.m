@@ -16,33 +16,40 @@
 
 @implementation TGEVE_MenuBarTableModel
 
-+ (void) insertMenuBarElementArray :(NSArray*) elements {
-  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+- (void) insertMenuBarElementArray :(NSArray*) elements {
   
   for (id aElement in elements) {
     if ([[aElement shortcutString] length] > 0) {
-      NSInteger shortcutID = [ShortcutTableModel getShortcutId:[aElement shortcutString]];
-      NSInteger applicationID = [ApplicationsTableModel getApplicationID:[[aElement owner] appName] :[[aElement owner] bundleIdentifier]];
-      
-      if (shortcutID) {
-        NSMutableString *query = [NSMutableString string];
-        [query appendFormat:@"INSERT OR REPLACE INTO %@ ", MENU_BAR_ITEMS_TABLE];
-        [query appendFormat:@"VALUES ( "];
-        [query appendFormat:@" NULL "];
-        [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[aElement uiElementIdentifier]]];
-        [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[aElement title]]];
-        [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[aElement help]]];
-        [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[aElement parentTitle]]];
-        [query appendFormat:@" , '%@' ", [EVEUtilities currentLanguage]];
-        [query appendFormat:@" ,  %li ", shortcutID];
-        [query appendFormat:@" ,  %li ", applicationID];
-        [query appendFormat:@" ); "];
-        
-        [db executeUpdate:query];
-      }
+      [self insertMenuBarElement:aElement];
     }
   }
 }
+
+- (void) insertMenuBarElement :(UIElement*) element {
+  NSInteger shortcutID = [ShortcutTableModel getShortcutId:[element shortcutString]];
+  NSInteger applicationID = [ApplicationsTableModel getApplicationID:[[element owner] appName] :[[element owner] bundleIdentifier]];
+
+  if (   shortcutID
+      && applicationID) {
+    EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+    
+    NSMutableString *query = [NSMutableString string];
+    [query appendFormat:@"INSERT OR REPLACE INTO %@ ", MENU_BAR_ITEMS_TABLE];
+    [query appendFormat:@"VALUES ( "];
+    [query appendFormat:@" NULL "];
+    [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[element uiElementIdentifier]]];
+    [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[element title]]];
+    [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[element help]]];
+    [query appendFormat:@" , '%@' ", [StringUtilities databaseString:[element parentTitle]]];
+    [query appendFormat:@" , '%@' ", [EVEUtilities currentLanguage]];
+    [query appendFormat:@" ,  %li ", shortcutID];
+    [query appendFormat:@" ,  %li ", applicationID];
+    [query appendFormat:@" ); "];
+    
+    [db executeUpdate:query];
+  }
+}
+
 
 - (NSArray*) searchInMenuBarTable :(UIElement*) element {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
@@ -101,13 +108,13 @@
   [query appendFormat:@"      FROM %@ ds ", DISABLED_SHORTCUTS_TABLE];
   [query appendFormat:@"      WHERE ds.%@ = s.%@ ", SHORTCUT_ID_COL, ID_COL];
   [query appendFormat:@"      AND   ds.%@ = m.%@ ", APPLICATION_ID_COL, APPLICATION_ID_COL];
-  [query appendFormat:@"      AND   ds.%@ = m.%@ ", TITLE_COL, TITLE_COL];
+  [query appendFormat:@"      AND   trim(ds.%@) = trim(m.%@) ", TITLE_COL, TITLE_COL];
   [query appendFormat:@"      AND   ds.%@ = %li ) AS %@, ", USER_ID_COL, userID, DISABLED_SHORTCUT_DYN_COL];
   
   [query appendFormat:@"    (  SELECT count(*) "];
   [query appendFormat:@"      FROM %@ ds ", GLOB_DISABLED_SHORTCUTS_TABLE];
   [query appendFormat:@"      WHERE ds.%@ = s.%@ ", SHORTCUT_ID_COL, ID_COL];
-  [query appendFormat:@"      AND   ds.%@ = m.%@ ", TITLE_COL, TITLE_COL];
+  [query appendFormat:@"      AND   trim(ds.%@) = trim(m.%@) ", TITLE_COL, TITLE_COL];
   [query appendFormat:@"      AND   ds.%@ = %li ) AS %@ ", USER_ID_COL, userID, GLOB_DISABLED_SHORTCUT_DYN_COL];
   
   [query appendFormat:@" FROM %@ m, %@ s ", MENU_BAR_ITEMS_TABLE, SHORTCUTS_TABLE];

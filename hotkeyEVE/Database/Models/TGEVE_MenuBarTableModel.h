@@ -10,10 +10,12 @@
 
 @interface TGEVE_MenuBarTableModel : NSObject
 
-+ (void) insertMenuBarElementArray :(NSArray*) elements;
+- (void) insertMenuBarElementArray :(NSArray*) elements;
+- (void) insertMenuBarElement :(UIElement*) element;
 
 - (NSArray*) searchInMenuBarTable :(UIElement*) element;
 
 + (NSInteger) countShortcuts :(Application*) app;
 + (NSArray*) getTitlesAndShortcuts :(NSInteger) appID;
+
 @end
