@@ -27,10 +27,11 @@
 
   NSArray *eventShortcutHintList = [_event searchForShortcuts :element];
   if (    [eventShortcutHintList count] > 0
-      && ![self isShortcutDisabled:eventShortcutHintList]
-      &&  [self isTimeIntevallOk:eventShortcutHintList]   ) {
+      && ![self isShortcutDisabled :eventShortcutHintList]
+      &&  [self isTimeIntevallOk :eventShortcutHintList]   ) {
+    
       [_event displayNotification :eventShortcutHintList];
-      [self insertInDisplayedShortcutsDB:eventShortcutHintList];
+      [self insertInDisplayedShortcutsDB :eventShortcutHintList];
   }
 }
 

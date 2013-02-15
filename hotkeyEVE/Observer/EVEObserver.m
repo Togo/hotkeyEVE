@@ -10,6 +10,7 @@
 #import <UIElements/ClickOnUIElementSubject.h>
 #import <UIElements/UIElement.h>
 #import "TGEVE_MouseEventHandler.h"
+#import <UIElements/UIElementUtilities_org.h>
 
 @implementation EVEObserver
 
@@ -25,12 +26,20 @@
 
 - (void) update :(NSNotification *) notification {
   DDLogInfo(@"EVEObserver -> update(notification :%@:) :: get called", [notification name]);
-  if ([[notification name] isEqualToString :ClickOnUIElementNotification]) {
-    UIElement *lastCLickedUIElement =  [UIElement createUIElement:([[notification object] currentUIElement])];
+
+if([[notification name] isEqualToString :ClickOnUIElementNotification]) {
+    AXUIElementRef elementRef = [[notification object] currentUIElement];
+    if(     elementRef != NULL
+        && ![self isInWebArea :elementRef] ) {
+      
+    UIElement *lastCLickedUIElement =  [UIElement createUIElement:elementRef];
     DDLogInfo(@"EVEObserver -> update() :: create new UIElement :%@:", lastCLickedUIElement);
+    
     id eventHandler = [[TGEVE_MouseEventHandler alloc] init];
     [eventHandler handleEVEEvent:lastCLickedUIElement];
-    return;
+    
+    }
+  return;
   }
 
   if ( [[notification name] isEqualToString:NSWorkspaceDidLaunchApplicationNotification] )  {
@@ -113,6 +122,16 @@
   
   [self unsuscribeGlobalNotificiation:NSWorkspaceDidLaunchApplicationNotification];
   DDLogInfo(@"UnSubscribed %@", NSWorkspaceDidLaunchApplicationNotification);
+}
+
+- (BOOL) isInWebArea :(AXUIElementRef) elementRef {
+    NSString *uiElementTree = [UIElementUtilities_org lineageDescriptionOfUIElement:elementRef];
+  if ([uiElementTree rangeOfString:@"AXWebArea" options:NSCaseInsensitiveSearch].location == NSNotFound) {
+    return NO;
+  } else {
+    DDLogInfo(@"EVEObserver -> isInWebArea() ::is InWebArea skip this click");
+    return YES;
+  }
 }
 
 @end
