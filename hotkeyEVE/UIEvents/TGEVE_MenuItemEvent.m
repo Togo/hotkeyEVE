@@ -27,8 +27,9 @@
 }
 
 - (NSArray*) searchForShortcuts :(UIElement*) element {
-  
+  DDLogInfo(@"TGEVE_MenuItemEvent -> searchForShortcuts(element :%@:) :: get called", element);
   if ( [[element shortcutString] length] > 0 ) {
+    DDLogInfo(@"TGEVE_MenuItemEvent -> searchForShortcuts() :: shortcut String in element Found");
     return [NSArray arrayWithObject :[NSDictionary dictionaryWithUIElement:element]];
   } else {
     NSMutableArray *shortcutList = [NSMutableArray array];
@@ -37,11 +38,13 @@
     [shortcutList addObject:[NSDictionary dictionaryWithMenuBarTableRow :aRow]];
     }
     
+    DDLogInfo(@"TGEVE_MenuItemEvent -> searchForShortcuts() :: :%li: shortcuts hints in db found ", [shortcutList count]);
     return shortcutList;
   }
 }
 
 - (BOOL) displayNotification :(NSArray*) eventHintList {
+    DDLogInfo(@"TGEVE_MenuItemEvent -> displayNotification() :: get called");
   if ( [eventHintList count] == 1 )
     [_userNotifications displaySingleShortcutHintNotification:[eventHintList objectAtIndex:0]];
   else if( [eventHintList count] > 1)

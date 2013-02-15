@@ -19,6 +19,7 @@
 @synthesize event = _event;
 
 - (void) handleEVEEvent :(UIElement*) element {
+  DDLogInfo(@"TGEVE_MouseEventHandler -> handleEVEEvent(element :%@:) :: get called", element);
   if ( element == nil )
     @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Clicked UIElement is nil" userInfo:nil];
 
@@ -29,7 +30,7 @@
   if (    [eventShortcutHintList count] > 0
       && ![self isShortcutDisabled :eventShortcutHintList]
       &&  [self isTimeIntevallOk :eventShortcutHintList]   ) {
-    
+
       [_event displayNotification :eventShortcutHintList];
       [self insertInDisplayedShortcutsDB :eventShortcutHintList];
   }
