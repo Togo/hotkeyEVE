@@ -83,6 +83,7 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 
 
 - (void) loadTableData {
+    NSLog(@"Reload table data");
   [self startProgressAnimationinSuperview:_tableView];
   dispatch_async(dispatch_get_global_queue(0,0),^{
     _dataSource = [_appsManager loadTableSourceData];
@@ -156,9 +157,9 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 }
 
 - (void) removeRowsFromTable {
-  [_tableView beginUpdates];
-  [_tableView removeRowsAtIndexes:[_tableView selectedRowIndexes] withAnimation:NSTableViewAnimationEffectFade];
-  [_tableView endUpdates];
+//  [_tableView beginUpdates];
+//  [_tableView removeRowsAtIndexes:[_tableView selectedRowIndexes] withAnimation:NSTableViewAnimationEffectNone];
+//  [_tableView endUpdates];
 }
 
 @end

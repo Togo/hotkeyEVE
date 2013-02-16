@@ -96,9 +96,9 @@ NSString * const KNavigationColumn = @"NavigationColumn";
   } else if ([[_dataSource objectAtIndex:row] valueForKey:KNavigationColumn] == kNotInstalledRowHeader) {
       [_appsManager removeAppsFromArray:moduleIDArray];
   }
-  
-  [[NSNotificationCenter defaultCenter] postNotificationName:kEVENotificationsRemoveDropedLinesFromTable object:nil];
-  
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kEVENotificationsRemoveDropedLinesFromTable object:nil];
+    
 	return YES;
 }
 

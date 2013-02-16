@@ -1445,7 +1445,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/hotkeyEVE/Frameworks\"",
-					"\"$(SRCROOT)/hotkeyEVE/Conroller/HotkeyController/SGHotKeysLib/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotkeyEVE/hotkeyEVE-Prefix.pch";
@@ -1472,7 +1471,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/hotkeyEVE/Frameworks\"",
-					"\"$(SRCROOT)/hotkeyEVE/Conroller/HotkeyController/SGHotKeysLib/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotkeyEVE/hotkeyEVE-Prefix.pch";
