@@ -27,7 +27,6 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
       self.appsManager = [[AppsManagerAmazon alloc] init];
-      self.progressIndicator = [self createProgressIndicator];
     }
   
     return self;
@@ -77,18 +76,16 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 
 - (void) loadView {
   [super loadView];
-
   [self loadTableData];
 }
 
 
 - (void) loadTableData {
-    NSLog(@"Reload table data");
   [self startProgressAnimationinSuperview:_tableView];
-  dispatch_async(dispatch_get_global_queue(0,0),^{
+  dispatch_async(dispatch_get_main_queue(),^{
     _dataSource = [_appsManager loadTableSourceData];
-    [_tableView reloadData];
     [self stopProgressAnimation];
+    [_tableView reloadData];
   });
 }
 
@@ -121,19 +118,25 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 }
 
 - (void) startProgressAnimationinSuperview :(NSView*) superview {
-    if ( superview != nil ) {
-    [_progressIndicator setFrame:[superview bounds]];
- 
-    [_progressIndicator startAnimation:nil];
-    [superview addSubview:_progressIndicator];
-  } else
-      @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                            reason:@"Can't start a Animation in a nil Superview" userInfo:nil];
+  if(_progressIndicator != nil) {
+    [self stopProgressAnimation];
+  }
+  
+  if ( superview != nil) {
+  _progressIndicator = [self createProgressIndicator];
+  [_progressIndicator setFrame:[superview bounds]];
+
+  [_progressIndicator startAnimation:nil];
+  [superview addSubview:_progressIndicator];
+} else
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                          reason:@"Can't start a Animation in a nil Superview" userInfo:nil];
 }
 
 - (void) stopProgressAnimation {
     [_progressIndicator stopAnimation:nil];
     [_progressIndicator removeFromSuperview];
+    _progressIndicator = nil;
 }
 
 - (BOOL)tableView:(NSTableView *)tv writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard*)pboard {
@@ -157,9 +160,18 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 }
 
 - (void) removeRowsFromTable {
-//  [_tableView beginUpdates];
-//  [_tableView removeRowsAtIndexes:[_tableView selectedRowIndexes] withAnimation:NSTableViewAnimationEffectNone];
-//  [_tableView endUpdates];
+    NSIndexSet *rowIndexes = [_tableView selectedRowIndexes];
+    NSUInteger selectedIndex;
+    if ( [rowIndexes lastIndex] != NSNotFound )
+      selectedIndex = [rowIndexes lastIndex];
+    else
+      selectedIndex = 0;
+
+    [_tableView beginUpdates];
+    [_tableView removeRowsAtIndexes:rowIndexes withAnimation:NSTableViewAnimationEffectFade];
+    [_tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:selectedIndex] byExtendingSelection:NO];
+    [_dataSource removeObjectsAtIndexes:rowIndexes];
+    [_tableView endUpdates];
 }
 
 @end
