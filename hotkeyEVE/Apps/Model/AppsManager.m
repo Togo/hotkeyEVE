@@ -52,12 +52,7 @@
     }
     @catch (NSException *exception) {
       DDLogError(@"AppsManager -> addAppWithModuleID :: exception occured => %@", [exception reason]);
-      NSAlert *alert = [NSAlert alertWithMessageText:@"Error occured!"
-                                       defaultButton:@"OK"
-                                     alternateButton:nil
-                                         otherButton:nil
-                           informativeTextWithFormat:@"%@", [exception reason]];
-      [alert beginSheetModalForWindow:nil modalDelegate:self didEndSelector:nil contextInfo:NULL];
+      [[NSAlert alert] showModalAlertSheetForWindow:nil message:@"Error occured!" informativeText:[exception reason] alertStyle:NSCriticalAlertStyle buttonBlocks:nil buttonTitle:@"OK", nil];
       return NO;
     }
     } else {

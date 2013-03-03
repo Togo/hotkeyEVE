@@ -21,7 +21,6 @@ NSString * const KNavigationColumn = @"NavigationColumn";
 
 @interface AppsTableNavigationViewController ()
 
-
 @end
 
 @implementation AppsTableNavigationViewController

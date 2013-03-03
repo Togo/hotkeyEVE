@@ -43,7 +43,7 @@
   
   [self initUserData];
   
-//  [self startIndexing];
+  [self startIndexing];
   
   [self registerListener];
   [[eveAppManager eveObserver] subscribeAllNotifications];
