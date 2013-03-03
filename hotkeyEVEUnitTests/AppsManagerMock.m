@@ -23,8 +23,8 @@
   
 }
 
-- (void) addAppWithModuleID :(NSString*) aModuleID {
-  
+- (BOOL) addAppWithModuleID :(NSString*) aModuleID {
+  return YES;
 }
 
 - (id) loadTableSourceData {
@@ -37,6 +37,10 @@
 
 - (void) postTableRefreshNotification {
   
+}
+
+- (BOOL) isAppInstalled :(NSString*) moduleID {
+  return YES;
 }
 
 @end

@@ -99,4 +99,22 @@ NSString * const kEVEApplicationIDColumn = @"application_id";
     return NO;
   }
 }
+
+- (BOOL) isAppInstalledWithModuleID :(NSString*) moduleID {
+  EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
+  
+  NSMutableString *query = [NSMutableString string];
+  [query appendFormat:@" SELECT count(*) as count FROM %@", kEVEModuleTableName];
+  [query appendFormat:@" WHERE %@ like '%@' ", kModuleID, moduleID];
+  NSArray *result =  [db executeQuery:query];
+  NSInteger count = [[[result objectAtIndex:0] valueForKey:@"count"] integerValue];
+  if (count == 1) {
+    return YES;
+  } else if (count  == 0) {
+    return NO;
+  } else {
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Found more than one AppModule with this AppID" userInfo:nil];
+  }
+}
+
 @end

@@ -18,15 +18,15 @@
 @property (strong) TGEVE_GUIElementsTableModel *guiElementTable;
 @property (strong) AppModuleTableModel   *appModuleTable;
 @property (strong) id<IUserNotifications> userNotifications;
-
 @property (strong) id<IReceiveAppModule> receiveAppModule;
 
 - (void) addAppsFromArray :(NSArray*) moduleIDs;
 - (void) removeAppsFromArray :(NSArray*) moduleIDs;
 
-- (void) addAppWithModuleID :(NSString*) aModuleID;
+- (BOOL) addAppWithModuleID :(NSString*) aModuleID;
 - (void) removeAppWithModuleID :(NSString*) aModuleID;
 
 - (id) loadTableSourceData;
 
+- (BOOL) isAppInstalled :(NSString*) moduleID;
 @end

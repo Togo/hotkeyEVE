@@ -43,7 +43,7 @@
   
   [self initUserData];
   
-  [self startIndexing];
+//  [self startIndexing];
   
   [self registerListener];
   [[eveAppManager eveObserver] subscribeAllNotifications];
@@ -51,8 +51,6 @@
   if (![[[EVEManager sharedEVEManager] licence] isValid]) {
     [[GrowlNotifications growlNotifications] displayRegisterEVEWithCallbackNotification :@"Register EVE" :@"\nClick to get an Activation Key"];
   }
-  
-  [[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES],@"apps_window_firstLaunch",nil]];
 }
 
 - (void) applicationWillTerminate:(NSNotification *)notification {

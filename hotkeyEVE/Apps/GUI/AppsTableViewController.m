@@ -9,6 +9,7 @@
 #import "AppsTableViewController.h"
 #import "AppsManagerAmazon.h"
 #import <AppsLibrary/AppsLibrary.h>
+#import "AppModuleTableModel.h"
 
 NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 
@@ -19,8 +20,6 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 @implementation AppsTableViewController
 
 @synthesize appsManager = _appsManager;
-
-@synthesize moduleIDTableColumn = _moduleIDTableColumn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,6 +36,9 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 }
 
 -(void) awakeFromNib {
+  [_installedTableColumn setIdentifier:TGUTIL_TCOLID_INSTALLED];
+  [_installedTableColumn setEditable:YES];
+  
   [_moduleIDTableColumn setIdentifier:kModuleID];
   [_moduleIDTableColumn setHidden:YES];
   
@@ -55,8 +57,6 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
   [_credatTableColumn setIdentifier:kModuleCredatKey];
   [_credatTableColumn setEditable:NO];
   [_credatTableColumn setSortDescriptorPrototype:[[NSSortDescriptor alloc] initWithKey:kModuleCredatKey ascending:NO]];
-  
-  [_tableView registerForDraggedTypes:[NSArray arrayWithObjects: NSPasteboardTypeString , nil]];
   
   [self registerObserver];
 }
@@ -84,6 +84,10 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
   [self startProgressAnimationinSuperview:_tableView];
   dispatch_async(dispatch_get_main_queue(),^{
     _dataSource = [_appsManager loadTableSourceData];
+    for (NSDictionary *aRow in _dataSource ) {
+      BOOL appModuleInstalled = [_appsManager isAppInstalled:[aRow valueForKey:kModuleID]];
+      [aRow setValue:[NSString stringWithFormat:@"%d", appModuleInstalled] forKey:TGUTIL_TCOLID_INSTALLED];
+    }
     [self stopProgressAnimation];
     [_tableView reloadData];
   });
@@ -93,9 +97,9 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
   return [_dataSource count];
 }
 
--(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+-(id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
   id returnParameter;
-  if ([tableColumn identifier] == kModuleCredatKey) {
+  if ( [tableColumn identifier] == kModuleCredatKey ) {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
     
@@ -106,9 +110,24 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
   } else
     returnParameter = [[_dataSource objectAtIndex:row] valueForKey:[tableColumn identifier]];
   
-  
   return returnParameter;
 }
+            
+- (void)tableView:(NSTableView *)aTableView setObjectValue:(id)anObject forTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
+  if ( [[aTableColumn identifier] isEqualToString:TGUTIL_TCOLID_INSTALLED] ) {
+    BOOL succeded = YES;
+    NSString *moduleID = [[_dataSource objectAtIndex:rowIndex] valueForKey:kModuleID];
+    if ( [anObject intValue] == NSOnState ) {
+        succeded = [_appsManager addAppWithModuleID:moduleID];
+    } else {
+      [_appsManager removeAppWithModuleID:moduleID];
+    }
+    
+    if( succeded )
+      [[_dataSource objectAtIndex:rowIndex] setObject :anObject forKey :[aTableColumn identifier]];
+  }
+}
+
 
 -(void)tableView:(NSTableView *)tableView sortDescriptorsDidChange: (NSArray *)oldDescriptors
 {
@@ -122,7 +141,7 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
     [self stopProgressAnimation];
   }
   
-  if ( superview != nil) {
+  if ( superview != nil ) {
   _progressIndicator = [self createProgressIndicator];
   [_progressIndicator setFrame:[superview bounds]];
 

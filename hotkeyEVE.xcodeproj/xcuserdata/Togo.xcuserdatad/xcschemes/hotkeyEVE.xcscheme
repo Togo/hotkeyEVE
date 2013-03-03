@@ -96,6 +96,16 @@
                ReferencedContainer = "container:AppsLibrary/AppsLibrary.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CD558B6816D92373005D4B97"
+               BuildableName = "Objc-UtilTests.octest"
+               BlueprintName = "Objc-UtilTests"
+               ReferencedContainer = "container:Objc-Util/Objc-Util.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

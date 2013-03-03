@@ -16,7 +16,7 @@
 
 #import "LicenceWindowController.h"
 #import "ShortcutsWindowController.h"
-#import "AppsWindowController.h"
+#import "TGEVE_AppsWindowWindowController.h"
 
 @implementation MainMenuController
 
@@ -109,7 +109,7 @@
 
 - (IBAction) showAppsWindow :(id) sender {
   if(!_appsWindowController) {
-    _appsWindowController = [[AppsWindowController alloc] initWithWindowNibName:
+    _appsWindowController = [[TGEVE_AppsWindowWindowController alloc] initWithWindowNibName:
                              [NSString stringWithFormat:@"%@",kAppsWindowNibName]];
   }
   

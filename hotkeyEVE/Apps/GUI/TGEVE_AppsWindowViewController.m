@@ -1,26 +1,27 @@
 //
-//  AppsViewController.m
+//  TGEVE_AppsWindowViewController.m
 //  hotkeyEVE
 //
 //  Created by Tobias Sommer on 1/11/13.
 //  Copyright (c) 2013 Tobias Sommer. All rights reserved.
 //
 
-#import "AppsViewController.h"
+#import "TGEVE_AppsWindowViewController.h"
 #import "AppsTableNavigationViewController.h"
 #import "AppsTableViewController.h"
 #import "AppsManagerLocalDB.h"
+#import "AppsManagerAmazon.h"
 
-@implementation AppsViewController
+@implementation TGEVE_AppsWindowViewController
 
 @synthesize navigationView = _navigationView;
 @synthesize mainContentView = _mainContentView;
 @synthesize mainContentViewController = _mainContentViewController;
 
-- (void)awakeFromNib {
+- (void) awakeFromNib {
   // set the view for the first start
-  [self viewSelectionDidChanged:[AppsTableViewController class] :kAppsTableViewControllerNibName :[AppsManagerLocalDB class]];
   [self initNavigationView:[AppsTableNavigationViewController class] :kAppsTableNavigationViewControllerNibName];
+  [self viewSelectionDidChanged:[AppsTableViewController class] :kAppsTableViewControllerNibName :[AppsManagerAmazon class]];
 }
 
 - (void) initNavigationView :(id)viewControllerClass :(NSString*) viewNibName {

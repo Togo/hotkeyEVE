@@ -14,6 +14,8 @@
   #import <UIElements/UIElementNotifications.h>
   #import "GUINotifications.h"
 
+  #import <Objc-Util/Objc_Util.h>
+
   static const int ddLogLevel = LOG_LEVEL_INFO;
 
 #endif

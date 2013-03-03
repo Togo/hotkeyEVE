@@ -9,19 +9,20 @@
 #import "AppsViewControllerTests.h"
 #import <OCMock/OCMock.h>
 #import "AppsTableViewController.h"
-#import "AppsViewController.h"
-#import "AppsWindowController.h"
+#import "TGEVE_AppsWindowViewController.h"
+#import "TGEVE_AppsWindowWindowController.h"
 #import "AppsTableNavigationViewController.h"
 #import "AppsManagerLocalDB.h"
 #import "IAppsTableViewController.h"
 #import "AppsManagerMock.h"
+#import "AppsManagerAmazon.h"
 
 @implementation AppsViewControllerTests
 
 - (void)setUp
 {
   [super setUp];
-  _appsViewController = [[AppsViewController alloc] init];
+  _appsViewController = [[TGEVE_AppsWindowViewController alloc] init];
   
   _navigationView = [[NSView alloc] init];
   [_navigationView setBounds:NSMakeRect(99, 99, 1, 1)];
@@ -44,7 +45,7 @@
 //************************* awakeFromNib *************************//
 - (void) test_awakeFromNib_contollerAllocated_callViewSelectiondDidChangeWithInstalledAppsView {
   id appsViewControllerMock = [OCMockObject partialMockForObject:_appsViewController];
-  [[appsViewControllerMock expect] viewSelectionDidChanged :[AppsTableViewController class] :kAppsTableViewControllerNibName :[AppsManagerLocalDB class]];
+  [[appsViewControllerMock expect] viewSelectionDidChanged :[AppsTableViewController class] :kAppsTableViewControllerNibName :[AppsManagerAmazon class]];
   
   [_appsViewController awakeFromNib];
   

@@ -3,19 +3,17 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
 		<string key="IBDocument.SystemVersion">12C60</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
 		<string key="IBDocument.AppKitVersion">1187.34</string>
 		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">2844</string>
+			<string key="NS.object.0">3084</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBNSLayoutConstraint</string>
 			<string>NSCustomObject</string>
 			<string>NSCustomView</string>
-			<string>NSImageCell</string>
-			<string>NSImageView</string>
 			<string>NSSplitView</string>
 			<string>NSView</string>
 			<string>NSWindowTemplate</string>
@@ -29,7 +27,7 @@
 		</object>
 		<array class="NSMutableArray" key="IBDocument.RootObjects" id="1000">
 			<object class="NSCustomObject" id="1001">
-				<string key="NSClassName">AppsWindowController</string>
+				<string key="NSClassName">TGEVE_AppsWindowWindowController</string>
 			</object>
 			<object class="NSCustomObject" id="1003">
 				<string key="NSClassName">FirstResponder</string>
@@ -95,40 +93,7 @@
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSCustomObject" id="133751718">
-				<string key="NSClassName">AppsViewController</string>
-			</object>
-			<object class="NSImageView" id="699469517">
-				<reference key="NSNextResponder"/>
-				<int key="NSvFlags">268</int>
-				<set class="NSMutableSet" key="NSDragTypes">
-					<string>Apple PDF pasteboard type</string>
-					<string>Apple PICT pasteboard type</string>
-					<string>Apple PNG pasteboard type</string>
-					<string>NSFilenamesPboardType</string>
-					<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
-					<string>NeXT TIFF v4.0 pasteboard type</string>
-				</set>
-				<string key="NSFrameSize">{788, 490}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
-				<double key="NSViewAlphaValue">0.60000000000000009</double>
-				<string key="NSReuseIdentifierKey">_NS:9</string>
-				<bool key="NSEnabled">YES</bool>
-				<object class="NSImageCell" key="NSCell" id="727787246">
-					<int key="NSCellFlags">134217728</int>
-					<int key="NSCellFlags2">33554432</int>
-					<object class="NSCustomResource" key="NSContents">
-						<string key="NSClassName">NSImage</string>
-						<string key="NSResourceName">apps_drag_and_drop_overlay</string>
-					</object>
-					<string key="NSCellIdentifier">_NS:9</string>
-					<int key="NSAlign">0</int>
-					<int key="NSScale">0</int>
-					<int key="NSStyle">2</int>
-					<bool key="NSAnimates">NO</bool>
-				</object>
-				<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
-				<bool key="NSEditable">YES</bool>
+				<string key="NSClassName">TGEVE_AppsWindowViewController</string>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -140,14 +105,6 @@
 						<reference key="destination" ref="1005"/>
 					</object>
 					<int key="connectionID">3</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">dragAndDropOverlay</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="699469517"/>
-					</object>
-					<int key="connectionID">81</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -407,19 +364,6 @@
 						<reference key="object" ref="199667641"/>
 						<reference key="parent" ref="863956542"/>
 					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">77</int>
-						<reference key="object" ref="699469517"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="727787246"/>
-						</array>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">78</int>
-						<reference key="object" ref="727787246"/>
-						<reference key="parent" ref="699469517"/>
-					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -455,8 +399,6 @@
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="74.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="77.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="78.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
@@ -467,7 +409,15 @@
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
-					<string key="className">AppsViewController</string>
+					<string key="className">NSLayoutConstraint</string>
+					<string key="superclassName">NSObject</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/NSLayoutConstraint.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">TGEVE_AppsWindowViewController</string>
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="mainContentView">NSView</string>
@@ -490,34 +440,15 @@
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/AppsViewController.h</string>
+						<string key="minorKey">./Classes/TGEVE_AppsWindowViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">AppsWindowController</string>
+					<string key="className">TGEVE_AppsWindowWindowController</string>
 					<string key="superclassName">NSWindowController</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">dragAndDropOverlay</string>
-						<string key="NS.object.0">NSImageView</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">dragAndDropOverlay</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">dragAndDropOverlay</string>
-							<string key="candidateClassName">NSImageView</string>
-						</object>
-					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/AppsWindowController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSLayoutConstraint</string>
-					<string key="superclassName">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/NSLayoutConstraint.h</string>
+						<string key="minorKey">./Classes/TGEVE_AppsWindowWindowController.h</string>
 					</object>
 				</object>
 			</array>
@@ -526,10 +457,6 @@
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">apps_drag_and_drop_overlay</string>
-			<string key="NS.object.0">{786, 487}</string>
-		</object>
 		<bool key="IBDocument.UseAutolayout">YES</bool>
 	</data>
 </archive>

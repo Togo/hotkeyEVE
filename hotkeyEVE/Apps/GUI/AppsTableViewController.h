@@ -25,10 +25,12 @@ extern NSString * const kAppsTableViewControllerNibName;
 @property (weak) IBOutlet  NSTableColumn *languageTableColumn;
 @property (weak) IBOutlet  NSTableColumn *userNameTableColumn;
 @property (weak) IBOutlet  NSTableColumn *credatTableColumn;
+@property (weak) IBOutlet  NSTableColumn *installedTableColumn;
 
 - (void) loadTableData;
 
 - (void) startProgressAnimationinSuperview :(NSView*) superview;
 - (void) stopProgressAnimation;
 - (void) registerObserver;
+
 @end

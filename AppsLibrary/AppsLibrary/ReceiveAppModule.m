@@ -20,8 +20,8 @@
   return receiver;
 }
 
-- (NSArray*) getNotInstalledAppList :(NSArray*) installedModuleIDs {
-  return [_webService getNotInstalledAppList :installedModuleIDs];
+- (NSArray*) getAppList {
+  return [_webService getAppListFromDB];
 }
 
 - (AppModule*) getAppWithModuleID :(NSString*) moduleID {

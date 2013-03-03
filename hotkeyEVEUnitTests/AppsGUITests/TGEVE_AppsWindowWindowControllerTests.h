@@ -7,10 +7,10 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "AppsWindowController.h"
+#import "TGEVE_AppsWindowWindowController.h"
 
-@interface AppsWindowControllerTests : SenTestCase {
-  AppsWindowController *_appsWindowController;
+@interface TGEVE_AppsWindowWindowControllerTests : SenTestCase {
+  TGEVE_AppsWindowWindowController *_appsWindowController;
   
   @private
     NSWindow *_appsWindow;

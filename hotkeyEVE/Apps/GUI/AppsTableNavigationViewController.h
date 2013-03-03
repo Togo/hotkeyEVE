@@ -16,8 +16,11 @@ extern NSString * const kAppsTableNavigationViewControllerNibName;
 }
 
 @property (strong) NSArray<NSTableViewDataSource> *dataSource;
+
 @property (weak) IBOutlet NSTableView *navigationTableView;
 @property (weak) IBOutlet NSTableColumn *navigationTableColumn;
 
-- (NSPasteboard*) getDragPasteboard :(id <NSDraggingInfo>)info;
+
+
+//- (NSPasteboard*) getDragPasteboard :(id <NSDraggingInfo>)info;
 @end

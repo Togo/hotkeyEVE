@@ -8,10 +8,10 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@class AppsViewController;
+@class TGEVE_AppsWindowViewController;
 
 @interface AppsViewControllerTests : SenTestCase {
-  AppsViewController *_appsViewController;
+  TGEVE_AppsWindowViewController *_appsViewController;
   NSView *_navigationView;
   NSView *_mainContentView;
 }

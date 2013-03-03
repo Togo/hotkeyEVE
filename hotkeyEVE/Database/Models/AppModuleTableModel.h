@@ -23,4 +23,5 @@ NSString * const kEVEApplicationIDColumn;
 - (NSDictionary*) getModuleEntityWithExternalID :(NSString*) external_id;
 - (NSArray*) selectAllInstalledAppModules;
 - (BOOL) installedAppsMaximumReached;
+- (BOOL) isAppInstalledWithModuleID :(NSString*) moduleID;
 @end

@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 Tobias Sommer. All rights reserved.
 //
 
-#import "AppsWindowControllerTests.h"
+#import "TGEVE_AppsWindowWindowControllerTests.h"
 #import <OCMock/OCMock.h>
 #import "GUINotifications.h"
 
-@implementation AppsWindowControllerTests
+@implementation TGEVE_AppsWindowWindowControllerTests
 
 - (void)setUp
 {
   [super setUp];
   
-  _appsWindowController = [[AppsWindowController alloc] init];
+  _appsWindowController = [[TGEVE_AppsWindowWindowController alloc] init];
   
   _appsWindow = [[NSWindow alloc] init];
   [_appsWindowController setWindow:_appsWindow];

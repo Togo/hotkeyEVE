@@ -10,8 +10,6 @@
 
 extern  NSString const * kAppsWindowNibName;
 
-@interface AppsWindowController : NSWindowController <NSWindowDelegate>
-
-@property IBOutlet NSImageView *dragAndDropOverlay;
+@interface TGEVE_AppsWindowWindowController : NSWindowController <NSWindowDelegate>
 
 @end

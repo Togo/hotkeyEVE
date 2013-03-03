@@ -11,6 +11,6 @@
 
 @interface AppsNavigationViewController : NSViewController <AppsNavigationView>
 
-// this class contains the delegate which will be set from AppsViewController. The AppsViewController contains a AppsNavigationViewController but will be called with a special class of AppsViewController like AppsTableNavigationViewController
+// this class contains the delegate which will be set from TGEVE_AppsWindowViewController. The TGEVE_AppsWindowViewController contains a AppsNavigationViewController but will be called with a special class of TGEVE_AppsWindowViewController like AppsTableNavigationViewController
 
 @end

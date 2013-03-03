@@ -14,6 +14,7 @@
   
   @private
    NSTableView *_tableView;
+  NSTableColumn *_installedTableColumn;
   NSTableColumn *_moduleIDTableColumn;
   NSTableColumn *_appNameTableColumn;
   NSTableColumn *_languageTableColumn;

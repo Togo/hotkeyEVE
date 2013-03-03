@@ -231,5 +231,25 @@
   [notificationsMock verify];
 }
 
+//************************* isAppInstalled *************************//
+- (void) test_isAppInstalled_appTableModelSaidYes_returnYES {
+  id appTableModelMock = [OCMockObject mockForClass:[AppModuleTableModel class]];
+  BOOL appTableModelFoundTupel = YES;
+  [[[appTableModelMock stub] andReturnValue:OCMOCK_VALUE(appTableModelFoundTupel)] isAppInstalledWithModuleID :OCMOCK_ANY];
+  
+  [_appsManager setAppModuleTable:appTableModelMock];
+  BOOL returnValue = [_appsManager isAppInstalled:@"1234"];
+  STAssertTrue(returnValue, @"");
+}
+
+- (void) test_isAppInstalled_appTableModelSaidNO_returnNO {
+  id appTableModelMock = [OCMockObject mockForClass:[AppModuleTableModel class]];
+  BOOL appTableModelFoundTupel = NO;
+  [[[appTableModelMock stub] andReturnValue:OCMOCK_VALUE(appTableModelFoundTupel)] isAppInstalledWithModuleID :OCMOCK_ANY];
+  
+  [_appsManager setAppModuleTable:appTableModelMock];
+  BOOL returnValue = [_appsManager isAppInstalled:@"1234"];
+  STAssertFalse(returnValue, @"");
+}
 
 @end

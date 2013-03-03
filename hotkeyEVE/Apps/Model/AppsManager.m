@@ -40,9 +40,9 @@
   _appCount = [moduleIDs count];
 }
 
-- (void) addAppWithModuleID :(NSString*) aModuleID {
+- (BOOL) addAppWithModuleID :(NSString*) aModuleID {
   @synchronized(self) {
-    if ([self grantInstall]) {
+    if ( [self grantInstall] ) {
     @try {
       AppModule *app = [_receiveAppModule getAppWithModuleID:aModuleID];
       [_appModuleTable addAppModule:app];
@@ -58,6 +58,7 @@
                                          otherButton:nil
                            informativeTextWithFormat:@"%@", [exception reason]];
       [alert beginSheetModalForWindow:nil modalDelegate:self didEndSelector:nil contextInfo:NULL];
+      return NO;
     }
     } else {
       [_userNotifications displayRegisterEVEWithCallbackNotification:@"Register EVE, to install more Apps!" :@"You've reached the maximum number of installed Apps"];
@@ -65,6 +66,7 @@
   }
   
   [self postTableRefreshNotificationIfNoMoreApps];
+  return YES;
 }
 
 - (void) removeAppsFromArray :(NSArray*) moduleIDs {
@@ -108,6 +110,10 @@
     return YES;
   else
     return NO;
+}
+
+- (BOOL) isAppInstalled :(NSString*) moduleID {
+  return [_appModuleTable isAppInstalledWithModuleID:moduleID];
 }
 
 @end

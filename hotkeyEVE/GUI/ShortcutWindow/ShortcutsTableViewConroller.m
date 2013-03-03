@@ -106,7 +106,7 @@ enum {
 
 - (void)tableView:(NSTableView *)aTableView setObjectValue:(id)anObject forTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
 
-  if ([[aTableColumn identifier] isEqualToString:DISABLED_SHORTCUT_DYN_COL]) {
+  if ( [[aTableColumn identifier] isEqualToString:DISABLED_SHORTCUT_DYN_COL] ) {
     NSInteger shortcutID = [[[shortcutList objectAtIndex:rowIndex] valueForKey:SHORTCUT_ID_COL] intValue];
     NSInteger appID = [[[shortcutList objectAtIndex:rowIndex] valueForKey:APPLICATION_ID_COL] intValue];
     NSString *title = [[shortcutList objectAtIndex:rowIndex] valueForKey:TITLE_COL];

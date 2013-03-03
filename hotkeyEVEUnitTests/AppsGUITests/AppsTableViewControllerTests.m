@@ -12,6 +12,9 @@
 #import "IAppsManager.h"
 #import "AppsManagerMock.h"
 #import "GUINotifications.h"
+#import <Objc-Util/Objc_Util.h>
+#import "AppModuleTableModel.h"
+
 
 @implementation AppsTableViewControllerTests
 
@@ -23,6 +26,9 @@
   
   _tableView = [[NSTableView alloc] init];
   [_appsNotInstalledController setTableView:_tableView];
+  
+  _installedTableColumn = [[NSTableColumn alloc] initWithIdentifier :TGUTIL_TCOLID_INSTALLED];
+  [_appsNotInstalledController setInstalledTableColumn:_installedTableColumn];
   
   _moduleIDTableColumn = [[NSTableColumn alloc] initWithIdentifier:kModuleID];
   [_appsNotInstalledController setModuleIDTableColumn:_moduleIDTableColumn];
@@ -55,10 +61,6 @@
 //************************* initWithNibName *************************//
 - (void) test_initWithNibName_selfDidCreated_appsManagerCreated {
   STAssertNotNil([_appsNotInstalledController appsManager], @"");
-}
-
-- (void) test_initWithNibName_selfDidCreated_createBarberAnimation {
-  STAssertNotNil([_appsNotInstalledController progressIndicator], @"");
 }
 
 //************************* awakeFromNib *************************//
@@ -116,6 +118,18 @@
   STAssertTrue([[[_appsNotInstalledController userNameTableColumn] identifier] isEqualToString:kUserNameKey], @"");
 }
 
+- (void) test_awakeFromNib_allSecenarios_languageTableColumnIsEditable  {
+  [[_appsNotInstalledController installedTableColumn] setEditable:NO];
+  [_appsNotInstalledController awakeFromNib];
+  STAssertTrue([[_appsNotInstalledController installedTableColumn] isEditable], @"");
+}
+
+- (void) test_awakeFromNib_allSecenarios_installedColumnHasCorrectIdentifier {
+  [[_appsNotInstalledController installedTableColumn] setIdentifier:nil];
+  [_appsNotInstalledController awakeFromNib];
+  STAssertTrue([[[_appsNotInstalledController installedTableColumn] identifier] isEqualToString:TGUTIL_TCOLID_INSTALLED], @"");
+}
+
 - (void) test_awakeFromNib_allSecenarios_userNameTableSortDescriptorKey {
   [[_appsNotInstalledController userNameTableColumn] setSortDescriptorPrototype:nil];
   [_appsNotInstalledController awakeFromNib];
@@ -146,15 +160,6 @@
   STAssertFalse([[_appsNotInstalledController credatTableColumn] isEditable], @"");
 }
 
-- (void) test_awakeFromNib_allSecenarios_registerForDragAndDrop  {
-  id tableViewMock = [OCMockObject partialMockForObject:[_appsNotInstalledController tableView]];
-  [[tableViewMock expect] registerForDraggedTypes:OCMOCK_ANY];
-  
-  [_appsNotInstalledController awakeFromNib];
-  
-  [tableViewMock verify];
-}
-
 - (void) test_awakeFromNib_allScenarios_addReloadObserver {
   id controllerMock = [OCMockObject partialMockForObject:_appsNotInstalledController];
   [[controllerMock expect] registerObserver];
@@ -171,14 +176,12 @@
   STAssertTrue([returnValue isEqualToString:@"value1"], @"");
 }
 
-- (void) test_objectValueForTableColumn_rowSelected_returnNavigationColumnValue {
+- (void) test_objectValueForTableColumn_dateColumn_formatDateString {
   [_appsNotInstalledController setDataSource:[self createDataSource :1]];
   [[[_appsNotInstalledController  dataSource] objectAtIndex:0] setValue:@"2013-01-26 20:34:52 +0000" forKey:kModuleCredatKey];
   NSString *returnValue = [_appsNotInstalledController tableView:_tableView objectValueForTableColumn:_credatTableColumn row:0];
   STAssertTrue([returnValue isEqualToString:@"2013-01-26 at 21:34"], @"");
 }
-
-
 
 //************************* numberOfRowsInTableView *************************//
 - (void) test_numberOfRowsInTableView_dataSourceWithOnItem_return1 {
@@ -198,37 +201,6 @@
   [controllerMock verify];
 }
 
-//************************* loadTableData *************************// untestestable blocks
-//- (void) test_loadTableData_allScenarios_loadTableDataFromAppsNotInstalledModel {
-//  id appsManagerMock = [OCMockObject niceMockForProtocol:@protocol(IAppsManager)];
-//  [[appsManagerMock expect] loadTableSourceData];
-//
-//  [_appsNotInstalledController setAppsManager:appsManagerMock];
-//  [_appsNotInstalledController loadTableData];
-//  
-//  [appsManagerMock verify];
-//}
-//
-//- (void) test_loadTableData_allScenarios_reloadTable {
-//  id tableViewMock = [OCMockObject partialMockForObject:[_appsNotInstalledController tableView]];
-//  [[tableViewMock expect] reloadData];
-//  
-//  [_appsNotInstalledController loadTableData];
-//  
-//  [tableViewMock verify];
-//}
-
-
-//- (void) test_loadTableData_loadingEnds_stopProgressAnimation {
-//  id controllerMock = [OCMockObject partialMockForObject:_appsNotInstalledController];
-//  [[controllerMock expect] stopProgressAnimation];
-//  
-//  [_appsNotInstalledController loadTableData];
-//  
-//  [controllerMock verify];
-//}
-//
-//
 - (void) test_loadTableData_loadingStarts_startProgressAnimation {
   id controllerMock = [OCMockObject partialMockForObject:_appsNotInstalledController];
   [[controllerMock expect] startProgressAnimationinSuperview:_tableView];
@@ -244,15 +216,6 @@
   STAssertTrue([[_tableView subviews] containsObject:[_appsNotInstalledController progressIndicator]], @"");
 }
 
-- (void) test_startProgressAnimationinSuperview_viewNotNil_startAnimation {
-  id progressIndicatorMock = [OCMockObject partialMockForObject:[_appsNotInstalledController progressIndicator]];
-  [[progressIndicatorMock expect] startAnimation:nil];
-  
-  [_appsNotInstalledController startProgressAnimationinSuperview:_tableView];
-  
-  [progressIndicatorMock verify];
-}
-
 
 - (void) test_startProgressAnimationinSuperview_viewNotNil_setTheFrameFromTheSuperview {
   [_tableView setFrame:NSMakeRect(0, 0, 10, 10)];
@@ -264,25 +227,6 @@
 
 - (void) test_startProgressAnimationinSuperview_viewIsNil_throwException {
   STAssertThrows([_appsNotInstalledController startProgressAnimationinSuperview:nil], @"");
-}
-
-//************************* stopAnimationProgress *************************//
-- (void) test_startProgressAnimationinSuperview_viewNotNil_stopAnimation {
-  id progressIndicatorMock = [OCMockObject partialMockForObject:[_appsNotInstalledController progressIndicator]];
-  [[progressIndicatorMock expect] stopAnimation:nil];
-  
-  [_appsNotInstalledController stopProgressAnimation];
-  
-  [progressIndicatorMock verify];
-}
-
-- (void) test_startProgressAnimationinSuperview_viewNotNil_removeProgressIndicationToSuperview {
-  id progressIndicatorMock = [OCMockObject partialMockForObject:[_appsNotInstalledController progressIndicator]];
-  [[progressIndicatorMock expect] removeFromSuperview];
-  
-  [_appsNotInstalledController stopProgressAnimation];
-  
-  [progressIndicatorMock verify];
 }
 
 - (void) test_writeRowsWithIndexes_oneRowSelected_pasteModuleIDStringToClipboard {

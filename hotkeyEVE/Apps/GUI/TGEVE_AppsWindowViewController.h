@@ -1,5 +1,5 @@
 //
-//  AppsViewController.h
+//  TGEVE_AppsWindowViewController.h
 //  hotkeyEVE
 //
 //  Created by Tobias Sommer on 1/11/13.
@@ -11,7 +11,7 @@
 #import "AppsNavigationViewController.h"
 #import "IAppsTableViewController.h"
 
-@interface AppsViewController : NSObject <AppsNavigationDelegate>
+@interface TGEVE_AppsWindowViewController : NSObject <AppsNavigationDelegate>
 
 @property (weak) IBOutlet NSSplitView *splitView;
 
