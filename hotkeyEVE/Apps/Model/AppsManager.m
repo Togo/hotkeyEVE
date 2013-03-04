@@ -57,6 +57,7 @@
     }
     } else {
       [_userNotifications displayRegisterEVEWithCallbackNotification:@"Register EVE, to install more Apps!" :@"You've reached the maximum number of installed Apps"];
+      return NO;
     }
   }
   
