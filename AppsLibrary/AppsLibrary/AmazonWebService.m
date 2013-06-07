@@ -82,11 +82,16 @@
   return attributes;
 }
 
-- (NSArray*) getAppListFromDB {
+- (NSArray*) getNotInstalledAppList :(NSArray*) installedModuleIDs {
   NSArray *entries = nil;
   NSMutableString *select = [NSMutableString string];
   [select appendFormat:@" select * from %@ ", kAmazonAppsDBDomainName];
-  [select appendFormat:@" where Enabled = 'YES' "];
+    [select appendFormat:@" where Enabled = 'YES' "];
+  
+//  for (NSString *aModuleID in installedModuleIDs) {
+//      [select appendFormat:@" and itemName() != '%@' ", aModuleID];
+//      
+//  }
   [select appendFormat:@" intersection ApplicationName is not null order by ApplicationName "];
   
   SimpleDBSelectRequest *selectRequest = [[SimpleDBSelectRequest alloc] initWithSelectExpression:select];

@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AppsManager.h"
+#import "TGEVE_AppsManager.h"
 
-@interface AppsManagerLocalDB : AppsManager
+@interface AppsManagerLocalDB : TGEVE_AppsManager
 
 @end

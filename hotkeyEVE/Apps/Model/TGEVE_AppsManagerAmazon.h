@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AppsManager.h"
+#import "TGEVE_AppsManager.h"
 
-@interface AppsManagerAmazon : AppsManager
+@interface TGEVE_AppsManagerAmazon : TGEVE_AppsManager
 
 @end

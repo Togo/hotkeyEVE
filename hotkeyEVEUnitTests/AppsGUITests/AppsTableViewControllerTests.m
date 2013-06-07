@@ -193,7 +193,7 @@
 //************************* loadView *************************//
 - (void) test_loadView_viewWillBeDisplayed_startBackgroundJobWithLoadingTableData {
   id controllerMock = [OCMockObject partialMockForObject:_appsNotInstalledController];
-  [[controllerMock expect] loadTableData];
+  [[controllerMock expect] loadTableDataFromDB];
   [[controllerMock stub] registerObserver];
   
   [_appsNotInstalledController loadView];
@@ -205,7 +205,7 @@
   id controllerMock = [OCMockObject partialMockForObject:_appsNotInstalledController];
   [[controllerMock expect] startProgressAnimationinSuperview:_tableView];
   
-  [_appsNotInstalledController loadTableData];
+  [_appsNotInstalledController loadTableDataFromDB];
   
   [controllerMock verify];
 }

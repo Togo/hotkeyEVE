@@ -15,9 +15,10 @@ NSString * const kEMailKey = @"EMail";
 NSString * const kAppNameKey = @"ApplicationName";
 NSString * const kBundleIdentifierKey = @"BundleIdentifier";
 NSString * const kModuleCredatKey = @"Credat";
-NSString * const kUploadSuccessMessage = @"Upload Successfull\n\nThe GUI Mapping was succesfully uploaded. You receive an E-Mail when the review of your mapping is completed, this can take several days.";
 NSString * const kModuleID = @"ModuleID";
 NSString * const kLanguageKey = @"Language";
+
+NSString * const kUploadSuccessMessage = @"Upload Successfull\n\nThe GUI Mapping was succesfully uploaded. You receive an E-Mail when the review of your mapping is completed, this can take several days.";
 NSString * const kAppModuleCreatingFailed = @"Error App Module";
 
 // Row Keys in ModuleBody(is in use in HotkeyEVEApps and HotkeyEVE main)

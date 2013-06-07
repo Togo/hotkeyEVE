@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Tobias Sommer. All rights reserved.
 //
 
-#import "AppsManager.h"
+#import "TGEVE_AppsManager.h"
 #import "TGEVE_GUIElementsTableModel.h"
 #import "AppModuleTableModel.h"
 #import "GrowlNotifications.h"
 #import "GUINotifications.h"
 
-@implementation AppsManager
+@implementation TGEVE_AppsManager
 
 @synthesize receiveAppModule = _receiveAppModule;
 @synthesize guiElementTable =_guiElementTable;
@@ -23,7 +23,7 @@
 {
   self = [super init];
   if (self) {
-    self.receiveAppModule = [ReceiveAppModule createReceiverWithAmazonWebService];
+    self.receiveAppModule = [ReceiveAppModuleAmazon createReceiverWithAmazonWebService];
     self.guiElementTable = [[TGEVE_GUIElementsTableModel alloc] init];
     self.appModuleTable = [[AppModuleTableModel alloc] init];
     self.userNotifications = [GrowlNotifications growlNotifications];
@@ -89,7 +89,7 @@
   [self postTableRefreshNotificationIfNoMoreApps];
 }
 
-- (id) loadTableSourceData {
+- (id) loadTableDataFromDB {
  [NSException raise:@"Invoked abstract method" format:@"Invoked abstract method"];
   return nil;
 }

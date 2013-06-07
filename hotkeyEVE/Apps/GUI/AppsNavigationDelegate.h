@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IAppsManager.h"
+#import "TGEVE_IAppsManager.h"
 
 @protocol AppsNavigationDelegate <NSObject>
 

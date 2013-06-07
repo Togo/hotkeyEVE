@@ -7,7 +7,7 @@
 //
 
 #import "MigrationV1_4_0.h"
-#import "AppsManager.h"
+#import "TGEVE_AppsManager.h"
 
 @implementation MigrationV1_4_0
 

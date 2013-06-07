@@ -27,7 +27,7 @@
   return YES;
 }
 
-- (id) loadTableSourceData {
+- (id) loadTableData {
   return nil;
 }
 

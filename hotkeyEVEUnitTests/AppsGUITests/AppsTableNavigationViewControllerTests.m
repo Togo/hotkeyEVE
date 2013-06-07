@@ -10,7 +10,7 @@
 #import "AppsTableNavigationViewController.h"
 #import <OCMock/OCMock.h>
 #import "AppsTableViewController.h"
-#import "AppsManagerAmazon.h"
+#import "TGEVE_AppsManagerAmazon.h"
 #import "AppsManagerLocalDB.h"
 
 @implementation AppsTableNavigationViewControllerTests

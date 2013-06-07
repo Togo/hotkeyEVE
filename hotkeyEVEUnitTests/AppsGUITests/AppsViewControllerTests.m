@@ -15,7 +15,7 @@
 #import "AppsManagerLocalDB.h"
 #import "IAppsTableViewController.h"
 #import "AppsManagerMock.h"
-#import "AppsManagerAmazon.h"
+#import "TGEVE_AppsManagerAmazon.h"
 
 @implementation AppsViewControllerTests
 
@@ -45,7 +45,7 @@
 //************************* awakeFromNib *************************//
 - (void) test_awakeFromNib_contollerAllocated_callViewSelectiondDidChangeWithInstalledAppsView {
   id appsViewControllerMock = [OCMockObject partialMockForObject:_appsViewController];
-  [[appsViewControllerMock expect] viewSelectionDidChanged :[AppsTableViewController class] :kAppsTableViewControllerNibName :[AppsManagerAmazon class]];
+  [[appsViewControllerMock expect] viewSelectionDidChanged :[AppsTableViewController class] :kAppsTableViewControllerNibName :[TGEVE_AppsManagerAmazon class]];
   
   [_appsViewController awakeFromNib];
   

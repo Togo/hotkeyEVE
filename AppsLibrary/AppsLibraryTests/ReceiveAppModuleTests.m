@@ -7,7 +7,7 @@
 //
 
 #import "ReceiveAppModuleTests.h"
-#import "ReceiveAppModule.h"
+#import "ReceiveAppModuleAmazon.h"
 #import <OCMock/OCMock.h>
 #import "IWebService.h"
 
@@ -17,7 +17,7 @@
 {
   [super setUp];
   
-  _receiveAppModule = [[ReceiveAppModule alloc] init];
+  _receiveAppModule = [[ReceiveAppModuleAmazon alloc] init];
 }
 
 - (void)tearDown

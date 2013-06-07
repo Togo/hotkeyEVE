@@ -26,46 +26,41 @@
   return self;
 }
 
-+ (AppModule*) createNewAppModule :(NSArray*) tableData :(NSString*) userName :(NSString*) eMail :(NSString*) appName :(NSString*) bundleIdentifier :(NSString*) appLanguage {
+// untested
+- (void)updateAppModule:(NSArray *)tableData metaData:(id<TGAPPSLIB_IAppModuleMetaDataCreator>) creatorDialog {
+	[self setModuleBody:tableData];
+
+	NSMutableDictionary *metaDataDic = [creatorDialog createMetaDataDictionary];
+	NSString *credat = [NSString stringWithFormat:@"%@", [NSDate date]];
+	[metaDataDic setObject:credat  forKey:kModuleCredatKey];
+	[metaDataDic setObject:[[self moduleMetaData] valueForKey:kModuleID] forKey:kModuleID];
+
+	[self setModuleMetaData:metaDataDic];
+}
+
++ (AppModule *)createNewAppModule:(NSArray *)tableData metaData:(id<TGAPPSLIB_IAppModuleMetaDataCreator>) creatorDialog {
   if (tableData == nil
       || [tableData count] == 0) {
     NSException *arrayEmptyException = [NSException exceptionWithName:NSInvalidArgumentException reason:@"There is no data in the Table" userInfo:nil];
     @throw arrayEmptyException;
   }
   
-  if (userName == nil
-      || [userName length] == 0) {
-    NSException *emptyUserNameException = [NSException exceptionWithName:NSInvalidArgumentException reason:@"No User Name" userInfo:nil];
-    @throw emptyUserNameException;
-  }
-  
-  if (eMail == nil
-      || [eMail length] == 0) {
-    NSException *emptyEmailException = [NSException exceptionWithName:NSInvalidArgumentException reason:@"No Email" userInfo:nil];
-    @throw emptyEmailException;
-  }
-  
-  if (appName == nil
-      || [appName length] == 0) {
-    NSException *emptyAppNameException = [NSException exceptionWithName:NSInvalidArgumentException reason:@"No Application Name" userInfo:nil];
-    @throw emptyAppNameException;
-  }
-  
-  if (bundleIdentifier == nil
-      || [bundleIdentifier length] == 0) {
-    NSException *emptyBundleIdentifierException = [NSException exceptionWithName:NSInvalidArgumentException reason:@"No Bundle Identifier" userInfo:nil];
-    @throw emptyBundleIdentifierException;
-  }
-  
-  if (appLanguage == nil
-      || [appLanguage length] == 0) {
-    NSException *emptyLanguageException = [NSException exceptionWithName:NSInvalidArgumentException reason:@"No Appliction language" userInfo:nil];
-    @throw emptyLanguageException;
-  }
-  
   AppModule *appModule = [[self alloc] init];
   [appModule setModuleBody:tableData];
-  [appModule setModuleMetaData:[appModule createMetaDataDictionary :userName :eMail :appName :bundleIdentifier :appLanguage]];
+
+
+	NSMutableDictionary *metaDataDic;
+	@try {
+		metaDataDic= [creatorDialog createMetaDataDictionary];
+		NSString *credat = [NSString stringWithFormat:@"%@", [NSDate date]];
+		[metaDataDic setObject:credat  forKey:kModuleCredatKey];
+		[metaDataDic setObject:[self createModuleID:[metaDataDic valueForKey:kAppNameKey] :[metaDataDic valueForKey:kUserNameKey] :credat]  forKey:kModuleID];
+
+		[appModule setModuleMetaData:metaDataDic];
+	} @catch (NSException *exception1) {
+		@throw exception1;
+	}
+
 
   return appModule;
 }
@@ -84,28 +79,26 @@
     
     return appModule;
   } else {
-    @throw [NSException exceptionWithName:@"NoDataFoundException" reason:@"Can't download Data with this moduleID" userInfo:nil];
+    @throw [NSException exceptionWithName:@"NoAppModuleFoundException" reason:@"Didn't find a Module with this ID!" userInfo:nil];
   }
 }
 
-- (NSDictionary*) createMetaDataDictionary :(NSString*) userName :(NSString*) eMail :(NSString*) appName :(NSString*) bundleIdentifier :(NSString*) appLanguage {
-  
-  NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-  [dic setObject:userName forKey:kUserNameKey];
-  [dic setObject:eMail forKey:kEMailKey];
-  [dic setObject:appName forKey:kAppNameKey];
-  [dic setObject:bundleIdentifier  forKey:kBundleIdentifierKey];
-  [dic setObject:appLanguage  forKey:kLanguageKey];
-  
-  NSString *credat = [NSString stringWithFormat:@"%@", [NSDate date]];
-  [dic setObject:credat  forKey:kModuleCredatKey];
-  
-  [dic setObject:[self createModuleID:appName :userName :credat]  forKey:kModuleID];
-  
-  return dic;
-}
+//- (NSDictionary *)createMetaDataDictionary:(NSDictionary *)metaDataDic {
+//
+//  NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+//	[dic addEntriesFromDictionary:metaDataDic];
+////  [dic setObject:userName forKey:kUserNameKey];
+////  [dic setObject:eMail forKey:kEMailKey];
+////  [dic setObject:appName forKey:kAppNameKey];
+////  [dic setObject:bundleIdentifier  forKey:kBundleIdentifierKey];
+////  [dic setObject:metaDataDic forKey:kLanguageKey];
+//
+//
+//
+//  return dic;
+//}
 
-- (id) createModuleID :(NSString*) appName :(NSString*) userName :(NSString*) credat {
++ (id) createModuleID :(NSString*) appName :(NSString*) userName :(NSString*) credat {
   return [NSString stringWithFormat:@"%@%@%@",[appName md5], [userName md5], [credat md5]];
 }
 

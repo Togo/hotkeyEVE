@@ -10,7 +10,6 @@
 
 @interface NSAlert()
 
-
 @end
 
 @implementation NSAlert (Blocks)

@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+#import "TGAPPSLIB_IAppModuleMetaDataCreator.h"
 #import "AppModule.h"
+
 #import "AmazonWebService.h"
 #import "DistributeAppModule.h"
 #import "AppsLibraryConstants.h"
 
-//#import "IWebService.h"
-
 #import "IReceiveAppModule.h"
-#import "ReceiveAppModule.h"
+#import "ReceiveAppModuleAmazon.h"
+

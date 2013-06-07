@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "IUserNotifications.h"
 
+extern NSString * const TGEVE_GROWL_MULTIPLE_MATCH;
+
 @interface GrowlNotifications : NSObject <IUserNotifications>
 
 + (id<IUserNotifications>) growlNotifications;

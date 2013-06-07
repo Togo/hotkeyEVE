@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IAppsManager.h"
+#import "TGEVE_IAppsManager.h"
 
-@interface AppsManager : NSObject <IAppsManager> {
+@interface TGEVE_AppsManager : NSObject <TGEVE_IAppsManager> {
   NSInteger _appCount;
 }
 

@@ -1,5 +1,5 @@
 //
-//  ReceiveAppModule.h
+//  ReceiveAppModuleAmazon.h
 //  AppsLibrary
 //
 //  Created by Tobias Sommer on 1/14/13.
@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "IReceiveAppModule.h"
 
-@interface ReceiveAppModule : NSObject <IReceiveAppModule>
+@interface ReceiveAppModuleAmazon : NSObject <IReceiveAppModule>
 
-+ (ReceiveAppModule*) createReceiverWithAmazonWebService;
++ (ReceiveAppModuleAmazon*) createReceiverWithAmazonWebService;
 
 @end

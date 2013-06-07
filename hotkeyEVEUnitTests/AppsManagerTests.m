@@ -7,7 +7,7 @@
 //
 
 #import "AppsManagerTests.h"
-#import "AppsManagerAmazon.h"
+#import "TGEVE_AppsManagerAmazon.h"
 #import <OCMock/OCMock.h>
 #import "ReceiveAppModuleMock.h"
 #import "TGEVE_GUIElementsTableModel.h"
@@ -21,7 +21,7 @@
 {
   [super setUp];
   
-  _appsManager = [[AppsManagerAmazon alloc] init];
+  _appsManager = [[TGEVE_AppsManagerAmazon alloc] init];
   [_appsManager setReceiveAppModule:[[ReceiveAppModuleMock alloc] init]];
   
   id notificationsMock = [OCMockObject partialMockForObject:[_appsManager userNotifications]];
@@ -38,7 +38,7 @@
 //************************* init *************************//
 - (void) test_init_selfCreated_objectToReceiveAppModuleNotNil {
   [_appsManager setReceiveAppModule:nil];
-  _appsManager = [[AppsManagerAmazon alloc] init];
+  _appsManager = [[TGEVE_AppsManagerAmazon alloc] init];
   STAssertNotNil([_appsManager receiveAppModule], @"");
 }
 

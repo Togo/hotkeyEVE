@@ -19,7 +19,6 @@
 
 - (id) initWithWebService :(id<IWebService>) webService;
 
-- (NSString*) distributeToWebServer :(NSArray*) tableData :(NSString*) userName :(NSString*) eMail :(NSString*) appName :(NSString*) bundleIdentifier :(NSString*) appLanguage;
-- (AppModule*) createNewAppModule :(NSArray*) tableData :(NSString*) userName :(NSString*) eMail :(NSString*) appName :(NSString*) bundleIdentifier :(NSString*) appLanguage;
+- (NSString *)distributeToWebServer:(AppModule *)appModule;
 
 @end

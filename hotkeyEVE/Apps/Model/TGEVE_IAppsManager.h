@@ -13,7 +13,7 @@
 @class TGEVE_GUIElementsTableModel;
 @class AppModuleTableModel;
 
-@protocol IAppsManager <NSObject>
+@protocol TGEVE_IAppsManager <NSObject>
 
 @property (strong) TGEVE_GUIElementsTableModel *guiElementTable;
 @property (strong) AppModuleTableModel   *appModuleTable;
@@ -26,7 +26,7 @@
 - (BOOL) addAppWithModuleID :(NSString*) aModuleID;
 - (void) removeAppWithModuleID :(NSString*) aModuleID;
 
-- (id) loadTableSourceData;
+- (id) loadTableDataFromDB;
 
 - (BOOL) isAppInstalled :(NSString*) moduleID;
 @end

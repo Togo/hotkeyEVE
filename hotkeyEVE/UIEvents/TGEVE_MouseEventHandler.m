@@ -50,10 +50,13 @@
 }
 
 - (BOOL) isShortcutDisabled :(NSArray*) eventShortcutHintList {
-  if ( [eventShortcutHintList count] > 1 )
-    return NO; // Display multiple message anyway
-   else
-     return [DisabledShortcutsModel isShortcutDisabled :[eventShortcutHintList objectAtIndex:0]];
+  for (NSDictionary *aRow in eventShortcutHintList ) {
+    if ( [DisabledShortcutsModel isShortcutDisabled :aRow] ) {
+      return YES;
+    }
+  }
+  
+  return NO;
 }
 
 - (BOOL) isTimeIntevallOk :(NSArray*) eventShortcutHintList {

@@ -7,7 +7,7 @@
 //
 
 #import "AppsTableViewController.h"
-#import "AppsManagerAmazon.h"
+#import "TGEVE_AppsManagerAmazon.h"
 #import <AppsLibrary/AppsLibrary.h>
 #import "AppModuleTableModel.h"
 
@@ -25,7 +25,7 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-      self.appsManager = [[AppsManagerAmazon alloc] init];
+      self.appsManager = [[TGEVE_AppsManagerAmazon alloc] init];
     }
   
     return self;
@@ -83,7 +83,7 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 - (void) loadTableData {
   [self startProgressAnimationinSuperview:_tableView];
   dispatch_async(dispatch_get_main_queue(),^{
-    _dataSource = [_appsManager loadTableSourceData];
+    _dataSource = [_appsManager loadTableDataFromDB];
     for (NSDictionary *aRow in _dataSource ) {
       BOOL appModuleInstalled = [_appsManager isAppInstalled:[aRow valueForKey:kModuleID]];
       [aRow setValue:[NSString stringWithFormat:@"%d", appModuleInstalled] forKey:TGUTIL_TCOLID_INSTALLED];

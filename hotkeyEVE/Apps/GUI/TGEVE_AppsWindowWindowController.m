@@ -7,7 +7,7 @@
 //
 
 #import "TGEVE_AppsWindowWindowController.h"
-#import "AppsManager.h"
+#import "TGEVE_AppsManager.h"
 
 NSString const * kAppsWindowNibName = @"TGEVE_AppsWindowWindowController";
 

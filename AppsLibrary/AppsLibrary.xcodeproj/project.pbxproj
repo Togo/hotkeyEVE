@@ -14,6 +14,7 @@
 		CD04781B167FA9450063DCBE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD047819167FA9450063DCBE /* InfoPlist.strings */; };
 		CD04781E167FA9450063DCBE /* AppsLibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD04781D167FA9450063DCBE /* AppsLibraryTests.m */; };
 		CD04782B167FAAF10063DCBE /* AppsLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = CD047807167FA9450063DCBE /* AppsLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD0E53E41704270E00161346 /* TGAPPSLIB_IAppModuleMetaDataCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = CD0E53E31704270300161346 /* TGAPPSLIB_IAppModuleMetaDataCreator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD47A45716987BA10074F2A5 /* AmazonAuthUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47997316987B990074F2A5 /* AmazonAuthUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		CD47A45816987BA10074F2A5 /* AmazonBoolValueUnmarshaller.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47997416987B990074F2A5 /* AmazonBoolValueUnmarshaller.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		CD47A45916987BA10074F2A5 /* AmazonClientException.m in Sources */ = {isa = PBXBuildFile; fileRef = CD47997516987B990074F2A5 /* AmazonClientException.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
@@ -1648,8 +1649,8 @@
 		CDACABE616998C3800BEDCD2 /* NSString+MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = CDACABE416998C3800BEDCD2 /* NSString+MD5.h */; };
 		CDACABE716998C3800BEDCD2 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACABE516998C3800BEDCD2 /* NSString+MD5.m */; };
 		CDACABE816998CE100BEDCD2 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACABE516998C3800BEDCD2 /* NSString+MD5.m */; };
-		CDE3017116A4942600E8D489 /* ReceiveAppModule.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE3016F16A4942600E8D489 /* ReceiveAppModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CDE3017216A4942600E8D489 /* ReceiveAppModule.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3017016A4942600E8D489 /* ReceiveAppModule.m */; };
+		CDE3017116A4942600E8D489 /* ReceiveAppModuleAmazon.h in Headers */ = {isa = PBXBuildFile; fileRef = CDE3016F16A4942600E8D489 /* ReceiveAppModuleAmazon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDE3017216A4942600E8D489 /* ReceiveAppModuleAmazon.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3017016A4942600E8D489 /* ReceiveAppModuleAmazon.m */; };
 		CDE3017616A495C800E8D489 /* ReceiveAppModuleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3017516A495C800E8D489 /* ReceiveAppModuleTests.m */; };
 /* End PBXBuildFile section */
 
@@ -1676,6 +1677,7 @@
 		CD047818167FA9450063DCBE /* AppsLibraryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppsLibraryTests-Info.plist"; sourceTree = "<group>"; };
 		CD04781A167FA9450063DCBE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CD04781D167FA9450063DCBE /* AppsLibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppsLibraryTests.m; sourceTree = "<group>"; };
+		CD0E53E31704270300161346 /* TGAPPSLIB_IAppModuleMetaDataCreator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TGAPPSLIB_IAppModuleMetaDataCreator.h; sourceTree = "<group>"; };
 		CD47997316987B990074F2A5 /* AmazonAuthUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmazonAuthUtils.m; sourceTree = "<group>"; };
 		CD47997416987B990074F2A5 /* AmazonBoolValueUnmarshaller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmazonBoolValueUnmarshaller.m; sourceTree = "<group>"; };
 		CD47997516987B990074F2A5 /* AmazonClientException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmazonClientException.m; sourceTree = "<group>"; };
@@ -3310,8 +3312,8 @@
 		CDACA67C16987FD500BEDCD2 /* SecurityTokenServiceResponseUnmarshaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityTokenServiceResponseUnmarshaller.h; sourceTree = "<group>"; };
 		CDACABE416998C3800BEDCD2 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		CDACABE516998C3800BEDCD2 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
-		CDE3016F16A4942600E8D489 /* ReceiveAppModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiveAppModule.h; sourceTree = "<group>"; };
-		CDE3017016A4942600E8D489 /* ReceiveAppModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiveAppModule.m; sourceTree = "<group>"; };
+		CDE3016F16A4942600E8D489 /* ReceiveAppModuleAmazon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiveAppModuleAmazon.h; sourceTree = "<group>"; };
+		CDE3017016A4942600E8D489 /* ReceiveAppModuleAmazon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiveAppModuleAmazon.m; sourceTree = "<group>"; };
 		CDE3017416A495C800E8D489 /* ReceiveAppModuleTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiveAppModuleTests.h; sourceTree = "<group>"; };
 		CDE3017516A495C800E8D489 /* ReceiveAppModuleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiveAppModuleTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -3391,6 +3393,7 @@
 				CD8EE98A16960CA3007945E2 /* AppsLibraryConstants.m */,
 				CD6035ED1695BA5500791EB4 /* DistributeAppModule.h */,
 				CD6035EE1695BA5500791EB4 /* DistributeAppModule.m */,
+				CD0E53E31704270300161346 /* TGAPPSLIB_IAppModuleMetaDataCreator.h */,
 				CD4EBE771680EAEF00CBD849 /* AppModule.h */,
 				CD4EBE781680EAEF00CBD849 /* AppModule.m */,
 				CDACABE416998C3800BEDCD2 /* NSString+MD5.h */,
@@ -3771,8 +3774,8 @@
 			isa = PBXGroup;
 			children = (
 				CDA558AD16AC7E88008D236E /* IReceiveAppModule.h */,
-				CDE3016F16A4942600E8D489 /* ReceiveAppModule.h */,
-				CDE3017016A4942600E8D489 /* ReceiveAppModule.m */,
+				CDE3016F16A4942600E8D489 /* ReceiveAppModuleAmazon.h */,
+				CDE3017016A4942600E8D489 /* ReceiveAppModuleAmazon.m */,
 			);
 			name = Receive;
 			sourceTree = "<group>";
@@ -6637,8 +6640,9 @@
 				CDACABD216987FDC00BEDCD2 /* SecurityTokenServiceResponse.h in Headers */,
 				CDACABD316987FDC00BEDCD2 /* SecurityTokenServiceResponseUnmarshaller.h in Headers */,
 				CDACABE616998C3800BEDCD2 /* NSString+MD5.h in Headers */,
-				CDE3017116A4942600E8D489 /* ReceiveAppModule.h in Headers */,
+				CDE3017116A4942600E8D489 /* ReceiveAppModuleAmazon.h in Headers */,
 				CDA558AE16AC7E88008D236E /* IReceiveAppModule.h in Headers */,
+				CD0E53E41704270E00161346 /* TGAPPSLIB_IAppModuleMetaDataCreator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6978,7 +6982,7 @@
 				CD47AB6B16987BA30074F2A5 /* GTMLogger+ASL.m in Sources */,
 				CD47AB6D16987BA30074F2A5 /* GTMLogger.m in Sources */,
 				CDACABE716998C3800BEDCD2 /* NSString+MD5.m in Sources */,
-				CDE3017216A4942600E8D489 /* ReceiveAppModule.m in Sources */,
+				CDE3017216A4942600E8D489 /* ReceiveAppModuleAmazon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -7084,7 +7088,7 @@
 				GCC_PREFIX_HEADER = "AppsLibrary/AppsLibrary-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = $TARGET_NAME;
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = NO;
 			};
 			name = Debug;
@@ -7101,7 +7105,7 @@
 				GCC_PREFIX_HEADER = "AppsLibrary/AppsLibrary-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = $TARGET_NAME;
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = NO;
 			};
 			name = Release;

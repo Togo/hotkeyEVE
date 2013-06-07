@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "IAppsManager.h"
 
-@interface AppsManagerMock : NSObject <IAppsManager>
+@interface AppsManagerMock : NSObject <TGEVE_IAppsManager>
 
 @end

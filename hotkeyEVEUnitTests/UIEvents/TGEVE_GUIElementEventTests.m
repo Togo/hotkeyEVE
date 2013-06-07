@@ -38,7 +38,7 @@
   STAssertTrue([returnedList count] == 1, @"");
 }
 
-- (void) test_searchForShortcuts_moreThanOneEntryFoundInDatabase_throwException {
+- (void) test_searchForShortcuts_moreThanOneEntryFoundInDatabase_returnArrayWithMoreThanOneDictionary {
   TGEVE_GUIElementEvent *event = [self createGUIElementEvent];
   
   UIElement *element = [[UIElement alloc] init];
@@ -47,7 +47,8 @@
   [[[guiElementTableMock stub] andReturn:[NSArray arrayWithObjects:[NSDictionary dictionary], [NSDictionary dictionary], nil]] searchInGUIElementTable :element];
   
   [event setGuiElementTable :guiElementTableMock];
-  STAssertThrows([event searchForShortcuts:element], @"");
+  NSArray *returnedList = [event searchForShortcuts :element];
+  STAssertTrue([returnedList count] == 2, @"");
 }
 
 - (TGEVE_GUIElementEvent*) createGUIElementEvent {

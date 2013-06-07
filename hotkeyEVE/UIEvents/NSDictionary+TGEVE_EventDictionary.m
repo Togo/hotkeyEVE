@@ -34,6 +34,16 @@ NSString * const TGEVE_KEY_PARENT_TITLE_STRING = @"Parent Title";
           ];
 }
 
++ (NSDictionary*) dictionaryWithGUIElementsTableRow :(NSDictionary*) aRow {
+  return [self createDictionary:[aRow valueForKey:SHORTCUT_STRING_COL]
+                               :[aRow valueForKey:HELP_COL]
+                               :[aRow valueForKey:TITLE_COL]
+                               :[aRow valueForKey:BUNDLE_IDEN_COL]
+                               :@""
+          ];
+}
+
+
 + (NSDictionary*) createDictionary :(NSString*) shortcutString :(NSString*) helpString :(NSString*) titleString :(NSString*) bundleIdentifierString :(NSString*) parentTitle {
   NSMutableDictionary *dic = [NSMutableDictionary dictionary];
   [dic setValue:shortcutString forKey:TGEVE_KEY_SHORTCUT_STRING];

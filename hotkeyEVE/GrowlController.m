@@ -22,17 +22,11 @@
       [DisabledShortcutsModel disableShortcutWithEventDictionary:[clickedContext valueForKey:@"clickContextDic"]];
       [GrowlNotifications displayShortcutDisabledNotification :[clickedContext valueForKey:@"clickContextDic"]];
 
-      //      NSString *appName = [clickedContext valueForKey:APP_NAME_COL];
-      //      NSString *user = [clickedContext valueForKey:USER_NAME_COL];
-      
-      //      NSString *bundleIdentifier = [clickedContext valueForKey:BUNDLE_IDEN_COL];
-      //      NSString *shortcutString = [clickedContext valueForKey:TGEVE_KEY_SHORTCUT_STRING];
-      //      NSString *title = [clickedContext valueForKey:TGEVE_KEY_TITLE_STRING];
-//      [[NSNotificationCenter defaultCenter] postNotificationName:SelectActiveApplication object:[EVEUtilities activeApplication]];
-//      [[NSNotificationCenter defaultCenter] postNotificationName:ShortcutsWindowApplicationDidChanged object:clickedContext];
-//      [[NSNotificationCenter defaultCenter] postNotificationName:SelectNotificationDisabledShortcutRow object:clickedContext];
-
       return;
+    }
+    
+    if ([[clickedContext valueForKey:@"mesage_type"] isEqualToString:TGEVE_GROWL_MULTIPLE_MATCH] ) {
+      [[[EVEManager sharedEVEManager] mainMenuController] showShortcutsWindow:nil];
     }
     
     if ([[clickedContext valueForKey:@"mesage_type"] isEqualToString:@"register_eve"]) {

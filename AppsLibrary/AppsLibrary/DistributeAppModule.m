@@ -21,32 +21,17 @@
   return self;
 }
 
-- (NSString*) distributeToWebServer :(NSArray*) tableData :(NSString*) userName :(NSString*) eMail :(NSString*) appName  :(NSString*) bundleIdentifier :(NSString*) appLanguage{
-  NSString *workflowStatus;
+// TODO untested
+- (NSString *)distributeToWebServer:(AppModule *)appModule {
   NSString *returnValue;
-  AppModule *module;
-  
-  @try {
-    module = [self createNewAppModule :tableData :userName :eMail :appName :bundleIdentifier :appLanguage];
-  }
-  @catch (NSException *exception) {
-    returnValue = [exception reason];
-    workflowStatus = kAppModuleCreatingFailed;
-  }
-  
-  if (workflowStatus != kAppModuleCreatingFailed) {
-      workflowStatus = [_webService uploadToServer :module];
-    
-    if (workflowStatus == kUploadSuccessMessage) {
-      returnValue =[_webService insertInAppsDatabase :module];
-    }
+
+  returnValue = [_webService uploadToServer :appModule];
+
+  if (returnValue == kUploadSuccessMessage) {
+    returnValue =[_webService insertInAppsDatabase :appModule];
   }
   
   return returnValue;
-}
-
-- (AppModule*) createNewAppModule :(NSArray*) tableData :(NSString*) userName :(NSString*) eMail :(NSString*) appName :(NSString*) bundleIdentifier :(NSString*) appLanguage {
-  return [AppModule createNewAppModule :tableData :userName :eMail :appName :bundleIdentifier :appLanguage];
 }
 
 @end

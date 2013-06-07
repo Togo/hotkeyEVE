@@ -10,6 +10,8 @@
 #import <Growl/Growl.h>
 #import "NSDictionary+TGEVE_EventDictionary.h"
 
+NSString * const TGEVE_GROWL_MULTIPLE_MATCH = @"MultipleMatchClickContext";
+
 @implementation GrowlNotifications
 
 + (id<IUserNotifications>) growlNotifications {
@@ -42,7 +44,10 @@
   for (id aShortcutHint in eventShortcutList) {
     [description appendFormat:@"%@ %@ - > %@\n",[aShortcutHint valueForKey:TGEVE_KEY_PARENT_TITLE_STRING], [aShortcutHint valueForKey:TGEVE_KEY_TITLE_STRING], [aShortcutHint valueForKey:TGEVE_KEY_SHORTCUT_STRING]];
   }
-  [GrowlApplicationBridge notifyWithTitle:@"Multiple Match" description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:nil];
+  NSMutableDictionary *clickContextDic = [[NSMutableDictionary alloc] init];
+  [clickContextDic setValue:TGEVE_GROWL_MULTIPLE_MATCH forKey:@"mesage_type"];
+  
+  [GrowlApplicationBridge notifyWithTitle:@"Multiple Match" description:description notificationName:@"EVE" iconData:nil priority:1 isSticky:NO clickContext:clickContextDic];
 }
 
 - (void) displayRegisterEVEWithCallbackNotification :(NSString*) title :(NSString*) informativeText {

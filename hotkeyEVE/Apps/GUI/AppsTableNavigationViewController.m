@@ -8,7 +8,7 @@
 
 #import "AppsTableNavigationViewController.h"
 #import "AppsTableViewController.h"
-#import "AppsManagerAmazon.h"
+#import "TGEVE_AppsManagerAmazon.h"
 #import "AppsManagerLocalDB.h"
 
 NSString * const kAppsTableNavigationViewControllerNibName = @"AppsTableNavigationViewController";
@@ -40,11 +40,11 @@ NSString * const KNavigationColumn = @"NavigationColumn";
 //      NSDictionary *installedRow = [NSDictionary dictionaryWithObjectsAndKeys:kInstalledRowHeader, KNavigationColumn, [AppsTableViewController class],@"Class" ,kAppsTableViewControllerNibName, @"NibName", [AppsManagerLocalDB class], @"model", nil];
 //      NSDictionary *notInstalledRow = [NSDictionary dictionaryWithObjectsAndKeys:kNotInstalledRowHeader, KNavigationColumn, [AppsTableViewController class],@"Class" ,kAppsTableViewControllerNibName, @"NibName", [AppsManagerAmazon class], @"model", nil];
       
-      NSDictionary *allAppsRow = [NSDictionary dictionaryWithObjectsAndKeys:TGEVE_CONST_ALLAPPS_HEADER, KNavigationColumn, [AppsTableViewController class],@"Class" ,kAppsTableViewControllerNibName, @"NibName", [AppsManagerAmazon class], @"model", nil];
+      NSDictionary *allAppsRow = [NSDictionary dictionaryWithObjectsAndKeys:TGEVE_CONST_ALLAPPS_HEADER, KNavigationColumn, [AppsTableViewController class],@"Class" ,kAppsTableViewControllerNibName, @"NibName", [TGEVE_AppsManagerAmazon class], @"model", nil];
 
       _dataSource = [NSArray arrayWithObjects:allAppsRow,nil];
       
-      _appsManager = [[AppsManagerAmazon alloc] init];
+      _appsManager = [[TGEVE_AppsManagerAmazon alloc] init];
     }
 
   return self;

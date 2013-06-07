@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "AppsNavigationDelegate.h"
 
-@class AppsManagerAmazon;
+@class TGEVE_AppsManagerAmazon;
 
 @protocol AppsNavigationView <NSObject>
 
 @property (strong) id<AppsNavigationDelegate> delegate;
-@property (strong) AppsManagerAmazon *appsManager;
+@property (strong) TGEVE_AppsManagerAmazon *appsManager;
 
 @end

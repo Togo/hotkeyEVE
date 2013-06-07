@@ -21,5 +21,7 @@
   return [[AppModule alloc] init];
 }
 
-
+-(NSArray *)getNotInstalledAppList:(NSArray *)installedModuleIDs {
+  return nil;
+}
 @end

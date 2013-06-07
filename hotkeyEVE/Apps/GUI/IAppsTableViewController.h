@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IAppsManager.h"
+#import "TGEVE_IAppsManager.h"
 
 @protocol IAppsTableViewController <NSObject>
 
-@property (strong) id<IAppsManager> appsManager;
+@property (strong) id<TGEVE_IAppsManager> appsManager;
 
 @end

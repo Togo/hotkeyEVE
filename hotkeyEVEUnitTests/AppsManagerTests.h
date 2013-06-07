@@ -8,10 +8,10 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@class AppsManagerAmazon;
+@class TGEVE_AppsManagerAmazon;
 
 @interface AppsManagerTests : SenTestCase {
-  AppsManagerAmazon *_appsManager;
+  TGEVE_AppsManagerAmazon *_appsManager;
 }
 
 

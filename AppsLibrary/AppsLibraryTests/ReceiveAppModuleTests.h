@@ -7,10 +7,10 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "ReceiveAppModule.h"
+#import "ReceiveAppModuleAmazon.h"
 
 @interface ReceiveAppModuleTests : SenTestCase {
-  ReceiveAppModule *_receiveAppModule;
+  ReceiveAppModuleAmazon *_receiveAppModule;
 }
 
 @end

@@ -11,7 +11,7 @@
 
 @implementation AppsManagerLocalDB
 
-- (id) loadTableSourceData {
+- (id) loadTableDataFromDB {
   return [[super appModuleTable] selectAllInstalledAppModules];
 }
 

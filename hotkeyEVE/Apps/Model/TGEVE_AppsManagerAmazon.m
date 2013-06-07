@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 Tobias Sommer. All rights reserved.
 //
 
-#import "AppsManagerAmazon.h"
+#import "TGEVE_AppsManagerAmazon.h"
 #import "AppModuleTableModel.h"
 
-@implementation AppsManagerAmazon
+@implementation TGEVE_AppsManagerAmazon
 
-- (id) loadTableSourceData {
+- (id) loadTableDataFromDB {
   return [[super receiveAppModule] getNotInstalledAppList:nil];
 }
 

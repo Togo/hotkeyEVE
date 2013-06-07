@@ -19,5 +19,5 @@ extern NSString * const TGEVE_KEY_PARENT_TITLE_STRING;
 
 + (NSDictionary*) dictionaryWithUIElement :(UIElement*) element;
 + (NSDictionary*) dictionaryWithMenuBarTableRow :(NSDictionary*) aRow;
-
++ (NSDictionary*) dictionaryWithGUIElementsTableRow :(NSDictionary*) aRow;
 @end
