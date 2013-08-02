@@ -13,12 +13,15 @@
 
 + (NSAlert*) alert;
 
-- (void)    showModalAlertSheetForWindow        :(NSWindow*) window
+- (void) showModalAlertSheetForWindow        :(NSWindow*) window
                                 message         :(NSString*) messageText
                                 informativeText :(NSString*) informativeText
                                 alertStyle      :(NSAlertStyle) alertStyle
                                 buttonBlocks    :(NSDictionary*) blocks
                                 buttonTitle     :(NSString*) button1, ... NS_REQUIRES_NIL_TERMINATION;
+
+- (void) setButtonActions :(NSDictionary*) newButtonActions;
+- (NSDictionary*) buttonActions;
 
 #pragma mark - Only for Unit Tests public
 

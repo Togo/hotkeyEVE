@@ -101,7 +101,7 @@
 
 - (void) test_initWithNibName_dataSourceAllAppsRow_dataSourceContainsRowWithAmazonModel {
   NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:0] valueForKey:@"model"];
-  STAssertTrue([returnValue isEqualTo:[AppsManagerAmazon class]], @"");
+  STAssertTrue([returnValue isEqualTo:[TGEVE_AppsManagerAmazon class]], @"");
 }
 
 //************************* loadView *************************//

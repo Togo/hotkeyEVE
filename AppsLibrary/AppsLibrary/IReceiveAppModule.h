@@ -13,7 +13,7 @@
 
 @property (strong) id<IWebService> webService;
 
-- (NSArray*) getNotInstalledAppList :(NSArray*) installedModuleIDs;
 - (AppModule*) getAppWithModuleID :(NSString*) moduleID;
+- (id) loadAppList;
 
 @end

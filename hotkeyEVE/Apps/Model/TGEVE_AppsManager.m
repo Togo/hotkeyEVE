@@ -91,7 +91,7 @@
 
 - (id) loadTableDataFromDB {
  [NSException raise:@"Invoked abstract method" format:@"Invoked abstract method"];
-  return nil;
+return nil;
 }
 
 - (void) postTableRefreshNotificationIfNoMoreApps {

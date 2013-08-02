@@ -13,6 +13,7 @@
 
 NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 
+
 @interface AppsTableViewController ()
 
 @end
@@ -84,10 +85,20 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
   [self startProgressAnimationinSuperview:_tableView];
   dispatch_async(dispatch_get_main_queue(),^{
     _dataSource = [_appsManager loadTableDataFromDB];
+    if ( [[_dataSource objectAtIndex:0] isKindOfClass:[NSString class]]) {
+      void (^closeWindow)() = ^() {
+        [[[self view] window] close];
+      };
+      
+      [[NSAlert alert] showModalAlertSheetForWindow:[[self view] window] message:[_dataSource objectAtIndex:0] informativeText:nil alertStyle:0 buttonBlocks:[NSDictionary dictionaryWithObject:[closeWindow copy] forKey:@"1000"] buttonTitle:@"Oki, doki", nil];
+      _dataSource = [NSArray array];
+    } else {
     for (NSDictionary *aRow in _dataSource ) {
       BOOL appModuleInstalled = [_appsManager isAppInstalled:[aRow valueForKey:kModuleID]];
       [aRow setValue:[NSString stringWithFormat:@"%d", appModuleInstalled] forKey:TGUTIL_TCOLID_INSTALLED];
+      }
     }
+    
     [self stopProgressAnimation];
     [_tableView reloadData];
   });

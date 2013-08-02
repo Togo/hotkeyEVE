@@ -12,7 +12,7 @@
 @implementation TGEVE_AppsManagerAmazon
 
 - (id) loadTableDataFromDB {
-  return [[super receiveAppModule] getNotInstalledAppList:nil];
+  return [[super receiveAppModule] loadAppList];
 }
 
 @end

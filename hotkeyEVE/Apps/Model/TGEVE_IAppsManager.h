@@ -29,4 +29,5 @@
 - (id) loadTableDataFromDB;
 
 - (BOOL) isAppInstalled :(NSString*) moduleID;
+
 @end

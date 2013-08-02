@@ -100,4 +100,31 @@ NSAlert *_alert;
   [alertMock verify];
 }
 
+- (void) test_showModalAlertSheetForWindow_showAlert_saveTheButtonDicInClassVariable {
+  [_alert setButtonActions:nil];
+  NSDictionary *buttonActions = [NSDictionary dictionary];
+  
+  [_alert showModalAlertSheetForWindow:nil message:@"Message" informativeText:@"Informative Text" alertStyle:NSWarningAlertStyle buttonBlocks:buttonActions buttonTitle:@"button1", nil];
+  
+  STAssertEqualObjects([_alert buttonActions], buttonActions, @"");
+}
+
+- (void) test_alertDidEnd_foundButtonActionForThisReturnCode_executeTheButtonActionForTheReturnCode {
+  __block  NSInteger sum_up = 0;
+  void (^myBlock)() = ^() {
+    sum_up++;
+  };
+  
+  NSDictionary *buttonActions = [NSDictionary dictionaryWithObject:myBlock forKey:@"1000"];
+  [_alert setButtonActions:buttonActions];
+  
+  [_alert alertDidEnd:nil returnCode:1000 contextInfo:nil];
+  
+  STAssertTrue(sum_up == 1, @"");
+}
+
+- (void) test_alertDidEnd_foundNoButtonActionForThisReturnCode_throwException {
+    STAssertThrows([_alert alertDidEnd:nil returnCode:99999 contextInfo:nil], @"");
+}
+
 @end

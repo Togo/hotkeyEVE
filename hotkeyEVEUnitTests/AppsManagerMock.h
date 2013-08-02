@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IAppsManager.h"
+#import "TGEVE_IAppsManager.h"
 
 @interface AppsManagerMock : NSObject <TGEVE_IAppsManager>
 

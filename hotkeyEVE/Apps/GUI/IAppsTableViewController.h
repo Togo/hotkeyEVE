@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "TGEVE_IAppsManager.h"
+#import <Objc-Util/Objc_Util.h>
 
 @protocol IAppsTableViewController <NSObject>
 
 @property (strong) id<TGEVE_IAppsManager> appsManager;
-
+//@property (strong) NSAlert *alertController;
 @end

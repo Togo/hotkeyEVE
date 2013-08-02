@@ -9,7 +9,7 @@
 #import "AppsTableViewControllerTests.h"
 #import <AppsLibrary/AppsLibrary.h>
 #import <OCMock/OCMock.h>
-#import "IAppsManager.h"
+#import "TGEVE_IAppsManager.h"
 #import "AppsManagerMock.h"
 #import "GUINotifications.h"
 #import <Objc-Util/Objc_Util.h>
@@ -193,7 +193,7 @@
 //************************* loadView *************************//
 - (void) test_loadView_viewWillBeDisplayed_startBackgroundJobWithLoadingTableData {
   id controllerMock = [OCMockObject partialMockForObject:_appsNotInstalledController];
-  [[controllerMock expect] loadTableDataFromDB];
+  [[controllerMock expect] loadTableData];
   [[controllerMock stub] registerObserver];
   
   [_appsNotInstalledController loadView];
@@ -205,7 +205,7 @@
   id controllerMock = [OCMockObject partialMockForObject:_appsNotInstalledController];
   [[controllerMock expect] startProgressAnimationinSuperview:_tableView];
   
-  [_appsNotInstalledController loadTableDataFromDB];
+  [_appsNotInstalledController loadTableData];
   
   [controllerMock verify];
 }
@@ -284,4 +284,20 @@
   
   return rows;
 }
+//************************* loadTableData *************************//
+//- (void) test_loadTableData_returnedArrayContainsAString_showInfoMessage {
+//
+//  NSString *errorMessage = @"error Message";
+//  id  appsManagerMock = [OCMockObject niceMockForProtocol:@protocol(TGEVE_IAppsManager)];
+//  [[appsManagerMock stub] andReturn:[NSArray arrayWithObject:errorMessage]];
+//  
+//  id alertMock = [OCMockObject mockForClass:[NSAlert class]];
+//  [_appsNotInstalledController setAppsManager:appsManagerMock];
+//  [_appsNotInstalledController setAlertController :alertMock];
+//  
+//  [[alertMock expect] showModalAlertSheetForWindow:OCMOCK_ANY message:OCMOCK_ANY informativeText:OCMOCK_ANY alertStyle:0 buttonBlocks:nil buttonTitle:@"Oki, doki", nil];
+//  [_appsNotInstalledController loadTableData];
+//
+//  [alertMock verify];
+//  }
 @end

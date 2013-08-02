@@ -7,5 +7,4 @@
 //
 
 #import "NSAlert+Blocks.h"
-
 #import "TGUTIL_TableColumnIdentifier.h"
