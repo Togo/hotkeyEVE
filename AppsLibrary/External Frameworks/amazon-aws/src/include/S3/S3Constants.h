@@ -56,7 +56,7 @@
 #define kHttpHdrAmzCopySourceIfUnmodified    @"x-amz-copy-source-if-unmodified-since"
 #define kHttpHdrAmzServerSideEncryption      @"x-amz-server-side-encryption"
 
-#define kS3DateFormat                        @"EEE, dd MMM yyyy HH:mm:ss z"
+#define kS3DateFormat                        @"EEE, dd MMM yyyy HH:mm:ss Z"
 
 #define kS3SubResourceAcl                    @"acl"
 #define kS3SubResourceVersioning             @"versioning"
