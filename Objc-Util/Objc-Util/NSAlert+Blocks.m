@@ -61,9 +61,6 @@ static NSDictionary *buttonActions;
   void (^buttonActionBlock)() = [buttonActions valueForKey:[NSString stringWithFormat:@"%li", returnCode]];
   if ( buttonActionBlock != nil) {
       buttonActionBlock();
-  } else {
-    [NSException raise:NSInternalInconsistencyException
-                format:@"%@ No Button action for return code %li", NSStringFromSelector(_cmd), returnCode];
   }
 }
 
