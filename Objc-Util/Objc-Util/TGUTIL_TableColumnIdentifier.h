@@ -7,3 +7,4 @@
 //
 
 extern NSString * const TGUTIL_TCOLID_INSTALLED;
+extern NSString * const TGUTIL_TCOLID_LANGUAGE;

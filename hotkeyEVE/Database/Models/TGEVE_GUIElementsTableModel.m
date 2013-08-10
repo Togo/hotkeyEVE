@@ -10,6 +10,7 @@
 #import "ShortcutTableModel.h"
 #import "ApplicationsTableModel.h"
 #import "AppModuleTableModel.h"
+#import "EVEUtilities.h"
 
 @implementation TGEVE_GUIElementsTableModel
 
@@ -25,11 +26,13 @@
   [query appendFormat:@" OR ( g.%@ like '%@' ", COCOA_IDENTIFIER_COL, [element cocoaIdentifierString]];
   [query appendFormat:@" AND   g.%@ != '' ) )", COCOA_IDENTIFIER_COL];
   [query appendFormat:@" AND ( m.%@ = g.%@  ", ID_COL, MODULE_ID_COL];
-  [query appendFormat:@" AND a.%@ = m.%@ ) ", ID_COL, APPLICATION_ID_COL];
-  [query appendFormat:@" AND a.%@ = %li  ", ID_COL, appID];
+  [query appendFormat:@" AND   m.%@ = '%@'  ", TGUTIL_TCOLID_LANGUAGE, [EVEUtilities currentLanguage]];
+  [query appendFormat:@" AND   a.%@ = m.%@ ) ", ID_COL, APPLICATION_ID_COL];
+  [query appendFormat:@" AND   a.%@ = %li  ", ID_COL, appID];
   [query appendFormat:@" GROUP BY   g.%@  ", ID_COL];
 
   DDLogInfo(@"GUIElementsTable -> searchInGUIElementTable :: query => :%@:", query);
+  
   NSArray *result = [db executeQuery:query];
  return result;
 }

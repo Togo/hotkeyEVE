@@ -7,3 +7,4 @@
 //
 
 NSString * const TGUTIL_TCOLID_INSTALLED = @"ColumnIdentifierInstalled";
+NSString * const TGUTIL_TCOLID_LANGUAGE = @"Language";
