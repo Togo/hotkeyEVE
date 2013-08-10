@@ -196,8 +196,14 @@
       case NSAlertFirstButtonReturn: {
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSPreferencePanesDirectory, NSSystemDomainMask, YES);
         if ([paths count] == 1) {
-          NSURL *prefPaneURL = [NSURL fileURLWithPath:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"UniversalAccessPref.prefPane"]];
-          [[NSWorkspace sharedWorkspace] openURL:prefPaneURL];
+          NSString *prefPaneName;
+          #if MAC_OS_X_VERSION_MIN_REQUIRED >= 1090 // Mac OS X 10.9 or later
+            prefPaneName = [NSString stringWithString:@"Security.prefPane"];
+          #else
+            prefPaneName = @"UniversalAccessPref.prefPane";
+          #endif
+            NSURL *prefPaneURL = [NSURL fileURLWithPath:[[paths objectAtIndex:0] stringByAppendingPathComponent:prefPaneName]];
+            [[NSWorkspace sharedWorkspace] openURL:prefPaneURL];
         }
       }
         break;
