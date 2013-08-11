@@ -180,15 +180,28 @@
 + (void) checkAccessibilityAPIEnabled {
   // We first have to check if the Accessibility APIs are turned on.  If not, we have to tell the user to do it (they'll need to authenticate to do it).  If you are an accessibility app (i.e., if you are getting info about UI elements in other apps), the APIs won't work unless the APIs are turned on.
   if (!AXAPIEnabled()) {
+    NSString *prefPaneName;
+    NSString *informativeText;
+    SInt32 OSXversionMajor, OSXversionMinor;
+    if(Gestalt(gestaltSystemVersionMajor, &OSXversionMajor) == noErr
+       && Gestalt(gestaltSystemVersionMinor, &OSXversionMinor) == noErr) {
+      if(OSXversionMajor == 10 && OSXversionMinor >= 9) {
+        prefPaneName = @"Security.prefPane";
+        informativeText = @"Would you like to launch System Preferences so that you can enable this App for access other Apps?\n Go in the \"Security Pane\" to the \"Privacy Tab\" and enable EVE in the \"Accessibility\" list! ";
+      } else {
+        prefPaneName = @"UniversalAccessPref.prefPane";
+        informativeText = @"Would you like to launch System Preferences so that you can turn on \"Enable access for assistive devices\"?";
+      }
+    }
     
     NSAlert *alert = [[NSAlert alloc] init];
     
     [alert setAlertStyle:NSWarningAlertStyle];
     [alert setMessageText:@"EVE requires that the Accessibility API be enabled."];
-    [alert setInformativeText:@"Would you like to launch System Preferences so that you can turn on \"Enable access for assistive devices\"?"];
+    [alert setInformativeText:informativeText];
     [alert addButtonWithTitle:@"Open System Preferences"];
     [alert addButtonWithTitle:@"Continue Anyway"];
-    [alert addButtonWithTitle:@"Quit UI"];
+    [alert addButtonWithTitle:@"Quit EVE"];
     
     NSInteger alertResult = [alert runModal];
     
@@ -196,12 +209,6 @@
       case NSAlertFirstButtonReturn: {
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSPreferencePanesDirectory, NSSystemDomainMask, YES);
         if ([paths count] == 1) {
-          NSString *prefPaneName;
-          #if MAC_OS_X_VERSION_MIN_REQUIRED >= 1090 // Mac OS X 10.9 or later
-            prefPaneName = [NSString stringWithString:@"Security.prefPane"];
-          #else
-            prefPaneName = @"UniversalAccessPref.prefPane";
-          #endif
             NSURL *prefPaneURL = [NSURL fileURLWithPath:[[paths objectAtIndex:0] stringByAppendingPathComponent:prefPaneName]];
             [[NSWorkspace sharedWorkspace] openURL:prefPaneURL];
         }
