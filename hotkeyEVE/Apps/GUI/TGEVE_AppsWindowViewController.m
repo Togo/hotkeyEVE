@@ -8,7 +8,7 @@
 
 #import "TGEVE_AppsWindowViewController.h"
 #import "AppsTableNavigationViewController.h"
-#import "AppsTableViewController.h"
+#import "TGEVE_AppsTableViewController.h"
 #import "AppsManagerLocalDB.h"
 #import "TGEVE_AppsManagerAmazon.h"
 
@@ -21,7 +21,7 @@
 - (void) awakeFromNib {
   // set the view for the first start
   [self initNavigationView:[AppsTableNavigationViewController class] :kAppsTableNavigationViewControllerNibName];
-  [self viewSelectionDidChanged:[AppsTableViewController class] :kAppsTableViewControllerNibName :[TGEVE_AppsManagerAmazon class]];
+  [self viewSelectionDidChanged:[TGEVE_AppsTableViewController class] :kAppsTableViewControllerNibName :[TGEVE_AppsManagerAmazon class]];
 }
 
 - (void) initNavigationView :(id)viewControllerClass :(NSString*) viewNibName {

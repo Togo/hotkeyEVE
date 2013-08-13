@@ -21,7 +21,7 @@
 - (void)setUp
 {
   [super setUp];
-  _appsNotInstalledController = [[AppsTableViewController alloc] initWithNibName:kAppsTableViewControllerNibName bundle:nil];
+  _appsNotInstalledController = [[TGEVE_AppsTableViewController alloc] initWithNibName:kAppsTableViewControllerNibName bundle:nil];
   
   
   _tableView = [[NSTableView alloc] init];

@@ -11,7 +11,7 @@
 
 extern NSString * const kAppsTableViewControllerNibName;
 
-@interface AppsTableViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate, IAppsTableViewController> {
+@interface TGEVE_AppsTableViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate, IAppsTableViewController> {
 
 }
 

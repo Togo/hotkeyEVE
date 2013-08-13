@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Tobias Sommer. All rights reserved.
 //
 
-#import "AppsTableViewController.h"
+#import "TGEVE_AppsTableViewController.h"
 #import "TGEVE_AppsManagerAmazon.h"
 #import <AppsLibrary/AppsLibrary.h>
 #import "AppModuleTableModel.h"
@@ -14,11 +14,11 @@
 NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 
 
-@interface AppsTableViewController ()
+@interface TGEVE_AppsTableViewController ()
 
 @end
 
-@implementation AppsTableViewController
+@implementation TGEVE_AppsTableViewController
 
 @synthesize appsManager = _appsManager;
 
@@ -109,18 +109,23 @@ NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
 }
 
 -(id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-  id returnParameter;
-  if ( [tableColumn identifier] == kModuleCredatKey ) {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
-    
-    NSString *unformattedString =  [[_dataSource objectAtIndex:row] valueForKey:[tableColumn identifier]];
-    NSDate *date = [NSDate dateWithNaturalLanguageString:unformattedString];
-    
-    returnParameter = [dateFormatter stringFromDate:date];
-  } else
-    returnParameter = [[_dataSource objectAtIndex:row] valueForKey:[tableColumn identifier]];
+  DDLogVerbose(@"TGEVE_AppsTableViewController -> objectValueForTableColumn(tableColumn :%@:,row :%li: ) :: get called", tableColumn, row);
+  DDLogVerbose(@"TGEVE_AppsTableViewController -> objectValueForTableColumn :: Use _datasource :%@:", _dataSource);
   
+  id returnParameter;
+  if ( ![[_dataSource objectAtIndex:0] isKindOfClass:[NSString class]]) {
+    if ( [tableColumn identifier] == kModuleCredatKey ) {
+      NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+      [dateFormatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
+      
+      NSString *unformattedString =  [[_dataSource objectAtIndex:row] valueForKey:[tableColumn identifier]];
+      NSDate *date = [NSDate dateWithNaturalLanguageString:unformattedString];
+      
+      returnParameter = [dateFormatter stringFromDate:date];
+    } else {
+      returnParameter = [[_dataSource objectAtIndex:row] valueForKey:[tableColumn identifier]];
+    }
+  }
   return returnParameter;
 }
             
