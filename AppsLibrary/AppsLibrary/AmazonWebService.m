@@ -98,8 +98,12 @@
     entries =  [self parseAmazonResponseToObjectiveCArrayWithDictionarys :selectResponse];
   }
   @catch (AmazonClientException *exception) {
-    return [NSArray arrayWithObject:[exception reason]];
     NSLog(@"%@", [exception reason]);
+    if ( [[[exception error] userInfo] valueForKey:@"NSLocalizedDescription"] ) {
+      return [NSArray arrayWithObject:[[[exception error] userInfo] valueForKey:@"NSLocalizedDescription"]];
+    } else {
+      return [NSArray arrayWithObject:[exception  reason]];
+    }
   }
   
   return entries;
