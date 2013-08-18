@@ -7,6 +7,7 @@
 //
 
 #import "EVEManager.h"
+#import "TGEVE_User.h"
 
 @implementation EVEManager
 
@@ -20,6 +21,8 @@
 @synthesize mainMenuController;
 
 @synthesize licence;
+
+@synthesize user;
 
 #pragma mark Singleton Methods
 
@@ -35,6 +38,8 @@
 
 - (id)init {
   if (self = [super init]) {
+    user = [TGEVE_User user];
+    
     indexing = [[IndexingController alloc] init];
     
     eveObserver = [[EVEObserver alloc] init];

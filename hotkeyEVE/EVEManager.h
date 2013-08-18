@@ -14,6 +14,7 @@
 #import "AppChangedController.h"
 #import "MainMenuController.h"
 #import "Licence.h"
+#import "TGEVE_IUser.h"
 
 @interface EVEManager : NSObject
 
@@ -27,6 +28,8 @@
 @property (strong, nonatomic)   MainMenuController *mainMenuController;
 
 @property (strong, nonatomic)   Licence *licence;
+
+@property  (strong, nonatomic)   id<TGEVE_IUser> user;
 
 + (id) sharedEVEManager;
 

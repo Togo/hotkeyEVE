@@ -14,7 +14,7 @@
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
   NSMutableString *query = [NSMutableString string];
-  [query appendFormat:@"INSERT OR IGNORE INTO %@ ", USER_DATA_TABLE];
+  [query appendFormat:@"INSERT OR IGNORE INTO %@ ", TGDB_CONST_USER_DATA_TABLE];
   [query appendFormat:@"VALUES ( "];
   [query appendFormat:@" NULL "];
   [query appendFormat:@" , '%@' ", user];
@@ -27,10 +27,10 @@
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
   NSMutableString *query = [NSMutableString string];
-  [query appendFormat:@"UPDATE %@", USER_DATA_TABLE];
+  [query appendFormat:@"UPDATE %@", TGDB_CONST_USER_DATA_TABLE];
   [query appendFormat:@" SET "];
-  [query appendFormat:@" %@ = %li ", START_AT_LOGIN_COL, state];
-  [query appendFormat:@" WHERE %@ = '%@' ", USER_NAME_COL, NSUserName()];
+  [query appendFormat:@" %@ = %li ", TGDB_CONST_START_AT_LOGIN_COL, state];
+  [query appendFormat:@" WHERE %@ = '%@' ", TGDB_CONST_USER_NAME_COL, NSUserName()];
   
   [db executeUpdate:query];
 }
@@ -39,8 +39,8 @@
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
   NSMutableString *query = [NSMutableString string];
-  [query appendFormat:@" SELECT * FROM %@ ", USER_DATA_TABLE];
-  [query appendFormat:@" WHERE %@ like '%@' ", USER_NAME_COL, userName];
+  [query appendFormat:@" SELECT * FROM %@ ", TGDB_CONST_USER_DATA_TABLE];
+  [query appendFormat:@" WHERE %@ like '%@' ", TGDB_CONST_USER_NAME_COL, userName];
   
   NSInteger userID = 0;
   NSArray *result = [db executeQuery:query];
@@ -55,12 +55,12 @@
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
   NSMutableString *query = [NSMutableString string];
-  [query appendFormat:@" SELECT %@ FROM %@ ",START_AT_LOGIN_COL, USER_DATA_TABLE];
-  [query appendFormat:@" WHERE %@ like '%@' ", USER_NAME_COL, userName];
+  [query appendFormat:@" SELECT %@ FROM %@ ",TGDB_CONST_START_AT_LOGIN_COL, TGDB_CONST_USER_DATA_TABLE];
+  [query appendFormat:@" WHERE %@ like '%@' ", TGDB_CONST_USER_NAME_COL, userName];
   
   NSArray *result = [db executeQuery:query];
   if ([result count] > 0) {
-    if ([[[result objectAtIndex:0] valueForKey:START_AT_LOGIN_COL] intValue] == 1) {
+    if ([[[result objectAtIndex:0] valueForKey:TGDB_CONST_START_AT_LOGIN_COL] intValue] == 1) {
       return NSOnState;
     } else {
       return NSOffState;

@@ -15,6 +15,10 @@
 @synthesize appModuleTable = _appModuleTable;
 @synthesize userNotifications = _userNotifications;
 
+- (id) loadTableDataFromDB {
+  return nil;
+}
+
 - (void) addAppsFromArray :(NSArray*) moduleIDs {
   
 }

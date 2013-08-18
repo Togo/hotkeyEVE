@@ -30,12 +30,10 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
   NSLog(@"EVE has been started");
-  NSLog(@"Lang: %@", [EVEUtilities currentLanguage]);
-  NSLog(@"User: %@ ", NSUserName());
-  
   [self startLogging];
-  
   [self openDatabase];
+
+  NSLog(@"Lang: %@", [EVEUtilities currentLanguage]);
   
   eveAppManager =  [EVEManager sharedEVEManager];
   

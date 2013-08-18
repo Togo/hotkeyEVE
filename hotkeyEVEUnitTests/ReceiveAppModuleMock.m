@@ -13,6 +13,10 @@
 
 @synthesize webService = _webService;
 
+- (id)loadAppList {
+  return nil;
+}
+
 - (NSArray*) getAppList {
   return [NSArray array];
 }

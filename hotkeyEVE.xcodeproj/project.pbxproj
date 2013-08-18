@@ -64,6 +64,10 @@
 		CD6AD3FE164D7BA6009FF1B5 /* ApplicationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD3FD164D7BA6009FF1B5 /* ApplicationsTableViewController.m */; };
 		CD6AD401164D893B009FF1B5 /* GUINotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD400164D8939009FF1B5 /* GUINotifications.m */; };
 		CD6ECE2316C0200F00A47985 /* libAppsLibrary.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDE3016C16A4932600E8D489 /* libAppsLibrary.a */; };
+		CD717C2617BFB150008E8EAE /* TGEVE_User.m in Sources */ = {isa = PBXBuildFile; fileRef = CD717C2517BFB150008E8EAE /* TGEVE_User.m */; };
+		CD717C2A17BFB459008E8EAE /* TGEVE_UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD717C2917BFB459008E8EAE /* TGEVE_UserTests.m */; };
+		CD717C2E17BFB73A008E8EAE /* TGEVE_UserTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD717C2D17BFB73A008E8EAE /* TGEVE_UserTableModel.m */; };
+		CD717C3117C0996A008E8EAE /* TGEVE_UserTableModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD717C3017C0996A008E8EAE /* TGEVE_UserTableModelTests.m */; };
 		CD71E4A8165EEB8C00987E09 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD71E4A7165EEB8C00987E09 /* Carbon.framework */; };
 		CD80E7531645393300A9C7D8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7521645393300A9C7D8 /* Cocoa.framework */; };
 		CD80E75D1645393400A9C7D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD80E75B1645393400A9C7D8 /* InfoPlist.strings */; };
@@ -344,6 +348,16 @@
 		CD6AD3FD164D7BA6009FF1B5 /* ApplicationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplicationsTableViewController.m; path = GUI/ShortcutWindow/ApplicationsTableViewController.m; sourceTree = "<group>"; };
 		CD6AD3FF164D8937009FF1B5 /* GUINotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUINotifications.h; path = GUI/GUINotifications/GUINotifications.h; sourceTree = "<group>"; };
 		CD6AD400164D8939009FF1B5 /* GUINotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GUINotifications.m; path = GUI/GUINotifications/GUINotifications.m; sourceTree = "<group>"; };
+		CD717C2317BFB11E008E8EAE /* TGEVE_IUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGEVE_IUser.h; sourceTree = "<group>"; };
+		CD717C2417BFB150008E8EAE /* TGEVE_User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGEVE_User.h; sourceTree = "<group>"; };
+		CD717C2517BFB150008E8EAE /* TGEVE_User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGEVE_User.m; sourceTree = "<group>"; };
+		CD717C2817BFB459008E8EAE /* TGEVE_UserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGEVE_UserTests.h; sourceTree = "<group>"; };
+		CD717C2917BFB459008E8EAE /* TGEVE_UserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGEVE_UserTests.m; sourceTree = "<group>"; };
+		CD717C2B17BFB714008E8EAE /* TGEVE_IUserTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_IUserTableModel.h; path = Database/Models/TGEVE_IUserTableModel.h; sourceTree = "<group>"; };
+		CD717C2C17BFB73A008E8EAE /* TGEVE_UserTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_UserTableModel.h; path = Database/Models/TGEVE_UserTableModel.h; sourceTree = "<group>"; };
+		CD717C2D17BFB73A008E8EAE /* TGEVE_UserTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_UserTableModel.m; path = Database/Models/TGEVE_UserTableModel.m; sourceTree = "<group>"; };
+		CD717C2F17C0996A008E8EAE /* TGEVE_UserTableModelTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGEVE_UserTableModelTests.h; sourceTree = "<group>"; };
+		CD717C3017C0996A008E8EAE /* TGEVE_UserTableModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGEVE_UserTableModelTests.m; sourceTree = "<group>"; };
 		CD71E4A7165EEB8C00987E09 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		CD80E74E1645393300A9C7D8 /* EVE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD80E7521645393300A9C7D8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -738,6 +752,27 @@
 			name = GUINotifications;
 			sourceTree = "<group>";
 		};
+		CD717C2217BFB0FF008E8EAE /* User */ = {
+			isa = PBXGroup;
+			children = (
+				CD717C2317BFB11E008E8EAE /* TGEVE_IUser.h */,
+				CD717C2417BFB150008E8EAE /* TGEVE_User.h */,
+				CD717C2517BFB150008E8EAE /* TGEVE_User.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		CD717C2717BFB436008E8EAE /* User */ = {
+			isa = PBXGroup;
+			children = (
+				CD717C2817BFB459008E8EAE /* TGEVE_UserTests.h */,
+				CD717C2917BFB459008E8EAE /* TGEVE_UserTests.m */,
+				CD717C2F17C0996A008E8EAE /* TGEVE_UserTableModelTests.h */,
+				CD717C3017C0996A008E8EAE /* TGEVE_UserTableModelTests.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
 		CD80E7431645393300A9C7D8 = {
 			isa = PBXGroup;
 			children = (
@@ -785,6 +820,7 @@
 		CD80E7581645393300A9C7D8 /* hotkeyEVE */ = {
 			isa = PBXGroup;
 			children = (
+				CD717C2217BFB0FF008E8EAE /* User */,
 				CD1464FC16CBEDAD004395D8 /* UIEvents */,
 				CDA558CB16B02611008D236E /* UserNotification */,
 				CD8459FF16A0C41B007717CB /* Apps */,
@@ -872,6 +908,7 @@
 		CD845A2816A15B98007717CB /* hotkeyEVEUnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				CD717C2717BFB436008E8EAE /* User */,
 				CD1464FE16CBEF87004395D8 /* UIEvents */,
 				CDA558CF16B0295C008D236E /* UserNotificiation */,
 				CD845A4616A16D92007717CB /* AppsTests */,
@@ -942,6 +979,9 @@
 				CDEE1536164812F500EDCDF4 /* DisplayedShortcutsModel.m */,
 				CDA558C116AF2BCD008D236E /* AppModuleTableModel.h */,
 				CDA558C216AF2BCE008D236E /* AppModuleTableModel.m */,
+				CD717C2B17BFB714008E8EAE /* TGEVE_IUserTableModel.h */,
+				CD717C2C17BFB73A008E8EAE /* TGEVE_UserTableModel.h */,
+				CD717C2D17BFB73A008E8EAE /* TGEVE_UserTableModel.m */,
 			);
 			name = DatabaseModel;
 			sourceTree = "<group>";
@@ -1330,6 +1370,8 @@
 				CD14651A16CD7E5E004395D8 /* TGEVE_GUIElementEvent.m in Sources */,
 				CD14652316CD9984004395D8 /* MigrationV1_4_1.m in Sources */,
 				CD3D3F98178A6F0800B74131 /* MigrationV1_4_3.m in Sources */,
+				CD717C2617BFB150008E8EAE /* TGEVE_User.m in Sources */,
+				CD717C2E17BFB73A008E8EAE /* TGEVE_UserTableModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1351,6 +1393,8 @@
 				CD14651616CC11CB004395D8 /* TGEVE_UIElementDictionaryTests.m in Sources */,
 				CD14651D16CD7FDB004395D8 /* TGEVE_GUIElementEventTests.m in Sources */,
 				CDEEC360172BE4B100E606C4 /* TGEVE_AppsManagerAmazonTests.m in Sources */,
+				CD717C2A17BFB459008E8EAE /* TGEVE_UserTests.m in Sources */,
+				CD717C3117C0996A008E8EAE /* TGEVE_UserTableModelTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
