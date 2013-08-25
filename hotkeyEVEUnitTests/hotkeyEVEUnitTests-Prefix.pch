@@ -4,4 +4,7 @@
 
 #ifdef __OBJC__
   #import <Cocoa/Cocoa.h>
+
+#import <OCMock/OCMock.h>
+
 #endif

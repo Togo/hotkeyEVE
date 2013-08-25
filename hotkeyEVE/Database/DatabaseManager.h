@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain)   EVEDatabase *eveDatabase;
 
+
 + (id)sharedDatabaseManager;
 
 @end

@@ -7,65 +7,52 @@
 //
 
 #import "TGEVE_UserTableModel.h"
+#import "EVEDatabase.h"
 
 @implementation TGEVE_UserTableModel
 
-+ (NSInteger) getUserID :(NSString*) userName {
-  DDLogInfo(@"TGEVE_UserTableModel -> getUserID :: getcalled(userName => :%@:) ", userName);
-  
-  NSInteger userID = 0;
-  userID = [self executeGetUserIDStatement :userName];
-  if (  userID == -2 ) {
-    userID = [self executeGetUserIDStatement:userName];
-  }
-  
-  DDLogInfo(@"TGEVE_UserTableModel -> getUserID :: return UserID :%li: ) ", userID);
-  return userID;
-}
-
-+ (NSInteger) executeGetUserIDStatement :(NSString *)userName {
++ (NSDictionary*) getUserRecordFromUserDataTable:(NSString *)userName {
+  DDLogInfo(@"TGEVE_UserTableModel -> getUserRecordFromUserDataTable(userName => :%@:) :: get called", userName);
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
-  NSInteger userID=0;
+  NSDictionary *userDic;
   
   NSMutableString *query = [NSMutableString string];
-  [query appendFormat:@" SELECT %@ FROM %@ ", ID_COL, TGDB_CONST_USER_DATA_TABLE];
-  [query appendFormat:@" WHERE %@ like '%@' ",TGDB_CONST_USER_NAME_COL, userName];
-  NSArray *results = [db executeQuery:query];
+  [query appendFormat:@" SELECT * FROM %@ ", TGDB_CONST_USER_DATA_TABLE];
+  [query appendFormat:@" WHERE %@ like '%@' ", TGDB_CONST_USER_NAME_COL, userName];
+
+  NSInteger attempts = 3;
+  do {
+    NSArray *rows =  [db executeQuery:query];
+    if (   rows == nil || [rows count] == 0 ) {
+      DDLogInfo(@"TGEVE_UserTableModel -> getUserRecordFromUserDataTable :: Nothing found, i insert a new record");
+      [TGEVE_UserTableModel insertUser:userName];
+    } else {
+      userDic = [rows objectAtIndex:0];
+      DDLogInfo(@"TGEVE_UserTableModel -> getUserRecordFromUserDataTable :: found user: :%@:", userDic);
+      break;
+    }
+    
+   attempts--;
+  } while ( attempts > 0 );
+
+  DDLogInfo(@"TGEVE_UserTableModel -> getUserRecordFromUserDataTable :: Finished method get user. Return user: :%@:", userDic);
   
-  if ( [results count] == 1 ) {
-    userID  = [[[results objectAtIndex:0] valueForKey:ID_COL] integerValue];
-    DDLogInfo(@"TGEVE_UserTableModel -> getUserID :: foundUserID :%li:) ", userID);
-  } else if ( [results count] == 0 ) {
-    DDLogInfo(@"TGEVE_UserTableModel -> getUserID :: no user Found ) ");
-    userID = [TGEVE_UserTableModel insertUserWithUserName:userName];
-  } else {
-    DDLogInfo(@"TGEVE_UserTableModel -> insertUserWithUserName :: more than one entry with this id return an error ) ");
-    userID = -1;
-  }
-  
-  return userID;
+  return userDic;
 }
 
-// untested
-+ (NSInteger) insertUserWithUserName:(NSString *)userName {
-  DDLogInfo(@"TGEVE_UserTableModel -> insertUserWithUserName :: getcalled(userName => :%@:) ", userName);
++ (void) insertUser :(NSString*) user {
+  DDLogInfo(@"TGEVE_UserTableModel -> insertUser(user => :%@:) :: get called", user);
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@"INSERT OR IGNORE INTO %@ ", TGDB_CONST_USER_DATA_TABLE];
   [query appendFormat:@"VALUES ( "];
   [query appendFormat:@" NULL "];
-  [query appendFormat:@" , '%@' ", userName];
+  [query appendFormat:@" , '%@' ", user];
   [query appendFormat:@" , 0 ); "];
   
-  Boolean error =  [db executeUpdate:query];
-  if ( !error ) {
-    DDLogInfo(@"TGEVE_UserTableModel -> insertUserWithUserName :: insertStatementSucceded ) ");
-    return -2;
-  } else {
-    DDLogInfo(@"There went something wrong with the inser Statement => query :%@:", query);
-    return -1;
-  }
+  [db executeUpdate:query];
+  DDLogInfo(@"TGEVE_UserTableModel -> insertUser :: finished insert");
 }
 
 @end

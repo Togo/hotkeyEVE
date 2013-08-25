@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UserDataTableModel : NSObject
+@interface UserDataTableModel_old : NSObject
 
 + (void) insertUser :(NSString*) user;
 

@@ -22,7 +22,7 @@
 
 @synthesize licence;
 
-@synthesize user;
+@synthesize eveUser;
 
 #pragma mark Singleton Methods
 
@@ -38,7 +38,7 @@
 
 - (id)init {
   if (self = [super init]) {
-    user = [TGEVE_User user];
+    eveUser = [TGEVE_User user];
     
     indexing = [[IndexingController alloc] init];
     

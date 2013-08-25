@@ -10,7 +10,7 @@
 
 @protocol TGEVE_IUserTableModel <NSObject>
 
-+ (NSInteger) getUserID :(NSString*) userName;
-+ (NSInteger) insertUserWithUserName :(NSString*) userName;
-+ (NSInteger)executeGetUserIDStatement :(NSString *)userName;
++ (NSDictionary*) getUserRecordFromUserDataTable :(NSString*) userName;
+//+ (NSInteger) insertUserWithUserName :(NSString*) userName;
+//+ (NSInteger)executeGetUserStatement :(NSString *)userName;
 @end

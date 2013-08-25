@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Tobias Sommer. All rights reserved.
 //
 
-#import "UserDataTableModel.h"
+#import "UserDataTableModel_old.h"
 
-@implementation UserDataTableModel
+@implementation UserDataTableModel_old
 
 + (void) insertUser :(NSString*) user {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];

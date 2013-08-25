@@ -50,6 +50,7 @@
     [eveDatabase addMigrationObject:[MigrationV1_4_0 migration]];
     [eveDatabase addMigrationObject:[MigrationV1_4_1 migration]];
     [eveDatabase addMigrationObject:[MigrationV1_4_3 migration]];
+    
   }
   
   return self;

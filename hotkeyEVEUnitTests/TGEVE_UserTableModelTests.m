@@ -18,7 +18,8 @@
 - (void)setUp
 {
   [super setUp];
-  
+  // dont execute querys on a real database
+  [[DatabaseManager sharedDatabaseManager] setEveDatabase:[[EVEDatabase alloc] init]];
 }
 
 - (void)tearDown
@@ -26,90 +27,64 @@
   [super tearDown];
 }
 
-//*************************** getUserID ***************************//
-- (void) test_getUserIDFrom_foundOneUserWithThisUserNameInDB_returnTheUserID {
-  OCMockObject *dbMock = [OCMockObject partialMockForObject:[[DatabaseManager sharedDatabaseManager] eveDatabase]];
-  NSInteger userID = 77;
-  NSDictionary *rowOne = [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:userID] forKey:ID_COL];
-  NSArray *rows = [NSArray arrayWithObject:rowOne];
-  
+//*************************** getUserRecordFromUserDataTable ***************************//
 
-  [[[dbMock stub] andReturn:rows] executeQuery:OCMOCK_ANY];
+- (void) test_getUserRecordFromUserDataTable_allScenarios_executeCorrectSelect {
+  OCMockObject *dbMock = [OCMockObject partialMockForObject:[[DatabaseManager sharedDatabaseManager] eveDatabase]];
+  NSMutableString *query = [NSMutableString string];
+  [query appendFormat:@" SELECT * FROM %@ ", TGDB_CONST_USER_DATA_TABLE];
+  [query appendFormat:@" WHERE %@ like '%@' ", TGDB_CONST_USER_NAME_COL, @"Test"];
+  [[dbMock expect] executeQuery:query];
   
-  NSInteger returnedUserID = [TGEVE_UserTableModel getUserID :@"Test"];
+  [TGEVE_UserTableModel getUserRecordFromUserDataTable:@"Test"];
   
-  STAssertEquals(returnedUserID, userID, @"");
+  [dbMock verify];
 }
-
-- (void) test_getUserIDFrom_noUserFoundWithThisName_insertUserIntoDB {
+- (void) test_getUserRecordFromUserDataTable_foundRecordsInDB_returnTheDictionary {
   OCMockObject *dbMock = [OCMockObject partialMockForObject:[[DatabaseManager sharedDatabaseManager] eveDatabase]];
-  NSArray *rows = [NSArray array];
-  
-  [[[dbMock stub] andReturn:rows] executeQuery:OCMOCK_ANY];
-  
-  OCMockObject *userTableMock = [OCMockObject mockForClass:[TGEVE_UserTableModel class]];
-  [[userTableMock expect] insertUserWithUserName :@"Test"];
-  
-  [TGEVE_UserTableModel getUserID:@"Test"];
-  
-  [userTableMock verify];
-}
+  NSDictionary *firstRow = [NSDictionary dictionary];
+  NSDictionary *secondRow = [NSDictionary dictionary];
 
-- (void) test_getUserIDFrom_noUserFoundWithThisNameAndInsertStatementSucceded_callGetUserIDStatementAgain {
-  OCMockObject *dbMock = [OCMockObject partialMockForObject:[[DatabaseManager sharedDatabaseManager] eveDatabase]];
-  [[dbMock stub] executeUpdate:OCMOCK_ANY];
-  NSInteger succeded = -2;
-  OCMockObject *userTableMock = [OCMockObject mockForClass:[TGEVE_UserTableModel class]];
-  [[[userTableMock expect] andReturnValue:OCMOCK_VALUE(succeded)]  executeGetUserIDStatement :@"Test"];
-  [[userTableMock expect]  executeGetUserIDStatement :@"Test"];
   
-  [TGEVE_UserTableModel getUserID:@"Test"];
+  [[[dbMock stub] andReturn:[NSArray arrayWithObjects:firstRow, secondRow,nil]] executeQuery:OCMOCK_ANY];
   
-  [userTableMock verify];
-}
-
-- (void) test_getUserIDFrom_executeStatementDidCalledTwice_returnTheUserIDFromTheSecondStatement {
-  OCMockObject *dbMock = [OCMockObject partialMockForObject:[[DatabaseManager sharedDatabaseManager] eveDatabase]];
-  [[dbMock stub] executeUpdate:OCMOCK_ANY];
-  NSInteger succeded = -2;
-  NSInteger userID = 99;
-  OCMockObject *userTableMock = [OCMockObject mockForClass:[TGEVE_UserTableModel class]];
-  [[[userTableMock expect] andReturnValue:OCMOCK_VALUE(succeded)]  executeGetUserIDStatement :@"Test"];
-  [[[userTableMock expect]  andReturnValue:OCMOCK_VALUE(userID)]   executeGetUserIDStatement :@"Test"];
+  NSDictionary *returnedDict = [TGEVE_UserTableModel  getUserRecordFromUserDataTable:OCMOCK_ANY];
   
-  NSInteger returnedUserID = [TGEVE_UserTableModel getUserID:@"Test"];
+  STAssertEqualObjects(returnedDict, firstRow, @"");
   
-  STAssertEquals(returnedUserID, userID, @"");
-}
-
-- (void) test_getUserIDFrom_executeStatementDidCalledTwiceAndReturnedAError_returnTheErrorCode {
-  OCMockObject *dbMock = [OCMockObject partialMockForObject:[[DatabaseManager sharedDatabaseManager] eveDatabase]];
-
-  NSInteger failed = -1;
-  OCMockObject *userTableMock = [OCMockObject mockForClass:[TGEVE_UserTableModel class]];
-  [[[userTableMock stub] andReturnValue:OCMOCK_VALUE(failed)]  executeGetUserIDStatement :@"Test"];
-  [[dbMock stub] executeUpdate:OCMOCK_ANY];
-  
-  NSInteger  returnedUserID = [TGEVE_UserTableModel getUserID:@"Test"];
-  
-  STAssertEquals(returnedUserID, failed, @"");
-}
-
-- (void) test_getUserIDFrom_foundMoreThanOneIDWithThisUserName_returnError {
-  OCMockObject *dbMock = [OCMockObject partialMockForObject:[[DatabaseManager sharedDatabaseManager] eveDatabase]];
-  NSDictionary *rowOne = [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:77] forKey:ID_COL];
-  NSDictionary *rowTwo = [NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:2] forKey:ID_COL];
-  NSArray *rows = [NSArray arrayWithObjects:rowOne,rowTwo, nil];
-  
-  [[[dbMock stub] andReturn:rows] executeQuery:OCMOCK_ANY];
-  
-  NSInteger expectedError = -1;
-  NSInteger returnedUserID =  [TGEVE_UserTableModel getUserID :@"Test"];
-  
-  STAssertEquals(returnedUserID, expectedError, @"");
 }
 
 
 
+- (void) test_getUserRecordFromUserDataTable_foundNothingInDB_insertUserToDBAndTryItAgain {
+  OCMockObject *dbMock = [OCMockObject partialMockForObject:[[DatabaseManager sharedDatabaseManager] eveDatabase]];
+  
+  [[[dbMock expect] andReturn:[NSArray array]] executeQuery:OCMOCK_ANY];
+  [[dbMock expect] executeUpdate:OCMOCK_ANY];
+  [[dbMock expect] executeQuery:OCMOCK_ANY];
+  
+  [TGEVE_UserTableModel getUserRecordFromUserDataTable:@"Test"];
+  
+  [dbMock verify];
+}
+
+- (void) test_getUserRecordFromUserDataTable_foundRecordAfterInsert_jumpOutOfWhileLoop {
+  OCMockObject *dbMock = [OCMockObject partialMockForObject:[[DatabaseManager sharedDatabaseManager] eveDatabase]];
+  
+  [[[dbMock expect] andReturn:[NSArray array]] executeQuery:OCMOCK_ANY];
+  [[dbMock expect] executeUpdate:OCMOCK_ANY];
+  [[[dbMock expect] andReturn:[NSArray arrayWithObject:[NSDictionary dictionary]]] executeQuery:OCMOCK_ANY];
+  [[dbMock reject] executeUpdate:OCMOCK_ANY];
+  
+  [TGEVE_UserTableModel getUserRecordFromUserDataTable:@"Test"];
+  
+  [dbMock verify];  
+}
+
+- (void) test_getUserRecordFromUserDataTable_nothingStillNothingAfterThreeInsertAttempts_returnNilDic {
+  NSDictionary *userDic = [TGEVE_UserTableModel getUserRecordFromUserDataTable:@"Test"];
+  
+  STAssertNil(userDic, @"");
+}
 
 @end

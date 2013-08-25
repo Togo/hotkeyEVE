@@ -12,11 +12,11 @@
 #import "GUIUtilities.h"
 
 #import "TGEVE_MenuBarTableModel.h"
-#import "UserDataTableModel.h"
 
 #import "LicenceWindowController.h"
 #import "ShortcutsWindowController.h"
 #import "TGEVE_AppsWindowWindowController.h"
+#import "AppDelegate.h"
 
 @implementation MainMenuController
 
@@ -27,6 +27,8 @@
 
 
 - (void)awakeFromNib {
+  [AppDelegate  openDatabase];
+  
   self.guiSupportIcon = [NSImage imageNamed:@"EVE_ICON_STATUS_BAR_ACTIVE.icns"];
   [guiSupportIcon setSize:NSMakeSize(14, 14)];
   
@@ -38,9 +40,9 @@
   [statusItem setMenu:statusMenu];
   [statusItem setImage:guiSupportIcon];
   
-  [_startAtLoginItem setState:[UserDataTableModel selectStartAtLogin :NSUserName()]];
+  [_startAtLoginItem setState:[[[EVEManager sharedEVEManager] eveUser] startAtLogin]];
   
-  // remove licence key and get pro version if full version
+  // remove licence key menu items and get pro version if full version
   if ([[[EVEManager sharedEVEManager] licence] isValid]) {
     [statusMenu removeItem:_proVersionSeparator];
     [statusMenu removeItem:enterLicenceItem];
@@ -130,7 +132,7 @@
     [EVEUtilities removeAppFromLoginItems];
   }
   
-  [UserDataTableModel setStartAtLogin :[sender state]];
+  [[[EVEManager sharedEVEManager] eveUser] setStartAtLogin: [sender state]];
 }
 
 - (IBAction)sendFeedback :(id) sender {

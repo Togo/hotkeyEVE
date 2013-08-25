@@ -8,7 +8,6 @@
 
 #import "ShortcutsTableViewConroller.h"
 #import "TGEVE_MenuBarTableModel.h"
-#import "UserDataTableModel.h"
 #import "DisabledShortcutsModel.h"
 #import "ShareService.h"
 

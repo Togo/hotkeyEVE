@@ -29,7 +29,7 @@
 
 @property (strong, nonatomic)   Licence *licence;
 
-@property  (strong, nonatomic)   id<TGEVE_IUser> user;
+@property  (strong, nonatomic)   id<TGEVE_IUser> eveUser;
 
 + (id) sharedEVEManager;
 

@@ -11,13 +11,21 @@
 @protocol TGEVE_IUser <NSObject>
 
 @property (strong) NSString *userName;
-@property NSInteger userID;
+@property (strong) NSDictionary *userData;
 
 + (id<TGEVE_IUser>) user;
 
-- (void) initUser;
+// User Settings
+- (NSInteger) startAtLogin;
+- (void) setStartAtLogin :(NSInteger) startAtLogin;
+- (NSInteger) userID;
 
 // TODO only for tests visible
+- (void) loadUser;
+
+- (BOOL) loadUserRecordWith :(NSString*) userName;
+
+- (BOOL) initializeUserName;
 - (NSString*) readUserName;
 
 @end

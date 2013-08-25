@@ -26,6 +26,10 @@
 		CD14651D16CD7FDB004395D8 /* TGEVE_GUIElementEventTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD14651C16CD7FDA004395D8 /* TGEVE_GUIElementEventTests.m */; };
 		CD14652016CD9943004395D8 /* ALTER_MENU_BAR_ITEMS_V1_4_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD14651F16CD9943004395D8 /* ALTER_MENU_BAR_ITEMS_V1_4_1.sql */; };
 		CD14652316CD9984004395D8 /* MigrationV1_4_1.m in Sources */ = {isa = PBXBuildFile; fileRef = CD14652216CD9984004395D8 /* MigrationV1_4_1.m */; };
+		CD3A476A17C9EEC5000838A7 /* TGEVE_TimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3A476917C9EEC5000838A7 /* TGEVE_TimerManager.m */; };
+		CD3A476E17C9EFE5000838A7 /* TGEVE_TimerManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3A476D17C9EFE5000838A7 /* TGEVE_TimerManagerTests.m */; };
+		CD3A477117C9F2DD000838A7 /* TGEVE_AppsUpdateTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3A477017C9F2DD000838A7 /* TGEVE_AppsUpdateTimer.m */; };
+		CD3A477717C9F8B4000838A7 /* TGEVE_AppsUpdateTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3A477617C9F8B4000838A7 /* TGEVE_AppsUpdateTimerTests.m */; };
 		CD3D3F91178A6EBD00B74131 /* ALTER_TABLE_GUI_ELEMENTS_V1_4_3.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD3D3F90178A6EBD00B74131 /* ALTER_TABLE_GUI_ELEMENTS_V1_4_3.sql */; };
 		CD3D3F98178A6F0800B74131 /* MigrationV1_4_3.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3D3F97178A6F0800B74131 /* MigrationV1_4_3.m */; };
 		CD558C1116DE883E005D4B97 /* Objc-Util.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD558C0C16DE8821005D4B97 /* Objc-Util.framework */; };
@@ -97,7 +101,7 @@
 		CD84B78C1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD84B78B1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql */; };
 		CD97CE9016467AB000406F1F /* GrowlController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE8F16467AB000406F1F /* GrowlController.m */; };
 		CD97CE96164683EA00406F1F /* ApplicationsTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE95164683EA00406F1F /* ApplicationsTableModel.m */; };
-		CD97CE99164685BA00406F1F /* UserDataTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE98164685BA00406F1F /* UserDataTableModel.m */; };
+		CD97CE99164685BA00406F1F /* UserDataTableModel_old.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE98164685BA00406F1F /* UserDataTableModel_old.m */; };
 		CD97CE9F16468A5E00406F1F /* DisabledShortcutsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CE9E16468A5E00406F1F /* DisabledShortcutsModel.m */; };
 		CD97CEA216468C5200406F1F /* ShortcutTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD97CEA116468C5200406F1F /* ShortcutTableModel.m */; };
 		CDA558AC16AC3653008D236E /* TGEVE_AppsManagerAmazon.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA558AB16AC3653008D236E /* TGEVE_AppsManagerAmazon.m */; };
@@ -111,6 +115,9 @@
 		CDB3D6621646BAE000285306 /* AppLaunchedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3D6611646BAE000285306 /* AppLaunchedController.m */; };
 		CDC1767916BC2583006C1A74 /* apps_drag_and_drop_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC1767816BC2583006C1A74 /* apps_drag_and_drop_overlay.png */; };
 		CDC77C1F165C2DAF00939D99 /* MigrationsV1_3_2.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */; };
+		CDCC534617CA48A100F49202 /* TGEVE_AppsUpdateTimerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCC534517CA48A100F49202 /* TGEVE_AppsUpdateTimerModel.m */; };
+		CDCC535E17CA572A00F49202 /* TGEVE_InfoPopUpWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCC535C17CA572A00F49202 /* TGEVE_InfoPopUpWindowController.m */; };
+		CDCC535F17CA572A00F49202 /* TGEVE_InfoPopUpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDCC535D17CA572A00F49202 /* TGEVE_InfoPopUpWindow.xib */; };
 		CDE3015716A2FB6B00E8D489 /* AppsNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3015616A2FB6B00E8D489 /* AppsNavigationViewController.m */; };
 		CDE3015A16A469BC00E8D489 /* TGEVE_AppsWindowWindowControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3015916A469BC00E8D489 /* TGEVE_AppsWindowWindowControllerTests.m */; };
 		CDE3018316A49D0300E8D489 /* libAppsLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE3016C16A4932600E8D489 /* libAppsLibrary.a */; };
@@ -291,6 +298,15 @@
 		CD14651F16CD9943004395D8 /* ALTER_MENU_BAR_ITEMS_V1_4_1.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ALTER_MENU_BAR_ITEMS_V1_4_1.sql; path = "Database/SQL Scripte/V1_4_1/ALTER_MENU_BAR_ITEMS_V1_4_1.sql"; sourceTree = "<group>"; };
 		CD14652116CD9984004395D8 /* MigrationV1_4_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationV1_4_1.h; path = Database/Migrations/MigrationV1_4_1.h; sourceTree = "<group>"; };
 		CD14652216CD9984004395D8 /* MigrationV1_4_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationV1_4_1.m; path = Database/Migrations/MigrationV1_4_1.m; sourceTree = "<group>"; };
+		CD3A476817C9EEC5000838A7 /* TGEVE_TimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGEVE_TimerManager.h; sourceTree = "<group>"; };
+		CD3A476917C9EEC5000838A7 /* TGEVE_TimerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGEVE_TimerManager.m; sourceTree = "<group>"; };
+		CD3A476C17C9EFE5000838A7 /* TGEVE_TimerManagerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGEVE_TimerManagerTests.h; sourceTree = "<group>"; };
+		CD3A476D17C9EFE5000838A7 /* TGEVE_TimerManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGEVE_TimerManagerTests.m; sourceTree = "<group>"; };
+		CD3A476F17C9F2DD000838A7 /* TGEVE_AppsUpdateTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_AppsUpdateTimer.h; path = ../User/TGEVE_AppsUpdateTimer.h; sourceTree = "<group>"; };
+		CD3A477017C9F2DD000838A7 /* TGEVE_AppsUpdateTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_AppsUpdateTimer.m; path = ../User/TGEVE_AppsUpdateTimer.m; sourceTree = "<group>"; };
+		CD3A477417C9F391000838A7 /* TGEVE_ITimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGEVE_ITimer.h; sourceTree = "<group>"; };
+		CD3A477517C9F8B4000838A7 /* TGEVE_AppsUpdateTimerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGEVE_AppsUpdateTimerTests.h; sourceTree = "<group>"; };
+		CD3A477617C9F8B4000838A7 /* TGEVE_AppsUpdateTimerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGEVE_AppsUpdateTimerTests.m; sourceTree = "<group>"; };
 		CD3D3F90178A6EBD00B74131 /* ALTER_TABLE_GUI_ELEMENTS_V1_4_3.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ALTER_TABLE_GUI_ELEMENTS_V1_4_3.sql; sourceTree = "<group>"; };
 		CD3D3F97178A6F0800B74131 /* MigrationV1_4_3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationV1_4_3.m; path = hotkeyEVE/Database/Migrations/MigrationV1_4_3.m; sourceTree = SOURCE_ROOT; };
 		CD3D3F99178A6F0E00B74131 /* MigrationV1_4_3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationV1_4_3.h; path = hotkeyEVE/Database/Migrations/MigrationV1_4_3.h; sourceTree = SOURCE_ROOT; };
@@ -407,8 +423,8 @@
 		CD97CE8F16467AB000406F1F /* GrowlController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowlController.m; sourceTree = "<group>"; };
 		CD97CE94164683EA00406F1F /* ApplicationsTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationsTableModel.h; path = Database/Models/ApplicationsTableModel.h; sourceTree = "<group>"; };
 		CD97CE95164683EA00406F1F /* ApplicationsTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplicationsTableModel.m; path = Database/Models/ApplicationsTableModel.m; sourceTree = "<group>"; };
-		CD97CE97164685BA00406F1F /* UserDataTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDataTableModel.h; path = Database/Models/UserDataTableModel.h; sourceTree = "<group>"; };
-		CD97CE98164685BA00406F1F /* UserDataTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDataTableModel.m; path = Database/Models/UserDataTableModel.m; sourceTree = "<group>"; };
+		CD97CE97164685BA00406F1F /* UserDataTableModel_old.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDataTableModel_old.h; path = Database/Models/UserDataTableModel_old.h; sourceTree = "<group>"; };
+		CD97CE98164685BA00406F1F /* UserDataTableModel_old.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDataTableModel_old.m; path = Database/Models/UserDataTableModel_old.m; sourceTree = "<group>"; };
 		CD97CE9D16468A5E00406F1F /* DisabledShortcutsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisabledShortcutsModel.h; path = Database/Models/DisabledShortcutsModel.h; sourceTree = "<group>"; };
 		CD97CE9E16468A5E00406F1F /* DisabledShortcutsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisabledShortcutsModel.m; path = Database/Models/DisabledShortcutsModel.m; sourceTree = "<group>"; };
 		CD97CEA016468C5100406F1F /* ShortcutTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortcutTableModel.h; sourceTree = "<group>"; };
@@ -436,6 +452,12 @@
 		CDC1767816BC2583006C1A74 /* apps_drag_and_drop_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apps_drag_and_drop_overlay.png; sourceTree = "<group>"; };
 		CDC77C1D165C2DAF00939D99 /* MigrationsV1_3_2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationsV1_3_2.h; path = Database/Migrations/MigrationsV1_3_2.h; sourceTree = "<group>"; };
 		CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationsV1_3_2.m; path = Database/Migrations/MigrationsV1_3_2.m; sourceTree = "<group>"; };
+		CDCC533E17CA484000F49202 /* TGEVE_IAppsUpdateTimerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_IAppsUpdateTimerModel.h; path = Database/Models/TGEVE_IAppsUpdateTimerModel.h; sourceTree = "<group>"; };
+		CDCC534417CA48A100F49202 /* TGEVE_AppsUpdateTimerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_AppsUpdateTimerModel.h; path = Database/Models/TGEVE_AppsUpdateTimerModel.h; sourceTree = "<group>"; };
+		CDCC534517CA48A100F49202 /* TGEVE_AppsUpdateTimerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_AppsUpdateTimerModel.m; path = Database/Models/TGEVE_AppsUpdateTimerModel.m; sourceTree = "<group>"; };
+		CDCC535B17CA572A00F49202 /* TGEVE_InfoPopUpWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_InfoPopUpWindowController.h; path = hotkeyEVE/Timer/TGEVE_InfoPopUpWindowController.h; sourceTree = SOURCE_ROOT; };
+		CDCC535C17CA572A00F49202 /* TGEVE_InfoPopUpWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_InfoPopUpWindowController.m; path = hotkeyEVE/Timer/TGEVE_InfoPopUpWindowController.m; sourceTree = SOURCE_ROOT; };
+		CDCC535D17CA572A00F49202 /* TGEVE_InfoPopUpWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TGEVE_InfoPopUpWindow.xib; path = hotkeyEVE/Timer/TGEVE_InfoPopUpWindow.xib; sourceTree = SOURCE_ROOT; };
 		CDE3015416A2F2B300E8D489 /* AppsNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppsNavigationView.h; path = Apps/GUI/AppsNavigationView.h; sourceTree = "<group>"; };
 		CDE3015516A2FB6A00E8D489 /* AppsNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsNavigationViewController.h; path = Apps/GUI/AppsNavigationViewController.h; sourceTree = "<group>"; };
 		CDE3015616A2FB6B00E8D489 /* AppsNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsNavigationViewController.m; path = Apps/GUI/AppsNavigationViewController.m; sourceTree = "<group>"; };
@@ -548,6 +570,29 @@
 				CD14651F16CD9943004395D8 /* ALTER_MENU_BAR_ITEMS_V1_4_1.sql */,
 			);
 			name = V1_4_1;
+			sourceTree = "<group>";
+		};
+		CD3A476717C9EEAC000838A7 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				CD3A477417C9F391000838A7 /* TGEVE_ITimer.h */,
+				CD3A476F17C9F2DD000838A7 /* TGEVE_AppsUpdateTimer.h */,
+				CD3A477017C9F2DD000838A7 /* TGEVE_AppsUpdateTimer.m */,
+				CD3A476817C9EEC5000838A7 /* TGEVE_TimerManager.h */,
+				CD3A476917C9EEC5000838A7 /* TGEVE_TimerManager.m */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		CD3A476B17C9EFD6000838A7 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				CD3A476C17C9EFE5000838A7 /* TGEVE_TimerManagerTests.h */,
+				CD3A476D17C9EFE5000838A7 /* TGEVE_TimerManagerTests.m */,
+				CD3A477517C9F8B4000838A7 /* TGEVE_AppsUpdateTimerTests.h */,
+				CD3A477617C9F8B4000838A7 /* TGEVE_AppsUpdateTimerTests.m */,
+			);
+			name = Timer;
 			sourceTree = "<group>";
 		};
 		CD3D3F8F178A6EBD00B74131 /* V1_4_3 */ = {
@@ -820,6 +865,7 @@
 		CD80E7581645393300A9C7D8 /* hotkeyEVE */ = {
 			isa = PBXGroup;
 			children = (
+				CD3A476717C9EEAC000838A7 /* Timer */,
 				CD717C2217BFB0FF008E8EAE /* User */,
 				CD1464FC16CBEDAD004395D8 /* UIEvents */,
 				CDA558CB16B02611008D236E /* UserNotification */,
@@ -863,6 +909,7 @@
 		CD80E78A164539A900A9C7D8 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				CDCC534917CA4FC600F49202 /* InfoPopUp */,
 				CD6AD402164D8948009FF1B5 /* GUINotifications */,
 				CD6AD3F3164D6BAA009FF1B5 /* ShortcutWindow */,
 				CD6AD38A164BFE91009FF1B5 /* Licence */,
@@ -908,6 +955,7 @@
 		CD845A2816A15B98007717CB /* hotkeyEVEUnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				CD3A476B17C9EFD6000838A7 /* Timer */,
 				CD717C2717BFB436008E8EAE /* User */,
 				CD1464FE16CBEF87004395D8 /* UIEvents */,
 				CDA558CF16B0295C008D236E /* UserNotificiation */,
@@ -969,8 +1017,8 @@
 				CD97CE95164683EA00406F1F /* ApplicationsTableModel.m */,
 				CD5A4697164563D0007B57A5 /* TGEVE_MenuBarTableModel.h */,
 				CD5A4698164563D0007B57A5 /* TGEVE_MenuBarTableModel.m */,
-				CD97CE97164685BA00406F1F /* UserDataTableModel.h */,
-				CD97CE98164685BA00406F1F /* UserDataTableModel.m */,
+				CD97CE97164685BA00406F1F /* UserDataTableModel_old.h */,
+				CD97CE98164685BA00406F1F /* UserDataTableModel_old.m */,
 				CD97CE9D16468A5E00406F1F /* DisabledShortcutsModel.h */,
 				CD97CE9E16468A5E00406F1F /* DisabledShortcutsModel.m */,
 				CD97CEA016468C5100406F1F /* ShortcutTableModel.h */,
@@ -982,6 +1030,9 @@
 				CD717C2B17BFB714008E8EAE /* TGEVE_IUserTableModel.h */,
 				CD717C2C17BFB73A008E8EAE /* TGEVE_UserTableModel.h */,
 				CD717C2D17BFB73A008E8EAE /* TGEVE_UserTableModel.m */,
+				CDCC533E17CA484000F49202 /* TGEVE_IAppsUpdateTimerModel.h */,
+				CDCC534417CA48A100F49202 /* TGEVE_AppsUpdateTimerModel.h */,
+				CDCC534517CA48A100F49202 /* TGEVE_AppsUpdateTimerModel.m */,
 			);
 			name = DatabaseModel;
 			sourceTree = "<group>";
@@ -1037,6 +1088,17 @@
 				CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */,
 			);
 			name = V1_3_2;
+			sourceTree = "<group>";
+		};
+		CDCC534917CA4FC600F49202 /* InfoPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				CDCC535D17CA572A00F49202 /* TGEVE_InfoPopUpWindow.xib */,
+				CDCC535B17CA572A00F49202 /* TGEVE_InfoPopUpWindowController.h */,
+				CDCC535C17CA572A00F49202 /* TGEVE_InfoPopUpWindowController.m */,
+			);
+			name = InfoPopUp;
+			path = GUI/InfoPopUp;
 			sourceTree = "<group>";
 		};
 		CDE3015B16A48E3A00E8D489 /* Model */ = {
@@ -1256,6 +1318,7 @@
 				CD5A466916455D69007B57A5 /* CREATE_TABLE_V1_0.sql in Resources */,
 				CD57864C16465D5800CC508B /* Growl Registration Ticket.growlRegDict in Resources */,
 				CD5786551646611200CC508B /* EVE_ICON.icns in Resources */,
+				CDCC535F17CA572A00F49202 /* TGEVE_InfoPopUpWindow.xib in Resources */,
 				CDEE15311648127A00EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns in Resources */,
 				CDEE155D164A9D3200EDCDF4 /* INSERT_GUI_SUPPORT_V1_0.sql in Resources */,
 				CDEE156F164AE38A00EDCDF4 /* INSERT_GUI_ELEMENTS_V1_0.sql in Resources */,
@@ -1311,6 +1374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD80E75F1645393400A9C7D8 /* main.m in Sources */,
+				CDCC534617CA48A100F49202 /* TGEVE_AppsUpdateTimerModel.m in Sources */,
 				CD80E7661645393400A9C7D8 /* AppDelegate.m in Sources */,
 				CD80E78D16453A0500A9C7D8 /* MainMenuController.m in Sources */,
 				CD5A464716455398007B57A5 /* DatabaseManager.m in Sources */,
@@ -1330,7 +1394,7 @@
 				CD5A46F516464F7E007B57A5 /* EVEObserver.m in Sources */,
 				CD97CE9016467AB000406F1F /* GrowlController.m in Sources */,
 				CD97CE96164683EA00406F1F /* ApplicationsTableModel.m in Sources */,
-				CD97CE99164685BA00406F1F /* UserDataTableModel.m in Sources */,
+				CD97CE99164685BA00406F1F /* UserDataTableModel_old.m in Sources */,
 				CD97CE9F16468A5E00406F1F /* DisabledShortcutsModel.m in Sources */,
 				CD97CEA216468C5200406F1F /* ShortcutTableModel.m in Sources */,
 				CDB3D6621646BAE000285306 /* AppLaunchedController.m in Sources */,
@@ -1351,6 +1415,7 @@
 				CD84B78A1658CB5500DF227B /* MigrationsV1_3_1.m in Sources */,
 				CDC77C1F165C2DAF00939D99 /* MigrationsV1_3_2.m in Sources */,
 				CD018F001660A4B3008A1C5A /* AppChangedController.m in Sources */,
+				CDCC535E17CA572A00F49202 /* TGEVE_InfoPopUpWindowController.m in Sources */,
 				CDE54D9A16626FF8009E4C57 /* ShareService.m in Sources */,
 				CD59010D1663BE57000613F7 /* MigrationsV1_3_3.m in Sources */,
 				CD845A0716A0C493007717CB /* TGEVE_AppsWindowWindowController.m in Sources */,
@@ -1372,6 +1437,8 @@
 				CD3D3F98178A6F0800B74131 /* MigrationV1_4_3.m in Sources */,
 				CD717C2617BFB150008E8EAE /* TGEVE_User.m in Sources */,
 				CD717C2E17BFB73A008E8EAE /* TGEVE_UserTableModel.m in Sources */,
+				CD3A476A17C9EEC5000838A7 /* TGEVE_TimerManager.m in Sources */,
+				CD3A477117C9F2DD000838A7 /* TGEVE_AppsUpdateTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1395,6 +1462,8 @@
 				CDEEC360172BE4B100E606C4 /* TGEVE_AppsManagerAmazonTests.m in Sources */,
 				CD717C2A17BFB459008E8EAE /* TGEVE_UserTests.m in Sources */,
 				CD717C3117C0996A008E8EAE /* TGEVE_UserTableModelTests.m in Sources */,
+				CD3A476E17C9EFE5000838A7 /* TGEVE_TimerManagerTests.m in Sources */,
+				CD3A477717C9F8B4000838A7 /* TGEVE_AppsUpdateTimerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1482,6 +1551,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -1509,6 +1579,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
@@ -1581,6 +1652,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotkeyEVEUnitTests/hotkeyEVEUnitTests-Prefix.pch";
+				GCC_WARN_UNUSED_VALUE = NO;
 				INFOPLIST_FILE = "hotkeyEVEUnitTests/hotkeyEVEUnitTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1601,6 +1673,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotkeyEVEUnitTests/hotkeyEVEUnitTests-Prefix.pch";
+				GCC_WARN_UNUSED_VALUE = NO;
 				INFOPLIST_FILE = "hotkeyEVEUnitTests/hotkeyEVEUnitTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";

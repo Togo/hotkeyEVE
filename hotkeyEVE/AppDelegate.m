@@ -16,30 +16,29 @@
 
 #import <UIElements/ClickOnUIElementSubject.h>
 
-#import "UserDataTableModel.h"
 #import "TGEVE_GUIElementsTableModel.h"
 
 #import "GrowlNotifications.h"
 #import "EVEUtilities.h"
+#import "TGEVE_TimerManager.h"
 
 @implementation AppDelegate
 
 @synthesize eveAppManager;
 @synthesize fileLogger;
+@synthesize eveTimerManager;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification   {
   NSLog(@"EVE has been started");
+
+  eveAppManager =  [EVEManager sharedEVEManager];
+  eveTimerManager = [TGEVE_TimerManager sharedTimerManager];
+  
   [self startLogging];
-  [self openDatabase];
 
   NSLog(@"Lang: %@", [EVEUtilities currentLanguage]);
   
-  eveAppManager =  [EVEManager sharedEVEManager];
-  
   [EVEUtilities checkAccessibilityAPIEnabled];
-  
-  [self initUserData];
   
   [self startIndexing];
   
@@ -67,7 +66,7 @@
   [DDLog addLogger:fileLogger];
 }
 
-- (void) openDatabase {
++ (void) openDatabase {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   [db executeMigrations:[db databasePath]];
 }
@@ -79,10 +78,6 @@
 - (void) registerListener {
     ClickOnUIElementSubject *clickListener = [[ClickOnUIElementSubject alloc]init];
     DDLogInfo(@"Register Listener: %@", clickListener);
-}
-
-- (void) initUserData {
-  [UserDataTableModel insertUser: NSUserName()];
 }
 
 @end

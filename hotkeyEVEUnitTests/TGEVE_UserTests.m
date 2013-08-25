@@ -29,51 +29,94 @@
   [super tearDown];
 }
 
-//*************************** initUser ***************************//
-- (void) test_init_NSUserNameReturnedValidUserName_setTheUserName {
-  [_user initUser];
+//*************************** loadUser ***************************//
+- (void) test_loadUser_allScenarios_initializeUserName {
+  OCMockObject *userMock = [OCMockObject  partialMockForObject:_user];
+  [[userMock stub] loadUserRecordWith:OCMOCK_ANY];
+  [[userMock expect] initializeUserName];
+  
+  [_user loadUser];
+  
+  [userMock verify];
+}
+
+- (void) test_loadUser_allScenarios_loadUserDataWithUserName {
+  OCMockObject *userMock = [OCMockObject  partialMockForObject:_user];
+  [[[userMock stub] andReturn:@"Test"] readUserName];
+  [[userMock expect] loadUserRecordWith:@"Test"];
+  
+  [_user loadUser];
+  
+  [userMock verify];
+}
+
+//*************************** initializeUserName ***************************//
+- (void) test_initializeUserName_NSUserNameReturnedValidUserName_setTheUserName {
+  [_user initializeUserName];
 
   STAssertTrue([[_user userName] isEqualToString:NSUserName()], @"");
 }
 
-- (void) test_init_UserNameIsEmpty_throwException {
+- (void) test_initializeUserName_UserNameIsEmpty_throwException {
   OCMockObject *userNameMock = [OCMockObject partialMockForObject:_user];
   [[[userNameMock stub] andReturn:@""] readUserName];
   
-  STAssertThrows([_user initUser], @"");
+  STAssertThrows([_user initializeUserName], @"");
 }
 
-- (void) test_init_UserNameIsNil_throwException {
+- (void) test_initializeUserName_UserNameIsNil_throwException {
   OCMockObject *userNameMock = [OCMockObject partialMockForObject:_user];
  [[[userNameMock stub] andReturn:nil] readUserName];
   
-  STAssertThrows([_user initUser], @"");
+  STAssertThrows([_user initializeUserName], @"");
 }
 
-- (void) test_initUser_gotAnNegativeValueAsUserID_throwAnException {
-  OCMockObject *userTableMock = [OCMockObject mockForClass:[TGEVE_UserTableModel class]];
-  NSInteger returnedUserID = -1;
-  [[[userTableMock stub] andReturnValue:OCMOCK_VALUE(returnedUserID)] getUserID :OCMOCK_ANY];
 
-  STAssertThrows([_user initUser], @"");
+
+//*************************** loadUserRecord ***************************//
+- (void) test_loadUserRecord_gotANilUser_throwException {
+  OCMockObject *userTableMock = [OCMockObject mockForClass:[TGEVE_UserTableModel class]];
+  NSDictionary *user = nil;
+  [[[userTableMock stub] andReturnValue:OCMOCK_VALUE(user)] getUserRecordFromUserDataTable :OCMOCK_ANY];
+  
+  STAssertThrows([_user loadUserRecordWith:OCMOCK_ANY], @"");
 }
 
-- (void) test_initUser_got0AsAsUserID_throwAnException {
+- (void) test_loadUserRecord_gotAUserRecord_returnYES {
   OCMockObject *userTableMock = [OCMockObject mockForClass:[TGEVE_UserTableModel class]];
-  NSInteger returnedUserID = 0;
-  [[[userTableMock stub] andReturnValue:OCMOCK_VALUE(returnedUserID)] getUserID :OCMOCK_ANY];
+  NSDictionary *userDic = [NSDictionary dictionary];
+  [[[userTableMock stub] andReturnValue:OCMOCK_VALUE(userDic)] getUserRecordFromUserDataTable :OCMOCK_ANY];
   
-  STAssertThrows([_user initUser], @"");
+  STAssertTrue([_user loadUserRecordWith:OCMOCK_ANY], @"");
 }
 
-- (void) test_init_succefullReceivedUserIDFromDB_setUserIDProperty {
+- (void) test_loadUserRecord_gotAUserRecord_setTheUserDataDictionaryWithThisRecord {
   OCMockObject *userTableMock = [OCMockObject mockForClass:[TGEVE_UserTableModel class]];
-  NSInteger returnedUserID = 99;
-  [[[userTableMock stub] andReturnValue:OCMOCK_VALUE(returnedUserID)] getUserID :OCMOCK_ANY];
+  NSDictionary *userDic = [NSDictionary dictionary];
+  [[[userTableMock stub] andReturnValue:OCMOCK_VALUE(userDic)] getUserRecordFromUserDataTable :OCMOCK_ANY];
+
+  [_user loadUserRecordWith:OCMOCK_ANY];
   
-  [_user initUser];
+  STAssertEqualObjects([_user userData], userDic, @"");
+}
+
+- (void) test_loadUserRecord_gotNilAsUserRecord_ThrowAnException {
+  OCMockObject *userTableMock = [OCMockObject mockForClass:[TGEVE_UserTableModel class]];
+  [[[userTableMock stub] andReturn:nil] getUserRecordFromUserDataTable :OCMOCK_ANY];
   
-  STAssertEquals([_user userID], returnedUserID, @"");
+  STAssertThrows([_user loadUserRecordWith:OCMOCK_ANY], @"");
+}
+
+- (void) test_loadUserRecord_userNameReadSucceded_getUserDataFromDB {
+  [_user setUserName:@"Test"];
+  
+  OCMockObject *dbMock = [OCMockObject mockForClass:[TGEVE_UserTableModel class]];
+  NSDictionary *user = [NSDictionary dictionary];
+  [[[dbMock expect] andReturn:user] getUserRecordFromUserDataTable :@"Test"];
+  
+  [_user loadUserRecordWith:@"Test"];
+ 
+  [dbMock verify];
 }
 
 @end

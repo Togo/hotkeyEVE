@@ -12,7 +12,6 @@
 #import "ShortcutTableModel.h"
 #import "ApplicationsTableModel.h"
 #import "EVEUtilities.h"
-#import "UserDataTableModel.h"
 
 @implementation TGEVE_MenuBarTableModel
 
@@ -99,7 +98,7 @@
 + (NSArray*) getTitlesAndShortcuts :(NSInteger) appID {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
-  NSInteger userID = [UserDataTableModel getUserID:NSUserName()];
+  NSInteger userID = [[[EVEManager sharedEVEManager] eveUser] userID];
   // First get all Title and Shortcut Strings for this App
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@" SELECT m.*, s.%@,   ", SHORTCUT_STRING_COL];

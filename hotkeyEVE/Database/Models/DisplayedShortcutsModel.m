@@ -9,7 +9,6 @@
 #import "DisplayedShortcutsModel.h"
 #import "ShortcutTableModel.h"
 #import "ApplicationsTableModel.h"
-#import "UserDataTableModel.h"
 #import "NSDictionary+TGEVE_EventDictionary.h"
 
 @implementation DisplayedShortcutsModel
@@ -19,7 +18,7 @@
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
   NSInteger appID = [ApplicationsTableModel getApplicationID :[eventHintShorcutDic valueForKey:TGEVE_KEY_BUNDLE_IDENTIFIER_STRING]];
-  NSInteger userID = [UserDataTableModel getUserID:NSUserName()];
+  NSInteger userID = [[[EVEManager sharedEVEManager] eveUser] userID];
   NSInteger shortcutID = [ShortcutTableModel getShortcutId :[eventHintShorcutDic valueForKey:TGEVE_KEY_SHORTCUT_STRING]];
   
   NSMutableString *query = [NSMutableString string];

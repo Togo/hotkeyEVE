@@ -9,7 +9,6 @@
 #import "DisabledShortcutsModel.h"
 #import "ShortcutTableModel.h"
 #import "ApplicationsTableModel.h"
-#import "UserDataTableModel.h"
 #import "EVEUtilities.h"
 #import "NSDictionary+TGEVE_EventDictionary.h"
 
@@ -33,8 +32,8 @@
 + (void) disableShortcut :(NSInteger) shortcutID :(NSInteger) appID :(NSString*) elementTitle {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
-  NSInteger userID = [UserDataTableModel getUserID:NSUserName()];
-
+  NSInteger userID = [[[EVEManager sharedEVEManager] eveUser] userID];
+  
   if (shortcutID == 0
       || appID == 0) {
     DDLogError(@"ShortcutTableModel -> disableShortcut:: Can't disable shortcut one of these is 0. appID => :%li:  shortcutID => :%li: ", appID, shortcutID);
@@ -58,7 +57,7 @@
 + (void) disableShortcutInAllApps :(NSInteger) shortcutID :(NSString*) title {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
-  NSInteger userID = [UserDataTableModel getUserID:NSUserName()];
+  NSInteger userID = [[[EVEManager sharedEVEManager] eveUser] userID];
   
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@"INSERT OR IGNORE INTO %@ ", GLOB_DISABLED_SHORTCUTS_TABLE];
@@ -82,7 +81,7 @@
 + (void) enableShortcut :(NSInteger) shortcutID :(NSInteger) appID :(NSString*) title {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
-  NSInteger userID = [UserDataTableModel getUserID:NSUserName()];
+  NSInteger userID = [[[EVEManager sharedEVEManager] eveUser] userID];
   
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@"DELETE FROM %@ ", DISABLED_SHORTCUTS_TABLE];
@@ -97,7 +96,7 @@
 + (void) enableShortcutInAllApps :(NSInteger) shortcutID :(NSString*) title {
   EVEDatabase *db = [[DatabaseManager sharedDatabaseManager] eveDatabase];
   
-    NSInteger userID = [UserDataTableModel getUserID:NSUserName()];
+  NSInteger userID = [[[EVEManager sharedEVEManager] eveUser] userID];
   
   NSMutableString *query = [NSMutableString string];
   [query appendFormat:@"DELETE FROM %@ ", GLOB_DISABLED_SHORTCUTS_TABLE];
@@ -118,14 +117,14 @@
 + (BOOL) isShortcutDisabled :(NSDictionary*) eventShortcutDic {
   NSInteger shortcutID = [ShortcutTableModel getShortcutId :[eventShortcutDic valueForKey:TGEVE_KEY_SHORTCUT_STRING]];
   NSInteger appID = [ApplicationsTableModel getApplicationID :[eventShortcutDic valueForKey:TGEVE_KEY_BUNDLE_IDENTIFIER_STRING]];
-  NSInteger userID = [UserDataTableModel getUserID :NSUserName() ];
+  NSInteger userID = [[[EVEManager sharedEVEManager] eveUser] userID];
   
   return [self isShortcutDisabled :shortcutID :appID :userID :[eventShortcutDic valueForKey:TGEVE_KEY_TITLE_STRING]];
 }
 
 + (BOOL) isShortcutDisabled :(UIElement*) element :(NSInteger) shortcutID {
   NSInteger appID = [ApplicationsTableModel getApplicationID:[[element owner] appName] :[[element owner] bundleIdentifier]];
-  NSInteger userID = [UserDataTableModel getUserID:[element user]];
+  NSInteger userID = [[[EVEManager sharedEVEManager] eveUser] userID];
   
   return [self isShortcutDisabled:shortcutID :appID :userID :[element title]];
 }
@@ -185,7 +184,7 @@
   for (id aRow in result) {
     NSString *title = [aRow valueForKey:TITLE_COL];
     NSInteger shortcutID = [[aRow valueForKey:SHORTCUT_ID_COL] intValue];
-    NSInteger userID = [UserDataTableModel getUserID:NSUserName()];
+    NSInteger userID = [[[EVEManager sharedEVEManager] eveUser] userID];
     
     if ([self isGlobalDisabled :shortcutID :userID :title]) {
       [self disableShortcut:shortcutID :[app appID] :title];

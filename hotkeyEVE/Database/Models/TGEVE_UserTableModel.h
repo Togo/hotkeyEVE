@@ -11,4 +11,5 @@
 
 @interface TGEVE_UserTableModel : NSObject <TGEVE_IUserTableModel>
 
+
 @end
