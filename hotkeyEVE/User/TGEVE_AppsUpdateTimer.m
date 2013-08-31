@@ -8,17 +8,17 @@
 
 #import "TGEVE_AppsUpdateTimer.h"
 #import "TGEVE_AppsUpdateTimerModel.h"
-#import "TGEVE_InfoPopUpWindowController.h"
 
 @implementation TGEVE_AppsUpdateTimer
 
 @synthesize repeatingTimer = _repeatingTimer;
-@synthesize windowController = _windowController;
 
 + (id<TGEVE_ITimer>) timerWithIntervall :(NSInteger) interval {
+  DDLogInfo(@"TGEVE_AppsUpdateTimer -> timerWithIntervall(interval => :%li:) :: get called ", interval);
   TGEVE_AppsUpdateTimer *updateTimer = [[self alloc] init];
   
   updateTimer.repeatingTimer = [updateTimer createTheTimer:interval];
+    DDLogInfo(@"TGEVE_AppsUpdateTimer -> timerWithIntervall:: create UpdatedTimer :%@: ", updateTimer.repeatingTimer);
   [updateTimer.repeatingTimer fire];
   
   return updateTimer;
@@ -31,8 +31,8 @@
 
 //TODO untested
 - (void) performTimerAction {
-  _windowController = [[TGEVE_InfoPopUpWindowController alloc] initWithWindowNibName:TGEVE_CONST_INFO_POP_UP_WINDOW_NAME];
-  [_windowController showWindow:nil];
+  DDLogInfo(@"TGEVE_AppsUpdateTimer -> performTimerAction:: performed ");
+
 }
 
 @end

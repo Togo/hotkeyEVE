@@ -87,8 +87,8 @@
 		CD845A0B16A0C8B1007717CB /* TGEVE_AppsWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A0A16A0C8B1007717CB /* TGEVE_AppsWindowViewController.m */; };
 		CD845A0F16A0C8ED007717CB /* AppsTableNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A0D16A0C8ED007717CB /* AppsTableNavigationViewController.m */; };
 		CD845A1016A0C8ED007717CB /* AppsTableNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A0E16A0C8ED007717CB /* AppsTableNavigationViewController.xib */; };
-		CD845A1916A0C937007717CB /* AppsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A1716A0C937007717CB /* AppsTableViewController.m */; };
-		CD845A1A16A0C937007717CB /* AppsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A1816A0C937007717CB /* AppsTableViewController.xib */; };
+		CD845A1916A0C937007717CB /* TGEVE_AllAppsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A1716A0C937007717CB /* TGEVE_AllAppsViewController.m */; };
+		CD845A1A16A0C937007717CB /* TGEVE_AllAppsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A1816A0C937007717CB /* TGEVE_AllAppsViewController.xib */; };
 		CD845A2616A15B98007717CB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7701645393400A9C7D8 /* SenTestingKit.framework */; };
 		CD845A2716A15B98007717CB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7521645393300A9C7D8 /* Cocoa.framework */; };
 		CD845A2D16A15B98007717CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD845A2B16A15B98007717CB /* InfoPlist.strings */; };
@@ -116,8 +116,8 @@
 		CDC1767916BC2583006C1A74 /* apps_drag_and_drop_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC1767816BC2583006C1A74 /* apps_drag_and_drop_overlay.png */; };
 		CDC77C1F165C2DAF00939D99 /* MigrationsV1_3_2.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */; };
 		CDCC534617CA48A100F49202 /* TGEVE_AppsUpdateTimerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCC534517CA48A100F49202 /* TGEVE_AppsUpdateTimerModel.m */; };
-		CDCC535E17CA572A00F49202 /* TGEVE_InfoPopUpWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCC535C17CA572A00F49202 /* TGEVE_InfoPopUpWindowController.m */; };
-		CDCC535F17CA572A00F49202 /* TGEVE_InfoPopUpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDCC535D17CA572A00F49202 /* TGEVE_InfoPopUpWindow.xib */; };
+		CDCC538417CBDFE300F49202 /* TGEVE_UpdatableAppsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCC538217CBDFE300F49202 /* TGEVE_UpdatableAppsViewController.m */; };
+		CDCC538517CBDFE300F49202 /* TGEVE_UpdatableAppsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDCC538317CBDFE300F49202 /* TGEVE_UpdatableAppsViewController.xib */; };
 		CDE3015716A2FB6B00E8D489 /* AppsNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3015616A2FB6B00E8D489 /* AppsNavigationViewController.m */; };
 		CDE3015A16A469BC00E8D489 /* TGEVE_AppsWindowWindowControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3015916A469BC00E8D489 /* TGEVE_AppsWindowWindowControllerTests.m */; };
 		CDE3018316A49D0300E8D489 /* libAppsLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE3016C16A4932600E8D489 /* libAppsLibrary.a */; };
@@ -402,9 +402,9 @@
 		CD845A0C16A0C8ED007717CB /* AppsTableNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsTableNavigationViewController.h; path = Apps/GUI/AppsTableNavigationViewController.h; sourceTree = "<group>"; };
 		CD845A0D16A0C8ED007717CB /* AppsTableNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsTableNavigationViewController.m; path = Apps/GUI/AppsTableNavigationViewController.m; sourceTree = "<group>"; };
 		CD845A0E16A0C8ED007717CB /* AppsTableNavigationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsTableNavigationViewController.xib; path = Apps/GUI/AppsTableNavigationViewController.xib; sourceTree = "<group>"; };
-		CD845A1616A0C936007717CB /* AppsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsTableViewController.h; path = Apps/GUI/AppsTableViewController.h; sourceTree = "<group>"; };
-		CD845A1716A0C937007717CB /* AppsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsTableViewController.m; path = Apps/GUI/AppsTableViewController.m; sourceTree = "<group>"; };
-		CD845A1816A0C937007717CB /* AppsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsTableViewController.xib; path = Apps/GUI/AppsTableViewController.xib; sourceTree = "<group>"; };
+		CD845A1616A0C936007717CB /* TGEVE_AllAppsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_AllAppsViewController.h; path = Apps/GUI/TGEVE_AllAppsViewController.h; sourceTree = "<group>"; };
+		CD845A1716A0C937007717CB /* TGEVE_AllAppsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_AllAppsViewController.m; path = Apps/GUI/TGEVE_AllAppsViewController.m; sourceTree = "<group>"; };
+		CD845A1816A0C937007717CB /* TGEVE_AllAppsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TGEVE_AllAppsViewController.xib; path = Apps/GUI/TGEVE_AllAppsViewController.xib; sourceTree = "<group>"; };
 		CD845A1B16A15560007717CB /* AppsNavigationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppsNavigationDelegate.h; path = Apps/GUI/AppsNavigationDelegate.h; sourceTree = "<group>"; };
 		CD845A2516A15B98007717CB /* hotkeyEVEUnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hotkeyEVEUnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD845A2A16A15B98007717CB /* hotkeyEVEUnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "hotkeyEVEUnitTests-Info.plist"; sourceTree = "<group>"; };
@@ -455,9 +455,9 @@
 		CDCC533E17CA484000F49202 /* TGEVE_IAppsUpdateTimerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_IAppsUpdateTimerModel.h; path = Database/Models/TGEVE_IAppsUpdateTimerModel.h; sourceTree = "<group>"; };
 		CDCC534417CA48A100F49202 /* TGEVE_AppsUpdateTimerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_AppsUpdateTimerModel.h; path = Database/Models/TGEVE_AppsUpdateTimerModel.h; sourceTree = "<group>"; };
 		CDCC534517CA48A100F49202 /* TGEVE_AppsUpdateTimerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_AppsUpdateTimerModel.m; path = Database/Models/TGEVE_AppsUpdateTimerModel.m; sourceTree = "<group>"; };
-		CDCC535B17CA572A00F49202 /* TGEVE_InfoPopUpWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_InfoPopUpWindowController.h; path = hotkeyEVE/Timer/TGEVE_InfoPopUpWindowController.h; sourceTree = SOURCE_ROOT; };
-		CDCC535C17CA572A00F49202 /* TGEVE_InfoPopUpWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_InfoPopUpWindowController.m; path = hotkeyEVE/Timer/TGEVE_InfoPopUpWindowController.m; sourceTree = SOURCE_ROOT; };
-		CDCC535D17CA572A00F49202 /* TGEVE_InfoPopUpWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TGEVE_InfoPopUpWindow.xib; path = hotkeyEVE/Timer/TGEVE_InfoPopUpWindow.xib; sourceTree = SOURCE_ROOT; };
+		CDCC538117CBDFE300F49202 /* TGEVE_UpdatableAppsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_UpdatableAppsViewController.h; path = Apps/GUI/TGEVE_UpdatableAppsViewController.h; sourceTree = "<group>"; };
+		CDCC538217CBDFE300F49202 /* TGEVE_UpdatableAppsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_UpdatableAppsViewController.m; path = Apps/GUI/TGEVE_UpdatableAppsViewController.m; sourceTree = "<group>"; };
+		CDCC538317CBDFE300F49202 /* TGEVE_UpdatableAppsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TGEVE_UpdatableAppsViewController.xib; path = Apps/GUI/TGEVE_UpdatableAppsViewController.xib; sourceTree = "<group>"; };
 		CDE3015416A2F2B300E8D489 /* AppsNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppsNavigationView.h; path = Apps/GUI/AppsNavigationView.h; sourceTree = "<group>"; };
 		CDE3015516A2FB6A00E8D489 /* AppsNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsNavigationViewController.h; path = Apps/GUI/AppsNavigationViewController.h; sourceTree = "<group>"; };
 		CDE3015616A2FB6B00E8D489 /* AppsNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsNavigationViewController.m; path = Apps/GUI/AppsNavigationViewController.m; sourceTree = "<group>"; };
@@ -491,7 +491,7 @@
 		CDF174A316A5E6EE0047C56E /* AppsTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsTableViewControllerTests.m; path = AppsGUITests/AppsTableViewControllerTests.m; sourceTree = "<group>"; };
 		CDF656E416B0403500A0FEC4 /* AppsManagerLocalDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsManagerLocalDB.h; path = Apps/Model/AppsManagerLocalDB.h; sourceTree = "<group>"; };
 		CDF656E516B0403500A0FEC4 /* AppsManagerLocalDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsManagerLocalDB.m; path = Apps/Model/AppsManagerLocalDB.m; sourceTree = "<group>"; };
-		CDF656E716B0444B00A0FEC4 /* IAppsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IAppsTableViewController.h; path = Apps/GUI/IAppsTableViewController.h; sourceTree = "<group>"; };
+		CDF656E716B0444B00A0FEC4 /* TGEVE_IAppsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TGEVE_IAppsViewController.h; path = Apps/GUI/TGEVE_IAppsViewController.h; sourceTree = "<group>"; };
 		CDF656E816B0493200A0FEC4 /* AppsManagerMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsManagerMock.h; sourceTree = "<group>"; };
 		CDF656E916B0493200A0FEC4 /* AppsManagerMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsManagerMock.m; sourceTree = "<group>"; };
 		CDF656EB16B04B3C00A0FEC4 /* TGEVE_AppsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_AppsManager.h; path = Apps/Model/TGEVE_AppsManager.h; sourceTree = "<group>"; };
@@ -909,7 +909,6 @@
 		CD80E78A164539A900A9C7D8 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				CDCC534917CA4FC600F49202 /* InfoPopUp */,
 				CD6AD402164D8948009FF1B5 /* GUINotifications */,
 				CD6AD3F3164D6BAA009FF1B5 /* ShortcutWindow */,
 				CD6AD38A164BFE91009FF1B5 /* Licence */,
@@ -932,6 +931,7 @@
 		CD845A0016A0C424007717CB /* GUI/Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CDCC538617CBE01300F49202 /* Views */,
 				CD845A0416A0C493007717CB /* TGEVE_AppsWindowWindowController.h */,
 				CD845A0516A0C493007717CB /* TGEVE_AppsWindowWindowController.m */,
 				CD845A0616A0C493007717CB /* TGEVE_AppsWindowWindowController.xib */,
@@ -944,10 +944,6 @@
 				CD845A0C16A0C8ED007717CB /* AppsTableNavigationViewController.h */,
 				CD845A0D16A0C8ED007717CB /* AppsTableNavigationViewController.m */,
 				CD845A0E16A0C8ED007717CB /* AppsTableNavigationViewController.xib */,
-				CDF656E716B0444B00A0FEC4 /* IAppsTableViewController.h */,
-				CD845A1616A0C936007717CB /* AppsTableViewController.h */,
-				CD845A1716A0C937007717CB /* AppsTableViewController.m */,
-				CD845A1816A0C937007717CB /* AppsTableViewController.xib */,
 			);
 			name = GUI/Controller;
 			sourceTree = "<group>";
@@ -1090,15 +1086,18 @@
 			name = V1_3_2;
 			sourceTree = "<group>";
 		};
-		CDCC534917CA4FC600F49202 /* InfoPopUp */ = {
+		CDCC538617CBE01300F49202 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CDCC535D17CA572A00F49202 /* TGEVE_InfoPopUpWindow.xib */,
-				CDCC535B17CA572A00F49202 /* TGEVE_InfoPopUpWindowController.h */,
-				CDCC535C17CA572A00F49202 /* TGEVE_InfoPopUpWindowController.m */,
+				CDF656E716B0444B00A0FEC4 /* TGEVE_IAppsViewController.h */,
+				CD845A1616A0C936007717CB /* TGEVE_AllAppsViewController.h */,
+				CD845A1716A0C937007717CB /* TGEVE_AllAppsViewController.m */,
+				CD845A1816A0C937007717CB /* TGEVE_AllAppsViewController.xib */,
+				CDCC538117CBDFE300F49202 /* TGEVE_UpdatableAppsViewController.h */,
+				CDCC538217CBDFE300F49202 /* TGEVE_UpdatableAppsViewController.m */,
+				CDCC538317CBDFE300F49202 /* TGEVE_UpdatableAppsViewController.xib */,
 			);
-			name = InfoPopUp;
-			path = GUI/InfoPopUp;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		CDE3015B16A48E3A00E8D489 /* Model */ = {
@@ -1316,9 +1315,9 @@
 				CD80E78F1645406B00A9C7D8 /* EVE_ICON_STATUS_BAR_ACTIVE.icns in Resources */,
 				CD5A4667164558FB007B57A5 /* README.txt in Resources */,
 				CD5A466916455D69007B57A5 /* CREATE_TABLE_V1_0.sql in Resources */,
+				CDCC538517CBDFE300F49202 /* TGEVE_UpdatableAppsViewController.xib in Resources */,
 				CD57864C16465D5800CC508B /* Growl Registration Ticket.growlRegDict in Resources */,
 				CD5786551646611200CC508B /* EVE_ICON.icns in Resources */,
-				CDCC535F17CA572A00F49202 /* TGEVE_InfoPopUpWindow.xib in Resources */,
 				CDEE15311648127A00EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns in Resources */,
 				CDEE155D164A9D3200EDCDF4 /* INSERT_GUI_SUPPORT_V1_0.sql in Resources */,
 				CDEE156F164AE38A00EDCDF4 /* INSERT_GUI_ELEMENTS_V1_0.sql in Resources */,
@@ -1329,7 +1328,7 @@
 				CD6A928E1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql in Resources */,
 				CD845A0816A0C493007717CB /* TGEVE_AppsWindowWindowController.xib in Resources */,
 				CD845A1016A0C8ED007717CB /* AppsTableNavigationViewController.xib in Resources */,
-				CD845A1A16A0C937007717CB /* AppsTableViewController.xib in Resources */,
+				CD845A1A16A0C937007717CB /* TGEVE_AllAppsViewController.xib in Resources */,
 				CDC1767916BC2583006C1A74 /* apps_drag_and_drop_overlay.png in Resources */,
 				CD1464F116CB9A65004395D8 /* ALTER_MENU_BAR_ITEMS.sql in Resources */,
 				CD1464F316CB9A84004395D8 /* ALTER_GUI_ELEMENTS_V1_3_3.sql in Resources */,
@@ -1382,6 +1381,7 @@
 				CD5A464E1645579C007B57A5 /* EVEDatabase.m in Sources */,
 				CD5A4660164558FB007B57A5 /* DDAbstractDatabaseLogger.m in Sources */,
 				CD5A4661164558FB007B57A5 /* DDASLLogger.m in Sources */,
+				CDCC538417CBDFE300F49202 /* TGEVE_UpdatableAppsViewController.m in Sources */,
 				CD5A4662164558FB007B57A5 /* DDFileLogger.m in Sources */,
 				CD5A4663164558FB007B57A5 /* DDLog.m in Sources */,
 				CD5A4664164558FB007B57A5 /* DDTTYLogger.m in Sources */,
@@ -1415,13 +1415,12 @@
 				CD84B78A1658CB5500DF227B /* MigrationsV1_3_1.m in Sources */,
 				CDC77C1F165C2DAF00939D99 /* MigrationsV1_3_2.m in Sources */,
 				CD018F001660A4B3008A1C5A /* AppChangedController.m in Sources */,
-				CDCC535E17CA572A00F49202 /* TGEVE_InfoPopUpWindowController.m in Sources */,
 				CDE54D9A16626FF8009E4C57 /* ShareService.m in Sources */,
 				CD59010D1663BE57000613F7 /* MigrationsV1_3_3.m in Sources */,
 				CD845A0716A0C493007717CB /* TGEVE_AppsWindowWindowController.m in Sources */,
 				CD845A0B16A0C8B1007717CB /* TGEVE_AppsWindowViewController.m in Sources */,
 				CD845A0F16A0C8ED007717CB /* AppsTableNavigationViewController.m in Sources */,
-				CD845A1916A0C937007717CB /* AppsTableViewController.m in Sources */,
+				CD845A1916A0C937007717CB /* TGEVE_AllAppsViewController.m in Sources */,
 				CDE3015716A2FB6B00E8D489 /* AppsNavigationViewController.m in Sources */,
 				CDA558AC16AC3653008D236E /* TGEVE_AppsManagerAmazon.m in Sources */,
 				CDA558BC16AF2615008D236E /* MigrationV1_4_0.m in Sources */,

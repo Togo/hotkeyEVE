@@ -16,7 +16,7 @@
 @property (weak) IBOutlet NSSplitView *splitView;
 
 @property (weak) IBOutlet NSView *mainContentView;
-@property (strong) NSViewController<IAppsTableViewController> *mainContentViewController;
+@property (strong) NSViewController<TGEVE_IAppsViewController> *mainContentViewController;
 
 @property (weak) IBOutlet NSView *navigationView;
 @property (strong) AppsNavigationViewController *navigationViewController;

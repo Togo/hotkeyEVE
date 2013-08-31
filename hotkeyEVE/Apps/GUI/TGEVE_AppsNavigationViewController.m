@@ -7,7 +7,7 @@
 //
 
 #import "AppsTableNavigationViewController.h"
-#import "AppsTableViewController.h"
+#import "TGEVE_AllAppsViewController.h"
 #import "TGEVE_AppsManagerAmazon.h"
 #import "AppsManagerLocalDB.h"
 
@@ -40,9 +40,11 @@ NSString * const KNavigationColumn = @"NavigationColumn";
 //      NSDictionary *installedRow = [NSDictionary dictionaryWithObjectsAndKeys:kInstalledRowHeader, KNavigationColumn, [AppsTableViewController class],@"Class" ,kAppsTableViewControllerNibName, @"NibName", [AppsManagerLocalDB class], @"model", nil];
 //      NSDictionary *notInstalledRow = [NSDictionary dictionaryWithObjectsAndKeys:kNotInstalledRowHeader, KNavigationColumn, [AppsTableViewController class],@"Class" ,kAppsTableViewControllerNibName, @"NibName", [AppsManagerAmazon class], @"model", nil];
       
-      NSDictionary *allAppsRow = [NSDictionary dictionaryWithObjectsAndKeys:TGEVE_CONST_ALLAPPS_HEADER, KNavigationColumn, [AppsTableViewController class],@"Class" ,kAppsTableViewControllerNibName, @"NibName", [TGEVE_AppsManagerAmazon class], @"model", nil];
+      NSDictionary *allAppsRow = [NSDictionary dictionaryWithObjectsAndKeys:TGEVE_CONST_ALLAPPS_HEADER, KNavigationColumn, [TGEVE_AllAppsViewController class],@"Class" ,kAppsTableViewControllerNibName, @"NibName", [TGEVE_AppsManagerAmazon class], @"model", nil];
+      
+      
 
-      _dataSource = [NSArray arrayWithObjects:allAppsRow,nil];
+      _dataSource = ((NSArray<NSTableViewDataSource>*)[NSArray arrayWithObjects:allAppsRow, nil]);
       
       _appsManager = [[TGEVE_AppsManagerAmazon alloc] init];
     }
@@ -77,37 +79,5 @@ NSString * const KNavigationColumn = @"NavigationColumn";
     [_delegate viewSelectionDidChanged:[theRow valueForKey:@"Class"] :[theRow valueForKey:@"NibName"] :[theRow valueForKey:@"model"]];
   }
 }
-
-//- (NSDragOperation)tableView:(NSTableView*)tv validateDrop:(id <NSDraggingInfo>)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)op {
-//  // Add code here to validate the drop
-//  if (row <= [_navigationTableView numberOfRows] -1
-//      && op == NSTableViewDropOn) {
-//    return NSDragOperationEvery;
-//  }
-//  return NSDragOperationNone;
-//}
-//
-//- (BOOL)tableView:(NSTableView*)tv acceptDrop:(id <NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)op {
-//  
-//  NSPasteboard *pboard = [info draggingPasteboard];
-//  NSString *moduleIDsString = [pboard stringForType:NSPasteboardTypeString];
-//  NSArray *moduleIDArray = [moduleIDsString componentsSeparatedByString:@"\n"];
-//  
-//  if ([[_dataSource objectAtIndex:row] valueForKey:KNavigationColumn] == kInstalledRowHeader) {
-//      [_appsManager addAppsFromArray:moduleIDArray];
-//  } else if ([[_dataSource objectAtIndex:row] valueForKey:KNavigationColumn] == kNotInstalledRowHeader) {
-//      [_appsManager removeAppsFromArray:moduleIDArray];
-//  }
-//    
-//    [[NSNotificationCenter defaultCenter] postNotificationName:kEVENotificationsRemoveDropedLinesFromTable object:nil];
-//    
-//	return YES;
-//}
-//
-//// to stub method in unit tests
-//- (NSPasteboard*) getDragPasteboard :(id <NSDraggingInfo>)info {
-//  return  [info draggingPasteboard];
-//}
-
 
 @end

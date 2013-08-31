@@ -11,7 +11,6 @@
 
 @interface TGEVE_AppsUpdateTimer : NSObject <TGEVE_ITimer>
 
-@property (strong) NSWindowController *windowController;
 // TODO only for unit test
 - (NSTimer*)createTheTimer:(NSInteger)interval;
 

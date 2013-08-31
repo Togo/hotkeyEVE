@@ -109,7 +109,7 @@ return nil;
 }
 
 - (BOOL) isAppInstalled :(NSString*) moduleID {
-  return [_appModuleTable isAppInstalledWithModuleID:moduleID];
+  return [_appModuleTable isAppInstalledWithModuleID :moduleID];
 }
 
 @end

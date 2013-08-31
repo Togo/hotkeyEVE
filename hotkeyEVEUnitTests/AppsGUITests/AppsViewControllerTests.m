@@ -8,7 +8,7 @@
 
 #import "AppsViewControllerTests.h"
 #import <OCMock/OCMock.h>
-#import "AppsTableViewController.h"
+#import "TGEVE_AllAppsViewController.h"
 #import "TGEVE_AppsWindowViewController.h"
 #import "TGEVE_AppsWindowWindowController.h"
 #import "AppsTableNavigationViewController.h"
@@ -45,7 +45,7 @@
 //************************* awakeFromNib *************************//
 - (void) test_awakeFromNib_contollerAllocated_callViewSelectiondDidChangeWithInstalledAppsView {
   id appsViewControllerMock = [OCMockObject partialMockForObject:_appsViewController];
-  [[appsViewControllerMock expect] viewSelectionDidChanged :[AppsTableViewController class] :kAppsTableViewControllerNibName :[TGEVE_AppsManagerAmazon class]];
+  [[appsViewControllerMock expect] viewSelectionDidChanged :[TGEVE_AllAppsViewController class] :kAppsTableViewControllerNibName :[TGEVE_AppsManagerAmazon class]];
   
   [_appsViewController awakeFromNib];
   
@@ -81,13 +81,13 @@
 - (void) test_viewSelectionDidChanged_allScenarios_addNewViewToTheMainContentView {
   [_appsViewController setMainContentViewController:nil];
   
-  [_appsViewController viewSelectionDidChanged:[AppsTableViewController class] :kAppsTableViewControllerNibName :[AppsManagerMock class]];
+  [_appsViewController viewSelectionDidChanged:[TGEVE_AllAppsViewController class] :kAppsTableViewControllerNibName :[AppsManagerMock class]];
   
   STAssertTrue([[[_appsViewController mainContentView] subviews] count] == 1, @"");
 }
 
 - (void) test_viewSelectiondDidChanged_allScenarios_setTheFrameOfSubviewToMainViewFrameBounds {
-  [_appsViewController viewSelectionDidChanged:[AppsTableViewController class] :kAppsTableViewControllerNibName :[AppsManagerMock class]];
+  [_appsViewController viewSelectionDidChanged:[TGEVE_AllAppsViewController class] :kAppsTableViewControllerNibName :[AppsManagerMock class]];
   
   NSRect returnValue = [[[_appsViewController mainContentViewController] view] frame];
   NSRect expectedValue = [[_appsViewController mainContentView] bounds];
@@ -96,7 +96,7 @@
 }
 
 - (void) test_viewSelectiondDidChanged_allScenarios_setSubviewToWitdhAndHeightResiziable {
-  [_appsViewController viewSelectionDidChanged:[AppsTableViewController class] :kAppsTableViewControllerNibName :[AppsManagerMock class]];
+  [_appsViewController viewSelectionDidChanged:[TGEVE_AllAppsViewController class] :kAppsTableViewControllerNibName :[AppsManagerMock class]];
   NSInteger autoresizMask = NSViewWidthSizable|NSViewHeightSizable;
   STAssertTrue([[[_appsViewController mainContentViewController] view] autoresizingMask] == autoresizMask , @"");
 }

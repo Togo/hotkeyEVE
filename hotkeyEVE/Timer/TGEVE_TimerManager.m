@@ -22,18 +22,19 @@
 }
 
 + (id)sharedTimerManager {
+  DDLogInfo(@"TGEVE_TimerManager -> sharedTimerManager() :: get called ");
   static TGEVE_TimerManager *timerManager = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     timerManager = [[self alloc] init];
   });
-  
   return timerManager;
 }
 
 
 - (id<TGEVE_ITimer>) createTimer :(id) class andInterval :(NSInteger) interval {
- return [class timerWithIntervall:interval];;
+ DDLogInfo(@"TGEVE_TimerManager -> createTimer(class :%@:, interval :%li:) :: get called ",class,interval);
+ return [class timerWithIntervall:interval];
 }
 
 @end

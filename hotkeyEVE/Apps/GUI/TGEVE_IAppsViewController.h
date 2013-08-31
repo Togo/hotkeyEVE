@@ -10,7 +10,7 @@
 #import "TGEVE_IAppsManager.h"
 #import <Objc-Util/Objc_Util.h>
 
-@protocol IAppsTableViewController <NSObject>
+@protocol TGEVE_IAppsViewController <NSObject>
 
 @property (strong) id<TGEVE_IAppsManager> appsManager;
 //@property (strong) NSAlert *alertController;
