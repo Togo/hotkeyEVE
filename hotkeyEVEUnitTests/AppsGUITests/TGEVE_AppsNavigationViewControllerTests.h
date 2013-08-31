@@ -8,10 +8,10 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@class AppsTableNavigationViewController;
+@class TGEVE_AppsNavigationViewController;
 
-@interface AppsTableNavigationViewControllerTests : SenTestCase {
-  AppsTableNavigationViewController *_tableNavController;
+@interface TGEVE_AppsNavigationViewControllerTests : SenTestCase {
+  TGEVE_AppsNavigationViewController *_tableNavController;
   
   @private
     NSTableView *_tableView;

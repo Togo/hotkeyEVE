@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Tobias Sommer. All rights reserved.
 //
 
-#import "AppsTableViewControllerTests.h"
+#import "TGEVE_AllAppsViewControllerTests.h"
 #import <AppsLibrary/AppsLibrary.h>
 #import <OCMock/OCMock.h>
 #import "TGEVE_IAppsManager.h"
@@ -14,14 +14,14 @@
 #import "GUINotifications.h"
 #import <Objc-Util/Objc_Util.h>
 #import "AppModuleTableModel.h"
+#import "TGEVE_AppsNavigationViewController.h"
 
-
-@implementation AppsTableViewControllerTests
+@implementation TGEVE_AllAppsViewControllerTests
 
 - (void)setUp
 {
   [super setUp];
-  _appsNotInstalledController = [[TGEVE_AllAppsViewController alloc] initWithNibName:kAppsTableViewControllerNibName bundle:nil];
+  _appsNotInstalledController = [[TGEVE_AllAppsViewController alloc] initWithNibName:TGEVE_CONST_APPS_TABLE_VIEW_NIB_NAME bundle:nil];
   
   
   _tableView = [[NSTableView alloc] init];
@@ -284,20 +284,5 @@
   
   return rows;
 }
-//************************* loadTableData *************************//
-//- (void) test_loadTableData_returnedArrayContainsAString_showInfoMessage {
-//
-//  NSString *errorMessage = @"error Message";
-//  id  appsManagerMock = [OCMockObject niceMockForProtocol:@protocol(TGEVE_IAppsManager)];
-//  [[appsManagerMock stub] andReturn:[NSArray arrayWithObject:errorMessage]];
-//  
-//  id alertMock = [OCMockObject mockForClass:[NSAlert class]];
-//  [_appsNotInstalledController setAppsManager:appsManagerMock];
-//  [_appsNotInstalledController setAlertController :alertMock];
-//  
-//  [[alertMock expect] showModalAlertSheetForWindow:OCMOCK_ANY message:OCMOCK_ANY informativeText:OCMOCK_ANY alertStyle:0 buttonBlocks:nil buttonTitle:@"Oki, doki", nil];
-//  [_appsNotInstalledController loadTableData];
-//
-//  [alertMock verify];
-//  }
+
 @end

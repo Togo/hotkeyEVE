@@ -9,7 +9,7 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import "TGEVE_AllAppsViewController.h"
 
-@interface AppsTableViewControllerTests : SenTestCase {
+@interface TGEVE_AllAppsViewControllerTests : SenTestCase {
   TGEVE_AllAppsViewController *_appsNotInstalledController;
   
   @private

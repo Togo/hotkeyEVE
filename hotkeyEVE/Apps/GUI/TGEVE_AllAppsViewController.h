@@ -9,8 +9,6 @@
 #import <Cocoa/Cocoa.h>
 #import "TGEVE_IAppsViewController.h"
 
-extern NSString * const kAppsTableViewControllerNibName;
-
 @interface TGEVE_AllAppsViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate, TGEVE_IAppsViewController> {
 
 }

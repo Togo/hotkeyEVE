@@ -6,20 +6,21 @@
 //  Copyright (c) 2013 Tobias Sommer. All rights reserved.
 //
 
-#import "AppsTableNavigationViewControllerTests.h"
-#import "AppsTableNavigationViewController.h"
+#import "TGEVE_AppsNavigationViewControllerTests.h"
+#import "TGEVE_AppsNavigationViewController.h"
 #import <OCMock/OCMock.h>
 #import "TGEVE_AllAppsViewController.h"
 #import "TGEVE_AppsManagerAmazon.h"
 #import "AppsManagerLocalDB.h"
+#import "TGEVE_UpdatableAppsViewController.h"
 
-@implementation AppsTableNavigationViewControllerTests
+@implementation TGEVE_AppsNavigationViewControllerTests
 
 - (void)setUp
 {
   [super setUp];
   
-  _tableNavController = [[AppsTableNavigationViewController alloc] initWithNibName:kAppsTableNavigationViewControllerNibName bundle:nil];
+  _tableNavController = [[TGEVE_AppsNavigationViewController alloc] initWithNibName:TGEVE_CONST_APPS_TABLE_NAVIGATION_NIB_NAME bundle:nil];
   
   _tableView = [[NSTableView alloc] init];
   [_tableNavController setNavigationTableView:_tableView];
@@ -44,46 +45,6 @@
   STAssertNotNil([_tableNavController appsManager]  , @"");
 }
 
-//- (void) test_initWithNibName_dataSourceInstalledRow_dataSourceContainsRowWithInstalledColumn {
-//  NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:0] valueForKey:@"NavigationColumn"];
-//  STAssertTrue([returnValue isEqualToString:@"All Apps"], @"");
-//}
-//
-//- (void) test_initWithNibName_dataSourceInstalledRow_dataSourceContainsRowWithAppsTableViewNibName {
-//  NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:0] valueForKey:@"NibName"];
-//  STAssertTrue([returnValue isEqualToString:kAppsTableViewControllerNibName], @"");
-//}
-//
-//- (void) test_initWithNibName_dataSourceInstalledRow_dataSourceContainsRowWithAppsTableViewClass {
-//  NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:0] valueForKey:@"Class"];
-//  STAssertTrue([returnValue isEqualTo:[AppsTableViewController class]], @"");
-//}
-//
-//- (void) test_initWithNibName_dataSourceInstalledRow_dataSourceContainsRowWithLocalDBModel {
-//  NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:0] valueForKey:@"model"];
-//  STAssertTrue([returnValue isEqualTo:[AppsManagerAmazon class]], @"");
-//}
-//
-//- (void) test_initWithNibName_dataSourceNotInstalledRow_dataSourceContainsRowWithNotInstalledColumn {
-//  NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:1] valueForKey:@"NavigationColumn"];
-//  STAssertTrue([returnValue isEqualToString:@"Not Installed"], @"");
-//}
-//
-//- (void) test_initWithNibName_dataSourceNotInstalledRow_dataSourceContainsRowWithAppsTableViewViewNibName {
-//  NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:1] valueForKey:@"NibName"];
-//  STAssertTrue([returnValue isEqualToString:kAppsTableViewControllerNibName], @"");
-//}
-
-//- (void) test_initWithNibName_dataSourceInstalledRow_dataSourceContainsRowWithAppsTableViewClassw {
-//  NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:1] valueForKey:@"Class"];
-//  STAssertTrue([returnValue isEqualTo:[AppsTableViewController class]], @"");
-//}
-//
-//- (void) test_initWithNibName_dataSourceInstalledRow_dataSourceContainsRowWithAppsAmazonModel {
-//  NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:1] valueForKey:@"model"];
-//  STAssertTrue([returnValue isEqualTo:[AppsManagerAmazon class]], @"");
-//}
-
 - (void) test_initWithNibName_dataSourceAllAppsRow_dataSourceContainsRowAllAppsColumn {
   NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:0] valueForKey:@"NavigationColumn"];
   STAssertTrue([returnValue isEqualToString:@"All Apps"], @"");
@@ -91,12 +52,12 @@
 
 - (void) test_initWithNibName_dataSourceAllAppsRow_dataSourceContainsRowWithAppsTableViewNibName {
   NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:0] valueForKey:@"NibName"];
-  STAssertTrue([returnValue isEqualToString:kAppsTableViewControllerNibName], @"");
+  STAssertTrue([returnValue isEqualToString:TGEVE_CONST_APPS_TABLE_VIEW_NIB_NAME], @"");
 }
 
 - (void) test_initWithNibName_dataSourceAllAppsRow_dataSourceContainsRowWithAppsTableViewClass {
   NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:0] valueForKey:@"Class"];
-  STAssertTrue([returnValue isEqualTo:[AppsTableViewController class]], @"");
+  STAssertTrue([returnValue isEqualTo:[TGEVE_AllAppsViewController class]], @"");
 }
 
 - (void) test_initWithNibName_dataSourceAllAppsRow_dataSourceContainsRowWithAmazonModel {
@@ -104,8 +65,32 @@
   STAssertTrue([returnValue isEqualTo:[TGEVE_AppsManagerAmazon class]], @"");
 }
 
-//************************* loadView *************************//
+- (void) test_initWithNibName_dataSourceAllAppsRow_dataSourceContainsRowUpdatableAppsColumn {
+  NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:1] valueForKey:@"NavigationColumn"];
+  STAssertTrue([returnValue isEqualToString:@"Updatable Apps"], @"");
+}
 
+- (void) test_initWithNibName_dataSourceUpdatabaleAppsRow_dataSourceContainsRowWithAppsTableViewNibName {
+  NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:1] valueForKey:@"NibName"];
+  STAssertTrue([returnValue isEqualToString:TGEVE_CONST_APPS_UPDATABLE_NIB_NAME], @"");
+}
+
+- (void) test_initWithNibName_dataSourceUpdatableAppsRow_dataSourceContainsRowWithUpdatableAppsViewNibName {
+  NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:1] valueForKey:@"NibName"];
+  STAssertTrue([returnValue isEqualToString:TGEVE_CONST_APPS_UPDATABLE_NIB_NAME], @"");
+}
+
+- (void) test_initWithNibName_dataSourceUpdatableAppsRow_dataSourceContainsRowWithUpdatableAppsViewClass {
+  NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:1] valueForKey:@"Class"];
+  STAssertTrue([returnValue isEqualTo:[TGEVE_UpdatableAppsViewController class]], @"");
+}
+
+- (void) test_initWithNibName_dataSourceUpdatableAppsRow_dataSourceContainsRowWithAmazonModel {
+  NSString *returnValue = [[[_tableNavController dataSource] objectAtIndex:1] valueForKey:@"model"];
+  STAssertTrue([returnValue isEqualTo:[TGEVE_AppsManagerAmazon class]], @"");
+}
+
+//************************* loadView *************************//
 
 //************************* objectValueForTableColumn *************************//
 - (void) test_objectValueForTableColumn_rowSelected_returnNavigationColumnValue {
@@ -125,7 +110,7 @@
   id navigationDelegateMock = [OCMockObject niceMockForProtocol:@protocol(AppsNavigationDelegate)];
   id expectedViewController = [[[_tableNavController dataSource] objectAtIndex:selectedRow] valueForKey:@"Class"];
   id expectedModelClass = [[[_tableNavController dataSource] objectAtIndex:selectedRow] valueForKey:@"model"];
-  [[navigationDelegateMock expect] viewSelectionDidChanged:expectedViewController :kAppsTableViewControllerNibName :expectedModelClass];
+  [[navigationDelegateMock expect] viewSelectionDidChanged:expectedViewController :TGEVE_CONST_APPS_TABLE_VIEW_NIB_NAME :expectedModelClass];
   
   _tableNavController.delegate = navigationDelegateMock;
   
@@ -142,7 +127,7 @@
   [[[tableViewMock stub] andReturnValue:OCMOCK_VALUE(selectedRow)] selectedRow];
   
   id navigationDelegateMock = [OCMockObject niceMockForProtocol:@protocol(AppsNavigationDelegate)];
-  [[navigationDelegateMock reject] viewSelectionDidChanged:[OCMArg any] :kAppsTableViewControllerNibName :[OCMArg any]];
+  [[navigationDelegateMock reject] viewSelectionDidChanged:[OCMArg any] :TGEVE_CONST_APPS_TABLE_VIEW_NIB_NAME :[OCMArg any]];
   
   _tableNavController.delegate = navigationDelegateMock;
   
@@ -170,68 +155,20 @@
   [navigationTableColumnMock verify];
 }
 
-//
-//- (void) test_awakeFromNib_allSecenarios_registerForDragAndDrop  {
-//  id tableViewMock = [OCMockObject partialMockForObject:[_tableNavController navigationTableView]];
-//  [[tableViewMock expect] registerForDraggedTypes:OCMOCK_ANY];
-//  
-//  [_tableNavController awakeFromNib];
-//  
-//  [tableViewMock verify];
-//}
 
-////************************* validateDrop *************************//
-//- (void) test_validateDrop_dropRowInRowCountAndOnRow_allOperationAllowed {
-//  id tableViewMock = [OCMockObject partialMockForObject:[_tableNavController navigationTableView]];
-//  NSInteger rowNumbers = 2;
-//  [[[tableViewMock stub] andReturnValue:OCMOCK_VALUE(rowNumbers)] numberOfRows];
-//  
-//  NSInteger  expectedValue = [_tableNavController tableView:_tableView validateDrop:nil proposedRow:1 proposedDropOperation:NSTableViewDropOn];
-//  
-//  STAssertTrue(expectedValue == NSDragOperationEvery, @"");
-//}
-//
-//- (void) test_validateDrop_dropRowNotInRowCountAndOnRow_noOperationAllowed {
-//  id tableViewMock = [OCMockObject partialMockForObject:[_tableNavController navigationTableView]];
-//  NSInteger rowNumbers = 0;
-//  [[[tableViewMock stub] andReturnValue:OCMOCK_VALUE(rowNumbers)] numberOfRows];
-//  
-//  NSInteger  expectedValue = [_tableNavController tableView:_tableView validateDrop:nil proposedRow:2 proposedDropOperation:NSTableViewDropOn];
-//  
-//  STAssertTrue(expectedValue == NSDragOperationNone, @"");
-//}
-//
-//- (void) test_validateDrop_dropRowInRowCountAndAboveRow_noOperationAllowed {
-//  id tableViewMock = [OCMockObject partialMockForObject:[_tableNavController navigationTableView]];
-//  NSInteger rowNumbers = 4;
-//  [[[tableViewMock stub] andReturnValue:OCMOCK_VALUE(rowNumbers)] numberOfRows];
-//  
-//  NSInteger  expectedValue = [_tableNavController tableView:_tableView validateDrop:nil proposedRow:2 proposedDropOperation:NSTableViewDropAbove];
-//  
-//  STAssertTrue(expectedValue == NSDragOperationNone, @"");
-//}
-//
-////************************* acceptDrop *************************//
-//- (void) test_acceptDrop_pasteBoardDropZoneInstallRow_callAppManagerToInstallAppWithArray {
-//  id appsManagerMock = [OCMockObject mockForClass:[AppsManagerAmazon class]];
-//  [[appsManagerMock expect] addAppsFromArray:OCMOCK_ANY];
-//  
-//  [_tableNavController setAppsManager:appsManagerMock];
-//  
-//  [_tableNavController tableView:nil acceptDrop:nil row:0 dropOperation:NSDragOperationEvery];
-//  
-//  [appsManagerMock verify];
-//}
-//
-//- (void) test_acceptDrop_pasteBoardDropZoneInstallRow_callAppManagerUnInstallAppsFromArray {
-//  id appsManagerMock = [OCMockObject mockForClass:[AppsManagerAmazon class]];
-//  [[appsManagerMock expect] removeAppsFromArray:OCMOCK_ANY];
-//  
-//  [_tableNavController setAppsManager:appsManagerMock];
-//  
-//  [_tableNavController tableView:nil acceptDrop:nil row:1 dropOperation:NSDragOperationEvery];
-//  
-//  [appsManagerMock verify];
-//}
+//***************************  TGEVE_CONST_APPS_TABLE_VIEW_NIB_NAME ***************************//
+- (void) test_constant_allScenarios_rightTableViewControllerNibName {
+  STAssertTrue([TGEVE_CONST_APPS_TABLE_VIEW_NIB_NAME isEqualToString:@"TGEVE_AllAppsViewController"], @"");
+}
+
+//***************************  TGEVE_CONST_APPS_UPDATABLE_NIB_NAME ***************************//
+- (void) test_constant_allScenarios_rightUpdatableAppsControllerNibName {
+  STAssertTrue([TGEVE_CONST_APPS_UPDATABLE_NIB_NAME isEqualToString:@"TGEVE_UpdatableAppsViewController"], @"");
+}
+
+//***************************  TGEVE_CONST_APPS_TABLE_NAVIGATION_NIB_NAME ***************************//
+- (void) test_constant_allScenarios_rightTableNavigationControllerNibName {
+  STAssertTrue([TGEVE_CONST_APPS_TABLE_NAVIGATION_NIB_NAME isEqualToString:@"AppsTableNavigationViewController"], @"");
+}
 
 @end

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AppsNavigationDelegate.h"
 #import "AppsNavigationViewController.h"
-#import "IAppsTableViewController.h"
+#import "TGEVE_IAppsViewController.h"
 
 @interface TGEVE_AppsWindowViewController : NSObject <AppsNavigationDelegate>
 

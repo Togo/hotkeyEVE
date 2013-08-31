@@ -6,24 +6,26 @@
 //  Copyright (c) 2013 Tobias Sommer. All rights reserved.
 //
 
-#import "AppsTableNavigationViewController.h"
+#import "TGEVE_AppsNavigationViewController.h"
 #import "TGEVE_AllAppsViewController.h"
 #import "TGEVE_AppsManagerAmazon.h"
 #import "AppsManagerLocalDB.h"
+#import "TGEVE_UpdatableAppsViewController.h"
 
-NSString * const kAppsTableNavigationViewControllerNibName = @"AppsTableNavigationViewController";
+NSString * const TGEVE_CONST_APPS_TABLE_NAVIGATION_NIB_NAME = @"AppsTableNavigationViewController";
+NSString * const TGEVE_CONST_APPS_TABLE_VIEW_NIB_NAME = @"TGEVE_AllAppsViewController";
+NSString * const TGEVE_CONST_APPS_UPDATABLE_NIB_NAME = @"TGEVE_UpdatableAppsViewController";
 
 NSString * const TGEVE_CONST_ALLAPPS_HEADER = @"All Apps";
-NSString * const kInstalledRowHeader = @"Installed";
-NSString * const kNotInstalledRowHeader = @"Not Installed";
+NSString * const TGEVE_CONST_UPDATABLEAPPS_HEADER = @"Updatable Apps";
 
 NSString * const KNavigationColumn = @"NavigationColumn";
 
-@interface AppsTableNavigationViewController ()
+@interface TGEVE_AppsNavigationViewController ()
 
 @end
 
-@implementation AppsTableNavigationViewController
+@implementation TGEVE_AppsNavigationViewController
 
 @synthesize delegate = _delegate;
 @synthesize appsManager = _appsManager;
@@ -37,14 +39,13 @@ NSString * const KNavigationColumn = @"NavigationColumn";
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-//      NSDictionary *installedRow = [NSDictionary dictionaryWithObjectsAndKeys:kInstalledRowHeader, KNavigationColumn, [AppsTableViewController class],@"Class" ,kAppsTableViewControllerNibName, @"NibName", [AppsManagerLocalDB class], @"model", nil];
-//      NSDictionary *notInstalledRow = [NSDictionary dictionaryWithObjectsAndKeys:kNotInstalledRowHeader, KNavigationColumn, [AppsTableViewController class],@"Class" ,kAppsTableViewControllerNibName, @"NibName", [AppsManagerAmazon class], @"model", nil];
-      
-      NSDictionary *allAppsRow = [NSDictionary dictionaryWithObjectsAndKeys:TGEVE_CONST_ALLAPPS_HEADER, KNavigationColumn, [TGEVE_AllAppsViewController class],@"Class" ,kAppsTableViewControllerNibName, @"NibName", [TGEVE_AppsManagerAmazon class], @"model", nil];
-      
+      NSDictionary *allAppsRow = [NSDictionary dictionaryWithObjectsAndKeys:TGEVE_CONST_ALLAPPS_HEADER, KNavigationColumn, [TGEVE_AllAppsViewController class],@"Class" ,TGEVE_CONST_APPS_TABLE_VIEW_NIB_NAME, @"NibName", [TGEVE_AppsManagerAmazon class], @"model", nil];
+
+      NSDictionary *updatableAppsRow = [NSDictionary dictionaryWithObjectsAndKeys:TGEVE_CONST_UPDATABLEAPPS_HEADER, KNavigationColumn, [TGEVE_UpdatableAppsViewController class],@"Class" ,TGEVE_CONST_APPS_UPDATABLE_NIB_NAME, @"NibName", [TGEVE_AppsManagerAmazon class], @"model", nil];
+
       
 
-      _dataSource = ((NSArray<NSTableViewDataSource>*)[NSArray arrayWithObjects:allAppsRow, nil]);
+      _dataSource = ((NSArray<NSTableViewDataSource>*)[NSArray arrayWithObjects:allAppsRow, updatableAppsRow,nil]);
       
       _appsManager = [[TGEVE_AppsManagerAmazon alloc] init];
     }
@@ -59,8 +60,6 @@ NSString * const KNavigationColumn = @"NavigationColumn";
 -(void)awakeFromNib {
   [_navigationTableView selectRowIndexes:[NSIndexSet indexSetWithIndex:0] byExtendingSelection:NO];
   [_navigationTableColumn setEditable:NO];
-  
-//  [_navigationTableView registerForDraggedTypes:[NSArray arrayWithObjects: NSPasteboardTypeString , nil]];
 }
 
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {

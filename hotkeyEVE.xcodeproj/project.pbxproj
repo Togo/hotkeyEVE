@@ -85,8 +85,8 @@
 		CD845A0716A0C493007717CB /* TGEVE_AppsWindowWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A0516A0C493007717CB /* TGEVE_AppsWindowWindowController.m */; };
 		CD845A0816A0C493007717CB /* TGEVE_AppsWindowWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A0616A0C493007717CB /* TGEVE_AppsWindowWindowController.xib */; };
 		CD845A0B16A0C8B1007717CB /* TGEVE_AppsWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A0A16A0C8B1007717CB /* TGEVE_AppsWindowViewController.m */; };
-		CD845A0F16A0C8ED007717CB /* AppsTableNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A0D16A0C8ED007717CB /* AppsTableNavigationViewController.m */; };
-		CD845A1016A0C8ED007717CB /* AppsTableNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A0E16A0C8ED007717CB /* AppsTableNavigationViewController.xib */; };
+		CD845A0F16A0C8ED007717CB /* TGEVE_AppsNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A0D16A0C8ED007717CB /* TGEVE_AppsNavigationViewController.m */; };
+		CD845A1016A0C8ED007717CB /* TGEVE_AppsNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A0E16A0C8ED007717CB /* TGEVE_AppsNavigationViewController.xib */; };
 		CD845A1916A0C937007717CB /* TGEVE_AllAppsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A1716A0C937007717CB /* TGEVE_AllAppsViewController.m */; };
 		CD845A1A16A0C937007717CB /* TGEVE_AllAppsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD845A1816A0C937007717CB /* TGEVE_AllAppsViewController.xib */; };
 		CD845A2616A15B98007717CB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7701645393400A9C7D8 /* SenTestingKit.framework */; };
@@ -95,7 +95,7 @@
 		CD845A3016A15B98007717CB /* hotkeyEVEUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A2F16A15B98007717CB /* hotkeyEVEUnitTests.m */; };
 		CD845A3716A15BDA007717CB /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8459F816A0AAF4007717CB /* OCMock.framework */; };
 		CD845A3916A15BE2007717CB /* OCMock.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD8459F816A0AAF4007717CB /* OCMock.framework */; };
-		CD845A4216A161F1007717CB /* AppsTableNavigationViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A3B16A15CB0007717CB /* AppsTableNavigationViewControllerTests.m */; };
+		CD845A4216A161F1007717CB /* TGEVE_AppsNavigationViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A3B16A15CB0007717CB /* TGEVE_AppsNavigationViewControllerTests.m */; };
 		CD845A4516A16D89007717CB /* AppsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD845A4416A16D89007717CB /* AppsViewControllerTests.m */; };
 		CD84B78A1658CB5500DF227B /* MigrationsV1_3_1.m in Sources */ = {isa = PBXBuildFile; fileRef = CD84B7891658CB5500DF227B /* MigrationsV1_3_1.m */; };
 		CD84B78C1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD84B78B1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql */; };
@@ -134,7 +134,7 @@
 		CDEE1573164B03FF00EDCDF4 /* Licence.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1572164B03FF00EDCDF4 /* Licence.m */; };
 		CDEE1576164B04F100EDCDF4 /* NSString+Hashes.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1575164B04F000EDCDF4 /* NSString+Hashes.m */; };
 		CDEEC360172BE4B100E606C4 /* TGEVE_AppsManagerAmazonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEEC35F172BE4B100E606C4 /* TGEVE_AppsManagerAmazonTests.m */; };
-		CDF174A416A5E6EE0047C56E /* AppsTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF174A316A5E6EE0047C56E /* AppsTableViewControllerTests.m */; };
+		CDF174A416A5E6EE0047C56E /* TGEVE_AllAppsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF174A316A5E6EE0047C56E /* TGEVE_AllAppsViewControllerTests.m */; };
 		CDF656E616B0403500A0FEC4 /* AppsManagerLocalDB.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF656E516B0403500A0FEC4 /* AppsManagerLocalDB.m */; };
 		CDF656EA16B0493200A0FEC4 /* AppsManagerMock.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF656E916B0493200A0FEC4 /* AppsManagerMock.m */; };
 		CDF656ED16B04B3C00A0FEC4 /* TGEVE_AppsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF656EC16B04B3C00A0FEC4 /* TGEVE_AppsManager.m */; };
@@ -399,9 +399,9 @@
 		CD845A0616A0C493007717CB /* TGEVE_AppsWindowWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TGEVE_AppsWindowWindowController.xib; path = Apps/GUI/TGEVE_AppsWindowWindowController.xib; sourceTree = "<group>"; };
 		CD845A0916A0C8B1007717CB /* TGEVE_AppsWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_AppsWindowViewController.h; path = Apps/GUI/TGEVE_AppsWindowViewController.h; sourceTree = "<group>"; };
 		CD845A0A16A0C8B1007717CB /* TGEVE_AppsWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_AppsWindowViewController.m; path = Apps/GUI/TGEVE_AppsWindowViewController.m; sourceTree = "<group>"; };
-		CD845A0C16A0C8ED007717CB /* AppsTableNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsTableNavigationViewController.h; path = Apps/GUI/AppsTableNavigationViewController.h; sourceTree = "<group>"; };
-		CD845A0D16A0C8ED007717CB /* AppsTableNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsTableNavigationViewController.m; path = Apps/GUI/AppsTableNavigationViewController.m; sourceTree = "<group>"; };
-		CD845A0E16A0C8ED007717CB /* AppsTableNavigationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppsTableNavigationViewController.xib; path = Apps/GUI/AppsTableNavigationViewController.xib; sourceTree = "<group>"; };
+		CD845A0C16A0C8ED007717CB /* TGEVE_AppsNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_AppsNavigationViewController.h; path = Apps/GUI/TGEVE_AppsNavigationViewController.h; sourceTree = "<group>"; };
+		CD845A0D16A0C8ED007717CB /* TGEVE_AppsNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_AppsNavigationViewController.m; path = Apps/GUI/TGEVE_AppsNavigationViewController.m; sourceTree = "<group>"; };
+		CD845A0E16A0C8ED007717CB /* TGEVE_AppsNavigationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TGEVE_AppsNavigationViewController.xib; path = Apps/GUI/TGEVE_AppsNavigationViewController.xib; sourceTree = "<group>"; };
 		CD845A1616A0C936007717CB /* TGEVE_AllAppsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_AllAppsViewController.h; path = Apps/GUI/TGEVE_AllAppsViewController.h; sourceTree = "<group>"; };
 		CD845A1716A0C937007717CB /* TGEVE_AllAppsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_AllAppsViewController.m; path = Apps/GUI/TGEVE_AllAppsViewController.m; sourceTree = "<group>"; };
 		CD845A1816A0C937007717CB /* TGEVE_AllAppsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TGEVE_AllAppsViewController.xib; path = Apps/GUI/TGEVE_AllAppsViewController.xib; sourceTree = "<group>"; };
@@ -412,8 +412,8 @@
 		CD845A2E16A15B98007717CB /* hotkeyEVEUnitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hotkeyEVEUnitTests.h; sourceTree = "<group>"; };
 		CD845A2F16A15B98007717CB /* hotkeyEVEUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hotkeyEVEUnitTests.m; sourceTree = "<group>"; };
 		CD845A3116A15B98007717CB /* hotkeyEVEUnitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hotkeyEVEUnitTests-Prefix.pch"; sourceTree = "<group>"; };
-		CD845A3A16A15CB0007717CB /* AppsTableNavigationViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsTableNavigationViewControllerTests.h; path = AppsGUITests/AppsTableNavigationViewControllerTests.h; sourceTree = "<group>"; };
-		CD845A3B16A15CB0007717CB /* AppsTableNavigationViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsTableNavigationViewControllerTests.m; path = AppsGUITests/AppsTableNavigationViewControllerTests.m; sourceTree = "<group>"; };
+		CD845A3A16A15CB0007717CB /* TGEVE_AppsNavigationViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_AppsNavigationViewControllerTests.h; path = AppsGUITests/TGEVE_AppsNavigationViewControllerTests.h; sourceTree = "<group>"; };
+		CD845A3B16A15CB0007717CB /* TGEVE_AppsNavigationViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_AppsNavigationViewControllerTests.m; path = AppsGUITests/TGEVE_AppsNavigationViewControllerTests.m; sourceTree = "<group>"; };
 		CD845A4316A16D89007717CB /* AppsViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsViewControllerTests.h; path = AppsGUITests/AppsViewControllerTests.h; sourceTree = "<group>"; };
 		CD845A4416A16D89007717CB /* AppsViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsViewControllerTests.m; path = AppsGUITests/AppsViewControllerTests.m; sourceTree = "<group>"; };
 		CD84B7881658CB5500DF227B /* MigrationsV1_3_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationsV1_3_1.h; path = Database/Migrations/MigrationsV1_3_1.h; sourceTree = "<group>"; };
@@ -487,8 +487,8 @@
 		CDEE1575164B04F000EDCDF4 /* NSString+Hashes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Hashes.m"; path = "Utilities/NSString+Hashes.m"; sourceTree = "<group>"; };
 		CDEEC35E172BE4B100E606C4 /* TGEVE_AppsManagerAmazonTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGEVE_AppsManagerAmazonTests.h; sourceTree = "<group>"; };
 		CDEEC35F172BE4B100E606C4 /* TGEVE_AppsManagerAmazonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGEVE_AppsManagerAmazonTests.m; sourceTree = "<group>"; };
-		CDF174A216A5E6ED0047C56E /* AppsTableViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsTableViewControllerTests.h; path = AppsGUITests/AppsTableViewControllerTests.h; sourceTree = "<group>"; };
-		CDF174A316A5E6EE0047C56E /* AppsTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsTableViewControllerTests.m; path = AppsGUITests/AppsTableViewControllerTests.m; sourceTree = "<group>"; };
+		CDF174A216A5E6ED0047C56E /* TGEVE_AllAppsViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_AllAppsViewControllerTests.h; path = AppsGUITests/TGEVE_AllAppsViewControllerTests.h; sourceTree = "<group>"; };
+		CDF174A316A5E6EE0047C56E /* TGEVE_AllAppsViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_AllAppsViewControllerTests.m; path = AppsGUITests/TGEVE_AllAppsViewControllerTests.m; sourceTree = "<group>"; };
 		CDF656E416B0403500A0FEC4 /* AppsManagerLocalDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsManagerLocalDB.h; path = Apps/Model/AppsManagerLocalDB.h; sourceTree = "<group>"; };
 		CDF656E516B0403500A0FEC4 /* AppsManagerLocalDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsManagerLocalDB.m; path = Apps/Model/AppsManagerLocalDB.m; sourceTree = "<group>"; };
 		CDF656E716B0444B00A0FEC4 /* TGEVE_IAppsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TGEVE_IAppsViewController.h; path = Apps/GUI/TGEVE_IAppsViewController.h; sourceTree = "<group>"; };
@@ -941,9 +941,9 @@
 				CDE3015416A2F2B300E8D489 /* AppsNavigationView.h */,
 				CDE3015516A2FB6A00E8D489 /* AppsNavigationViewController.h */,
 				CDE3015616A2FB6B00E8D489 /* AppsNavigationViewController.m */,
-				CD845A0C16A0C8ED007717CB /* AppsTableNavigationViewController.h */,
-				CD845A0D16A0C8ED007717CB /* AppsTableNavigationViewController.m */,
-				CD845A0E16A0C8ED007717CB /* AppsTableNavigationViewController.xib */,
+				CD845A0C16A0C8ED007717CB /* TGEVE_AppsNavigationViewController.h */,
+				CD845A0D16A0C8ED007717CB /* TGEVE_AppsNavigationViewController.m */,
+				CD845A0E16A0C8ED007717CB /* TGEVE_AppsNavigationViewController.xib */,
 			);
 			name = GUI/Controller;
 			sourceTree = "<group>";
@@ -979,14 +979,14 @@
 				CDEEC35E172BE4B100E606C4 /* TGEVE_AppsManagerAmazonTests.h */,
 				CDEEC35F172BE4B100E606C4 /* TGEVE_AppsManagerAmazonTests.m */,
 				CDA558B816ADD083008D236E /* Mock Classes */,
-				CD845A3A16A15CB0007717CB /* AppsTableNavigationViewControllerTests.h */,
-				CD845A3B16A15CB0007717CB /* AppsTableNavigationViewControllerTests.m */,
+				CD845A3A16A15CB0007717CB /* TGEVE_AppsNavigationViewControllerTests.h */,
+				CD845A3B16A15CB0007717CB /* TGEVE_AppsNavigationViewControllerTests.m */,
 				CD845A4316A16D89007717CB /* AppsViewControllerTests.h */,
 				CD845A4416A16D89007717CB /* AppsViewControllerTests.m */,
 				CDE3015816A469BC00E8D489 /* TGEVE_AppsWindowWindowControllerTests.h */,
 				CDE3015916A469BC00E8D489 /* TGEVE_AppsWindowWindowControllerTests.m */,
-				CDF174A216A5E6ED0047C56E /* AppsTableViewControllerTests.h */,
-				CDF174A316A5E6EE0047C56E /* AppsTableViewControllerTests.m */,
+				CDF174A216A5E6ED0047C56E /* TGEVE_AllAppsViewControllerTests.h */,
+				CDF174A316A5E6EE0047C56E /* TGEVE_AllAppsViewControllerTests.m */,
 				CDA558B116ADC4E9008D236E /* AppsManagerTests.h */,
 				CDA558B216ADC4E9008D236E /* AppsManagerTests.m */,
 			);
@@ -1327,7 +1327,7 @@
 				CD84B78C1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql in Resources */,
 				CD6A928E1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql in Resources */,
 				CD845A0816A0C493007717CB /* TGEVE_AppsWindowWindowController.xib in Resources */,
-				CD845A1016A0C8ED007717CB /* AppsTableNavigationViewController.xib in Resources */,
+				CD845A1016A0C8ED007717CB /* TGEVE_AppsNavigationViewController.xib in Resources */,
 				CD845A1A16A0C937007717CB /* TGEVE_AllAppsViewController.xib in Resources */,
 				CDC1767916BC2583006C1A74 /* apps_drag_and_drop_overlay.png in Resources */,
 				CD1464F116CB9A65004395D8 /* ALTER_MENU_BAR_ITEMS.sql in Resources */,
@@ -1419,7 +1419,7 @@
 				CD59010D1663BE57000613F7 /* MigrationsV1_3_3.m in Sources */,
 				CD845A0716A0C493007717CB /* TGEVE_AppsWindowWindowController.m in Sources */,
 				CD845A0B16A0C8B1007717CB /* TGEVE_AppsWindowViewController.m in Sources */,
-				CD845A0F16A0C8ED007717CB /* AppsTableNavigationViewController.m in Sources */,
+				CD845A0F16A0C8ED007717CB /* TGEVE_AppsNavigationViewController.m in Sources */,
 				CD845A1916A0C937007717CB /* TGEVE_AllAppsViewController.m in Sources */,
 				CDE3015716A2FB6B00E8D489 /* AppsNavigationViewController.m in Sources */,
 				CDA558AC16AC3653008D236E /* TGEVE_AppsManagerAmazon.m in Sources */,
@@ -1446,10 +1446,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD845A3016A15B98007717CB /* hotkeyEVEUnitTests.m in Sources */,
-				CD845A4216A161F1007717CB /* AppsTableNavigationViewControllerTests.m in Sources */,
+				CD845A4216A161F1007717CB /* TGEVE_AppsNavigationViewControllerTests.m in Sources */,
 				CD845A4516A16D89007717CB /* AppsViewControllerTests.m in Sources */,
 				CDE3015A16A469BC00E8D489 /* TGEVE_AppsWindowWindowControllerTests.m in Sources */,
-				CDF174A416A5E6EE0047C56E /* AppsTableViewControllerTests.m in Sources */,
+				CDF174A416A5E6EE0047C56E /* TGEVE_AllAppsViewControllerTests.m in Sources */,
 				CDA558B316ADC4E9008D236E /* AppsManagerTests.m in Sources */,
 				CDA558B716ADCA2F008D236E /* ReceiveAppModuleMock.m in Sources */,
 				CDA558D216B02981008D236E /* GrowlNotificationTests.m in Sources */,

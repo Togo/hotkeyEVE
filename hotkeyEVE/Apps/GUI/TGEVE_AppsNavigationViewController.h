@@ -10,9 +10,13 @@
 #import "AppsNavigationDelegate.h"
 #import "AppsNavigationViewController.h"
 
-extern NSString * const kAppsTableNavigationViewControllerNibName;
+extern NSString * const TGEVE_CONST_APPS_TABLE_NAVIGATION_NIB_NAME;
 
-@interface AppsTableNavigationViewController : AppsNavigationViewController <NSTableViewDataSource, NSTableViewDelegate> {
+extern NSString * const TGEVE_CONST_APPS_TABLE_VIEW_NIB_NAME;
+extern NSString * const TGEVE_CONST_APPS_UPDATABLE_NIB_NAME;
+
+
+@interface TGEVE_AppsNavigationViewController : AppsNavigationViewController <NSTableViewDataSource, NSTableViewDelegate> {
 }
 
 @property (strong) NSArray<NSTableViewDataSource> *dataSource;

@@ -11,9 +11,6 @@
 #import <AppsLibrary/AppsLibrary.h>
 #import "AppModuleTableModel.h"
 
-NSString * const kAppsTableViewControllerNibName = @"AppsTableViewController";
-
-
 @interface TGEVE_AllAppsViewController ()
 
 @end

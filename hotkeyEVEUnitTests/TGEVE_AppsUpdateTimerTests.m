@@ -53,12 +53,7 @@
 }
 
 //*************************** performTimerAction ***************************//
-- (void) test_performTimerAction_allScenarios_createWindowControllerAndShowWindow {
-  TGEVE_AppsUpdateTimer *updateTimer = [[TGEVE_AppsUpdateTimer alloc] init];
-  [updateTimer performTimerAction];
-  
-  STAssertNotNil([updateTimer windowController], @"");
-}
+
 
 
 @end
