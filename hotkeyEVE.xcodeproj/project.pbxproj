@@ -54,8 +54,6 @@
 		CD5A46D016463E64007B57A5 /* IndexingController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46CF16463E64007B57A5 /* IndexingController.m */; };
 		CD5A46F516464F7E007B57A5 /* EVEObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46F416464F7E007B57A5 /* EVEObserver.m */; };
 		CD6A928E1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD6A928D1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql */; };
-		CD6AD392164BFE9D009FF1B5 /* LicenceWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AD38F164BFE9D009FF1B5 /* LicenceWindow.xib */; };
-		CD6AD395164C047E009FF1B5 /* LicenceWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD394164C047E009FF1B5 /* LicenceWindowController.m */; };
 		CD6AD3BC164C17E9009FF1B5 /* GUIUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD3BB164C17E9009FF1B5 /* GUIUtilities.m */; };
 		CD6AD3E9164CC0F0009FF1B5 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */; };
 		CD6AD3EA164CC178009FF1B5 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */; };
@@ -65,6 +63,7 @@
 		CD6AD401164D893B009FF1B5 /* GUINotifications.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD400164D8939009FF1B5 /* GUINotifications.m */; };
 		CD6ECE2316C0200F00A47985 /* libAppsLibrary.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDE3016C16A4932600E8D489 /* libAppsLibrary.a */; };
 		CD71E4A8165EEB8C00987E09 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD71E4A7165EEB8C00987E09 /* Carbon.framework */; };
+		CD7488871D64F2F700B8D6B4 /* EVE_ICON_STATUS_BAR_ACTIVE_DARK_THEME.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CD7488861D64F2F700B8D6B4 /* EVE_ICON_STATUS_BAR_ACTIVE_DARK_THEME.tiff */; };
 		CD80E7531645393300A9C7D8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD80E7521645393300A9C7D8 /* Cocoa.framework */; };
 		CD80E75D1645393400A9C7D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD80E75B1645393400A9C7D8 /* InfoPlist.strings */; };
 		CD80E75F1645393400A9C7D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD80E75E1645393400A9C7D8 /* main.m */; };
@@ -120,7 +119,6 @@
 		CDEE155D164A9D3200EDCDF4 /* INSERT_GUI_SUPPORT_V1_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDEE155C164A9D3200EDCDF4 /* INSERT_GUI_SUPPORT_V1_0.sql */; };
 		CDEE1560164AB0D400EDCDF4 /* TGEVE_GUIElementsTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE155F164AB0D200EDCDF4 /* TGEVE_GUIElementsTableModel.m */; };
 		CDEE156F164AE38A00EDCDF4 /* INSERT_GUI_ELEMENTS_V1_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDEE156E164AE38A00EDCDF4 /* INSERT_GUI_ELEMENTS_V1_0.sql */; };
-		CDEE1573164B03FF00EDCDF4 /* Licence.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1572164B03FF00EDCDF4 /* Licence.m */; };
 		CDEE1576164B04F100EDCDF4 /* NSString+Hashes.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1575164B04F000EDCDF4 /* NSString+Hashes.m */; };
 		CDEEC360172BE4B100E606C4 /* TGEVE_AppsManagerAmazonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEEC35F172BE4B100E606C4 /* TGEVE_AppsManagerAmazonTests.m */; };
 		CDF174A416A5E6EE0047C56E /* AppsTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF174A316A5E6EE0047C56E /* AppsTableViewControllerTests.m */; };
@@ -331,9 +329,6 @@
 		CD5A46F316464F7E007B57A5 /* EVEObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EVEObserver.h; path = Observer/EVEObserver.h; sourceTree = "<group>"; };
 		CD5A46F416464F7E007B57A5 /* EVEObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EVEObserver.m; path = Observer/EVEObserver.m; sourceTree = "<group>"; };
 		CD6A928D1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_APPLICATION_BLACKLISTV1_3_1.sql; path = "Database/SQL Scripte/INSERT_APPLICATION_BLACKLISTV1_3_1.sql"; sourceTree = "<group>"; };
-		CD6AD38F164BFE9D009FF1B5 /* LicenceWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LicenceWindow.xib; path = GUI/Licence/LicenceWindow.xib; sourceTree = "<group>"; };
-		CD6AD393164C047E009FF1B5 /* LicenceWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LicenceWindowController.h; path = GUI/Licence/LicenceWindowController.h; sourceTree = "<group>"; };
-		CD6AD394164C047E009FF1B5 /* LicenceWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LicenceWindowController.m; path = GUI/Licence/LicenceWindowController.m; sourceTree = "<group>"; };
 		CD6AD3BA164C17E9009FF1B5 /* GUIUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIUtilities.h; sourceTree = "<group>"; };
 		CD6AD3BB164C17E9009FF1B5 /* GUIUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUIUtilities.m; sourceTree = "<group>"; };
 		CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = hotkeyEVE/Frameworks/Sparkle.framework; sourceTree = "<group>"; };
@@ -345,6 +340,7 @@
 		CD6AD3FF164D8937009FF1B5 /* GUINotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUINotifications.h; path = GUI/GUINotifications/GUINotifications.h; sourceTree = "<group>"; };
 		CD6AD400164D8939009FF1B5 /* GUINotifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GUINotifications.m; path = GUI/GUINotifications/GUINotifications.m; sourceTree = "<group>"; };
 		CD71E4A7165EEB8C00987E09 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		CD7488861D64F2F700B8D6B4 /* EVE_ICON_STATUS_BAR_ACTIVE_DARK_THEME.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = EVE_ICON_STATUS_BAR_ACTIVE_DARK_THEME.tiff; sourceTree = "<group>"; };
 		CD80E74E1645393300A9C7D8 /* EVE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD80E7521645393300A9C7D8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CD80E7551645393300A9C7D8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -445,8 +441,6 @@
 		CDEE155E164AB0D100EDCDF4 /* TGEVE_GUIElementsTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_GUIElementsTableModel.h; path = Database/Models/TGEVE_GUIElementsTableModel.h; sourceTree = "<group>"; };
 		CDEE155F164AB0D200EDCDF4 /* TGEVE_GUIElementsTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_GUIElementsTableModel.m; path = Database/Models/TGEVE_GUIElementsTableModel.m; sourceTree = "<group>"; };
 		CDEE156E164AE38A00EDCDF4 /* INSERT_GUI_ELEMENTS_V1_0.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_GUI_ELEMENTS_V1_0.sql; path = "Database/SQL Scripte/INSERT_GUI_ELEMENTS_V1_0.sql"; sourceTree = "<group>"; };
-		CDEE1571164B03FF00EDCDF4 /* Licence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Licence.h; path = Licencing/Licence.h; sourceTree = "<group>"; };
-		CDEE1572164B03FF00EDCDF4 /* Licence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Licence.m; path = Licencing/Licence.m; sourceTree = "<group>"; };
 		CDEE1574164B04F000EDCDF4 /* NSString+Hashes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Hashes.h"; path = "Utilities/NSString+Hashes.h"; sourceTree = "<group>"; };
 		CDEE1575164B04F000EDCDF4 /* NSString+Hashes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Hashes.m"; path = "Utilities/NSString+Hashes.m"; sourceTree = "<group>"; };
 		CDEEC35E172BE4B100E606C4 /* TGEVE_AppsManagerAmazonTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGEVE_AppsManagerAmazonTests.h; sourceTree = "<group>"; };
@@ -705,16 +699,6 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		CD6AD38A164BFE91009FF1B5 /* Licence */ = {
-			isa = PBXGroup;
-			children = (
-				CD6AD393164C047E009FF1B5 /* LicenceWindowController.h */,
-				CD6AD394164C047E009FF1B5 /* LicenceWindowController.m */,
-				CD6AD38F164BFE9D009FF1B5 /* LicenceWindow.xib */,
-			);
-			name = Licence;
-			sourceTree = "<group>";
-		};
 		CD6AD3F3164D6BAA009FF1B5 /* ShortcutWindow */ = {
 			isa = PBXGroup;
 			children = (
@@ -789,7 +773,6 @@
 				CDA558CB16B02611008D236E /* UserNotification */,
 				CD8459FF16A0C41B007717CB /* Apps */,
 				CDE54D9716626FE6009E4C57 /* Social */,
-				CDEE1570164B03EF00EDCDF4 /* Licencing */,
 				CD5A46F916465128007B57A5 /* Controller */,
 				CD5A46F216464F26007B57A5 /* Observer */,
 				CD5A46CA16463CBF007B57A5 /* Utilities */,
@@ -814,6 +797,7 @@
 				CD57864B16465D5800CC508B /* Growl Registration Ticket.growlRegDict */,
 				CD5786541646611200CC508B /* EVE_ICON.icns */,
 				CD80E78E1645406B00A9C7D8 /* EVE_ICON_STATUS_BAR_ACTIVE.icns */,
+				CD7488861D64F2F700B8D6B4 /* EVE_ICON_STATUS_BAR_ACTIVE_DARK_THEME.tiff */,
 				CDEE15301648127900EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns */,
 				CD80E75A1645393400A9C7D8 /* hotkeyEVE-Info.plist */,
 				CD80E75B1645393400A9C7D8 /* InfoPlist.strings */,
@@ -829,7 +813,6 @@
 			children = (
 				CD6AD402164D8948009FF1B5 /* GUINotifications */,
 				CD6AD3F3164D6BAA009FF1B5 /* ShortcutWindow */,
-				CD6AD38A164BFE91009FF1B5 /* Licence */,
 				CD80E78B16453A0500A9C7D8 /* MainMenuController.h */,
 				CD80E78C16453A0500A9C7D8 /* MainMenuController.m */,
 				CD80E7671645393400A9C7D8 /* MainMenu.xib */,
@@ -1043,15 +1026,6 @@
 			name = V1_3_0;
 			sourceTree = "<group>";
 		};
-		CDEE1570164B03EF00EDCDF4 /* Licencing */ = {
-			isa = PBXGroup;
-			children = (
-				CDEE1571164B03FF00EDCDF4 /* Licence.h */,
-				CDEE1572164B03FF00EDCDF4 /* Licence.m */,
-			);
-			name = Licencing;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1095,7 +1069,7 @@
 			name = hotkeyEVEUnitTests;
 			productName = hotkeyEVEUnitTests;
 			productReference = CD845A2516A15B98007717CB /* hotkeyEVEUnitTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -1103,6 +1077,7 @@
 		CD80E7451645393300A9C7D8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0730;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Tobias Sommer";
 			};
@@ -1219,7 +1194,6 @@
 				CDEE15311648127A00EDCDF4 /* EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns in Resources */,
 				CDEE155D164A9D3200EDCDF4 /* INSERT_GUI_SUPPORT_V1_0.sql in Resources */,
 				CDEE156F164AE38A00EDCDF4 /* INSERT_GUI_ELEMENTS_V1_0.sql in Resources */,
-				CD6AD392164BFE9D009FF1B5 /* LicenceWindow.xib in Resources */,
 				CD6AD3F2164D6B9E009FF1B5 /* ShortcutsWindow.xib in Resources */,
 				CD836D591652C0A5008A7876 /* Credits.html in Resources */,
 				CD84B78C1658CC7200DF227B /* CREATE_TABLEV1_3_1.sql in Resources */,
@@ -1231,6 +1205,7 @@
 				CD1464F116CB9A65004395D8 /* ALTER_MENU_BAR_ITEMS.sql in Resources */,
 				CD1464F316CB9A84004395D8 /* ALTER_GUI_ELEMENTS_V1_3_3.sql in Resources */,
 				CD1464F816CB9A9F004395D8 /* ALTER_TABLE_APPLICATIONS_V1_4_0.sql in Resources */,
+				CD7488871D64F2F700B8D6B4 /* EVE_ICON_STATUS_BAR_ACTIVE_DARK_THEME.tiff in Resources */,
 				CD1464F916CB9A9F004395D8 /* ALTER_TABLE_GUI_ELEMENTS_V1_4_0.sql in Resources */,
 				CD1464FA16CB9A9F004395D8 /* CREATE_TABLE_APP_MODULE_V1_4_0.sql in Resources */,
 				CD1464FB16CB9A9F004395D8 /* REMOVE_GUI_ELEMENTS_V1_4_0.sql in Resources */,
@@ -1300,9 +1275,7 @@
 				CDEE155A164A93FB00EDCDF4 /* Queue.m in Sources */,
 				CDEE155B164A93FB00EDCDF4 /* StringUtilities.m in Sources */,
 				CDEE1560164AB0D400EDCDF4 /* TGEVE_GUIElementsTableModel.m in Sources */,
-				CDEE1573164B03FF00EDCDF4 /* Licence.m in Sources */,
 				CDEE1576164B04F100EDCDF4 /* NSString+Hashes.m in Sources */,
-				CD6AD395164C047E009FF1B5 /* LicenceWindowController.m in Sources */,
 				CD6AD3BC164C17E9009FF1B5 /* GUIUtilities.m in Sources */,
 				CD6AD3F1164D6B9E009FF1B5 /* ShortcutsWindowController.m in Sources */,
 				CD6AD3FE164D7BA6009FF1B5 /* ApplicationsTableViewController.m in Sources */,
@@ -1440,7 +1413,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
@@ -1467,7 +1440,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\"";

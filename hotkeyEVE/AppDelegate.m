@@ -47,10 +47,6 @@
   
   [self registerListener];
   [[eveAppManager eveObserver] subscribeAllNotifications];
-  
-  if (![[[EVEManager sharedEVEManager] licence] isValid]) {
-    [[GrowlNotifications growlNotifications] displayRegisterEVEWithCallbackNotification :@"Register EVE" :@"\nClick to get an Activation Key"];
-  }
 }
 
 - (void) applicationWillTerminate:(NSNotification *)notification {

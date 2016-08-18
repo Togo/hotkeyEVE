@@ -100,12 +100,7 @@ return nil;
 }
 
 - (BOOL) grantInstall {
-  if ([[[EVEManager sharedEVEManager] licence] isValid])
     return YES;
-  else if ( ![_appModuleTable installedAppsMaximumReached] )
-    return YES;
-  else
-    return NO;
 }
 
 - (BOOL) isAppInstalled :(NSString*) moduleID {

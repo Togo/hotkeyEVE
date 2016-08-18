@@ -13,9 +13,7 @@
 @interface MainMenuController : NSObject {
     IBOutlet NSMenu *statusMenu;
     IBOutlet NSMenuItem *activeApp;
-    IBOutlet NSMenuItem *pauseMenuItem;
-    IBOutlet NSMenuItem *enterLicenceItem;
-    IBOutlet NSMenuItem *getProVersionItem;
+    IBOutlet NSMenuItem *pauseMenuItem;;
   __unsafe_unretained NSMenuItem *_startAtLoginItem;
   __unsafe_unretained NSMenuItem *_proVersionSeparator;
 }
@@ -24,19 +22,16 @@
 @property (strong, nonatomic)  Application *activeApplication;
 @property (strong, nonatomic)  NSImage *guiSupportIcon;
 @property (strong, nonatomic)  NSImage *noGUISupportIcon;
-@property (unsafe_unretained) IBOutlet NSMenuItem *proVersionSeparator;
 
 
 @property (unsafe_unretained) IBOutlet NSMenuItem *startAtLoginItem;
 
 @property (strong, nonatomic)             NSWindowController *ourViewController;
-@property (strong, nonatomic, readonly)   NSWindowController *liceneWindowController;
 @property (strong, nonatomic, readonly)   NSWindowController *appsWindowController;
 @property (strong, nonatomic, readonly)   ShortcutsWindowController *shortcutsWindowController;
 
 - (void) updateStatusIcon :(BOOL) guiSupport;
 
-- (IBAction) showLicenceKeyWindow :(id) sender;
 - (IBAction) showShortcutsWindow :(id) sender;
 - (IBAction) showAppsWindow :(id) sender;
 - (IBAction) getProVersion :(id)sender;

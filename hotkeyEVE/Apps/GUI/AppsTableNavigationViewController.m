@@ -78,36 +78,4 @@ NSString * const KNavigationColumn = @"NavigationColumn";
   }
 }
 
-//- (NSDragOperation)tableView:(NSTableView*)tv validateDrop:(id <NSDraggingInfo>)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)op {
-//  // Add code here to validate the drop
-//  if (row <= [_navigationTableView numberOfRows] -1
-//      && op == NSTableViewDropOn) {
-//    return NSDragOperationEvery;
-//  }
-//  return NSDragOperationNone;
-//}
-//
-//- (BOOL)tableView:(NSTableView*)tv acceptDrop:(id <NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)op {
-//  
-//  NSPasteboard *pboard = [info draggingPasteboard];
-//  NSString *moduleIDsString = [pboard stringForType:NSPasteboardTypeString];
-//  NSArray *moduleIDArray = [moduleIDsString componentsSeparatedByString:@"\n"];
-//  
-//  if ([[_dataSource objectAtIndex:row] valueForKey:KNavigationColumn] == kInstalledRowHeader) {
-//      [_appsManager addAppsFromArray:moduleIDArray];
-//  } else if ([[_dataSource objectAtIndex:row] valueForKey:KNavigationColumn] == kNotInstalledRowHeader) {
-//      [_appsManager removeAppsFromArray:moduleIDArray];
-//  }
-//    
-//    [[NSNotificationCenter defaultCenter] postNotificationName:kEVENotificationsRemoveDropedLinesFromTable object:nil];
-//    
-//	return YES;
-//}
-//
-//// to stub method in unit tests
-//- (NSPasteboard*) getDragPasteboard :(id <NSDraggingInfo>)info {
-//  return  [info draggingPasteboard];
-//}
-
-
 @end

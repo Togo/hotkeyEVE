@@ -14,7 +14,6 @@
 #import "TGEVE_MenuBarTableModel.h"
 #import "UserDataTableModel.h"
 
-#import "LicenceWindowController.h"
 #import "ShortcutsWindowController.h"
 #import "TGEVE_AppsWindowWindowController.h"
 
@@ -27,7 +26,13 @@
 
 
 - (void)awakeFromNib {
-  self.guiSupportIcon = [NSImage imageNamed:@"EVE_ICON_STATUS_BAR_ACTIVE.icns"];
+  NSString *osxMode = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppleInterfaceStyle"];
+  
+    if (osxMode == nil) {
+        self.guiSupportIcon = [NSImage imageNamed:@"EVE_ICON_STATUS_BAR_ACTIVE.icns"];
+    } else {        
+        self.guiSupportIcon = [NSImage imageNamed:@"EVE_ICON_STATUS_BAR_ACTIVE_DARK_THEME.tiff"];
+    }
   [guiSupportIcon setSize:NSMakeSize(14, 14)];
   
   self.noGUISupportIcon = [NSImage imageNamed:@"EVE_ICON_STATUS_BAR_NOT_SUPPORTED.icns"];
@@ -39,13 +44,6 @@
   [statusItem setImage:guiSupportIcon];
   
   [_startAtLoginItem setState:[UserDataTableModel selectStartAtLogin :NSUserName()]];
-  
-  // remove licence key and get pro version if full version
-  if ([[[EVEManager sharedEVEManager] licence] isValid]) {
-    [statusMenu removeItem:_proVersionSeparator];
-    [statusMenu removeItem:enterLicenceItem];
-    [statusMenu removeItem:getProVersionItem];
-  }
   
   [[EVEManager sharedEVEManager] setMainMenuController:self];
 }
@@ -79,26 +77,10 @@
   }
 }
 
-- (IBAction) showLicenceKeyWindow :(id) sender {
-  
-  if(!_liceneWindowController) {
-    _liceneWindowController = [[LicenceWindowController alloc] initWithWindowNibName:@"LicenceWindow"];
-  }
-  
-  [GUIUtilities closeOpenWindow:_ourViewController];
-  
-  self.ourViewController = _liceneWindowController;
-  [GUIUtilities showWindow:_ourViewController];
-}
-
 - (IBAction) showShortcutsWindow :(id) sender {
   
   if(!_shortcutsWindowController) {
     _shortcutsWindowController = [[ShortcutsWindowController alloc] initWithWindowNibName:@"ShortcutsWindow"];
-  }
-  
-  if (self.ourViewController.class == _liceneWindowController.class ) {
-      [GUIUtilities closeOpenWindow:_ourViewController];
   }
   
   self.ourViewController = _shortcutsWindowController;
