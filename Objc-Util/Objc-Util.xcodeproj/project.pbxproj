@@ -70,6 +70,8 @@
 		CD558C0216DA78F4005D4B97 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = "Objc-UtilTests/OCMock.framework"; sourceTree = "<group>"; };
 		CD558C1316DE8C12005D4B97 /* TGUTIL_TableColumnIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGUTIL_TableColumnIdentifier.h; sourceTree = "<group>"; };
 		CD558C1416DE8C12005D4B97 /* TGUTIL_TableColumnIdentifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGUTIL_TableColumnIdentifier.m; sourceTree = "<group>"; };
+		CDF0A07C1D6CD176003E0F30 /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		CDF0A07E1D6CD176003E0F30 /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			children = (
 				CD558B5A16D92373005D4B97 /* Objc-Util */,
 				CD558B7016D92374005D4B97 /* Objc-UtilTests */,
+				CDF0A07B1D6CD176003E0F30 /* Test */,
 				CD558B5316D92373005D4B97 /* Frameworks */,
 				CD558B5216D92373005D4B97 /* Products */,
 			);
@@ -177,6 +180,15 @@
 				CD558B7316D92374005D4B97 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDF0A07B1D6CD176003E0F30 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				CDF0A07C1D6CD176003E0F30 /* Test.h */,
+				CDF0A07E1D6CD176003E0F30 /* Test.m */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

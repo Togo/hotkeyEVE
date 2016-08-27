@@ -17,7 +17,7 @@
 		<key>hotkeyEVEUnitTests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>5</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -25,17 +25,17 @@
 		<key>CD80E74D1645393300A9C7D8</key>
 		<dict>
 			<key>primary</key>
-			<true/>
+			<true />
 		</dict>
 		<key>CD80E76E1645393400A9C7D8</key>
 		<dict>
 			<key>primary</key>
-			<true/>
+			<true />
 		</dict>
 		<key>CD845A2416A15B98007717CB</key>
 		<dict>
 			<key>primary</key>
-			<true/>
+			<true />
 		</dict>
 	</dict>
 </dict>

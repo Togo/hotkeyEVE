@@ -24,7 +24,7 @@
             buildForTesting = "YES"
             buildForRunning = "NO"
             buildForProfiling = "NO"
-            buildForArchiving = "YES"
+            buildForArchiving = "NO"
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
@@ -38,7 +38,7 @@
             buildForTesting = "YES"
             buildForRunning = "NO"
             buildForProfiling = "NO"
-            buildForArchiving = "YES"
+            buildForArchiving = "NO"
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
@@ -46,6 +46,48 @@
                BuildableName = "UIElementsTests.octest"
                BlueprintName = "UIElementsTests"
                ReferencedContainer = "container:eve-uielements/UIElements.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CD845A2416A15B98007717CB"
+               BuildableName = "hotkeyEVEUnitTests.octest"
+               BlueprintName = "hotkeyEVEUnitTests"
+               ReferencedContainer = "container:hotkeyEVE.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CD04780E167FA9450063DCBE"
+               BuildableName = "AppsLibraryTests.octest"
+               BlueprintName = "AppsLibraryTests"
+               ReferencedContainer = "container:AppsLibrary/AppsLibrary.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CD558B6816D92373005D4B97"
+               BuildableName = "Objc-UtilTests.octest"
+               BlueprintName = "Objc-UtilTests"
+               ReferencedContainer = "container:Objc-Util/Objc-Util.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -56,56 +98,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CD845A2416A15B98007717CB"
-               BuildableName = "hotkeyEVEUnitTests.octest"
-               BlueprintName = "hotkeyEVEUnitTests"
-               ReferencedContainer = "container:hotkeyEVE.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CD868166163BBCEB00667709"
-               BuildableName = "DatabaseTests.octest"
-               BlueprintName = "DatabaseTests"
-               ReferencedContainer = "container:eve-database/Database.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CDE8B48E1633080B0085E130"
-               BuildableName = "UIElementsTests.octest"
-               BlueprintName = "UIElementsTests"
-               ReferencedContainer = "container:eve-uielements/UIElements.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CD04780E167FA9450063DCBE"
-               BuildableName = "AppsLibraryTests.octest"
-               BlueprintName = "AppsLibraryTests"
-               ReferencedContainer = "container:AppsLibrary/AppsLibrary.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CD558B6816D92373005D4B97"
-               BuildableName = "Objc-UtilTests.octest"
-               BlueprintName = "Objc-UtilTests"
-               ReferencedContainer = "container:Objc-Util/Objc-Util.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

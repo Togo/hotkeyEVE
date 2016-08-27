@@ -28,7 +28,7 @@
 		CD14652316CD9984004395D8 /* MigrationV1_4_1.m in Sources */ = {isa = PBXBuildFile; fileRef = CD14652216CD9984004395D8 /* MigrationV1_4_1.m */; };
 		CD3D3F91178A6EBD00B74131 /* ALTER_TABLE_GUI_ELEMENTS_V1_4_3.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD3D3F90178A6EBD00B74131 /* ALTER_TABLE_GUI_ELEMENTS_V1_4_3.sql */; };
 		CD3D3F98178A6F0800B74131 /* MigrationV1_4_3.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3D3F97178A6F0800B74131 /* MigrationV1_4_3.m */; };
-		CD558C1116DE883E005D4B97 /* Objc-Util.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD558C0C16DE8821005D4B97 /* Objc-Util.framework */; };
+		CD558C1116DE883E005D4B97 /* Objc-Util.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD558C0C16DE8821005D4B97 /* Objc-Util.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		CD558C1216DE8854005D4B97 /* Objc-Util.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD558C0C16DE8821005D4B97 /* Objc-Util.framework */; };
 		CD558C1716DE8E2D005D4B97 /* Objc-Util.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD558C0C16DE8821005D4B97 /* Objc-Util.framework */; };
 		CD57864C16465D5800CC508B /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = CD57864B16465D5800CC508B /* Growl Registration Ticket.growlRegDict */; };
@@ -121,11 +121,11 @@
 		CDEE156F164AE38A00EDCDF4 /* INSERT_GUI_ELEMENTS_V1_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = CDEE156E164AE38A00EDCDF4 /* INSERT_GUI_ELEMENTS_V1_0.sql */; };
 		CDEE1576164B04F100EDCDF4 /* NSString+Hashes.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEE1575164B04F000EDCDF4 /* NSString+Hashes.m */; };
 		CDEEC360172BE4B100E606C4 /* TGEVE_AppsManagerAmazonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEEC35F172BE4B100E606C4 /* TGEVE_AppsManagerAmazonTests.m */; };
+		CDF0A04D1D6CCAFC003E0F30 /* Database.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CDF0A04C1D6CCAFC003E0F30 /* Database.dylib */; };
 		CDF174A416A5E6EE0047C56E /* AppsTableViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF174A316A5E6EE0047C56E /* AppsTableViewControllerTests.m */; };
 		CDF656E616B0403500A0FEC4 /* AppsManagerLocalDB.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF656E516B0403500A0FEC4 /* AppsManagerLocalDB.m */; };
 		CDF656EA16B0493200A0FEC4 /* AppsManagerMock.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF656E916B0493200A0FEC4 /* AppsManagerMock.m */; };
 		CDF656ED16B04B3C00A0FEC4 /* TGEVE_AppsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF656EC16B04B3C00A0FEC4 /* TGEVE_AppsManager.m */; };
-		CDFF8CDB164B72EF00A5EA5A /* Database.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5A463816455119007B57A5 /* Database.dylib */; };
 		CDFF8CDC164B72EF00A5EA5A /* UIElements.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5A462C1645510F007B57A5 /* UIElements.dylib */; };
 		CDFF8CEA164B7CEF00A5EA5A /* Database.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD5A463816455119007B57A5 /* Database.dylib */; };
 		CDFF8CEB164B7CEF00A5EA5A /* UIElements.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD5A462C1645510F007B57A5 /* UIElements.dylib */; };
@@ -247,8 +247,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CD6ECE2316C0200F00A47985 /* libAppsLibrary.a in CopyFiles */,
 				CDFF8CEA164B7CEF00A5EA5A /* Database.dylib in CopyFiles */,
+				CD6ECE2316C0200F00A47985 /* libAppsLibrary.a in CopyFiles */,
 				CDFF8CEB164B7CEF00A5EA5A /* UIElements.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +445,7 @@
 		CDEE1575164B04F000EDCDF4 /* NSString+Hashes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Hashes.m"; path = "Utilities/NSString+Hashes.m"; sourceTree = "<group>"; };
 		CDEEC35E172BE4B100E606C4 /* TGEVE_AppsManagerAmazonTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGEVE_AppsManagerAmazonTests.h; sourceTree = "<group>"; };
 		CDEEC35F172BE4B100E606C4 /* TGEVE_AppsManagerAmazonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGEVE_AppsManagerAmazonTests.m; sourceTree = "<group>"; };
+		CDF0A04C1D6CCAFC003E0F30 /* Database.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = Database.dylib; path = "eve-database/build/Release/Database.dylib"; sourceTree = "<group>"; };
 		CDF174A216A5E6ED0047C56E /* AppsTableViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsTableViewControllerTests.h; path = AppsGUITests/AppsTableViewControllerTests.h; sourceTree = "<group>"; };
 		CDF174A316A5E6EE0047C56E /* AppsTableViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsTableViewControllerTests.m; path = AppsGUITests/AppsTableViewControllerTests.m; sourceTree = "<group>"; };
 		CDF656E416B0403500A0FEC4 /* AppsManagerLocalDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsManagerLocalDB.h; path = Apps/Model/AppsManagerLocalDB.h; sourceTree = "<group>"; };
@@ -461,9 +462,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDF0A04D1D6CCAFC003E0F30 /* Database.dylib in Frameworks */,
 				CD558C1116DE883E005D4B97 /* Objc-Util.framework in Frameworks */,
 				CDE3018316A49D0300E8D489 /* libAppsLibrary.a in Frameworks */,
-				CDFF8CDB164B72EF00A5EA5A /* Database.dylib in Frameworks */,
 				CDFF8CDC164B72EF00A5EA5A /* UIElements.dylib in Frameworks */,
 				CD57865316465EDE00CC508B /* Growl.framework in Frameworks */,
 				CD80E7531645393300A9C7D8 /* Cocoa.framework in Frameworks */,
@@ -744,6 +745,7 @@
 		CD80E7511645393300A9C7D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CDF0A04C1D6CCAFC003E0F30 /* Database.dylib */,
 				CD8459F816A0AAF4007717CB /* OCMock.framework */,
 				CD71E4A7165EEB8C00987E09 /* Carbon.framework */,
 				CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */,
@@ -1080,6 +1082,11 @@
 				LastTestingUpgradeCheck = 0730;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Tobias Sommer";
+				TargetAttributes = {
+					CD80E74D1645393300A9C7D8 = {
+						DevelopmentTeam = 58RYE7MR35;
+					};
+				};
 			};
 			buildConfigurationList = CD80E7481645393300A9C7D8 /* Build configuration list for PBXProject "hotkeyEVE" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1450,6 +1457,7 @@
 		CD80E7811645393400A9C7D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1458,17 +1466,20 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotkeyEVE/hotkeyEVE-Prefix.pch";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				INFOPLIST_FILE = "hotkeyEVE/hotkeyEVE-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/eve-database/build/Release";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = EVE;
+				PROVISIONING_PROFILE = "";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
-				USER_HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\" \"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts\"";
+				SKIP_INSTALL = NO;
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1476,24 +1487,32 @@
 		CD80E7821645393400A9C7D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/hotkeyEVE/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotkeyEVE/hotkeyEVE-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				INFOPLIST_FILE = "hotkeyEVE/hotkeyEVE-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/eve-database/build/Release";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OBJROOT = "$(SYMROOT)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				PRODUCT_NAME = EVE;
+				PROVISIONING_PROFILE = "";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
-				USER_HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)\" \"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts\"";
+				SKIP_INSTALL = NO;
+				SYMROOT = build;
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
