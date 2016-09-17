@@ -91,7 +91,7 @@ NSString * const kAppsTableViewControllerNibName = @"TGEVE_AppsTableViewControll
       };
       
       [[NSAlert alert] showModalAlertSheetForWindow:[[self view] window] message:[_dataSource objectAtIndex:0] informativeText:nil alertStyle:0 buttonBlocks:[NSDictionary dictionaryWithObject:[closeWindow copy] forKey:@"1000"] buttonTitle:@"Oki, doki", nil];
-      _dataSource = [NSArray array];
+      _dataSource = (NSMutableArray<NSTableViewDataSource>*) [NSMutableArray array];
     } else {
     for (NSDictionary *aRow in _dataSource ) {
       BOOL appModuleInstalled = [_appsManager isAppInstalled:[aRow valueForKey:kModuleID]];

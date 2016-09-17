@@ -19,7 +19,7 @@
 - (id) init {
   self = [super init];
   
-  subscribedNotifications = [NSMutableArray array];
+  subscribedNotifications = [NSMutableDictionary dictionary];
   
   return self;
 }

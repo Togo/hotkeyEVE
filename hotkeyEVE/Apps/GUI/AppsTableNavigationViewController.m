@@ -42,7 +42,7 @@ NSString * const KNavigationColumn = @"NavigationColumn";
       
       NSDictionary *allAppsRow = [NSDictionary dictionaryWithObjectsAndKeys:TGEVE_CONST_ALLAPPS_HEADER, KNavigationColumn, [TGEVE_AppsTableViewController class],@"Class" ,kAppsTableViewControllerNibName, @"NibName", [TGEVE_AppsManagerAmazon class], @"model", nil];
 
-      _dataSource = [NSArray arrayWithObjects:allAppsRow,nil];
+      _dataSource = (NSArray<NSTableViewDataSource>*) [NSArray arrayWithObjects:allAppsRow,nil];
       
       _appsManager = [[TGEVE_AppsManagerAmazon alloc] init];
     }
