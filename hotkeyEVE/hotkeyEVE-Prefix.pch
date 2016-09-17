@@ -7,7 +7,9 @@
 
   #import "DatabaseManager.h"
   #import "EVEManager.h"
-  #import "DDLog.h"
+
+  #define LOG_LEVEL_DEF ddLogLevel
+  #import <CocoaLumberjack/CocoaLumberjack.h>
 
   #import <Database/TableAndColumnNames.h>
 
@@ -16,6 +18,5 @@
 
   #import <Objc-Util/Objc_Util.h>
 
-  static const int ddLogLevel = LOG_LEVEL_INFO;
-
+  static const DDLogLevel ddLogLevel = DDLogLevelDebug;
 #endif

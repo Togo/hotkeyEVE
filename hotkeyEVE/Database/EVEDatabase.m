@@ -7,6 +7,7 @@
 //
 
 #import "EVEDatabase.h"
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 @implementation EVEDatabase
 

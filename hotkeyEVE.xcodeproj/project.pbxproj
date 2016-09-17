@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		551C20493627EF21090AC581 /* libPods-hotkeyEVEUnitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D48F3A75A1D448C44F9FC8 /* libPods-hotkeyEVEUnitTests.a */; };
+		6BEEDFD944C44BAA33C5D70C /* libPods-hotkeyEVE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A31402662CFD3F17146091 /* libPods-hotkeyEVE.a */; };
 		CD018F001660A4B3008A1C5A /* AppChangedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD018EFF1660A4B3008A1C5A /* AppChangedController.m */; };
 		CD1464F116CB9A65004395D8 /* ALTER_MENU_BAR_ITEMS.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD1464F016CB9A65004395D8 /* ALTER_MENU_BAR_ITEMS.sql */; };
 		CD1464F316CB9A84004395D8 /* ALTER_GUI_ELEMENTS_V1_3_3.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD1464F216CB9A84004395D8 /* ALTER_GUI_ELEMENTS_V1_3_3.sql */; };
@@ -40,14 +42,6 @@
 		CD5A464716455398007B57A5 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A464616455398007B57A5 /* DatabaseManager.m */; };
 		CD5A464A1645563E007B57A5 /* MIGRATIONV1_3_0.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46491645563E007B57A5 /* MIGRATIONV1_3_0.m */; };
 		CD5A464E1645579C007B57A5 /* EVEDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A464D1645579C007B57A5 /* EVEDatabase.m */; };
-		CD5A4660164558FB007B57A5 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4651164558FB007B57A5 /* DDAbstractDatabaseLogger.m */; };
-		CD5A4661164558FB007B57A5 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4653164558FB007B57A5 /* DDASLLogger.m */; };
-		CD5A4662164558FB007B57A5 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4655164558FB007B57A5 /* DDFileLogger.m */; };
-		CD5A4663164558FB007B57A5 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4657164558FB007B57A5 /* DDLog.m */; };
-		CD5A4664164558FB007B57A5 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4659164558FB007B57A5 /* DDTTYLogger.m */; };
-		CD5A4665164558FB007B57A5 /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A465C164558FB007B57A5 /* ContextFilterLogFormatter.m */; };
-		CD5A4666164558FB007B57A5 /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A465E164558FB007B57A5 /* DispatchQueueLogFormatter.m */; };
-		CD5A4667164558FB007B57A5 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = CD5A465F164558FB007B57A5 /* README.txt */; };
 		CD5A466916455D69007B57A5 /* CREATE_TABLE_V1_0.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD5A466816455D69007B57A5 /* CREATE_TABLE_V1_0.sql */; };
 		CD5A469216455F7D007B57A5 /* MenuBarIndexingThread.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A469116455F7D007B57A5 /* MenuBarIndexingThread.m */; };
 		CD5A4699164563D0007B57A5 /* TGEVE_MenuBarTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A4698164563D0007B57A5 /* TGEVE_MenuBarTableModel.m */; };
@@ -256,6 +250,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1BD6853D5B3B657D82C3F070 /* Pods-hotkeyEVE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotkeyEVE.release.xcconfig"; path = "Pods/Target Support Files/Pods-hotkeyEVE/Pods-hotkeyEVE.release.xcconfig"; sourceTree = "<group>"; };
+		43D48F3A75A1D448C44F9FC8 /* libPods-hotkeyEVEUnitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hotkeyEVEUnitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95BF71933BD5A701F2779720 /* Pods-hotkeyEVE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotkeyEVE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hotkeyEVE/Pods-hotkeyEVE.debug.xcconfig"; sourceTree = "<group>"; };
 		CD018EFE1660A4B3008A1C5A /* AppChangedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppChangedController.h; path = Conroller/AppChangedController.h; sourceTree = "<group>"; };
 		CD018EFF1660A4B3008A1C5A /* AppChangedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppChangedController.m; path = Conroller/AppChangedController.m; sourceTree = "<group>"; };
 		CD1464F016CB9A65004395D8 /* ALTER_MENU_BAR_ITEMS.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ALTER_MENU_BAR_ITEMS.sql; path = "Database/SQL Scripte/V1_3_2/ALTER_MENU_BAR_ITEMS.sql"; sourceTree = "<group>"; };
@@ -302,21 +299,6 @@
 		CD5A46491645563E007B57A5 /* MIGRATIONV1_3_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIGRATIONV1_3_0.m; path = Database/Migrations/MIGRATIONV1_3_0.m; sourceTree = "<group>"; };
 		CD5A464C1645579C007B57A5 /* EVEDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EVEDatabase.h; path = Database/EVEDatabase.h; sourceTree = "<group>"; };
 		CD5A464D1645579C007B57A5 /* EVEDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EVEDatabase.m; path = Database/EVEDatabase.m; sourceTree = "<group>"; };
-		CD5A4650164558FB007B57A5 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
-		CD5A4651164558FB007B57A5 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
-		CD5A4652164558FB007B57A5 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
-		CD5A4653164558FB007B57A5 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
-		CD5A4654164558FB007B57A5 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
-		CD5A4655164558FB007B57A5 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
-		CD5A4656164558FB007B57A5 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
-		CD5A4657164558FB007B57A5 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
-		CD5A4658164558FB007B57A5 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
-		CD5A4659164558FB007B57A5 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
-		CD5A465B164558FB007B57A5 /* ContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextFilterLogFormatter.h; sourceTree = "<group>"; };
-		CD5A465C164558FB007B57A5 /* ContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextFilterLogFormatter.m; sourceTree = "<group>"; };
-		CD5A465D164558FB007B57A5 /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
-		CD5A465E164558FB007B57A5 /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
-		CD5A465F164558FB007B57A5 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		CD5A466816455D69007B57A5 /* CREATE_TABLE_V1_0.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CREATE_TABLE_V1_0.sql; path = "Database/SQL Scripte/CREATE_TABLE_V1_0.sql"; sourceTree = "<group>"; };
 		CD5A469016455F7D007B57A5 /* MenuBarIndexingThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuBarIndexingThread.h; path = Indexing/MenuBarIndexingThread.h; sourceTree = "<group>"; };
 		CD5A469116455F7D007B57A5 /* MenuBarIndexingThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuBarIndexingThread.m; path = Indexing/MenuBarIndexingThread.m; sourceTree = "<group>"; };
@@ -455,6 +437,9 @@
 		CDF656E916B0493200A0FEC4 /* AppsManagerMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsManagerMock.m; sourceTree = "<group>"; };
 		CDF656EB16B04B3C00A0FEC4 /* TGEVE_AppsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGEVE_AppsManager.h; path = Apps/Model/TGEVE_AppsManager.h; sourceTree = "<group>"; };
 		CDF656EC16B04B3C00A0FEC4 /* TGEVE_AppsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGEVE_AppsManager.m; path = Apps/Model/TGEVE_AppsManager.m; sourceTree = "<group>"; };
+		E5A31402662CFD3F17146091 /* libPods-hotkeyEVE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hotkeyEVE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7FBF3DCCC01E59C3A23D308 /* Pods-hotkeyEVEUnitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotkeyEVEUnitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hotkeyEVEUnitTests/Pods-hotkeyEVEUnitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FAD757FA65D1A4D088ABCFFE /* Pods-hotkeyEVEUnitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotkeyEVEUnitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-hotkeyEVEUnitTests/Pods-hotkeyEVEUnitTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -470,6 +455,7 @@
 				CD80E7531645393300A9C7D8 /* Cocoa.framework in Frameworks */,
 				CD6AD3E9164CC0F0009FF1B5 /* Sparkle.framework in Frameworks */,
 				CD71E4A8165EEB8C00987E09 /* Carbon.framework in Frameworks */,
+				6BEEDFD944C44BAA33C5D70C /* libPods-hotkeyEVE.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,12 +469,24 @@
 				CD845A2616A15B98007717CB /* SenTestingKit.framework in Frameworks */,
 				CD845A2716A15B98007717CB /* Cocoa.framework in Frameworks */,
 				CD845A3716A15BDA007717CB /* OCMock.framework in Frameworks */,
+				551C20493627EF21090AC581 /* libPods-hotkeyEVEUnitTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6605FF891DB8048CF411D2AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				95BF71933BD5A701F2779720 /* Pods-hotkeyEVE.debug.xcconfig */,
+				1BD6853D5B3B657D82C3F070 /* Pods-hotkeyEVE.release.xcconfig */,
+				F7FBF3DCCC01E59C3A23D308 /* Pods-hotkeyEVEUnitTests.debug.xcconfig */,
+				FAD757FA65D1A4D088ABCFFE /* Pods-hotkeyEVEUnitTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CD1464FC16CBEDAD004395D8 /* UIEvents */ = {
 			isa = PBXGroup;
 			children = (
@@ -617,37 +615,6 @@
 			name = Migrations;
 			sourceTree = "<group>";
 		};
-		CD5A464F164558FB007B57A5 /* Lumberjack */ = {
-			isa = PBXGroup;
-			children = (
-				CD5A4650164558FB007B57A5 /* DDAbstractDatabaseLogger.h */,
-				CD5A4651164558FB007B57A5 /* DDAbstractDatabaseLogger.m */,
-				CD5A4652164558FB007B57A5 /* DDASLLogger.h */,
-				CD5A4653164558FB007B57A5 /* DDASLLogger.m */,
-				CD5A4654164558FB007B57A5 /* DDFileLogger.h */,
-				CD5A4655164558FB007B57A5 /* DDFileLogger.m */,
-				CD5A4656164558FB007B57A5 /* DDLog.h */,
-				CD5A4657164558FB007B57A5 /* DDLog.m */,
-				CD5A4658164558FB007B57A5 /* DDTTYLogger.h */,
-				CD5A4659164558FB007B57A5 /* DDTTYLogger.m */,
-				CD5A465A164558FB007B57A5 /* Extensions */,
-			);
-			name = Lumberjack;
-			path = hotkeyEVE/Frameworks/Lumberjack;
-			sourceTree = "<group>";
-		};
-		CD5A465A164558FB007B57A5 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				CD5A465B164558FB007B57A5 /* ContextFilterLogFormatter.h */,
-				CD5A465C164558FB007B57A5 /* ContextFilterLogFormatter.m */,
-				CD5A465D164558FB007B57A5 /* DispatchQueueLogFormatter.h */,
-				CD5A465E164558FB007B57A5 /* DispatchQueueLogFormatter.m */,
-				CD5A465F164558FB007B57A5 /* README.txt */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		CD5A469316455F86007B57A5 /* Indexing */ = {
 			isa = PBXGroup;
 			children = (
@@ -730,6 +697,7 @@
 				CD845A2816A15B98007717CB /* hotkeyEVEUnitTests */,
 				CD80E7511645393300A9C7D8 /* Frameworks */,
 				CD80E74F1645393300A9C7D8 /* Products */,
+				6605FF891DB8048CF411D2AA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -750,10 +718,11 @@
 				CD71E4A7165EEB8C00987E09 /* Carbon.framework */,
 				CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */,
 				CD57865116465E2600CC508B /* Growl.framework */,
-				CD5A464F164558FB007B57A5 /* Lumberjack */,
 				CD80E7521645393300A9C7D8 /* Cocoa.framework */,
 				CD80E7701645393400A9C7D8 /* SenTestingKit.framework */,
 				CD80E7541645393300A9C7D8 /* Other Frameworks */,
+				E5A31402662CFD3F17146091 /* libPods-hotkeyEVE.a */,
+				43D48F3A75A1D448C44F9FC8 /* libPods-hotkeyEVEUnitTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1035,11 +1004,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD80E7801645393400A9C7D8 /* Build configuration list for PBXNativeTarget "hotkeyEVE" */;
 			buildPhases = (
+				BF2585A81E9083204BD482E3 /* [CP] Check Pods Manifest.lock */,
 				CD80E74A1645393300A9C7D8 /* Sources */,
 				CD80E74B1645393300A9C7D8 /* Frameworks */,
 				CD80E74C1645393300A9C7D8 /* Resources */,
 				CD57864A16465CE100CC508B /* CopyFiles */,
 				CDFF8CE9164B7CDC00A5EA5A /* CopyFiles */,
+				799C37ED82698E4ED621B805 /* [CP] Embed Pods Frameworks */,
+				A00CCAC671E206BA34C45AED /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1057,11 +1029,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD845A3216A15B98007717CB /* Build configuration list for PBXNativeTarget "hotkeyEVEUnitTests" */;
 			buildPhases = (
+				CB376C117BE6B07E7B40857F /* [CP] Check Pods Manifest.lock */,
 				CD845A2016A15B98007717CB /* Sources */,
 				CD845A2116A15B98007717CB /* Frameworks */,
 				CD845A2216A15B98007717CB /* Resources */,
 				CD845A2316A15B98007717CB /* ShellScript */,
 				CD845A3816A15BDE007717CB /* CopyFiles */,
+				49DB9D75B44A82B03EB33FEA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1194,7 +1168,6 @@
 				CD80E7631645393400A9C7D8 /* Credits.rtf in Resources */,
 				CD80E7691645393400A9C7D8 /* MainMenu.xib in Resources */,
 				CD80E78F1645406B00A9C7D8 /* EVE_ICON_STATUS_BAR_ACTIVE.icns in Resources */,
-				CD5A4667164558FB007B57A5 /* README.txt in Resources */,
 				CD5A466916455D69007B57A5 /* CREATE_TABLE_V1_0.sql in Resources */,
 				CD57864C16465D5800CC508B /* Growl Registration Ticket.growlRegDict in Resources */,
 				CD5786551646611200CC508B /* EVE_ICON.icns in Resources */,
@@ -1232,6 +1205,81 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		49DB9D75B44A82B03EB33FEA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hotkeyEVEUnitTests/Pods-hotkeyEVEUnitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		799C37ED82698E4ED621B805 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hotkeyEVE/Pods-hotkeyEVE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A00CCAC671E206BA34C45AED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hotkeyEVE/Pods-hotkeyEVE-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF2585A81E9083204BD482E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CB376C117BE6B07E7B40857F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		CD845A2316A15B98007717CB /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1258,13 +1306,6 @@
 				CD5A464716455398007B57A5 /* DatabaseManager.m in Sources */,
 				CD5A464A1645563E007B57A5 /* MIGRATIONV1_3_0.m in Sources */,
 				CD5A464E1645579C007B57A5 /* EVEDatabase.m in Sources */,
-				CD5A4660164558FB007B57A5 /* DDAbstractDatabaseLogger.m in Sources */,
-				CD5A4661164558FB007B57A5 /* DDASLLogger.m in Sources */,
-				CD5A4662164558FB007B57A5 /* DDFileLogger.m in Sources */,
-				CD5A4663164558FB007B57A5 /* DDLog.m in Sources */,
-				CD5A4664164558FB007B57A5 /* DDTTYLogger.m in Sources */,
-				CD5A4665164558FB007B57A5 /* ContextFilterLogFormatter.m in Sources */,
-				CD5A4666164558FB007B57A5 /* DispatchQueueLogFormatter.m in Sources */,
 				CD5A469216455F7D007B57A5 /* MenuBarIndexingThread.m in Sources */,
 				CD5A4699164563D0007B57A5 /* TGEVE_MenuBarTableModel.m in Sources */,
 				CD5A46CD16463D72007B57A5 /* EVEManager.m in Sources */,
@@ -1459,6 +1500,7 @@
 		};
 		CD80E7811645393400A9C7D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95BF71933BD5A701F2779720 /* Pods-hotkeyEVE.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1469,30 +1511,25 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotkeyEVE/hotkeyEVE-Prefix.pch";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (
-					"${SRCROOT}",
-					"$(BUILT_PRODUCTS_DIR)",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "hotkeyEVE/hotkeyEVE-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.togo.hotkey${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = EVE;
 				PROVISIONING_PROFILE = "";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SKIP_INSTALL = NO;
-				USER_HEADER_SEARCH_PATHS = "${SRCROOT} $(BUILT_PRODUCTS_DIR)";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		CD80E7821645393400A9C7D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BD6853D5B3B657D82C3F070 /* Pods-hotkeyEVE.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1504,29 +1541,27 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "hotkeyEVE/hotkeyEVE-Prefix.pch";
-				HEADER_SEARCH_PATHS = " $(OBJROOT)/UninstalledProducts/include";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "hotkeyEVE/hotkeyEVE-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OBJROOT = "$(SYMROOT)";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.togo.hotkey${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = EVE;
 				PROVISIONING_PROFILE = "";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SKIP_INSTALL = NO;
 				SYMROOT = build;
-				USER_HEADER_SEARCH_PATHS = "${SRCROOT} $(BUILT_PRODUCTS_DIR)";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
 		CD845A3316A15B98007717CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7FBF3DCCC01E59C3A23D308 /* Pods-hotkeyEVEUnitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EVE.app/Contents/MacOS/EVE";
@@ -1548,6 +1583,7 @@
 		};
 		CD845A3416A15B98007717CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAD757FA65D1A4D088ABCFFE /* Pods-hotkeyEVEUnitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/hotkeyEVE.app/Contents/MacOS/hotkeyEVE";

@@ -120,9 +120,9 @@
   NSString* body = [NSString stringWithFormat:@"You can contact me in English or German!\n\n Thanks in Advance \nTobias Sommer"];
   NSString* to = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"eMail"];
   
-  NSString *encodedSubject = [NSString stringWithFormat:@"SUBJECT=%@", [subject stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-  NSString *encodedBody = [NSString stringWithFormat:@"BODY=%@", [body stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-  NSString *encodedTo = [to stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *encodedSubject = [NSString stringWithFormat:@"SUBJECT=%@", [subject stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]]];
+  NSString *encodedBody = [NSString stringWithFormat:@"BODY=%@", [body stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]]];
+  NSString *encodedTo = [to stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]];
   NSString *encodedURLString = [NSString stringWithFormat:@"mailto:%@?%@&%@", encodedTo, encodedSubject, encodedBody];
   NSURL *mailtoURL = [NSURL URLWithString:encodedURLString];
   

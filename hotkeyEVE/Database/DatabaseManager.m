@@ -40,7 +40,7 @@
     NSString *name = @"eve.db";
     eveDatabase = [[EVEDatabase alloc] initWithNameAndPath:name :path];
     
-    DDLogInfo(@"Load Database at Path: %@", [eveDatabase databasePath]);
+    //DDLogInfo(@"Load Database at Path: %@", [eveDatabase databasePath]);
     
     // Add Migrations
     [eveDatabase addMigrationObject:[MIGRATIONV1_3_0 migration]];

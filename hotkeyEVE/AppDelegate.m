@@ -61,8 +61,9 @@
   fileLogger = [[DDFileLogger alloc] init];
   fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
   fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
-
-  [DDLog addLogger:fileLogger];
+        
+  
+    [DDLog addLogger:fileLogger];
 }
 
 - (void) openDatabase {

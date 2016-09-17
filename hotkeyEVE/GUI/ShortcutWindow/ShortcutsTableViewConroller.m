@@ -164,6 +164,7 @@ enum {
 
 - (IBAction) disableInAllApps:(id)sender {
   NSIndexSet *selectedRows = [shortcutTable selectedRowIndexes];
+    
   /*int (as commented, unreliable across different platforms)*/
   NSInteger currentIndex = [selectedRows firstIndex];
   while (currentIndex != NSNotFound) {
@@ -178,14 +179,17 @@ enum {
 
 
 - (IBAction)disableEnableInOneApp:(id)sender {
-  BOOL isDisabled = [sender tag];
+//   = [sender tag];/
+    
   NSIndexSet *selectedRows = [shortcutTable selectedRowIndexes];
-  /*int (as commented, unreliable across different platforms)*/
+  
+    /*int (as commented, unreliable across different platforms)*/
   NSInteger currentIndex = [selectedRows firstIndex];
   while (currentIndex != NSNotFound) {
     NSInteger shortcutID = [[[shortcutList objectAtIndex:currentIndex] valueForKey:SHORTCUT_ID_COL] intValue];
     NSInteger appID = [[[shortcutList objectAtIndex:currentIndex] valueForKey:APPLICATION_ID_COL] intValue];
     NSString *title = [[shortcutList objectAtIndex:currentIndex] valueForKey:TITLE_COL];
+  BOOL isDisabled   = [[[shortcutList objectAtIndex:currentIndex] valueForKey:DISABLED_SHORTCUT_DYN_COL] intValue];
     
     if (isDisabled) {
       [DisabledShortcutsModel enableShortcut :shortcutID :appID :title];
@@ -193,7 +197,7 @@ enum {
 
     } else {
       [DisabledShortcutsModel disableShortcut :shortcutID :appID :title];
-      [self tableView:shortcutTable setObjectValue:[NSNumber numberWithInt:NSOnState] forTableColumn:[[NSTableColumn alloc] initWithIdentifier:DISABLED_SHORTCUT_DYN_COL] row:currentIndex];
+      [self tableView:shortcutTable setObjectValue:[NSNumber numberWithInt:NSOnState] forTableColumn:[[NSTableColumn alloc] initWithIdentifier:DISABLED_SHORTCUTS_TABLE] row:currentIndex];
     }
     
     currentIndex = [selectedRows indexGreaterThanIndex: currentIndex];

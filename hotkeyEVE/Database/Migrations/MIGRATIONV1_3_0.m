@@ -14,9 +14,9 @@
   CoreDatabase *db =  [[DatabaseManager sharedDatabaseManager] eveDatabase];
   [db executeScript:@"CREATE_TABLE_V1_0" :@"sql" :@""];
   
-  NSArray *result = [db executeQuery:@"SELECT * FROM schema_info"];
+  //NSArray *result = [db executeQuery:@"SELECT * FROM schema_info"];
   
-  DDLogInfo(@"Database Created? schema_info >>> %lu", [result count]);
+  //DDLogInfo(@"Database Created? schema_info >>> %lu", [result count]);
   
 //  [db executeScript:@"INSERT_GUI_SUPPORT_V1_0" :@"sql" :@""];
 //  [db executeScript:@"INSERT_GUI_ELEMENTS_V1_0" :@"sql" :@""];
