@@ -7,13 +7,16 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.3.0):
     - CocoaLumberjack/Default
+  - Sparkle (1.14.0)
 
 DEPENDENCIES:
   - CocoaLumberjack (= 2.3.0)
+  - Sparkle
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
+  Sparkle: ccd95233b12a3e3d4eeb55ff01dd4c8bb8188b07
 
-PODFILE CHECKSUM: 3a3b04f5629dc7acee2f927304bdd9b43227f869
+PODFILE CHECKSUM: ab7fa35a074ca6c1bd5f29ca30ff91b2e99f03b8
 
 COCOAPODS: 1.0.1

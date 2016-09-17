@@ -8,6 +8,7 @@ target 'hotkeyEVE' do
   # Pods for hotkeyEVE
 
   pod 'CocoaLumberjack', '2.3.0'
+  pod 'Sparkle'
 end
 
 target 'hotkeyEVEUnitTests' do

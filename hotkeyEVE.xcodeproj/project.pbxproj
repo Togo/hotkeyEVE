@@ -50,8 +50,6 @@
 		CD5A46F516464F7E007B57A5 /* EVEObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5A46F416464F7E007B57A5 /* EVEObserver.m */; };
 		CD6A928E1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql in Resources */ = {isa = PBXBuildFile; fileRef = CD6A928D1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql */; };
 		CD6AD3BC164C17E9009FF1B5 /* GUIUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD3BB164C17E9009FF1B5 /* GUIUtilities.m */; };
-		CD6AD3E9164CC0F0009FF1B5 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */; };
-		CD6AD3EA164CC178009FF1B5 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CD6AD3F1164D6B9E009FF1B5 /* ShortcutsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD3EF164D6B9D009FF1B5 /* ShortcutsWindowController.m */; };
 		CD6AD3F2164D6B9E009FF1B5 /* ShortcutsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6AD3F0164D6B9D009FF1B5 /* ShortcutsWindow.xib */; };
 		CD6AD3FE164D7BA6009FF1B5 /* ApplicationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6AD3FD164D7BA6009FF1B5 /* ApplicationsTableViewController.m */; };
@@ -101,6 +99,7 @@
 		CDB3D6621646BAE000285306 /* AppLaunchedController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB3D6611646BAE000285306 /* AppLaunchedController.m */; };
 		CDC1767916BC2583006C1A74 /* apps_drag_and_drop_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = CDC1767816BC2583006C1A74 /* apps_drag_and_drop_overlay.png */; };
 		CDC77C1F165C2DAF00939D99 /* MigrationsV1_3_2.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */; };
+		CDD3748D1D8DA14C00B55D4D /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = CDD3748C1D8DA14C00B55D4D /* dsa_pub.pem */; };
 		CDE3015716A2FB6B00E8D489 /* AppsNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3015616A2FB6B00E8D489 /* AppsNavigationViewController.m */; };
 		CDE3015A16A469BC00E8D489 /* TGEVE_AppsWindowWindowControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3015916A469BC00E8D489 /* TGEVE_AppsWindowWindowControllerTests.m */; };
 		CDE3018316A49D0300E8D489 /* libAppsLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE3016C16A4932600E8D489 /* libAppsLibrary.a */; };
@@ -220,7 +219,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CD558C1216DE8854005D4B97 /* Objc-Util.framework in CopyFiles */,
-				CD6AD3EA164CC178009FF1B5 /* Sparkle.framework in CopyFiles */,
 				CD57865216465E2600CC508B /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,7 +311,6 @@
 		CD6A928D1658D4DE00239A9E /* INSERT_APPLICATION_BLACKLISTV1_3_1.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = INSERT_APPLICATION_BLACKLISTV1_3_1.sql; path = "Database/SQL Scripte/INSERT_APPLICATION_BLACKLISTV1_3_1.sql"; sourceTree = "<group>"; };
 		CD6AD3BA164C17E9009FF1B5 /* GUIUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GUIUtilities.h; sourceTree = "<group>"; };
 		CD6AD3BB164C17E9009FF1B5 /* GUIUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GUIUtilities.m; sourceTree = "<group>"; };
-		CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = hotkeyEVE/Frameworks/Sparkle.framework; sourceTree = "<group>"; };
 		CD6AD3EE164D6B9C009FF1B5 /* ShortcutsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShortcutsWindowController.h; path = GUI/ShortcutWindow/ShortcutsWindowController.h; sourceTree = "<group>"; };
 		CD6AD3EF164D6B9D009FF1B5 /* ShortcutsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShortcutsWindowController.m; path = GUI/ShortcutWindow/ShortcutsWindowController.m; sourceTree = "<group>"; };
 		CD6AD3F0164D6B9D009FF1B5 /* ShortcutsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShortcutsWindow.xib; path = GUI/ShortcutWindow/ShortcutsWindow.xib; sourceTree = "<group>"; };
@@ -400,6 +397,7 @@
 		CDC1767816BC2583006C1A74 /* apps_drag_and_drop_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apps_drag_and_drop_overlay.png; sourceTree = "<group>"; };
 		CDC77C1D165C2DAF00939D99 /* MigrationsV1_3_2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MigrationsV1_3_2.h; path = Database/Migrations/MigrationsV1_3_2.h; sourceTree = "<group>"; };
 		CDC77C1E165C2DAF00939D99 /* MigrationsV1_3_2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MigrationsV1_3_2.m; path = Database/Migrations/MigrationsV1_3_2.m; sourceTree = "<group>"; };
+		CDD3748C1D8DA14C00B55D4D /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = Sparkle/dsa_pub.pem; sourceTree = SOURCE_ROOT; };
 		CDE3015416A2F2B300E8D489 /* AppsNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppsNavigationView.h; path = Apps/GUI/AppsNavigationView.h; sourceTree = "<group>"; };
 		CDE3015516A2FB6A00E8D489 /* AppsNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppsNavigationViewController.h; path = Apps/GUI/AppsNavigationViewController.h; sourceTree = "<group>"; };
 		CDE3015616A2FB6B00E8D489 /* AppsNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppsNavigationViewController.m; path = Apps/GUI/AppsNavigationViewController.m; sourceTree = "<group>"; };
@@ -453,7 +451,6 @@
 				CDFF8CDC164B72EF00A5EA5A /* UIElements.dylib in Frameworks */,
 				CD57865316465EDE00CC508B /* Growl.framework in Frameworks */,
 				CD80E7531645393300A9C7D8 /* Cocoa.framework in Frameworks */,
-				CD6AD3E9164CC0F0009FF1B5 /* Sparkle.framework in Frameworks */,
 				CD71E4A8165EEB8C00987E09 /* Carbon.framework in Frameworks */,
 				6BEEDFD944C44BAA33C5D70C /* libPods-hotkeyEVE.a in Frameworks */,
 			);
@@ -716,7 +713,6 @@
 				CDF0A04C1D6CCAFC003E0F30 /* Database.dylib */,
 				CD8459F816A0AAF4007717CB /* OCMock.framework */,
 				CD71E4A7165EEB8C00987E09 /* Carbon.framework */,
-				CD6AD3E8164CC0F0009FF1B5 /* Sparkle.framework */,
 				CD57865116465E2600CC508B /* Growl.framework */,
 				CD80E7521645393300A9C7D8 /* Cocoa.framework */,
 				CD80E7701645393400A9C7D8 /* SenTestingKit.framework */,
@@ -763,6 +759,7 @@
 		CD80E7591645393400A9C7D8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CDD3748C1D8DA14C00B55D4D /* dsa_pub.pem */,
 				CDC1767816BC2583006C1A74 /* apps_drag_and_drop_overlay.png */,
 				CD836D581652C0A5008A7876 /* Credits.html */,
 				CD57864B16465D5800CC508B /* Growl Registration Ticket.growlRegDict */,
@@ -1185,6 +1182,7 @@
 				CD1464F116CB9A65004395D8 /* ALTER_MENU_BAR_ITEMS.sql in Resources */,
 				CD1464F316CB9A84004395D8 /* ALTER_GUI_ELEMENTS_V1_3_3.sql in Resources */,
 				CD1464F816CB9A9F004395D8 /* ALTER_TABLE_APPLICATIONS_V1_4_0.sql in Resources */,
+				CDD3748D1D8DA14C00B55D4D /* dsa_pub.pem in Resources */,
 				CD7488871D64F2F700B8D6B4 /* EVE_ICON_STATUS_BAR_ACTIVE_DARK_THEME.tiff in Resources */,
 				CD1464F916CB9A9F004395D8 /* ALTER_TABLE_GUI_ELEMENTS_V1_4_0.sql in Resources */,
 				CD1464FA16CB9A9F004395D8 /* CREATE_TABLE_APP_MODULE_V1_4_0.sql in Resources */,
@@ -1513,7 +1511,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "hotkeyEVE/hotkeyEVE-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = "$(inherited)";
@@ -1543,7 +1541,7 @@
 				GCC_PREFIX_HEADER = "hotkeyEVE/hotkeyEVE-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "hotkeyEVE/hotkeyEVE-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OBJROOT = "$(SYMROOT)";
