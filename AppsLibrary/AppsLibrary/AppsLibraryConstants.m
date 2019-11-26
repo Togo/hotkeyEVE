@@ -35,7 +35,7 @@ NSString * const kAppsUIElementIdentifierColumn = @"UIElementIdentifierColumn";
 NSString * const kAppsElementImageColumn = @"ElementImageColumn";
 
 // Amazon
-NSString * const kAmazonBucketName = @"hotkeyeveapps";
-NSString * const kAmazonAccesKey = @"AKIAIG3HL4EROXAR3DOQ";
-NSString * const kAmazonSecretKey = @"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";
-NSString * const kAmazonAppsDBDomainName = @"hotkeyeveapps_db";
+NSString * const kAmazonBucketName = @"";
+NSString * const kAmazonAccesKey = @"";
+NSString * const kAmazonSecretKey = @"";
+NSString * const kAmazonAppsDBDomainName = @"";
